@@ -2115,7 +2115,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">
             12 משתתפים מ-5 קבוצות הגיעו להסכמה של 78% על הצעה משותפת
           </div>
-          <div style="font-size:11px;color:var(--teal)">קרא/י את ההצעה המלאה ←</div>
+          <div style="font-size:11px;color:var(--teal);cursor:pointer" onclick="goToScreen('screen-assembly-summary')">קרא/י את ההצעה המלאה ←</div>
         </div>
 
         <!-- Today's summary -->
@@ -2249,6 +2249,168 @@ input[type="range"]::-webkit-slider-thumb {
           בהשראת pol.is — ללא תגובות, אין טרולים. אם אתה לא מסכים עם הצהרה, כתוב הצהרה טובה יותר. הנושאים הפופולריים ביותר כאן הופכים לשאלות הדופק היומיות.
         </div>
 
+      </div>
+    </div>
+
+    <!-- ===== ASSEMBLY SUMMARY (Completed Assembly Report) ===== -->
+    <div class="screen has-tabs" id="screen-assembly-summary">
+      <div class="screen-scroll">
+        <!-- Header with back -->
+        <div style="padding:16px 20px;display:flex;align-items:center;gap:12px">
+          <button style="background:var(--elevated);border:none;color:var(--text-1);width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center" onclick="goToScreen('screen-pulse')">→</button>
+          <div>
+            <h2 style="font-size:18px;font-weight:700;margin:0">סיכום אסיפה</h2>
+            <div style="font-size:12px;color:var(--text-3)">הושלמה לפני 3 שעות</div>
+          </div>
+        </div>
+
+        <!-- Status Banner -->
+        <div style="margin:0 20px 16px;padding:14px 16px;background:linear-gradient(135deg, rgba(229,168,75,0.12), rgba(45,212,168,0.08));border:1px solid rgba(229,168,75,0.3);border-radius:var(--r-lg);text-align:center">
+          <div style="font-size:28px;margin-bottom:4px">🎉</div>
+          <div style="font-size:18px;font-weight:700;color:var(--gold);margin-bottom:4px">הסכמה הושגה!</div>
+          <div style="font-size:32px;font-weight:800;color:var(--teal);direction:ltr">78%</div>
+          <div style="font-size:12px;color:var(--text-2);margin-top:4px">מתוך 12 משתתפים, 9 תמכו בהצעה הסופית</div>
+        </div>
+
+        <!-- Topic -->
+        <div style="margin:0 20px 16px;padding:16px;background:var(--surface);border-radius:var(--r-lg);border-right:3px solid var(--gold)">
+          <div style="font-size:11px;color:var(--text-3);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px">הנושא</div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:8px">תקצוב בתי ספר בפריפריה</div>
+          <div style="font-size:13px;color:var(--text-2);line-height:1.6">האם המדינה צריכה להעביר תקציב נוסף לבתי ספר בפריפריה, גם אם זה אומר הקטנת תקציב בתי ספר במרכז?</div>
+        </div>
+
+        <!-- Participants Diversity -->
+        <div style="margin:0 20px 16px;padding:16px;background:var(--surface);border-radius:var(--r-lg)">
+          <div style="font-size:13px;font-weight:600;margin-bottom:10px">👥 12 משתתפים מ-5 קבוצות שונות</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
+            <span style="background:rgba(45,212,168,0.15);color:var(--teal);padding:4px 10px;border-radius:var(--r-pill);font-size:11px">חילונים ×3</span>
+            <span style="background:rgba(229,168,75,0.15);color:var(--gold);padding:4px 10px;border-radius:var(--r-pill);font-size:11px">דתיים ×2</span>
+            <span style="background:rgba(91,127,191,0.15);color:var(--blue);padding:4px 10px;border-radius:var(--r-pill);font-size:11px">ערבים ×3</span>
+            <span style="background:rgba(232,99,111,0.15);color:var(--coral);padding:4px 10px;border-radius:var(--r-pill);font-size:11px">רוסים ×2</span>
+            <span style="background:rgba(192,132,252,0.15);color:#c084fc;padding:4px 10px;border-radius:var(--r-pill);font-size:11px">מסורתיים ×2</span>
+          </div>
+          <div style="font-size:11px;color:var(--text-3)">הרכב מגוון מקסימלי — נבחר אלגוריתמית</div>
+        </div>
+
+        <!-- The Proposal That Won Consensus -->
+        <div style="margin:0 20px 16px;padding:16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid rgba(45,212,168,0.3)">
+          <div style="font-size:11px;color:var(--teal);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">✅ ההצעה שהושגה עליה הסכמה</div>
+          <div style="font-size:14px;font-weight:500;line-height:1.7;margin-bottom:12px;color:var(--text-1)">העברת 15% מתקציב החינוך הארצי לבתי ספר בפריפריה לתקופת ניסיון של 3 שנים, עם מדדי הצלחה ברורים: צמצום פערי בגרות ב-20%, הגדלת שיעור ההשתלבות באקדמיה ב-15%. אם המדדים לא מושגים — התקציב חוזר.</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="background:rgba(45,212,168,0.1);color:var(--teal);padding:3px 8px;border-radius:var(--r-sm);font-size:11px">תקופת ניסיון</span>
+            <span style="background:rgba(45,212,168,0.1);color:var(--teal);padding:3px 8px;border-radius:var(--r-sm);font-size:11px">מדדים מדידים</span>
+            <span style="background:rgba(45,212,168,0.1);color:var(--teal);padding:3px 8px;border-radius:var(--r-sm);font-size:11px">מנגנון חזרה</span>
+          </div>
+        </div>
+
+        <!-- Journey: How We Got There -->
+        <div style="margin:0 20px 16px;padding:16px;background:var(--surface);border-radius:var(--r-lg)">
+          <div style="font-size:13px;font-weight:600;margin-bottom:12px">🗺️ איך הגענו לשם — 4 שלבים</div>
+
+          <!-- Phase 1 -->
+          <div style="display:flex;gap:12px;margin-bottom:14px">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--teal);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">1</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;margin-bottom:2px">קריאה שקטה</div>
+              <div style="font-size:12px;color:var(--text-3);line-height:1.5">כולם קראו את חומרי הרקע: נתוני CBS על פערי תקצוב, דוח מבקר המדינה, ועדויות מנהלי בתי ספר</div>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div style="display:flex;gap:12px;margin-bottom:14px">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--teal);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">2</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;margin-bottom:2px">הצהרות עמדה</div>
+              <div style="font-size:12px;color:var(--text-3);line-height:1.5">כל משתתף כתב עמדה קצרה. נחשפו 3 דעות מרכזיות: "להעביר הכל לפריפריה", "לא לגעת בתקציב המרכז", "ניסיון מוגבל עם מדדים"</div>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div style="display:flex;gap:12px;margin-bottom:14px">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">3</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;margin-bottom:2px">שיחות 1:1</div>
+              <div style="font-size:12px;color:var(--text-3);line-height:1.5">המערכת זיווגה כל משתתף עם מישהו מקבוצה אחרת. <span style="color:var(--gold)">הרגע המכריע:</span> אמא מנצרת ואבא מפתח תקווה גילו ששניהם מתמודדים עם אותו מחסור — מורים מקצועיים</div>
+            </div>
+          </div>
+
+          <!-- Phase 4 -->
+          <div style="display:flex;gap:12px">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">4</div>
+            <div>
+              <div style="font-size:13px;font-weight:500;margin-bottom:2px">הצבעת הסכמה</div>
+              <div style="font-size:12px;color:var(--text-3);line-height:1.5">ההצעה "ניסיון 3 שנים עם מדדים" זכתה ל-78% תמיכה — גם מי שבהתחלה התנגד קיבל את מנגנון החזרה</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Quotes -->
+        <div style="margin:0 20px 16px;padding:16px;background:var(--surface);border-radius:var(--r-lg)">
+          <div style="font-size:13px;font-weight:600;margin-bottom:12px">💬 רגעים בולטים</div>
+
+          <div style="padding:10px 14px;background:rgba(45,212,168,0.06);border-right:2px solid var(--teal);border-radius:0 var(--r-sm) var(--r-sm) 0;margin-bottom:10px">
+            <div style="font-size:13px;color:var(--text-1);line-height:1.6;font-style:italic">"אני חרדי מבני ברק ולא חשבתי שאסכים עם ערבייה מנצרת על משהו. אבל שנינו רוצים את אותו דבר — מורים טובים לילדים שלנו"</div>
+            <div style="font-size:11px;color:var(--text-3);margin-top:6px">משתתף/ת מקבוצה אחרת · שלב 3</div>
+          </div>
+
+          <div style="padding:10px 14px;background:rgba(229,168,75,0.06);border-right:2px solid var(--gold);border-radius:0 var(--r-sm) var(--r-sm) 0;margin-bottom:10px">
+            <div style="font-size:13px;color:var(--text-1);line-height:1.6;font-style:italic">"מנגנון החזרה שכנע אותי. אם זה לא עובד תוך 3 שנים — חוזרים. אין מה להפסיד"</div>
+            <div style="font-size:11px;color:var(--text-3);margin-top:6px">משתתף/ת מתל אביב · שלב 4</div>
+          </div>
+
+          <div style="padding:10px 14px;background:rgba(192,132,252,0.06);border-right:2px solid #c084fc;border-radius:0 var(--r-sm) var(--r-sm) 0">
+            <div style="font-size:13px;color:var(--text-1);line-height:1.6;font-style:italic">"בכנסת זה היה נופל ברגע שמישהו מהקואליציה היה מתנגד. פה — 12 אנשים רגילים הגיעו להסכמה תוך שעה"</div>
+            <div style="font-size:11px;color:var(--text-3);margin-top:6px">משתתף/ת מבאר שבע · שלב 4</div>
+          </div>
+        </div>
+
+        <!-- What Happens Next -->
+        <div style="margin:0 20px 16px;padding:16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid rgba(229,168,75,0.2)">
+          <div style="font-size:13px;font-weight:600;margin-bottom:10px">🚀 מה קורה עכשיו?</div>
+          <div style="font-size:12px;color:var(--text-2);line-height:1.7">
+            <div style="margin-bottom:6px">✓ ההצעה פורסמה בדעת הקהל — כל המשתמשים יכולים לראות ולהצביע</div>
+            <div style="margin-bottom:6px">✓ אם <span dir="ltr" style="color:var(--teal);font-weight:600">10,000</span> אזרחים תומכים — היא הופכת להתחייבות לאומית</div>
+            <div style="margin-bottom:6px">✓ קרן המימון הריבועי כבר התחילה לאסוף תרומות למורים בפריפריה</div>
+            <div>✓ <span dir="ltr" style="color:var(--gold);font-weight:600">3</span> ארגונים (נט״ל, סאלם, אל-אמל) כבר הצטרפו לסבב המימון</div>
+          </div>
+        </div>
+
+        <!-- Impact Stats -->
+        <div style="margin:0 20px 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="padding:14px;background:var(--surface);border-radius:var(--r-lg);text-align:center">
+            <div style="font-size:24px;font-weight:800;color:var(--teal);direction:ltr">78%</div>
+            <div style="font-size:11px;color:var(--text-3)">הסכמה סופית</div>
+          </div>
+          <div style="padding:14px;background:var(--surface);border-radius:var(--r-lg);text-align:center">
+            <div style="font-size:24px;font-weight:800;color:var(--gold);direction:ltr">12</div>
+            <div style="font-size:11px;color:var(--text-3)">משתתפים</div>
+          </div>
+          <div style="padding:14px;background:var(--surface);border-radius:var(--r-lg);text-align:center">
+            <div style="font-size:24px;font-weight:800;color:#c084fc;direction:ltr">5</div>
+            <div style="font-size:11px;color:var(--text-3)">קבוצות שונות</div>
+          </div>
+          <div style="padding:14px;background:var(--surface);border-radius:var(--r-lg);text-align:center">
+            <div style="font-size:24px;font-weight:800;color:var(--coral);direction:ltr">47</div>
+            <div style="font-size:11px;color:var(--text-3)">דקות</div>
+          </div>
+        </div>
+
+        <!-- XP Reward -->
+        <div style="margin:0 20px 16px;padding:14px 16px;background:linear-gradient(135deg, rgba(45,212,168,0.08), rgba(229,168,75,0.08));border:1px solid rgba(45,212,168,0.2);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div style="font-size:13px;font-weight:600">🏆 המשתתפים הרוויחו</div>
+            <div style="font-size:12px;color:var(--text-2)">+350 XP · +45 ניקוד גישור · תג "בונה הסכמות"</div>
+          </div>
+          <div style="font-size:20px;color:var(--gold)">⭐</div>
+        </div>
+
+        <!-- Share + Join CTA -->
+        <div style="margin:0 20px 24px;display:flex;gap:10px">
+          <button class="btn btn-gold" style="flex:1" onclick="goToScreen('screen-pulse')">שתף את ההסכמה 📤</button>
+          <button class="btn btn-primary" style="flex:1" onclick="goToScreen('screen-assembly')">הצטרף/י לאסיפה הבאה</button>
+        </div>
+
+        <div style="height:80px"></div>
       </div>
     </div>
 
