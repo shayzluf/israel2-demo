@@ -3395,8 +3395,8 @@ function initSwipeCard(cardId, resultId) {
   const forInd = card.querySelector('.for-ind');
   const againstInd = card.querySelector('.against-ind');
 
-  // Entrance animation
-  card.classList.add('entering');
+  // Entrance animation (skip for card1 — tutorial handles it)
+  if (cardId !== 'card1') card.classList.add('entering');
 
   function onStart(e) {
     isDragging = true;
