@@ -1458,7 +1458,7 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="avg-num">2.3</div>
         <div class="avg-label" style="margin-top:4px">לפי מדד הדמוקרטיה 2025 — רק 11% סומכים על הכנסת</div>
       </div>
-      <button class="btn btn-primary btn-block" style="margin-top:8px" onclick="showKnessetAvg()">המשך</button>
+      <button class="btn btn-primary btn-block" id="knessetContinueBtn" style="margin-top:8px" onclick="showKnessetAvg()">המשך</button>
     </div>
 
     <!-- ===== ONBOARDING: CITY PICKER ===== -->
@@ -2829,7 +2829,11 @@ function goToScreen(id) {
   next.classList.add('active');
   state.currentScreen = id;
 
-  // Run screen init
+  // Run screen init / reset
+  if (id === 'screen-knesset') {
+    const kb = document.getElementById('knessetContinueBtn');
+    if (kb) { kb.disabled = false; kb.style.opacity = '1'; kb.style.pointerEvents = 'auto'; }
+  }
   if (id === 'screen-reveal') initReveal();
   if (id === 'screen-swipe1') {
     const card1 = document.getElementById('card1');
@@ -2888,6 +2892,12 @@ function updateKnesset(val) {
 }
 
 function showKnessetAvg() {
+  const btn = document.getElementById('knessetContinueBtn');
+  btn.disabled = true;
+  btn.style.opacity = '0.4';
+  btn.style.pointerEvents = 'none';
+  btn.style.transition = 'opacity 300ms ease';
+
   if (!state.knessetAvgShown) {
     state.knessetAvgShown = true;
     document.getElementById('knessetAvg').classList.add('visible');
