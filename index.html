@@ -1439,10 +1439,58 @@ input[type="range"]::-webkit-slider-thumb {
       <div class="lang-logo">2.0</div>
       <div class="lang-title">Israel 2.0</div>
       <div class="lang-subtitle">בחר את השפה שלך:<br>Choose your language</div>
-      <button class="lang-btn selected" onclick="goToScreen('screen-knesset')">עברית</button>
-      <button class="lang-btn" onclick="goToScreen('screen-knesset')">العربية</button>
-      <button class="lang-btn" onclick="goToScreen('screen-knesset')">Русский</button>
-      <button class="lang-btn" onclick="goToScreen('screen-knesset')">English</button>
+      <button class="lang-btn selected" onclick="goToScreen('screen-consent')">עברית</button>
+      <button class="lang-btn" onclick="goToScreen('screen-consent')">العربية</button>
+      <button class="lang-btn" onclick="goToScreen('screen-consent')">Русский</button>
+      <button class="lang-btn" onclick="goToScreen('screen-consent')">English</button>
+    </div>
+
+    <!-- ===== ONBOARDING: CONSENT & PRIVACY ===== -->
+    <div class="screen" id="screen-consent">
+      <div style="padding:20px 20px 0;text-align:center">
+        <div style="font-size:36px;margin-bottom:12px">🛡️</div>
+        <div style="font-size:20px;font-weight:600;margin-bottom:8px">הפרטיות שלך חשובה לנו</div>
+        <div style="font-size:13px;color:var(--text-2);margin-bottom:20px">לפני שנתחיל, חשוב שתדע/י:</div>
+      </div>
+      <div style="padding:0 20px;display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--surface);border-radius:var(--r-md);padding:14px;display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:20px;flex-shrink:0">🗳️</span>
+          <div>
+            <div style="font-size:14px;font-weight:500;margin-bottom:2px">ההצבעות שלך נשארות במכשיר</div>
+            <div style="font-size:12px;color:var(--text-2);line-height:1.5">המערכת לומדת את העמדות שלך מתוך ההצבעות — אבל המידע נשמר רק על המכשיר שלך, לא בשרתים שלנו</div>
+          </div>
+        </div>
+        <div style="background:var(--surface);border-radius:var(--r-md);padding:14px;display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:20px;flex-shrink:0">📍</span>
+          <div>
+            <div style="font-size:14px;font-weight:500;margin-bottom:2px">המיקום שלך לא נשלח לשרת</div>
+            <div style="font-size:12px;color:var(--text-2);line-height:1.5">בחירת עיר מגורים משמשת להצגת נתונים מקומיים בלבד. לשרת נשלח רק המחוז (לא העיר)</div>
+          </div>
+        </div>
+        <div style="background:var(--surface);border-radius:var(--r-md);padding:14px;display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:20px;flex-shrink:0">🔒</span>
+          <div>
+            <div style="font-size:14px;font-weight:500;margin-bottom:2px">הצבעה אנונימית לחלוטין</div>
+            <div style="font-size:12px;color:var(--text-2);line-height:1.5">טכנולוגיית Zero-Knowledge מבטיחה שאף אחד — כולל אנחנו — לא יכול לדעת איך הצבעת</div>
+          </div>
+        </div>
+        <div style="background:var(--surface);border-radius:var(--r-md);padding:14px;display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:20px;flex-shrink:0">🗑️</span>
+          <div>
+            <div style="font-size:14px;font-weight:500;margin-bottom:2px">מחיקה בכל עת</div>
+            <div style="font-size:12px;color:var(--text-2);line-height:1.5">את/ה יכול/ה למחוק את כל המידע שלך בכל רגע מהגדרות הפרופיל</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:16px 20px 0">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 0" id="consentAgeLabel">
+          <input type="checkbox" id="consentAgeCheck" onchange="updateConsentBtn()" style="width:20px;height:20px;accent-color:var(--teal);flex-shrink:0">
+          <span style="font-size:13px;color:var(--text-2)">אני מאשר/ת שגילי מעל 18 ושקראתי את <a href="#" style="color:var(--teal);text-decoration:underline" onclick="event.preventDefault()">מדיניות הפרטיות</a></span>
+        </label>
+      </div>
+      <div style="padding:8px 20px 20px">
+        <button class="btn btn-primary btn-block" id="consentBtn" disabled style="opacity:0.4" onclick="goToScreen('screen-knesset')">בואו נתחיל</button>
+      </div>
     </div>
 
     <!-- ===== ONBOARDING: KNESSET ===== -->
@@ -2882,6 +2930,20 @@ function enterPulseFeed() {
   });
   state.activeTab = 'pulse';
   goToScreen('screen-pulse');
+}
+
+// ========== CONSENT SCREEN ==========
+function updateConsentBtn() {
+  const check = document.getElementById('consentAgeCheck');
+  const btn = document.getElementById('consentBtn');
+  if (check.checked) {
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    btn.style.transition = 'opacity 300ms';
+  } else {
+    btn.disabled = true;
+    btn.style.opacity = '0.4';
+  }
 }
 
 // ========== KNESSET SLIDER ==========
