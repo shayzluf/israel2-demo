@@ -1,0 +1,3441 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Israel 2.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========== DESIGN SYSTEM TOKENS ========== */
+:root {
+  --bg: #0D0F14;
+  --surface: #1A1D23;
+  --elevated: #22262E;
+  --text-1: #FFFFFF;
+  --text-2: #8B9AAF;
+  --text-3: #5A6578;
+  --gold: #E5A84B;
+  --teal: #2DD4A8;
+  --blue: #5B7FBF;
+  --coral: #E8636F;
+  --divider: #2A2F3A;
+  --gold-glow: rgba(229,168,75,0.3);
+  --teal-glow: rgba(45,212,168,0.3);
+  --font: 'Heebo', sans-serif;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-pill: 24px;
+  --r-circle: 9999px;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-elevated: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font);
+  background: #111;
+  color: var(--text-1);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ========== PHONE FRAME ========== */
+.phone-frame {
+  width: 375px;
+  height: 812px;
+  background: var(--bg);
+  border-radius: 44px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 0 12px #1a1a1a, 0 0 0 14px #333, 0 20px 60px rgba(0,0,0,0.6);
+}
+@media (max-width: 428px) {
+  .phone-frame { width: 100vw; height: 100vh; border-radius: 0; box-shadow: none; }
+}
+
+/* Status bar */
+.status-bar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  position: relative;
+  z-index: 10;
+}
+.status-bar .time { direction: ltr; }
+.status-bar .icons { display: flex; gap: 6px; direction: ltr; }
+
+/* App container */
+.app-container {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* ========== SCREEN SYSTEM ========== */
+.screen {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: none;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 250ms ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
+.screen.active { display: flex; opacity: 1; }
+.screen.has-tabs { bottom: 72px; }
+.screen-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: 24px; }
+
+/* ========== BOTTOM TAB BAR ========== */
+.tab-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 72px;
+  background: var(--surface);
+  border-top: 1px solid var(--divider);
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 8px;
+  z-index: 100;
+}
+.tab-bar.visible { display: flex; }
+.tab-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: color 200ms;
+  -webkit-tap-highlight-color: transparent;
+}
+.tab-btn.active { color: var(--teal); }
+.tab-btn svg { width: 24px; height: 24px; fill: currentColor; }
+
+/* ========== COMMON COMPONENTS ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--r-pill);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 200ms;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-primary { background: var(--teal); color: var(--bg); }
+.btn-primary:active { transform: scale(0.96); }
+.btn-secondary { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
+.btn-gold { background: var(--gold); color: var(--bg); }
+.btn-ghost { background: rgba(255,255,255,0.08); color: var(--text-1); }
+.btn-sm { padding: 10px 20px; font-size: 14px; }
+.btn-block { width: 100%; }
+
+.card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  border: 1px solid var(--divider);
+}
+.card-gold {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px var(--gold-glow);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--elevated);
+  border-radius: 4px;
+  overflow: hidden;
+  direction: rtl;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 800ms ease;
+}
+
+/* Section header */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 8px;
+}
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Numbers in RTL */
+.ltr-num { direction: ltr; display: inline-block; unicode-bidi: embed; }
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInRight { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes goldShimmer {
+  0%, 100% { box-shadow: 0 0 10px var(--gold-glow); }
+  50% { box-shadow: 0 0 30px var(--gold-glow), 0 0 60px rgba(229,168,75,0.15); }
+}
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes barGrow { from { width: 0; } }
+@keyframes countUp { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes tealGlow {
+  0%, 100% { box-shadow: 0 0 10px var(--teal-glow); }
+  50% { box-shadow: 0 0 25px var(--teal-glow); }
+}
+.animate-fade-in { animation: fadeIn 400ms ease forwards; }
+.animate-fade-up { animation: fadeInUp 500ms ease forwards; }
+.animate-gold { animation: goldShimmer 2s ease-in-out infinite; }
+
+/* ========== ONBOARDING: LANGUAGE ========== */
+#screen-lang {
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  gap: 12px;
+}
+.lang-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--r-circle);
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.lang-title { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+.lang-subtitle { font-size: 16px; color: var(--text-2); margin-bottom: 32px; text-align: center; }
+.lang-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 2px solid var(--divider);
+  color: var(--text-1);
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 200ms;
+  text-align: center;
+}
+.lang-btn.selected { border-color: var(--teal); background: rgba(45,212,168,0.1); }
+.lang-btn:active { transform: scale(0.98); }
+
+/* ========== ONBOARDING: CITY PICKER ========== */
+#screen-city {
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+.city-title { font-size: 22px; font-weight: 700; color: var(--text-1); margin-bottom: 6px; }
+.city-subtitle { font-size: 14px; color: var(--text-3); margin-bottom: 24px; line-height: 1.4; }
+.city-input-wrap {
+  width: 100%; position: relative; margin-bottom: 12px;
+}
+.city-input {
+  width: 100%; padding: 14px 16px; font-size: 16px;
+  background: var(--elevated); border: 1.5px solid var(--border);
+  border-radius: var(--r-lg); color: var(--text-1);
+  outline: none; direction: rtl; font-family: inherit;
+  box-sizing: border-box;
+}
+.city-input:focus { border-color: var(--teal); }
+.city-input::placeholder { color: var(--text-3); }
+.city-results {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 100;
+  background: var(--surface); border: 1.5px solid var(--border);
+  border-radius: var(--r-md);
+  max-height: 240px; overflow-y: auto;
+  display: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.city-results.visible { display: block; }
+.city-result-item {
+  padding: 14px 16px; font-size: 15px; color: var(--text-1);
+  cursor: pointer; direction: rtl; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.city-result-item:last-child { border-bottom: none; }
+.city-result-item:active, .city-result-item.selected {
+  background: rgba(45,212,168,0.15); color: var(--teal);
+}
+.city-toggle {
+  display: flex; gap: 8px; margin-bottom: 16px; width: 100%;
+}
+.city-toggle-btn {
+  flex: 1; padding: 10px; font-size: 14px; font-weight: 600;
+  background: var(--elevated); border: 1.5px solid var(--border);
+  border-radius: var(--r-md); color: var(--text-2); cursor: pointer;
+  font-family: inherit; transition: all 0.2s;
+}
+.city-toggle-btn.active {
+  background: rgba(45,212,168,0.1); border-color: var(--teal); color: var(--teal);
+}
+.city-chips {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  margin-bottom: 12px;
+}
+.city-chip {
+  padding: 8px 14px; font-size: 13px; background: var(--elevated);
+  border: 1px solid var(--border); border-radius: 20px; color: var(--text-2);
+  cursor: pointer; font-family: inherit; transition: all 0.2s;
+}
+.city-chip:active, .city-chip.selected {
+  background: rgba(45,212,168,0.1); border-color: var(--teal); color: var(--teal);
+}
+.city-skip { font-size: 13px; color: var(--text-3); margin-top: 16px; cursor: pointer; }
+.city-skip:hover { color: var(--text-2); }
+
+/* ========== ONBOARDING: KNESSET SLIDER ========== */
+#screen-knesset {
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  gap: 24px;
+}
+.knesset-q {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+}
+.knesset-number {
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--teal);
+  transition: color 300ms;
+  direction: ltr;
+}
+.knesset-number.low { color: var(--coral); }
+.knesset-number.mid { color: var(--gold); }
+.knesset-number.high { color: var(--teal); }
+.slider-wrap { width: 100%; padding: 0 8px; }
+.slider-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--text-3); }
+input[type="range"] {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--elevated);
+  border-radius: 4px;
+  outline: none;
+  direction: ltr;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--teal);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--teal-glow);
+}
+.knesset-avg {
+  padding: 16px 24px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 500ms;
+}
+.knesset-avg.visible { opacity: 1; }
+.knesset-avg .avg-num { font-size: 28px; font-weight: 700; color: var(--coral); direction: ltr; }
+.knesset-avg .avg-label { font-size: 14px; color: var(--text-2); }
+
+/* ========== ONBOARDING: SWIPE VOTE ========== */
+#screen-vote1, #screen-vote2, #screen-vote3 {
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.vote-progress {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.vote-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+.vote-dot.done { background: var(--teal); }
+.vote-dot.current { background: var(--teal); animation: pulse 1s infinite; }
+
+.swipe-area {
+  width: 100%;
+  height: 360px;
+  position: relative;
+  perspective: 800px;
+}
+.swipe-card-wrap {
+  position: absolute;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swipe-card {
+  width: 310px;
+  min-height: 300px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: 1px solid var(--divider);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  position: relative;
+  will-change: transform;
+}
+.swipe-card.dragging { cursor: grabbing; }
+.swipe-card .topic-tag {
+  padding: 6px 16px;
+  border-radius: var(--r-pill);
+  background: rgba(45,212,168,0.15);
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 600;
+}
+.swipe-card .q-text {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.5;
+}
+.swipe-card .q-meta {
+  font-size: 13px;
+  color: var(--text-3);
+  display: flex;
+  gap: 16px;
+}
+.swipe-indicator {
+  position: absolute;
+  top: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: var(--r-pill);
+  opacity: 0;
+  transition: opacity 150ms;
+}
+.swipe-indicator.for-ind {
+  left: 20px;
+  background: rgba(45,212,168,0.2);
+  color: var(--teal);
+  border: 2px solid var(--teal);
+}
+.swipe-indicator.against-ind {
+  right: 20px;
+  background: rgba(91,127,191,0.2);
+  color: var(--blue);
+  border: 2px solid var(--blue);
+}
+.swipe-hint {
+  font-size: 13px;
+  color: var(--text-3);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 12px;
+}
+.complex-btn {
+  margin-top: 8px;
+  padding: 12px 32px;
+  border-radius: var(--r-pill);
+  background: var(--elevated);
+  border: 1px solid var(--divider);
+  color: var(--text-2);
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: center;
+}
+
+/* Vote result overlay */
+.vote-result {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--bg);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px;
+  z-index: 5;
+}
+.vote-result.visible { display: flex; }
+.vote-result .big-pct {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--gold);
+  animation: countUp 500ms ease forwards;
+}
+.vote-result .result-label { font-size: 18px; color: var(--text-2); text-align: center; }
+.result-bar-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 4px 0;
+}
+.result-bar-label { font-size: 13px; color: var(--text-2); width: 80px; text-align: start; flex-shrink: 0; }
+.result-bar-track { flex: 1; height: 24px; background: var(--elevated); border-radius: 4px; overflow: hidden; position: relative; }
+.result-bar-fill { height: 100%; border-radius: 4px; animation: barGrow 800ms ease forwards; }
+.result-bar-pct { font-size: 13px; font-weight: 600; width: 40px; text-align: end; direction: ltr; }
+
+/* ========== ONBOARDING: REVEAL ========== */
+#screen-reveal {
+  align-items: center;
+  padding: 20px 24px;
+  gap: 16px;
+  overflow-y: auto;
+}
+.reveal-title { font-size: 20px; font-weight: 700; text-align: center; margin-top: 8px; }
+.reveal-subtitle { font-size: 14px; color: var(--text-2); text-align: center; }
+/* constellation removed — replaced with tribal bar chart */
+.consensus-surprise {
+  width: 100%;
+  padding: 24px;
+  border-radius: var(--r-lg);
+  border: 2px solid var(--gold);
+  background: var(--surface);
+  text-align: center;
+  animation: goldShimmer 2s ease-in-out infinite;
+}
+.surprise-label { font-size: 13px; color: var(--gold); font-weight: 600; margin-bottom: 8px; letter-spacing: 1px; }
+.surprise-pct { font-size: 48px; font-weight: 700; color: var(--gold); direction: ltr; }
+.surprise-text { font-size: 16px; color: var(--text-2); margin-top: 8px; line-height: 1.5; }
+.dna-card {
+  width: 100%;
+  padding: 20px;
+  background: var(--elevated);
+  border-radius: var(--r-lg);
+  text-align: center;
+}
+.dna-card .cluster-name { font-size: 20px; font-weight: 700; color: var(--teal); margin: 8px 0; }
+.dna-card .cluster-desc { font-size: 14px; color: var(--text-2); }
+.reveal-tribes {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--elevated);
+  border-radius: var(--r-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tribe-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+.tb-name {
+  width: 60px;
+  text-align: right;
+  color: var(--text-2);
+  flex-shrink: 0;
+}
+.tb-track {
+  flex: 1;
+  height: 14px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.tb-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  border-radius: 7px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tb-pct {
+  width: 36px;
+  text-align: left;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 13px;
+  direction: ltr;
+}
+.reveal-actions { display: flex; gap: 12px; width: 100%; margin-top: 8px; }
+.reveal-actions .btn { flex: 1; }
+
+/* ========== PULSE FEED ========== */
+#screen-pulse { padding: 0; }
+.pulse-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+.pulse-title { font-size: 24px; font-weight: 700; }
+.pulse-date { font-size: 13px; color: var(--text-3); }
+.notif-dot {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.notif-dot::after {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--coral);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px; right: 8px;
+}
+
+/* Bridge score widget */
+.bridge-widget {
+  margin: 0 20px 16px;
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--divider);
+}
+.bridge-ring {
+  width: 56px; height: 56px;
+  position: relative;
+}
+.bridge-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.bridge-ring circle { fill: none; stroke-width: 5; stroke-linecap: round; }
+.bridge-ring .ring-bg { stroke: var(--elevated); }
+.bridge-ring .ring-fill { stroke: var(--teal); transition: stroke-dashoffset 800ms ease; }
+.bridge-ring .ring-val { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; transform: rotate(0); }
+.bridge-info { flex: 1; }
+.bridge-info .bi-title { font-size: 14px; font-weight: 600; }
+.bridge-info .bi-level { font-size: 12px; color: var(--teal); }
+.bridge-info .bi-gain { font-size: 12px; color: var(--text-3); direction: ltr; display: inline-block; }
+
+/* Feed vote card (compact) */
+.feed-vote-card {
+  margin: 0 20px 16px;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+  position: relative;
+  overflow: hidden;
+}
+.feed-vote-card .fv-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(45,212,168,0.12);
+  color: var(--teal);
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.feed-vote-card .fv-text { font-size: 18px; font-weight: 600; line-height: 1.5; margin-bottom: 16px; }
+.feed-vote-card .fv-meta { font-size: 12px; color: var(--text-3); display: flex; gap: 16px; margin-bottom: 16px; }
+.feed-vote-btns { display: flex; gap: 12px; }
+.feed-vote-btns .btn { flex: 1; font-size: 15px; padding: 12px; }
+.btn-for { background: rgba(45,212,168,0.15); color: var(--teal); border: 1.5px solid var(--teal); }
+.btn-against { background: rgba(91,127,191,0.15); color: var(--blue); border: 1.5px solid var(--blue); }
+
+/* Representative (הנציג) mini card */
+.rep-mini {
+  margin: 0 20px 16px;
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.rep-mini .sm-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(91,127,191,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.rep-mini .sm-text { flex: 1; }
+.rep-mini .sm-title { font-size: 14px; font-weight: 600; }
+.rep-mini .sm-desc { font-size: 12px; color: var(--text-3); }
+
+/* Consensus found card */
+.consensus-card {
+  margin: 0 20px 16px;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 2px solid var(--gold);
+  animation: goldShimmer 3s ease-in-out infinite;
+}
+.consensus-card .cc-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.consensus-card .cc-icon { font-size: 18px; }
+.consensus-card .cc-label { font-size: 12px; color: var(--gold); font-weight: 600; letter-spacing: 1px; }
+.consensus-card .cc-pct { font-size: 32px; font-weight: 700; color: var(--gold); direction: ltr; display: inline-block; }
+.consensus-card .cc-text { font-size: 15px; color: var(--text-2); margin-top: 4px; line-height: 1.5; }
+.consensus-card .cc-groups { font-size: 13px; color: var(--text-3); margin-top: 8px; }
+
+/* ========== FORUM (GATED ESCALATION) ========== */
+#screen-forum { padding: 0; }
+.forum-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.forum-back {
+  background: var(--elevated);
+  border: none;
+  color: var(--text-1);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.forum-header-text h2 { font-size: 20px; font-weight: 700; }
+.forum-header-text .forum-topic { font-size: 13px; color: var(--teal); font-weight: 600; }
+
+.forum-layer-badge {
+  margin: 0 20px 12px;
+  padding: 8px 16px;
+  background: rgba(45,212,168,0.08);
+  border: 1px solid rgba(45,212,168,0.2);
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.forum-layer-badge .layer-num {
+  background: var(--teal);
+  color: var(--bg);
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.forum-consensus-bar {
+  margin: 0 20px 16px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-radius: var(--r-md);
+  border: 1px solid var(--divider);
+}
+.consensus-bar-label { font-size: 11px; color: var(--text-3); margin-bottom: 6px; }
+.consensus-bar-track {
+  height: 6px;
+  background: var(--elevated);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+}
+.consensus-bar-agree { background: var(--teal); height: 100%; transition: width 0.5s; }
+.consensus-bar-disagree { background: var(--blue); height: 100%; transition: width 0.5s; }
+.consensus-bar-pass { background: var(--text-3); height: 100%; transition: width 0.5s; }
+.consensus-bar-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--text-3);
+}
+
+/* Statement cards */
+.statement-card {
+  margin: 0 20px 12px;
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+}
+.statement-text { font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
+.statement-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--text-3);
+  margin-bottom: 12px;
+}
+.statement-cluster {
+  padding: 2px 10px;
+  background: rgba(229,168,75,0.1);
+  color: var(--gold);
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  font-weight: 600;
+}
+.statement-actions {
+  display: flex;
+  gap: 8px;
+}
+.stmt-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--r-md);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid;
+  background: transparent;
+  transition: all 0.15s;
+  font-family: var(--font);
+}
+.stmt-btn-agree { color: var(--teal); border-color: var(--teal); }
+.stmt-btn-agree:hover { background: rgba(45,212,168,0.15); }
+.stmt-btn-disagree { color: var(--blue); border-color: var(--blue); }
+.stmt-btn-disagree:hover { background: rgba(91,127,191,0.15); }
+.stmt-btn-pass { color: var(--text-3); border-color: var(--divider); }
+
+/* Evidence attached to statement */
+.statement-evidence {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: rgba(229,168,75,0.06);
+  border-right: 3px solid var(--gold);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.evidence-label { font-size: 11px; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
+.evidence-text { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+.evidence-source {
+  margin-top: 6px;
+  padding: 4px 10px;
+  background: rgba(229,168,75,0.1);
+  border-radius: var(--r-sm);
+  font-size: 11px;
+  color: var(--gold);
+  display: inline-block;
+}
+
+/* Need Evidence badge */
+.need-evidence-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: rgba(232,99,111,0.1);
+  color: var(--coral);
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Reaction buttons */
+.statement-reactions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.reaction-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid;
+  background: transparent;
+  font-family: var(--font);
+  transition: all 0.15s;
+}
+.reaction-btn-mind {
+  color: var(--gold);
+  border-color: rgba(229,168,75,0.3);
+}
+.reaction-btn-mind:hover, .reaction-btn-mind.selected {
+  background: rgba(229,168,75,0.15);
+  border-color: var(--gold);
+}
+.reaction-btn-strong {
+  color: var(--teal);
+  border-color: rgba(45,212,168,0.3);
+}
+.reaction-btn-strong:hover, .reaction-btn-strong.selected {
+  background: rgba(45,212,168,0.15);
+  border-color: var(--teal);
+}
+.reaction-btn-evidence {
+  color: var(--coral);
+  border-color: rgba(232,99,111,0.3);
+}
+.reaction-btn-evidence:hover, .reaction-btn-evidence.selected {
+  background: rgba(232,99,111,0.15);
+  border-color: var(--coral);
+}
+.reaction-btn .reaction-count {
+  font-weight: 400;
+  opacity: 0.7;
+  direction: ltr;
+  display: inline-block;
+}
+
+/* Submit new statement */
+.forum-submit {
+  margin: 12px 20px 20px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px dashed var(--divider);
+  border-radius: var(--r-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.forum-submit-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(45,212,168,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--teal);
+}
+.forum-submit-text { flex: 1; font-size: 13px; color: var(--text-3); }
+.forum-submit-cost { font-size: 12px; color: var(--gold); font-weight: 600; }
+
+/* Layer 2 paired dialogue card */
+.paired-invite {
+  margin: 0 20px 16px;
+  padding: 16px;
+  background: linear-gradient(135deg, rgba(45,212,168,0.08), rgba(91,127,191,0.08));
+  border: 1px solid rgba(45,212,168,0.25);
+  border-radius: var(--r-lg);
+}
+.paired-invite-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.paired-invite-desc { font-size: 13px; color: var(--text-2); line-height: 1.5; margin-bottom: 12px; }
+.paired-invite-btn {
+  width: 100%;
+  padding: 12px;
+  background: rgba(45,212,168,0.15);
+  border: 1.5px solid var(--teal);
+  border-radius: var(--r-md);
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+/* Enter forum button on voted cards */
+.enter-forum-btn {
+  margin-top: 12px;
+  padding: 10px;
+  width: 100%;
+  background: rgba(45,212,168,0.08);
+  border: 1px solid rgba(45,212,168,0.2);
+  border-radius: var(--r-md);
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* ========== BRIDGE TAB ========== */
+#screen-bridge { padding: 0; }
+.bridge-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bridge-header h1 { font-size: 24px; font-weight: 700; }
+.consensus-map {
+  width: 100%;
+  height: 260px;
+  position: relative;
+  margin: 0 0 16px;
+}
+.consensus-map canvas { width: 100%; height: 100%; }
+.trending-consensus { padding: 0 20px; }
+.trend-item {
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: border-color 200ms;
+}
+.trend-item:active { border-color: var(--gold); }
+.trend-pct {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gold);
+  direction: ltr;
+  min-width: 60px;
+  text-align: center;
+}
+.trend-info { flex: 1; }
+.trend-info .ti-text { font-size: 15px; font-weight: 500; }
+.trend-info .ti-groups { font-size: 12px; color: var(--text-3); margin-top: 4px; }
+.bridge-challenge {
+  margin: 8px 20px 24px;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--teal);
+}
+.bridge-challenge .bc-title { font-size: 14px; font-weight: 600; color: var(--teal); margin-bottom: 12px; }
+.bridge-challenge .bc-quote { font-size: 15px; color: var(--text-2); font-style: italic; padding: 12px; background: var(--elevated); border-radius: var(--r-md); margin-bottom: 16px; line-height: 1.5; }
+.bridge-challenge .bc-from { font-size: 12px; color: var(--text-3); margin-bottom: 12px; }
+
+/* ========== BRIDGE DETAIL ========== */
+#screen-bridge-detail { padding: 0; }
+.detail-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  font-size: 15px;
+  color: var(--teal);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font);
+}
+.detail-back svg { width: 20px; height: 20px; fill: var(--teal); transform: scaleX(-1); }
+.detail-content { padding: 0 20px 24px; }
+.detail-topic { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+.detail-big-bar { margin-bottom: 24px; }
+.detail-big-bar .db-pct { font-size: 40px; font-weight: 700; color: var(--gold); direction: ltr; display: inline-block; }
+.detail-big-bar .db-label { font-size: 14px; color: var(--text-2); margin-bottom: 8px; }
+.detail-big-bar .progress-bar { height: 12px; }
+
+.group-breakdown { margin-bottom: 24px; }
+.group-breakdown h3 { font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+.group-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.group-row .gr-name { font-size: 13px; color: var(--text-2); width: 100px; flex-shrink: 0; }
+.group-row .gr-bar { flex: 1; height: 20px; background: var(--elevated); border-radius: 4px; overflow: hidden; }
+.group-row .gr-fill { height: 100%; border-radius: 4px; }
+.group-row .gr-pct { font-size: 13px; font-weight: 600; width: 40px; direction: ltr; text-align: end; }
+
+.knesset-compare {
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+}
+.knesset-compare h3 { font-size: 14px; font-weight: 600; color: var(--text-2); margin-bottom: 12px; }
+.compare-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.compare-row .cr-label { font-size: 14px; }
+.compare-row .cr-val { font-size: 18px; font-weight: 700; direction: ltr; }
+
+/* ========== REPRESENTATIVE (הנציג) TAB ========== */
+#screen-rep { align-items: center; padding: 20px; }
+.rep-locked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+  padding: 40px 20px;
+}
+.lock-icon {
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(91,127,191,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  animation: float 3s ease-in-out infinite;
+}
+.rep-locked h2 { font-size: 22px; font-weight: 700; }
+.rep-locked .sl-desc { font-size: 15px; color: var(--text-2); line-height: 1.6; }
+.level-progress {
+  width: 100%;
+  max-width: 280px;
+  margin-top: 8px;
+}
+.level-progress .lp-label { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-3); margin-bottom: 8px; }
+.level-progress .progress-bar { height: 10px; }
+.rep-features {
+  width: 100%;
+  margin-top: 20px;
+}
+.sf-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider);
+}
+.sf-item:last-child { border-bottom: none; }
+.sf-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.sf-text { font-size: 14px; color: var(--text-2); line-height: 1.5; }
+
+/* ========== PHASE LOCK OVERLAY ========== */
+.phase-lock-banner {
+  background: linear-gradient(135deg, rgba(91,127,191,0.15), rgba(45,212,168,0.1));
+  border: 1px solid rgba(91,127,191,0.3);
+  border-radius: var(--r-md);
+  padding: 10px 16px;
+  margin: 0 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-2);
+}
+.phase-lock-banner .lock-badge {
+  background: rgba(91,127,191,0.2);
+  color: var(--blue);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.arena-locked-overlay {
+  position: relative;
+}
+.arena-locked-overlay .screen-scroll > *:not(.phase-lock-banner):not(.arena-header) {
+  opacity: 0.3;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+/* ========== HAMIMUN (QF) TAB ========== */
+#screen-arena { padding: 0; }
+.arena-header { padding: 16px 20px; }
+.arena-header h1 { font-size: 24px; font-weight: 700; }
+.portfolio-summary {
+  margin: 0 20px 16px;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ps-balance { text-align: start; }
+.ps-balance .ps-amount { font-size: 28px; font-weight: 700; direction: ltr; display: inline-block; }
+.ps-balance .ps-label { font-size: 12px; color: var(--text-3); }
+.ps-stats { display: flex; gap: 20px; }
+.ps-stat { text-align: center; }
+.ps-stat .pss-val { font-size: 18px; font-weight: 700; color: var(--teal); direction: ltr; }
+.ps-stat .pss-label { font-size: 11px; color: var(--text-3); }
+.arena-tabs {
+  display: flex;
+  gap: 0;
+  margin: 0 20px 16px;
+  background: var(--elevated);
+  border-radius: var(--r-pill);
+  padding: 4px;
+}
+.arena-tab {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--r-pill);
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-3);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.arena-tab:hover { background: rgba(255,255,255,0.06); color: var(--text-2); border-color: var(--divider); }
+.arena-tab.active { background: var(--surface); color: var(--text-1); border-color: var(--divider); box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+.market-card {
+  margin: 0 20px 12px;
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+}
+.market-card .mc-q { font-size: 15px; font-weight: 600; margin-bottom: 12px; line-height: 1.4; }
+.mc-prob { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.mc-prob .prob-bar { flex: 1; height: 8px; background: var(--elevated); border-radius: 4px; overflow: hidden; }
+.mc-prob .prob-fill { height: 100%; background: var(--teal); border-radius: 4px; }
+.mc-prob .prob-val { font-size: 16px; font-weight: 700; color: var(--teal); direction: ltr; min-width: 40px; text-align: end; }
+.mc-footer { display: flex; justify-content: space-between; align-items: center; }
+.mc-meta { font-size: 12px; color: var(--text-3); }
+.mc-actions { display: flex; gap: 8px; }
+.mc-actions .btn { padding: 8px 16px; font-size: 13px; }
+.btn-yes { background: rgba(45,212,168,0.15); color: var(--teal); border: 1px solid rgba(45,212,168,0.3); }
+.btn-no { background: rgba(232,99,111,0.15); color: var(--coral); border: 1px solid rgba(232,99,111,0.3); }
+
+/* ========== PROFILE TAB ========== */
+#screen-profile { padding: 0; }
+.profile-header-section {
+  padding: 24px 20px;
+  text-align: center;
+}
+.profile-avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+}
+.profile-avatar .level-badge {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: var(--r-pill);
+}
+.profile-name { font-size: 20px; font-weight: 700; }
+.profile-cluster { font-size: 14px; color: var(--teal); margin-top: 4px; }
+.profile-tier { font-size: 13px; color: var(--text-3); margin-top: 2px; }
+
+.score-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+.score-card {
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  text-align: center;
+  border: 1px solid var(--divider);
+}
+.score-card .sc-val { font-size: 24px; font-weight: 700; direction: ltr; }
+.score-card .sc-label { font-size: 12px; color: var(--text-3); margin-top: 4px; }
+.score-card:nth-child(1) .sc-val { color: var(--teal); }
+.score-card:nth-child(2) .sc-val { color: var(--gold); }
+.score-card:nth-child(3) .sc-val { color: var(--blue); }
+.score-card:nth-child(4) .sc-val { color: var(--coral); }
+
+.tier-ladder {
+  margin: 0 20px 20px;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+}
+.tier-ladder h3 { font-size: 14px; font-weight: 600; color: var(--text-2); margin-bottom: 12px; }
+.tier-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+}
+.tier-row.current { color: var(--teal); font-weight: 600; }
+.tier-row .tier-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--text-3);
+  flex-shrink: 0;
+}
+.tier-row.current .tier-dot { background: var(--teal); box-shadow: 0 0 8px var(--teal-glow); }
+.tier-row.done .tier-dot { background: var(--teal); }
+.tier-row .tier-name { flex: 1; }
+.tier-row .tier-xp { font-size: 12px; color: var(--text-3); direction: ltr; }
+
+.recent-activity {
+  padding: 0 20px 24px;
+}
+.recent-activity h3 { font-size: 14px; font-weight: 600; color: var(--text-2); margin-bottom: 12px; }
+.activity-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--divider);
+}
+.activity-item:last-child { border-bottom: none; }
+.ai-icon { font-size: 16px; margin-top: 2px; }
+.ai-text { flex: 1; font-size: 14px; color: var(--text-2); }
+.ai-time { font-size: 12px; color: var(--text-3); direction: ltr; }
+
+/* ========== REDUCED MOTION ========== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="phone-frame">
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <span class="icons">
+      <svg width="16" height="12" viewBox="0 0 16 12"><rect x="0" y="4" width="3" height="8" rx="0.5" fill="currentColor"/><rect x="4.5" y="2" width="3" height="10" rx="0.5" fill="currentColor"/><rect x="9" y="0" width="3" height="12" rx="0.5" fill="currentColor"/><rect x="13.5" y="3" width="2.5" height="9" rx="0.5" fill="currentColor" opacity="0.3"/></svg>
+      <svg width="16" height="12" viewBox="0 0 24 16"><path d="M1 5C5.5 1 11 1 12 1s6.5 0 11 4" stroke="currentColor" stroke-width="2" fill="none" opacity="0.3"/><path d="M4 8.5C7 5.5 10 5 12 5s5 .5 8 3.5" stroke="currentColor" stroke-width="2" fill="none" opacity="0.6"/><circle cx="12" cy="13" r="2" fill="currentColor"/></svg>
+      <svg width="24" height="12" viewBox="0 0 28 14"><rect x="0" y="1" width="22" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="23" y="4.5" width="2.5" height="5" rx="1" fill="currentColor" opacity="0.4"/><rect x="2" y="3" width="14" height="8" rx="1" fill="currentColor"/></svg>
+    </span>
+  </div>
+
+  <div class="app-container">
+
+    <!-- ===== ONBOARDING: LANGUAGE ===== -->
+    <div class="screen active" id="screen-lang">
+      <div class="lang-logo">2.0</div>
+      <div class="lang-title">Israel 2.0</div>
+      <div class="lang-subtitle">בחר את השפה שלך:<br>Choose your language</div>
+      <button class="lang-btn selected" onclick="goToScreen('screen-knesset')">עברית</button>
+      <button class="lang-btn" onclick="goToScreen('screen-knesset')">العربية</button>
+      <button class="lang-btn" onclick="goToScreen('screen-knesset')">Русский</button>
+      <button class="lang-btn" onclick="goToScreen('screen-knesset')">English</button>
+    </div>
+
+    <!-- ===== ONBOARDING: KNESSET ===== -->
+    <div class="screen" id="screen-knesset">
+      <div class="knesset-q">עד כמה הכנסת מייצגת אותך?</div>
+      <div class="knesset-number mid" id="knessetNum">5</div>
+      <div class="slider-wrap">
+        <input type="range" min="1" max="10" value="5" id="knessetSlider" oninput="updateKnesset(this.value)">
+        <div class="slider-labels"><span>10 - מעולה</span><span>1 - בכלל לא</span></div>
+      </div>
+      <div class="knesset-avg" id="knessetAvg">
+        <div class="avg-label">הממוצע הארצי</div>
+        <div class="avg-num">2.3</div>
+        <div class="avg-label" style="margin-top:4px">לפי מדד הדמוקרטיה 2025 — רק 11% סומכים על הכנסת</div>
+      </div>
+      <button class="btn btn-primary btn-block" style="margin-top:8px" onclick="showKnessetAvg()">המשך</button>
+    </div>
+
+    <!-- ===== ONBOARDING: CITY PICKER ===== -->
+    <div class="screen" id="screen-city">
+      <div class="city-title">איפה את/ה גר/ה?</div>
+      <div class="city-subtitle">כדי להציג נתונים רלוונטיים לאזור שלך ולחבר אותך לקהילה המקומית</div>
+      <div class="city-toggle" id="cityToggle">
+        <button class="city-toggle-btn active" onclick="setCityMode('israel')">בישראל 🇮🇱</button>
+        <button class="city-toggle-btn" onclick="setCityMode('abroad')">בחו״ל 🌍</button>
+      </div>
+      <div class="city-input-wrap">
+        <input type="text" class="city-input" id="cityInput" placeholder="הקלד/י שם עיר..." autocomplete="off" oninput="filterCities(this.value)" onkeydown="if(event.key==='Enter')confirmFreeText()">
+        <div class="city-results" id="cityResults"></div>
+      </div>
+      <div class="city-abroad-hint" id="cityAbroadHint" style="display:none">
+        <div style="font-size:12px;color:var(--text-3);margin-bottom:8px;text-align:center">קהילות ישראליות פופולריות</div>
+        <div class="city-chips" id="cityChips"></div>
+      </div>
+      <button class="btn btn-primary btn-block" id="cityConfirmBtn" style="opacity:0.4;pointer-events:none" onclick="confirmCity()">המשך</button>
+      <div class="city-skip" onclick="goToScreen('screen-swipe1')">דלג/י — אוסיף אחר כך</div>
+    </div>
+
+    <!-- ===== UNIFIED SWIPE SEQUENCE (onboarding: 10 cards, daily: 3 cards) ===== -->
+    <!-- All 10 cards are inference (2D Bayesian tribal classification) -->
+    <!-- Result moments after cards 4 and 7 as engagement rewards -->
+    <!-- Flow: cards 1-4 → result → cards 5-7 → result → cards 8-10 → Mirror Moment -->
+    <div class="screen" id="screen-swipe1">
+      <div class="vote-progress" id="swipe-progress">
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div>
+        <div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea1">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card1" data-next="screen-swipe2">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">ביטחון ושוויון</div>
+            <div class="q-text">האם שירות צבאי או אזרחי צריך לחול על כל האזרחים ללא יוצא מן הכלל?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">127,403</span> הצביעו</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="goToScreen('screen-swipe2')">🤔 זה מורכב</button>
+    </div>
+
+    <div class="screen" id="screen-swipe2">
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea2">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card2" data-next="screen-swipe3">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">דת ומדינה</div>
+            <div class="q-text">האם לשכונות מגורים צריכה להיות הזכות למנוע תחבורה ציבורית בשבת?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">98,221</span> הצביעו</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="goToScreen('screen-swipe3')">🤔 זה מורכב</button>
+    </div>
+
+    <div class="screen" id="screen-swipe3">
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea3">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card3" data-next="screen-swipe4">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">שטחים ומדיניות</div>
+            <div class="q-text">האם ישראל צריכה להקפיא בנייה ביהודה ושומרון כתנאי להסכם מדיני?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">83,112</span> הצביעו</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="goToScreen('screen-swipe4')">🤔 זה מורכב</button>
+    </div>
+
+    <div class="screen" id="screen-swipe4">
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea4">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card4" data-next="screen-swipe5">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">חינוך ובריאות</div>
+            <div class="q-text">האם בתי ספר צריכים ללמד עזרה ראשונה נפשית כבר מכיתה ז׳?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">89,334</span> הצביעו</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="skipVote('screen-swipe5')">🤔 זה מורכב</button>
+      <div class="vote-result" id="result4">
+        <div class="big-pct">76%</div>
+        <div class="result-label">הסכמה חוצת שבטים!</div>
+        <div style="width:100%">
+          <div class="result-bar-row">
+            <span class="result-bar-label">חילונים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:82%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">82%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">דתיים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:71%;background:var(--gold)"></div></div>
+            <span class="result-bar-pct">71%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">ערבים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:85%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">85%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">רוסים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:76%;background:var(--gold)"></div></div>
+            <span class="result-bar-pct">76%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards 5-7: Inference continues (Q5 Arabic, Q6 Civil marriage, Q7 PA negotiations) -->
+    <div class="screen" id="screen-swipe5">
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea5">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card5" data-next="screen-swipe6">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">שפה וחברה</div>
+            <div class="q-text">האם בתי ספר צריכים להחליט בעצמם אם ללמד ערבית כחובה?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">52,887</span> הצביעו</span>
+              <span>⏱️ <span class="ltr-num">8</span> שעות נותרו</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="skipVote('screen-swipe6')">🤔 זה מורכב</button>
+      <div class="vote-result" id="result5">
+        <div class="big-pct">73%</div>
+        <div class="result-label">הסכמה חוצת שבטים!</div>
+        <div style="width:100%">
+          <div class="result-bar-row">
+            <span class="result-bar-label">חילונים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:89%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">89%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">דתיים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:41%;background:var(--coral)"></div></div>
+            <span class="result-bar-pct">41%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">ערבים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:82%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">82%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">רוסים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:63%;background:var(--gold)"></div></div>
+            <span class="result-bar-pct">63%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-swipe6">
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea6">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card6" data-next="screen-swipe7">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">דת ומדינה</div>
+            <div class="q-text">האם צריך לאפשר נישואין אזרחיים בישראל?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">41,302</span> הצביעו</span>
+              <span>⏱️ <span class="ltr-num">6</span> שעות נותרו</span>
+              <span>🔥 טרנדי</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="skipVote('screen-swipe7')">🤔 זה מורכב</button>
+      <div class="vote-result" id="result6">
+        <div class="big-pct">71%</div>
+        <div class="result-label">מסכימים איתך!</div>
+        <div style="width:100%">
+          <div class="result-bar-row">
+            <span class="result-bar-label">חילונים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:82%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">82%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">דתיים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:34%;background:var(--blue)"></div></div>
+            <span class="result-bar-pct">34%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">ערבים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:67%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">67%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">רוסים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:75%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">75%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-swipe7">
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea7">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card7" data-next="screen-swipe8">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">מדיניות</div>
+            <div class="q-text">האם ישראל צריכה לדרוש פירוק תשתיות טרור לפני חידוש משא ומתן?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">89,234</span> הצביעו</span>
+              <span>⏱️ <span class="ltr-num">1</span> יום נותר</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="skipVote('screen-swipe8')">🤔 זה מורכב</button>
+      <div class="vote-result" id="result7">
+        <div class="big-pct" style="color:var(--gold)">78%</div>
+        <div class="result-label" style="color:var(--gold)">🌉 הסכמה חוצת שבטים!</div>
+        <div style="width:100%">
+          <div class="result-bar-row">
+            <span class="result-bar-label">חילונים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:81%;background:var(--gold)"></div></div>
+            <span class="result-bar-pct">81%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">דתיים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:74%;background:var(--gold)"></div></div>
+            <span class="result-bar-pct">74%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">ערבים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:79%;background:var(--gold)"></div></div>
+            <span class="result-bar-pct">79%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">רוסים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:76%;background:var(--gold)"></div></div>
+            <span class="result-bar-pct">76%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8: Gender separation (Q8) -->
+    <div class="screen" id="screen-swipe8">
+      <div class="vote-progress">
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot current"></div><div class="vote-dot"></div><div class="vote-dot"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea8">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card8" data-next="screen-swipe9">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">בריאות</div>
+            <div class="q-text">האם צריך לאסור על חברות ביטוח לסרב לכסות טיפול שרופא אישר?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">112,003</span> הצביעו</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="skipVote('screen-swipe9')">🤔 זה מורכב</button>
+      <div class="vote-result" id="result8">
+        <div class="big-pct">80%</div>
+        <div class="result-label">כל השבטים מסכימים!</div>
+        <div style="width:100%">
+          <div class="result-bar-row">
+            <span class="result-bar-label">חילונים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:83%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">83%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">דתיים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:77%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">77%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">חרדים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:80%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">80%</span>
+          </div>
+          <div class="result-bar-row">
+            <span class="result-bar-label">ערבים</span>
+            <div class="result-bar-track"><div class="result-bar-fill" style="width:81%;background:var(--teal)"></div></div>
+            <span class="result-bar-pct">81%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9: Periphery budgets (Q9) -->
+    <div class="screen" id="screen-swipe9">
+      <div class="vote-progress">
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot done"></div><div class="vote-dot current"></div><div class="vote-dot"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea9">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card9" data-next="screen-swipe10">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">חברה</div>
+            <div class="q-text">האם מותר לאפשר הפרדה בין נשים לגברים באירועים ציבוריים?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">41,832</span> הצביעו</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="goToScreen('screen-swipe10')">🤔 זה מורכב</button>
+    </div>
+
+    <!-- Card 10: Nakba recognition (Q10) -->
+    <div class="screen" id="screen-swipe10">
+      <div class="vote-progress">
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot current"></div>
+      </div>
+      <div class="swipe-area" id="swipeArea10">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card10" data-next="screen-reveal">
+            <div class="swipe-indicator for-ind">בעד</div>
+            <div class="swipe-indicator against-ind">נגד</div>
+            <div class="topic-tag">זהות וזיכרון</div>
+            <div class="q-text">האם המדינה צריכה להכיר רשמית באירועי הנכבה?</div>
+            <div class="q-meta">
+              <span>🗳️ <span class="ltr-num">67,201</span> הצביעו</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
+      <button class="complex-btn" onclick="showVoteResult(null, 'screen-reveal')">🤔 זה מורכב</button>
+    </div>
+
+    <!-- ===== REVEAL: Mirror Moment + Constellation (shown once after all swipes) ===== -->
+    <div class="screen" id="screen-reveal">
+      <div class="reveal-title animate-fade-up">✨ מטורף לגלות ✨</div>
+      <div class="reveal-subtitle animate-fade-up" style="animation-delay:200ms">מה שהנתונים חושפים — ישראלים מסכימים יותר ממה שחושבים</div>
+
+      <!-- Main shareable: consensus surprise -->
+      <div class="consensus-surprise animate-fade-up" style="animation-delay:600ms">
+        <div class="surprise-label">הסכמה בין כל השבטים</div>
+        <div class="surprise-pct" id="revealPct">0%</div>
+        <div class="surprise-text">מסכימים: טיפול נפשי חינם ללוחמים ומשפחות נפגעי טראומה</div>
+      </div>
+
+      <!-- Tribal bar chart — who agrees -->
+      <div class="reveal-tribes animate-fade-up" style="animation-delay:1000ms">
+        <div style="font-size:13px;color:var(--text-3);margin-bottom:10px;text-align:center">פילוח לפי קבוצות</div>
+        <div class="tribe-bar"><span class="tb-name">חילונים</span><div class="tb-track"><div class="tb-fill" style="width:82%"></div></div><span class="tb-pct">82%</span></div>
+        <div class="tribe-bar"><span class="tb-name">דתיים</span><div class="tb-track"><div class="tb-fill" style="width:76%"></div></div><span class="tb-pct">76%</span></div>
+        <div class="tribe-bar"><span class="tb-name">ערבים</span><div class="tb-track"><div class="tb-fill" style="width:81%"></div></div><span class="tb-pct">81%</span></div>
+        <div class="tribe-bar"><span class="tb-name">רוסים</span><div class="tb-track"><div class="tb-fill" style="width:74%"></div></div><span class="tb-pct">74%</span></div>
+        <div class="tribe-bar"><span class="tb-name">מתנחלים</span><div class="tb-track"><div class="tb-fill" style="width:69%"></div></div><span class="tb-pct">69%</span></div>
+        <div class="tribe-bar"><span class="tb-name">חרדים</span><div class="tb-track"><div class="tb-fill" style="width:71%"></div></div><span class="tb-pct">71%</span></div>
+      </div>
+
+      <!-- Your personal stat — non-divisive, empowering -->
+      <div class="dna-card animate-fade-up" style="animation-delay:1400ms">
+        <div style="font-size:13px;color:var(--text-3)">הצבעת על 7 נושאים</div>
+        <div class="cluster-name">בדרך לשינוי 🗳️</div>
+        <div class="cluster-desc">כל הצבעה מגלה עוד הסכמה נסתרת. המשיכ/י להצביע כדי לגלות עוד.</div>
+      </div>
+
+      <div class="reveal-actions animate-fade-up" style="animation-delay:1800ms">
+        <button class="btn btn-gold" onclick="enterPulseFeed()">המשך לדעת הקהל ←</button>
+        <button class="btn btn-ghost" onclick="shareReveal()">📤 שתף את הגילוי המטורף</button>
+      </div>
+    </div>
+
+    <!-- ===== PULSE FEED (דעת הקהל) — Today's highlights, no voting ===== -->
+    <div class="screen has-tabs" id="screen-pulse">
+      <div class="screen-scroll">
+        <div class="pulse-header">
+          <div>
+            <div class="pulse-title">דעת הקהל</div>
+            <div class="pulse-date">יום רביעי, 12 במרץ 2026</div>
+          </div>
+          <div class="notif-dot">🔔</div>
+        </div>
+
+        <!-- Bridge Score Widget -->
+        <div class="bridge-widget">
+          <div class="bridge-ring">
+            <svg viewBox="0 0 56 56">
+              <circle class="ring-bg" cx="28" cy="28" r="23"/>
+              <circle class="ring-fill" cx="28" cy="28" r="23"
+                stroke-dasharray="144.5"
+                stroke-dashoffset="95"/>
+            </svg>
+            <div class="ring-val">340</div>
+          </div>
+          <div class="bridge-info">
+            <div class="bi-title">ציון נקודות מגע שלך</div>
+            <div class="bi-level">רמה: מקשיב 👂</div>
+            <div class="bi-gain">+12 היום</div>
+          </div>
+        </div>
+
+        <!-- Consensus Discovered (flagged — highest visibility) -->
+        <div class="consensus-card">
+          <div class="cc-header">
+            <span class="cc-icon">🌉</span>
+            <span class="cc-label">הסכמה התגלתה</span>
+          </div>
+          <div class="cc-pct">78%</div>
+          <div class="cc-text">מסכימים: טיפול נפשי חינם ללוחמים ומשפחות נפגעי טראומה</div>
+          <div class="cc-groups">חילונים · דתיים · ערבים · רוסים — כולם!</div>
+        </div>
+
+        <!-- Forum Entry Banner -->
+        <div style="margin:0 20px 16px;padding:14px 16px;background:linear-gradient(135deg, rgba(45,212,168,0.08), rgba(91,127,191,0.08));border:1px solid rgba(45,212,168,0.25);border-radius:var(--r-lg);cursor:pointer" onclick="goToScreen('screen-forum')">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:40px;height:40px;border-radius:50%;background:rgba(45,212,168,0.15);display:flex;align-items:center;justify-content:center;font-size:18px">💬</div>
+              <div>
+                <div style="font-size:14px;font-weight:600">הפורום פתוח</div>
+                <div style="font-size:12px;color:var(--text-3)"><span dir="ltr">23</span> הצהרות · <span dir="ltr">3</span> הסכמות חדשות</div>
+              </div>
+            </div>
+            <div style="font-size:18px;color:var(--teal)">←</div>
+          </div>
+        </div>
+
+        <!-- Seasonal Progress Banner -->
+        <div style="margin:0 20px 16px;padding:16px;background:linear-gradient(135deg, rgba(229,168,75,0.06), rgba(45,212,168,0.06));border:1px solid rgba(229,168,75,0.2);border-radius:var(--r-lg)">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-size:16px">🌱</span>
+              <span style="font-size:14px;font-weight:700;color:var(--gold)">עונת השחרור</span>
+            </div>
+            <span style="font-size:12px;color:var(--text-3)">שבוע <span dir="ltr">6</span> מתוך <span dir="ltr">13</span></span>
+          </div>
+          <div style="font-size:13px;color:var(--text-2);margin-bottom:10px">אביב תשפ״ו · נושא: זכויות, חירויות, חופש אזרחי</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+            <div style="flex:1;height:6px;background:var(--elevated);border-radius:3px;overflow:hidden">
+              <div style="width:46%;height:100%;background:linear-gradient(90deg, var(--gold), var(--teal));border-radius:3px"></div>
+            </div>
+            <span style="font-size:12px;color:var(--text-3)">שלב 2: דיון</span>
+          </div>
+          <div style="display:flex;gap:16px;font-size:11px;color:var(--text-3)">
+            <span>📊 <span dir="ltr" style="color:var(--teal);font-weight:600">4</span> הסכמות עונתיות</span>
+            <span>🗳️ <span dir="ltr" style="color:var(--gold);font-weight:600">127K</span> הצבעות</span>
+            <span>🏙️ <span dir="ltr" style="font-weight:600">23</span> ערים</span>
+          </div>
+        </div>
+
+        <!-- Assembly Invitation -->
+        <div style="margin:0 20px 16px;padding:16px;background:linear-gradient(135deg, rgba(156,100,255,0.08), rgba(45,212,168,0.06));border:1.5px solid rgba(156,100,255,0.3);border-radius:var(--r-lg);cursor:pointer" onclick="goToScreen('screen-assembly')">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(156,100,255,0.15);display:flex;align-items:center;justify-content:center;font-size:18px">🏛️</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;color:#c084fc">הזמנה לאסיפה</div>
+              <div style="font-size:12px;color:var(--text-3)">יום ד׳ 19:00 · <span dir="ltr">12</span> דקות</div>
+            </div>
+          </div>
+          <div style="font-size:14px;color:var(--text-1);font-weight:500;margin-bottom:8px;line-height:1.5">האם חופש הביטוי באינטרנט צריך להיות מוגבל בזמן מלחמה?</div>
+          <div style="display:flex;gap:12px;font-size:12px;color:var(--text-3);margin-bottom:12px">
+            <span>👥 <span dir="ltr">8-12</span> משתתפים</span>
+            <span>🌉 גיוון מקסימלי</span>
+            <span>🔒 <span dir="ltr">200</span> XP פיקדון</span>
+          </div>
+          <div style="display:flex;gap:8px">
+            <button style="flex:1;padding:10px;background:rgba(156,100,255,0.15);border:1.5px solid #c084fc;border-radius:var(--r-md);color:#c084fc;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--font)">אשר השתתפות</button>
+            <button style="padding:10px 16px;background:transparent;border:1px solid var(--divider);border-radius:var(--r-md);color:var(--text-3);font-size:14px;cursor:pointer;font-family:var(--font)">לא הפעם</button>
+          </div>
+        </div>
+
+        <!-- Representative (הנציג) Mini Report -->
+        <div class="rep-mini">
+          <div class="sm-icon">🤖</div>
+          <div class="sm-text">
+            <div class="sm-title">הנציג שלך הצביע על 3 נושאים היום</div>
+            <div class="sm-desc">ביטחון: 94% | דגל 1 נושא לתשומת לבך</div>
+          </div>
+        </div>
+
+        <!-- QF Round Preview (tied to consensus) -->
+        <div class="card" style="margin:0 20px 16px;border:1px solid rgba(229,168,75,0.3)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+            <span style="font-size:16px">💛</span>
+            <span style="font-size:14px;font-weight:600;color:var(--gold)">סבב מימון פעיל</span>
+          </div>
+          <div style="font-size:15px;font-weight:500;margin-bottom:8px">טיפול נפשי ללוחמים ומשפחות</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <span style="font-size:12px;color:var(--text-3)"><span dir="ltr">847</span> תורמים · <span dir="ltr">3</span> עמותות</span>
+            <span style="font-size:13px;color:var(--gold);font-weight:600">x4.2 מכפיל QF</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="flex:1;height:6px;background:var(--elevated);border-radius:3px;overflow:hidden">
+              <div style="width:73%;height:100%;background:var(--gold);border-radius:3px"></div>
+            </div>
+            <span style="font-size:14px;color:var(--gold);font-weight:600;direction:ltr">₪48K</span>
+          </div>
+        </div>
+
+        <!-- Today's summary -->
+        <div style="margin:0 20px 24px;padding:14px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
+          <div style="font-size:14px;font-weight:600;margin-bottom:10px">📊 סיכום יומי</div>
+          <div style="font-size:13px;color:var(--text-2);line-height:1.8">
+            <div>✓ הצבעת על <span dir="ltr" style="color:var(--teal);font-weight:600">3</span> שאלות היום</div>
+            <div>🌉 <span dir="ltr" style="color:var(--gold);font-weight:600">1</span> גילוי מטורף</div>
+            <div>💬 <span dir="ltr" style="color:var(--teal);font-weight:600">23</span> הצהרות חדשות בפורום</div>
+            <div>🏛️ אסיפה מחכה לך יום ד׳ — <span style="color:#c084fc">חופש ביטוי בזמן מלחמה</span></div>
+            <div>🌱 עונת השחרור · שבוע <span dir="ltr" style="font-weight:600">6</span>/<span dir="ltr">13</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FORUM (GATED ESCALATION MODEL) ===== -->
+    <div class="screen has-tabs" id="screen-forum">
+      <div class="screen-scroll">
+        <div class="forum-header">
+          <button class="forum-back" onclick="goToScreen('screen-pulse')">←</button>
+          <div class="forum-header-text">
+            <h2>הפורום</h2>
+            <div class="forum-topic">חינוך · לימודי ליבה</div>
+          </div>
+        </div>
+
+        <!-- Layer badge -->
+        <div class="forum-layer-badge">
+          <span class="layer-num">1</span>
+          <span>שכבה 1: הצהרות בלבד — ללא תגובות, ללא טרולים</span>
+        </div>
+
+        <!-- Live consensus bar -->
+        <div class="forum-consensus-bar">
+          <div class="consensus-bar-label">מפת הסכמות חיה · <span dir="ltr">847</span> הצבעות על <span dir="ltr">23</span> הצהרות</div>
+          <div class="consensus-bar-track">
+            <div class="consensus-bar-agree" style="width:62%"></div>
+            <div class="consensus-bar-disagree" style="width:27%"></div>
+            <div class="consensus-bar-pass" style="width:11%"></div>
+          </div>
+          <div class="consensus-bar-stats">
+            <span>מסכים 62%</span>
+            <span>חולק 27%</span>
+            <span>עובר 11%</span>
+          </div>
+        </div>
+
+        <!-- Statement 1: with evidence response attached -->
+        <div class="statement-card">
+          <div class="statement-text">לימודי ליבה חייבים לכלול מתמטיקה, אנגלית ואזרחות — בלי זה אין שוויון הזדמנויות בשוק העבודה</div>
+          <div class="statement-meta">
+            <span class="statement-cluster">קבוצה ג׳</span>
+            <span><span dir="ltr">312</span> הצביעו</span>
+            <span style="color:var(--teal)">78% מסכימים</span>
+          </div>
+          <div class="statement-evidence">
+            <div class="evidence-label">📊 נתון שהוגש · מחבר ההצהרה</div>
+            <div class="evidence-text">לפי נתוני למ"ס 2024, שיעור התעסוקה בקרב בוגרי לימודי ליבה גבוה ב-34% מבוגרי מסלולים ללא ליבה</div>
+            <div class="evidence-source">🔍 מקור: דו"ח למ"ס תעסוקה 2024</div>
+          </div>
+          <div class="statement-actions">
+            <button class="stmt-btn stmt-btn-agree" onclick="this.style.background='rgba(45,212,168,0.2)';this.textContent='✓ מסכים';this.parentElement.nextElementSibling.style.display='flex'">מסכים</button>
+            <button class="stmt-btn stmt-btn-disagree" onclick="this.style.background='rgba(91,127,191,0.2)';this.textContent='✓ חולק';this.parentElement.nextElementSibling.style.display='flex'">חולק</button>
+            <button class="stmt-btn stmt-btn-pass" onclick="this.style.background='rgba(90,101,120,0.2)';this.textContent='✓ עובר';this.parentElement.nextElementSibling.style.display='flex'">עובר</button>
+          </div>
+          <div class="statement-reactions" style="display:none">
+            <button class="reaction-btn reaction-btn-mind" onclick="this.classList.toggle('selected')">💡 שינה לי דעה <span class="reaction-count">47</span></button>
+            <button class="reaction-btn reaction-btn-strong" onclick="this.classList.toggle('selected')">💪 נקודה חזקה <span class="reaction-count">89</span></button>
+            <button class="reaction-btn reaction-btn-evidence" onclick="this.classList.toggle('selected')">🔎 צריך ראיות <span class="reaction-count">12</span></button>
+          </div>
+        </div>
+
+        <!-- Statement 2: with Need Evidence badge (3+ requests, awaiting author response) -->
+        <div class="statement-card">
+          <div class="statement-text">מערכת החינוך הערבית צריכה אוטונומיה מלאה בתכני הלימוד — המדינה לא צריכה להחליט מה ילדים ערבים לומדים</div>
+          <div class="statement-meta">
+            <span class="statement-cluster">קבוצה א׳</span>
+            <span><span dir="ltr">198</span> הצביעו</span>
+            <span style="color:var(--blue)">52% חולקים</span>
+            <span class="need-evidence-badge">🔎 <span dir="ltr">5</span> ביקשו ראיות</span>
+          </div>
+          <div style="margin-top:8px;padding:8px 12px;background:rgba(232,99,111,0.06);border-radius:var(--r-sm);font-size:12px;color:var(--text-3)">
+            ⏳ ממתין לתגובת מחבר ההצהרה עם ראיות (ניסיון אחד, 280 תווים, טקסט בלבד)
+          </div>
+          <div class="statement-actions" style="margin-top:12px">
+            <button class="stmt-btn stmt-btn-agree" onclick="this.style.background='rgba(45,212,168,0.2)';this.textContent='✓ מסכים';this.parentElement.nextElementSibling.style.display='flex'">מסכים</button>
+            <button class="stmt-btn stmt-btn-disagree" onclick="this.style.background='rgba(91,127,191,0.2)';this.textContent='✓ חולק';this.parentElement.nextElementSibling.style.display='flex'">חולק</button>
+            <button class="stmt-btn stmt-btn-pass" onclick="this.style.background='rgba(90,101,120,0.2)';this.textContent='✓ עובר';this.parentElement.nextElementSibling.style.display='flex'">עובר</button>
+          </div>
+          <div class="statement-reactions" style="display:none">
+            <button class="reaction-btn reaction-btn-mind" onclick="this.classList.toggle('selected')">💡 שינה לי דעה <span class="reaction-count">8</span></button>
+            <button class="reaction-btn reaction-btn-strong" onclick="this.classList.toggle('selected')">💪 נקודה חזקה <span class="reaction-count">23</span></button>
+            <button class="reaction-btn reaction-btn-evidence selected" style="background:rgba(232,99,111,0.15);border-color:var(--coral)">🔎 צריך ראיות <span class="reaction-count">5</span></button>
+          </div>
+        </div>
+
+        <!-- Statement 3: bridge statement (cross-group consensus) -->
+        <div class="statement-card" style="border-color:var(--gold)">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
+            <span style="font-size:12px;color:var(--gold);font-weight:600">🌉 הצהרת גשר — הסכמה חוצת קבוצות</span>
+          </div>
+          <div class="statement-text">כל ילד בישראל, בלי קשר למגזר, צריך ללמוד את ההיסטוריה והתרבות של כל המגזרים האחרים</div>
+          <div class="statement-meta">
+            <span><span dir="ltr">534</span> הצביעו</span>
+            <span style="color:var(--gold);font-weight:600">91% מסכימים מכל הקבוצות</span>
+          </div>
+          <div class="statement-actions">
+            <button class="stmt-btn stmt-btn-agree" onclick="this.style.background='rgba(45,212,168,0.2)';this.textContent='✓ מסכים';this.parentElement.nextElementSibling.style.display='flex'">מסכים</button>
+            <button class="stmt-btn stmt-btn-disagree" onclick="this.style.background='rgba(91,127,191,0.2)';this.textContent='✓ חולק';this.parentElement.nextElementSibling.style.display='flex'">חולק</button>
+            <button class="stmt-btn stmt-btn-pass" onclick="this.style.background='rgba(90,101,120,0.2)';this.textContent='✓ עובר';this.parentElement.nextElementSibling.style.display='flex'">עובר</button>
+          </div>
+          <div class="statement-reactions" style="display:none">
+            <button class="reaction-btn reaction-btn-mind" onclick="this.classList.toggle('selected')">💡 שינה לי דעה <span class="reaction-count">112</span></button>
+            <button class="reaction-btn reaction-btn-strong" onclick="this.classList.toggle('selected')">💪 נקודה חזקה <span class="reaction-count">203</span></button>
+            <button class="reaction-btn reaction-btn-evidence" onclick="this.classList.toggle('selected')">🔎 צריך ראיות <span class="reaction-count">3</span></button>
+          </div>
+        </div>
+
+        <!-- Layer 2: Paired Dialogue Invitation -->
+        <div class="paired-invite">
+          <div class="paired-invite-title">💬 הזמנה לדיאלוג 1:1</div>
+          <div class="paired-invite-desc">מישהו מקבוצה אחרת רוצה לדון איתך על ההצהרה בנושא אוטונומיה בחינוך הערבי. שיחה מובנית — 3 דקות, 2 תורות, 280 תווים.</div>
+          <button class="paired-invite-btn">קבל הזמנה לדיאלוג</button>
+        </div>
+
+        <!-- Submit new statement -->
+        <div class="forum-submit" onclick="this.innerHTML='<div style=\'text-align:center;padding:4px;color:var(--teal);font-size:13px\'>✓ תיבת כתיבה נפתחת (140 תווים מקס׳)</div>'">
+          <div class="forum-submit-icon">✏️</div>
+          <div class="forum-submit-text">הוסף הצהרה חדשה (140 תווים, ללא תגובות)</div>
+          <div class="forum-submit-cost">50 XP</div>
+        </div>
+
+        <!-- Anti-troll info -->
+        <div style="margin:0 20px 24px;padding:12px;background:var(--surface);border-radius:var(--r-md);font-size:11px;color:var(--text-3);line-height:1.6;border:1px solid var(--divider)">
+          <div style="font-weight:600;color:var(--text-2);margin-bottom:4px">🛡️ למה אין כאן כפתור תגובה?</div>
+          בהשראת pol.is — ללא תגובות, אין טרולים. אם אתה חולק על הצהרה, כתוב הצהרה טובה יותר. האלגוריתם מציף הצהרות גשר שמדברות לכל הקבוצות.
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== ASSEMBLY (LIVE SESSION) ===== -->
+    <div class="screen has-tabs" id="screen-assembly">
+      <div class="screen-scroll">
+        <!-- Assembly Header -->
+        <div style="padding:16px 20px;display:flex;align-items:center;gap:12px">
+          <button style="background:var(--elevated);border:none;color:var(--text-1);width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center" onclick="goToScreen('screen-pulse')">←</button>
+          <div>
+            <h2 style="font-size:20px;font-weight:700;margin:0">האסיפה</h2>
+            <div style="font-size:13px;color:#c084fc;font-weight:600">חופש ביטוי בזמן מלחמה</div>
+          </div>
+        </div>
+
+        <!-- Phase Progress -->
+        <div style="margin:0 20px 16px;padding:14px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
+          <div style="display:flex;justify-content:space-between;margin-bottom:10px">
+            <div style="display:flex;align-items:center;gap:6px">
+              <div style="width:24px;height:24px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--bg)">1</div>
+              <span style="font-size:11px;color:var(--teal)">קריאה</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <div style="width:24px;height:24px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--bg)">2</div>
+              <span style="font-size:11px;color:var(--teal)">עמדה</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <div style="width:24px;height:24px;border-radius:50%;background:#c084fc;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--bg)">3</div>
+              <span style="font-size:11px;color:#c084fc;font-weight:600">שיחה 1:1</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <div style="width:24px;height:24px;border-radius:50%;background:var(--elevated);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--text-3)">4</div>
+              <span style="font-size:11px;color:var(--text-3)">הצבעה</span>
+            </div>
+          </div>
+          <div style="height:4px;background:var(--elevated);border-radius:2px;overflow:hidden">
+            <div style="width:62%;height:100%;background:linear-gradient(90deg, var(--teal), #c084fc);border-radius:2px"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--text-3)">
+            <span>שלב 3 מתוך 4</span>
+            <span style="color:#c084fc;font-weight:600">⏱️ <span dir="ltr">3:42</span> נותרו</span>
+          </div>
+        </div>
+
+        <!-- Participants -->
+        <div style="margin:0 20px 16px;padding:12px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
+          <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">👥 <span dir="ltr">10</span> משתתפים · <span dir="ltr">5</span> קבוצות שבטיות</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span style="padding:3px 10px;background:rgba(45,212,168,0.1);color:var(--teal);border-radius:var(--r-pill);font-size:11px">חילונים ×3</span>
+            <span style="padding:3px 10px;background:rgba(229,168,75,0.1);color:var(--gold);border-radius:var(--r-pill);font-size:11px">דתיים ×2</span>
+            <span style="padding:3px 10px;background:rgba(91,127,191,0.1);color:var(--blue);border-radius:var(--r-pill);font-size:11px">ערבים ×2</span>
+            <span style="padding:3px 10px;background:rgba(232,99,111,0.1);color:var(--coral);border-radius:var(--r-pill);font-size:11px">רוסים ×1</span>
+            <span style="padding:3px 10px;background:rgba(156,100,255,0.1);color:#c084fc;border-radius:var(--r-pill);font-size:11px">מתנחלים ×2</span>
+          </div>
+        </div>
+
+        <!-- Cross-Examination: Current 1:1 Pairing -->
+        <div style="margin:0 20px 16px;padding:16px;background:linear-gradient(135deg, rgba(156,100,255,0.06), rgba(45,212,168,0.06));border:1.5px solid rgba(156,100,255,0.25);border-radius:var(--r-lg)">
+          <div style="font-size:13px;color:#c084fc;font-weight:600;margin-bottom:10px">🔄 שיחה 1:1</div>
+          <div style="font-size:12px;color:var(--text-3);margin-bottom:12px">זוּוגת עם משתתף מקבוצה אחרת · <span dir="ltr">2</span> תורות, <span dir="ltr">280</span> תווים כל אחת</div>
+
+          <!-- Partner's message -->
+          <div style="padding:12px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider);margin-bottom:10px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(229,168,75,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold)">ד</div>
+              <span style="font-size:12px;color:var(--gold);font-weight:600">קבוצה ד׳ · דתי</span>
+            </div>
+            <div style="font-size:14px;color:var(--text-1);line-height:1.6">בזמן מלחמה, ביטויים מסויימים מסכנים חיילים. יש גבול בין חופש ביטוי לבין אחריות לאומית. אני לא נגד ביקורת — אני נגד שידור מידע שמסכן חיים.</div>
+          </div>
+
+          <!-- Your response area -->
+          <div style="padding:12px;background:rgba(45,212,168,0.04);border-radius:var(--r-lg);border:1.5px dashed rgba(45,212,168,0.3)">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+              <div style="width:28px;height:28px;border-radius:50%;background:rgba(45,212,168,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--teal)">א</div>
+              <span style="font-size:12px;color:var(--teal);font-weight:600">את/ה · קבוצה ב׳</span>
+              <span style="font-size:11px;color:var(--text-3);margin-right:auto">תור <span dir="ltr">1</span> מתוך <span dir="ltr">2</span></span>
+            </div>
+            <div style="font-size:14px;color:var(--text-3);padding:8px 0">הקלד/י את עמדתך כאן...</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+              <span style="font-size:11px;color:var(--text-3)"><span dir="ltr">0</span>/<span dir="ltr">280</span> תווים</span>
+              <button style="padding:8px 20px;background:var(--teal);color:var(--bg);border:none;border-radius:var(--r-md);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font)">שלח</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Facilitator AI note -->
+        <div style="margin:0 20px 16px;padding:10px 14px;background:rgba(229,168,75,0.06);border-right:3px solid var(--gold);border-radius:0 var(--r-sm) var(--r-sm) 0">
+          <div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:3px">🤖 מנחה AI</div>
+          <div style="font-size:13px;color:var(--text-2);line-height:1.5">נסו למצוא את הנקודה שבה אתם מסכימים. שני הצדדים מכירים בסיכון — ההבדל הוא באיזון.</div>
+        </div>
+
+        <!-- Previous phases summary (collapsed) -->
+        <div style="margin:0 20px 16px;padding:14px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
+          <div style="font-size:13px;font-weight:600;margin-bottom:8px">📝 סיכום שלבים קודמים</div>
+          <div style="font-size:12px;color:var(--text-3);line-height:1.7">
+            <div style="margin-bottom:6px"><span style="color:var(--teal)">שלב 1 — קריאה:</span> תקציר הנושא + 4 עמדות מרכזיות</div>
+            <div><span style="color:var(--teal)">שלב 2 — עמדה:</span> <span dir="ltr">10</span> הצהרות עמדה הוגשו · <span dir="ltr">7</span> בעד הגבלה מסויימת, <span dir="ltr">3</span> נגד</div>
+          </div>
+        </div>
+
+        <!-- What happens next -->
+        <div style="margin:0 20px 24px;padding:14px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
+          <div style="font-size:13px;font-weight:600;margin-bottom:6px">⏭️ הבא: שלב 4 — הצבעת התכנסות</div>
+          <div style="font-size:12px;color:var(--text-3);line-height:1.5">אחרי השיחות, כולם מצביעים: ״על מה בעצם אנחנו מסכימים?״</div>
+          <div style="margin-top:8px;font-size:12px;color:var(--gold)">🏆 <span dir="ltr">500-2,000</span> XP · תג ״ותיק/ת אסיפה״</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BRIDGE TAB ===== -->
+    <div class="screen has-tabs" id="screen-bridge">
+      <div class="screen-scroll">
+        <div class="bridge-header">
+          <h1>נקודות מגע</h1>
+          <div style="font-size:13px;color:var(--text-3)">מפת ההסכמות של ישראל</div>
+        </div>
+
+        <div class="consensus-map">
+          <canvas id="bridgeMapCanvas"></canvas>
+        </div>
+
+        <div class="section-header">
+          <span class="section-title">הסכמות מגמתיות</span>
+        </div>
+
+        <div class="trending-consensus">
+          <div class="trend-item" onclick="goToScreen('screen-bridge-detail')">
+            <div class="trend-pct">78%</div>
+            <div class="trend-info">
+              <div class="ti-text">טיפול נפשי ללוחמים ומשפחות</div>
+              <div class="ti-groups">ימין · שמאל · מרכז · ערבים</div>
+            </div>
+          </div>
+          <div class="trend-item" onclick="goToScreen('screen-bridge-detail')">
+            <div class="trend-pct">73%</div>
+            <div class="trend-info">
+              <div class="ti-text">הארכת שעות שירות ממשלתי לאחה"צ</div>
+              <div class="ti-groups">ימין · מרכז · ערבים</div>
+            </div>
+          </div>
+          <div class="trend-item" onclick="goToScreen('screen-bridge-detail')">
+            <div class="trend-pct">69%</div>
+            <div class="trend-info">
+              <div class="ti-text">רפורמה בשוק הדיור</div>
+              <div class="ti-groups">ימין · שמאל · מרכז</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bridge-challenge">
+          <div class="bc-title">🌉 אתגר הסכמות</div>
+          <div class="bc-quote">"אני חושב שלימודי ליבה חשובים, אבל הדרך שבה הם מוצגים היום לא מתאימה לכולם. צריך גישה שמכבדת את כל הזרמים."</div>
+          <div class="bc-from">— משתתף מהאשכול: שומרי מסורת</div>
+          <button class="btn btn-sm btn-primary">הגב ותרוויח נקודות גשר</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BRIDGE DETAIL ===== -->
+    <div class="screen has-tabs" id="screen-bridge-detail">
+      <div class="screen-scroll">
+        <button class="detail-back" onclick="goToScreen('screen-bridge')">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          חזרה
+        </button>
+        <div class="detail-content">
+          <div class="detail-topic">טיפול נפשי ללוחמים ומשפחות</div>
+          <div class="detail-big-bar">
+            <div class="db-pct">78%</div>
+            <div class="db-label">הסכמה כללית</div>
+            <div class="progress-bar" style="height:12px">
+              <div class="progress-fill" style="width:78%;background:var(--gold)"></div>
+            </div>
+          </div>
+
+          <div class="group-breakdown">
+            <h3>פירוט לפי אשכולות</h3>
+            <div class="group-row">
+              <span class="gr-name">חילונים</span>
+              <div class="gr-bar"><div class="gr-fill" style="width:82%;background:var(--teal)"></div></div>
+              <span class="gr-pct">82%</span>
+            </div>
+            <div class="group-row">
+              <span class="gr-name">דתיים</span>
+              <div class="gr-bar"><div class="gr-fill" style="width:74%;background:var(--gold)"></div></div>
+              <span class="gr-pct">74%</span>
+            </div>
+            <div class="group-row">
+              <span class="gr-name">ערבים</span>
+              <div class="gr-bar"><div class="gr-fill" style="width:81%;background:var(--teal)"></div></div>
+              <span class="gr-pct">81%</span>
+            </div>
+            <div class="group-row">
+              <span class="gr-name">רוסים</span>
+              <div class="gr-bar"><div class="gr-fill" style="width:76%;background:var(--gold)"></div></div>
+              <span class="gr-pct">76%</span>
+            </div>
+            <div class="group-row">
+              <span class="gr-name">מזרחים</span>
+              <div class="gr-bar"><div class="gr-fill" style="width:79%;background:var(--teal)"></div></div>
+              <span class="gr-pct">79%</span>
+            </div>
+          </div>
+
+          <div class="knesset-compare">
+            <h3>הכנסת אומרת vs. ישראל אומרת</h3>
+            <div class="compare-row">
+              <span class="cr-label">עמדת הכנסת</span>
+              <span class="cr-val" style="color:var(--coral)">רק 30% מהלוחמים מקבלים טיפול</span>
+            </div>
+            <div class="compare-row">
+              <span class="cr-label">עמדת ישראל</span>
+              <span class="cr-val" style="color:var(--teal)">91% בעד הרחבת הטיפול</span>
+            </div>
+            <div style="margin-top:12px;padding:12px;background:var(--elevated);border-radius:var(--r-md);font-size:13px;color:var(--text-2);text-align:center">
+              הפער בין הכנסת לעם: <span style="color:var(--gold);font-weight:700">גדול</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== REPRESENTATIVE (הנציג) TAB (LOCKED) ===== -->
+    <div class="screen has-tabs" id="screen-rep">
+      <div class="screen-scroll">
+        <div class="phase-lock-banner">
+          <span class="lock-badge">🔒 שלב A</span>
+          <span>אוספים נתונים כדי לאמן את ה-AI שלך. המשיכ/י להצביע!</span>
+        </div>
+        <div class="rep-locked">
+          <div class="lock-icon">🗳️</div>
+          <h2>שיקוף ה-AI לדעות שלך</h2>
+          <div class="sl-desc">סוכן AI אישי שלומד את הערכים שלך ומנבא איך היית מצביע/ה על נושאים שלא הספקת לראות. מסביר כל תחזית, ומתריע על נושאים שדורשים את תשומת ליבך.</div>
+          <div class="level-progress">
+            <div class="lp-label">
+              <span>רמה 2: צופה 👁️</span>
+              <span>רמה 3: מקשיב 👂</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:65%;background:var(--blue)"></div>
+            </div>
+            <div style="text-align:center;margin-top:8px;font-size:13px;color:var(--text-3)">
+              <span class="ltr-num">340</span> / <span class="ltr-num">500</span> XP לפתיחה
+            </div>
+          </div>
+          <div class="rep-features">
+            <div class="sf-item">
+              <span class="sf-icon">🗳️</span>
+              <span class="sf-text">תחזית הצבעה על נושאים שגרתיים — מאושרת אוטומטית אחרי 24 שעות אם לא דרסת</span>
+            </div>
+            <div class="sf-item">
+              <span class="sf-icon">🔍</span>
+              <span class="sf-text">שקיפות מלאה — כל תחזית מוסברת ואפשר לדרוס אותה</span>
+            </div>
+            <div class="sf-item">
+              <span class="sf-icon">🔔</span>
+              <span class="sf-text">התראה על נושאים רגישים שדורשים החלטה אנושית</span>
+            </div>
+            <div class="sf-item">
+              <span class="sf-icon">📈</span>
+              <span class="sf-text">מעקב דיוק — ראה כמה שיקוף AI לדעות שלך מדויק לאורך זמן</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HAMIMUN (QF FUNDING) TAB ===== -->
+    <div class="screen has-tabs arena-locked-overlay" id="screen-arena">
+      <div class="screen-scroll">
+        <div class="arena-header">
+          <h1>המימון</h1>
+          <div style="font-size:13px;color:var(--text-3)">תמיכה אזרחית — ביחד אנחנו משפיעים יותר</div>
+        </div>
+        <div class="phase-lock-banner">
+          <span class="lock-badge">🔒 שלב A</span>
+          <span>המימון ייפתח בשלב הבא. בינתיים — הצביעו, דברו, השפיעו.</span>
+        </div>
+
+        <!-- Impact Summary -->
+        <div class="portfolio-summary">
+          <div class="ps-balance">
+            <div class="ps-amount" style="color:var(--teal)">₪2,847</div>
+            <div class="ps-label">ההשפעה שלך 🌱</div>
+          </div>
+          <div class="ps-stats">
+            <div class="ps-stat">
+              <div class="pss-val" style="color:var(--gold)">x4.2</div>
+              <div class="pss-label">מכפיל התאמה</div>
+            </div>
+            <div class="ps-stat">
+              <div class="pss-val">5</div>
+              <div class="pss-label">עמותות מומנו</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QF Round Tabs -->
+        <div class="arena-tabs">
+          <button class="arena-tab active">🌉 סבבי הסכמה</button>
+          <button class="arena-tab">🌐 סבב פתוח</button>
+          <button class="arena-tab">📊 ההשפעה שלי</button>
+        </div>
+
+        <!-- Active Consensus Round (Gold border) -->
+        <div class="market-card" style="border-color:var(--gold);box-shadow:0 0 15px rgba(229,168,75,0.2)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <span style="font-size:11px;padding:3px 10px;background:rgba(229,168,75,0.15);color:var(--gold);border-radius:var(--r-pill);font-weight:600">סבב הסכמה · 78% הסכימו</span>
+          </div>
+          <div class="mc-q">טיפול נפשי ללוחמים ומשפחות</div>
+          <div style="font-size:13px;color:var(--text-3);margin-bottom:12px">3 עמותות מאושרות סעיף 46 · 8 ימים נותרו</div>
+
+          <div style="background:var(--elevated);border-radius:var(--r-md);padding:12px;margin-bottom:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+              <span style="font-size:14px;font-weight:600">נט״ל — טיפול בטראומה 🎗️</span>
+              <span style="font-size:12px;color:var(--teal)">✓ סעיף 46</span>
+            </div>
+            <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">טיפול פסיכולוגי ללוחמים ומשפחות נפגעי טרור</div>
+            <div class="mc-prob">
+              <div class="prob-bar"><div class="prob-fill" style="width:68%;background:var(--gold)"></div></div>
+              <span class="prob-val" style="color:var(--gold)">x5.2</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-3)">
+              <span>👥 <span class="ltr-num">1,247</span> תורמים</span>
+              <span>₪<span class="ltr-num">18,400</span> + ₪<span class="ltr-num">95,680</span> התאמה</span>
+            </div>
+          </div>
+
+          <div style="background:var(--elevated);border-radius:var(--r-md);padding:12px;margin-bottom:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+              <span style="font-size:14px;font-weight:600">הגל שלי — סרף תרפיה 🏄</span>
+              <span style="font-size:12px;color:var(--teal)">✓ סעיף 46</span>
+            </div>
+            <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">טיפול בטראומה דרך גלישה — 12 שבועות ללוחמים</div>
+            <div class="mc-prob">
+              <div class="prob-bar"><div class="prob-fill" style="width:45%;background:var(--gold)"></div></div>
+              <span class="prob-val" style="color:var(--gold)">x3.8</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-3)">
+              <span>👥 <span class="ltr-num">834</span> תורמים</span>
+              <span>₪<span class="ltr-num">9,200</span> + ₪<span class="ltr-num">34,960</span> התאמה</span>
+            </div>
+          </div>
+
+          <div class="mc-footer" style="flex-direction:column;gap:8px">
+            <div style="display:flex;gap:8px;width:100%">
+              <button class="btn btn-sm btn-gold" style="flex:1" onclick="this.innerHTML='✓ תרומה נרשמה!'">מממן ₪10</button>
+              <button class="btn btn-sm btn-gold" style="flex:1" onclick="this.innerHTML='✓ תרומה נרשמה!'">מממן ₪25</button>
+              <button class="btn btn-sm btn-gold" style="flex:1" onclick="this.innerHTML='✓ תרומה נרשמה!'">מממן ₪50</button>
+            </div>
+            <div style="text-align:center;font-size:11px;color:var(--text-3)">💡 35% זיכוי מס על תרומות (סעיף 46) · קבלה אוטומטית</div>
+          </div>
+        </div>
+
+        <!-- Representative Funder Suggestion -->
+        <div class="market-card" style="border-color:var(--blue)">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+            <span style="font-size:18px">🤖</span>
+            <span style="font-size:13px;font-weight:600;color:var(--blue)">הנציג שלך מציע</span>
+          </div>
+          <div style="font-size:14px;color:var(--text-2);margin-bottom:12px;line-height:1.5">
+            "בהתבסס על ההצבעות שלך, הקצתי ₪35 מתקציב החודש שלך ל-3 עמותות בתחום המים והסביבה."
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btn-sm btn-primary" style="flex:1" onclick="this.parentElement.innerHTML='<div style=\'text-align:center;padding:8px;color:var(--teal)\'>✓ אושר!</div>'">אשר הקצאה</button>
+            <button class="btn btn-sm btn-ghost" style="flex:0.5">ערוך</button>
+          </div>
+        </div>
+
+        <!-- Open Round Card -->
+        <div class="market-card">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <span style="font-size:11px;padding:3px 10px;background:rgba(45,212,168,0.12);color:var(--teal);border-radius:var(--r-pill);font-weight:600">סבב פתוח · חודשי</span>
+          </div>
+          <div class="mc-q">סבב מימון פתוח — מרץ 2026</div>
+          <div style="font-size:13px;color:var(--text-3);margin-bottom:12px">12 עמותות מאושרות · 18 ימים נותרו · ₪<span class="ltr-num">124,000</span> בקופת ההתאמה</div>
+          <button class="btn btn-sm btn-primary btn-block">עיין בעמותות ומממן</button>
+        </div>
+
+        <!-- Past Impact Card -->
+        <div class="card" style="margin:0 20px 16px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+            <span style="font-size:16px">📊</span>
+            <span style="font-size:14px;font-weight:600;color:var(--text-2)">ההשפעה שלך החודש</span>
+          </div>
+          <div style="font-size:14px;color:var(--text-2);margin-bottom:8px">תרמת ₪<span class="ltr-num">85</span> → הותאמו ל-₪<span class="ltr-num">357</span></div>
+          <div style="font-size:14px;color:var(--text-2);margin-bottom:8px">זיכוי מס צפוי: ₪<span class="ltr-num">30</span> (35%)</div>
+          <div style="font-size:13px;color:var(--gold)">⭐ נט״ל דיווחו: 150 לוחמים סיימו טיפול מלא ברבעון האחרון</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PROFILE TAB ===== -->
+    <div class="screen has-tabs" id="screen-profile">
+      <div class="screen-scroll">
+        <div class="profile-header-section">
+          <div class="profile-avatar">
+            ש
+            <span class="level-badge">Lv 4</span>
+          </div>
+          <div class="profile-name">שי</div>
+          <div class="profile-cluster">גשר פרגמטי</div>
+          <div class="profile-tier">דרגה 4: דובר · עונת השחרור</div>
+        </div>
+
+        <!-- XP Progress to Next Level -->
+        <div style="margin:0 20px 20px;padding:16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-size:14px;font-weight:600">דובר → יושב ראש</span>
+            <span style="font-size:13px;color:var(--teal);font-weight:600;direction:ltr">2,300 / 6,300 XP</span>
+          </div>
+          <div style="height:8px;background:var(--elevated);border-radius:4px;overflow:hidden;margin-bottom:8px">
+            <div style="width:36%;height:100%;background:linear-gradient(90deg, var(--teal), #c084fc);border-radius:4px;transition:width 1s"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-3)">
+            <span>4,000 XP עד דרגה 5</span>
+            <span>~2-3 שבועות</span>
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="score-grid">
+          <div class="score-card">
+            <div class="sc-val">340</div>
+            <div class="sc-label">ציון גשר</div>
+          </div>
+          <div class="score-card">
+            <div class="sc-val" style="direction:ltr">x1.38</div>
+            <div class="sc-label">משקל השפעה</div>
+          </div>
+          <div class="score-card">
+            <div class="sc-val">92%</div>
+            <div class="sc-label">השתתפות</div>
+          </div>
+          <div class="score-card">
+            <div class="sc-val" style="direction:ltr">14d</div>
+            <div class="sc-label">רצף ימים</div>
+          </div>
+        </div>
+
+        <!-- Influence Weight Breakdown -->
+        <div style="margin:0 20px 16px;padding:14px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
+          <div style="font-size:13px;font-weight:600;margin-bottom:10px">⚖️ משקל ההשפעה שלך</div>
+          <div style="font-size:12px;color:var(--text-2);line-height:2">
+            <div style="display:flex;justify-content:space-between"><span>בסיס</span><span style="direction:ltr;color:var(--text-1)">1.00x</span></div>
+            <div style="display:flex;justify-content:space-between"><span>ציון גשר (340/100)</span><span style="direction:ltr;color:var(--teal)">+0.17x</span></div>
+            <div style="display:flex;justify-content:space-between"><span>דרגה 4</span><span style="direction:ltr;color:#c084fc">+0.20x</span></div>
+            <div style="display:flex;justify-content:space-between"><span>רצף (14 ימים)</span><span style="direction:ltr;color:var(--gold)">+0.01x</span></div>
+            <div style="display:flex;justify-content:space-between;border-top:1px solid var(--divider);padding-top:6px;margin-top:4px"><span style="font-weight:600">סה״כ</span><span style="direction:ltr;color:var(--text-1);font-weight:700">1.38x</span></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-3);margin-top:6px">תקרה: x3.42 · השפעה נצברת דרך בניית גשרים, לא חזרה שבטית</div>
+        </div>
+
+        <!-- Seasonal Badges -->
+        <div style="margin:0 20px 16px;padding:14px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
+          <div style="font-size:13px;font-weight:600;margin-bottom:10px">🏅 תגים עונתיים</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span style="padding:6px 12px;background:rgba(45,212,168,0.1);color:var(--teal);border-radius:var(--r-pill);font-size:12px;font-weight:600">🏛️ ותיק אסיפה</span>
+            <span style="padding:6px 12px;background:rgba(229,168,75,0.1);color:var(--gold);border-radius:var(--r-pill);font-size:12px;font-weight:600">🌉 בונה גשרים</span>
+            <span style="padding:6px 12px;background:rgba(156,100,255,0.1);color:#c084fc;border-radius:var(--r-pill);font-size:12px;font-weight:600">❄️ עונת החידוש ×2</span>
+            <span style="padding:6px 12px;background:rgba(91,127,191,0.1);color:var(--blue);border-radius:var(--r-pill);font-size:12px;font-weight:600">💡 שינה לי דעה ×12</span>
+          </div>
+        </div>
+
+        <!-- 10-Level Civic Ladder -->
+        <div class="tier-ladder">
+          <h3>מסלול אזרחי — 10 דרגות</h3>
+          <div class="tier-row done">
+            <div class="tier-dot"></div>
+            <span class="tier-name">1. אזרח/ית</span>
+            <span class="tier-xp" style="direction:ltr">0 XP</span>
+          </div>
+          <div class="tier-row done" style="opacity:0.7">
+            <div class="tier-dot"></div>
+            <div style="flex:1">
+              <span class="tier-name">2. צופה</span>
+              <div style="font-size:10px;color:var(--text-3)">פורום: קריאה ותגובות</div>
+            </div>
+            <span class="tier-xp" style="direction:ltr">200</span>
+          </div>
+          <div class="tier-row done" style="opacity:0.7">
+            <div class="tier-dot"></div>
+            <div style="flex:1">
+              <span class="tier-name">3. משתתף/ת</span>
+              <div style="font-size:10px;color:var(--text-3)">כתיבה בפורום · הקמת נציג AI</div>
+            </div>
+            <span class="tier-xp" style="direction:ltr">800</span>
+          </div>
+          <div class="tier-row current">
+            <div class="tier-dot"></div>
+            <div style="flex:1">
+              <span class="tier-name">4. דובר/ת</span>
+              <div style="font-size:10px;color:var(--teal)">זכאות לאסיפות · צפייה בשוק הצעות</div>
+            </div>
+            <span class="tier-xp" style="direction:ltr;color:var(--teal)">2,300</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-dot"></div>
+            <div style="flex:1">
+              <span class="tier-name">5. יושב/ת ראש</span>
+              <div style="font-size:10px;color:var(--text-3)">הנחיית אסיפות · הימורים בשוק</div>
+            </div>
+            <span class="tier-xp" style="direction:ltr">6,300</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-dot"></div>
+            <div style="flex:1">
+              <span class="tier-name">6. מתכנן/ת</span>
+              <div style="font-size:10px;color:var(--text-3)">יצירת הצעות · נדרי לאום</div>
+            </div>
+            <span class="tier-xp" style="direction:ltr">16,300</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-dot"></div>
+            <div style="flex:1">
+              <span class="tier-name">7. בונה</span>
+              <div style="font-size:10px;color:var(--text-3)">יצירת אסיפות · משקל בדו״ח קונצנזוס</div>
+            </div>
+            <span class="tier-xp" style="direction:ltr">41,300</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-dot"></div>
+            <div style="flex:1">
+              <span class="tier-name">8. נאמן/ה</span>
+              <div style="font-size:10px;color:var(--text-3)">וטו ממשל כפול · מועצה עונתית</div>
+            </div>
+            <span class="tier-xp" style="direction:ltr">101,300</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-dot"></div>
+            <div style="flex:1">
+              <span class="tier-name">9. מייסד/ת</span>
+              <div style="font-size:10px;color:var(--text-3)">ממשל פלטפורמה · הצעות תכונות</div>
+            </div>
+            <span class="tier-xp" style="direction:ltr">251,300</span>
+          </div>
+          <div class="tier-row">
+            <div class="tier-dot"></div>
+            <div style="flex:1">
+              <span class="tier-name">10. משפיע/ה</span>
+              <div style="font-size:10px;color:var(--text-3)">ממשל-שותף מלא · לוח מחוונים ציבורי</div>
+            </div>
+            <span class="tier-xp" style="direction:ltr">651,300</span>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="recent-activity">
+          <h3>פעילות אחרונה</h3>
+          <div class="activity-item">
+            <span class="ai-icon">🗳️</span>
+            <span class="ai-text">הצבעת על "חוק גיוס אוניברסלי"</span>
+            <span class="ai-time">2 שעות</span>
+          </div>
+          <div class="activity-item">
+            <span class="ai-icon">💡</span>
+            <span class="ai-text">קיבלת "שינה לי דעה" — +100 XP</span>
+            <span class="ai-time">3 שעות</span>
+          </div>
+          <div class="activity-item">
+            <span class="ai-icon">🏛️</span>
+            <span class="ai-text">השלמת אסיפה — +1,200 XP</span>
+            <span class="ai-time">אתמול</span>
+          </div>
+          <div class="activity-item">
+            <span class="ai-icon">🌉</span>
+            <span class="ai-text">הסכמה חוצת שבטים התגלתה בעזרתך</span>
+            <span class="ai-time">אתמול</span>
+          </div>
+          <div class="activity-item">
+            <span class="ai-icon">📈</span>
+            <span class="ai-text">עלית לדרגת דובר/ת!</span>
+            <span class="ai-time">3 ימים</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- app-container -->
+
+  <!-- ===== BOTTOM TAB BAR ===== -->
+  <nav class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-tab="pulse" onclick="switchTab('pulse')">
+      <svg viewBox="0 0 24 24"><path d="M3.5 12h3l2-7 3 14 2.5-9 1.5 2h5"/><path d="M3.5 12h3l2-7 3 14 2.5-9 1.5 2h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>דעת הקהל</span>
+    </button>
+    <button class="tab-btn" data-tab="bridge" onclick="switchTab('bridge')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20L8 10M20 20L16 10M8 10C8 10 10 6 12 6S16 10 16 10M6 16H18"/></svg>
+      <span>נקודות מגע</span>
+    </button>
+    <button class="tab-btn" data-tab="rep" onclick="switchTab('rep')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="5"/><path d="M7 20c0-3 2-5 5-5s5 2 5 5"/><path d="M15 5c1-1 3-1 4 0" opacity="0.5"/></svg>
+      <span>הנציג</span>
+    </button>
+    <button class="tab-btn" data-tab="arena" onclick="switchTab('arena')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C12 21 4 13.5 4 8.5C4 5.46 6.46 3 9.5 3C11.13 3 12 4 12 4S12.87 3 14.5 3C17.54 3 20 5.46 20 8.5C20 13.5 12 21 12 21Z"/><path d="M12 4V14" opacity="0.4"/><path d="M8 9H16" opacity="0.4"/></svg>
+      <span>המימון</span>
+    </button>
+    <button class="tab-btn" data-tab="profile" onclick="switchTab('profile')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2c0-2.2 2.7-4 6-4s6 1.8 6 4v2"/></svg>
+      <span>פרופיל</span>
+    </button>
+  </nav>
+
+</div><!-- phone-frame -->
+
+<script>
+// ========== STATE ==========
+const state = {
+  mode: 'onboarding', // 'onboarding' | 'main'
+  activeTab: 'pulse',
+  currentScreen: 'screen-lang',
+  knessetAvgShown: false,
+};
+
+// ========== NAVIGATION ==========
+function goToScreen(id) {
+  const prev = document.getElementById(state.currentScreen);
+  const next = document.getElementById(id);
+  if (!prev || !next || id === state.currentScreen) return;
+
+  prev.classList.remove('active');
+  next.classList.add('active');
+  state.currentScreen = id;
+
+  // Run screen init
+  if (id === 'screen-reveal') initReveal();
+  if (id === 'screen-swipe1') {
+    const card1 = document.getElementById('card1');
+    if (card1) showSwipeTutorial(card1);
+  }
+  if (id === 'screen-bridge') initBridgeMap();
+}
+
+function switchTab(tab) {
+  if (state.mode !== 'main') return;
+  state.activeTab = tab;
+
+  // Update tab buttons
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.tab === tab);
+  });
+
+  // Map tab to screen
+  const tabScreens = {
+    pulse: 'screen-pulse',
+    bridge: 'screen-bridge',
+    rep: 'screen-rep',
+    arena: 'screen-arena',
+    profile: 'screen-profile',
+  };
+
+  const targetScreen = tabScreens[tab];
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(targetScreen).classList.add('active');
+  state.currentScreen = targetScreen;
+
+  if (tab === 'bridge') initBridgeMap();
+}
+
+function enterMainApp() {
+  state.mode = 'main';
+  // Onboarding complete — go directly to feed with tab bar
+  enterPulseFeed();
+}
+
+function enterPulseFeed() {
+  state.mode = 'main';
+  document.getElementById('tabBar').classList.add('visible');
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.tab === 'pulse');
+  });
+  state.activeTab = 'pulse';
+  goToScreen('screen-pulse');
+}
+
+// ========== KNESSET SLIDER ==========
+function updateKnesset(val) {
+  const num = document.getElementById('knessetNum');
+  num.textContent = val;
+  num.className = 'knesset-number ' + (val <= 3 ? 'low' : val <= 6 ? 'mid' : 'high');
+}
+
+function showKnessetAvg() {
+  if (!state.knessetAvgShown) {
+    state.knessetAvgShown = true;
+    document.getElementById('knessetAvg').classList.add('visible');
+    setTimeout(() => goToScreen('screen-city'), 2000);
+  } else {
+    goToScreen('screen-city');
+  }
+}
+
+// ========== CITY PICKER ==========
+// Israeli cities: top 50 by population + 150 additional localities
+const CITIES_ISRAEL = [
+  "אבו בלאל","אבו גווייעד (שבט)","אבו גוש","אבו געדה","אבו דיס","אבו חמרה","אבו טוילה","אבו סנאן","אבו סריחאן (שבט)","אבו עבדון (שבט)",
+  "אבו עמאר (שבט)","אבו עמרה (שבט)","אבו קורינאת (שבט)","אבו קרינאת (יישוב)","אבו קש","אבו רובייעה (שבט)","אבו רוקייק (שבט)","אבו שחידם","אבו תלול","אבטין",
+  "אבטליון","אביאל","אביבים","אביגדור","אביחיל","אביטל","אביעזר","אבירים","אבן יהודה","אבן מנחם",
+  "אבן ספיר","אבן שמואל","אבני איתן","אבני חפץ","אבנת","אבשלום","אבתאן","אג'נסניא","אדורה","אדירים",
+  "אדמית","אדנה","אדרת","אהלו","אודים","אודלה","אודם","אוהד","אום אל תות","אום אל-פחם",
+  "אום אל-קוטוף","אום בטין","אומן","אומץ","אופקים","אוצרין","אור הגנוז","אור הנר","אור יהודה","אור עקיבא",
+  "אורה","אורות","אורטל","אורים","אורנים","אורנית","אושה","אזור","אחווה","אחוזם",
+  "אחוזת ברק","אחיהוד","אחיטוב","אחיסמך","אחיעזר","אטרש (שבט)","איבים","אייל","איילת השחר","אילון",
+  "אילות","אילניה","אילת","איתמר","איתן","איתנים","אכסאל","אכתאבא","אל בירה","אל סייד",
+  "אל עריש","אל-עזי","אל-עריאן","אל-רום","אלומה","אלומות","אלון הגליל","אלון מורה","אלון שבות","אלוני אבא",
+  "אלוני הבשן","אלוני יצחק","אלונים","אלי סיני","אלי-עד","אליכין","אליפז","אליפלט","אליקים","אלישיב",
+  "אלישמע","אלמגור","אלמוג","אלעד","אלעזר","אלפי מנשה","אלקוש","אלקנה","אם א טלע","אם אל גנם",
+  "אם חשיבה","אם סלמונה","אם עלאס","אם עסלה","אם צפא","אם קוצרי","אמאתין","אמונים","אמירים","אמנון",
+  "אמציה","אמריש","אניעם","אסד (שבט)","אסכאכא","אספר","אעבלין","אעצם (שבט)","אפיניש (שבט)","אפיק",
+  "אפיקים","אפעל בית אב","אפעל מרכז ס","אפק","אפרתה","ארבל","ארגמן","ארז","ארטאס","אריאל",
+  "ארסוף","ארתאח","אשבול","אשבל","אשדוד","אשדות יעקב (איחוד)","אשדות יעקב (מאוחד)","אשחר","אשכולות","אשל הנשיא",
+  "אשלים","אשקלון","אשרת","אשתאול","אתגר","אתר מצדה","באגה","באקה","באקה אל שרק","באקה אל-גרביה",
+  "באר אורה","באר גנים","באר טוביה","באר יעקב","באר מילכה","באר שבע","בארות יצחק","בארותיים","בארי","בגדד",
+  "בדו","בדולח","בדיא","בדרס","בוגה","בוסתן הגליל","בועיינה-נוגידאת","בוקעאתא","בורגתה","בורהאם",
+  "בורין","בורקה","בזאריה","בחן","בטחה","ביאדה","בידא","ביוכי","ביצרון","ביר א נצב",
+  "ביר א סכה","ביר אבו סוי","ביר אבו צוי","ביר אל חסי","ביר אל מלחה","ביר אל מעין","ביר אל עבד","ביר אל-מכסור","ביר אלמיין","ביר ג'אלא",
+  "ביר הדאג","ביר הליל","ביר זית","ביר חסנה","ביר לחפאן","ביר מלאקי","ביר מער","ביר נבאלא","ביר נצב","ביר סדרי",
+  "ביר שיח חמי","ביר תל","בירה חברון","ביריה","בית אג'זא","בית אולא","בית אורן","בית איבא","בית אכסא","בית אל",
+  "בית אל ב","בית אללו","בית אלעזרי","בית אלפא","בית אמין","בית אמר","בית אמרין","בית אענאן","בית ארוש פו","בית ארוש תח",
+  "בית אריה","בית ברל","בית ג'אלא","בית גוברין","בית גמאל","בית גמליאל","בית גן","בית דגן","בית דקו","בית הגדי",
+  "בית הלוי","בית הלל","בית העמק","בית הערבה","בית השיטה","בית וזן","בית זיד","בית זית","בית זרע","בית חורון",
+  "בית חירות","בית חלקיה","בית חנון","בית חנינא","בית חנן","בית חנניה","בית חשמונאי","בית יהושע","בית יוסף","בית ינאי",
+  "בית יצחק-שער חפר","בית כאחל גמ","בית לאהיה","בית לחם","בית לחם הגלילית","בית ליד","בית לקיא","בית מאיר","בית מחסיר","בית מרסם",
+  "בית נחמיה","בית ניר","בית נקופה","בית סאחור","בית סוריכ","בית סירא","בית עוא","בית עובד","בית עוזיאל","בית עור אל",
+  "בית עזרא","בית עמרא","בית עריף","בית פג'אר","בית פוריכ","בית צבי","בית קאד דרו","בית קאד צפו","בית קמה","בית קשת",
+  "בית רבן","בית רימא","בית רימון","בית שאן","בית שמש","בית שערים","בית שקמה","ביתא א תחתא","ביתא פוקא","ביתוניא",
+  "ביתין","ביתן אהרן","ביתר עילית","בכורה","בלאטה","בלעא","בלעין","בלפוריה","בן זכאי","בן עמי",
+  "בן שמן (כפר נוער)","בן שמן (מושב)","בני ברק","בני דקלים","בני דרום","בני דרור","בני יהודה","בני נעים","בני נצרים","בני סוהילה",
+  "בני עטרות","בני עי\"ש","בני עצמון","בני ציון","בני ראם","בניה","בנימינה-גבעת עדה","בסמ\"ה","בסמת טבעון","בענה",
+  "בצרה","בצת","בקה אל-גרביה","בקוע","בקעות","בר גיורא","בר יוחאי","ברג'","ברדלא","ברוקין",
+  "ברור חיל","ברוש","ברטעה","בריג","ברכה","ברכיה","ברעם","ברק","ברקא","ברקאי",
+  "ברקין","ברקן","ברקת","בת הדר","בת חן","בת חפר","בת חצור","בת ים","בת עין","בת שלמה",
+  "בתיר","ג'אלוד","ג'אניה","ג'ארושיה","ג'בע ג'נין","ג'בע רמאללה","ג'בעה","ג'דידה","ג'דירה","ג'וריש",
+  "ג'ורת אל שמ","ג'ז אבו רעד","ג'יב","ג'יביא","ג'יוס","ג'ית","ג'לבון","ג'לג'ליה","ג'לזון","ג'למה",
+  "ג'לקמוס","ג'מאלה","ג'מאעין","ג'ניד","ג'נין","ג'נצאפוט","ג'רבא","גאולי תימן","גאולים","גאליה",
+  "גבאליה","גבאליה העיר","גבולות","גבים","גבל אל ערף","גבל הלאל","גבל חמיר","גבל מגארה","גבע","גבע בנימין",
+  "גבע כרמל","גבעולים","גבעון החדשה","גבעות בר","גבעת אבני","גבעת אלה","גבעת ברנר","גבעת השלושה","גבעת זאב","גבעת ח\"ן",
+  "גבעת חיים (איחוד)","גבעת חיים (מאוחד)","גבעת יואב","גבעת יערים","גבעת ישעיהו","גבעת כ\"ח","גבעת ניל\"י","גבעת עדה","גבעת עוז","גבעת שמואל",
+  "גבעת שמש","גבעת שפירא","גבעתי","גבעתיים","גברעם","גבת","גדות","גדיד","גדידה","גדיידה-מכר",
+  "גדיש","גדעונה","גדרה","גולס","גונן","גורן","גורנות הגליל","גזית","גזר","גיאה",
+  "גיבתון","גיזו","גילון","גילת","גינוסר","גיניגר","גינתון","גיתה","גיתית","גלאון",
+  "גלגוליה","גלגל","גליל ים","גלעד (אבן יצחק)","גמזו","גן אור","גן הדרום","גן השומרון","גן חיים","גן יאשיה",
+  "גן יבנה","גן נר","גן שורק","גן שלמה","גן שמואל","גנאביב (שבט)","גנות","גנות הדר","גני הדר","גני טל",
+  "גני טל *","גני יהודה","גני יוחנן","גני מודיעין","גני עם","גני תקווה","גנים","גסר א-זרקא","געש","געתון",
+  "גפן","גפנא","גקילה","גרופית","גריעה","גש (גוש חלב)","גשור","גשר","גשר הזיו","גת",
+  "גת (קיבוץ)","גת בגליל","גת רימון","דאהריה","דאלית אל-כרמל","דבורה","דבוריה","דבירה","דברת","דגניה א",
+  "דגניה ב","דהב","דהישה","דהר חלת אל","דוב\"ב","דוגית","דולב","דומא חברון","דומא שכם","דור",
+  "דורא","דורא אל קרע","דורות","דחי","דחית בריד","דיוכ","דייר חנא","דייר ראפאת","דימונה","דיר א שמס",
+  "דיר אבו דעי","דיר אבו משע","דיר אבזיע","דיר אל בלח","דיר אל גצון","דיר אל חטב","דיר אל סודא","דיר אל עסל","דיר אל-אסד","דיר אסתיא",
+  "דיר בלוט","דיר גזאלה","דיר גסאנה","דיר גריר","דיר דבואן","דיר נזאם","דיר עמאר","דיר קדיס","דיר רזאח","דיר שרף",
+  "דישון","דליה","דלתון","דמיידה","דן","דנאבה","דפידף","דפנה","דקל","דרב אל מליח",
+  "דריגאת","האון","האשמיה","הבונים","הגושרים","הדר עם","הוד השרון","הודיה","הודיות","הוואשלה (שבט)",
+  "הוזייל (שבט)","הושעיה","הזורע","הזורעים","החותרים","היוגב","הילה","המעפיל","הסוללים","העוגן",
+  "הר אדר","הר גילה","הר עמשא","הראל","הרדוף","הרצליה","הררית","ואדי אל אחמ","ואדי אל ביד","ואדי אל וער",
+  "ואדי אל ערא","ואדי אל ערי","ואדי אסלה","ואדי ברקין","ואדי גרנדל","ואדי חמר","ואדי מבעוק","ואדי מחאש","ואדי נצב","ואדי נצריין",
+  "ואדי סעאל","ואדי קיד","ואדי קריה","ואדי רהבה","ואדי רחבה","ואדי רינה","ואדי תמן","ואדי תר","ואדיאל עמר","ואסט נויבע",
+  "ורד יריחו","ורדון","זאויה ג'נין","זאויה טול כ","זבאבדה","זבארגה (שבט)","זבדה","זבדיאל","זבובה","זבידאת",
+  "זואתה","זוהר","זוואידה","זיף","זיקים","זיתא","זיתא ג'מעין","זיתונה","זיתן","זכרון יעקב",
+  "זכריה","זלפה","זמר","זמרת","זנוח","זעתרה","זרועה","זרזיר","זרחיה","חאן יונס",
+  "חאן יונס הע","חאראס","חארס","חבילה","חבלה","חבצלת השרון","חבר","חברון","חגאגרה","חגה",
+  "חגור","חגי","חגילה","חגלה","חד-נס","חדב","חדיד","חדר","חדרה","חואלד",
+  "חואלד (שבט)","חוארה","חוגייראת (דהרה)","חולדה","חולון","חולית","חולתה","חומש","חוסאן","חוסן",
+  "חוסנייה","חופית","חוקוק","חורה","חורסה","חורפיש","חורשים","חות שלם","חזאעה","חזון",
+  "חזמא","חיבת ציון","חיננית","חיפה","חירות","חלוץ","חלחול","חלמיש","חלף","חלץ",
+  "חלת אל פולה","חמאם","חמד","חמדיה","חמדת","חמרה","חניאל","חניתה","חנתון","חסכה",
+  "חספין","חפץ חיים","חפצי-בה","חצב","חצבה","חצור הגלילית","חצור-אשדוד","חצר בארותיים","חצרות חולדה","חצרות חפר",
+  "חצרות יסף","חצרות כ\"ח","חצרים","חרב לאת","חרבת אבו חמ","חרבת אבו נג","חרבת אבו סל","חרבת אבו פל","חרבת אום אל","חרבת אל אקר",
+  "חרבת אל אשק","חרבת אל דיר","חרבת אל דלב","חרבת אל הגר","חרבת אל חדב","חרבת אל חפי","חרבת אל חרז","חרבת אל טבק","חרבת אל כום","חרבת אל לוז",
+  "חרבת אל מגו","חרבת אל מגנ","חרבת אל מדו","חרבת אל מטל","חרבת אל מנש","חרבת אל מעצ","חרבת אל מרג","חרבת אל נבי","חרבת אל נג","חרבת אל סכה",
+  "חרבת אל עדס","חרבת אל עוג","חרבת אל עלק","חרבת אל עקר","חרבת אל ערו","חרבת אל צרי","חרבת אל קצו","חרבת אל שיח","חרבת בית חס","חרבת בית ענ",
+  "חרבת בית תע","חרבת בריזעה","חרבת גאדור","חרבת גהזם","חרבת גיב א","חרבת גראד","חרבת דיר צא","חרבת ואדי א","חרבת ודח","חרבת זאהר",
+  "חרבת זיתא","חרבת חדיר","חרבת טויל","חרבת כזון","חרבת כנעאן","חרבת כרמה","חרבת מורק","חרבת מעין","חרבת נבי צא","חרבת סמיא",
+  "חרבת עאבא","חרבת עוד","חרבת עילת ע","חרבת עסלה","חרבת פקיקס","חרבת צאפא","חרבת ציר","חרבת קיס","חרבת ראס אל","חרבת ראס עט",
+  "חרבת רקעה","חרבת שויכה","חרבתא","חרבתא אל מצ","חרובה כולל","חרוצים","חריש -קציר","חרמלה","חרמש","חרסה",
+  "חרשים","חשמונאים","טבעון","טבריה","טואני","טובא-זנגריה","טובאס","טויל אל אמי","טול כרם","טורה אל גרב",
+  "טורעאן","טיבה ג'נין","טיבה רמאללה","טייבה","טייבה (בעמק)","טירה","טירת יהודה","טירת כרמל","טירת צבי","טל שחר",
+  "טל-אל","טלוזה","טללים","טלמון","טמון","טמרה","טמרה (יזרעאל)","טנא","טפחות","טראמה",
+  "יאטה","יאמון","יאנוח","יאנוח-גת","יאנון","יאסוף","יאציד","יבול","יבנאל","יבנה",
+  "יברוד","יגור","יגל","יד בנימין","יד השמונה","יד חנה","יד מרדכי","יד נתן","יד רמב\"ם","ידידה",
+  "יהוד-מונוסון","יהל","יובל","יובלים","יודפת","יונתן","יושיביה","יזרעאל","יזרעם","יחיעם",
+  "יטבתה","ייט\"ב","יכיני","ימא","ינוב","ינון","יסוד המעלה","יסודות","יסעור","יעבד",
+  "יעד","יעל","יעף","יערה","יפיע","יפית","יפעת","יפתח","יצהר","יציץ",
+  "יקום","יקיר","יקנעם (מושבה)","יקנעם עילית","יראון","ירדנה","ירוחם","ירושלים","ירחיב","יריחו",
+  "ירכא","ירקונה","ישע","ישעי","ישרש","יתד","יתיר","יתמא","כאבול","כאוכב אבו אל-היגא",
+  "כברי","כדורי","כדים","כדיתה","כובר","כוכב השחר","כוכב יאיר","כוכב יעקב","כוכב מיכאל","כונתילא",
+  "כור","כורזים","כזיה אל רטר","כחל","כחלה","כיסופים","כישור","כליל","כלנית","כמאנה",
+  "כמהין","כמון","כנות","כנף","כנרת (מושבה)","כנרת (קבוצה)","כסיפה","כסלון","כסרא","כסרא-סמיע",
+  "כעביה שבט","כעביה-טבאש-חגאגרה","כפיר","כפירת","כפל חארת","כפר אביב","כפר אדומים","כפר אוריה","כפר אזר","כפר אחים",
+  "כפר אל דיכ","כפר אל לבד","כפר ביאליק","כפר ביל\"ו","כפר בלום","כפר בן נון","כפר ברא","כפר ברוך","כפר גדעון","כפר גלים",
+  "כפר גליקסון","כפר גלעדי","כפר גמאל","כפר דאן","כפר דניאל","כפר דרום","כפר האורנים","כפר החורש","כפר המכבי","כפר הנגיד",
+  "כפר הנוער הדתי","כפר הנשיא","כפר הס","כפר הרא\"ה","כפר הרי\"ף","כפר ויתקין","כפר ורבורג","כפר ורדים","כפר זוהרים","כפר זיבאד",
+  "כפר זיתים","כפר חב\"ד","כפר חושן","כפר חיטים","כפר חיים","כפר חנניה","כפר חסידים א","כפר חסידים ב","כפר חרוב","כפר טרומן",
+  "כפר יאסיף","כפר ידידיה","כפר יהושע","כפר יונה","כפר יחזקאל","כפר יעבץ","כפר כמא","כפר כנא","כפר לאקף","כפר מאלכ",
+  "כפר מונש","כפר מימון","כפר מל\"ל","כפר מנדא","כפר מנחם","כפר מסריק","כפר מצר","כפר מרדכי","כפר נטר","כפר נעמה",
+  "כפר סאלד","כפר סבא","כפר סילבר","כפר סירקין","כפר סמיע","כפר עבודה","כפר עבוש","כפר עזה","כפר עזיז","כפר עין",
+  "כפר עציון","כפר עקב","כפר פינס","כפר צור","כפר קאסם","כפר קדום","כפר קוד","כפר קיש","כפר קליל","כפר קרע",
+  "כפר ראעי","כפר ראש הנקרה","כפר רוזנואלד (זרעית)","כפר רופין","כפר רות","כפר רמאן","כפר שמאי","כפר שמואל","כפר שמריהו","כפר תבור",
+  "כפר תלת","כפר תפוח","כרזה","כרי דשא","כרכום","כרם אבו מצל","כרם אבו שרי","כרם בן זמרה","כרם בן שמן","כרם יבנה (ישיבה)",
+  "כרם מהר\"ל","כרם שלום","כרמי יוסף","כרמי צור","כרמיאל","כרמיה","כרמים","כרמל","לבון","לביא",
+  "לבן","לבן שרקיה","לבנים","להב","להבות הבשן","להבות חביבה","להבים","לוד","לוזית","לוחמי הגיטאות",
+  "לוטם","לוטן","לימן","לכיש","לפיד","לפידות","לקיה","מאדמא","מאור","מאיר שפיה",
+  "מאסורה","מאקורה","מבוא ביתר","מבוא דותן","מבוא חורון","מבוא חמה","מבוא מודיעים","מבואות ים","מבועים","מבטחים",
+  "מבקיעים","מבשרת ציון","מגאזי","מגאר","מגד","מגד אל-כרום","מגדים","מגדל","מגדל בני פא","מגדל העמק",
+  "מגדל עוז","מגדל שמס","מגדלים","מגידו","מגיר ג'נין","מגיר רמאללה","מגל","מגן","מגן שאול","מגשימים",
+  "מדיה","מדפונה","מדרך עוז","מדרשת בן גוריון","מדרשת רופין","מודיעין עילית","מודיעין-מכבים-רעות","מולדה","מולדת","מוצא עילית",
+  "מוצא תחתית","מוצמוץ","מוקייבלה","מורג","מורן","מורשת","מושב אליאב","מזאר","מזארע אל נו","מזור",
+  "מזכרת בתיה","מזרע","מזרעה","מזרעה אל קב","מזרעה אל שר","מחולה","מחים אל פאר","מחים קלנדיה","מחמאס","מחנה גבעת ח",
+  "מחנה הילה","מחנה טלי","מחנה יבור","מחנה יהודית","מחנה יוכבד","מחנה יפה","מחנה יתיר","מחנה מרים","מחנה עדי","מחנה תל נוף",
+  "מחניים","מחסיה","מחשיב","מטולה","מטע","מי עמי","מידאן","מיטב","מייסר","מיצר",
+  "מירב","מירון","מישר","מיתלה","מיתלון","מיתר","מכבים","מכורה","מכחול","מכמורת",
+  "מכמנים","מכסורה","מכר","מלאה","מלילות","מלכיה","מלכישוע","מנבטח","מנוחה","מנוף",
+  "מנות","מנחמיה","מנרה","מנשית זבדה","מסד","מסדה","מסחה","מסילות","מסילת ציון","מסלול",
+  "מסליה","מסעדה","מסעודין אל-עזאזמה","מעאויה","מעברות","מעגלים","מעגן","מעגן מיכאל","מעוז חיים","מעון",
+  "מעונה","מעוף","מעיליא","מעין ברוך","מעין צבי","מעלה אדומים","מעלה אפרים","מעלה גלבוע","מעלה גמלא","מעלה החמישה",
+  "מעלה לבונה","מעלה מכמש","מעלה עירון","מעלה עמוס","מעלה שומרון","מעלות-תרשיחא","מעני אבו חא","מענית","מעסכר אל ער","מעש",
+  "מפלסים","מצבח","מצדות יהודה","מצובה","מצליח","מצפה","מצפה אבי\"ב","מצפה אילן","מצפה יריחו","מצפה נטופה",
+  "מצפה רמון","מצפה שלם","מצפק","מצר","מקדבה)עגילה","מקווה ישראל","מראח אל בקר","מראח רבאח","מרג נעגה","מרגה",
+  "מרגליות","מרדה","מרום גולן","מרחב עם","מרחביה (מושב)","מרחביה (קיבוץ)","מרכה","מרכז שפירא","משאבי שדה","משאיח סעדיה",
+  "משגב דב","משגב עם","משהד","משואה","משואות יצחק","משירפה","משכיות","משמר איילון","משמר דוד","משמר הירדן",
+  "משמר הנגב","משמר העמק","משמר השבעה","משמר השרון","משמרות","משמרת","משען","משרוע מוסא","מתמתני","מתן",
+  "מתת","מתתיהו","נאות גולן","נאות הכיכר","נאות מרדכי","נאות סמדר","נאעורה","נאקורה","נבטים","נבי צאלח",
+  "נבי צמויל","נביעות","נבק","נגבה","נגוהות","נגידאת","נגילה","נהורה","נהלל","נהריה",
+  "נוב","נובא","נוגה","נוה","נוה אפרים","נוה דקלים","נווה אבות","נווה אור","נווה אטי\"ב","נווה אילן",
+  "נווה איתן","נווה דניאל","נווה זוהר","נווה זיו","נווה חריף","נווה ים","נווה ימין","נווה ירק","נווה מבטח","נווה מיכאל",
+  "נווה שלום","נויעמה","נומיס","נועם","נוף איילון","נוף הגליל","נופים","נופית","נופך","נוקדים",
+  "נור אל שמס","נורדיה","נורית","נזלה אל גרב","נזלה אל וסט","נזלה אל שרק","נזלת אבו נא","נזלת זיד","נזלת עיסא","נחאלין",
+  "נחושה","נחל אדורה","נחל אלישע","נחל אמתי","נחל בתרונות","נחל גבעות","נחל גנת","נחל יעלון","נחל מול נבו","נחל מרוה",
+  "נחל נחושתן","נחל נמרוד","נחל נצרים","נחל עוז","נחל עירית","נחל צורף","נחל צרי","נחל שיאון","נחל(חפגה)","נחלה",
+  "נחליאל","נחלים","נחלת יהודה","נחם","נחף","נחשולים","נחשון","נחשונים","נטועה","נטור",
+  "נטעים","נטף","ניין","ניל\"י","ניסנית","ניצן","ניצן ב","ניצנה (קהילת חינוך)","ניצני סיני","ניצני עוז",
+  "ניצנים","ניר אליהו","ניר בנים","ניר גלים","ניר דוד (תל עמל)","ניר ח\"ן","ניר יפה","ניר יצחק","ניר ישראל","ניר משה",
+  "ניר עוז","ניר עם","ניר עציון","ניר עקיבא","ניר צבי","נירים","נירית","נירן","נמל תעופה בן גוריון","נס הרים",
+  "נס עמים","נס ציונה","נעורים","נעלה","נעלין","נעמ\"ה","נען","נצאצרה (שבט)","נצאריה","נציראת",
+  "נצף גביל","נצר חזני","נצר חזני *","נצר סרני","נצרת","נצרת עילית","נקא שעבאני","נשר","נתיב הגדוד","נתיב הל\"ה",
+  "נתיב העשרה","נתיב השיירה","נתיבות","נתניה","סאגור","סאויה","סאלם","סאסא","סביון","סבסטיה",
+  "סגולה","סדום","סואחרה","סואעד (חמרייה)","סואעד (כמאנה) )שבט)","סולם","סוסיה","סופה","סחנין","סייד (שבט)",
+  "סייפה","סילת אל דאה","סילת אל חאר","סיריס","סכנין","סלואד","סלמאנה","סלמה","סלעית","סלפית",
+  "סמוע","סמר","סנג'ל","סנטה קטרינה","סניריה","סנסנה","סעד","סעיר","סער","ספארין",
+  "ספיר","סרדה","סתריה","עאבוד","עאנין","עארה","עארורה","עבאסן אל כב","עבאסן אל צע","עבדה",
+  "עבדון","עבוין","עבידיה","עברון","עג'ה","עגול","עגור","עגר","עדי","עדנים",
+  "עוזה","עוזייר","עולש","עומר","עופר","עופרה","עופרים","עוצם","עוקבי (בנו עוקבה)","עוריף",
+  "עורתא","עזבת א דרוב","עזה","עזוז","עזון","עזון עתמה","עזמוט","עזר","עזריאל","עזריה",
+  "עזריקם","עטאוונה (שבט)","עטאטרה","עטארה ג'נין","עטארה רמאלל","עטרת","עידן","עיזריה","עיילבון","עיינות",
+  "עילוט","עין א סהלה","עין איוב","עין איילה","עין אל אחדר","עין אל בידא","עין אל שלטא","עין אל-אסד","עין גב","עין גדי",
+  "עין דור","עין דרויש","עין הבשור","עין הוד","עין החורש","עין המפרץ","עין הנצי\"ב","עין העמק","עין השופט","עין השלושה",
+  "עין ורד","עין זיוון","עין חוד","עין חצבה","עין חרוד (איחוד)","עין חרוד (מאוחד)","עין יברוד","עין יהב","עין יעקב","עין כרם-בי\"ס חקלאי",
+  "עין כרמל","עין מאהל","עין נקובא","עין סיניא","עין עירון","עין עריכ","עין צדר","עין צורים","עין קידכאת","עין קיניא",
+  "עין קנייא","עין ראפה","עין שמר","עין שריד","עין תמר","עינאבוס","עינת","עיר אובות","עכו","עלאר",
+  "עלומים","עלי","עלי זהב","עלמה","עלמון","עלקה","עמוקה","עמור","עמוריה","עמינדב",
+  "עמיעד","עמיעוז","עמיקם","עמיר","עמנואל","עמק חפר","עמקה","ענאב אל צגי","ענאתא","ענב",
+  "ענבתא","ענזה","עסאכרה","עסכר","עספיא","עפולה","עץ אפרים","עצירה אל קב","עצירה אלשמא","עצמון שגב",
+  "עקאבה","עקבת גבר","עקרבה","עראבה","עראמשה","עראמשה שבט","עראנה","עראק בורין","ערב אבו ציב","ערב אל חסינ",
+  "ערב אל נעים","ערבונה","ערד","ערוגות","ערערה","ערערה-בנגב","ערקה","עשרת","עתיל","עתלית",
+  "עתניאל","פארן","פאת שדה","פדואל","פדויים","פדיה","פוגיה","פוור","פוריה  -כפר עבודה","פוריה  -נווה עובד",
+  "פוריה עילית","פוריידיס","פורת","פחמה","פטיש","פיראן","פלאמה","פלך","פלמחים","פנדק",
+  "פנדקומיה","פני חבר","פסגות","פסוטה","פעמי תש\"ז","פצאיל","פצאל","פקועה","פקיעין (בוקייעה)","פקיעין חדשה",
+  "פרדס חנה-כרכור","פרדסיה","פרוד","פרוש בית דג","פרזון","פרחה","פרי גן","פרנגה","פרעה אל גיפ","פרעון",
+  "פרעתה","פתח תקווה","פתחיה","צאלים","צאנור","צאנע(שבט)","צביה","צבעון","צובה","צוחר",
+  "צופיה","צופים","צופית","צופר","צוקי ים","צוקים","צור הדסה","צור יגאל","צור יצחק","צור משה",
+  "צור נתן","צוריאל","צוריף","צורית","צורן","צידא","ציפורי","ציר","צלפון","צנדלה",
+  "צפא","צפריה","צפרירים","צפת","צרה","צרופה","צרטא","צרעה","ק.מ45 .","קבאטיה",
+  "קבה","קבועה (שבט)","קבוצת יבנה","קביא","קביבה","קבלאן","קבר עמיר","קדומים","קדימה-צורן","קדמה",
+  "קדמת צבי","קדר","קדרון","קדרים","קודייראת א-","קוואעין (שבט)","קוממיות","קוצימה","קוצין","קורנית",
+  "קטורה","קטיף","קטנה","קיסריה","קירה","קלחים","קליה","קלנדיה","קלנסווה","קלע",
+  "קלקיליה","קפין","קציר","קצר א-סר","קצרה","קצרין","קראות בני ז","קראות בני ח","קרארה","קריות",
+  "קריית אתא","קריית ביאליק","קריית גת","קריית מוצקין","קריית שמונה","קרית אונו","קרית ארבע","קרית אתא","קרית ביאליק","קרית גת",
+  "קרית חיים","קרית טבעון","קרית ים","קרית יערים","קרית יערים(מוסד)","קרית מוצקין","קרית מלאכי","קרית נטפים","קרית ענבים","קרית עקרון",
+  "קרית שלמה","קרית שמונה","קרני שומרון","קשת","ראבא","ראבוד","ראם","ראמה","ראמין","ראס",
+  "ראס אל נקב","ראס אל-עין","ראס כרכר","ראס נצראני","ראס סאלם","ראס סניסל","ראס עלי","ראפאת חברון","ראפאת טול כ","ראפאת רמאלל",
+  "ראש העין","ראש פינה","ראש צורים","ראשון לציון","רבבה","רבדים","רביבים","רביד","רבעה כולל ב","רגבה",
+  "רגבים","רהט","רוגיב","רווחה","רוויה","רוח מדבר","רוחמה","רומאנה","רומת הייב","רועי",
+  "רותם","רחוב","רחובות","רחימה","ריחאניה","ריחיה","ריחן","ריינה","רימונים","רינתיה",
+  "ריסאן","רכום","רכסים","רם-און","רמאללה","רמאנה","רמון","רמות","רמות השבים","רמות מאיר",
+  "רמות מנשה","רמות נפתלי","רמלה","רמסה","רמת אפעל","רמת גן","רמת דוד","רמת הכובש","רמת השופט","רמת השרון",
+  "רמת חובב","רמת יוחנן","רמת ישי","רמת מגשימים","רמת פנקס","רמת צבי","רמת רזיאל","רמת רחל","רנן","רנתיס",
+  "רעים","רעננה","רפידה","רפידיה","רפיח","רפיח העיר","רפיח ים","רקפת","רשימת הישובים לפי א' – ב'","רשפון",
+  "רשפים","רתמים","שא-נור","שאטי","שאר ישוב","שבי ציון","שבי שומרון","שבלי  -אום אל-גנם","שבע בארות","שבתין",
+  "שגב-שלום","שדה אילן","שדה אליהו","שדה אליעזר","שדה בוקר","שדה דוד","שדה ורבורג","שדה יואב","שדה יעקב","שדה יצחק",
+  "שדה משה","שדה נחום","שדה נחמיה","שדה ניצן","שדה עוזיהו","שדה צבי","שדות ים","שדות מיכה","שדי אברהם","שדי חמד",
+  "שדי תרומות","שדמה","שדמות דבורה","שדמות מחולה","שדרות","שואבה","שובה","שובל","שוהם","שויכה",
+  "שוכת א צופי","שומרה","שומריה","שופה","שוקדה","שורש","שורשים","שושנת העמקים","שזור","שחר",
+  "שחרות","שיבולים","שיוח","שיח אחמד","שיח אחמד אל","שיח בריכ","שיח זויד","שיח חשש","שיח סלימאן","שיח סעיד",
+  "שיח עגלין","שיח עוד","שיטים","שייח דנון","שילה","שילת","שכם","שכניה","שלאק וג'ורה","שלווה",
+  "שלווה במדבר","שלוחות","שלומי","שלומית","שליו","שמיר","שמעה","שמרת","שמשית","שני",
+  "שניר","שעב","שעורים","שעל","שעלבים","שער אפרים","שער הגולן","שער העמקים","שער מנשה","שערי אברהם",
+  "שערי תקווה","שפיים","שפיר","שפר","שפרעם","שקבה","שקד","שקף","שרונה","שריגים (לי-און)",
+  "שריד","שרשרת","שתולה","שתולים","תאשור","תדהר","תובל","תומר","תושיה","תיאסיר",
+  "תימורים","תירוש","תל","תל א שמסיה","תל אבו שנאר","תל אביב  -יפו","תל אביב-יפו","תל אל אחמר","תל אל בידא","תל יוסף",
+  "תל יצחק","תל מונד","תל עדשים","תל קציר","תל שבע","תל תאומים","תלם","תלמי אליהו","תלמי אלעזר","תלמי ביל\"ו",
+  "תלמי יוסף","תלמי יחיאל","תלמי יפה","תלמים","תלפית ג'נין","תלפית שכם","תמד","תמרת","תנובות","תעוז",
+  "תענך","תפוח","תפרח","תקומה","תקוע","תראבין א-צאנע (שבט)","תראבין א-צאנע(ישוב)","תרום","תרמוסעיא","תרפת אל קדר",
+  "תרקומיא"
+];
+
+const CITIES_ABROAD = [
+  "גואה, הודו 🇮🇳",
+  "דהרמסלה, הודו 🇮🇳",
+  "פושקר, הודו 🇮🇳",
+  "בנגקוק, תאילנד 🇹🇭",
+  "קו פנגן, תאילנד 🇹🇭",
+  "צ'אנג מאי, תאילנד 🇹🇭",
+  "באלי, אינדונזיה 🇮🇩",
+  "סיאם ריפ, קמבודיה 🇰🇭",
+  "האנוי, וייטנאם 🇻🇳",
+  "קטמנדו, נפאל 🇳🇵",
+  "טוקיו, יפן 🇯🇵",
+  "סינגפור 🇸🇬",
+  "הונג קונג 🇭🇰",
+  "שנגחאי, סין 🇨🇳",
+  "מומבאי, הודו 🇮🇳",
+  "ברלין, גרמניה 🇩🇪",
+  "אמסטרדם, הולנד 🇳🇱",
+  "לונדון, אנגליה 🇬🇧",
+  "פריז, צרפת 🇫🇷",
+  "ברצלונה, ספרד 🇪🇸",
+  "ליסבון, פורטוגל 🇵🇹",
+  "פראג, צ'כיה 🇨🇿",
+  "בודפשט, הונגריה 🇭🇺",
+  "וינה, אוסטריה 🇦🇹",
+  "ציריך, שוויץ 🇨🇭",
+  "מינכן, גרמניה 🇩🇪",
+  "רומא, איטליה 🇮🇹",
+  "מילאנו, איטליה 🇮🇹",
+  "אתונה, יוון 🇬🇷",
+  "קפריסין 🇨🇾",
+  "מדריד, ספרד 🇪🇸",
+  "פרנקפורט, גרמניה 🇩🇪",
+  "בריסל, בלגיה 🇧🇪",
+  "קופנהגן, דנמרק 🇩🇰",
+  "סטוקהולם, שוודיה 🇸🇪",
+  "אוסלו, נורווגיה 🇳🇴",
+  "הלסינקי, פינלנד 🇫🇮",
+  "ורשה, פולין 🇵🇱",
+  "קייב, אוקראינה 🇺🇦",
+  "מוסקבה, רוסיה 🇷🇺",
+  "ניו יורק, ארה״ב 🇺🇸",
+  "לוס אנג'לס, ארה״ב 🇺🇸",
+  "מיאמי, ארה״ב 🇺🇸",
+  "סן פרנסיסקו, ארה״ב 🇺🇸",
+  "אוסטין, ארה״ב 🇺🇸",
+  "בוסטון, ארה״ב 🇺🇸",
+  "שיקגו, ארה״ב 🇺🇸",
+  "טורונטו, קנדה 🇨🇦",
+  "ונקובר, קנדה 🇨🇦",
+  "מונטריאול, קנדה 🇨🇦",
+  "בואנוס איירס, ארגנטינה 🇦🇷",
+  "סאו פאולו, ברזיל 🇧🇷",
+  "מקסיקו סיטי, מקסיקו 🇲🇽",
+  "מדיין, קולומביה 🇨🇴",
+  "מלבורן, אוסטרליה 🇦🇺",
+  "סידני, אוסטרליה 🇦🇺",
+  "אוקלנד, ניו זילנד 🇳🇿",
+  "קייפ טאון, דרום אפריקה 🇿🇦",
+  "אדיס אבבה, אתיופיה 🇪🇹",
+  "יוהנסבורג, דרום אפריקה 🇿🇦",
+  "ניירובי, קניה 🇰🇪",
+  "דובאי, איחוד האמירויות 🇦🇪",
+  "איסטנבול, טורקיה 🇹🇷"
+];
+
+const ABROAD_CHIPS = [
+  "ברלין 🇩🇪","ניו יורק 🇺🇸","לונדון 🇬🇧","גואה 🇮🇳","בנגקוק 🇹🇭","לוס אנג'לס 🇺🇸","מלבורן 🇦🇺","אמסטרדם 🇳🇱","טורונטו 🇨🇦","באלי 🇮🇩"
+];
+
+let selectedCity = '';
+let cityMode = 'israel'; // 'israel' or 'abroad'
+
+function setCityMode(mode) {
+  cityMode = mode;
+  const btns = document.querySelectorAll('.city-toggle-btn');
+  btns.forEach(b => b.classList.remove('active'));
+  btns[mode === 'israel' ? 0 : 1].classList.add('active');
+  const input = document.getElementById('cityInput');
+  const hint = document.getElementById('cityAbroadHint');
+  const results = document.getElementById('cityResults');
+  input.value = '';
+  selectedCity = '';
+  results.classList.remove('visible');
+  document.getElementById('cityConfirmBtn').style.opacity = '0.4';
+  document.getElementById('cityConfirmBtn').style.pointerEvents = 'none';
+  if (mode === 'abroad') {
+    input.placeholder = 'הקלד/י עיר או מדינה...';
+    hint.style.display = 'block';
+    // Render chips
+    document.getElementById('cityChips').innerHTML = ABROAD_CHIPS.map(c =>
+      `<button class="city-chip" onclick="selectChip(this,'${c}')">${c}</button>`
+    ).join('');
+  } else {
+    input.placeholder = 'הקלד/י שם עיר...';
+    hint.style.display = 'none';
+  }
+}
+
+function selectChip(el, city) {
+  document.querySelectorAll('.city-chip').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  // Find full name from CITIES_ABROAD
+  const full = CITIES_ABROAD.find(c => c.startsWith(city.replace(/\s*🇦🇺|🇩🇪|🇺🇸|🇬🇧|🇮🇳|🇹🇭|🇳🇱|🇨🇦|🇮🇩/g,'').trim())) || city;
+  selectCity(full);
+  document.getElementById('cityInput').value = city;
+}
+
+function filterCities(query) {
+  const results = document.getElementById('cityResults');
+  if (!query.trim()) {
+    results.classList.remove('visible');
+    results.innerHTML = '';
+    return;
+  }
+  const list = cityMode === 'israel' ? CITIES_ISRAEL : CITIES_ABROAD;
+  const q = query.trim();
+  // Prioritize: starts-with matches first, then contains matches
+  const startsWith = [];
+  const contains = [];
+  for (const c of list) {
+    if (c.startsWith(q)) startsWith.push(c);
+    else if (c.includes(q)) contains.push(c);
+    if (startsWith.length + contains.length >= 50) break; // perf limit
+  }
+  const matches = [...startsWith, ...contains].slice(0, 8);
+  if (matches.length === 0) {
+    // Show "use custom" option for free text
+    results.innerHTML = `<div class="city-result-item" onclick="selectCity('${q.replace(/'/g,"\\'")}')">
+      <span style="color:var(--teal)">✚</span> &quot;${q}&quot;
+    </div>`;
+    results.classList.add('visible');
+    return;
+  }
+  const total = startsWith.length + contains.length;
+  let html = matches.map(c =>
+    `<div class="city-result-item" onclick="selectCity('${c.replace(/'/g,"\\'")}');">${c}</div>`
+  ).join('');
+  if (total > 8) {
+    html += `<div style="padding:8px 16px;font-size:12px;color:var(--text-3);text-align:center">
+      עוד ${total - 8} תוצאות — המשיכ/י להקליד</div>`;
+  }
+  results.innerHTML = html;
+  results.classList.add('visible');
+}
+
+function selectCity(city) {
+  selectedCity = city;
+  document.getElementById('cityInput').value = city;
+  document.getElementById('cityResults').classList.remove('visible');
+  const btn = document.getElementById('cityConfirmBtn');
+  btn.style.opacity = '1';
+  btn.style.pointerEvents = 'auto';
+}
+
+function confirmFreeText() {
+  const val = document.getElementById('cityInput').value.trim();
+  if (val) {
+    selectCity(val);
+    confirmCity();
+  }
+}
+
+function confirmCity() {
+  if (selectedCity) {
+    state.city = selectedCity;
+    state.cityMode = cityMode;
+    goToScreen('screen-swipe1');
+  }
+}
+
+// Close city results when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.city-input-wrap')) {
+    const results = document.getElementById('cityResults');
+    if (results) results.classList.remove('visible');
+  }
+});
+
+// ========== SWIPE TUTORIAL ==========
+let tutorialShown = false;
+function showSwipeTutorial(card) {
+  if (tutorialShown) return;
+  tutorialShown = true;
+  const forInd = card.querySelector('.for-ind');
+  const againstInd = card.querySelector('.against-ind');
+
+  // Step 1: Tilt right → show "בעד"
+  setTimeout(() => {
+    card.style.transition = 'transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1)';
+    card.style.transform = 'translateX(90px) rotate(8deg)';
+    if (forInd) { forInd.style.transition = 'opacity 300ms'; forInd.style.opacity = '1'; }
+  }, 800);
+
+  // Step 1b: Return to center
+  setTimeout(() => {
+    card.style.transition = 'transform 500ms ease-out';
+    card.style.transform = 'translateX(0) rotate(0)';
+    if (forInd) forInd.style.opacity = '0';
+  }, 2000);
+
+  // Step 2: Tilt left → show "נגד"
+  setTimeout(() => {
+    card.style.transition = 'transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1)';
+    card.style.transform = 'translateX(-90px) rotate(-8deg)';
+    if (againstInd) { againstInd.style.transition = 'opacity 300ms'; againstInd.style.opacity = '1'; }
+  }, 2800);
+
+  // Step 2b: Return to center
+  setTimeout(() => {
+    card.style.transition = 'transform 500ms ease-out';
+    card.style.transform = 'translateX(0) rotate(0)';
+    if (againstInd) againstInd.style.opacity = '0';
+  }, 4000);
+}
+
+// ========== SWIPE CARDS ==========
+function initSwipeCard(cardId, resultId) {
+  const card = document.getElementById(cardId);
+  if (!card) return;
+
+  let startX = 0, currentX = 0, isDragging = false;
+  const threshold = 100;
+  const maxRot = 8;
+  const forInd = card.querySelector('.for-ind');
+  const againstInd = card.querySelector('.against-ind');
+
+  function onStart(e) {
+    isDragging = true;
+    startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    card.style.transition = 'none';
+    card.classList.add('dragging');
+  }
+
+  function onMove(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    const cx = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    currentX = cx - startX;
+    const rot = (currentX / threshold) * maxRot;
+    const opacity = Math.min(Math.abs(currentX) / threshold, 1);
+    card.style.transform = `translateX(${currentX}px) rotate(${rot}deg)`;
+
+    // Tinder-style: swipe right = "For" (positive), swipe left = "Against" (negative)
+    if (currentX > 0) {
+      forInd.style.opacity = opacity;
+      againstInd.style.opacity = 0;
+    } else {
+      againstInd.style.opacity = opacity;
+      forInd.style.opacity = 0;
+    }
+  }
+
+  function onEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    card.classList.remove('dragging');
+
+    if (Math.abs(currentX) > threshold) {
+      const dir = currentX < 0 ? -1 : 1;
+      card.style.transition = 'transform 300ms ease-out, opacity 300ms ease-out';
+      card.style.transform = `translateX(${dir * 400}px) rotate(${dir * 15}deg)`;
+      card.style.opacity = '0';
+      forInd.style.opacity = 0;
+      againstInd.style.opacity = 0;
+      showVoteResult(resultId, card.dataset.next);
+    } else {
+      card.style.transition = 'transform 300ms ease-out';
+      card.style.transform = 'translateX(0) rotate(0)';
+      forInd.style.opacity = 0;
+      againstInd.style.opacity = 0;
+    }
+    currentX = 0;
+  }
+
+  card.addEventListener('pointerdown', onStart);
+  card.addEventListener('pointermove', onMove);
+  card.addEventListener('pointerup', onEnd);
+  card.addEventListener('pointerleave', onEnd);
+}
+
+function showVoteResult(resultId, nextScreen) {
+  // No result screen (inference cards) — go directly to next
+  if (!resultId) {
+    if (nextScreen) goToScreen(nextScreen);
+    return;
+  }
+  const result = document.getElementById(resultId);
+  if (result) {
+    result.classList.add('visible');
+    // Animate bars
+    result.querySelectorAll('.result-bar-fill').forEach((bar, i) => {
+      const w = bar.style.width;
+      bar.style.width = '0';
+      setTimeout(() => { bar.style.width = w; }, 200 + i * 150);
+    });
+    // If next screen ends with -stay (Mirror Moment), show reveal instead of auto-nav
+    if (nextScreen && nextScreen.includes('-stay')) {
+      setTimeout(() => {
+        result.classList.remove('visible');
+        goToScreen('screen-reveal');
+        initReveal();
+      }, 2500);
+    } else if (nextScreen) {
+      setTimeout(() => {
+        result.classList.remove('visible');
+        goToScreen(nextScreen);
+      }, 2500);
+    }
+  }
+}
+
+function skipVote(nextScreen) {
+  goToScreen(nextScreen);
+}
+
+// ========== REVEAL SCREEN ==========
+function initReveal() {
+  // Animate percentage counter
+  const pctEl = document.getElementById('revealPct');
+  let current = 0;
+  const target = 78;
+  const interval = setInterval(() => {
+    current += 1;
+    pctEl.textContent = current + '%';
+    if (current >= target) clearInterval(interval);
+  }, 18);
+
+  // Animate bar fills (they start at 0 width via CSS, transition to target)
+  setTimeout(() => {
+    document.querySelectorAll('.tb-fill').forEach(bar => {
+      bar.style.width = bar.style.width; // trigger reflow
+    });
+  }, 800);
+}
+
+function shareReveal() {
+  // In real app: native share sheet. In mockup: show feedback.
+  const btn = event.target;
+  btn.textContent = '✓ הקישור הועתק!';
+  btn.style.color = 'var(--teal)';
+  setTimeout(() => {
+    btn.textContent = '📤 שתף את הגילוי המטורף';
+    btn.style.color = '';
+  }, 2000);
+}
+
+// ========== BRIDGE MAP ==========
+function initBridgeMap() {
+  const canvas = document.getElementById('bridgeMapCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width = canvas.parentElement.offsetWidth;
+  const h = canvas.height = canvas.parentElement.offsetHeight;
+
+  ctx.clearRect(0, 0, w, h);
+
+  const nodes = [
+    { x: w*0.5, y: h*0.2, r: 28, color: '#2DD4A8', name: 'חילונים', pct: '34%' },
+    { x: w*0.2, y: h*0.45, r: 24, color: '#E5A84B', name: 'דתיים', pct: '18%' },
+    { x: w*0.8, y: h*0.45, r: 22, color: '#5B7FBF', name: 'ערבים', pct: '21%' },
+    { x: w*0.3, y: h*0.8, r: 20, color: '#E8636F', name: 'רוסים', pct: '12%' },
+    { x: w*0.7, y: h*0.8, r: 20, color: '#8B9AAF', name: 'מזרחים', pct: '15%' },
+  ];
+
+  // Gold consensus lines
+  const lines = [
+    [0, 1, 0.73], [0, 2, 0.78], [0, 3, 0.65], [0, 4, 0.71],
+    [1, 2, 0.52], [1, 3, 0.58], [1, 4, 0.69],
+    [2, 3, 0.61], [2, 4, 0.67], [3, 4, 0.74],
+  ];
+
+  lines.forEach(([a, b, strength]) => {
+    ctx.beginPath();
+    ctx.moveTo(nodes[a].x, nodes[a].y);
+    ctx.lineTo(nodes[b].x, nodes[b].y);
+    ctx.strokeStyle = `rgba(229,168,75,${strength * 0.5})`;
+    ctx.lineWidth = strength * 4;
+    ctx.stroke();
+  });
+
+  // Draw nodes
+  nodes.forEach(n => {
+    // Glow
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.r + 4, 0, Math.PI * 2);
+    ctx.fillStyle = n.color + '22';
+    ctx.fill();
+
+    // Circle
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+    ctx.fillStyle = n.color + '33';
+    ctx.strokeStyle = n.color;
+    ctx.lineWidth = 2;
+    ctx.fill();
+    ctx.stroke();
+
+    // Label
+    ctx.font = 'bold 13px Heebo';
+    ctx.fillStyle = n.color;
+    ctx.textAlign = 'center';
+    ctx.fillText(n.name, n.x, n.y + 4);
+
+    // Percentage
+    ctx.font = '11px Heebo';
+    ctx.fillStyle = n.color + 'aa';
+    ctx.fillText(n.pct, n.x, n.y + 18);
+  });
+}
+
+// ========== INIT ==========
+document.addEventListener('DOMContentLoaded', () => {
+  // Init swipe cards
+  // Unified swipe cards (1-4: inference, no results; 5-7: pulse, with results)
+  // All 10 cards are inference — no individual results
+  // Result moments shown after cards 4 and 7 as engagement rewards
+  initSwipeCard('card1', null);
+  initSwipeCard('card2', null);
+  initSwipeCard('card3', null);
+  initSwipeCard('card4', 'result4');   // → result moment after card 4
+  initSwipeCard('card5', null);
+  initSwipeCard('card6', null);
+  initSwipeCard('card7', 'result7');   // → result moment after card 7
+  initSwipeCard('card8', 'result8');   // → result moment after card 8 (consensus)
+  initSwipeCard('card9', null);
+  initSwipeCard('card10', null);
+});
+</script>
+</body>
+</html>
