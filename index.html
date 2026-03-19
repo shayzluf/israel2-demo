@@ -452,7 +452,7 @@ input[type="range"]::-webkit-slider-thumb {
   pointer-events: none;
 }
 .swipe-card.returning {
-  transition: transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.375), box-shadow 0.35s ease, border-color 0.35s ease;
+  transition: transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.375), opacity 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 .swipe-card.entering {
   animation: cardEnter 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -3450,8 +3450,14 @@ function initSwipeCard(cardId, resultId) {
     // Y follows finger but dampened
     const yFollow = currentY * 0.35;
 
+    // Fade out progressively as card moves to either side
+    // Starts fading at 40% of threshold, reaches 0.3 opacity at full exit
+    const fadeProgress = Math.min(Math.abs(currentX) / (threshold * 2.5), 1);
+    const cardOpacity = 1 - fadeProgress * 0.7;
+
     // Apply transform with no transition (direct finger tracking)
     card.style.transform = `translateX(${currentX}px) translateY(${yFollow}px) rotate(${rotation}deg) scale(${scale})`;
+    card.style.opacity = cardOpacity;
 
     // Dynamic shadow that follows the card angle
     const shadowOffsetX = -currentX * 0.08;
@@ -3520,6 +3526,7 @@ function initSwipeCard(cardId, resultId) {
       // Spring back to center with elastic overshoot
       card.classList.add('returning');
       card.style.transform = 'translateX(0) translateY(0) rotate(0) scale(1)';
+      card.style.opacity = '1';
       card.style.borderColor = 'var(--divider)';
       card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
 
