@@ -440,11 +440,28 @@ input[type="range"]::-webkit-slider-thumb {
   user-select: none;
   touch-action: none;
   position: relative;
-  will-change: transform;
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-  animation: fadeInUp 400ms ease forwards;
+  will-change: transform, box-shadow;
+  transform-origin: center center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
 }
-.swipe-card.dragging { cursor: grabbing; }
+.swipe-card.dragging {
+  cursor: grabbing;
+}
+.swipe-card.exiting {
+  transition: transform 0.32s cubic-bezier(0.4, 0, 1, 1), opacity 0.25s ease-out, border-color 0.15s ease;
+  pointer-events: none;
+}
+.swipe-card.returning {
+  transition: transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.375), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.swipe-card.entering {
+  animation: cardEnter 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+@keyframes cardEnter {
+  from { opacity: 0; transform: scale(0.93) translateY(18px); }
+  60% { opacity: 1; transform: scale(1.01) translateY(-2px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
 .swipe-card .topic-tag {
   padding: 6px 16px;
   border-radius: var(--r-pill);
@@ -468,24 +485,31 @@ input[type="range"]::-webkit-slider-thumb {
 .swipe-indicator {
   position: absolute;
   top: 20px;
-  font-size: 18px;
-  font-weight: 700;
-  padding: 8px 20px;
+  font-size: 20px;
+  font-weight: 800;
+  padding: 10px 24px;
   border-radius: var(--r-pill);
   opacity: 0;
-  transition: opacity 150ms;
+  transition: opacity 150ms ease, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0.5) rotate(-5deg);
+  z-index: 2;
+  letter-spacing: 2px;
 }
+.swipe-indicator.visible { transform: scale(1.05) rotate(0deg); }
+.swipe-indicator.locked { transform: scale(1) rotate(0deg); }
 .swipe-indicator.for-ind {
-  left: 20px;
-  background: rgba(45,212,168,0.2);
+  left: 16px;
+  background: rgba(45,212,168,0.25);
   color: var(--teal);
-  border: 2px solid var(--teal);
+  border: 2.5px solid var(--teal);
+  text-shadow: 0 0 8px rgba(45,212,168,0.3);
 }
 .swipe-indicator.against-ind {
-  right: 20px;
-  background: rgba(91,127,191,0.2);
+  right: 16px;
+  background: rgba(91,127,191,0.25);
   color: var(--blue);
-  border: 2px solid var(--blue);
+  border: 2.5px solid var(--blue);
+  text-shadow: 0 0 8px rgba(91,127,191,0.3);
 }
 .swipe-hint {
   font-size: 13px;
@@ -507,6 +531,30 @@ input[type="range"]::-webkit-slider-thumb {
   font-weight: 500;
   cursor: pointer;
   align-self: center;
+  transition: transform 150ms ease, background 150ms ease, box-shadow 150ms ease;
+}
+.complex-btn:active {
+  animation: complexPulse 0.35s ease-out;
+}
+@keyframes complexPulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45,212,168,0.3); }
+  40% { transform: scale(0.92); box-shadow: 0 0 0 0 rgba(45,212,168,0.3); }
+  70% { transform: scale(1.06); box-shadow: 0 0 0 8px rgba(45,212,168,0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45,212,168,0); }
+}
+
+/* Swipe color screen flash */
+.swipe-flash {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 80ms ease-out;
+}
+.swipe-flash.active {
+  opacity: 1;
+  transition: opacity 20ms ease-in;
 }
 
 /* Vote result overlay */
@@ -1371,6 +1419,7 @@ input[type="range"]::-webkit-slider-thumb {
 </style>
 </head>
 <body>
+<div class="swipe-flash" id="swipeFlash"></div>
 
 <div class="phone-frame">
   <!-- Status Bar -->
@@ -3267,69 +3316,167 @@ function showSwipeTutorial(card) {
   const forInd = card.querySelector('.for-ind');
   const againstInd = card.querySelector('.against-ind');
 
-  // Step 1: Tilt right → show "בעד"
+  // Step 1: Tilt right with lift effect and glow
   setTimeout(() => {
-    card.style.transition = 'transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1)';
-    card.style.transform = 'translateX(90px) rotate(8deg)';
-    if (forInd) { forInd.style.transition = 'opacity 300ms'; forInd.style.opacity = '1'; }
+    card.style.transition = 'transform 750ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 400ms ease, border-color 400ms ease';
+    card.style.transform = 'translateX(95px) rotate(8deg) scale(1.03)';
+    card.style.boxShadow = '0 14px 40px rgba(0,0,0,0.3), 12px 0 30px rgba(45,212,168,0.12)';
+    card.style.borderColor = 'rgba(45,212,168,0.5)';
+    if (forInd) {
+      forInd.style.transition = 'opacity 250ms ease, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1)';
+      forInd.style.opacity = '1';
+      forInd.classList.add('visible');
+    }
   }, 800);
 
-  // Step 1b: Return to center
+  // Step 1b: Return to center with spring
   setTimeout(() => {
-    card.style.transition = 'transform 500ms ease-out';
-    card.style.transform = 'translateX(0) rotate(0)';
-    if (forInd) forInd.style.opacity = '0';
+    card.style.transition = 'transform 550ms cubic-bezier(0.175, 0.885, 0.32, 1.375), box-shadow 350ms ease, border-color 350ms ease';
+    card.style.transform = 'translateX(0) rotate(0) scale(1)';
+    card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
+    card.style.borderColor = 'var(--divider)';
+    if (forInd) { forInd.style.opacity = '0'; forInd.classList.remove('visible'); }
   }, 2000);
 
-  // Step 2: Tilt left → show "נגד"
+  // Step 2: Tilt left with lift effect and glow
   setTimeout(() => {
-    card.style.transition = 'transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1)';
-    card.style.transform = 'translateX(-90px) rotate(-8deg)';
-    if (againstInd) { againstInd.style.transition = 'opacity 300ms'; againstInd.style.opacity = '1'; }
+    card.style.transition = 'transform 750ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 400ms ease, border-color 400ms ease';
+    card.style.transform = 'translateX(-95px) rotate(-8deg) scale(1.03)';
+    card.style.boxShadow = '0 14px 40px rgba(0,0,0,0.3), -12px 0 30px rgba(91,127,191,0.12)';
+    card.style.borderColor = 'rgba(91,127,191,0.5)';
+    if (againstInd) {
+      againstInd.style.transition = 'opacity 250ms ease, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1)';
+      againstInd.style.opacity = '1';
+      againstInd.classList.add('visible');
+    }
   }, 2800);
 
-  // Step 2b: Return to center
+  // Step 2b: Return to center with spring
   setTimeout(() => {
-    card.style.transition = 'transform 500ms ease-out';
-    card.style.transform = 'translateX(0) rotate(0)';
-    if (againstInd) againstInd.style.opacity = '0';
+    card.style.transition = 'transform 550ms cubic-bezier(0.175, 0.885, 0.32, 1.375), box-shadow 350ms ease, border-color 350ms ease';
+    card.style.transform = 'translateX(0) rotate(0) scale(1)';
+    card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
+    card.style.borderColor = 'var(--divider)';
+    if (againstInd) { againstInd.style.opacity = '0'; againstInd.classList.remove('visible'); }
+    // Clear inline transition so dragging is smooth
+    setTimeout(() => { card.style.transition = ''; }, 600);
   }, 4000);
 }
 
-// ========== SWIPE CARDS ==========
+// ========== SCREEN FLASH UTILITY ==========
+function flashScreen(color) {
+  const flash = document.getElementById('swipeFlash');
+  if (!flash) return;
+  flash.style.background = color === 'for'
+    ? 'radial-gradient(circle at center, rgba(45,212,168,0.12) 0%, transparent 70%)'
+    : 'radial-gradient(circle at center, rgba(91,127,191,0.12) 0%, transparent 70%)';
+  flash.classList.add('active');
+  setTimeout(() => flash.classList.remove('active'), 120);
+}
+
+// ========== SWIPE CARDS (Tinder-style physics) ==========
 function initSwipeCard(cardId, resultId) {
   const card = document.getElementById(cardId);
   if (!card) return;
 
-  let startX = 0, currentX = 0, isDragging = false;
-  const threshold = 100;
-  const maxRot = 8;
+  let startX = 0, startY = 0, currentX = 0, currentY = 0;
+  let isDragging = false, startTime = 0;
+  let lastMoveTime = 0, lastMoveX = 0, lastMoveY = 0;
+  let velocityX = 0, velocityY = 0;
+  let touchPointYRatio = 0.5;
+  const threshold = 80;
   const forInd = card.querySelector('.for-ind');
   const againstInd = card.querySelector('.against-ind');
 
+  // Entrance animation
+  card.classList.add('entering');
+
   function onStart(e) {
     isDragging = true;
-    startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    startTime = Date.now();
+    lastMoveTime = startTime;
+    const cx = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const cy = e.clientY || (e.touches && e.touches[0].clientY) || 0;
+    startX = cx;
+    startY = cy;
+    lastMoveX = cx;
+    lastMoveY = cy;
+    currentX = 0;
+    currentY = 0;
+    velocityX = 0;
+    velocityY = 0;
+
+    const rect = card.getBoundingClientRect();
+    touchPointYRatio = (cy - rect.top) / rect.height;
+
     card.style.transition = 'none';
     card.classList.add('dragging');
+    card.classList.remove('entering', 'returning');
   }
 
   function onMove(e) {
     if (!isDragging) return;
     e.preventDefault();
     const cx = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const cy = e.clientY || (e.touches && e.touches[0].clientY) || 0;
     currentX = cx - startX;
-    const rot = (currentX / threshold) * maxRot;
-    const opacity = Math.min(Math.abs(currentX) / threshold, 1);
-    card.style.transform = `translateX(${currentX}px) rotate(${rot}deg)`;
+    currentY = cy - startY;
 
-    // Tinder-style: swipe right = "For" (positive), swipe left = "Against" (negative)
+    // Track velocity with exponential moving average for smooth flick detection
+    const now = Date.now();
+    const dt = Math.max(now - lastMoveTime, 1);
+    const instantVx = (cx - lastMoveX) / dt * 1000;
+    const instantVy = (cy - lastMoveY) / dt * 1000;
+    velocityX = velocityX * 0.6 + instantVx * 0.4;
+    velocityY = velocityY * 0.6 + instantVy * 0.4;
+    lastMoveTime = now;
+    lastMoveX = cx;
+    lastMoveY = cy;
+
+    // Rotation: grab-position-aware
+    // Top grab = more rotation, center grab = minimal rotation
+    const grabInfluence = Math.abs(touchPointYRatio - 0.5) * 2; // 0 at center, 1 at edges
+    const rotationSign = touchPointYRatio < 0.5 ? 1 : -1;
+    const maxRot = 14;
+    const rotation = (currentX / threshold) * maxRot * (0.3 + grabInfluence * 0.7) * rotationSign;
+
+    // Progress: 0 to 1 as we approach threshold
+    const progress = Math.min(Math.abs(currentX) / threshold, 1);
+    const overProgress = Math.min(Math.abs(currentX) / (threshold * 2), 1);
+
+    // Lift effect: scale up while dragging
+    const scale = 1 + overProgress * 0.05;
+
+    // Y follows finger but dampened
+    const yFollow = currentY * 0.35;
+
+    // Apply transform with no transition (direct finger tracking)
+    card.style.transform = `translateX(${currentX}px) translateY(${yFollow}px) rotate(${rotation}deg) scale(${scale})`;
+
+    // Dynamic shadow that follows the card angle
+    const shadowOffsetX = -currentX * 0.08;
+    const shadowBlur = 20 + overProgress * 30;
+    const shadowSpread = overProgress * 4;
+
+    // Card edge glow and indicators
     if (currentX > 0) {
-      forInd.style.opacity = opacity;
+      const glowIntensity = progress * 0.2;
+      const glowSpread = progress * 45;
+      card.style.borderColor = `rgba(45,212,168,${progress * 0.65})`;
+      card.style.boxShadow = `${shadowOffsetX}px ${12 + overProgress * 8}px ${shadowBlur}px ${shadowSpread}px rgba(0,0,0,0.25), ${progress * 18}px 0 ${glowSpread}px rgba(45,212,168,${glowIntensity})`;
+      forInd.style.opacity = progress;
+      forInd.classList.toggle('visible', progress > 0.3);
       againstInd.style.opacity = 0;
+      againstInd.classList.remove('visible');
     } else {
-      againstInd.style.opacity = opacity;
+      const glowIntensity = progress * 0.2;
+      const glowSpread = progress * 45;
+      card.style.borderColor = `rgba(91,127,191,${progress * 0.65})`;
+      card.style.boxShadow = `${shadowOffsetX}px ${12 + overProgress * 8}px ${shadowBlur}px ${shadowSpread}px rgba(0,0,0,0.25), ${-progress * 18}px 0 ${glowSpread}px rgba(91,127,191,${glowIntensity})`;
+      againstInd.style.opacity = progress;
+      againstInd.classList.toggle('visible', progress > 0.3);
       forInd.style.opacity = 0;
+      forInd.classList.remove('visible');
     }
   }
 
@@ -3338,21 +3485,60 @@ function initSwipeCard(cardId, resultId) {
     isDragging = false;
     card.classList.remove('dragging');
 
-    if (Math.abs(currentX) > threshold) {
+    // Use tracked velocity for flick detection
+    const speed = Math.abs(velocityX);
+
+    // Accept swipe if past threshold OR fast flick
+    const accepted = Math.abs(currentX) > threshold || speed > 600;
+
+    if (accepted) {
       const dir = currentX < 0 ? -1 : 1;
-      card.style.transition = 'transform 300ms ease-out, opacity 300ms ease-out';
-      card.style.transform = `translateX(${dir * 400}px) rotate(${dir * 15}deg)`;
+
+      // Flash the screen with swipe color
+      flashScreen(dir > 0 ? 'for' : 'against');
+
+      // Exit: fly off in the actual trajectory direction (maintain Y component)
+      // Use velocity to determine exit angle, not just left/right
+      const exitDist = window.innerWidth + 150;
+      const yRatio = Math.abs(currentX) > 10 ? currentY / Math.abs(currentX) : 0;
+      const exitX = dir * exitDist;
+      const exitY = yRatio * exitDist * 0.5;
+      const exitRot = dir * (18 + speed * 0.008);
+      const exitScale = 0.75;
+
+      card.classList.add('exiting');
+      card.style.transform = `translateX(${exitX}px) translateY(${exitY}px) rotate(${exitRot}deg) scale(${exitScale})`;
       card.style.opacity = '0';
+      card.style.borderColor = 'var(--divider)';
+      card.style.boxShadow = 'none';
       forInd.style.opacity = 0;
       againstInd.style.opacity = 0;
+      forInd.classList.remove('visible');
+      againstInd.classList.remove('visible');
       showVoteResult(resultId, card.dataset.next);
     } else {
-      card.style.transition = 'transform 300ms ease-out';
-      card.style.transform = 'translateX(0) rotate(0)';
+      // Spring back to center with elastic overshoot
+      card.classList.add('returning');
+      card.style.transform = 'translateX(0) translateY(0) rotate(0) scale(1)';
+      card.style.borderColor = 'var(--divider)';
+      card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
+
+      // Smoothly fade out indicators
+      forInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
+      againstInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
       forInd.style.opacity = 0;
       againstInd.style.opacity = 0;
+      forInd.classList.remove('visible');
+      againstInd.classList.remove('visible');
+
+      // Reset indicator transition after snap-back completes
+      setTimeout(() => {
+        forInd.style.transition = '';
+        againstInd.style.transition = '';
+      }, 600);
     }
     currentX = 0;
+    currentY = 0;
   }
 
   card.addEventListener('pointerdown', onStart);
