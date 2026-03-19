@@ -401,6 +401,7 @@ input[type="range"]::-webkit-slider-thumb {
   display: flex;
   gap: 8px;
   margin-bottom: 24px;
+  justify-content: center;
 }
 .vote-dot {
   width: 8px; height: 8px;
@@ -440,6 +441,8 @@ input[type="range"]::-webkit-slider-thumb {
   touch-action: none;
   position: relative;
   will-change: transform;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  animation: fadeInUp 400ms ease forwards;
 }
 .swipe-card.dragging { cursor: grabbing; }
 .swipe-card .topic-tag {
@@ -612,8 +615,19 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 13px;
   direction: ltr;
 }
-.reveal-actions { display: flex; gap: 12px; width: 100%; margin-top: 8px; }
+.reveal-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: 8px;
+  position: sticky;
+  bottom: 0;
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  padding-top: 16px;
+  background: linear-gradient(transparent, var(--bg) 30%);
+}
 .reveal-actions .btn { flex: 1; }
+#screen-reveal .screen-scroll { padding-bottom: 80px; }
 
 /* ========== PULSE FEED ========== */
 #screen-pulse { padding: 0; }
@@ -1454,6 +1468,9 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
       </div>
       <div class="swipe-area" id="swipeArea2">
         <div class="swipe-card-wrap">
@@ -1477,6 +1494,9 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="vote-dot done"></div>
         <div class="vote-dot done"></div>
         <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
@@ -1508,6 +1528,9 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
       </div>
       <div class="swipe-area" id="swipeArea4">
         <div class="swipe-card-wrap">
@@ -1526,7 +1549,7 @@ input[type="range"]::-webkit-slider-thumb {
       <button class="complex-btn" onclick="skipVote('screen-swipe5')">🤔 זה מורכב</button>
       <div class="vote-result" id="result4">
         <div class="big-pct">76%</div>
-        <div class="result-label">הסכמה חוצת שבטים!</div>
+        <div class="result-label">הסכמה חוצת קבוצות!</div>
         <div style="width:100%">
           <div class="result-bar-row">
             <span class="result-bar-label">חילונים</span>
@@ -1562,6 +1585,9 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="vote-dot current"></div>
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
       </div>
       <div class="swipe-area" id="swipeArea5">
         <div class="swipe-card-wrap">
@@ -1581,7 +1607,7 @@ input[type="range"]::-webkit-slider-thumb {
       <button class="complex-btn" onclick="skipVote('screen-swipe6')">🤔 זה מורכב</button>
       <div class="vote-result" id="result5">
         <div class="big-pct">73%</div>
-        <div class="result-label">הסכמה חוצת שבטים!</div>
+        <div class="result-label">הסכמה חוצת קבוצות!</div>
         <div style="width:100%">
           <div class="result-bar-row">
             <span class="result-bar-label">חילונים</span>
@@ -1615,6 +1641,9 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="vote-dot done"></div>
         <div class="vote-dot done"></div>
         <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
         <div class="vote-dot"></div>
       </div>
       <div class="swipe-area" id="swipeArea6">
@@ -1671,6 +1700,9 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="vote-dot done"></div>
         <div class="vote-dot done"></div>
         <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
       </div>
       <div class="swipe-area" id="swipeArea7">
         <div class="swipe-card-wrap">
@@ -1690,7 +1722,7 @@ input[type="range"]::-webkit-slider-thumb {
       <button class="complex-btn" onclick="skipVote('screen-swipe8')">🤔 זה מורכב</button>
       <div class="vote-result" id="result7">
         <div class="big-pct" style="color:var(--gold)">78%</div>
-        <div class="result-label" style="color:var(--gold)">🌉 הסכמה חוצת שבטים!</div>
+        <div class="result-label" style="color:var(--gold)">הסכמה חוצת קבוצות!</div>
         <div style="width:100%">
           <div class="result-bar-row">
             <span class="result-bar-label">חילונים</span>
@@ -1740,7 +1772,7 @@ input[type="range"]::-webkit-slider-thumb {
       <button class="complex-btn" onclick="skipVote('screen-swipe9')">🤔 זה מורכב</button>
       <div class="vote-result" id="result8">
         <div class="big-pct">80%</div>
-        <div class="result-label">כל השבטים מסכימים!</div>
+        <div class="result-label">כל הקבוצות מסכימות!</div>
         <div style="width:100%">
           <div class="result-bar-row">
             <span class="result-bar-label">חילונים</span>
@@ -1816,14 +1848,14 @@ input[type="range"]::-webkit-slider-thumb {
 
     <!-- ===== REVEAL: Mirror Moment + Constellation (shown once after all swipes) ===== -->
     <div class="screen" id="screen-reveal">
-      <div class="reveal-title animate-fade-up">✨ מטורף לגלות ✨</div>
+      <div class="reveal-title animate-fade-up">מטורף לגלות</div>
       <div class="reveal-subtitle animate-fade-up" style="animation-delay:200ms">מה שהנתונים חושפים — ישראלים מסכימים יותר ממה שחושבים</div>
 
-      <!-- Main shareable: consensus surprise -->
+      <!-- Main shareable: consensus surprise — from swipe card 4 result -->
       <div class="consensus-surprise animate-fade-up" style="animation-delay:600ms">
-        <div class="surprise-label">הסכמה בין כל השבטים</div>
+        <div class="surprise-label">הסכמה בין כל הקבוצות</div>
         <div class="surprise-pct" id="revealPct">0%</div>
-        <div class="surprise-text">מסכימים: טיפול נפשי חינם ללוחמים ומשפחות נפגעי טראומה</div>
+        <div class="surprise-text">מסכימים: בתי ספר צריכים ללמד עזרה ראשונה נפשית כבר מכיתה ז׳</div>
       </div>
 
       <!-- Tribal bar chart — who agrees -->
@@ -1845,7 +1877,7 @@ input[type="range"]::-webkit-slider-thumb {
       </div>
 
       <div class="reveal-actions animate-fade-up" style="animation-delay:1800ms">
-        <button class="btn btn-gold" onclick="enterPulseFeed()">המשך לדעת הקהל ←</button>
+        <button class="btn btn-gold" onclick="enterPulseFeed()">המשך לדעת הקהל →</button>
         <button class="btn btn-ghost" onclick="shareReveal()">📤 שתף את הגילוי המטורף</button>
       </div>
     </div>
@@ -1885,8 +1917,8 @@ input[type="range"]::-webkit-slider-thumb {
             <span class="cc-icon">🌉</span>
             <span class="cc-label">הסכמה התגלתה</span>
           </div>
-          <div class="cc-pct">78%</div>
-          <div class="cc-text">מסכימים: טיפול נפשי חינם ללוחמים ומשפחות נפגעי טראומה</div>
+          <div class="cc-pct">80%</div>
+          <div class="cc-text">מסכימים: לאסור על חברות ביטוח לסרב לכסות טיפול שרופא אישר</div>
           <div class="cc-groups">חילונים · דתיים · ערבים · רוסים — כולם!</div>
         </div>
 
@@ -1896,32 +1928,30 @@ input[type="range"]::-webkit-slider-thumb {
             <div style="display:flex;align-items:center;gap:10px">
               <div style="width:40px;height:40px;border-radius:50%;background:rgba(45,212,168,0.15);display:flex;align-items:center;justify-content:center;font-size:18px">💬</div>
               <div>
-                <div style="font-size:14px;font-weight:600">הפורום פתוח</div>
+                <div style="font-size:14px;font-weight:600">נושאים להסכמות חדשות</div>
                 <div style="font-size:12px;color:var(--text-3)"><span dir="ltr">23</span> הצהרות · <span dir="ltr">3</span> הסכמות חדשות</div>
               </div>
             </div>
-            <div style="font-size:18px;color:var(--teal)">←</div>
+            <div style="font-size:18px;color:var(--teal)">→</div>
           </div>
         </div>
 
-        <!-- Seasonal Progress Banner -->
-        <div style="margin:0 20px 16px;padding:16px;background:linear-gradient(135deg, rgba(229,168,75,0.06), rgba(45,212,168,0.06));border:1px solid rgba(229,168,75,0.2);border-radius:var(--r-lg)">
+        <!-- Trending Topics Banner -->
+        <div style="margin:0 20px 16px;padding:16px;background:linear-gradient(135deg, rgba(232,99,111,0.06), rgba(229,168,75,0.06));border:1px solid rgba(232,99,111,0.2);border-radius:var(--r-lg)">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
             <div style="display:flex;align-items:center;gap:8px">
-              <span style="font-size:16px">🌱</span>
-              <span style="font-size:14px;font-weight:700;color:var(--gold)">עונת השחרור</span>
+              <span style="font-size:16px">🔥</span>
+              <span style="font-size:14px;font-weight:700;color:var(--coral)">נושאים בוערים השבוע</span>
             </div>
-            <span style="font-size:12px;color:var(--text-3)">שבוע <span dir="ltr">6</span> מתוך <span dir="ltr">13</span></span>
+            <span style="font-size:12px;color:var(--text-3)">מבוסס על חדשות ודיונים</span>
           </div>
-          <div style="font-size:13px;color:var(--text-2);margin-bottom:10px">אביב תשפ״ו · נושא: זכויות, חירויות, חופש אזרחי</div>
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-            <div style="flex:1;height:6px;background:var(--elevated);border-radius:3px;overflow:hidden">
-              <div style="width:46%;height:100%;background:linear-gradient(90deg, var(--gold), var(--teal));border-radius:3px"></div>
-            </div>
-            <span style="font-size:12px;color:var(--text-3)">שלב 2: דיון</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
+            <span style="padding:4px 10px;background:rgba(232,99,111,0.1);color:var(--coral);border-radius:var(--r-pill);font-size:12px;font-weight:600">חינוך ולימודי ליבה</span>
+            <span style="padding:4px 10px;background:rgba(229,168,75,0.1);color:var(--gold);border-radius:var(--r-pill);font-size:12px;font-weight:600">דיור ויוקר מחיה</span>
+            <span style="padding:4px 10px;background:rgba(45,212,168,0.1);color:var(--teal);border-radius:var(--r-pill);font-size:12px;font-weight:600">ביטחון וחברה</span>
           </div>
           <div style="display:flex;gap:16px;font-size:11px;color:var(--text-3)">
-            <span>📊 <span dir="ltr" style="color:var(--teal);font-weight:600">4</span> הסכמות עונתיות</span>
+            <span>📊 <span dir="ltr" style="color:var(--teal);font-weight:600">4</span> הסכמות חדשות</span>
             <span>🗳️ <span dir="ltr" style="color:var(--gold);font-weight:600">127K</span> הצבעות</span>
             <span>🏙️ <span dir="ltr" style="font-weight:600">23</span> ערים</span>
           </div>
@@ -1966,7 +1996,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div style="font-size:15px;font-weight:500;margin-bottom:8px">טיפול נפשי ללוחמים ומשפחות</div>
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
             <span style="font-size:12px;color:var(--text-3)"><span dir="ltr">847</span> תורמים · <span dir="ltr">3</span> עמותות</span>
-            <span style="font-size:13px;color:var(--gold);font-weight:600">x4.2 מכפיל QF</span>
+            <span style="font-size:13px;color:var(--gold);font-weight:600">x30 מכפיל QF</span>
           </div>
           <div style="display:flex;align-items:center;gap:8px">
             <div style="flex:1;height:6px;background:var(--elevated);border-radius:3px;overflow:hidden">
@@ -1976,15 +2006,30 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
 
+        <!-- Assembly Summary -->
+        <div class="card" style="margin:0 20px 16px;border-right: 3px solid var(--gold);">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <span style="font-size:16px">🏛️</span>
+            <span style="font-weight:600;color:var(--gold)">סיכום אסיפה מוצלחת</span>
+          </div>
+          <div style="font-size:13px;color:var(--text-2);margin-bottom:8px">
+            נושא: תקצוב בתי ספר בפריפריה
+          </div>
+          <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">
+            12 משתתפים מ-5 קבוצות הגיעו להסכמה של 78% על הצעה משותפת
+          </div>
+          <div style="font-size:11px;color:var(--teal)">קרא/י את ההצעה המלאה →</div>
+        </div>
+
         <!-- Today's summary -->
         <div style="margin:0 20px 24px;padding:14px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
           <div style="font-size:14px;font-weight:600;margin-bottom:10px">📊 סיכום יומי</div>
           <div style="font-size:13px;color:var(--text-2);line-height:1.8">
             <div>✓ הצבעת על <span dir="ltr" style="color:var(--teal);font-weight:600">3</span> שאלות היום</div>
             <div>🌉 <span dir="ltr" style="color:var(--gold);font-weight:600">1</span> גילוי מטורף</div>
-            <div>💬 <span dir="ltr" style="color:var(--teal);font-weight:600">23</span> הצהרות חדשות בפורום</div>
-            <div>🏛️ אסיפה מחכה לך יום ד׳ — <span style="color:#c084fc">חופש ביטוי בזמן מלחמה</span></div>
-            <div>🌱 עונת השחרור · שבוע <span dir="ltr" style="font-weight:600">6</span>/<span dir="ltr">13</span></div>
+            <div>💬 <span dir="ltr" style="color:var(--teal);font-weight:600">23</span> נושאים חדשים להסכמות</div>
+            <div>🏛️ יש לך עוד <span dir="ltr" style="color:#c084fc;font-weight:600">6</span> שעות לענות באסיפה — <span style="color:#c084fc">חופש ביטוי בזמן מלחמה</span></div>
+            <div>🔥 נושאים בוערים השבוע: חינוך, ביטחון, דיור</div>
           </div>
         </div>
       </div>
@@ -1994,10 +2039,11 @@ input[type="range"]::-webkit-slider-thumb {
     <div class="screen has-tabs" id="screen-forum">
       <div class="screen-scroll">
         <div class="forum-header">
-          <button class="forum-back" onclick="goToScreen('screen-pulse')">←</button>
+          <button class="forum-back" onclick="goToScreen('screen-pulse')">→</button>
           <div class="forum-header-text">
-            <h2>הפורום</h2>
+            <h2>נושאים להסכמות חדשות</h2>
             <div class="forum-topic">חינוך · לימודי ליבה</div>
+            <div style="font-size:11px;color:var(--text-3);margin-top:4px">הנושאים שתעלו כאן הם הנושאים שיהפכו לשאלות הדופק</div>
           </div>
         </div>
 
@@ -2017,7 +2063,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
           <div class="consensus-bar-stats">
             <span>מסכים 62%</span>
-            <span>חולק 27%</span>
+            <span>לא מסכים 27%</span>
             <span>עובר 11%</span>
           </div>
         </div>
@@ -2036,13 +2082,13 @@ input[type="range"]::-webkit-slider-thumb {
             <div class="evidence-source">🔍 מקור: דו"ח למ"ס תעסוקה 2024</div>
           </div>
           <div class="statement-actions">
-            <button class="stmt-btn stmt-btn-agree" onclick="this.style.background='rgba(45,212,168,0.2)';this.textContent='✓ מסכים';this.parentElement.nextElementSibling.style.display='flex'">מסכים</button>
-            <button class="stmt-btn stmt-btn-disagree" onclick="this.style.background='rgba(91,127,191,0.2)';this.textContent='✓ חולק';this.parentElement.nextElementSibling.style.display='flex'">חולק</button>
+            <button class="stmt-btn stmt-btn-agree" onclick="toggleReaction(this,'vote')">מסכים</button>
+            <button class="stmt-btn stmt-btn-disagree" onclick="toggleReaction(this,'vote')">לא מסכים</button>
             <button class="stmt-btn stmt-btn-pass" onclick="this.style.background='rgba(90,101,120,0.2)';this.textContent='✓ עובר';this.parentElement.nextElementSibling.style.display='flex'">עובר</button>
           </div>
           <div class="statement-reactions" style="display:none">
-            <button class="reaction-btn reaction-btn-mind" onclick="this.classList.toggle('selected')">💡 שינה לי דעה <span class="reaction-count">47</span></button>
-            <button class="reaction-btn reaction-btn-strong" onclick="this.classList.toggle('selected')">💪 נקודה חזקה <span class="reaction-count">89</span></button>
+
+            <button class="reaction-btn reaction-btn-strong" onclick="this.classList.toggle('selected')">💪 חזק <span class="reaction-count">89</span></button>
             <button class="reaction-btn reaction-btn-evidence" onclick="this.classList.toggle('selected')">🔎 צריך ראיות <span class="reaction-count">12</span></button>
           </div>
         </div>
@@ -2053,20 +2099,20 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="statement-meta">
             <span class="statement-cluster">קבוצה א׳</span>
             <span><span dir="ltr">198</span> הצביעו</span>
-            <span style="color:var(--blue)">52% חולקים</span>
+            <span style="color:var(--blue)">52% לא מסכימים</span>
             <span class="need-evidence-badge">🔎 <span dir="ltr">5</span> ביקשו ראיות</span>
           </div>
           <div style="margin-top:8px;padding:8px 12px;background:rgba(232,99,111,0.06);border-radius:var(--r-sm);font-size:12px;color:var(--text-3)">
             ⏳ ממתין לתגובת מחבר ההצהרה עם ראיות (ניסיון אחד, 280 תווים, טקסט בלבד)
           </div>
           <div class="statement-actions" style="margin-top:12px">
-            <button class="stmt-btn stmt-btn-agree" onclick="this.style.background='rgba(45,212,168,0.2)';this.textContent='✓ מסכים';this.parentElement.nextElementSibling.style.display='flex'">מסכים</button>
-            <button class="stmt-btn stmt-btn-disagree" onclick="this.style.background='rgba(91,127,191,0.2)';this.textContent='✓ חולק';this.parentElement.nextElementSibling.style.display='flex'">חולק</button>
+            <button class="stmt-btn stmt-btn-agree" onclick="toggleReaction(this,'vote')">מסכים</button>
+            <button class="stmt-btn stmt-btn-disagree" onclick="toggleReaction(this,'vote')">לא מסכים</button>
             <button class="stmt-btn stmt-btn-pass" onclick="this.style.background='rgba(90,101,120,0.2)';this.textContent='✓ עובר';this.parentElement.nextElementSibling.style.display='flex'">עובר</button>
           </div>
           <div class="statement-reactions" style="display:none">
-            <button class="reaction-btn reaction-btn-mind" onclick="this.classList.toggle('selected')">💡 שינה לי דעה <span class="reaction-count">8</span></button>
-            <button class="reaction-btn reaction-btn-strong" onclick="this.classList.toggle('selected')">💪 נקודה חזקה <span class="reaction-count">23</span></button>
+
+            <button class="reaction-btn reaction-btn-strong" onclick="this.classList.toggle('selected')">💪 חזק <span class="reaction-count">23</span></button>
             <button class="reaction-btn reaction-btn-evidence selected" style="background:rgba(232,99,111,0.15);border-color:var(--coral)">🔎 צריך ראיות <span class="reaction-count">5</span></button>
           </div>
         </div>
@@ -2082,26 +2128,19 @@ input[type="range"]::-webkit-slider-thumb {
             <span style="color:var(--gold);font-weight:600">91% מסכימים מכל הקבוצות</span>
           </div>
           <div class="statement-actions">
-            <button class="stmt-btn stmt-btn-agree" onclick="this.style.background='rgba(45,212,168,0.2)';this.textContent='✓ מסכים';this.parentElement.nextElementSibling.style.display='flex'">מסכים</button>
-            <button class="stmt-btn stmt-btn-disagree" onclick="this.style.background='rgba(91,127,191,0.2)';this.textContent='✓ חולק';this.parentElement.nextElementSibling.style.display='flex'">חולק</button>
+            <button class="stmt-btn stmt-btn-agree" onclick="toggleReaction(this,'vote')">מסכים</button>
+            <button class="stmt-btn stmt-btn-disagree" onclick="toggleReaction(this,'vote')">לא מסכים</button>
             <button class="stmt-btn stmt-btn-pass" onclick="this.style.background='rgba(90,101,120,0.2)';this.textContent='✓ עובר';this.parentElement.nextElementSibling.style.display='flex'">עובר</button>
           </div>
           <div class="statement-reactions" style="display:none">
-            <button class="reaction-btn reaction-btn-mind" onclick="this.classList.toggle('selected')">💡 שינה לי דעה <span class="reaction-count">112</span></button>
-            <button class="reaction-btn reaction-btn-strong" onclick="this.classList.toggle('selected')">💪 נקודה חזקה <span class="reaction-count">203</span></button>
+
+            <button class="reaction-btn reaction-btn-strong" onclick="this.classList.toggle('selected')">💪 חזק <span class="reaction-count">203</span></button>
             <button class="reaction-btn reaction-btn-evidence" onclick="this.classList.toggle('selected')">🔎 צריך ראיות <span class="reaction-count">3</span></button>
           </div>
         </div>
 
-        <!-- Layer 2: Paired Dialogue Invitation -->
-        <div class="paired-invite">
-          <div class="paired-invite-title">💬 הזמנה לדיאלוג 1:1</div>
-          <div class="paired-invite-desc">מישהו מקבוצה אחרת רוצה לדון איתך על ההצהרה בנושא אוטונומיה בחינוך הערבי. שיחה מובנית — 3 דקות, 2 תורות, 280 תווים.</div>
-          <button class="paired-invite-btn">קבל הזמנה לדיאלוג</button>
-        </div>
-
         <!-- Submit new statement -->
-        <div class="forum-submit" onclick="this.innerHTML='<div style=\'text-align:center;padding:4px;color:var(--teal);font-size:13px\'>✓ תיבת כתיבה נפתחת (140 תווים מקס׳)</div>'">
+        <div class="forum-submit" onclick="this.innerHTML='<textarea style=&quot;width:100%;height:60px;background:var(--card-bg,var(--surface));border:1px solid var(--teal);border-radius:8px;color:var(--text-1);padding:8px;font-size:13px;resize:none;direction:rtl;font-family:var(--font)&quot; maxlength=&quot;140&quot; placeholder=&quot;כתוב/י הצהרה (עד 140 תווים)...&quot;></textarea><div style=&quot;display:flex;justify-content:space-between;margin-top:8px&quot;><span style=&quot;font-size:11px;color:var(--text-3)&quot;>50 XP</span><button style=&quot;background:var(--teal);color:var(--bg);border:none;border-radius:6px;padding:4px 16px;font-size:12px;cursor:pointer;font-family:var(--font)&quot;>שלח</button></div>'">
           <div class="forum-submit-icon">✏️</div>
           <div class="forum-submit-text">הוסף הצהרה חדשה (140 תווים, ללא תגובות)</div>
           <div class="forum-submit-cost">50 XP</div>
@@ -2110,7 +2149,7 @@ input[type="range"]::-webkit-slider-thumb {
         <!-- Anti-troll info -->
         <div style="margin:0 20px 24px;padding:12px;background:var(--surface);border-radius:var(--r-md);font-size:11px;color:var(--text-3);line-height:1.6;border:1px solid var(--divider)">
           <div style="font-weight:600;color:var(--text-2);margin-bottom:4px">🛡️ למה אין כאן כפתור תגובה?</div>
-          בהשראת pol.is — ללא תגובות, אין טרולים. אם אתה חולק על הצהרה, כתוב הצהרה טובה יותר. האלגוריתם מציף הצהרות גשר שמדברות לכל הקבוצות.
+          בהשראת pol.is — ללא תגובות, אין טרולים. אם אתה לא מסכים עם הצהרה, כתוב הצהרה טובה יותר. הנושאים הפופולריים ביותר כאן הופכים לשאלות הדופק היומיות.
         </div>
 
       </div>
@@ -2121,7 +2160,7 @@ input[type="range"]::-webkit-slider-thumb {
       <div class="screen-scroll">
         <!-- Assembly Header -->
         <div style="padding:16px 20px;display:flex;align-items:center;gap:12px">
-          <button style="background:var(--elevated);border:none;color:var(--text-1);width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center" onclick="goToScreen('screen-pulse')">←</button>
+          <button style="background:var(--elevated);border:none;color:var(--text-1);width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center" onclick="goToScreen('screen-pulse')">→</button>
           <div>
             <h2 style="font-size:20px;font-weight:700;margin:0">האסיפה</h2>
             <div style="font-size:13px;color:#c084fc;font-weight:600">חופש ביטוי בזמן מלחמה</div>
@@ -2152,14 +2191,14 @@ input[type="range"]::-webkit-slider-thumb {
             <div style="width:62%;height:100%;background:linear-gradient(90deg, var(--teal), #c084fc);border-radius:2px"></div>
           </div>
           <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--text-3)">
-            <span>שלב 3 מתוך 4</span>
-            <span style="color:#c084fc;font-weight:600">⏱️ <span dir="ltr">3:42</span> נותרו</span>
+            <span>שלב 3 מתוך 4 · אסינכרוני</span>
+            <span style="color:#c084fc;font-weight:600">⏰ יש לך עוד <span dir="ltr">6</span> שעות לענות</span>
           </div>
         </div>
 
         <!-- Participants -->
         <div style="margin:0 20px 16px;padding:12px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
-          <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">👥 <span dir="ltr">10</span> משתתפים · <span dir="ltr">5</span> קבוצות שבטיות</div>
+          <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">👥 <span dir="ltr">10</span> משתתפים · <span dir="ltr">5</span> קבוצות</div>
           <div style="display:flex;gap:6px;flex-wrap:wrap">
             <span style="padding:3px 10px;background:rgba(45,212,168,0.1);color:var(--teal);border-radius:var(--r-pill);font-size:11px">חילונים ×3</span>
             <span style="padding:3px 10px;background:rgba(229,168,75,0.1);color:var(--gold);border-radius:var(--r-pill);font-size:11px">דתיים ×2</span>
@@ -2172,13 +2211,14 @@ input[type="range"]::-webkit-slider-thumb {
         <!-- Cross-Examination: Current 1:1 Pairing -->
         <div style="margin:0 20px 16px;padding:16px;background:linear-gradient(135deg, rgba(156,100,255,0.06), rgba(45,212,168,0.06));border:1.5px solid rgba(156,100,255,0.25);border-radius:var(--r-lg)">
           <div style="font-size:13px;color:#c084fc;font-weight:600;margin-bottom:10px">🔄 שיחה 1:1</div>
-          <div style="font-size:12px;color:var(--text-3);margin-bottom:12px">זוּוגת עם משתתף מקבוצה אחרת · <span dir="ltr">2</span> תורות, <span dir="ltr">280</span> תווים כל אחת</div>
+          <div style="font-size:12px;color:var(--text-3);margin-bottom:6px">זוּוגת עם משתתף מקבוצה אחרת · <span dir="ltr">2</span> תורות, <span dir="ltr">280</span> תווים כל אחת</div>
+          <div style="font-size:11px;color:#c084fc;margin-bottom:12px">⏰ הצד השני ענה לפני <span dir="ltr">2</span> שעות — יש לך עד יום ד׳ <span dir="ltr">18:00</span> להשיב</div>
 
           <!-- Partner's message -->
           <div style="padding:12px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider);margin-bottom:10px">
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
               <div style="width:28px;height:28px;border-radius:50%;background:rgba(229,168,75,0.15);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--gold)">ד</div>
-              <span style="font-size:12px;color:var(--gold);font-weight:600">קבוצה ד׳ · דתי</span>
+              <span style="font-size:12px;color:var(--gold);font-weight:600">משתתף/ת מקבוצה אחרת</span>
             </div>
             <div style="font-size:14px;color:var(--text-1);line-height:1.6">בזמן מלחמה, ביטויים מסויימים מסכנים חיילים. יש גבול בין חופש ביטוי לבין אחריות לאומית. אני לא נגד ביקורת — אני נגד שידור מידע שמסכן חיים.</div>
           </div>
@@ -2263,9 +2303,10 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
 
         <div class="bridge-challenge">
-          <div class="bc-title">🌉 אתגר הסכמות</div>
+          <div class="bc-title">אתגר הסכמות</div>
+          <div style="font-size:12px;color:var(--text-3);margin-bottom:12px">כתבו הצהרות שכל הקבוצות יכולות להסכים עליהן. ככל שיותר קבוצות מסכימות — כך ההצהרה חזקה יותר.</div>
           <div class="bc-quote">"אני חושב שלימודי ליבה חשובים, אבל הדרך שבה הם מוצגים היום לא מתאימה לכולם. צריך גישה שמכבדת את כל הזרמים."</div>
-          <div class="bc-from">— משתתף מהאשכול: שומרי מסורת</div>
+          <div class="bc-from">— משתתף/ת</div>
           <button class="btn btn-sm btn-primary">הגב ותרוויח נקודות גשר</button>
         </div>
       </div>
@@ -2289,7 +2330,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
 
           <div class="group-breakdown">
-            <h3>פירוט לפי אשכולות</h3>
+            <h3>פירוט לפי קבוצות</h3>
             <div class="group-row">
               <span class="gr-name">חילונים</span>
               <div class="gr-bar"><div class="gr-fill" style="width:82%;background:var(--teal)"></div></div>
@@ -2400,7 +2441,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
           <div class="ps-stats">
             <div class="ps-stat">
-              <div class="pss-val" style="color:var(--gold)">x4.2</div>
+              <div class="pss-val" style="color:var(--gold)">x30</div>
               <div class="pss-label">מכפיל התאמה</div>
             </div>
             <div class="ps-stat">
@@ -2423,7 +2464,8 @@ input[type="range"]::-webkit-slider-thumb {
             <span style="font-size:11px;padding:3px 10px;background:rgba(229,168,75,0.15);color:var(--gold);border-radius:var(--r-pill);font-weight:600">סבב הסכמה · 78% הסכימו</span>
           </div>
           <div class="mc-q">טיפול נפשי ללוחמים ומשפחות</div>
-          <div style="font-size:13px;color:var(--text-3);margin-bottom:12px">3 עמותות מאושרות סעיף 46 · 8 ימים נותרו</div>
+          <div style="font-size:13px;color:var(--text-3);margin-bottom:8px">3 עמותות מאושרות סעיף 46 · 8 ימים נותרו</div>
+          <div style="font-size:13px;color:var(--gold);font-weight:600;margin-bottom:12px;padding:8px 12px;background:rgba(229,168,75,0.06);border-radius:var(--r-sm)">💡 ₪10 שלך × מכפיל 30 = ₪300 — מימון טיפול אחד מלא</div>
 
           <div style="background:var(--elevated);border-radius:var(--r-md);padding:12px;margin-bottom:12px">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
@@ -2433,11 +2475,11 @@ input[type="range"]::-webkit-slider-thumb {
             <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">טיפול פסיכולוגי ללוחמים ומשפחות נפגעי טרור</div>
             <div class="mc-prob">
               <div class="prob-bar"><div class="prob-fill" style="width:68%;background:var(--gold)"></div></div>
-              <span class="prob-val" style="color:var(--gold)">x5.2</span>
+              <span class="prob-val" style="color:var(--gold)">x32</span>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-3)">
               <span>👥 <span class="ltr-num">1,247</span> תורמים</span>
-              <span>₪<span class="ltr-num">18,400</span> + ₪<span class="ltr-num">95,680</span> התאמה</span>
+              <span>₪<span class="ltr-num">18,400</span> + ₪<span class="ltr-num">588,800</span> התאמה</span>
             </div>
           </div>
 
@@ -2449,11 +2491,11 @@ input[type="range"]::-webkit-slider-thumb {
             <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">טיפול בטראומה דרך גלישה — 12 שבועות ללוחמים</div>
             <div class="mc-prob">
               <div class="prob-bar"><div class="prob-fill" style="width:45%;background:var(--gold)"></div></div>
-              <span class="prob-val" style="color:var(--gold)">x3.8</span>
+              <span class="prob-val" style="color:var(--gold)">x28</span>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-3)">
               <span>👥 <span class="ltr-num">834</span> תורמים</span>
-              <span>₪<span class="ltr-num">9,200</span> + ₪<span class="ltr-num">34,960</span> התאמה</span>
+              <span>₪<span class="ltr-num">9,200</span> + ₪<span class="ltr-num">257,600</span> התאמה</span>
             </div>
           </div>
 
@@ -2498,7 +2540,7 @@ input[type="range"]::-webkit-slider-thumb {
             <span style="font-size:16px">📊</span>
             <span style="font-size:14px;font-weight:600;color:var(--text-2)">ההשפעה שלך החודש</span>
           </div>
-          <div style="font-size:14px;color:var(--text-2);margin-bottom:8px">תרמת ₪<span class="ltr-num">85</span> → הותאמו ל-₪<span class="ltr-num">357</span></div>
+          <div style="font-size:14px;color:var(--text-2);margin-bottom:8px">תרמת ₪<span class="ltr-num">85</span> → הותאמו ל-₪<span class="ltr-num">2,550</span> (מכפיל x30)</div>
           <div style="font-size:14px;color:var(--text-2);margin-bottom:8px">זיכוי מס צפוי: ₪<span class="ltr-num">30</span> (35%)</div>
           <div style="font-size:13px;color:var(--gold)">⭐ נט״ל דיווחו: 150 לוחמים סיימו טיפול מלא ברבעון האחרון</div>
         </div>
@@ -2514,8 +2556,8 @@ input[type="range"]::-webkit-slider-thumb {
             <span class="level-badge">Lv 4</span>
           </div>
           <div class="profile-name">שי</div>
-          <div class="profile-cluster">גשר פרגמטי</div>
-          <div class="profile-tier">דרגה 4: דובר · עונת השחרור</div>
+          <div class="profile-cluster">הפרופיל האזרחי שלך</div>
+          <div class="profile-tier">דרגה 4: דובר/ת</div>
         </div>
 
         <!-- XP Progress to Next Level -->
@@ -2563,17 +2605,17 @@ input[type="range"]::-webkit-slider-thumb {
             <div style="display:flex;justify-content:space-between"><span>רצף (14 ימים)</span><span style="direction:ltr;color:var(--gold)">+0.01x</span></div>
             <div style="display:flex;justify-content:space-between;border-top:1px solid var(--divider);padding-top:6px;margin-top:4px"><span style="font-weight:600">סה״כ</span><span style="direction:ltr;color:var(--text-1);font-weight:700">1.38x</span></div>
           </div>
-          <div style="font-size:11px;color:var(--text-3);margin-top:6px">תקרה: x3.42 · השפעה נצברת דרך בניית גשרים, לא חזרה שבטית</div>
+          <div style="font-size:11px;color:var(--text-3);margin-top:6px">תקרה: x3.42 · השפעה נצברת דרך בניית גשרים, לא חזרה על עמדות קבוצה</div>
         </div>
 
         <!-- Seasonal Badges -->
         <div style="margin:0 20px 16px;padding:14px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
-          <div style="font-size:13px;font-weight:600;margin-bottom:10px">🏅 תגים עונתיים</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:10px">🔥 נושאים בוערים שלך</div>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <span style="padding:6px 12px;background:rgba(45,212,168,0.1);color:var(--teal);border-radius:var(--r-pill);font-size:12px;font-weight:600">🏛️ ותיק אסיפה</span>
+            <span style="padding:6px 12px;background:rgba(45,212,168,0.1);color:var(--teal);border-radius:var(--r-pill);font-size:12px;font-weight:600">🏛️ ותיק/ת אסיפה</span>
             <span style="padding:6px 12px;background:rgba(229,168,75,0.1);color:var(--gold);border-radius:var(--r-pill);font-size:12px;font-weight:600">🌉 בונה גשרים</span>
-            <span style="padding:6px 12px;background:rgba(156,100,255,0.1);color:#c084fc;border-radius:var(--r-pill);font-size:12px;font-weight:600">❄️ עונת החידוש ×2</span>
-            <span style="padding:6px 12px;background:rgba(91,127,191,0.1);color:var(--blue);border-radius:var(--r-pill);font-size:12px;font-weight:600">💡 שינה לי דעה ×12</span>
+            <span style="padding:6px 12px;background:rgba(232,99,111,0.1);color:var(--coral);border-radius:var(--r-pill);font-size:12px;font-weight:600">📌 חינוך</span>
+            <span style="padding:6px 12px;background:rgba(91,127,191,0.1);color:var(--blue);border-radius:var(--r-pill);font-size:12px;font-weight:600">📌 ביטחון וחברה</span>
           </div>
         </div>
 
@@ -2589,7 +2631,7 @@ input[type="range"]::-webkit-slider-thumb {
             <div class="tier-dot"></div>
             <div style="flex:1">
               <span class="tier-name">2. צופה</span>
-              <div style="font-size:10px;color:var(--text-3)">פורום: קריאה ותגובות</div>
+              <div style="font-size:10px;color:var(--text-3)">קריאה ותגובות על נושאים</div>
             </div>
             <span class="tier-xp" style="direction:ltr">200</span>
           </div>
@@ -2597,7 +2639,7 @@ input[type="range"]::-webkit-slider-thumb {
             <div class="tier-dot"></div>
             <div style="flex:1">
               <span class="tier-name">3. משתתף/ת</span>
-              <div style="font-size:10px;color:var(--text-3)">כתיבה בפורום · הקמת נציג AI</div>
+              <div style="font-size:10px;color:var(--text-3)">כתיבת הצהרות · הקמת נציג AI</div>
             </div>
             <span class="tier-xp" style="direction:ltr">800</span>
           </div>
@@ -2637,7 +2679,7 @@ input[type="range"]::-webkit-slider-thumb {
             <div class="tier-dot"></div>
             <div style="flex:1">
               <span class="tier-name">8. נאמן/ה</span>
-              <div style="font-size:10px;color:var(--text-3)">וטו ממשל כפול · מועצה עונתית</div>
+              <div style="font-size:10px;color:var(--text-3)">וטו ממשל כפול · מועצת נושאים</div>
             </div>
             <span class="tier-xp" style="direction:ltr">101,300</span>
           </div>
@@ -2669,7 +2711,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
           <div class="activity-item">
             <span class="ai-icon">💡</span>
-            <span class="ai-text">קיבלת "שינה לי דעה" — +100 XP</span>
+            <span class="ai-text">קיבלת "שינה את דעתי" — +100 XP</span>
             <span class="ai-time">3 שעות</span>
           </div>
           <div class="activity-item">
@@ -2679,7 +2721,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
           <div class="activity-item">
             <span class="ai-icon">🌉</span>
-            <span class="ai-text">הסכמה חוצת שבטים התגלתה בעזרתך</span>
+            <span class="ai-text">הסכמה חוצת קבוצות התגלתה בעזרתך</span>
             <span class="ai-time">אתמול</span>
           </div>
           <div class="activity-item">
@@ -3187,6 +3229,36 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// ========== FORUM REACTION TOGGLE ==========
+function toggleReaction(btn, group) {
+  const parent = btn.closest('.statement-card') || btn.parentElement;
+  if (group === 'vote') {
+    parent.querySelectorAll('.stmt-btn-agree, .stmt-btn-disagree').forEach(function(b) {
+      if (b !== btn) {
+        b.classList.remove('selected');
+        b.style.background = '';
+        b.textContent = b.classList.contains('stmt-btn-agree') ? 'מסכים' : 'לא מסכים';
+      }
+    });
+  }
+  btn.classList.toggle('selected');
+  if (btn.classList.contains('selected')) {
+    if (btn.classList.contains('stmt-btn-agree')) {
+      btn.style.background = 'rgba(45,212,168,0.2)';
+      btn.textContent = '✓ מסכים';
+    } else if (btn.classList.contains('stmt-btn-disagree')) {
+      btn.style.background = 'rgba(91,127,191,0.2)';
+      btn.textContent = '✓ לא מסכים';
+    }
+  } else {
+    btn.style.background = '';
+    btn.textContent = btn.classList.contains('stmt-btn-agree') ? 'מסכים' : 'לא מסכים';
+  }
+  // Show reactions row
+  var reactions = parent.querySelector('.statement-reactions');
+  if (reactions) reactions.style.display = 'flex';
+}
+
 // ========== SWIPE TUTORIAL ==========
 let tutorialShown = false;
 function showSwipeTutorial(card) {
@@ -3302,7 +3374,7 @@ function showVoteResult(resultId, nextScreen) {
     result.querySelectorAll('.result-bar-fill').forEach((bar, i) => {
       const w = bar.style.width;
       bar.style.width = '0';
-      setTimeout(() => { bar.style.width = w; }, 200 + i * 150);
+      setTimeout(() => { bar.style.width = w; }, 300 + i * 200);
     });
     // If next screen ends with -stay (Mirror Moment), show reveal instead of auto-nav
     if (nextScreen && nextScreen.includes('-stay')) {
@@ -3310,12 +3382,12 @@ function showVoteResult(resultId, nextScreen) {
         result.classList.remove('visible');
         goToScreen('screen-reveal');
         initReveal();
-      }, 2500);
+      }, 4000);
     } else if (nextScreen) {
       setTimeout(() => {
         result.classList.remove('visible');
         goToScreen(nextScreen);
-      }, 2500);
+      }, 4000);
     }
   }
 }
