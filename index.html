@@ -1817,35 +1817,9 @@ input[type="range"]::-webkit-slider-thumb {
       </div>
       <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
       <button class="complex-btn" onclick="skipVote('screen-swipe8')">🤔 זה מורכב</button>
-      <div class="vote-result" id="result7">
-        <div class="big-pct" style="color:var(--gold)">78%</div>
-        <div class="result-label" style="color:var(--gold)">הסכמה חוצת קבוצות!</div>
-        <div style="width:100%">
-          <div class="result-bar-row">
-            <span class="result-bar-label">חילונים</span>
-            <div class="result-bar-track"><div class="result-bar-fill" style="width:81%;background:var(--gold)"></div></div>
-            <span class="result-bar-pct">81%</span>
-          </div>
-          <div class="result-bar-row">
-            <span class="result-bar-label">דתיים</span>
-            <div class="result-bar-track"><div class="result-bar-fill" style="width:74%;background:var(--gold)"></div></div>
-            <span class="result-bar-pct">74%</span>
-          </div>
-          <div class="result-bar-row">
-            <span class="result-bar-label">ערבים</span>
-            <div class="result-bar-track"><div class="result-bar-fill" style="width:79%;background:var(--gold)"></div></div>
-            <span class="result-bar-pct">79%</span>
-          </div>
-          <div class="result-bar-row">
-            <span class="result-bar-label">רוסים</span>
-            <div class="result-bar-track"><div class="result-bar-fill" style="width:76%;background:var(--gold)"></div></div>
-            <span class="result-bar-pct">76%</span>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- Card 8: Gender separation (Q8) -->
+    <!-- Card 8: CONSENSUS — ban insurance overriding doctors -->
     <div class="screen" id="screen-swipe8">
       <div class="vote-progress">
         <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
@@ -3938,8 +3912,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSwipeCard('card4', 'result4');   // → result moment after card 4
   initSwipeCard('card5', null);
   initSwipeCard('card6', null);
-  initSwipeCard('card7', 'result7');   // → result moment after card 7
-  initSwipeCard('card8', 'result8');   // → result moment after card 8 (consensus)
+  initSwipeCard('card7', null);         // inference — no result
+  initSwipeCard('card8', 'result8');   // CONSENSUS — result moment after card 8
   initSwipeCard('card9', null);
   initSwipeCard('card10', null);
 });
