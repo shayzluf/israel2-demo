@@ -3316,12 +3316,16 @@ function showSwipeTutorial(card) {
   const forInd = card.querySelector('.for-ind');
   const againstInd = card.querySelector('.against-ind');
 
-  // Step 1: Tilt right with lift effect and glow
+  const tutTrans = 'transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 500ms ease, box-shadow 400ms ease, border-color 400ms ease';
+  const tutReturn = 'transform 550ms cubic-bezier(0.175, 0.885, 0.32, 1.375), opacity 400ms ease, box-shadow 350ms ease, border-color 350ms ease';
+
+  // Step 1: Swipe right — matches real drag experience (translateX + Y arc + rotation + fade + glow)
   setTimeout(() => {
-    card.style.transition = 'transform 750ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 400ms ease, border-color 400ms ease';
-    card.style.transform = 'translateX(95px) rotate(8deg) scale(1.03)';
-    card.style.boxShadow = '0 14px 40px rgba(0,0,0,0.3), 12px 0 30px rgba(45,212,168,0.12)';
-    card.style.borderColor = 'rgba(45,212,168,0.5)';
+    card.style.transition = tutTrans;
+    card.style.transform = 'translateX(100px) translateY(-12px) rotate(10deg) scale(1.04)';
+    card.style.opacity = '0.72';
+    card.style.boxShadow = '0 14px 40px rgba(0,0,0,0.3), 16px 0 40px rgba(45,212,168,0.15)';
+    card.style.borderColor = 'rgba(45,212,168,0.6)';
     if (forInd) {
       forInd.style.transition = 'opacity 250ms ease, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1)';
       forInd.style.opacity = '1';
@@ -3331,36 +3335,39 @@ function showSwipeTutorial(card) {
 
   // Step 1b: Return to center with spring
   setTimeout(() => {
-    card.style.transition = 'transform 550ms cubic-bezier(0.175, 0.885, 0.32, 1.375), box-shadow 350ms ease, border-color 350ms ease';
-    card.style.transform = 'translateX(0) rotate(0) scale(1)';
+    card.style.transition = tutReturn;
+    card.style.transform = 'translateX(0) translateY(0) rotate(0) scale(1)';
+    card.style.opacity = '1';
     card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
     card.style.borderColor = 'var(--divider)';
     if (forInd) { forInd.style.opacity = '0'; forInd.classList.remove('visible'); }
-  }, 2000);
+  }, 1900);
 
-  // Step 2: Tilt left with lift effect and glow
+  // Step 2: Swipe left — same physics, opposite direction
   setTimeout(() => {
-    card.style.transition = 'transform 750ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 400ms ease, border-color 400ms ease';
-    card.style.transform = 'translateX(-95px) rotate(-8deg) scale(1.03)';
-    card.style.boxShadow = '0 14px 40px rgba(0,0,0,0.3), -12px 0 30px rgba(91,127,191,0.12)';
-    card.style.borderColor = 'rgba(91,127,191,0.5)';
+    card.style.transition = tutTrans;
+    card.style.transform = 'translateX(-100px) translateY(-12px) rotate(-10deg) scale(1.04)';
+    card.style.opacity = '0.72';
+    card.style.boxShadow = '0 14px 40px rgba(0,0,0,0.3), -16px 0 40px rgba(91,127,191,0.15)';
+    card.style.borderColor = 'rgba(91,127,191,0.6)';
     if (againstInd) {
       againstInd.style.transition = 'opacity 250ms ease, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1)';
       againstInd.style.opacity = '1';
       againstInd.classList.add('visible');
     }
-  }, 2800);
+  }, 2700);
 
   // Step 2b: Return to center with spring
   setTimeout(() => {
-    card.style.transition = 'transform 550ms cubic-bezier(0.175, 0.885, 0.32, 1.375), box-shadow 350ms ease, border-color 350ms ease';
-    card.style.transform = 'translateX(0) rotate(0) scale(1)';
+    card.style.transition = tutReturn;
+    card.style.transform = 'translateX(0) translateY(0) rotate(0) scale(1)';
+    card.style.opacity = '1';
     card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
     card.style.borderColor = 'var(--divider)';
     if (againstInd) { againstInd.style.opacity = '0'; againstInd.classList.remove('visible'); }
-    // Clear inline transition so dragging is smooth
-    setTimeout(() => { card.style.transition = ''; }, 600);
-  }, 4000);
+    // Clear inline styles so real drag has zero lag
+    setTimeout(() => { card.style.transition = ''; card.style.opacity = ''; }, 600);
+  }, 3800);
 }
 
 // ========== SCREEN FLASH UTILITY ==========
