@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>Israel 2.0</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -57,7 +57,7 @@ body {
   box-shadow: 0 0 0 12px #1a1a1a, 0 0 0 14px #333, 0 20px 60px rgba(0,0,0,0.6);
 }
 @media (max-width: 428px) {
-  .phone-frame { width: 100vw; height: 100vh; border-radius: 0; box-shadow: none; }
+  .phone-frame { width: 100vw; height: 100dvh; border-radius: 0; box-shadow: none; }
 }
 
 /* Status bar */
@@ -100,20 +100,20 @@ body {
   overscroll-behavior: none;
 }
 .screen.active { display: flex; opacity: 1; }
-.screen.has-tabs { bottom: 72px; }
+.screen.has-tabs { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
 .screen-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: 24px; }
 
 /* ========== BOTTOM TAB BAR ========== */
 .tab-bar {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  height: 72px;
+  height: calc(72px + env(safe-area-inset-bottom, 0px));
   background: var(--surface);
   border-top: 1px solid var(--divider);
   display: none;
   align-items: center;
   justify-content: space-around;
-  padding-bottom: 8px;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0px));
   z-index: 100;
 }
 .tab-bar.visible { display: flex; }
