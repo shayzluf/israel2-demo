@@ -511,36 +511,26 @@ input[type="range"]::-webkit-slider-thumb {
   border: 2.5px solid var(--blue);
   text-shadow: 0 0 8px rgba(91,127,191,0.3);
 }
+.swipe-indicator.complex-ind {
+  left: 50%;
+  transform: scale(0.5) rotate(-5deg) translateX(-50%);
+  background: rgba(229,168,75,0.25);
+  color: #E5A84B;
+  border: 2.5px solid #E5A84B;
+  text-shadow: 0 0 8px rgba(229,168,75,0.3);
+}
+.swipe-indicator.complex-ind.visible { transform: scale(1.05) rotate(0deg) translateX(-50%); }
+.swipe-indicator.complex-ind.locked { transform: scale(1) rotate(0deg) translateX(-50%); }
 .swipe-hint {
   font-size: 13px;
   color: var(--text-3);
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 24px;
   margin-top: 12px;
 }
-.complex-btn {
-  margin-top: 8px;
-  padding: 12px 32px;
-  border-radius: var(--r-pill);
-  background: var(--elevated);
-  border: 1px solid var(--divider);
-  color: var(--text-2);
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  align-self: center;
-  transition: transform 150ms ease, background 150ms ease, box-shadow 150ms ease;
-}
-.complex-btn:active {
-  animation: complexPulse 0.35s ease-out;
-}
-@keyframes complexPulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45,212,168,0.3); }
-  40% { transform: scale(0.92); box-shadow: 0 0 0 0 rgba(45,212,168,0.3); }
-  70% { transform: scale(1.06); box-shadow: 0 0 0 8px rgba(45,212,168,0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45,212,168,0); }
+.swipe-hint .hint-complex {
+  opacity: 0.7;
 }
 
 /* Swipe color screen flash */
@@ -1544,6 +1534,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card1" data-next="screen-swipe2">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">ביטחון ושוויון</div>
             <div class="q-text">האם שירות צבאי או אזרחי צריך לחול על כל האזרחים ללא יוצא מן הכלל?</div>
             <div class="q-meta">
@@ -1552,8 +1543,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="goToScreen('screen-swipe2')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
     </div>
 
     <div class="screen" id="screen-swipe2">
@@ -1574,6 +1564,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card2" data-next="screen-swipe3">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">דת ומדינה</div>
             <div class="q-text">האם לשכונות מגורים צריכה להיות הזכות למנוע תחבורה ציבורית בשבת?</div>
             <div class="q-meta">
@@ -1582,8 +1573,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="goToScreen('screen-swipe3')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
     </div>
 
     <div class="screen" id="screen-swipe3">
@@ -1604,6 +1594,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card3" data-next="screen-swipe4">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">שטחים ומדיניות</div>
             <div class="q-text">האם ישראל צריכה להקפיא בנייה ביהודה ושומרון כתנאי להסכם מדיני?</div>
             <div class="q-meta">
@@ -1612,8 +1603,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="goToScreen('screen-swipe4')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
     </div>
 
     <div class="screen" id="screen-swipe4">
@@ -1634,6 +1624,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card4" data-next="screen-swipe5">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">חינוך ובריאות</div>
             <div class="q-text">האם בתי ספר צריכים ללמד עזרה ראשונה נפשית כבר מכיתה ז׳?</div>
             <div class="q-meta">
@@ -1642,8 +1633,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="skipVote('screen-swipe5')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
       <div class="vote-result" id="result4">
         <div class="big-pct">76%</div>
         <div class="result-label">הסכמה חוצת קבוצות!</div>
@@ -1691,6 +1681,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card5" data-next="screen-swipe6">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">שפה וחברה</div>
             <div class="q-text">האם בתי ספר צריכים להחליט בעצמם אם ללמד ערבית כחובה?</div>
             <div class="q-meta">
@@ -1700,8 +1691,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="skipVote('screen-swipe6')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
       <div class="vote-result" id="result5">
         <div class="big-pct">73%</div>
         <div class="result-label">הסכמה חוצת קבוצות!</div>
@@ -1748,6 +1738,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card6" data-next="screen-swipe7">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">דת ומדינה</div>
             <div class="q-text">האם צריך לאפשר נישואין אזרחיים בישראל?</div>
             <div class="q-meta">
@@ -1758,8 +1749,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="skipVote('screen-swipe7')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
       <div class="vote-result" id="result6">
         <div class="big-pct">71%</div>
         <div class="result-label">מסכימים איתך!</div>
@@ -1806,6 +1796,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card7" data-next="screen-swipe8">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">מדיניות</div>
             <div class="q-text">האם ישראל צריכה לדרוש פירוק תשתיות טרור לפני חידוש משא ומתן?</div>
             <div class="q-meta">
@@ -1815,8 +1806,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="skipVote('screen-swipe8')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
     </div>
 
     <!-- Card 8: CONSENSUS — ban insurance overriding doctors -->
@@ -1831,6 +1821,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card8" data-next="screen-swipe9">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">בריאות</div>
             <div class="q-text">האם צריך לאסור על חברות ביטוח לסרב לכסות טיפול שרופא אישר?</div>
             <div class="q-meta">
@@ -1839,8 +1830,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="skipVote('screen-swipe9')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
       <div class="vote-result" id="result8">
         <div class="big-pct">80%</div>
         <div class="result-label">כל הקבוצות מסכימות!</div>
@@ -1881,6 +1871,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card9" data-next="screen-swipe10">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">חברה</div>
             <div class="q-text">האם מותר לאפשר הפרדה בין נשים לגברים באירועים ציבוריים?</div>
             <div class="q-meta">
@@ -1889,8 +1880,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="goToScreen('screen-swipe10')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
     </div>
 
     <!-- Card 10: Nakba recognition (Q10) -->
@@ -1905,6 +1895,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="swipe-card" id="card10" data-next="screen-reveal">
             <div class="swipe-indicator for-ind">בעד</div>
             <div class="swipe-indicator against-ind">נגד</div>
+            <div class="swipe-indicator complex-ind">מורכב</div>
             <div class="topic-tag">זהות וזיכרון</div>
             <div class="q-text">האם המדינה צריכה להכיר רשמית באירועי הנכבה?</div>
             <div class="q-meta">
@@ -1913,8 +1904,7 @@ input[type="range"]::-webkit-slider-thumb {
           </div>
         </div>
       </div>
-      <div class="swipe-hint"><span>← נגד</span><span>בעד →</span></div>
-      <button class="complex-btn" onclick="showVoteResult(null, 'screen-reveal')">🤔 זה מורכב</button>
+      <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
     </div>
 
     <!-- ===== REVEAL: Mirror Moment + Constellation (shown once after all swipes) ===== -->
@@ -3574,18 +3564,47 @@ function showSwipeTutorial(card) {
     card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
     card.style.borderColor = 'var(--divider)';
     if (againstInd) { againstInd.style.opacity = '0'; againstInd.classList.remove('visible'); }
+  }, 3800);
+
+  // Step 3: Swipe up — "it's complex"
+  const complexInd = card.querySelector('.complex-ind');
+  setTimeout(() => {
+    card.style.transition = tutTrans;
+    card.style.transform = 'translateX(0) translateY(-90px) scale(1.04)';
+    card.style.opacity = '0.72';
+    card.style.boxShadow = '0 -14px 40px rgba(0,0,0,0.3), 0 -16px 40px rgba(229,168,75,0.15)';
+    card.style.borderColor = 'rgba(229,168,75,0.6)';
+    if (complexInd) {
+      complexInd.style.transition = 'opacity 250ms ease, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1)';
+      complexInd.style.opacity = '1';
+      complexInd.classList.add('visible');
+    }
+  }, 4600);
+
+  // Step 3b: Return to center
+  setTimeout(() => {
+    card.style.transition = tutReturn;
+    card.style.transform = 'translateX(0) translateY(0) rotate(0) scale(1)';
+    card.style.opacity = '1';
+    card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
+    card.style.borderColor = 'var(--divider)';
+    if (complexInd) { complexInd.style.opacity = '0'; complexInd.classList.remove('visible'); }
     // Clear inline styles so real drag has zero lag
     setTimeout(() => { card.style.transition = ''; card.style.opacity = ''; }, 600);
-  }, 3800);
+  }, 5700);
 }
 
 // ========== SCREEN FLASH UTILITY ==========
 function flashScreen(color) {
   const flash = document.getElementById('swipeFlash');
   if (!flash) return;
-  flash.style.background = color === 'for'
-    ? 'radial-gradient(circle at center, rgba(45,212,168,0.12) 0%, transparent 70%)'
-    : 'radial-gradient(circle at center, rgba(91,127,191,0.12) 0%, transparent 70%)';
+  if (color === 'for') {
+    flash.style.background = 'radial-gradient(circle at center, rgba(45,212,168,0.12) 0%, transparent 70%)';
+  } else if (color === 'complex') {
+    flash.style.background = 'radial-gradient(circle at center, rgba(229,168,75,0.12) 0%, transparent 70%)';
+  } else {
+    flash.style.background = 'radial-gradient(circle at center, rgba(91,127,191,0.12) 0%, transparent 70%)';
+  }
   flash.classList.add('active');
   setTimeout(() => flash.classList.remove('active'), 120);
 }
@@ -3603,12 +3622,28 @@ function initSwipeCard(cardId, resultId) {
   const threshold = 80;
   const forInd = card.querySelector('.for-ind');
   const againstInd = card.querySelector('.against-ind');
+  const complexInd = card.querySelector('.complex-ind');
+  const verticalThreshold = 80;
 
   // Entrance animation (skip for card1 — tutorial handles it)
   if (cardId !== 'card1') card.classList.add('entering');
 
+  // Determine dominant axis after initial movement to lock swipe direction
+  let swipeAxis = null; // 'horizontal' or 'vertical'
+  const axisLockDistance = 15; // px before axis is decided
+
+  function resetIndicators() {
+    forInd.style.opacity = 0;
+    againstInd.style.opacity = 0;
+    complexInd.style.opacity = 0;
+    forInd.classList.remove('visible');
+    againstInd.classList.remove('visible');
+    complexInd.classList.remove('visible');
+  }
+
   function onStart(e) {
     isDragging = true;
+    swipeAxis = null;
     startTime = Date.now();
     lastMoveTime = startTime;
     const cx = e.clientX || (e.touches && e.touches[0].clientX) || 0;
@@ -3638,6 +3673,11 @@ function initSwipeCard(cardId, resultId) {
     currentX = cx - startX;
     currentY = cy - startY;
 
+    // Lock axis after initial movement
+    if (!swipeAxis && (Math.abs(currentX) > axisLockDistance || Math.abs(currentY) > axisLockDistance)) {
+      swipeAxis = Math.abs(currentX) >= Math.abs(currentY) ? 'horizontal' : 'vertical';
+    }
+
     // Track velocity with exponential moving average for smooth flick detection
     const now = Date.now();
     const dt = Math.max(now - lastMoveTime, 1);
@@ -3649,56 +3689,73 @@ function initSwipeCard(cardId, resultId) {
     lastMoveX = cx;
     lastMoveY = cy;
 
-    // Rotation: grab-position-aware
-    // Top grab = more rotation, center grab = minimal rotation
-    const grabInfluence = Math.abs(touchPointYRatio - 0.5) * 2; // 0 at center, 1 at edges
-    const rotationSign = touchPointYRatio < 0.5 ? 1 : -1;
-    const maxRot = 14;
-    const rotation = (currentX / threshold) * maxRot * (0.3 + grabInfluence * 0.7) * rotationSign;
+    if (swipeAxis === 'vertical') {
+      // ---- VERTICAL (upward = complex) ----
+      const upY = Math.min(currentY, 0); // only track upward movement
+      const dampX = currentX * 0.15; // slight horizontal follow
+      const progressV = Math.min(Math.abs(upY) / verticalThreshold, 1);
+      const overProgressV = Math.min(Math.abs(upY) / (verticalThreshold * 2), 1);
+      const scale = 1 + overProgressV * 0.05;
+      const fadeV = Math.min(Math.abs(upY) / (verticalThreshold * 2.5), 1);
+      const cardOpacity = 1 - fadeV * 0.7;
 
-    // Progress: 0 to 1 as we approach threshold
-    const progress = Math.min(Math.abs(currentX) / threshold, 1);
-    const overProgress = Math.min(Math.abs(currentX) / (threshold * 2), 1);
+      card.style.transform = `translateX(${dampX}px) translateY(${upY}px) scale(${scale})`;
+      card.style.opacity = cardOpacity;
 
-    // Lift effect: scale up while dragging
-    const scale = 1 + overProgress * 0.05;
-
-    // Y follows finger but dampened
-    const yFollow = currentY * 0.35;
-
-    // Fade out progressively as card moves to either side
-    // Starts fading at 40% of threshold, reaches 0.3 opacity at full exit
-    const fadeProgress = Math.min(Math.abs(currentX) / (threshold * 2.5), 1);
-    const cardOpacity = 1 - fadeProgress * 0.7;
-
-    // Apply transform with no transition (direct finger tracking)
-    card.style.transform = `translateX(${currentX}px) translateY(${yFollow}px) rotate(${rotation}deg) scale(${scale})`;
-    card.style.opacity = cardOpacity;
-
-    // Dynamic shadow that follows the card angle
-    const shadowOffsetX = -currentX * 0.08;
-    const shadowBlur = 20 + overProgress * 30;
-    const shadowSpread = overProgress * 4;
-
-    // Card edge glow and indicators
-    if (currentX > 0) {
-      const glowIntensity = progress * 0.2;
-      const glowSpread = progress * 45;
-      card.style.borderColor = `rgba(45,212,168,${progress * 0.65})`;
-      card.style.boxShadow = `${shadowOffsetX}px ${12 + overProgress * 8}px ${shadowBlur}px ${shadowSpread}px rgba(0,0,0,0.25), ${progress * 18}px 0 ${glowSpread}px rgba(45,212,168,${glowIntensity})`;
-      forInd.style.opacity = progress;
-      forInd.classList.toggle('visible', progress > 0.3);
-      againstInd.style.opacity = 0;
-      againstInd.classList.remove('visible');
+      if (upY < 0) {
+        card.style.borderColor = `rgba(229,168,75,${progressV * 0.65})`;
+        card.style.boxShadow = `0 ${-progressV * 18}px ${20 + overProgressV * 30}px ${overProgressV * 4}px rgba(0,0,0,0.25), 0 ${-progressV * 18}px ${progressV * 45}px rgba(229,168,75,${progressV * 0.2})`;
+        complexInd.style.opacity = progressV;
+        complexInd.classList.toggle('visible', progressV > 0.3);
+        forInd.style.opacity = 0;
+        againstInd.style.opacity = 0;
+        forInd.classList.remove('visible');
+        againstInd.classList.remove('visible');
+      }
     } else {
-      const glowIntensity = progress * 0.2;
-      const glowSpread = progress * 45;
-      card.style.borderColor = `rgba(91,127,191,${progress * 0.65})`;
-      card.style.boxShadow = `${shadowOffsetX}px ${12 + overProgress * 8}px ${shadowBlur}px ${shadowSpread}px rgba(0,0,0,0.25), ${-progress * 18}px 0 ${glowSpread}px rgba(91,127,191,${glowIntensity})`;
-      againstInd.style.opacity = progress;
-      againstInd.classList.toggle('visible', progress > 0.3);
-      forInd.style.opacity = 0;
-      forInd.classList.remove('visible');
+      // ---- HORIZONTAL (left/right) ----
+      // Rotation: grab-position-aware
+      const grabInfluence = Math.abs(touchPointYRatio - 0.5) * 2;
+      const rotationSign = touchPointYRatio < 0.5 ? 1 : -1;
+      const maxRot = 14;
+      const rotation = (currentX / threshold) * maxRot * (0.3 + grabInfluence * 0.7) * rotationSign;
+
+      const progress = Math.min(Math.abs(currentX) / threshold, 1);
+      const overProgress = Math.min(Math.abs(currentX) / (threshold * 2), 1);
+      const scale = 1 + overProgress * 0.05;
+      const yFollow = currentY * 0.35;
+      const fadeProgress = Math.min(Math.abs(currentX) / (threshold * 2.5), 1);
+      const cardOpacity = 1 - fadeProgress * 0.7;
+
+      card.style.transform = `translateX(${currentX}px) translateY(${yFollow}px) rotate(${rotation}deg) scale(${scale})`;
+      card.style.opacity = cardOpacity;
+
+      const shadowOffsetX = -currentX * 0.08;
+      const shadowBlur = 20 + overProgress * 30;
+      const shadowSpread = overProgress * 4;
+
+      complexInd.style.opacity = 0;
+      complexInd.classList.remove('visible');
+
+      if (currentX > 0) {
+        const glowIntensity = progress * 0.2;
+        const glowSpread = progress * 45;
+        card.style.borderColor = `rgba(45,212,168,${progress * 0.65})`;
+        card.style.boxShadow = `${shadowOffsetX}px ${12 + overProgress * 8}px ${shadowBlur}px ${shadowSpread}px rgba(0,0,0,0.25), ${progress * 18}px 0 ${glowSpread}px rgba(45,212,168,${glowIntensity})`;
+        forInd.style.opacity = progress;
+        forInd.classList.toggle('visible', progress > 0.3);
+        againstInd.style.opacity = 0;
+        againstInd.classList.remove('visible');
+      } else {
+        const glowIntensity = progress * 0.2;
+        const glowSpread = progress * 45;
+        card.style.borderColor = `rgba(91,127,191,${progress * 0.65})`;
+        card.style.boxShadow = `${shadowOffsetX}px ${12 + overProgress * 8}px ${shadowBlur}px ${shadowSpread}px rgba(0,0,0,0.25), ${-progress * 18}px 0 ${glowSpread}px rgba(91,127,191,${glowIntensity})`;
+        againstInd.style.opacity = progress;
+        againstInd.classList.toggle('visible', progress > 0.3);
+        forInd.style.opacity = 0;
+        forInd.classList.remove('visible');
+      }
     }
   }
 
@@ -3707,61 +3764,83 @@ function initSwipeCard(cardId, resultId) {
     isDragging = false;
     card.classList.remove('dragging');
 
-    // Use tracked velocity for flick detection
-    const speed = Math.abs(velocityX);
+    if (swipeAxis === 'vertical') {
+      // ---- VERTICAL END ----
+      const upY = Math.min(currentY, 0);
+      const speedV = Math.abs(velocityY);
+      const acceptedV = Math.abs(upY) > verticalThreshold || (speedV > 600 && currentY < 0);
 
-    // Accept swipe if past threshold OR fast flick
-    const accepted = Math.abs(currentX) > threshold || speed > 600;
+      if (acceptedV) {
+        flashScreen('complex');
 
-    if (accepted) {
-      const dir = currentX < 0 ? -1 : 1;
+        const exitY = -(window.innerHeight + 150);
+        const dampX = currentX * 0.15;
 
-      // Flash the screen with swipe color
-      flashScreen(dir > 0 ? 'for' : 'against');
+        card.classList.add('exiting');
+        card.style.transform = `translateX(${dampX}px) translateY(${exitY}px) scale(0.75)`;
+        card.style.opacity = '0';
+        card.style.borderColor = 'var(--divider)';
+        card.style.boxShadow = 'none';
+        resetIndicators();
+        showVoteResult(resultId, card.dataset.next);
+      } else {
+        // Spring back
+        card.classList.add('returning');
+        card.style.transform = 'translateX(0) translateY(0) rotate(0) scale(1)';
+        card.style.opacity = '1';
+        card.style.borderColor = 'var(--divider)';
+        card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
 
-      // Exit: fly off in the actual trajectory direction (maintain Y component)
-      // Use velocity to determine exit angle, not just left/right
-      const exitDist = window.innerWidth + 150;
-      const yRatio = Math.abs(currentX) > 10 ? currentY / Math.abs(currentX) : 0;
-      const exitX = dir * exitDist;
-      const exitY = yRatio * exitDist * 0.5;
-      const exitRot = dir * (18 + speed * 0.008);
-      const exitScale = 0.75;
-
-      card.classList.add('exiting');
-      card.style.transform = `translateX(${exitX}px) translateY(${exitY}px) rotate(${exitRot}deg) scale(${exitScale})`;
-      card.style.opacity = '0';
-      card.style.borderColor = 'var(--divider)';
-      card.style.boxShadow = 'none';
-      forInd.style.opacity = 0;
-      againstInd.style.opacity = 0;
-      forInd.classList.remove('visible');
-      againstInd.classList.remove('visible');
-      showVoteResult(resultId, card.dataset.next);
+        complexInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
+        complexInd.style.opacity = 0;
+        complexInd.classList.remove('visible');
+        setTimeout(() => { complexInd.style.transition = ''; }, 600);
+      }
     } else {
-      // Spring back to center with elastic overshoot
-      card.classList.add('returning');
-      card.style.transform = 'translateX(0) translateY(0) rotate(0) scale(1)';
-      card.style.opacity = '1';
-      card.style.borderColor = 'var(--divider)';
-      card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
+      // ---- HORIZONTAL END ----
+      const speed = Math.abs(velocityX);
+      const accepted = Math.abs(currentX) > threshold || speed > 600;
 
-      // Smoothly fade out indicators
-      forInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
-      againstInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
-      forInd.style.opacity = 0;
-      againstInd.style.opacity = 0;
-      forInd.classList.remove('visible');
-      againstInd.classList.remove('visible');
+      if (accepted) {
+        const dir = currentX < 0 ? -1 : 1;
+        flashScreen(dir > 0 ? 'for' : 'against');
 
-      // Reset indicator transition after snap-back completes
-      setTimeout(() => {
-        forInd.style.transition = '';
-        againstInd.style.transition = '';
-      }, 600);
+        const exitDist = window.innerWidth + 150;
+        const yRatio = Math.abs(currentX) > 10 ? currentY / Math.abs(currentX) : 0;
+        const exitX = dir * exitDist;
+        const exitY = yRatio * exitDist * 0.5;
+        const exitRot = dir * (18 + speed * 0.008);
+
+        card.classList.add('exiting');
+        card.style.transform = `translateX(${exitX}px) translateY(${exitY}px) rotate(${exitRot}deg) scale(0.75)`;
+        card.style.opacity = '0';
+        card.style.borderColor = 'var(--divider)';
+        card.style.boxShadow = 'none';
+        resetIndicators();
+        showVoteResult(resultId, card.dataset.next);
+      } else {
+        card.classList.add('returning');
+        card.style.transform = 'translateX(0) translateY(0) rotate(0) scale(1)';
+        card.style.opacity = '1';
+        card.style.borderColor = 'var(--divider)';
+        card.style.boxShadow = '0 2px 12px rgba(0,0,0,0.15)';
+
+        forInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
+        againstInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
+        forInd.style.opacity = 0;
+        againstInd.style.opacity = 0;
+        forInd.classList.remove('visible');
+        againstInd.classList.remove('visible');
+
+        setTimeout(() => {
+          forInd.style.transition = '';
+          againstInd.style.transition = '';
+        }, 600);
+      }
     }
     currentX = 0;
     currentY = 0;
+    swipeAxis = null;
   }
 
   card.addEventListener('pointerdown', onStart);
