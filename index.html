@@ -627,73 +627,29 @@ input[type="range"]::-webkit-slider-thumb {
   animation: goldShimmer 2s ease-in-out infinite;
 }
 .surprise-label { font-size: 13px; color: var(--gold); font-weight: 600; margin-bottom: 8px; letter-spacing: 1px; }
-.surprise-pct { font-size: 48px; font-weight: 700; color: var(--gold); direction: ltr; }
+.surprise-pct { font-size: 56px; font-weight: 700; color: var(--gold); direction: ltr; }
 .surprise-text { font-size: 16px; color: var(--text-2); margin-top: 8px; line-height: 1.5; }
-.dna-card {
-  width: 100%;
-  padding: 20px;
-  background: var(--elevated);
-  border-radius: var(--r-lg);
-  text-align: center;
-}
-.dna-card .cluster-name { font-size: 20px; font-weight: 700; color: var(--teal); margin: 8px 0; }
-.dna-card .cluster-desc { font-size: 14px; color: var(--text-2); }
-.reveal-tribes {
-  width: 100%;
-  padding: 16px 20px;
-  background: var(--elevated);
-  border-radius: var(--r-lg);
+.surprise-divider { width: 60%; height: 1px; background: rgba(229, 168, 75, 0.15); margin: 16px auto; }
+.surprise-groups { font-size: 13px; color: var(--text-3); line-height: 1.4; }
+/* (tribal bar chart + dna-card removed — consolidated into consensus-surprise card) */
+#screen-reveal {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-}
-.tribe-bar {
-  display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-}
-.tb-name {
-  width: 60px;
-  text-align: right;
-  color: var(--text-2);
-  flex-shrink: 0;
-}
-.tb-track {
-  flex: 1;
-  height: 14px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 7px;
-  overflow: hidden;
-}
-.tb-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--teal), var(--gold));
-  border-radius: 7px;
-  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.tb-pct {
-  width: 36px;
-  text-align: left;
-  color: var(--gold);
-  font-weight: 600;
-  font-size: 13px;
-  direction: ltr;
+  justify-content: center;
+  padding: 24px 20px;
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  gap: 0;
 }
 .reveal-actions {
   display: flex;
   flex-direction: column;
   gap: 8px;
   width: 100%;
-  margin-top: 8px;
-  position: sticky;
-  bottom: 0;
-  padding-bottom: max(12px, env(safe-area-inset-bottom));
-  padding-top: 12px;
-  background: linear-gradient(transparent, var(--bg) 40%);
+  margin-top: auto;
+  padding-top: 24px;
 }
-.reveal-actions .btn { font-size: 13px; padding: 10px 16px; }
-#screen-reveal .screen-scroll { padding-bottom: 40px; }
+.reveal-actions .btn { font-size: 14px; padding: 12px 16px; }
 
 /* ========== PULSE FEED ========== */
 #screen-pulse { padding: 0; }
@@ -1954,27 +1910,11 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="surprise-label">הסכמה בין כל הקבוצות</div>
         <div class="surprise-pct" id="revealPct">0%</div>
         <div class="surprise-text">מסכימים: בתי ספר צריכים ללמד עזרה ראשונה נפשית כבר מכיתה ז׳</div>
+        <div class="surprise-divider"></div>
+        <div class="surprise-groups">חילונים · דתיים · ערבים · רוסים · חרדים — כולם</div>
       </div>
 
-      <!-- Tribal bar chart — who agrees -->
-      <div class="reveal-tribes animate-fade-up" style="animation-delay:1000ms">
-        <div style="font-size:13px;color:var(--text-3);margin-bottom:10px;text-align:center">פילוח לפי קבוצות</div>
-        <div class="tribe-bar"><span class="tb-name">חילונים</span><div class="tb-track"><div class="tb-fill" style="width:82%"></div></div><span class="tb-pct">82%</span></div>
-        <div class="tribe-bar"><span class="tb-name">דתיים</span><div class="tb-track"><div class="tb-fill" style="width:76%"></div></div><span class="tb-pct">76%</span></div>
-        <div class="tribe-bar"><span class="tb-name">ערבים</span><div class="tb-track"><div class="tb-fill" style="width:81%"></div></div><span class="tb-pct">81%</span></div>
-        <div class="tribe-bar"><span class="tb-name">רוסים</span><div class="tb-track"><div class="tb-fill" style="width:74%"></div></div><span class="tb-pct">74%</span></div>
-        <div class="tribe-bar"><span class="tb-name">מתנחלים</span><div class="tb-track"><div class="tb-fill" style="width:69%"></div></div><span class="tb-pct">69%</span></div>
-        <div class="tribe-bar"><span class="tb-name">חרדים</span><div class="tb-track"><div class="tb-fill" style="width:71%"></div></div><span class="tb-pct">71%</span></div>
-      </div>
-
-      <!-- Your personal stat — non-divisive, empowering -->
-      <div class="dna-card animate-fade-up" style="animation-delay:1400ms">
-        <div style="font-size:13px;color:var(--text-3)">הצבעת על 7 נושאים</div>
-        <div class="cluster-name">בדרך לשינוי 🗳️</div>
-        <div class="cluster-desc">כל הצבעה מגלה עוד הסכמה נסתרת. המשיכ/י להצביע כדי לגלות עוד.</div>
-      </div>
-
-      <div class="reveal-actions animate-fade-up" style="animation-delay:1800ms">
+      <div class="reveal-actions animate-fade-up" style="animation-delay:2000ms">
         <button class="btn btn-gold" onclick="enterPulseFeed()">המשך לדעת הקהל ←</button>
         <button class="btn btn-ghost" onclick="shareReveal()">📤 שתף את הגילוי המטורף</button>
       </div>
@@ -3936,12 +3876,6 @@ function initReveal() {
     if (current >= target) clearInterval(interval);
   }, 18);
 
-  // Animate bar fills (they start at 0 width via CSS, transition to target)
-  setTimeout(() => {
-    document.querySelectorAll('.tb-fill').forEach(bar => {
-      bar.style.width = bar.style.width; // trigger reflow
-    });
-  }, 800);
 }
 
 function openForumInput(el) {
