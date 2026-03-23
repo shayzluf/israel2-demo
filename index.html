@@ -629,10 +629,52 @@ input[type="range"]::-webkit-slider-thumb {
 .surprise-label { font-size: 13px; color: var(--gold); font-weight: 600; margin-bottom: 8px; letter-spacing: 1px; }
 .surprise-pct { font-size: 56px; font-weight: 700; color: var(--gold); direction: ltr; }
 .surprise-text { font-size: 16px; color: var(--text-2); margin-top: 8px; line-height: 1.5; }
-.surprise-divider { width: 60%; height: 1px; background: rgba(229, 168, 75, 0.15); margin: 16px auto; }
-.surprise-groups { font-size: 13px; color: var(--text-3); line-height: 1.4; }
-/* (tribal bar chart + dna-card removed — consolidated into consensus-surprise card) */
-#screen-reveal {
+/* surprise-divider and surprise-groups removed — tribal bars shown separately */
+/* Tribal bars — gold palette, matching reveal card */
+.reveal-tribes {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tribe-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+.tb-name {
+  width: 50px;
+  text-align: right;
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+.tb-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(229, 168, 75, 0.08);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.tb-fill {
+  height: 100%;
+  background: rgba(229, 168, 75, 0.45);
+  border-radius: 5px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.tb-pct {
+  width: 32px;
+  text-align: left;
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 12px;
+  direction: ltr;
+  opacity: 0.7;
+}
+#screen-reveal.active {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1910,11 +1952,17 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="surprise-label">הסכמה בין כל הקבוצות</div>
         <div class="surprise-pct" id="revealPct">0%</div>
         <div class="surprise-text">מסכימים: בתי ספר צריכים ללמד עזרה ראשונה נפשית כבר מכיתה ז׳</div>
-        <div class="surprise-divider"></div>
-        <div class="surprise-groups">חילונים · דתיים · ערבים · רוסים · חרדים — כולם</div>
       </div>
 
-      <div class="reveal-actions animate-fade-up" style="animation-delay:2000ms">
+      <!-- Tribal breakdown — muted gold bars -->
+      <div class="reveal-tribes animate-fade-up" style="animation-delay:1200ms">
+        <div class="tribe-bar"><span class="tb-name">חילונים</span><div class="tb-track"><div class="tb-fill" style="width:82%"></div></div><span class="tb-pct">82%</span></div>
+        <div class="tribe-bar"><span class="tb-name">דתיים</span><div class="tb-track"><div class="tb-fill" style="width:76%"></div></div><span class="tb-pct">76%</span></div>
+        <div class="tribe-bar"><span class="tb-name">ערבים</span><div class="tb-track"><div class="tb-fill" style="width:81%"></div></div><span class="tb-pct">81%</span></div>
+        <div class="tribe-bar"><span class="tb-name">רוסים</span><div class="tb-track"><div class="tb-fill" style="width:74%"></div></div><span class="tb-pct">74%</span></div>
+      </div>
+
+      <div class="reveal-actions animate-fade-up" style="animation-delay:2200ms">
         <button class="btn btn-gold" onclick="enterPulseFeed()">המשך לדעת הקהל ←</button>
         <button class="btn btn-ghost" onclick="shareReveal()">📤 שתף את הגילוי המטורף</button>
       </div>
