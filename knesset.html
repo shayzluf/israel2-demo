@@ -1,0 +1,2163 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>מראת הכנסת — Knesset Mirror</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ========== DESIGN SYSTEM TOKENS ========== */
+:root {
+  --bg: #0D0F14;
+  --surface: #1A1D23;
+  --elevated: #22262E;
+  --text-1: #FFFFFF;
+  --text-2: #8B9AAF;
+  --text-3: #5A6578;
+  --gold: #E5A84B;
+  --teal: #2DD4A8;
+  --blue: #5B7FBF;
+  --coral: #E8636F;
+  --divider: #2A2F3A;
+  --gold-glow: rgba(229,168,75,0.3);
+  --teal-glow: rgba(45,212,168,0.3);
+  --font: 'Heebo', sans-serif;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-pill: 24px;
+  --r-circle: 9999px;
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-elevated: 0 4px 16px rgba(0,0,0,0.4);
+
+  /* Party colors */
+  --likud: #1E56A0;
+  --yesh-atid: #FF6B00;
+  --mamlachti: #0077B6;
+  --rz: #8B0000;
+  --shas: #4A0080;
+  --utj: #555555;
+  --yisrael-beiteinu: #00897B;
+  --labor: #D32F2F;
+  --meretz: #43A047;
+  --hadash: #C62828;
+  --raam: #2E7D32;
+  --balad: #1B5E20;
+}
+
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font);
+  background: #111;
+  color: var(--text-1);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ========== PHONE FRAME ========== */
+.phone-frame {
+  width: 375px;
+  height: 812px;
+  background: var(--bg);
+  border-radius: 44px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 0 12px #1a1a1a, 0 0 0 14px #333, 0 20px 60px rgba(0,0,0,0.6);
+}
+@media (max-width: 428px) {
+  .phone-frame { width: 100vw; height: 100dvh; border-radius: 0; box-shadow: none; }
+  body { background: var(--bg); }
+}
+
+/* Status bar */
+.status-bar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  position: relative;
+  z-index: 10;
+}
+.status-bar .time { direction: ltr; }
+.status-bar .icons { display: flex; gap: 6px; direction: ltr; }
+@media (max-width: 500px) { .status-bar { display: none !important; } .app-container { top: 0 !important; } }
+
+/* App container */
+.app-container {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* ========== SCREEN SYSTEM ========== */
+.screen {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: none;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 250ms ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
+.screen.active { display: flex; opacity: 1; }
+.screen-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: 24px; }
+
+/* ========== COMMON COMPONENTS ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--r-pill);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 200ms;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-primary { background: var(--teal); color: var(--bg); }
+.btn-primary:active { transform: scale(0.96); }
+.btn-secondary { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
+.btn-gold { background: var(--gold); color: var(--bg); }
+.btn-ghost { background: rgba(255,255,255,0.08); color: var(--text-1); }
+.btn-sm { padding: 10px 20px; font-size: 14px; }
+.btn-block { width: 100%; }
+
+.card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  border: 1px solid var(--divider);
+}
+.card-gold {
+  border-color: var(--gold);
+  box-shadow: 0 0 20px var(--gold-glow);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--elevated);
+  border-radius: 4px;
+  overflow: hidden;
+  direction: ltr;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 800ms ease;
+}
+
+/* Numbers in RTL */
+.ltr-num { direction: ltr; display: inline-block; unicode-bidi: embed; }
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInRight { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+@keyframes goldShimmer {
+  0%, 100% { box-shadow: 0 0 10px var(--gold-glow); }
+  50% { box-shadow: 0 0 30px var(--gold-glow), 0 0 60px rgba(229,168,75,0.15); }
+}
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes barGrow { from { width: 0; } }
+@keyframes countUp { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes tealGlow {
+  0%, 100% { box-shadow: 0 0 10px var(--teal-glow); }
+  50% { box-shadow: 0 0 25px var(--teal-glow); }
+}
+@keyframes tealPulse {
+  0%, 100% { box-shadow: 0 0 8px var(--teal-glow), 0 0 16px rgba(45,212,168,0.15); transform: translate(-50%, -50%) scale(1); }
+  50% { box-shadow: 0 0 16px var(--teal-glow), 0 0 32px rgba(45,212,168,0.25); transform: translate(-50%, -50%) scale(1.15); }
+}
+@keyframes mirrorShine {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes cardEnter {
+  from { opacity: 0; transform: scale(0.93) translateY(18px); }
+  60% { opacity: 1; transform: scale(1.01) translateY(-2px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes countNumber {
+  from { opacity: 0; transform: scale(0.3); }
+  60% { transform: scale(1.1); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes heatmapPulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+.animate-fade-in { animation: fadeIn 400ms ease forwards; }
+.animate-fade-up { animation: fadeInUp 500ms ease forwards; }
+.animate-gold { animation: goldShimmer 2s ease-in-out infinite; }
+
+/* ========== LANGUAGE SCREEN ========== */
+#screen-lang {
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  gap: 12px;
+}
+.lang-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--r-circle);
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.lang-title { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+.lang-subtitle { font-size: 16px; color: var(--text-2); margin-bottom: 32px; text-align: center; }
+.lang-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 2px solid var(--divider);
+  color: var(--text-1);
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 200ms;
+  text-align: center;
+}
+.lang-btn.selected { border-color: var(--teal); background: rgba(45,212,168,0.1); }
+.lang-btn:active { transform: scale(0.98); }
+
+/* ========== INTRO SCREEN ========== */
+#screen-intro {
+  align-items: center;
+  justify-content: center;
+  padding: 40px 28px;
+  gap: 20px;
+  text-align: center;
+}
+.intro-mirror-icon {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--r-circle);
+  background: linear-gradient(135deg, var(--teal), var(--blue), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  box-shadow: 0 0 40px rgba(45,212,168,0.2), 0 0 80px rgba(91,127,191,0.1);
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+}
+.intro-mirror-icon::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: var(--r-circle);
+  background: linear-gradient(135deg, var(--teal), var(--blue), var(--gold));
+  opacity: 0.3;
+  filter: blur(12px);
+  z-index: -1;
+}
+.intro-title {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.3;
+  background: linear-gradient(135deg, var(--text-1) 0%, var(--teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.intro-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+.intro-desc {
+  font-size: 16px;
+  color: var(--text-3);
+  line-height: 1.6;
+  max-width: 300px;
+}
+.intro-stats {
+  display: flex;
+  gap: 24px;
+  margin: 8px 0;
+}
+.intro-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.intro-stat-num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold);
+  direction: ltr;
+}
+.intro-stat-label {
+  font-size: 12px;
+  color: var(--text-3);
+}
+.intro-footer {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: auto;
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.intro-footer svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--text-3);
+}
+
+/* ========== VOTE SWIPE SCREENS ========== */
+.swipe-screen {
+  padding: 20px;
+}
+.swipe-screen.active {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
+.vote-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px 8px;
+}
+.vote-counter {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-2);
+  direction: ltr;
+}
+.vote-progress {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 4px 0 max(12px, env(safe-area-inset-bottom));
+}
+.vote-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--text-3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.vote-dot.done { background: var(--teal); }
+.vote-dot.current { background: var(--teal); transform: scale(1.3); }
+
+.swipe-area {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  perspective: 800px;
+}
+.swipe-card-wrap {
+  position: absolute;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swipe-card {
+  width: calc(100% - 40px);
+  max-width: 380px;
+  min-height: 360px;
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: 1px solid var(--divider);
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  position: relative;
+  will-change: transform, box-shadow;
+  transform-origin: center center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+.swipe-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  opacity: 0.5;
+}
+.swipe-card.dragging {
+  cursor: grabbing;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+.swipe-card.exiting {
+  transition: transform 0.32s cubic-bezier(0.4, 0, 1, 1), opacity 0.25s ease-out, border-color 0.15s ease;
+  pointer-events: none;
+}
+.swipe-card.returning {
+  transition: transform 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.375), opacity 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.swipe-card.entering {
+  animation: cardEnter 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+.swipe-card .topic-tag {
+  padding: 8px 18px;
+  border-radius: var(--r-pill);
+  background: rgba(45,212,168,0.12);
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.swipe-card .q-text {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 300px;
+}
+.swipe-card .q-meta {
+  font-size: 12px;
+  color: var(--text-3);
+  display: flex;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+  width: 100%;
+  justify-content: center;
+  direction: rtl;
+  flex-wrap: wrap;
+}
+.q-meta-sep { color: var(--divider); }
+.swipe-indicator {
+  position: absolute;
+  top: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: var(--r-pill);
+  opacity: 0;
+  transition: opacity 150ms ease, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0.5) rotate(-5deg);
+  z-index: 2;
+  letter-spacing: 1px;
+}
+.swipe-indicator.visible { transform: scale(1.05) rotate(0deg); }
+.swipe-indicator.locked { transform: scale(1) rotate(0deg); }
+.swipe-indicator.for-ind {
+  left: 16px;
+  background: rgba(45,212,168,0.25);
+  color: var(--teal);
+  border: 2.5px solid var(--teal);
+  text-shadow: 0 0 8px rgba(45,212,168,0.3);
+}
+.swipe-indicator.against-ind {
+  right: 16px;
+  background: rgba(91,127,191,0.25);
+  color: var(--blue);
+  border: 2.5px solid var(--blue);
+  text-shadow: 0 0 8px rgba(91,127,191,0.3);
+}
+.swipe-indicator.complex-ind {
+  left: 50%;
+  transform: scale(0.5) rotate(-5deg) translateX(-50%);
+  background: rgba(229,168,75,0.25);
+  color: #E5A84B;
+  border: 2.5px solid #E5A84B;
+  text-shadow: 0 0 8px rgba(229,168,75,0.3);
+}
+.swipe-indicator.complex-ind.visible { transform: scale(1.05) rotate(0deg) translateX(-50%); }
+.swipe-indicator.complex-ind.locked { transform: scale(1) rotate(0deg) translateX(-50%); }
+.swipe-hint {
+  font-size: 13px;
+  color: var(--text-3);
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 8px 0 0;
+}
+.swipe-hint .hint-complex {
+  opacity: 0.7;
+}
+
+/* Swipe color screen flash */
+.swipe-flash {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 80ms ease-out;
+}
+.swipe-flash.active {
+  opacity: 1;
+  transition: opacity 20ms ease-in;
+}
+
+/* ========== PARTY VOTE OVERLAY ========== */
+.party-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(13, 15, 20, 0.95);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px 16px;
+  z-index: 5;
+  animation: fadeIn 300ms ease;
+}
+.party-overlay.visible { display: flex; }
+.party-overlay-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-2);
+  margin-bottom: 4px;
+}
+.party-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  max-width: 320px;
+}
+.party-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--r-md);
+  background: var(--elevated);
+  font-size: 12px;
+  font-weight: 600;
+  direction: rtl;
+}
+.party-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.party-dot.vote-for { background: var(--teal); box-shadow: 0 0 6px var(--teal-glow); }
+.party-dot.vote-against { background: var(--coral); box-shadow: 0 0 6px rgba(232,99,111,0.3); }
+.party-dot.vote-absent { background: var(--text-3); }
+.party-pill-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.party-overlay-hint {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 8px;
+}
+.party-overlay-timer {
+  width: 60%;
+  height: 3px;
+  background: var(--elevated);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.party-overlay-timer-fill {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 2px;
+  width: 100%;
+  transition: width 2.5s linear;
+}
+
+/* ========== RESULT SCREEN ========== */
+#screen-result {
+  padding: 20px;
+  gap: 16px;
+}
+#screen-result.active {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.result-header {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 8px;
+}
+
+/* 2D Position Map */
+.position-map-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 4px 0;
+}
+.position-map {
+  width: 250px;
+  height: 250px;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: var(--r-lg);
+  position: relative;
+  overflow: hidden;
+}
+.map-axis-x {
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--divider);
+}
+.map-axis-y {
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--divider);
+}
+.map-label {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-3);
+}
+.map-label-left { right: 8px; top: 50%; transform: translateY(-50%); }
+.map-label-right { left: 8px; top: 50%; transform: translateY(-50%); }
+.map-label-secular { left: 50%; top: 8px; transform: translateX(-50%); }
+.map-label-religious { left: 50%; bottom: 8px; transform: translateX(-50%); }
+
+.map-party {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease;
+}
+.map-user {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--teal);
+  transform: translate(-50%, -50%);
+  animation: tealPulse 2s ease-in-out infinite;
+  z-index: 5;
+}
+
+/* Match bars */
+.match-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+.match-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.match-rank {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--gold);
+  width: 28px;
+  text-align: center;
+  direction: ltr;
+}
+.match-details { flex: 1; }
+.match-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.match-pct {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--teal);
+  direction: ltr;
+}
+.match-bar {
+  height: 8px;
+  background: var(--elevated);
+  border-radius: 4px;
+  overflow: hidden;
+  direction: ltr;
+}
+.match-bar-fill {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 4px;
+  animation: barGrow 800ms ease forwards;
+}
+.match-item:nth-child(2) .match-bar-fill { background: var(--blue); }
+.match-item:nth-child(3) .match-bar-fill { background: var(--gold); }
+
+/* Surprise box */
+.surprise-box {
+  padding: 16px 20px;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  animation: goldShimmer 2.5s ease-in-out infinite;
+}
+.surprise-emoji { font-size: 28px; flex-shrink: 0; }
+.surprise-text { font-size: 14px; color: var(--text-2); line-height: 1.5; }
+
+/* Share / action buttons */
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 8px;
+}
+.btn-whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+.result-nav-row {
+  display: flex;
+  gap: 10px;
+}
+.result-nav-row .btn { flex: 1; font-size: 13px; padding: 12px 8px; }
+
+/* ========== CONTRADICTION SCREEN ========== */
+#screen-contradiction {
+  padding: 20px;
+  gap: 16px;
+}
+#screen-contradiction.active {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.contra-header {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--coral);
+}
+.contra-card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+  overflow: hidden;
+}
+.contra-mk {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--divider);
+}
+.contra-mk-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+.contra-mk-name { font-size: 16px; font-weight: 600; }
+.contra-mk-party { font-size: 12px; color: var(--text-3); }
+.contra-split {
+  display: flex;
+  position: relative;
+}
+.contra-side {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.contra-side-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.contra-side.quote { background: rgba(45,212,168,0.05); }
+.contra-side.quote .contra-side-label { color: var(--teal); }
+.contra-side.vote { background: rgba(232,99,111,0.05); }
+.contra-side.vote .contra-side-label { color: var(--coral); }
+.contra-side-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+.contra-side-source {
+  font-size: 10px;
+  color: var(--text-3);
+  margin-top: auto;
+}
+.contra-x {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  z-index: 2;
+  box-shadow: 0 0 12px rgba(232,99,111,0.4);
+}
+
+.contra-consensus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(229,168,75,0.08);
+  border-radius: var(--r-md);
+  border: 1px solid rgba(229,168,75,0.2);
+}
+.contra-consensus-pct {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--gold);
+  direction: ltr;
+  flex-shrink: 0;
+}
+.contra-consensus-text {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+.contra-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+.contra-actions .btn { flex: 1; font-size: 13px; padding: 12px 8px; }
+
+/* ========== CONSENSUS SCREEN ========== */
+#screen-consensus {
+  padding: 24px 20px;
+  gap: 16px;
+  align-items: center;
+  text-align: center;
+}
+#screen-consensus.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+.consensus-big-num {
+  font-size: 88px;
+  font-weight: 900;
+  color: var(--gold);
+  direction: ltr;
+  line-height: 1;
+  animation: countNumber 600ms ease forwards;
+  text-shadow: 0 0 40px var(--gold-glow);
+}
+.consensus-desc {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.5;
+  max-width: 300px;
+}
+.consensus-statement {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--text-1);
+  padding: 16px;
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--divider);
+  width: 100%;
+}
+.consensus-dramatic {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--coral);
+  padding: 8px 0;
+}
+.consensus-zero {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--coral);
+  direction: ltr;
+}
+
+/* Heatmap */
+.heatmap-title {
+  font-size: 14px;
+  color: var(--text-3);
+  font-weight: 600;
+  align-self: flex-start;
+}
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+.heatmap-cell {
+  padding: 12px 8px;
+  border-radius: var(--r-md);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  animation: heatmapPulse 2s ease-in-out infinite;
+}
+.heatmap-cell:nth-child(odd) { animation-delay: 0.3s; }
+.heatmap-cell:nth-child(even) { animation-delay: 0.8s; }
+.heatmap-cell .pct {
+  font-size: 18px;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 2px;
+  direction: ltr;
+}
+.heatmap-green { background: rgba(45,212,168,0.15); color: var(--teal); border: 1px solid rgba(45,212,168,0.2); }
+
+.consensus-cta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 12px;
+}
+.subscribe-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+.subscribe-input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: var(--r-pill);
+  background: var(--elevated);
+  border: 1px solid var(--divider);
+  color: var(--text-1);
+  font-family: var(--font);
+  font-size: 14px;
+  direction: ltr;
+  outline: none;
+}
+.subscribe-input::placeholder { color: var(--text-3); }
+.subscribe-input:focus { border-color: var(--teal); }
+
+/* ========== BACK BUTTON ========== */
+.back-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 20;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-2);
+  font-size: 18px;
+  transition: background 200ms;
+}
+.back-btn:active { background: rgba(255,255,255,0.15); }
+
+/* ========== STEP INDICATOR (top of vote screens) ========== */
+.step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 0 4px;
+}
+.step-pip {
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--text-3);
+  transition: all 0.3s ease;
+}
+.step-pip.done { background: var(--teal); }
+.step-pip.current { background: var(--teal); width: 36px; }
+
+</style>
+</head>
+<body>
+
+<!-- Flash overlay -->
+<div class="swipe-flash" id="swipeFlash"></div>
+
+<div class="phone-frame">
+  <div class="status-bar">
+    <span class="time">9:41</span>
+    <span class="icons">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor"><rect x="0" y="3" width="3" height="9" rx="1"/><rect x="4.5" y="2" width="3" height="10" rx="1"/><rect x="9" y="0" width="3" height="12" rx="1"/><rect x="13.5" y="1" width="2.5" height="11" rx="1" opacity="0.3"/></svg>
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor"><path d="M8 2C5.5 2 3.2 3 1.5 4.7L0 3.2C2.1 1.2 4.9 0 8 0s5.9 1.2 8 3.2L14.5 4.7C12.8 3 10.5 2 8 2zm0 4c-1.7 0-3.2.7-4.3 1.8L2.2 6.3C3.7 4.9 5.7 4 8 4s4.3.9 5.8 2.3L12.3 7.8C11.2 6.7 9.7 6 8 6zm0 4c-1.1 0-2.1.5-2.8 1.2L8 14l2.8-2.8C10.1 10.5 9.1 10 8 10z"/></svg>
+      <svg width="24" height="12" viewBox="0 0 24 12" fill="currentColor"><rect x="0" y="1" width="20" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/><rect x="2" y="3" width="14" height="6" rx="1"/></svg>
+    </span>
+  </div>
+
+  <div class="app-container">
+
+    <!-- ==================== SCREEN 1: LANGUAGE ==================== -->
+    <div class="screen active" id="screen-lang">
+      <div class="lang-logo">🪞</div>
+      <div class="lang-title">מראת הכנסת</div>
+      <div class="lang-subtitle">Knesset Mirror</div>
+      <button class="lang-btn" onclick="selectLang(this, 'he')">עברית</button>
+      <button class="lang-btn" onclick="selectLang(this, 'ar')">العربية</button>
+      <button class="lang-btn" onclick="selectLang(this, 'ru')">Русский</button>
+      <button class="lang-btn" onclick="selectLang(this, 'en')">English</button>
+    </div>
+
+    <!-- ==================== SCREEN 2: INTRO ==================== -->
+    <div class="screen" id="screen-intro">
+      <div class="intro-mirror-icon">🪞</div>
+      <div class="intro-title">מראת הכנסת</div>
+      <div class="intro-subtitle">גלה/י מי באמת מצביע בשבילך</div>
+      <div class="intro-stats">
+        <div class="intro-stat">
+          <span class="intro-stat-num">15</span>
+          <span class="intro-stat-label">הצבעות אמיתיות</span>
+        </div>
+        <div class="intro-stat">
+          <span class="intro-stat-num">3</span>
+          <span class="intro-stat-label">דקות</span>
+        </div>
+        <div class="intro-stat">
+          <span class="intro-stat-num">12</span>
+          <span class="intro-stat-label">מפלגות</span>
+        </div>
+      </div>
+      <div class="intro-desc">תמונה אמיתית של מי מייצג אותך — ומי לא</div>
+      <button class="btn btn-primary btn-block" onclick="goToScreen('screen-vote1')" style="margin-top: 16px;">
+        בואו נתחיל
+      </button>
+      <div class="intro-footer">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+        כל הנתונים מתוך פרוטוקולי הכנסת הרשמיים
+      </div>
+    </div>
+
+    <!-- ==================== SCREEN 3: VOTE 1 ==================== -->
+    <div class="screen swipe-screen" id="screen-vote1">
+      <div class="step-indicator">
+        <div class="step-pip current"></div>
+        <div class="step-pip"></div>
+        <div class="step-pip"></div>
+        <div class="step-pip"></div>
+        <div class="step-pip"></div>
+      </div>
+      <div class="swipe-area">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card" id="card-v1" data-next="screen-vote2" data-index="0">
+            <span class="swipe-indicator for-ind">בעד ←</span>
+            <span class="swipe-indicator against-ind">→ נגד</span>
+            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
+            <span class="topic-tag">דת ומדינה</span>
+            <div class="q-text">האם לחייב הפעלת תחבורה ציבורית בשבת?</div>
+            <div class="q-meta">
+              <span>הכנסת ה-25</span>
+              <span class="q-meta-sep">|</span>
+              <span>הצבעה מס׳ 1247</span>
+              <span class="q-meta-sep">|</span>
+              <span>מרץ 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        <span>← בעד</span>
+        <span class="hint-complex">↑ מורכב</span>
+        <span>נגד →</span>
+      </div>
+      <div class="vote-progress">
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+      <!-- Party overlay -->
+      <div class="party-overlay" id="party-overlay-1">
+        <div class="party-overlay-title">איך הצביעו המפלגות?</div>
+        <div class="party-grid">
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מחנה ממ׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ש״ס</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">יהדות הת׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ישראל ביתנו</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">רע״מ</span></div>
+          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
+        </div>
+        <div class="party-overlay-hint">לחצו להמשך</div>
+        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-1"></div></div>
+      </div>
+    </div>
+
+    <!-- ==================== SCREEN 4: VOTE 2 ==================== -->
+    <div class="screen swipe-screen" id="screen-vote2">
+      <div class="step-indicator">
+        <div class="step-pip done"></div>
+        <div class="step-pip current"></div>
+        <div class="step-pip"></div>
+        <div class="step-pip"></div>
+        <div class="step-pip"></div>
+      </div>
+      <div class="swipe-area">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card entering" id="card-v2" data-next="screen-vote3" data-index="1">
+            <span class="swipe-indicator for-ind">בעד ←</span>
+            <span class="swipe-indicator against-ind">→ נגד</span>
+            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
+            <span class="topic-tag">ביטחון ושוויון</span>
+            <div class="q-text">האם לחייב גיוס שוויוני לצה״ל?</div>
+            <div class="q-meta">
+              <span>הכנסת ה-25</span>
+              <span class="q-meta-sep">|</span>
+              <span>הצבעה מס׳ 892</span>
+              <span class="q-meta-sep">|</span>
+              <span>ינואר 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        <span>← בעד</span>
+        <span class="hint-complex">↑ מורכב</span>
+        <span>נגד →</span>
+      </div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+      <div class="party-overlay" id="party-overlay-2">
+        <div class="party-overlay-title">איך הצביעו המפלגות?</div>
+        <div class="party-grid">
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מחנה ממ׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ש״ס</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">יהדות הת׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ישראל ביתנו</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
+          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
+          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">רע״מ</span></div>
+          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
+        </div>
+        <div class="party-overlay-hint">לחצו להמשך</div>
+        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-2"></div></div>
+      </div>
+    </div>
+
+    <!-- ==================== SCREEN 5: VOTE 3 ==================== -->
+    <div class="screen swipe-screen" id="screen-vote3">
+      <div class="step-indicator">
+        <div class="step-pip done"></div>
+        <div class="step-pip done"></div>
+        <div class="step-pip current"></div>
+        <div class="step-pip"></div>
+        <div class="step-pip"></div>
+      </div>
+      <div class="swipe-area">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card entering" id="card-v3" data-next="screen-vote4" data-index="2">
+            <span class="swipe-indicator for-ind">בעד ←</span>
+            <span class="swipe-indicator against-ind">→ נגד</span>
+            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
+            <span class="topic-tag">כלכלה</span>
+            <div class="q-text">האם להגביל רווחי רשתות מזון ל-15%?</div>
+            <div class="q-meta">
+              <span>הכנסת ה-25</span>
+              <span class="q-meta-sep">|</span>
+              <span>הצבעה מס׳ 1503</span>
+              <span class="q-meta-sep">|</span>
+              <span>יוני 2023</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        <span>← בעד</span>
+        <span class="hint-complex">↑ מורכב</span>
+        <span>נגד →</span>
+      </div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+      <div class="party-overlay" id="party-overlay-3">
+        <div class="party-overlay-title">איך הצביעו המפלגות?</div>
+        <div class="party-grid">
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">מחנה ממ׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ש״ס</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יהדות הת׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ישראל ביתנו</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">רע״מ</span></div>
+          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
+        </div>
+        <div class="party-overlay-hint">לחצו להמשך</div>
+        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-3"></div></div>
+      </div>
+    </div>
+
+    <!-- ==================== SCREEN 6: VOTE 4 ==================== -->
+    <div class="screen swipe-screen" id="screen-vote4">
+      <div class="step-indicator">
+        <div class="step-pip done"></div>
+        <div class="step-pip done"></div>
+        <div class="step-pip done"></div>
+        <div class="step-pip current"></div>
+        <div class="step-pip"></div>
+      </div>
+      <div class="swipe-area">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card entering" id="card-v4" data-next="screen-vote5" data-index="3">
+            <span class="swipe-indicator for-ind">בעד ←</span>
+            <span class="swipe-indicator against-ind">→ נגד</span>
+            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
+            <span class="topic-tag">ביטחון</span>
+            <div class="q-text">האם להקצות 2 מיליארד ₪ לשיקום הצפון?</div>
+            <div class="q-meta">
+              <span>הכנסת ה-25</span>
+              <span class="q-meta-sep">|</span>
+              <span>הצבעה מס׳ 2081</span>
+              <span class="q-meta-sep">|</span>
+              <span>נובמבר 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        <span>← בעד</span>
+        <span class="hint-complex">↑ מורכב</span>
+        <span>נגד →</span>
+      </div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+      </div>
+      <div class="party-overlay" id="party-overlay-4">
+        <div class="party-overlay-title">איך הצביעו המפלגות?</div>
+        <div class="party-grid">
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מחנה ממ׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ש״ס</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יהדות הת׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ישראל ביתנו</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">רע״מ</span></div>
+          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
+        </div>
+        <div class="party-overlay-hint">לחצו להמשך</div>
+        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-4"></div></div>
+      </div>
+    </div>
+
+    <!-- ==================== SCREEN 7: VOTE 5 ==================== -->
+    <div class="screen swipe-screen" id="screen-vote5">
+      <div class="step-indicator">
+        <div class="step-pip done"></div>
+        <div class="step-pip done"></div>
+        <div class="step-pip done"></div>
+        <div class="step-pip done"></div>
+        <div class="step-pip current"></div>
+      </div>
+      <div class="swipe-area">
+        <div class="swipe-card-wrap">
+          <div class="swipe-card entering" id="card-v5" data-next="screen-result" data-index="4">
+            <span class="swipe-indicator for-ind">בעד ←</span>
+            <span class="swipe-indicator against-ind">→ נגד</span>
+            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
+            <span class="topic-tag">ביטחון</span>
+            <div class="q-text">האם לחייב מקלט בכל בניין מגורים חדש?</div>
+            <div class="q-meta">
+              <span>הכנסת ה-25</span>
+              <span class="q-meta-sep">|</span>
+              <span>הצבעה מס׳ 1876</span>
+              <span class="q-meta-sep">|</span>
+              <span>אוגוסט 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swipe-hint">
+        <span>← בעד</span>
+        <span class="hint-complex">↑ מורכב</span>
+        <span>נגד →</span>
+      </div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+      </div>
+      <div class="party-overlay" id="party-overlay-5">
+        <div class="party-overlay-title">איך הצביעו המפלגות?</div>
+        <div class="party-grid">
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מחנה ממ׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ש״ס</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יהדות הת׳</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ישראל ביתנו</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
+          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">רע״מ</span></div>
+          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
+        </div>
+        <div class="party-overlay-hint">לחצו להמשך</div>
+        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-5"></div></div>
+      </div>
+    </div>
+
+    <!-- ==================== SCREEN 6: RESULT ==================== -->
+    <div class="screen" id="screen-result">
+      <div class="result-header">התוצאות שלך</div>
+
+      <!-- 2D Position Map -->
+      <div class="position-map-container">
+        <div class="position-map">
+          <div class="map-axis-x"></div>
+          <div class="map-axis-y"></div>
+          <span class="map-label map-label-right">שמאל</span>
+          <span class="map-label map-label-left">ימין</span>
+          <span class="map-label map-label-secular">חילוני</span>
+          <span class="map-label map-label-religious">דתי</span>
+
+          <!-- Party positions (approximate) -->
+          <div class="map-party" style="left:22%;top:28%;background:var(--likud);" title="ליכוד">ל</div>
+          <div class="map-party" style="left:55%;top:30%;background:var(--yesh-atid);" title="יש עתיד">יע</div>
+          <div class="map-party" style="left:42%;top:32%;background:var(--mamlachti);" title="מחנה ממלכתי">ממ</div>
+          <div class="map-party" style="left:15%;top:35%;background:var(--rz);" title="הציונות הדתית">צד</div>
+          <div class="map-party" style="left:28%;top:78%;background:var(--shas);" title="ש״ס">ש</div>
+          <div class="map-party" style="left:35%;top:85%;background:var(--utj);" title="יהדות התורה">ג</div>
+          <div class="map-party" style="left:38%;top:22%;background:var(--yisrael-beiteinu);" title="ישראל ביתנו">יב</div>
+          <div class="map-party" style="left:70%;top:30%;background:var(--labor);" title="העבודה">ע</div>
+          <div class="map-party" style="left:82%;top:24%;background:var(--meretz);" title="מרצ">מ</div>
+          <div class="map-party" style="left:85%;top:42%;background:var(--hadash);" title="חד״ש-תע״ל">חת</div>
+          <div class="map-party" style="left:78%;top:60%;background:var(--raam);" title="רע״מ">ר</div>
+          <div class="map-party" style="left:88%;top:48%;background:var(--balad);" title="בל״ד">ב</div>
+
+          <!-- User position -->
+          <div class="map-user" id="user-dot" style="left:52%;top:30%;"></div>
+        </div>
+      </div>
+
+      <!-- Top 3 matches -->
+      <div class="match-list">
+        <div class="match-item" style="animation: slideUp 0.5s ease 0.3s both;">
+          <div class="match-rank">1</div>
+          <div class="match-details">
+            <div class="match-name">
+              <span>יש עתיד</span>
+              <span class="match-pct">78%</span>
+            </div>
+            <div class="match-bar">
+              <div class="match-bar-fill" style="width:78%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="match-item" style="animation: slideUp 0.5s ease 0.5s both;">
+          <div class="match-rank" style="color:var(--blue);">2</div>
+          <div class="match-details">
+            <div class="match-name">
+              <span>מחנה ממלכתי</span>
+              <span class="match-pct" style="color:var(--blue);">71%</span>
+            </div>
+            <div class="match-bar">
+              <div class="match-bar-fill" style="width:71%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="match-item" style="animation: slideUp 0.5s ease 0.7s both;">
+          <div class="match-rank" style="color:var(--gold);">3</div>
+          <div class="match-details">
+            <div class="match-name">
+              <span>ישראל ביתנו</span>
+              <span class="match-pct" style="color:var(--gold);">64%</span>
+            </div>
+            <div class="match-bar">
+              <div class="match-bar-fill" style="width:64%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Surprise -->
+      <div class="surprise-box" style="animation: slideUp 0.5s ease 0.9s both;">
+        <span class="surprise-emoji">&#x1F62E;</span>
+        <div class="surprise-text">
+          <strong>הפתעה:</strong> את/ה מסכים/ה עם ש״ס ב-<span class="ltr-num">52%</span> מהנושאים הכלכליים
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="result-actions">
+        <button class="btn btn-whatsapp btn-block" onclick="shareWhatsApp()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          שתפו בוואטסאפ
+        </button>
+        <div class="result-nav-row">
+          <button class="btn btn-ghost" onclick="goToScreen('screen-consensus')">ראו הסכמות</button>
+          <button class="btn btn-ghost" onclick="goToScreen('screen-contradiction')" style="color:var(--coral);">ראו סתירות</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SCREEN 7: CONTRADICTION ==================== -->
+    <div class="screen" id="screen-contradiction">
+      <button class="back-btn" onclick="goToScreen('screen-result')">&#x2190;</button>
+      <div style="height: 40px;"></div>
+      <div class="contra-header">אמר X, הצביע Y</div>
+
+      <div class="contra-card" id="contra-card-1">
+        <div class="contra-mk">
+          <div class="contra-mk-avatar" style="background: var(--likud);">נ</div>
+          <div>
+            <div class="contra-mk-name">בנימין נתניהו</div>
+            <div class="contra-mk-party">ליכוד</div>
+          </div>
+        </div>
+        <div class="contra-split">
+          <div class="contra-side quote">
+            <div class="contra-side-label">אמר</div>
+            <div class="contra-side-text">"אנחנו נפחית את יוקר המחיה"</div>
+            <div class="contra-side-source">מסיבת עיתונאים, מרץ 2023</div>
+          </div>
+          <div class="contra-x">&times;</div>
+          <div class="contra-side vote">
+            <div class="contra-side-label">הצביע</div>
+            <div class="contra-side-text">נגד הגבלת רווחי רשתות מזון</div>
+            <div class="contra-side-source">הצבעה מס׳ 1503, יוני 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contra-consensus">
+        <div class="contra-consensus-pct">83%</div>
+        <div class="contra-consensus-text">מכל הקבוצות מסכימים: זו סתירה</div>
+      </div>
+
+      <div class="contra-card" id="contra-card-2" style="display:none;">
+        <div class="contra-mk">
+          <div class="contra-mk-avatar" style="background: var(--yesh-atid);">ל</div>
+          <div>
+            <div class="contra-mk-name">יאיר לפיד</div>
+            <div class="contra-mk-party">יש עתיד</div>
+          </div>
+        </div>
+        <div class="contra-split">
+          <div class="contra-side quote">
+            <div class="contra-side-label">אמר</div>
+            <div class="contra-side-text">"נעביר חוק גיוס שוויוני"</div>
+            <div class="contra-side-source">ערוץ 12, פברואר 2022</div>
+          </div>
+          <div class="contra-x">&times;</div>
+          <div class="contra-side vote">
+            <div class="contra-side-label">הצביע</div>
+            <div class="contra-side-text">נמנע בהצבעה על תיקון חוק הגיוס</div>
+            <div class="contra-side-source">הצבעה מס׳ 892, ינואר 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contra-consensus" id="contra-consensus-2" style="display:none;">
+        <div class="contra-consensus-pct">76%</div>
+        <div class="contra-consensus-text">מכל הקבוצות מסכימים: זו סתירה</div>
+      </div>
+
+      <div class="contra-actions">
+        <button class="btn btn-ghost btn-sm" onclick="nextContradiction()">&#x2190; הבא</button>
+        <button class="btn btn-ghost btn-sm" onclick="shareContradiction()" style="color:var(--gold);">שתפו את הכרטיס</button>
+      </div>
+    </div>
+
+    <!-- ==================== SCREEN 8: CONSENSUS ==================== -->
+    <div class="screen" id="screen-consensus">
+      <button class="back-btn" onclick="goToScreen('screen-result')">&#x2190;</button>
+      <div style="height: 40px;"></div>
+
+      <div class="consensus-big-num" id="consensusNum">0%</div>
+      <div class="consensus-desc">מכל המשתמשים — שמאל, ימין, דתי, חילוני — מסכימים:</div>
+      <div class="consensus-statement">"צריך להגדיל את תקציב בריאות הנפש פי 2"</div>
+
+      <div class="consensus-dramatic">
+        <div class="consensus-zero">0</div>
+        מפלגות הצביעו בעד
+      </div>
+
+      <div class="heatmap-title">הסכמה לפי מחוז</div>
+      <div class="heatmap-grid">
+        <div class="heatmap-cell heatmap-green">
+          <span class="pct">91%</span>
+          צפון
+        </div>
+        <div class="heatmap-cell heatmap-green">
+          <span class="pct">89%</span>
+          חיפה
+        </div>
+        <div class="heatmap-cell heatmap-green">
+          <span class="pct">88%</span>
+          מרכז
+        </div>
+        <div class="heatmap-cell heatmap-green">
+          <span class="pct">92%</span>
+          תל אביב
+        </div>
+        <div class="heatmap-cell heatmap-green">
+          <span class="pct">84%</span>
+          ירושלים
+        </div>
+        <div class="heatmap-cell heatmap-green">
+          <span class="pct">87%</span>
+          דרום
+        </div>
+        <div class="heatmap-cell heatmap-green" style="grid-column: span 2;">
+          <span class="pct">82%</span>
+          יהודה ושומרון
+        </div>
+      </div>
+
+      <div class="consensus-cta">
+        <button class="btn btn-primary btn-block" onclick="shareConsensus()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+          שתפו את ההסכמה הזו
+        </button>
+        <div class="subscribe-row">
+          <input type="email" class="subscribe-input" placeholder="email@example.com" dir="ltr">
+          <button class="btn btn-gold btn-sm" onclick="subscribe()">עדכנו אותי</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /app-container -->
+</div><!-- /phone-frame -->
+
+
+<script>
+/* ========================================
+   NAVIGATION
+   ======================================== */
+function goToScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => {
+    s.classList.remove('active');
+  });
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+    target.scrollTop = 0;
+  }
+
+  // Init swipe for vote screens
+  if (id === 'screen-vote1') { initSwipeCard('card-v1'); runTutorialTilt(); }
+  if (id === 'screen-vote2') initSwipeCard('card-v2');
+  if (id === 'screen-vote3') initSwipeCard('card-v3');
+  if (id === 'screen-vote4') initSwipeCard('card-v4');
+  if (id === 'screen-vote5') initSwipeCard('card-v5');
+
+  // Animate result screen
+  if (id === 'screen-result') initResultScreen();
+
+  // Animate consensus count
+  if (id === 'screen-consensus') initConsensusScreen();
+}
+
+/* ========================================
+   LANGUAGE SELECTION
+   ======================================== */
+function selectLang(btn, lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  setTimeout(() => goToScreen('screen-intro'), 300);
+}
+
+/* ========================================
+   FLASH SCREEN
+   ======================================== */
+function flashScreen(type) {
+  const flash = document.getElementById('swipeFlash');
+  const colors = {
+    'for': 'radial-gradient(circle, rgba(45,212,168,0.20) 0%, transparent 70%)',
+    'against': 'radial-gradient(circle, rgba(91,127,191,0.20) 0%, transparent 70%)',
+    'complex': 'radial-gradient(circle, rgba(229,168,75,0.20) 0%, transparent 70%)'
+  };
+  flash.style.background = colors[type] || colors['for'];
+  flash.classList.add('active');
+  setTimeout(() => flash.classList.remove('active'), 200);
+}
+
+/* ========================================
+   SWIPE CARD ENGINE
+   ======================================== */
+const initializedCards = new Set();
+
+function initSwipeCard(cardId) {
+  if (initializedCards.has(cardId)) return;
+  initializedCards.add(cardId);
+
+  const card = document.getElementById(cardId);
+  if (!card) return;
+
+  let startX = 0, startY = 0, currentX = 0, currentY = 0;
+  let isDragging = false, startTime = 0;
+  let lastMoveTime = 0, lastMoveX = 0, lastMoveY = 0;
+  let velocityX = 0, velocityY = 0;
+  let touchPointYRatio = 0.5;
+  const threshold = 80;
+  const forInd = card.querySelector('.for-ind');
+  const againstInd = card.querySelector('.against-ind');
+  const complexInd = card.querySelector('.complex-ind');
+  const verticalThreshold = 80;
+
+  let swipeAxis = null;
+  const axisLockDistance = 15;
+
+  function resetIndicators() {
+    forInd.style.opacity = 0;
+    againstInd.style.opacity = 0;
+    complexInd.style.opacity = 0;
+    forInd.classList.remove('visible');
+    againstInd.classList.remove('visible');
+    complexInd.classList.remove('visible');
+  }
+
+  function onStart(e) {
+    isDragging = true;
+    swipeAxis = null;
+    startTime = Date.now();
+    lastMoveTime = startTime;
+    const cx = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const cy = e.clientY || (e.touches && e.touches[0].clientY) || 0;
+    startX = cx;
+    startY = cy;
+    lastMoveX = cx;
+    lastMoveY = cy;
+    currentX = 0;
+    currentY = 0;
+    velocityX = 0;
+    velocityY = 0;
+
+    const rect = card.getBoundingClientRect();
+    touchPointYRatio = (cy - rect.top) / rect.height;
+
+    card.style.transition = 'none';
+    card.classList.add('dragging');
+    card.classList.remove('entering', 'returning');
+  }
+
+  function onMove(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    const cx = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const cy = e.clientY || (e.touches && e.touches[0].clientY) || 0;
+    currentX = cx - startX;
+    currentY = cy - startY;
+
+    if (!swipeAxis && (Math.abs(currentX) > axisLockDistance || Math.abs(currentY) > axisLockDistance)) {
+      swipeAxis = Math.abs(currentX) >= Math.abs(currentY) ? 'horizontal' : 'vertical';
+    }
+
+    const now = Date.now();
+    const dt = Math.max(now - lastMoveTime, 1);
+    const instantVx = (cx - lastMoveX) / dt * 1000;
+    const instantVy = (cy - lastMoveY) / dt * 1000;
+    velocityX = velocityX * 0.6 + instantVx * 0.4;
+    velocityY = velocityY * 0.6 + instantVy * 0.4;
+    lastMoveTime = now;
+    lastMoveX = cx;
+    lastMoveY = cy;
+
+    if (swipeAxis === 'vertical') {
+      const upY = Math.min(currentY, 0);
+      const dampX = currentX * 0.15;
+      const progressV = Math.min(Math.abs(upY) / verticalThreshold, 1);
+      const overProgressV = Math.min(Math.abs(upY) / (verticalThreshold * 2), 1);
+      const scale = 1 + overProgressV * 0.05;
+      const fadeV = Math.min(Math.abs(upY) / (verticalThreshold * 2.5), 1);
+      const cardOpacity = 1 - fadeV * 0.7;
+
+      card.style.transform = `translateX(${dampX}px) translateY(${upY}px) scale(${scale})`;
+      card.style.opacity = cardOpacity;
+
+      if (upY < 0) {
+        card.style.borderColor = `rgba(229,168,75,${progressV * 0.65})`;
+        card.style.boxShadow = `0 ${-progressV * 18}px ${20 + overProgressV * 30}px ${overProgressV * 4}px rgba(0,0,0,0.25), 0 ${-progressV * 18}px ${progressV * 45}px rgba(229,168,75,${progressV * 0.2})`;
+        complexInd.style.opacity = progressV;
+        complexInd.classList.toggle('visible', progressV > 0.3);
+        forInd.style.opacity = 0;
+        againstInd.style.opacity = 0;
+        forInd.classList.remove('visible');
+        againstInd.classList.remove('visible');
+      }
+    } else {
+      const grabInfluence = Math.abs(touchPointYRatio - 0.5) * 2;
+      const rotationSign = touchPointYRatio < 0.5 ? 1 : -1;
+      const maxRot = 14;
+      const rotation = (currentX / threshold) * maxRot * (0.3 + grabInfluence * 0.7) * rotationSign;
+
+      const progress = Math.min(Math.abs(currentX) / threshold, 1);
+      const overProgress = Math.min(Math.abs(currentX) / (threshold * 2), 1);
+      const scale = 1 + overProgress * 0.05;
+      const yFollow = currentY * 0.35;
+      const fadeProgress = Math.min(Math.abs(currentX) / (threshold * 2.5), 1);
+      const cardOpacity = 1 - fadeProgress * 0.7;
+
+      card.style.transform = `translateX(${currentX}px) translateY(${yFollow}px) rotate(${rotation}deg) scale(${scale})`;
+      card.style.opacity = cardOpacity;
+
+      const shadowOffsetX = -currentX * 0.08;
+      const shadowBlur = 20 + overProgress * 30;
+      const shadowSpread = overProgress * 4;
+
+      complexInd.style.opacity = 0;
+      complexInd.classList.remove('visible');
+
+      if (currentX > 0) {
+        const glowIntensity = progress * 0.2;
+        const glowSpread = progress * 45;
+        card.style.borderColor = `rgba(45,212,168,${progress * 0.65})`;
+        card.style.boxShadow = `${shadowOffsetX}px ${12 + overProgress * 8}px ${shadowBlur}px ${shadowSpread}px rgba(0,0,0,0.25), ${progress * 18}px 0 ${glowSpread}px rgba(45,212,168,${glowIntensity})`;
+        forInd.style.opacity = progress;
+        forInd.classList.toggle('visible', progress > 0.3);
+        againstInd.style.opacity = 0;
+        againstInd.classList.remove('visible');
+      } else {
+        const glowIntensity = progress * 0.2;
+        const glowSpread = progress * 45;
+        card.style.borderColor = `rgba(91,127,191,${progress * 0.65})`;
+        card.style.boxShadow = `${shadowOffsetX}px ${12 + overProgress * 8}px ${shadowBlur}px ${shadowSpread}px rgba(0,0,0,0.25), ${-progress * 18}px 0 ${glowSpread}px rgba(91,127,191,${glowIntensity})`;
+        againstInd.style.opacity = progress;
+        againstInd.classList.toggle('visible', progress > 0.3);
+        forInd.style.opacity = 0;
+        forInd.classList.remove('visible');
+      }
+    }
+  }
+
+  function onEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    card.classList.remove('dragging');
+
+    const cardIndex = parseInt(card.dataset.index);
+    const nextScreen = card.dataset.next;
+
+    if (swipeAxis === 'vertical') {
+      const upY = Math.min(currentY, 0);
+      const speedV = Math.abs(velocityY);
+      const acceptedV = Math.abs(upY) > verticalThreshold || (speedV > 600 && currentY < 0);
+
+      if (acceptedV) {
+        flashScreen('complex');
+        const exitY = -(window.innerHeight + 150);
+        const dampX = currentX * 0.15;
+        card.classList.add('exiting');
+        card.style.transform = `translateX(${dampX}px) translateY(${exitY}px) scale(0.75)`;
+        card.style.opacity = '0';
+        card.style.borderColor = 'var(--divider)';
+        card.style.boxShadow = 'none';
+        resetIndicators();
+        showPartyOverlay(cardIndex, nextScreen);
+      } else {
+        returnCard();
+      }
+    } else {
+      const speed = Math.abs(velocityX);
+      const accepted = Math.abs(currentX) > threshold || speed > 600;
+
+      if (accepted) {
+        const dir = currentX < 0 ? -1 : 1;
+        flashScreen(dir > 0 ? 'for' : 'against');
+        const exitDist = window.innerWidth + 150;
+        const yRatio = Math.abs(currentX) > 10 ? currentY / Math.abs(currentX) : 0;
+        const exitX = dir * exitDist;
+        const exitY = yRatio * exitDist * 0.5;
+        const exitRot = dir * (18 + speed * 0.008);
+        card.classList.add('exiting');
+        card.style.transform = `translateX(${exitX}px) translateY(${exitY}px) rotate(${exitRot}deg) scale(0.75)`;
+        card.style.opacity = '0';
+        card.style.borderColor = 'var(--divider)';
+        card.style.boxShadow = 'none';
+        resetIndicators();
+        showPartyOverlay(cardIndex, nextScreen);
+      } else {
+        returnCard();
+      }
+    }
+    currentX = 0;
+    currentY = 0;
+    swipeAxis = null;
+
+    function returnCard() {
+      card.classList.add('returning');
+      card.style.transform = 'translateX(0) translateY(0) rotate(0) scale(1)';
+      card.style.opacity = '1';
+      card.style.borderColor = 'var(--divider)';
+      card.style.boxShadow = '0 4px 24px rgba(0,0,0,0.25)';
+
+      forInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
+      againstInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
+      complexInd.style.transition = 'opacity 200ms ease, transform 200ms ease';
+      forInd.style.opacity = 0;
+      againstInd.style.opacity = 0;
+      complexInd.style.opacity = 0;
+      forInd.classList.remove('visible');
+      againstInd.classList.remove('visible');
+      complexInd.classList.remove('visible');
+      setTimeout(() => {
+        forInd.style.transition = '';
+        againstInd.style.transition = '';
+        complexInd.style.transition = '';
+      }, 600);
+    }
+  }
+
+  card.addEventListener('pointerdown', onStart);
+  card.addEventListener('pointermove', onMove);
+  card.addEventListener('pointerup', onEnd);
+  card.addEventListener('pointerleave', onEnd);
+}
+
+/* ========================================
+   PARTY VOTE OVERLAY
+   ======================================== */
+let partyOverlayTimer = null;
+
+function showPartyOverlay(cardIndex, nextScreen) {
+  const overlayId = `party-overlay-${cardIndex + 1}`;
+  const overlay = document.getElementById(overlayId);
+  if (!overlay) {
+    // No overlay for this card, go directly to next
+    if (nextScreen) setTimeout(() => goToScreen(nextScreen), 300);
+    return;
+  }
+
+  overlay.classList.add('visible');
+
+  // Start timer animation
+  const timerFill = document.getElementById(`timer-fill-${cardIndex + 1}`);
+  if (timerFill) {
+    timerFill.style.transition = 'none';
+    timerFill.style.width = '100%';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        timerFill.style.transition = 'width 2.5s linear';
+        timerFill.style.width = '0%';
+      });
+    });
+  }
+
+  // Auto-advance after 2.5 seconds
+  if (partyOverlayTimer) clearTimeout(partyOverlayTimer);
+  partyOverlayTimer = setTimeout(() => {
+    dismissPartyOverlay(overlayId, nextScreen);
+  }, 2500);
+
+  // Click to dismiss
+  overlay.onclick = function(e) {
+    if (partyOverlayTimer) clearTimeout(partyOverlayTimer);
+    dismissPartyOverlay(overlayId, nextScreen);
+  };
+}
+
+function dismissPartyOverlay(overlayId, nextScreen) {
+  const overlay = document.getElementById(overlayId);
+  if (overlay) {
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 200ms ease';
+    setTimeout(() => {
+      overlay.classList.remove('visible');
+      overlay.style.opacity = '';
+      overlay.style.transition = '';
+      if (nextScreen) goToScreen(nextScreen);
+    }, 200);
+  }
+}
+
+/* ========================================
+   RESULT SCREEN
+   ======================================== */
+function initResultScreen() {
+  // Animate match bars
+  document.querySelectorAll('#screen-result .match-bar-fill').forEach((bar, i) => {
+    const w = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(() => { bar.style.width = w; }, 400 + i * 200);
+  });
+
+  // Animate user dot onto map
+  const dot = document.getElementById('user-dot');
+  if (dot) {
+    dot.style.opacity = '0';
+    dot.style.transform = 'translate(-50%, -50%) scale(0)';
+    setTimeout(() => {
+      dot.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      dot.style.opacity = '1';
+      dot.style.transform = 'translate(-50%, -50%) scale(1)';
+      // Re-enable pulse animation after initial entry
+      setTimeout(() => {
+        dot.style.transition = '';
+      }, 700);
+    }, 300);
+  }
+
+  // Animate party positions
+  document.querySelectorAll('#screen-result .map-party').forEach((p, i) => {
+    p.style.opacity = '0';
+    p.style.transform = 'translate(-50%, -50%) scale(0)';
+    setTimeout(() => {
+      p.style.transition = 'all 0.4s ease';
+      p.style.opacity = '0.5';
+      p.style.transform = 'translate(-50%, -50%) scale(1)';
+    }, 100 + i * 50);
+  });
+}
+
+/* ========================================
+   CONSENSUS SCREEN
+   ======================================== */
+function initConsensusScreen() {
+  const numEl = document.getElementById('consensusNum');
+  if (!numEl) return;
+  let current = 0;
+  const target = 87;
+  numEl.textContent = '0%';
+  const interval = setInterval(() => {
+    current += 1;
+    numEl.textContent = current + '%';
+    if (current >= target) clearInterval(interval);
+  }, 18);
+}
+
+/* ========================================
+   CONTRADICTION CYCLING
+   ======================================== */
+let currentContra = 1;
+function nextContradiction() {
+  if (currentContra === 1) {
+    document.getElementById('contra-card-1').style.display = 'none';
+    document.querySelector('#screen-contradiction .contra-consensus').style.display = 'none';
+    document.getElementById('contra-card-2').style.display = 'block';
+    document.getElementById('contra-card-2').style.animation = 'fadeInUp 0.4s ease forwards';
+    document.getElementById('contra-consensus-2').style.display = 'flex';
+    document.getElementById('contra-consensus-2').style.animation = 'fadeInUp 0.4s ease 0.2s forwards';
+    currentContra = 2;
+  } else {
+    document.getElementById('contra-card-2').style.display = 'none';
+    document.getElementById('contra-consensus-2').style.display = 'none';
+    document.getElementById('contra-card-1').style.display = 'block';
+    document.getElementById('contra-card-1').style.animation = 'fadeInUp 0.4s ease forwards';
+    document.querySelector('#screen-contradiction .contra-consensus').style.display = 'flex';
+    document.querySelector('#screen-contradiction .contra-consensus').style.animation = 'fadeInUp 0.4s ease 0.2s forwards';
+    currentContra = 1;
+  }
+}
+
+/* ========================================
+   SHARE ACTIONS
+   ======================================== */
+function shareWhatsApp() {
+  const btn = event.target.closest('.btn');
+  const origHTML = btn.innerHTML;
+  btn.innerHTML = '<span style="color:#fff;">&#x2713; הקישור הועתק!</span>';
+  setTimeout(() => { btn.innerHTML = origHTML; }, 2000);
+}
+
+function shareContradiction() {
+  const btn = event.target.closest('.btn');
+  const orig = btn.textContent;
+  btn.textContent = '&#x2713; הועתק!';
+  btn.style.color = 'var(--teal)';
+  setTimeout(() => { btn.textContent = orig; btn.style.color = ''; }, 2000);
+}
+
+function shareConsensus() {
+  const btn = event.target.closest('.btn');
+  const origHTML = btn.innerHTML;
+  btn.innerHTML = '&#x2713; הקישור הועתק!';
+  setTimeout(() => { btn.innerHTML = origHTML; }, 2000);
+}
+
+function subscribe() {
+  const input = document.querySelector('.subscribe-input');
+  const btn = event.target;
+  if (input.value && input.value.includes('@')) {
+    btn.textContent = '&#x2713;';
+    btn.style.background = 'var(--teal)';
+    input.value = '';
+    input.placeholder = 'נרשמת בהצלחה!';
+    setTimeout(() => {
+      btn.textContent = 'עדכנו אותי';
+      btn.style.background = '';
+      input.placeholder = 'email@example.com';
+    }, 2500);
+  } else {
+    input.style.borderColor = 'var(--coral)';
+    input.placeholder = 'הכניסו כתובת אימייל';
+    setTimeout(() => { input.style.borderColor = ''; }, 1500);
+  }
+}
+
+/* ========================================
+   TUTORIAL AUTO-TILT (first card)
+   ======================================== */
+function runTutorialTilt() {
+  const card = document.getElementById('card-v1');
+  if (!card) return;
+
+  const forInd = card.querySelector('.for-ind');
+  const againstInd = card.querySelector('.against-ind');
+
+  // Wait for card to be visible
+  setTimeout(() => {
+    // Tilt right
+    card.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    card.style.transform = 'translateX(40px) rotate(4deg)';
+    forInd.style.opacity = '0.6';
+    forInd.classList.add('visible');
+
+    setTimeout(() => {
+      // Return
+      card.style.transform = 'translateX(0) rotate(0)';
+      forInd.style.opacity = '0';
+      forInd.classList.remove('visible');
+
+      setTimeout(() => {
+        // Tilt left
+        card.style.transform = 'translateX(-40px) rotate(-4deg)';
+        againstInd.style.opacity = '0.6';
+        againstInd.classList.add('visible');
+
+        setTimeout(() => {
+          // Return
+          card.style.transform = 'translateX(0) rotate(0)';
+          againstInd.style.opacity = '0';
+          againstInd.classList.remove('visible');
+
+          setTimeout(() => {
+            card.style.transition = '';
+          }, 600);
+        }, 600);
+      }, 400);
+    }, 600);
+  }, 500);
+}
+
+/* ========================================
+   INIT
+   ======================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  // Start on language screen
+  goToScreen('screen-lang');
+});
+</script>
+</body>
+</html>
