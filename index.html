@@ -75,6 +75,7 @@ body {
 }
 .status-bar .time { direction: ltr; }
 .status-bar .icons { display: flex; gap: 6px; direction: ltr; }
+@media (max-width: 500px) { .status-bar { display: none; } }
 
 /* App container */
 .app-container {
@@ -397,23 +398,30 @@ input[type="range"]::-webkit-slider-thumb {
   justify-content: center;
   padding: 20px;
 }
+.swipe-screen.active {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
 .vote-progress {
   display: flex;
   gap: 8px;
-  margin-bottom: 24px;
   justify-content: center;
+  padding: 4px 0 max(12px, env(safe-area-inset-bottom));
 }
 .vote-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--text-3);
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 .vote-dot.done { background: var(--teal); }
-.vote-dot.current { background: var(--teal); animation: pulse 1s infinite; }
+.vote-dot.current { background: var(--teal); transform: scale(1.3); }
 
 .swipe-area {
   width: 100%;
-  height: 360px;
+  flex: 1;
+  min-height: 0;
   position: relative;
   perspective: 800px;
 }
@@ -425,16 +433,17 @@ input[type="range"]::-webkit-slider-thumb {
   justify-content: center;
 }
 .swipe-card {
-  width: 310px;
-  min-height: 300px;
+  width: calc(100% - 40px);
+  max-width: 380px;
+  min-height: 380px;
   background: var(--surface);
-  border-radius: var(--r-lg);
-  padding: 32px 24px;
+  border-radius: 20px;
+  padding: 40px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   border: 1px solid var(--divider);
   cursor: grab;
   user-select: none;
@@ -442,10 +451,22 @@ input[type="range"]::-webkit-slider-thumb {
   position: relative;
   will-change: transform, box-shadow;
   transform-origin: center center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+.swipe-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  opacity: 0.5;
 }
 .swipe-card.dragging {
   cursor: grabbing;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
 }
 .swipe-card.exiting {
   transition: transform 0.32s cubic-bezier(0.4, 0, 1, 1), opacity 0.25s ease-out, border-color 0.15s ease;
@@ -463,24 +484,30 @@ input[type="range"]::-webkit-slider-thumb {
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 .swipe-card .topic-tag {
-  padding: 6px 16px;
+  padding: 8px 18px;
   border-radius: var(--r-pill);
-  background: rgba(45,212,168,0.15);
+  background: rgba(45,212,168,0.12);
   color: var(--teal);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
+  letter-spacing: 0.3px;
 }
 .swipe-card .q-text {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.6;
+  max-width: 300px;
 }
 .swipe-card .q-meta {
   font-size: 13px;
   color: var(--text-3);
   display: flex;
   gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+  width: 100%;
+  justify-content: center;
 }
 .swipe-indicator {
   position: absolute;
@@ -526,8 +553,8 @@ input[type="range"]::-webkit-slider-thumb {
   color: var(--text-3);
   display: flex;
   justify-content: center;
-  gap: 24px;
-  margin-top: 12px;
+  gap: 28px;
+  padding: 8px 0 0;
 }
 .swipe-hint .hint-complex {
   opacity: 0.7;
@@ -655,17 +682,18 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .reveal-actions {
   display: flex;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
   width: 100%;
   margin-top: 8px;
   position: sticky;
   bottom: 0;
-  padding-bottom: max(16px, env(safe-area-inset-bottom));
-  padding-top: 16px;
-  background: linear-gradient(transparent, var(--bg) 30%);
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  padding-top: 12px;
+  background: linear-gradient(transparent, var(--bg) 40%);
 }
-.reveal-actions .btn { flex: 1; }
-#screen-reveal .screen-scroll { padding-bottom: 80px; }
+.reveal-actions .btn { font-size: 13px; padding: 10px 16px; }
+#screen-reveal .screen-scroll { padding-bottom: 40px; }
 
 /* ========== PULSE FEED ========== */
 #screen-pulse { padding: 0; }
@@ -1478,7 +1506,7 @@ input[type="range"]::-webkit-slider-thumb {
           <span style="font-size:13px;color:var(--text-2)">אני מאשר/ת שגילי מעל 18 ושקראתי את <a href="#" style="color:var(--teal);text-decoration:underline" onclick="event.preventDefault()">מדיניות הפרטיות</a></span>
         </label>
       </div>
-      <div style="padding:8px 20px 20px">
+      <div style="padding:8px 20px 20px;padding-bottom:max(20px, env(safe-area-inset-bottom))">
         <button class="btn btn-primary btn-block" id="consentBtn" disabled style="opacity:0.4" onclick="goToScreen('screen-knesset')">בואו נתחיל</button>
       </div>
     </div>
@@ -1523,12 +1551,7 @@ input[type="range"]::-webkit-slider-thumb {
     <!-- All 10 cards are inference (2D Bayesian tribal classification) -->
     <!-- Result moments after cards 4 and 7 as engagement rewards -->
     <!-- Flow: cards 1-4 → result → cards 5-7 → result → cards 8-10 → Mirror Moment -->
-    <div class="screen" id="screen-swipe1">
-      <div class="vote-progress" id="swipe-progress">
-        <div class="vote-dot current"></div>
-        <div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div>
-        <div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div>
-      </div>
+    <div class="screen swipe-screen" id="screen-swipe1">
       <div class="swipe-area" id="swipeArea1">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card1" data-next="screen-swipe2">
@@ -1544,21 +1567,14 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
+      <div class="vote-progress" id="swipe-progress">
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div>
+        <div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div><div class="vote-dot"></div>
+      </div>
     </div>
 
-    <div class="screen" id="screen-swipe2">
-      <div class="vote-progress">
-        <div class="vote-dot done"></div>
-        <div class="vote-dot current"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-      </div>
+    <div class="screen swipe-screen" id="screen-swipe2">
       <div class="swipe-area" id="swipeArea2">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card2" data-next="screen-swipe3">
@@ -1574,11 +1590,7 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
-    </div>
-
-    <div class="screen" id="screen-swipe3">
       <div class="vote-progress">
-        <div class="vote-dot done"></div>
         <div class="vote-dot done"></div>
         <div class="vote-dot current"></div>
         <div class="vote-dot"></div>
@@ -1588,7 +1600,12 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
       </div>
+
+    </div>
+
+    <div class="screen swipe-screen" id="screen-swipe3">
       <div class="swipe-area" id="swipeArea3">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card3" data-next="screen-swipe4">
@@ -1604,11 +1621,7 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
-    </div>
-
-    <div class="screen" id="screen-swipe4">
       <div class="vote-progress">
-        <div class="vote-dot done"></div>
         <div class="vote-dot done"></div>
         <div class="vote-dot done"></div>
         <div class="vote-dot current"></div>
@@ -1618,7 +1631,12 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
         <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
       </div>
+
+    </div>
+
+    <div class="screen swipe-screen" id="screen-swipe4">
       <div class="swipe-area" id="swipeArea4">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card4" data-next="screen-swipe5">
@@ -1634,6 +1652,19 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+
       <div class="vote-result" id="result4">
         <div class="big-pct">76%</div>
         <div class="result-label">הסכמה חוצת קבוצות!</div>
@@ -1663,19 +1694,7 @@ input[type="range"]::-webkit-slider-thumb {
     </div>
 
     <!-- Cards 5-7: Inference continues (Q5 Arabic, Q6 Civil marriage, Q7 PA negotiations) -->
-    <div class="screen" id="screen-swipe5">
-      <div class="vote-progress">
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot current"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-      </div>
+    <div class="screen swipe-screen" id="screen-swipe5">
       <div class="swipe-area" id="swipeArea5">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card5" data-next="screen-swipe6">
@@ -1692,6 +1711,19 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+
       <div class="vote-result" id="result5">
         <div class="big-pct">73%</div>
         <div class="result-label">הסכמה חוצת קבוצות!</div>
@@ -1720,19 +1752,7 @@ input[type="range"]::-webkit-slider-thumb {
       </div>
     </div>
 
-    <div class="screen" id="screen-swipe6">
-      <div class="vote-progress">
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot current"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-      </div>
+    <div class="screen swipe-screen" id="screen-swipe6">
       <div class="swipe-area" id="swipeArea6">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card6" data-next="screen-swipe7">
@@ -1750,6 +1770,19 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+
       <div class="vote-result" id="result6">
         <div class="big-pct">71%</div>
         <div class="result-label">מסכימים איתך!</div>
@@ -1778,19 +1811,7 @@ input[type="range"]::-webkit-slider-thumb {
       </div>
     </div>
 
-    <div class="screen" id="screen-swipe7">
-      <div class="vote-progress">
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot current"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-      </div>
+    <div class="screen swipe-screen" id="screen-swipe7">
       <div class="swipe-area" id="swipeArea7">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card7" data-next="screen-swipe8">
@@ -1807,15 +1828,23 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot done"></div>
+        <div class="vote-dot current"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+        <div class="vote-dot"></div>
+      </div>
+
     </div>
 
     <!-- Card 8: CONSENSUS — ban insurance overriding doctors -->
-    <div class="screen" id="screen-swipe8">
-      <div class="vote-progress">
-        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
-        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
-        <div class="vote-dot current"></div><div class="vote-dot"></div><div class="vote-dot"></div>
-      </div>
+    <div class="screen swipe-screen" id="screen-swipe8">
       <div class="swipe-area" id="swipeArea8">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card8" data-next="screen-swipe9">
@@ -1831,6 +1860,12 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot current"></div><div class="vote-dot"></div><div class="vote-dot"></div>
+      </div>
+
       <div class="vote-result" id="result8">
         <div class="big-pct">80%</div>
         <div class="result-label">כל הקבוצות מסכימות!</div>
@@ -1860,12 +1895,7 @@ input[type="range"]::-webkit-slider-thumb {
     </div>
 
     <!-- Card 9: Periphery budgets (Q9) -->
-    <div class="screen" id="screen-swipe9">
-      <div class="vote-progress">
-        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
-        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
-        <div class="vote-dot done"></div><div class="vote-dot current"></div><div class="vote-dot"></div>
-      </div>
+    <div class="screen swipe-screen" id="screen-swipe9">
       <div class="swipe-area" id="swipeArea9">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card9" data-next="screen-swipe10">
@@ -1881,15 +1911,16 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
-    </div>
-
-    <!-- Card 10: Nakba recognition (Q10) -->
-    <div class="screen" id="screen-swipe10">
       <div class="vote-progress">
         <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
         <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
-        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot current"></div>
+        <div class="vote-dot done"></div><div class="vote-dot current"></div><div class="vote-dot"></div>
       </div>
+
+    </div>
+
+    <!-- Card 10: Nakba recognition (Q10) -->
+    <div class="screen swipe-screen" id="screen-swipe10">
       <div class="swipe-area" id="swipeArea10">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="card10" data-next="screen-reveal">
@@ -1905,6 +1936,12 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
       </div>
       <div class="swipe-hint"><span>← נגד</span><span class="hint-complex">מורכב ↑</span><span>בעד →</span></div>
+      <div class="vote-progress">
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot done"></div>
+        <div class="vote-dot done"></div><div class="vote-dot done"></div><div class="vote-dot current"></div>
+      </div>
+
     </div>
 
     <!-- ===== REVEAL: Mirror Moment + Constellation (shown once after all swipes) ===== -->
@@ -1975,7 +2012,6 @@ input[type="range"]::-webkit-slider-thumb {
         <!-- Consensus Discovered (flagged — highest visibility) -->
         <div class="consensus-card">
           <div class="cc-header">
-            <span class="cc-icon">🌉</span>
             <span class="cc-label">הסכמה התגלתה</span>
           </div>
           <div class="cc-pct">80%</div>
@@ -2105,14 +2141,14 @@ input[type="range"]::-webkit-slider-thumb {
           <div class="forum-header-text">
             <h2>נושאים להסכמות חדשות</h2>
             <div class="forum-topic">חינוך · לימודי ליבה</div>
-            <div style="font-size:11px;color:var(--text-3);margin-top:4px">הנושאים שתעלו כאן הם הנושאים שיהפכו לשאלות הדופק</div>
+            <div style="font-size:11px;color:var(--text-3);margin-top:4px">הנושאים שיעלו כאן הם הנושאים שיהפכו להסכמות חדשות</div>
           </div>
         </div>
 
         <!-- Layer badge -->
         <div class="forum-layer-badge">
           <span class="layer-num">1</span>
-          <span>שכבה 1: הצהרות בלבד — ללא תגובות, ללא טרולים</span>
+          <span>הצהרות בלבד — ללא תגובות, ללא טרולים</span>
         </div>
 
         <!-- Live consensus bar -->
@@ -2202,7 +2238,7 @@ input[type="range"]::-webkit-slider-thumb {
         </div>
 
         <!-- Submit new statement -->
-        <div class="forum-submit" onclick="this.innerHTML='<textarea style=&quot;width:100%;height:60px;background:var(--card-bg,var(--surface));border:1px solid var(--teal);border-radius:8px;color:var(--text-1);padding:8px;font-size:13px;resize:none;direction:rtl;font-family:var(--font)&quot; maxlength=&quot;140&quot; placeholder=&quot;כתוב/י הצהרה (עד 140 תווים)...&quot;></textarea><div style=&quot;display:flex;justify-content:space-between;margin-top:8px&quot;><span style=&quot;font-size:11px;color:var(--text-3)&quot;>50 XP</span><button style=&quot;background:var(--teal);color:var(--bg);border:none;border-radius:6px;padding:4px 16px;font-size:12px;cursor:pointer;font-family:var(--font)&quot;>שלח</button></div>'">
+        <div class="forum-submit" onclick="openForumInput(this)">
           <div class="forum-submit-icon">✏️</div>
           <div class="forum-submit-text">הוסף הצהרה חדשה (140 תווים, ללא תגובות)</div>
           <div class="forum-submit-cost">50 XP</div>
@@ -2211,7 +2247,7 @@ input[type="range"]::-webkit-slider-thumb {
         <!-- Anti-troll info -->
         <div style="margin:0 20px 24px;padding:12px;background:var(--surface);border-radius:var(--r-md);font-size:11px;color:var(--text-3);line-height:1.6;border:1px solid var(--divider)">
           <div style="font-weight:600;color:var(--text-2);margin-bottom:4px">🛡️ למה אין כאן כפתור תגובה?</div>
-          בהשראת pol.is — ללא תגובות, אין טרולים. אם אתה לא מסכים עם הצהרה, כתוב הצהרה טובה יותר. הנושאים הפופולריים ביותר כאן הופכים לשאלות הדופק היומיות.
+          בהשראת pol.is — ללא תגובות, אין טרולים. אם אתה לא מסכים עם הצהרה, כתוב הצהרה טובה יותר. הנושאים הפופולריים ביותר כאן הופכים להסכמות חדשות.
         </div>
 
       </div>
@@ -2531,7 +2567,7 @@ input[type="range"]::-webkit-slider-thumb {
           <div style="font-size:12px;color:var(--text-3);margin-bottom:12px">כתבו הצהרות שכל הקבוצות יכולות להסכים עליהן. ככל שיותר קבוצות מסכימות — כך ההצהרה חזקה יותר.</div>
           <div class="bc-quote">"אני חושב שלימודי ליבה חשובים, אבל הדרך שבה הם מוצגים היום לא מתאימה לכולם. צריך גישה שמכבדת את כל הזרמים."</div>
           <div class="bc-from">— משתתף/ת</div>
-          <button class="btn btn-sm btn-primary">הגב ותרוויח נקודות גשר</button>
+          <button class="btn btn-sm btn-primary" onclick="goToScreen('screen-forum')">השתתף באתגר והצע הסכמה חדשה</button>
         </div>
       </div>
     </div>
@@ -2651,6 +2687,7 @@ input[type="range"]::-webkit-slider-thumb {
         <div class="arena-header">
           <h1>המימון</h1>
           <div style="font-size:13px;color:var(--text-3)">תמיכה אזרחית — ביחד אנחנו משפיעים יותר</div>
+          <div style="font-size:12px;color:var(--text-2);margin-top:6px">כל תרומה שלך מוכפלת — ככל שיותר אנשים תורמים, ההשפעה גדלה</div>
         </div>
         <div class="phase-lock-banner">
           <span class="lock-badge">🔒 שלב A</span>
@@ -2834,10 +2871,13 @@ input[type="range"]::-webkit-slider-thumb {
 
         <!-- Seasonal Badges -->
         <div style="margin:0 20px 16px;padding:14px 16px;background:var(--surface);border-radius:var(--r-lg);border:1px solid var(--divider)">
-          <div style="font-size:13px;font-weight:600;margin-bottom:10px">🔥 נושאים בוערים שלך</div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <div style="font-size:13px;font-weight:600;margin-bottom:10px">🏅 הישגים</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">
             <span style="padding:6px 12px;background:rgba(45,212,168,0.1);color:var(--teal);border-radius:var(--r-pill);font-size:12px;font-weight:600">🏛️ ותיק/ת אסיפה</span>
             <span style="padding:6px 12px;background:rgba(229,168,75,0.1);color:var(--gold);border-radius:var(--r-pill);font-size:12px;font-weight:600">🌉 בונה גשרים</span>
+          </div>
+          <div style="font-size:12px;color:var(--text-3);margin-bottom:6px">נושאים שמעניינים אותך</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
             <span style="padding:6px 12px;background:rgba(232,99,111,0.1);color:var(--coral);border-radius:var(--r-pill);font-size:12px;font-weight:600">📌 חינוך</span>
             <span style="padding:6px 12px;background:rgba(91,127,191,0.1);color:var(--blue);border-radius:var(--r-pill);font-size:12px;font-weight:600">📌 ביטחון וחברה</span>
           </div>
@@ -3902,6 +3942,12 @@ function initReveal() {
       bar.style.width = bar.style.width; // trigger reflow
     });
   }, 800);
+}
+
+function openForumInput(el) {
+  el.innerHTML = '<textarea style="width:100%;height:60px;background:var(--card-bg,var(--surface));border:1px solid var(--teal);border-radius:8px;color:var(--text-1);padding:8px;font-size:13px;resize:none;direction:rtl;font-family:var(--font)" maxlength="140" placeholder="כתוב/י הצהרה (עד 140 תווים)..."></textarea><div style="display:flex;justify-content:space-between;margin-top:8px"><span style="font-size:11px;color:var(--text-3)">50 XP</span><button style="background:var(--teal);color:var(--bg);border:none;border-radius:6px;padding:4px 16px;font-size:12px;cursor:pointer;font-family:var(--font)">שלח</button></div>';
+  el.onclick = null;
+  setTimeout(() => { const ta = el.querySelector('textarea'); if (ta) ta.focus(); }, 50);
 }
 
 function shareReveal() {
