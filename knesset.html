@@ -2296,18 +2296,19 @@ body {
           <span class="map-label map-label-religious">דתי</span>
 
           <!-- Party positions (approximate) -->
-          <div class="map-party" style="left:22%;top:28%;background:var(--likud);" title="ליכוד">ל</div>
-          <div class="map-party" style="left:55%;top:30%;background:var(--yesh-atid);" title="יש עתיד">יע</div>
-          <div class="map-party" style="left:42%;top:32%;background:var(--mamlachti);" title="מחנה ממלכתי">ממ</div>
-          <div class="map-party" style="left:15%;top:35%;background:var(--rz);" title="הציונות הדתית">צד</div>
-          <div class="map-party" style="left:28%;top:78%;background:var(--shas);" title="ש״ס">ש</div>
-          <div class="map-party" style="left:35%;top:85%;background:var(--utj);" title="יהדות התורה">ג</div>
-          <div class="map-party" style="left:38%;top:22%;background:var(--yisrael-beiteinu);" title="ישראל ביתנו">יב</div>
-          <div class="map-party" style="left:70%;top:30%;background:var(--labor);" title="העבודה">ע</div>
-          <div class="map-party" style="left:82%;top:24%;background:var(--meretz);" title="מרצ">מ</div>
-          <div class="map-party" style="left:85%;top:42%;background:var(--hadash);" title="חד״ש-תע״ל">חת</div>
-          <div class="map-party" style="left:78%;top:60%;background:var(--raam);" title="רע״מ">ר</div>
-          <div class="map-party" style="left:88%;top:48%;background:var(--balad);" title="בל״ד">ב</div>
+          <!-- Party positions computed from actual Knesset voting data on 11 onboarding votes -->
+          <div class="map-party" style="left:34%;top:66%;background:var(--likud);" title="ליכוד">ל</div>
+          <div class="map-party" style="left:72%;top:28%;background:var(--yesh-atid);" title="יש עתיד">יע</div>
+          <div class="map-party" style="left:70%;top:37%;background:var(--mamlachti);" title="המחנה הממלכתי">ממ</div>
+          <div class="map-party" style="left:20%;top:70%;background:var(--rz);" title="הציונות הדתית">צד</div>
+          <div class="map-party" style="left:30%;top:70%;background:var(--shas);" title="ש״ס">ש</div>
+          <div class="map-party" style="left:32%;top:72%;background:var(--utj);" title="יהדות התורה">ג</div>
+          <div class="map-party" style="left:62%;top:22%;background:var(--yisrael-beiteinu);" title="ישראל ביתנו">יב</div>
+          <div class="map-party" style="left:72%;top:28%;background:var(--labor);" title="העבודה">ע</div>
+          <div class="map-party" style="left:82%;top:20%;background:var(--meretz);" title="מרצ">מ</div>
+          <div class="map-party" style="left:80%;top:45%;background:var(--hadash);" title="חד״ש-תע״ל">חת</div>
+          <div class="map-party" style="left:72%;top:58%;background:var(--raam);" title="רע״מ">ר</div>
+          <div class="map-party" style="left:85%;top:50%;background:var(--balad);" title="בל״ד">ב</div>
 
           <!-- User position -->
           <div class="map-user" id="user-dot" style="left:52%;top:30%;"></div>
@@ -2970,13 +2971,13 @@ body {
             <div class="map-label map-label-secular">חילוני</div>
             <div class="map-label map-label-religious">דתי</div>
             <!-- Party dots -->
-            <div class="map-party" style="left:30%;top:28%;background:var(--likud);">ליכוד</div>
-            <div class="map-party" style="left:68%;top:30%;background:var(--yesh-atid);">יש עתיד</div>
-            <div class="map-party" style="left:62%;top:38%;background:var(--mamlachti);">המחנה הממלכתי</div>
-            <div class="map-party" style="left:22%;top:70%;background:var(--rz);">הציונות הדתית</div>
-            <div class="map-party" style="left:35%;top:82%;background:var(--shas);">ש״ס</div>
-            <div class="map-party" style="left:42%;top:88%;background:var(--utj);">יהדות התורה</div>
-            <div class="map-party" style="left:52%;top:22%;background:var(--yisrael-beiteinu);">יש״ב</div>
+            <div class="map-party" style="left:34%;top:66%;background:var(--likud);">ליכוד</div>
+            <div class="map-party" style="left:72%;top:28%;background:var(--yesh-atid);">יש עתיד</div>
+            <div class="map-party" style="left:70%;top:37%;background:var(--mamlachti);">המחנה הממלכתי</div>
+            <div class="map-party" style="left:20%;top:70%;background:var(--rz);">הציונות הדתית</div>
+            <div class="map-party" style="left:30%;top:70%;background:var(--shas);">ש״ס</div>
+            <div class="map-party" style="left:32%;top:72%;background:var(--utj);">יהדות התורה</div>
+            <div class="map-party" style="left:62%;top:22%;background:var(--yisrael-beiteinu);">יש״ב</div>
             <!-- User dot -->
             <div class="map-user" id="profile-user-dot" style="left:50%;top:50%;"></div>
           </div>
@@ -4140,79 +4141,44 @@ function computeResults() {
     surpriseText.innerHTML = `<strong>הפתעה:</strong> ההתאמה הנמוכה ביותר שלך — ${last.displayName} עם <span class="ltr-num">${last.pct}%</span> בלבד`;
   }
 
-  // Position user dot on 2D map based on votes
-  // Simple heuristic: left-right based on Reasonableness (1) and Criminal Orgs (25)
-  // Secular-religious based on Shabbat (4) and Haredi Draft (2)
+  // Position user dot on 2D map using signal weights derived from party voting data
+  // lr: positive=left-wing (high left%), negative=right-wing (low left%)
+  // sr: positive=religious (high top%), negative=secular (low top%)
+  const VOTE_SIGNALS = {
+    1:  { lr: -1, sr: 0 },   // Bagatz: for=less oversight=right
+    4:  { lr: 0,  sr: -1 },  // Shabbat transport: for=secular
+    6:  { lr: 1,  sr: -1 },  // Same-sex adoption: for=left+secular
+    8:  { lr: -1, sr: 0 },   // Death penalty: for=right
+    9:  { lr: 0,  sr: 1 },   // Rabbinate: for=religious
+    14: { lr: 0,  sr: 0 },   // Shelters: consensus
+    17: { lr: 1,  sr: -1 },  // Cannabis: for=left+secular
+    23: { lr: 1,  sr: -1 },  // Civil marriage: for=left+secular
+    25: { lr: -1, sr: 0 },   // Crime law: for=right
+    26: { lr: 1,  sr: 0 },   // Climate: for=left
+    28: { lr: 0,  sr: 1 },   // Kotel prayer: for=religious
+  };
+
   const userDot = document.getElementById('user-dot');
   if (userDot) {
-    let leftRight = 50; // 0=right, 100=left
-    let secRel = 50;    // 0=secular(top), 100=religious(bottom)
-
+    let lrSum = 0, srSum = 0, count = 0;
     userVotes.forEach(uv => {
-      if (uv.voteNum === 1) {
-        // Reasonableness: for=left-leaning, against=right-leaning
-        if (uv.direction === 'for') leftRight += 12;
-        else if (uv.direction === 'against') leftRight -= 12;
-      }
-      if (uv.voteNum === 25) {
-        // Police powers: for=right-leaning, against=left-leaning
-        if (uv.direction === 'for') leftRight -= 8;
-        else if (uv.direction === 'against') leftRight += 8;
-      }
-      if (uv.voteNum === 4) {
-        // Shabbat transport: for=secular, against=religious
-        if (uv.direction === 'for') secRel -= 12;
-        else if (uv.direction === 'against') secRel += 12;
-      }
-      if (uv.voteNum === 9) {
-        // Rabbinate control: for=religious, against=secular
-        if (uv.direction === 'for') secRel += 10;
-        else if (uv.direction === 'against') secRel -= 10;
-      }
-      if (uv.voteNum === 14) {
-        // Bomb shelters: for=slightly left, against=slightly right
-        if (uv.direction === 'for') leftRight += 4;
-        else if (uv.direction === 'against') leftRight -= 4;
-      }
-      if (uv.voteNum === 6) {
-        // Same-sex adoption: for=secular/left, against=religious/right
-        if (uv.direction === 'for') { leftRight += 6; secRel -= 6; }
-        else if (uv.direction === 'against') { leftRight -= 6; secRel += 6; }
-      }
-      if (uv.voteNum === 28) {
-        // Non-Orthodox prayer at Kotel: for=secular, against=religious
-        if (uv.direction === 'for') secRel -= 8;
-        else if (uv.direction === 'against') secRel += 8;
-      }
-      if (uv.voteNum === 23) {
-        // Civil marriage: for=secular/left, against=religious
-        if (uv.direction === 'for') { leftRight += 5; secRel -= 8; }
-        else if (uv.direction === 'against') { leftRight -= 5; secRel += 8; }
-      }
-      if (uv.voteNum === 8) {
-        // Death penalty for terrorists: for=right, against=left
-        if (uv.direction === 'for') leftRight -= 10;
-        else if (uv.direction === 'against') leftRight += 10;
-      }
-      if (uv.voteNum === 26) {
-        // Air pollution: for=left, against=right
-        if (uv.direction === 'for') leftRight += 5;
-        else if (uv.direction === 'against') leftRight -= 5;
-      }
-      if (uv.voteNum === 17) {
-        // Cannabis: for=left/secular, against=right/religious
-        if (uv.direction === 'for') { leftRight += 5; secRel -= 4; }
-        else if (uv.direction === 'against') { leftRight -= 5; secRel += 4; }
-      }
+      const sig = VOTE_SIGNALS[uv.voteNum];
+      if (!sig) return;
+      if (uv.direction === 'complex') return;
+      const mult = uv.direction === 'for' ? 1 : -1;
+      lrSum += sig.lr * mult;
+      srSum += sig.sr * mult;
+      count++;
     });
 
-    leftRight = Math.max(10, Math.min(90, leftRight));
-    secRel = Math.max(10, Math.min(90, secRel));
+    // Normalize: map raw signal to 10-90% range
+    const maxSignal = count || 1;
+    const leftRight = Math.max(10, Math.min(90, 50 + (lrSum / maxSignal) * 40));
+    const secRel = Math.max(10, Math.min(90, 50 + (srSum / maxSignal) * 40));
     userDot.style.left = leftRight + '%';
     userDot.style.top = secRel + '%';
 
-    // Store in appState for profile screen
-    appState.userPosition = { leftRight, secRel };
+    appState.userPosition = { leftRight: Math.round(leftRight), secRel: Math.round(secRel) };
   }
 
   // Store results for tiebreaker
