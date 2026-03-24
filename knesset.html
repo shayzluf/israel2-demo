@@ -4336,7 +4336,6 @@ function alertDecision(type) {
 }
 
 function overrideWithReason(reason) {
-  const a = getActiveAlert();
   const area = document.getElementById('alert-decision-area');
   if (!area) return;
   const reasons = {
@@ -4344,7 +4343,12 @@ function overrideWithReason(reason) {
     irrelevant: 'הורדת חשיבות הנושא נרשמה. הנציג/ה לומד/ת ✓',
     complex: 'מורכבות נרשמה. הנציג/ה מרחיב/ה את טווח החיזוי ✓'
   };
-  showPostDecision(area, a, reasons[reason], 'var(--coral)');
+  area.innerHTML = `
+    <div style="text-align: center; padding: 16px 0;">
+      <div style="font-size: 15px; font-weight: 700; color: var(--coral); margin-bottom: 12px;">${reasons[reason]}</div>
+      <div onclick="goToScreen('screen-home')" style="color: var(--text-3); font-size: 13px; cursor: pointer; padding: 10px;">חזרה לדעת הקהל</div>
+    </div>`;
+  setTimeout(() => goToScreen('screen-home'), 2500);
 }
 
 function showPostDecision(area, a, msg, accentColor) {
