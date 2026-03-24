@@ -2130,6 +2130,18 @@ body {
 }
 .alert-toast.show { opacity: 1; }
 
+/* Icon system — unified inline SVG */
+.icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.icon svg { display: block; }
+.icon--sm svg { width: 16px; height: 16px; }
+.icon--md svg { width: 20px; height: 20px; }
+.icon--lg svg { width: 28px; height: 28px; }
+.icon--muted { color: var(--text-2); }
+.icon--alert { color: var(--coral); }
+.icon--accent { color: var(--gold); }
+.icon--teal { color: var(--teal); }
+.icon--blue { color: var(--blue); }
+
 /* Contact MK Modal */
 .mk-contact-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100;
@@ -2465,7 +2477,7 @@ body {
         <!-- Shabbat card -->
         <div style="padding: 8px 20px;">
           <div class="shabbat-card">
-            <div class="shabbat-title">&#x05E9;&#x05D9;&#x05D7;&#x05EA; &#x05E9;&#x05D1;&#x05EA; &#x1F56F;&#xFE0F;</div>
+            <div class="shabbat-title" style="display: flex; align-items: center; gap: 6px; justify-content: center;"><span class="icon icon--md icon--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2 4-4 6-4 9a4 4 0 0 0 8 0c0-3-2-5-4-9z"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/></svg></span> שיחת שבת</div>
             <div class="shabbat-desc">3 &#x05D4;&#x05E6;&#x05D1;&#x05E2;&#x05D5;&#x05EA; &#x05D7;&#x05D3;&#x05E9;&#x05D5;&#x05EA; &#x05DB;&#x05DC; &#x05D9;&#x05D5;&#x05DD; &#x05D7;&#x05DE;&#x05D9;&#x05E9;&#x05D9; &#x05D1;-14:00</div>
             <div class="shabbat-toggle">
               <div class="toggle-track" id="shabbat-toggle" onclick="toggleShabbat()">
@@ -2603,22 +2615,22 @@ body {
             <div class="how-it-works-text">הנציג/ה מציג/ה חיזויים לכל ההצבעות הממתינות. יש לך 48 שעות לבדוק ולתקן. אם לא שינית כלום — העמדה החזויה נרשמת.</div>
             <div class="how-it-works-flow" style="flex-wrap: wrap; gap: 8px 4px; justify-content: center;">
               <div class="flow-step">
-                <div class="flow-icon" style="background:rgba(45,212,168,0.15);">🔮</div>
+                <div class="flow-icon" style="background:rgba(45,212,168,0.15); color: var(--teal);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v2"/><path d="M12 16v2"/><path d="M6 12h2"/><path d="M16 12h2"/><circle cx="12" cy="12" r="3"/></svg></div>
                 <div class="flow-label">חוזה הכל</div>
               </div>
               <div class="flow-arrow">&larr;</div>
               <div class="flow-step">
-                <div class="flow-icon" style="background:rgba(232,99,111,0.15);">🔔</div>
+                <div class="flow-icon" style="background:rgba(232,99,111,0.15); color: var(--coral);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
                 <div class="flow-label">מתריע/ה</div>
               </div>
               <div class="flow-arrow">&larr;</div>
               <div class="flow-step">
-                <div class="flow-icon" style="background:rgba(229,168,75,0.15);">⏳</div>
+                <div class="flow-icon" style="background:rgba(229,168,75,0.15); color: var(--gold);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg></div>
                 <div class="flow-label">48 שעות</div>
               </div>
               <div class="flow-arrow">&larr;</div>
               <div class="flow-step">
-                <div class="flow-icon" style="background:rgba(91,127,191,0.15);">📊</div>
+                <div class="flow-icon" style="background:rgba(91,127,191,0.15); color: var(--blue);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
                 <div class="flow-label">נרשם</div>
               </div>
             </div>
@@ -2755,7 +2767,7 @@ body {
         </div>
 
         <!-- Contradiction feed -->
-        <div class="promise-section-title">סתירות שוברות שיא &#x1F525;</div>
+        <div class="promise-section-title" style="display: flex; align-items: center; gap: 6px;"><span class="icon icon--md icon--alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14 0-5.5 3-7.5.5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.5-2.26 1.5-3"/></svg></span> סתירות שוברות שיא</div>
 
         <div class="contra-carousel" id="tracker-contra-carousel">
           <!-- Card 1: Netanyahu -->
@@ -3132,6 +3144,26 @@ const PARTY_DISPLAY = {
 };
 
 // Canonical party order for overlay display
+// SVG icon library — 24x24 viewBox, 1.5px stroke, round caps, currentColor
+const SVG_ATTRS = 'fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"';
+const ICONS = {
+  bell:    `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`,
+  share:   `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>`,
+  chat:    `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`,
+  mail:    `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 7 12 14 2 7"/></svg>`,
+  copy:    `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`,
+  flame:   `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M12 2c-2 4-4 6-4 9a4 4 0 0 0 8 0c0-3-2-5-4-9z"/><line x1="12" y1="15" x2="12" y2="22"/><line x1="9" y1="22" x2="15" y2="22"/></svg>`,
+  fire:    `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14 0-5.5 3-7.5.5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.5-2.26 1.5-3"/></svg>`,
+  speech:  `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+  ballot:  `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M7 11l3 3 7-7"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg>`,
+  predict: `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><circle cx="12" cy="12" r="10"/><path d="M12 6v2"/><path d="M12 16v2"/><path d="M6 12h2"/><path d="M16 12h2"/><circle cx="12" cy="12" r="3"/></svg>`,
+  timer:   `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>`,
+  chart:   `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+};
+function icon(name, size='md', colorClass='muted') {
+  return `<span class="icon icon--${size} icon--${colorClass}">${ICONS[name]||''}</span>`;
+}
+
 const PARTY_ORDER = ['הליכוד', 'יש עתיד', 'המחנה הממלכתי', 'הציונות הדתית', 'ש"ס', 'יהדות התורה', 'העבודה'];
 
 // User's swipe responses: array of {voteNum, direction} where direction is 'for'|'against'|'complex'
@@ -4109,7 +4141,7 @@ function renderWatchdogAlert() {
   container.innerHTML = `
     <div class="card" style="border-color: var(--coral); background: rgba(232,99,111,0.08); padding: 14px 18px;">
       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-        <span style="font-size: 20px;">🔔</span>
+        ${icon('bell','md','alert')}
         <span style="font-size: 13px; font-weight: 700; color: var(--coral);">התראת הנציג/ה</span>
         <span style="font-size: 11px; color: var(--text-3); margin-right: auto; direction: ltr;">לפני 2 שעות</span>
       </div>
@@ -4130,7 +4162,7 @@ function renderAlertDetail() {
   c.innerHTML = `
     <div class="alert-section">
       <div class="card" style="border-color: var(--coral); background: rgba(232,99,111,0.08); padding: 16px; text-align: center;">
-        <div style="font-size: 28px; margin-bottom: 8px;">🔔</div>
+        <div style="margin-bottom: 8px;">${icon('bell','lg','alert')}</div>
         <div style="font-size: 16px; font-weight: 700; color: var(--coral); line-height: 1.5;">התראת נציג/ה: ${a.mk} (${a.party})</div>
         <div style="font-size: 11px; color: var(--text-3); margin-top: 6px;">לפני 2 שעות</div>
       </div>
@@ -4144,11 +4176,11 @@ function renderAlertDetail() {
     <div class="alert-section">
       <div class="alert-section-title">מה שנאמר מול מה שקרה</div>
       <div class="contradiction-said">
-        <div style="font-size: 11px; color: var(--blue); font-weight: 600; margin-bottom: 4px;">💬 מה שנאמר</div>
+        <div style="font-size: 11px; color: var(--blue); font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">${icon('speech','sm','blue')} מה שנאמר</div>
         ${a.said}
       </div>
       <div class="contradiction-voted">
-        <div style="font-size: 11px; color: var(--coral); font-weight: 600; margin-bottom: 4px;">🗳️ מה שקרה בפועל</div>
+        <div style="font-size: 11px; color: var(--coral); font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">${icon('ballot','sm','alert')} מה שקרה בפועל</div>
         ${a.voted}
       </div>
       <div style="font-size: 12px; color: var(--text-3); line-height: 1.6; padding: 0 4px;">${a.kicker}</div>
@@ -4163,11 +4195,11 @@ function renderAlertDetail() {
     <div class="alert-section">
       <div class="alert-section-title">איך הצביעו במפלגות</div>
       <div style="margin-bottom: 12px;">
-        <div style="font-size: 12px; font-weight: 600; color: var(--teal); margin-bottom: 6px;">👍 בעד</div>
+        <div style="font-size: 12px; font-weight: 600; color: var(--teal); margin-bottom: 6px;">בעד</div>
         <div class="party-pills">${a.partiesFor.map(p => `<span class="party-pill party-pill-for">${p}</span>`).join('')}</div>
       </div>
       <div>
-        <div style="font-size: 12px; font-weight: 600; color: var(--coral); margin-bottom: 6px;">👎 נגד</div>
+        <div style="font-size: 12px; font-weight: 600; color: var(--coral); margin-bottom: 6px;">נגד</div>
         <div class="party-pills">${a.partiesAgainst.map(p => `<span class="party-pill party-pill-against">${p}</span>`).join('')}</div>
       </div>
     </div>
@@ -4175,8 +4207,8 @@ function renderAlertDetail() {
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <button class="btn" onclick="alertAction('confirm')" style="background: var(--teal); color: var(--bg); font-size: 14px; padding: 14px; border: none; width: 100%;">הנציג/ה צדק/ה — אני באמת מסכים/ה</button>
         <button class="btn" onclick="alertAction('override')" style="background: rgba(232,99,111,0.15); color: var(--coral); font-size: 14px; padding: 14px; border: none; width: 100%;">לא, אני דווקא חושב/ת אחרת</button>
-        <button class="btn" onclick="shareContradiction()" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%;">📲 לשתף את הסתירה</button>
-        <button class="btn" onclick="contactMK()" style="background: rgba(229,168,75,0.15); color: var(--gold); font-size: 14px; padding: 14px; border: none; width: 100%;">✉️ לשלוח הודעה לח"כ</button>
+        <button class="btn" onclick="shareContradiction()" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">${icon('share','sm','blue')} לשתף את הסתירה</button>
+        <button class="btn" onclick="contactMK()" style="background: rgba(229,168,75,0.15); color: var(--gold); font-size: 14px; padding: 14px; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">${icon('mail','sm','accent')} לשלוח הודעה לח"כ</button>
       </div>
     </div>
     <div class="alert-section" style="padding-bottom: 100px;">
@@ -4199,9 +4231,9 @@ function contactMK() {
     <div style="font-size: 12px; color: var(--text-3); margin-bottom: 8px;">הודעה מוכנה — אפשר לערוך לפני שליחה</div>
     <div class="mk-msg-preview" id="mkMsgText">${msg.replace(/\n/g, '<br>')}</div>
     <div class="mk-send-options">
-      <button class="btn" onclick="sendMKMessage('whatsapp')" style="background: #25D366; color: #fff; font-size: 14px; padding: 14px; border: none; width: 100%;">📱 שליחה בוואטסאפ</button>
-      <button class="btn" onclick="sendMKMessage('email')" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%;">📧 שליחה באימייל</button>
-      <button class="btn" onclick="sendMKMessage('copy')" style="background: rgba(255,255,255,0.05); color: var(--text-2); font-size: 14px; padding: 14px; border: none; width: 100%;">📋 להעתיק את הטקסט</button>
+      <button class="btn" onclick="sendMKMessage('whatsapp')" style="background: #25D366; color: #fff; font-size: 14px; padding: 14px; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">${icon('chat','sm','muted')} שליחה בוואטסאפ</button>
+      <button class="btn" onclick="sendMKMessage('email')" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">${icon('mail','sm','blue')} שליחה באימייל</button>
+      <button class="btn" onclick="sendMKMessage('copy')" style="background: rgba(255,255,255,0.05); color: var(--text-2); font-size: 14px; padding: 14px; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">${icon('copy','sm','muted')} להעתיק את הטקסט</button>
     </div>
     <div style="font-size: 11px; color: var(--text-3); text-align: center; margin-top: 12px; line-height: 1.5;">
       ההודעה נשלחת ממך ישירות — לא מהאפליקציה. פרטי הקשר של חברי הכנסת ציבוריים.
