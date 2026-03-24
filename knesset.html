@@ -2105,7 +2105,7 @@ body {
 .reset-btn:active { background: rgba(232,99,111,0.1); }
 
 /* Alert Detail Screen */
-.alert-back { display: flex; align-items: center; gap: 6px; padding: 12px 20px; color: var(--text-2); font-size: 13px; cursor: pointer; }
+.alert-back { display: flex; align-items: center; gap: 6px; padding: 12px 20px; color: var(--text-2); font-size: 13px; cursor: pointer; position: sticky; top: 0; z-index: 10; background: var(--bg); }
 .alert-back:active { opacity: 0.6; }
 .alert-section { padding: 0 20px 16px; }
 .alert-section-title { font-size: 13px; font-weight: 700; color: var(--text-3); margin-bottom: 8px; letter-spacing: 0.3px; }
@@ -2129,6 +2129,26 @@ body {
   transition: opacity 300ms; pointer-events: none; white-space: nowrap;
 }
 .alert-toast.show { opacity: 1; }
+
+/* Contact MK Modal */
+.mk-contact-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100;
+  display: flex; align-items: flex-end; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 200ms;
+}
+.mk-contact-overlay.show { opacity: 1; pointer-events: auto; }
+.mk-contact-sheet {
+  background: var(--surface); border-radius: var(--r-lg) var(--r-lg) 0 0;
+  width: 100%; max-width: 420px; padding: 20px; max-height: 80vh; overflow-y: auto;
+  transform: translateY(100%); transition: transform 300ms ease-out;
+}
+.mk-contact-overlay.show .mk-contact-sheet { transform: translateY(0); }
+.mk-msg-preview {
+  background: var(--bg); border: 1px solid var(--divider); border-radius: var(--r-md);
+  padding: 14px; font-size: 13px; line-height: 1.7; color: var(--text-2);
+  margin: 12px 0; direction: rtl;
+}
+.mk-send-options { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
 
 </style>
 </head>
@@ -2428,23 +2448,8 @@ body {
           </div>
         </div>
 
-        <!-- Watchdog alert -->
-        <div style="padding: 8px 20px;">
-          <div class="card" style="border-color: var(--coral); background: rgba(232,99,111,0.08); padding: 14px 18px;">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-              <span style="font-size: 20px;">&#x1F514;</span>
-              <span style="font-size: 13px; font-weight: 700; color: var(--coral);">התראת הנציג/ה</span>
-              <span style="font-size: 11px; color: var(--text-3); margin-right: auto; direction: ltr;">לפני 2 שעות</span>
-            </div>
-            <div style="font-size: 14px; line-height: 1.6; color: var(--text-2);">
-              <strong style="color: var(--text-1);">בנימין נתניהו</strong> הצביע נגד מה שהנציג/ה חוזה שהיית בוחר/ת בנושא רפורמת יבוא מהאיחוד האירופי
-            </div>
-            <div style="display: flex; gap: 8px; margin-top: 10px;">
-              <button class="btn btn-sm" onclick="goToScreen('screen-alert-detail')" style="background: rgba(232,99,111,0.15); color: var(--coral); border: none; flex: 1; font-size: 12px; padding: 8px;">ראו פרטים</button>
-              <button class="btn btn-sm" style="background: rgba(45,212,168,0.15); color: var(--teal); border: none; flex: 1; font-size: 12px; padding: 8px;">הנציג/ה צדק/ה</button>
-            </div>
-          </div>
-        </div>
+        <!-- Watchdog alert (dynamically populated by JS based on user position) -->
+        <div style="padding: 8px 20px;" id="watchdog-alert-container"></div>
 
         <!-- Weekly votes -->
         <div style="padding: 8px 20px;">
@@ -2507,106 +2512,24 @@ body {
     <div class="screen" id="screen-alert-detail">
       <div class="screen-scroll">
 
-        <!-- Back button -->
+        <!-- Back button (sticky) -->
         <div class="alert-back" onclick="goToScreen('screen-home')">
           <span style="direction:ltr;">→</span> חזרה
         </div>
 
-        <!-- Header -->
-        <div class="alert-section">
-          <div class="card" style="border-color: var(--coral); background: rgba(232,99,111,0.08); padding: 16px; text-align: center;">
-            <div style="font-size: 28px; margin-bottom: 8px;">🔔</div>
-            <div style="font-size: 16px; font-weight: 700; color: var(--coral); line-height: 1.5;">התראת נציג/ה: הצבעה נגד החיזוי שלך</div>
-            <div style="font-size: 11px; color: var(--text-3); margin-top: 6px;">לפני 2 שעות</div>
-          </div>
-        </div>
-
-        <!-- The Issue -->
-        <div class="alert-section">
-          <div class="alert-section-title">מה הנושא?</div>
-          <div class="card" style="padding: 14px 16px;">
-            <div style="font-size: 14px; line-height: 1.8; color: var(--text-2);">
-              הכנסת הצביעה על הצעת חוק שתאפשר <strong style="color: var(--text-1);">יבוא מקביל של מוצרים מאירופה</strong> — בלי לעבור דרך היבואנים הבלעדיים שמחזיקים מונופול על המחירים בארץ. המחירים של מזון בישראל גבוהים ב-<strong style="color: var(--coral);">51%</strong> מהממוצע באירופה. ההצעה נפלה.
-            </div>
-          </div>
-        </div>
-
-        <!-- The Contradiction -->
-        <div class="alert-section">
-          <div class="alert-section-title">מה שנאמר מול מה שקרה</div>
-          <div class="contradiction-said">
-            <div style="font-size: 11px; color: var(--blue); font-weight: 600; margin-bottom: 4px;">💬 מה שנאמר</div>
-            נתניהו הבטיח שוב ושוב להוריד את יוקר המחיה ולפתוח את השוק לתחרות.
-          </div>
-          <div class="contradiction-voted">
-            <div style="font-size: 11px; color: var(--coral); font-weight: 600; margin-bottom: 4px;">🗳️ מה שקרה בפועל</div>
-            הצביע <strong>נגד</strong> הצעת החוק ליבוא מקביל מאירופה.
-          </div>
-          <div style="font-size: 12px; color: var(--text-3); line-height: 1.6; padding: 0 4px;">
-            ההצעה הייתה מאפשרת לייבא מוצרי מזון וצריכה ישירות מאירופה במחירים נמוכים יותר. הקואליציה הפילה אותה.
-          </div>
-        </div>
-
-        <!-- Rep Prediction -->
-        <div class="alert-section">
-          <div class="alert-section-title">החיזוי של הנציג/ה שלך</div>
-          <div class="card" style="padding: 14px 16px; border-color: var(--teal); background: rgba(45,212,168,0.06);">
-            <div style="font-size: 15px; font-weight: 600; color: var(--teal); margin-bottom: 8px;">
-              הנציג/ה שלך חזה שהיית בוחר/ת: בעד הרפורמה ✅
-            </div>
-            <div style="font-size: 13px; color: var(--text-2); line-height: 1.7;">
-              <strong style="color: var(--text-3);">למה?</strong> בהתבסס על ההצבעות הקודמות שלך בנושאי יוקר המחיה ותחרות בשוק, הנציג/ה חזה שתתמוך בהורדת חסמי יבוא.
-            </div>
-          </div>
-        </div>
-
-        <!-- Party Breakdown -->
-        <div class="alert-section">
-          <div class="alert-section-title">איך הצביעו במפלגות</div>
-          <div style="margin-bottom: 12px;">
-            <div style="font-size: 12px; font-weight: 600; color: var(--teal); margin-bottom: 6px;">👍 בעד הרפורמה</div>
-            <div class="party-pills">
-              <span class="party-pill party-pill-for">יש עתיד</span>
-              <span class="party-pill party-pill-for">המחנה הממלכתי</span>
-              <span class="party-pill party-pill-for">ישראל ביתנו</span>
-              <span class="party-pill party-pill-for">העבודה</span>
-              <span class="party-pill party-pill-for">חד"ש-תע"ל</span>
-              <span class="party-pill party-pill-for">רע"ם</span>
-            </div>
-          </div>
-          <div>
-            <div style="font-size: 12px; font-weight: 600; color: var(--coral); margin-bottom: 6px;">👎 נגד הרפורמה</div>
-            <div class="party-pills">
-              <span class="party-pill party-pill-against">הליכוד</span>
-              <span class="party-pill party-pill-against">הציונות הדתית</span>
-              <span class="party-pill party-pill-against">ש"ס</span>
-              <span class="party-pill party-pill-against">יהדות התורה</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="alert-section">
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            <button class="btn" onclick="alertAction('confirm')" style="background: var(--teal); color: var(--bg); font-size: 14px; padding: 14px; border: none; width: 100%;">הנציג/ה צדק/ה — אני באמת בעד</button>
-            <button class="btn" onclick="alertAction('override')" style="background: rgba(232,99,111,0.15); color: var(--coral); font-size: 14px; padding: 14px; border: none; width: 100%;">לא, אני דווקא נגד</button>
-            <button class="btn" onclick="shareContradiction()" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%;">📲 לשתף את הסתירה</button>
-          </div>
-        </div>
-
-        <!-- Legal Fine Print -->
-        <div class="alert-section" style="padding-bottom: 100px;">
-          <div style="display: flex; align-items: flex-start; gap: 8px; padding: 10px 14px; background: rgba(255,255,255,0.03); border-radius: var(--r-md);">
-            <svg viewBox="0 0 24 24" fill="var(--text-3)" width="16" height="16" style="flex-shrink:0; margin-top: 2px;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-            <div style="font-size: 11px; color: var(--text-3); line-height: 1.5;">הנציג/ה לא מצביע/ה במקומך — זה כלי חיזוי אישי. ההצבעה הסופית תמיד שלך.</div>
-          </div>
-        </div>
+        <!-- Dynamic content populated by renderAlertDetail() -->
+        <div id="alert-detail-content"></div>
 
       </div>
     </div>
 
     <!-- Toast notification -->
     <div class="alert-toast" id="alertToast"></div>
+
+    <!-- Contact MK Modal -->
+    <div class="mk-contact-overlay" id="mkContactOverlay" onclick="if(event.target===this)closeMKContact()">
+      <div class="mk-contact-sheet" id="mkContactSheet"></div>
+    </div>
 
     <!-- ==================== SCREEN: REP ==================== -->
     <div class="screen tab-screen" id="screen-rep">
@@ -4111,6 +4034,202 @@ function shareConsensus() {
   setTimeout(() => { btn.innerHTML = origHTML; }, 2000);
 }
 
+// ===== DYNAMIC ALERT SYSTEM: 4 per-quadrant contradiction alerts =====
+const alertVariants = {
+  'right-secular': {
+    mk: 'ניר ברקת', party: 'הליכוד', verb: 'הצביע',
+    topic: 'הפחתת מע"מ על מוצרי מזון בסיסיים',
+    issueHtml: 'הכנסת הצביעה על הצעת חוק ל<strong style="color:var(--text-1);">הפחתת מע"מ על מוצרי מזון בסיסיים</strong> — חלב, לחם, ביצים, ירקות. המחירים של מזון בישראל גבוהים ב-<strong style="color:var(--coral);">51%</strong> מהממוצע באירופה. ההצעה נפלה.',
+    said: 'ברקת הבטיח לפעול להורדת מחירי המזון והדיור. "משפחות עובדות לא צריכות לבחור בין שכר דירה לאוכל."',
+    voted: 'הצביע <strong>נגד</strong> הצעת חוק להפחתת מע"מ על סל מזון בסיסי, בהתאם להנחיית הקואליציה.',
+    kicker: 'ההצעה הוגשה כהצעת חוק פרטית ונפלה בקריאה טרומית ברוב קואליציוני.',
+    prediction: 'בעד הפחתת המע"מ ✅',
+    predictionWhy: 'בהתבסס על ההצבעות הקודמות שלך בנושאי יוקר המחיה ותחרות בשוק, הנציג/ה חזה שתתמוך בהורדת מחירי מזון.',
+    partiesFor: ['יש עתיד', 'המחנה הממלכתי', 'ישראל ביתנו', 'העבודה', 'חד"ש-תע"ל'],
+    partiesAgainst: ['הליכוד', 'הציונות הדתית', 'ש"ס', 'יהדות התורה'],
+  },
+  'left-secular': {
+    mk: 'מיכל שיר', party: 'יש עתיד', verb: 'נעדרה מההצבעה על',
+    topic: 'תחבורה ציבורית בשבת',
+    issueHtml: 'הכנסת הצביעה על הצעת חוק ל<strong style="color:var(--text-1);">תחבורה ציבורית בשבת</strong> — אוטובוסים ורכבות בימי שבת ברשויות שמבקשות זאת. ההצעה נפלה בפער קטן.',
+    said: 'שיר הבטיחה: "חופש התנועה בשבת הוא זכות בסיסית. אנחנו לא מוכנים לוותר על אורח החיים החילוני שלנו."',
+    voted: '<strong>נעדרה</strong> מההצבעה על הצעת חוק לתחבורה ציבורית בשבת ולא הגיעה למליאה ביום ההצבעה.',
+    kicker: 'הצעות חוק בנושא תחבורה בשבת נפלו שוב ושוב בפערים קטנים — כל קול נעדר מכריע.',
+    prediction: 'בעד תחבורה ציבורית בשבת ✅',
+    predictionWhy: 'בהתבסס על ההצבעות הקודמות שלך בנושאי חופש דת ושוויון אזרחי, הנציג/ה חזה שתתמוך בתחבורה ציבורית בשבת.',
+    partiesFor: ['ישראל ביתנו', 'העבודה', 'חד"ש-תע"ל', 'רע"ם'],
+    partiesAgainst: ['הליכוד', 'הציונות הדתית', 'ש"ס', 'יהדות התורה'],
+  },
+  'right-religious': {
+    mk: 'אופיר סופר', party: 'הציונות הדתית', verb: 'הצביע',
+    topic: 'תקציב שירותי דת ורבנויות',
+    issueHtml: 'הכנסת אישרה את <strong style="color:var(--text-1);">תקציב המדינה</strong> שכלל קיצוץ של <strong style="color:var(--coral);">15%</strong> בתקציב שירותי הדת והקפאת תקנים ברבנויות המקומיות.',
+    said: 'סופר הצהיר: "שירותי הדת הם עמוד השדרה של החברה היהודית. אני אלחם על כל שקל לרבנויות ולמקוואות."',
+    voted: 'תמך בתקציב המדינה שכלל <strong>קיצוץ של 15%</strong> בתקציב שירותי הדת והקפאת תקנים ברבנויות.',
+    kicker: 'הקיצוצים בשירותי הדת נדחקו לשוליים בדיון הציבורי שהתמקד בסעיפים ביטחוניים.',
+    prediction: 'נגד הקיצוץ בשירותי דת ✅',
+    predictionWhy: 'בהתבסס על ההצבעות הקודמות שלך בנושאי דת ומסורת, הנציג/ה חזה שתתנגד לקיצוץ בתקציב הרבנויות.',
+    partiesFor: ['הליכוד', 'הציונות הדתית', 'ש"ס', 'יהדות התורה'],
+    partiesAgainst: ['יש עתיד', 'המחנה הממלכתי', 'ישראל ביתנו', 'העבודה', 'חד"ש-תע"ל'],
+  },
+  'center-traditional': {
+    mk: 'גדי איזנקוט', party: 'המחנה הממלכתי', verb: 'הצביע',
+    topic: 'ועדת חקירה לאירועי 7 באוקטובר',
+    issueHtml: 'הכנסת הצביעה על הקמת <strong style="color:var(--text-1);">ועדת חקירה פרלמנטרית</strong> עם סמכויות מורחבות לחקירת כשלי 7 באוקטובר — כולל הדרג המדיני והצבאי.',
+    said: 'איזנקוט הצהיר: "חייבת לקום ועדת חקירה ממלכתית. זה לא עניין פוליטי, זה חוב מוסרי למשפחות."',
+    voted: 'הצביע <strong>נגד</strong> הצעה להקמת ועדת חקירה פרלמנטרית, בטענה שהתזמון לא נכון.',
+    kicker: 'הצעות להקמת ועדת חקירה נתקלו בהתנגדות קואליציונית וגם בהיסוסים מחלק מחברי האופוזיציה.',
+    prediction: 'בעד ועדת חקירה ✅',
+    predictionWhy: 'בהתבסס על ההצבעות הקודמות שלך בנושאי שוויון בנטל וממשל תקין, הנציג/ה חזה שתתמוך בועדת חקירה.',
+    partiesFor: ['יש עתיד', 'ישראל ביתנו', 'העבודה', 'חד"ש-תע"ל'],
+    partiesAgainst: ['הליכוד', 'הציונות הדתית', 'ש"ס', 'יהדות התורה', 'המחנה הממלכתי'],
+  }
+};
+
+function getUserQuadrant() {
+  // Determine quadrant from user's 2D position (computed during onboarding swipes)
+  // leftRight: negative = right, positive = left
+  // secRel: negative = religious, positive = secular
+  const lr = userPosition.leftRight || 0;
+  const sr = userPosition.secRel || 0;
+  if (lr < 0 && sr >= 0) return 'right-secular';
+  if (lr >= 0 && sr >= 0) return 'left-secular';
+  if (lr < 0 && sr < 0) return 'right-religious';
+  return 'center-traditional';
+}
+
+function getActiveAlert() {
+  return alertVariants[getUserQuadrant()];
+}
+
+function renderWatchdogAlert() {
+  const a = getActiveAlert();
+  const container = document.getElementById('watchdog-alert-container');
+  if (!container) return;
+  container.innerHTML = `
+    <div class="card" style="border-color: var(--coral); background: rgba(232,99,111,0.08); padding: 14px 18px;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        <span style="font-size: 20px;">🔔</span>
+        <span style="font-size: 13px; font-weight: 700; color: var(--coral);">התראת הנציג/ה</span>
+        <span style="font-size: 11px; color: var(--text-3); margin-right: auto; direction: ltr;">לפני 2 שעות</span>
+      </div>
+      <div style="font-size: 14px; line-height: 1.6; color: var(--text-2);">
+        <strong style="color: var(--text-1);">${a.mk}</strong> (${a.party}) ${a.verb} נגד מה שהנציג/ה חוזה שהיית בוחר/ת בנושא ${a.topic}
+      </div>
+      <div style="display: flex; gap: 8px; margin-top: 10px;">
+        <button class="btn btn-sm" onclick="goToScreen('screen-alert-detail'); renderAlertDetail();" style="background: rgba(232,99,111,0.15); color: var(--coral); border: none; flex: 1; font-size: 12px; padding: 8px;">ראו פרטים</button>
+        <button class="btn btn-sm" onclick="alertAction('confirm')" style="background: rgba(45,212,168,0.15); color: var(--teal); border: none; flex: 1; font-size: 12px; padding: 8px;">הנציג/ה צדק/ה</button>
+      </div>
+    </div>`;
+}
+
+function renderAlertDetail() {
+  const a = getActiveAlert();
+  const c = document.getElementById('alert-detail-content');
+  if (!c) return;
+  c.innerHTML = `
+    <div class="alert-section">
+      <div class="card" style="border-color: var(--coral); background: rgba(232,99,111,0.08); padding: 16px; text-align: center;">
+        <div style="font-size: 28px; margin-bottom: 8px;">🔔</div>
+        <div style="font-size: 16px; font-weight: 700; color: var(--coral); line-height: 1.5;">התראת נציג/ה: ${a.mk} (${a.party})</div>
+        <div style="font-size: 11px; color: var(--text-3); margin-top: 6px;">לפני 2 שעות</div>
+      </div>
+    </div>
+    <div class="alert-section">
+      <div class="alert-section-title">מה הנושא?</div>
+      <div class="card" style="padding: 14px 16px;">
+        <div style="font-size: 14px; line-height: 1.8; color: var(--text-2);">${a.issueHtml}</div>
+      </div>
+    </div>
+    <div class="alert-section">
+      <div class="alert-section-title">מה שנאמר מול מה שקרה</div>
+      <div class="contradiction-said">
+        <div style="font-size: 11px; color: var(--blue); font-weight: 600; margin-bottom: 4px;">💬 מה שנאמר</div>
+        ${a.said}
+      </div>
+      <div class="contradiction-voted">
+        <div style="font-size: 11px; color: var(--coral); font-weight: 600; margin-bottom: 4px;">🗳️ מה שקרה בפועל</div>
+        ${a.voted}
+      </div>
+      <div style="font-size: 12px; color: var(--text-3); line-height: 1.6; padding: 0 4px;">${a.kicker}</div>
+    </div>
+    <div class="alert-section">
+      <div class="alert-section-title">החיזוי של הנציג/ה שלך</div>
+      <div class="card" style="padding: 14px 16px; border-color: var(--teal); background: rgba(45,212,168,0.06);">
+        <div style="font-size: 15px; font-weight: 600; color: var(--teal); margin-bottom: 8px;">הנציג/ה שלך חזה שהיית בוחר/ת: ${a.prediction}</div>
+        <div style="font-size: 13px; color: var(--text-2); line-height: 1.7;"><strong style="color: var(--text-3);">למה?</strong> ${a.predictionWhy}</div>
+      </div>
+    </div>
+    <div class="alert-section">
+      <div class="alert-section-title">איך הצביעו במפלגות</div>
+      <div style="margin-bottom: 12px;">
+        <div style="font-size: 12px; font-weight: 600; color: var(--teal); margin-bottom: 6px;">👍 בעד</div>
+        <div class="party-pills">${a.partiesFor.map(p => `<span class="party-pill party-pill-for">${p}</span>`).join('')}</div>
+      </div>
+      <div>
+        <div style="font-size: 12px; font-weight: 600; color: var(--coral); margin-bottom: 6px;">👎 נגד</div>
+        <div class="party-pills">${a.partiesAgainst.map(p => `<span class="party-pill party-pill-against">${p}</span>`).join('')}</div>
+      </div>
+    </div>
+    <div class="alert-section">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button class="btn" onclick="alertAction('confirm')" style="background: var(--teal); color: var(--bg); font-size: 14px; padding: 14px; border: none; width: 100%;">הנציג/ה צדק/ה — אני באמת מסכים/ה</button>
+        <button class="btn" onclick="alertAction('override')" style="background: rgba(232,99,111,0.15); color: var(--coral); font-size: 14px; padding: 14px; border: none; width: 100%;">לא, אני דווקא חושב/ת אחרת</button>
+        <button class="btn" onclick="shareContradiction()" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%;">📲 לשתף את הסתירה</button>
+        <button class="btn" onclick="contactMK()" style="background: rgba(229,168,75,0.15); color: var(--gold); font-size: 14px; padding: 14px; border: none; width: 100%;">✉️ לשלוח הודעה לח"כ</button>
+      </div>
+    </div>
+    <div class="alert-section" style="padding-bottom: 100px;">
+      <div style="display: flex; align-items: flex-start; gap: 8px; padding: 10px 14px; background: rgba(255,255,255,0.03); border-radius: var(--r-md);">
+        <svg viewBox="0 0 24 24" fill="var(--text-3)" width="16" height="16" style="flex-shrink:0; margin-top: 2px;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+        <div style="font-size: 11px; color: var(--text-3); line-height: 1.5;">הנציג/ה חוזה, לא מחליט/ה — זה כלי חיזוי אישי. ההחלטה הסופית תמיד שלך.</div>
+      </div>
+    </div>`;
+}
+
+function contactMK() {
+  const a = getActiveAlert();
+  const sheet = document.getElementById('mkContactSheet');
+  const msg = `שלום ח"כ ${a.mk},\nאני אזרח/ית ישראלי/ת שעוקב/ת אחרי ההצבעות בכנסת.\nשמתי לב שבנושא ${a.topic} הבעת עמדה פומבית אחת אבל הצבעת אחרת.\nאשמח לשמוע הסבר — למה ההצבעה לא תואמת את מה שנאמר?`;
+  sheet.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+      <div style="font-size: 16px; font-weight: 700; color: var(--text-1);">✉️ הודעה לח"כ ${a.mk}</div>
+      <div onclick="closeMKContact()" style="color: var(--text-3); font-size: 20px; cursor: pointer; padding: 4px 8px;">✕</div>
+    </div>
+    <div style="font-size: 12px; color: var(--text-3); margin-bottom: 8px;">הודעה מוכנה — אפשר לערוך לפני שליחה</div>
+    <div class="mk-msg-preview" id="mkMsgText">${msg.replace(/\n/g, '<br>')}</div>
+    <div class="mk-send-options">
+      <button class="btn" onclick="sendMKMessage('whatsapp')" style="background: #25D366; color: #fff; font-size: 14px; padding: 14px; border: none; width: 100%;">📱 שליחה בוואטסאפ</button>
+      <button class="btn" onclick="sendMKMessage('email')" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%;">📧 שליחה באימייל</button>
+      <button class="btn" onclick="sendMKMessage('copy')" style="background: rgba(255,255,255,0.05); color: var(--text-2); font-size: 14px; padding: 14px; border: none; width: 100%;">📋 להעתיק את הטקסט</button>
+    </div>
+    <div style="font-size: 11px; color: var(--text-3); text-align: center; margin-top: 12px; line-height: 1.5;">
+      ההודעה נשלחת ממך ישירות — לא מהאפליקציה. פרטי הקשר של חברי הכנסת ציבוריים.
+    </div>`;
+  document.getElementById('mkContactOverlay').classList.add('show');
+}
+
+function closeMKContact() {
+  document.getElementById('mkContactOverlay').classList.remove('show');
+}
+
+function sendMKMessage(method) {
+  const a = getActiveAlert();
+  const msg = `שלום ח"כ ${a.mk}, אני אזרח/ית שעוקב/ת אחרי ההצבעות בכנסת. שמתי לב שבנושא ${a.topic} הבעת עמדה פומבית אחת אבל הצבעת אחרת. אשמח לשמוע הסבר.`;
+  if (method === 'whatsapp') {
+    window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+  } else if (method === 'email') {
+    window.open('mailto:?subject=' + encodeURIComponent('שאלה על הצבעה בכנסת') + '&body=' + encodeURIComponent(msg));
+  } else {
+    navigator.clipboard?.writeText(msg);
+  }
+  closeMKContact();
+  const toast = document.getElementById('alertToast');
+  toast.textContent = method === 'copy' ? 'הטקסט הועתק ✓' : 'ההודעה מוכנה לשליחה ✓';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
 function alertAction(type) {
   const toast = document.getElementById('alertToast');
   if (type === 'confirm') {
@@ -4165,6 +4284,9 @@ function updateHomeScreen() {
   if (homeVal) homeVal.textContent = pctInt + '%';
   const milestoneEl = document.getElementById('home-milestone');
   if (milestoneEl) milestoneEl.textContent = getMilestoneText(appState.totalVotesAnswered);
+
+  // Watchdog alert (per-quadrant)
+  renderWatchdogAlert();
 
   // Weekly votes
   renderWeeklyVotes();
