@@ -2562,8 +2562,8 @@ body {
           <div class="party-contra-pill high">ליכוד: 4 סתירות</div>
           <div class="party-contra-pill medium">ש״ס: 3 סתירות</div>
           <div class="party-contra-pill medium">יש עתיד: 2 סתירות</div>
-          <div class="party-contra-pill low">הציונות הד׳: 1</div>
-          <div class="party-contra-pill low">המחנה הממ׳: 1</div>
+          <div class="party-contra-pill low">צה״ד: 1</div>
+          <div class="party-contra-pill low">ממלכתי: 1</div>
           <div class="party-contra-pill low">ישראל ביתנו: 1</div>
         </div>
 
@@ -2823,10 +2823,10 @@ body {
             <!-- Party dots -->
             <div class="map-party" style="left:30%;top:28%;background:var(--likud);">ליכוד</div>
             <div class="map-party" style="left:68%;top:30%;background:var(--yesh-atid);">יש עתיד</div>
-            <div class="map-party" style="left:62%;top:38%;background:var(--mamlachti);">מחנה ממ׳</div>
-            <div class="map-party" style="left:22%;top:70%;background:var(--rz);">הצ. הד׳</div>
+            <div class="map-party" style="left:62%;top:38%;background:var(--mamlachti);">ממלכתי</div>
+            <div class="map-party" style="left:22%;top:70%;background:var(--rz);">צה״ד</div>
             <div class="map-party" style="left:35%;top:82%;background:var(--shas);">ש״ס</div>
-            <div class="map-party" style="left:42%;top:88%;background:var(--utj);">יהדות הת׳</div>
+            <div class="map-party" style="left:42%;top:88%;background:var(--utj);">יהדות התורה</div>
             <div class="map-party" style="left:52%;top:22%;background:var(--yisrael-beiteinu);">יש״ב</div>
             <!-- User dot -->
             <div class="map-user" id="profile-user-dot" style="left:50%;top:50%;"></div>
@@ -3001,10 +3001,10 @@ const HEBREW_MONTHS = {
 const PARTY_DISPLAY = {
   'הליכוד': 'ליכוד',
   'יש עתיד': 'יש עתיד',
-  'המחנה הממלכתי': 'מחנה ממ׳',
-  'הציונות הדתית': 'הציונות הד׳',
+  'המחנה הממלכתי': 'ממלכתי',
+  'הציונות הדתית': 'צה״ד',
   'ש"ס': 'ש״ס',
-  'יהדות התורה': 'יהדות הת׳',
+  'יהדות התורה': 'יהדות התורה',
   'העבודה': 'העבודה',
   'ישראל ביתנו': 'ישראל ביתנו',
   'חד"ש-תע"ל': 'חד״ש-תע״ל',
@@ -4505,7 +4505,7 @@ const CITY_DATA = {
     name: 'תל אביב',
     results: [
       { party: 'יש עתיד', pct: 34, color: 'var(--yesh-atid)' },
-      { party: 'המחנה הממ׳', pct: 22, color: 'var(--mamlachti)' },
+      { party: 'ממלכתי', pct: 22, color: 'var(--mamlachti)' },
       { party: 'העבודה', pct: 15, color: 'var(--labor)' }
     ]
   },
@@ -4514,7 +4514,7 @@ const CITY_DATA = {
     results: [
       { party: 'ליכוד', pct: 28, color: 'var(--likud)' },
       { party: 'ש״ס', pct: 21, color: 'var(--shas)' },
-      { party: 'הציונות הד׳', pct: 17, color: 'var(--rz)' }
+      { party: 'צה״ד', pct: 17, color: 'var(--rz)' }
     ]
   },
   'haifa': {
@@ -4522,7 +4522,7 @@ const CITY_DATA = {
     results: [
       { party: 'יש עתיד', pct: 29, color: 'var(--yesh-atid)' },
       { party: 'ישראל ביתנו', pct: 19, color: 'var(--yisrael-beiteinu)' },
-      { party: 'המחנה הממ׳', pct: 18, color: 'var(--mamlachti)' }
+      { party: 'ממלכתי', pct: 18, color: 'var(--mamlachti)' }
     ]
   },
   'beer': {
@@ -4538,11 +4538,11 @@ const CITY_DATA = {
 const COALITION_DATA = [
   { party: 'יש עתיד', seats: 24, color: 'var(--yesh-atid)' },
   { party: 'ליכוד', seats: 22, color: 'var(--likud)' },
-  { party: 'המחנה הממ׳', seats: 18, color: 'var(--mamlachti)' },
-  { party: 'הציונות הד׳', seats: 14, color: 'var(--rz)' },
+  { party: 'ממלכתי', seats: 18, color: 'var(--mamlachti)' },
+  { party: 'צה״ד', seats: 14, color: 'var(--rz)' },
   { party: 'ש״ס', seats: 12, color: 'var(--shas)' },
   { party: 'ישראל ביתנו', seats: 11, color: 'var(--yisrael-beiteinu)' },
-  { party: 'יהדות הת׳', seats: 8, color: 'var(--utj)' },
+  { party: 'יהדות התורה', seats: 8, color: 'var(--utj)' },
   { party: 'אחרים', seats: 11, color: 'var(--text-3)' }
 ];
 
