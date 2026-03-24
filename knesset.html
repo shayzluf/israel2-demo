@@ -485,15 +485,15 @@ body {
 .swipe-indicator {
   position: absolute;
   top: 12px;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 5px 14px;
+  font-size: 18px;
+  font-weight: 800;
+  padding: 8px 20px;
   border-radius: var(--r-pill);
   opacity: 0;
   transition: opacity 150ms ease, transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
   transform: scale(0.5) rotate(-5deg);
   z-index: 2;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 .swipe-indicator.visible { transform: scale(1.05) rotate(0deg); }
 .swipe-indicator.locked { transform: scale(1) rotate(0deg); }
@@ -518,6 +518,8 @@ body {
   color: #E5A84B;
   border: 2.5px solid #E5A84B;
   text-shadow: 0 0 8px rgba(229,168,75,0.3);
+  white-space: nowrap;
+  font-size: 16px;
 }
 .swipe-indicator.complex-ind.visible { transform: scale(1.05) rotate(0deg) translateX(-50%); }
 .swipe-indicator.complex-ind.locked { transform: scale(1) rotate(0deg) translateX(-50%); }
@@ -2227,9 +2229,9 @@ body {
       <div class="swipe-area">
         <div class="swipe-card-wrap">
           <div class="swipe-card" id="vote-card" data-index="0">
-            <span class="swipe-indicator for-ind">בעד ←</span>
-            <span class="swipe-indicator against-ind">→ נגד</span>
-            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
+            <span class="swipe-indicator for-ind">בעד</span>
+            <span class="swipe-indicator against-ind">נגד</span>
+            <span class="swipe-indicator complex-ind">זה מורכב</span>
             <span class="topic-tag" id="card-topic"></span>
             <div class="q-text" id="card-question"></div>
             <div class="q-meta" id="card-meta"></div>
@@ -2237,9 +2239,9 @@ body {
         </div>
       </div>
       <div class="swipe-hint">
-        <span>← בעד</span>
+        <span>בעד →</span>
         <span class="hint-complex">↑ מורכב</span>
-        <span>נגד →</span>
+        <span>← נגד</span>
       </div>
       <div class="vote-progress" id="vote-progress"></div>
       <!-- Party overlay (dynamically populated) -->
@@ -3049,9 +3051,9 @@ body {
         <div class="swipe-area">
           <div class="swipe-card-wrap">
             <div class="swipe-card" id="modal-vote-card">
-              <span class="swipe-indicator for-ind">&#x05D1;&#x05E2;&#x05D3; &larr;</span>
-              <span class="swipe-indicator against-ind">&rarr; &#x05E0;&#x05D2;&#x05D3;</span>
-              <span class="swipe-indicator complex-ind">&uarr; &#x05D6;&#x05D4; &#x05DE;&#x05D5;&#x05E8;&#x05DB;&#x05D1;</span>
+              <span class="swipe-indicator for-ind">&#x05D1;&#x05E2;&#x05D3;</span>
+              <span class="swipe-indicator against-ind">&#x05E0;&#x05D2;&#x05D3;</span>
+              <span class="swipe-indicator complex-ind">&#x05D6;&#x05D4; &#x05DE;&#x05D5;&#x05E8;&#x05DB;&#x05D1;</span>
               <span class="topic-tag" id="modal-card-topic"></span>
               <div class="q-text" id="modal-card-question"></div>
               <div class="q-meta" id="modal-card-meta"></div>
@@ -3059,9 +3061,9 @@ body {
           </div>
         </div>
         <div class="swipe-hint">
-          <span>&larr; &#x05D1;&#x05E2;&#x05D3;</span>
+          <span>&#x05D1;&#x05E2;&#x05D3; &rarr;</span>
           <span class="hint-complex">&uarr; &#x05DE;&#x05D5;&#x05E8;&#x05DB;&#x05D1;</span>
-          <span>&#x05E0;&#x05D2;&#x05D3; &rarr;</span>
+          <span>&larr; &#x05E0;&#x05D2;&#x05D3;</span>
         </div>
         <!-- Party overlay for modal -->
         <div class="party-overlay" id="modal-party-overlay">
@@ -3365,7 +3367,7 @@ function startVoteFlow() {
   // Re-init swipe for fresh card
   swipeInitialized = false;
   initCurrentSwipeCard();
-  runTutorialTilt();
+  // Tutorial runs from showVoteCard(0) via runSwipeTutorial — don't duplicate here
 }
 
 function showVoteCard(index) {
@@ -3447,45 +3449,43 @@ function runSwipeTutorial(card) {
   const againstInd = card.querySelector('.against-ind');
   const complexInd = card.querySelector('.complex-ind');
   const delay = 600;
-  const dur = 500;
-  const pause = 300;
+  const dur = 600;
+  const pause = 400;
+  const step = dur + pause;
 
-  // Step 1: tilt RIGHT (בעד)
+  // Step 1: swipe RIGHT = בעד (positive X in screen coords)
   setTimeout(() => {
-    card.style.transition = `transform ${dur}ms ease`;
-    card.style.transform = 'translateX(-40px) rotate(-4deg)';
-    if (forInd) { forInd.style.transition = `opacity ${dur}ms`; forInd.style.opacity = '0.8'; }
+    card.style.transition = `transform ${dur}ms cubic-bezier(0.34, 1.56, 0.64, 1)`;
+    card.style.transform = 'translateX(80px) rotate(8deg)';
+    if (forInd) { forInd.style.transition = `opacity ${dur}ms`; forInd.style.opacity = '1'; forInd.classList.add('visible'); }
   }, delay);
-  // Return
   setTimeout(() => {
     card.style.transform = '';
-    if (forInd) forInd.style.opacity = '0';
-  }, delay + dur + pause);
+    if (forInd) { forInd.style.opacity = '0'; forInd.classList.remove('visible'); }
+  }, delay + step);
 
-  // Step 2: tilt LEFT (נגד)
+  // Step 2: swipe LEFT = נגד (negative X)
   setTimeout(() => {
-    card.style.transform = 'translateX(40px) rotate(4deg)';
-    if (againstInd) { againstInd.style.transition = `opacity ${dur}ms`; againstInd.style.opacity = '0.8'; }
-  }, delay + (dur + pause) * 2);
-  // Return
+    card.style.transform = 'translateX(-80px) rotate(-8deg)';
+    if (againstInd) { againstInd.style.transition = `opacity ${dur}ms`; againstInd.style.opacity = '1'; againstInd.classList.add('visible'); }
+  }, delay + step * 2);
   setTimeout(() => {
     card.style.transform = '';
-    if (againstInd) againstInd.style.opacity = '0';
-  }, delay + (dur + pause) * 2 + dur + pause);
+    if (againstInd) { againstInd.style.opacity = '0'; againstInd.classList.remove('visible'); }
+  }, delay + step * 3);
 
-  // Step 3: tilt UP (זה מורכב)
+  // Step 3: swipe UP = זה מורכב
   setTimeout(() => {
-    card.style.transform = 'translateY(-30px)';
-    if (complexInd) { complexInd.style.transition = `opacity ${dur}ms`; complexInd.style.opacity = '0.8'; complexInd.classList.add('visible'); }
-  }, delay + (dur + pause) * 4);
-  // Return + cleanup
+    card.style.transform = 'translateY(-60px)';
+    if (complexInd) { complexInd.style.transition = `opacity ${dur}ms`; complexInd.style.opacity = '1'; complexInd.classList.add('visible'); }
+  }, delay + step * 4);
   setTimeout(() => {
     card.style.transform = '';
     card.style.transition = '';
     if (complexInd) { complexInd.style.opacity = '0'; complexInd.classList.remove('visible'); complexInd.style.transition = ''; }
     if (forInd) forInd.style.transition = '';
     if (againstInd) againstInd.style.transition = '';
-  }, delay + (dur + pause) * 4 + dur + pause);
+  }, delay + step * 5);
 }
 
 /* ========================================
@@ -4415,7 +4415,7 @@ function renderWeeklyVotes() {
       <span class="weekly-vote-tag">${wv.topic}</span>
       <div class="weekly-vote-text">${wv.question}</div>
       <div class="weekly-vote-bottom">
-        <button class="weekly-vote-btn" onclick="event.stopPropagation(); openWeeklyVote(${wv.voteNum});">הצביעו &rarr;</button>
+        <button class="weekly-vote-btn" onclick="event.stopPropagation(); openWeeklyVote(${wv.voteNum});">הצביעו &larr;</button>
         <div class="weekly-vote-voted">
           <span>&#x2713; הצבעת</span>
           <div class="weekly-vote-party-pills">${partyPillsHTML}</div>
@@ -5128,31 +5128,54 @@ function runTutorialTilt() {
 
   const forInd = card.querySelector('.for-ind');
   const againstInd = card.querySelector('.against-ind');
+  const complexInd = card.querySelector('.complex-ind');
 
   setTimeout(() => {
+    // Step 1: Swipe RIGHT — בעד
     card.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-    card.style.transform = 'translateX(40px) rotate(4deg)';
-    forInd.style.opacity = '0.6';
+    card.style.transform = 'translateX(80px) rotate(8deg)';
+    forInd.style.opacity = '1';
     forInd.classList.add('visible');
 
     setTimeout(() => {
+      // Return to center
       card.style.transform = 'translateX(0) rotate(0)';
       forInd.style.opacity = '0';
       forInd.classList.remove('visible');
 
       setTimeout(() => {
-        card.style.transform = 'translateX(-40px) rotate(-4deg)';
-        againstInd.style.opacity = '0.6';
+        // Step 2: Swipe LEFT — נגד
+        card.style.transform = 'translateX(-80px) rotate(-8deg)';
+        againstInd.style.opacity = '1';
         againstInd.classList.add('visible');
 
         setTimeout(() => {
+          // Return to center
           card.style.transform = 'translateX(0) rotate(0)';
           againstInd.style.opacity = '0';
           againstInd.classList.remove('visible');
 
           setTimeout(() => {
-            card.style.transition = '';
-          }, 600);
+            // Step 3: Swipe UP — זה מורכב
+            card.style.transform = 'translateY(-60px)';
+            if (complexInd) {
+              complexInd.style.opacity = '1';
+              complexInd.classList.add('visible');
+            }
+
+            setTimeout(() => {
+              // Return to center
+              card.style.transform = 'translateX(0) rotate(0) translateY(0)';
+              if (complexInd) {
+                complexInd.style.opacity = '0';
+                complexInd.classList.remove('visible');
+              }
+
+              setTimeout(() => {
+                card.style.transition = '';
+              }, 600);
+            }, 600);
+          }, 400);
         }, 600);
       }, 400);
     }, 600);
