@@ -4133,27 +4133,27 @@ function computeResults() {
     28: { lr: 0,  sr: 1 },   // Kotel prayer: for=religious
   };
 
+  // Compute user 2D position from vote signals (independent of DOM)
+  let lrSum = 0, srSum = 0, vCount = 0;
+  userVotes.forEach(uv => {
+    const sig = VOTE_SIGNALS[uv.voteNum];
+    if (!sig) return;
+    if (uv.direction === 'complex') return;
+    const mult = uv.direction === 'for' ? 1 : -1;
+    lrSum += sig.lr * mult;
+    srSum += sig.sr * mult;
+    vCount++;
+  });
+  const maxSignal = vCount || 1;
+  const leftRight = Math.max(10, Math.min(90, 50 - (lrSum / maxSignal) * 40));
+  const secRel = Math.max(10, Math.min(90, 50 + (srSum / maxSignal) * 40));
+  appState.userPosition = { leftRight: Math.round(leftRight), secRel: Math.round(secRel) };
+
+  // Apply to result map dot if it exists
   const userDot = document.getElementById('user-dot');
   if (userDot) {
-    let lrSum = 0, srSum = 0, count = 0;
-    userVotes.forEach(uv => {
-      const sig = VOTE_SIGNALS[uv.voteNum];
-      if (!sig) return;
-      if (uv.direction === 'complex') return;
-      const mult = uv.direction === 'for' ? 1 : -1;
-      lrSum += sig.lr * mult;
-      srSum += sig.sr * mult;
-      count++;
-    });
-
-    // Normalize: map raw signal to 10-90% range
-    const maxSignal = count || 1;
-    const leftRight = Math.max(10, Math.min(90, 50 - (lrSum / maxSignal) * 40));
-    const secRel = Math.max(10, Math.min(90, 50 + (srSum / maxSignal) * 40));
     userDot.style.left = leftRight + '%';
     userDot.style.top = secRel + '%';
-
-    appState.userPosition = { leftRight: Math.round(leftRight), secRel: Math.round(secRel) };
   }
 
   // Store results for tiebreaker
