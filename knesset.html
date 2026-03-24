@@ -2138,6 +2138,7 @@ body {
 .icon--sm svg { width: 16px; height: 16px; }
 .icon--md svg { width: 20px; height: 20px; }
 .icon--lg svg { width: 28px; height: 28px; }
+.icon--xl svg { width: 48px; height: 48px; }
 .icon--muted { color: var(--text-2); }
 .icon--alert { color: var(--coral); }
 .icon--accent { color: var(--gold); }
@@ -2185,7 +2186,7 @@ body {
 
     <!-- ==================== SCREEN 1: LANGUAGE ==================== -->
     <div class="screen active" id="screen-lang">
-      <div class="lang-logo">🪞</div>
+      <div class="lang-logo"><span class="icon icon--xl icon--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-5 7 5v14"/><path d="M9 21v-6h6v6"/><line x1="10" y1="9" x2="10" y2="9.01"/><line x1="14" y1="9" x2="14" y2="9.01"/><line x1="10" y1="13" x2="10" y2="13.01"/><line x1="14" y1="13" x2="14" y2="13.01"/></svg></span></div>
       <div class="lang-title">מראת הכנסת</div>
       <div class="lang-subtitle">Knesset Mirror</div>
       <button class="lang-btn" onclick="selectLang(this, 'he')">עברית</button>
@@ -2196,7 +2197,7 @@ body {
 
     <!-- ==================== SCREEN 2: INTRO ==================== -->
     <div class="screen" id="screen-intro">
-      <div class="intro-mirror-icon">🪞</div>
+      <div class="intro-mirror-icon"><span class="icon icon--xl icon--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-5 7 5v14"/><path d="M9 21v-6h6v6"/><line x1="10" y1="9" x2="10" y2="9.01"/><line x1="14" y1="9" x2="14" y2="9.01"/><line x1="10" y1="13" x2="10" y2="13.01"/><line x1="14" y1="13" x2="14" y2="13.01"/></svg></span></div>
       <div class="intro-title">מראת הכנסת</div>
       <div class="intro-subtitle">גלה/י מי באמת מצביע בשבילך</div>
       <div class="intro-stats">
@@ -3161,6 +3162,7 @@ const ICONS = {
   predict: `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><circle cx="12" cy="12" r="10"/><path d="M12 6v2"/><path d="M12 16v2"/><path d="M6 12h2"/><path d="M16 12h2"/><circle cx="12" cy="12" r="3"/></svg>`,
   timer:   `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>`,
   chart:   `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+  knesset: `<svg viewBox="0 0 24 24" ${SVG_ATTRS}><path d="M3 21h18"/><path d="M5 21V7l7-5 7 5v14"/><path d="M9 21v-6h6v6"/><line x1="10" y1="9" x2="10" y2="9.01"/><line x1="14" y1="9" x2="14" y2="9.01"/><line x1="10" y1="13" x2="10" y2="13.01"/><line x1="14" y1="13" x2="14" y2="13.01"/></svg>`,
 };
 function icon(name, size='md', colorClass='muted') {
   return `<span class="icon icon--${size} icon--${colorClass}">${ICONS[name]||''}</span>`;
@@ -4099,14 +4101,14 @@ function nextContradiction() {
 function shareWhatsApp() {
   const btn = event.target.closest('.btn');
   const origHTML = btn.innerHTML;
-  btn.innerHTML = '<span style="color:#fff;">&#x2713; הקישור הועתק!</span>';
+  btn.innerHTML = '<span style="color:#fff;">\u2713 הקישור הועתק!</span>';
   setTimeout(() => { btn.innerHTML = origHTML; }, 2000);
 }
 
 function shareContradiction() {
   const btn = event.target.closest('.btn');
   const orig = btn.textContent;
-  btn.textContent = '&#x2713; הועתק!';
+  btn.textContent = '\u2713 הועתק!';
   btn.style.color = 'var(--teal)';
   setTimeout(() => { btn.textContent = orig; btn.style.color = ''; }, 2000);
 }
@@ -4114,7 +4116,7 @@ function shareContradiction() {
 function shareConsensus() {
   const btn = event.target.closest('.btn');
   const origHTML = btn.innerHTML;
-  btn.innerHTML = '&#x2713; הקישור הועתק!';
+  btn.innerHTML = '\u2713 הקישור הועתק!';
   setTimeout(() => { btn.innerHTML = origHTML; }, 2000);
 }
 
@@ -4127,7 +4129,7 @@ const alertVariants = {
     said: 'ברקת הבטיח לפעול להורדת מחירי המזון והדיור. "משפחות עובדות לא צריכות לבחור בין שכר דירה לאוכל."',
     voted: 'הצביע <strong>נגד</strong> הצעת חוק להפחתת מע"מ על סל מזון בסיסי, בהתאם להנחיית הקואליציה.',
     kicker: 'ההצעה הוגשה כהצעת חוק פרטית ונפלה בקריאה טרומית ברוב קואליציוני.',
-    prediction: 'בעד הפחתת המע"מ ✅',
+    prediction: 'בעד הפחתת המע"מ',
     predictionWhy: 'בהתבסס על ההצבעות הקודמות שלך בנושאי יוקר המחיה ותחרות בשוק, הנציג/ה חזה שתתמוך בהורדת מחירי מזון.',
     partiesFor: ['יש עתיד', 'המחנה הממלכתי', 'ישראל ביתנו', 'העבודה', 'חד"ש-תע"ל'],
     partiesAgainst: ['הליכוד', 'הציונות הדתית', 'ש"ס', 'יהדות התורה'],
@@ -4139,7 +4141,7 @@ const alertVariants = {
     said: 'שיר הבטיחה: "חופש התנועה בשבת הוא זכות בסיסית. אנחנו לא מוכנים לוותר על אורח החיים החילוני שלנו."',
     voted: '<strong>נעדרה</strong> מההצבעה על הצעת חוק לתחבורה ציבורית בשבת ולא הגיעה למליאה ביום ההצבעה.',
     kicker: 'הצעות חוק בנושא תחבורה בשבת נפלו שוב ושוב בפערים קטנים — כל קול נעדר מכריע.',
-    prediction: 'בעד תחבורה ציבורית בשבת ✅',
+    prediction: 'בעד תחבורה ציבורית בשבת',
     predictionWhy: 'בהתבסס על ההצבעות הקודמות שלך בנושאי חופש דת ושוויון אזרחי, הנציג/ה חזה שתתמוך בתחבורה ציבורית בשבת.',
     partiesFor: ['ישראל ביתנו', 'העבודה', 'חד"ש-תע"ל', 'רע"ם'],
     partiesAgainst: ['הליכוד', 'הציונות הדתית', 'ש"ס', 'יהדות התורה'],
@@ -4151,7 +4153,7 @@ const alertVariants = {
     said: 'סופר הצהיר: "שירותי הדת הם עמוד השדרה של החברה היהודית. אני אלחם על כל שקל לרבנויות ולמקוואות."',
     voted: 'תמך בתקציב המדינה שכלל <strong>קיצוץ של 15%</strong> בתקציב שירותי הדת והקפאת תקנים ברבנויות.',
     kicker: 'הקיצוצים בשירותי הדת נדחקו לשוליים בדיון הציבורי שהתמקד בסעיפים ביטחוניים.',
-    prediction: 'נגד הקיצוץ בשירותי דת ✅',
+    prediction: 'נגד הקיצוץ בשירותי דת',
     predictionWhy: 'בהתבסס על ההצבעות הקודמות שלך בנושאי דת ומסורת, הנציג/ה חזה שתתנגד לקיצוץ בתקציב הרבנויות.',
     partiesFor: ['הליכוד', 'הציונות הדתית', 'ש"ס', 'יהדות התורה'],
     partiesAgainst: ['יש עתיד', 'המחנה הממלכתי', 'ישראל ביתנו', 'העבודה', 'חד"ש-תע"ל'],
@@ -4163,7 +4165,7 @@ const alertVariants = {
     said: 'איזנקוט הצהיר: "חייבת לקום ועדת חקירה ממלכתית. זה לא עניין פוליטי, זה חוב מוסרי למשפחות."',
     voted: 'הצביע <strong>נגד</strong> הצעה להקמת ועדת חקירה פרלמנטרית, בטענה שהתזמון לא נכון.',
     kicker: 'הצעות להקמת ועדת חקירה נתקלו בהתנגדות קואליציונית וגם בהיסוסים מחלק מחברי האופוזיציה.',
-    prediction: 'בעד ועדת חקירה ✅',
+    prediction: 'בעד ועדת חקירה',
     predictionWhy: 'בהתבסס על ההצבעות הקודמות שלך בנושאי שוויון בנטל וממשל תקין, הנציג/ה חזה שתתמוך בועדת חקירה.',
     partiesFor: ['יש עתיד', 'ישראל ביתנו', 'העבודה', 'חד"ש-תע"ל'],
     partiesAgainst: ['הליכוד', 'הציונות הדתית', 'ש"ס', 'יהדות התורה', 'המחנה הממלכתי'],
@@ -4276,7 +4278,7 @@ function contactMK() {
   const msg = `שלום ח"כ ${a.mk},\nאני אזרח/ית ישראלי/ת שעוקב/ת אחרי ההצבעות בכנסת.\nשמתי לב שבנושא ${a.topic} הבעת עמדה פומבית אחת אבל הצבעת אחרת.\nאשמח לשמוע הסבר — למה ההצבעה לא תואמת את מה שנאמר?`;
   sheet.innerHTML = `
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-      <div style="font-size: 16px; font-weight: 700; color: var(--text-1);">✉️ הודעה לח"כ ${a.mk}</div>
+      <div style="font-size: 16px; font-weight: 700; color: var(--text-1); display: flex; align-items: center; gap: 6px;">${icon('mail','md','blue')} הודעה לח"כ ${a.mk}</div>
       <div onclick="closeMKContact()" style="color: var(--text-3); font-size: 20px; cursor: pointer; padding: 4px 8px;">✕</div>
     </div>
     <div style="font-size: 12px; color: var(--text-3); margin-bottom: 8px;">הודעה מוכנה — אפשר לערוך לפני שליחה</div>
@@ -4369,7 +4371,7 @@ function subscribe() {
   const input = document.querySelector('.subscribe-input');
   const btn = event.target;
   if (input.value && input.value.includes('@')) {
-    btn.textContent = '&#x2713;';
+    btn.textContent = '\u2713';
     btn.style.background = 'var(--teal)';
     input.value = '';
     input.placeholder = 'נרשמת בהצלחה!';
@@ -4942,7 +4944,7 @@ function shareContraWhatsApp(index) {
   const btn = event.target.closest('.contra-share-btn');
   if (!btn) return;
   const orig = btn.innerHTML;
-  btn.innerHTML = '&#x2713; הקישור הועתק!';
+  btn.innerHTML = '\u2713 הקישור הועתק!';
   btn.style.color = 'var(--teal)';
   btn.style.borderColor = 'var(--teal)';
   appState.shareCount = (appState.shareCount || 0) + 1;
@@ -5125,7 +5127,7 @@ function shareFamily() {
   const btn = event.target.closest('.family-invite-btn');
   if (!btn) return;
   const orig = btn.innerHTML;
-  btn.innerHTML = '&#x2713; הקישור הועתק!';
+  btn.innerHTML = '\u2713 הקישור הועתק!';
   btn.style.color = 'var(--teal)';
   btn.style.borderColor = 'var(--teal)';
   appState.shareCount = (appState.shareCount || 0) + 1;
@@ -5137,7 +5139,7 @@ function shareProfile() {
   const btn = event.target.closest('.family-invite-btn');
   if (!btn) return;
   const orig = btn.innerHTML;
-  btn.innerHTML = '&#x2713; הקישור הועתק!';
+  btn.innerHTML = '\u2713 הקישור הועתק!';
   btn.style.color = 'var(--teal)';
   btn.style.borderColor = 'var(--teal)';
   appState.shareCount = (appState.shareCount || 0) + 1;
