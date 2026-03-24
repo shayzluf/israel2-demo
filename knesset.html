@@ -1095,7 +1095,7 @@ body {
       <div class="intro-subtitle">גלה/י מי באמת מצביע בשבילך</div>
       <div class="intro-stats">
         <div class="intro-stat">
-          <span class="intro-stat-num">15</span>
+          <span class="intro-stat-num">5</span>
           <span class="intro-stat-label">הצבעות אמיתיות</span>
         </div>
         <div class="intro-stat">
@@ -1108,7 +1108,7 @@ body {
         </div>
       </div>
       <div class="intro-desc">תמונה אמיתית של מי מייצג אותך — ומי לא</div>
-      <button class="btn btn-primary btn-block" onclick="goToScreen('screen-vote1')" style="margin-top: 16px;">
+      <button class="btn btn-primary btn-block" onclick="startVoteFlow()" style="margin-top: 16px;">
         בואו נתחיל
       </button>
       <div class="intro-footer">
@@ -1117,30 +1117,18 @@ body {
       </div>
     </div>
 
-    <!-- ==================== SCREEN 3: VOTE 1 ==================== -->
-    <div class="screen swipe-screen" id="screen-vote1">
-      <div class="step-indicator">
-        <div class="step-pip current"></div>
-        <div class="step-pip"></div>
-        <div class="step-pip"></div>
-        <div class="step-pip"></div>
-        <div class="step-pip"></div>
-      </div>
+    <!-- ==================== SINGLE VOTE SCREEN (dynamically populated) ==================== -->
+    <div class="screen swipe-screen" id="screen-vote">
+      <div class="step-indicator" id="step-indicator"></div>
       <div class="swipe-area">
         <div class="swipe-card-wrap">
-          <div class="swipe-card" id="card-v1" data-next="screen-vote2" data-index="0">
+          <div class="swipe-card" id="vote-card" data-index="0">
             <span class="swipe-indicator for-ind">בעד ←</span>
             <span class="swipe-indicator against-ind">→ נגד</span>
             <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
-            <span class="topic-tag">דת ומדינה</span>
-            <div class="q-text">האם לחייב הפעלת תחבורה ציבורית בשבת?</div>
-            <div class="q-meta">
-              <span>הכנסת ה-25</span>
-              <span class="q-meta-sep">|</span>
-              <span>הצבעה מס׳ 1247</span>
-              <span class="q-meta-sep">|</span>
-              <span>מרץ 2023</span>
-            </div>
+            <span class="topic-tag" id="card-topic"></span>
+            <div class="q-text" id="card-question"></div>
+            <div class="q-meta" id="card-meta"></div>
           </div>
         </div>
       </div>
@@ -1149,272 +1137,13 @@ body {
         <span class="hint-complex">↑ מורכב</span>
         <span>נגד →</span>
       </div>
-      <div class="vote-progress">
-        <div class="vote-dot current"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-      </div>
-      <!-- Party overlay -->
-      <div class="party-overlay" id="party-overlay-1">
+      <div class="vote-progress" id="vote-progress"></div>
+      <!-- Party overlay (dynamically populated) -->
+      <div class="party-overlay" id="party-overlay">
         <div class="party-overlay-title">איך הצביעו המפלגות?</div>
-        <div class="party-grid">
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מחנה ממ׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ש״ס</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">יהדות הת׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ישראל ביתנו</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">רע״מ</span></div>
-          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
-        </div>
+        <div class="party-grid" id="party-grid"></div>
         <div class="party-overlay-hint">לחצו להמשך</div>
-        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-1"></div></div>
-      </div>
-    </div>
-
-    <!-- ==================== SCREEN 4: VOTE 2 ==================== -->
-    <div class="screen swipe-screen" id="screen-vote2">
-      <div class="step-indicator">
-        <div class="step-pip done"></div>
-        <div class="step-pip current"></div>
-        <div class="step-pip"></div>
-        <div class="step-pip"></div>
-        <div class="step-pip"></div>
-      </div>
-      <div class="swipe-area">
-        <div class="swipe-card-wrap">
-          <div class="swipe-card entering" id="card-v2" data-next="screen-vote3" data-index="1">
-            <span class="swipe-indicator for-ind">בעד ←</span>
-            <span class="swipe-indicator against-ind">→ נגד</span>
-            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
-            <span class="topic-tag">ביטחון ושוויון</span>
-            <div class="q-text">האם לחייב גיוס שוויוני לצה״ל?</div>
-            <div class="q-meta">
-              <span>הכנסת ה-25</span>
-              <span class="q-meta-sep">|</span>
-              <span>הצבעה מס׳ 892</span>
-              <span class="q-meta-sep">|</span>
-              <span>ינואר 2023</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swipe-hint">
-        <span>← בעד</span>
-        <span class="hint-complex">↑ מורכב</span>
-        <span>נגד →</span>
-      </div>
-      <div class="vote-progress">
-        <div class="vote-dot done"></div>
-        <div class="vote-dot current"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-      </div>
-      <div class="party-overlay" id="party-overlay-2">
-        <div class="party-overlay-title">איך הצביעו המפלגות?</div>
-        <div class="party-grid">
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מחנה ממ׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ש״ס</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">יהדות הת׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ישראל ביתנו</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
-          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
-          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">רע״מ</span></div>
-          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
-        </div>
-        <div class="party-overlay-hint">לחצו להמשך</div>
-        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-2"></div></div>
-      </div>
-    </div>
-
-    <!-- ==================== SCREEN 5: VOTE 3 ==================== -->
-    <div class="screen swipe-screen" id="screen-vote3">
-      <div class="step-indicator">
-        <div class="step-pip done"></div>
-        <div class="step-pip done"></div>
-        <div class="step-pip current"></div>
-        <div class="step-pip"></div>
-        <div class="step-pip"></div>
-      </div>
-      <div class="swipe-area">
-        <div class="swipe-card-wrap">
-          <div class="swipe-card entering" id="card-v3" data-next="screen-vote4" data-index="2">
-            <span class="swipe-indicator for-ind">בעד ←</span>
-            <span class="swipe-indicator against-ind">→ נגד</span>
-            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
-            <span class="topic-tag">כלכלה</span>
-            <div class="q-text">האם להגביל רווחי רשתות מזון ל-15%?</div>
-            <div class="q-meta">
-              <span>הכנסת ה-25</span>
-              <span class="q-meta-sep">|</span>
-              <span>הצבעה מס׳ 1503</span>
-              <span class="q-meta-sep">|</span>
-              <span>יוני 2023</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swipe-hint">
-        <span>← בעד</span>
-        <span class="hint-complex">↑ מורכב</span>
-        <span>נגד →</span>
-      </div>
-      <div class="vote-progress">
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot current"></div>
-        <div class="vote-dot"></div>
-        <div class="vote-dot"></div>
-      </div>
-      <div class="party-overlay" id="party-overlay-3">
-        <div class="party-overlay-title">איך הצביעו המפלגות?</div>
-        <div class="party-grid">
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">מחנה ממ׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ש״ס</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יהדות הת׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ישראל ביתנו</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">רע״מ</span></div>
-          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
-        </div>
-        <div class="party-overlay-hint">לחצו להמשך</div>
-        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-3"></div></div>
-      </div>
-    </div>
-
-    <!-- ==================== SCREEN 6: VOTE 4 ==================== -->
-    <div class="screen swipe-screen" id="screen-vote4">
-      <div class="step-indicator">
-        <div class="step-pip done"></div>
-        <div class="step-pip done"></div>
-        <div class="step-pip done"></div>
-        <div class="step-pip current"></div>
-        <div class="step-pip"></div>
-      </div>
-      <div class="swipe-area">
-        <div class="swipe-card-wrap">
-          <div class="swipe-card entering" id="card-v4" data-next="screen-vote5" data-index="3">
-            <span class="swipe-indicator for-ind">בעד ←</span>
-            <span class="swipe-indicator against-ind">→ נגד</span>
-            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
-            <span class="topic-tag">ביטחון</span>
-            <div class="q-text">האם להקצות 2 מיליארד ₪ לשיקום הצפון?</div>
-            <div class="q-meta">
-              <span>הכנסת ה-25</span>
-              <span class="q-meta-sep">|</span>
-              <span>הצבעה מס׳ 2081</span>
-              <span class="q-meta-sep">|</span>
-              <span>נובמבר 2024</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swipe-hint">
-        <span>← בעד</span>
-        <span class="hint-complex">↑ מורכב</span>
-        <span>נגד →</span>
-      </div>
-      <div class="vote-progress">
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot current"></div>
-        <div class="vote-dot"></div>
-      </div>
-      <div class="party-overlay" id="party-overlay-4">
-        <div class="party-overlay-title">איך הצביעו המפלגות?</div>
-        <div class="party-grid">
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מחנה ממ׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ש״ס</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יהדות הת׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ישראל ביתנו</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">רע״מ</span></div>
-          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
-        </div>
-        <div class="party-overlay-hint">לחצו להמשך</div>
-        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-4"></div></div>
-      </div>
-    </div>
-
-    <!-- ==================== SCREEN 7: VOTE 5 ==================== -->
-    <div class="screen swipe-screen" id="screen-vote5">
-      <div class="step-indicator">
-        <div class="step-pip done"></div>
-        <div class="step-pip done"></div>
-        <div class="step-pip done"></div>
-        <div class="step-pip done"></div>
-        <div class="step-pip current"></div>
-      </div>
-      <div class="swipe-area">
-        <div class="swipe-card-wrap">
-          <div class="swipe-card entering" id="card-v5" data-next="screen-result" data-index="4">
-            <span class="swipe-indicator for-ind">בעד ←</span>
-            <span class="swipe-indicator against-ind">→ נגד</span>
-            <span class="swipe-indicator complex-ind">↑ זה מורכב</span>
-            <span class="topic-tag">ביטחון</span>
-            <div class="q-text">האם לחייב מקלט בכל בניין מגורים חדש?</div>
-            <div class="q-meta">
-              <span>הכנסת ה-25</span>
-              <span class="q-meta-sep">|</span>
-              <span>הצבעה מס׳ 1876</span>
-              <span class="q-meta-sep">|</span>
-              <span>אוגוסט 2024</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swipe-hint">
-        <span>← בעד</span>
-        <span class="hint-complex">↑ מורכב</span>
-        <span>נגד →</span>
-      </div>
-      <div class="vote-progress">
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot done"></div>
-        <div class="vote-dot current"></div>
-      </div>
-      <div class="party-overlay" id="party-overlay-5">
-        <div class="party-overlay-title">איך הצביעו המפלגות?</div>
-        <div class="party-grid">
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">ליכוד</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יש עתיד</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מחנה ממ׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-against"></div><span class="party-pill-name">הציונות הד׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ש״ס</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">יהדות הת׳</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">ישראל ביתנו</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">העבודה</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">מרצ</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">חד״ש-תע״ל</span></div>
-          <div class="party-pill"><div class="party-dot vote-for"></div><span class="party-pill-name">רע״מ</span></div>
-          <div class="party-pill"><div class="party-dot vote-absent"></div><span class="party-pill-name">בל״ד</span></div>
-        </div>
-        <div class="party-overlay-hint">לחצו להמשך</div>
-        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill-5"></div></div>
+        <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill"></div></div>
       </div>
     </div>
 
@@ -1451,52 +1180,13 @@ body {
         </div>
       </div>
 
-      <!-- Top 3 matches -->
-      <div class="match-list">
-        <div class="match-item" style="animation: slideUp 0.5s ease 0.3s both;">
-          <div class="match-rank">1</div>
-          <div class="match-details">
-            <div class="match-name">
-              <span>יש עתיד</span>
-              <span class="match-pct">78%</span>
-            </div>
-            <div class="match-bar">
-              <div class="match-bar-fill" style="width:78%;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="match-item" style="animation: slideUp 0.5s ease 0.5s both;">
-          <div class="match-rank" style="color:var(--blue);">2</div>
-          <div class="match-details">
-            <div class="match-name">
-              <span>מחנה ממלכתי</span>
-              <span class="match-pct" style="color:var(--blue);">71%</span>
-            </div>
-            <div class="match-bar">
-              <div class="match-bar-fill" style="width:71%;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="match-item" style="animation: slideUp 0.5s ease 0.7s both;">
-          <div class="match-rank" style="color:var(--gold);">3</div>
-          <div class="match-details">
-            <div class="match-name">
-              <span>ישראל ביתנו</span>
-              <span class="match-pct" style="color:var(--gold);">64%</span>
-            </div>
-            <div class="match-bar">
-              <div class="match-bar-fill" style="width:64%;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Top 3 matches (dynamically populated) -->
+      <div class="match-list" id="match-list"></div>
 
       <!-- Surprise -->
-      <div class="surprise-box" style="animation: slideUp 0.5s ease 0.9s both;">
+      <div class="surprise-box" id="surprise-box" style="animation: slideUp 0.5s ease 0.9s both;">
         <span class="surprise-emoji">&#x1F62E;</span>
-        <div class="surprise-text">
-          <strong>הפתעה:</strong> את/ה מסכים/ה עם ש״ס ב-<span class="ltr-num">52%</span> מהנושאים הכלכליים
-        </div>
+        <div class="surprise-text" id="surprise-text"></div>
       </div>
 
       <!-- Actions -->
@@ -1535,8 +1225,8 @@ body {
           <div class="contra-x">&times;</div>
           <div class="contra-side vote">
             <div class="contra-side-label">הצביע</div>
-            <div class="contra-side-text">נגד הגבלת רווחי רשתות מזון</div>
-            <div class="contra-side-source">הצבעה מס׳ 1503, יוני 2023</div>
+            <div class="contra-side-text">נגד רפורמת יבוא מהאיחוד האירופי שהיתה מוזילה מוצרי מזון</div>
+            <div class="contra-side-source">הצבעה מס׳ 41588, אוגוסט 2024</div>
           </div>
         </div>
       </div>
@@ -1557,14 +1247,14 @@ body {
         <div class="contra-split">
           <div class="contra-side quote">
             <div class="contra-side-label">אמר</div>
-            <div class="contra-side-text">"נעביר חוק גיוס שוויוני"</div>
-            <div class="contra-side-source">ערוץ 12, פברואר 2022</div>
+            <div class="contra-side-text">"אנחנו תומכים בתחבורה ציבורית בשבת"</div>
+            <div class="contra-side-source">קמפיין בחירות, 2022</div>
           </div>
           <div class="contra-x">&times;</div>
           <div class="contra-side vote">
             <div class="contra-side-label">הצביע</div>
-            <div class="contra-side-text">נמנע בהצבעה על תיקון חוק הגיוס</div>
-            <div class="contra-side-source">הצבעה מס׳ 892, ינואר 2023</div>
+            <div class="contra-side-text">יש עתיד נעדרו/חלשים בהצבעת תחבורה ציבורית בשבת</div>
+            <div class="contra-side-source">הצבעה מס׳ 44754, נובמבר 2025</div>
           </div>
         </div>
       </div>
@@ -1587,7 +1277,7 @@ body {
 
       <div class="consensus-big-num" id="consensusNum">0%</div>
       <div class="consensus-desc">מכל המשתמשים — שמאל, ימין, דתי, חילוני — מסכימים:</div>
-      <div class="consensus-statement">"צריך להגדיל את תקציב בריאות הנפש פי 2"</div>
+      <div class="consensus-statement">"צריך להרחיב את הנגישות לטיפול בבריאות הנפש"</div>
 
       <div class="consensus-dramatic">
         <div class="consensus-zero">0</div>
@@ -1644,6 +1334,76 @@ body {
 
 <script>
 /* ========================================
+   DATA & STATE
+   ======================================== */
+window.votesData = null;
+let currentVoteIndex = 0;
+const TOTAL_VOTES = 5;
+const SELECTED_VOTE_NUMS = [1, 4, 2, 25, 14];
+
+const QUESTION_MAP = {
+  1: "האם לבטל את סמכות בג\"ץ לפסול החלטות ממשלה \"בלתי סבירות\"?",
+  2: "האם תלמידי ישיבות צריכים להמשיך לקבל פטור מגיוס לצה\"ל?",
+  4: "האם אוטובוסים ורכבות צריכים לפעול גם בשבת?",
+  14: "האם לחייב פיקוח על מקלטים משותפים בבנייני מגורים?",
+  25: "האם לתת לבתי משפט סמכות להגביל חשודים בפשע מאורגן ללא הרשעה?"
+};
+
+const TOPIC_MAP = {
+  1: "דמוקרטיה ומשילות",
+  2: "ביטחון ושוויון",
+  4: "דת ומדינה",
+  14: "ביטחון אזרחי",
+  25: "חברה ומשפט"
+};
+
+const HEBREW_MONTHS = {
+  '01': 'ינואר', '02': 'פברואר', '03': 'מרץ', '04': 'אפריל',
+  '05': 'מאי', '06': 'יוני', '07': 'יולי', '08': 'אוגוסט',
+  '09': 'ספטמבר', '10': 'אוקטובר', '11': 'נובמבר', '12': 'דצמבר'
+};
+
+// Display names for parties (shorter versions for pills)
+const PARTY_DISPLAY = {
+  'הליכוד': 'ליכוד',
+  'יש עתיד': 'יש עתיד',
+  'המחנה הממלכתי': 'מחנה ממ׳',
+  'הציונות הדתית': 'הציונות הד׳',
+  'ש"ס': 'ש״ס',
+  'יהדות התורה': 'יהדות הת׳',
+  'העבודה': 'העבודה',
+  'ישראל ביתנו': 'ישראל ביתנו',
+  'חד"ש-תע"ל': 'חד״ש-תע״ל',
+  'רע"ם': 'רע״מ',
+  'עוצמה יהודית': 'עוצמה יהודית'
+};
+
+// Canonical party order for overlay display
+const PARTY_ORDER = ['הליכוד', 'יש עתיד', 'המחנה הממלכתי', 'הציונות הדתית', 'ש"ס', 'יהדות התורה', 'העבודה'];
+
+// User's swipe responses: array of {voteNum, direction} where direction is 'for'|'against'|'complex'
+const userVotes = [];
+
+/* ========================================
+   LOAD DATA
+   ======================================== */
+async function loadVotesData() {
+  try {
+    const resp = await fetch('data/votes_data.json');
+    if (!resp.ok) throw new Error('fetch failed');
+    window.votesData = await resp.json();
+  } catch (e) {
+    console.warn('Could not load votes_data.json, using fallback mode:', e);
+    window.votesData = null;
+  }
+}
+
+function getVoteByNum(num) {
+  if (!window.votesData) return null;
+  return window.votesData.votes.find(v => v.vote_num === num) || null;
+}
+
+/* ========================================
    NAVIGATION
    ======================================== */
 function goToScreen(id) {
@@ -1656,18 +1416,93 @@ function goToScreen(id) {
     target.scrollTop = 0;
   }
 
-  // Init swipe for vote screens
-  if (id === 'screen-vote1') { initSwipeCard('card-v1'); runTutorialTilt(); }
-  if (id === 'screen-vote2') initSwipeCard('card-v2');
-  if (id === 'screen-vote3') initSwipeCard('card-v3');
-  if (id === 'screen-vote4') initSwipeCard('card-v4');
-  if (id === 'screen-vote5') initSwipeCard('card-v5');
-
   // Animate result screen
   if (id === 'screen-result') initResultScreen();
 
   // Animate consensus count
   if (id === 'screen-consensus') initConsensusScreen();
+}
+
+/* ========================================
+   VOTE FLOW
+   ======================================== */
+function startVoteFlow() {
+  currentVoteIndex = 0;
+  userVotes.length = 0;
+  showVoteCard(0);
+  goToScreen('screen-vote');
+  // Re-init swipe for fresh card
+  swipeInitialized = false;
+  initCurrentSwipeCard();
+  runTutorialTilt();
+}
+
+function showVoteCard(index) {
+  const voteNum = SELECTED_VOTE_NUMS[index];
+  const voteData = getVoteByNum(voteNum);
+
+  // Update step indicator
+  const stepEl = document.getElementById('step-indicator');
+  stepEl.innerHTML = '';
+  for (let i = 0; i < TOTAL_VOTES; i++) {
+    const pip = document.createElement('div');
+    pip.className = 'step-pip';
+    if (i < index) pip.classList.add('done');
+    if (i === index) pip.classList.add('current');
+    stepEl.appendChild(pip);
+  }
+
+  // Update progress dots
+  const progressEl = document.getElementById('vote-progress');
+  progressEl.innerHTML = '';
+  for (let i = 0; i < TOTAL_VOTES; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'vote-dot';
+    if (i < index) dot.classList.add('done');
+    if (i === index) dot.classList.add('current');
+    progressEl.appendChild(dot);
+  }
+
+  // Populate card content
+  document.getElementById('card-topic').textContent = TOPIC_MAP[voteNum] || '';
+  document.getElementById('card-question').textContent = QUESTION_MAP[voteNum] || (voteData ? voteData.title_he : '');
+
+  // Meta line
+  const metaEl = document.getElementById('card-meta');
+  if (voteData) {
+    const dateParts = voteData.date.split('-');
+    const heMonth = HEBREW_MONTHS[dateParts[1]] || dateParts[1];
+    const year = dateParts[0];
+    metaEl.innerHTML = `<span>הכנסת ה-25</span><span class="q-meta-sep">|</span><span>הצבעה מס׳ ${voteData.api_vote_id}</span><span class="q-meta-sep">|</span><span>${heMonth} ${year}</span>`;
+  } else {
+    metaEl.innerHTML = `<span>הכנסת ה-25</span>`;
+  }
+
+  // Reset card position
+  const card = document.getElementById('vote-card');
+  card.dataset.index = index;
+  card.style.transform = '';
+  card.style.opacity = '';
+  card.style.borderColor = '';
+  card.style.boxShadow = '';
+  card.classList.remove('exiting', 'returning', 'dragging');
+  if (index > 0) {
+    card.classList.add('entering');
+  } else {
+    card.classList.remove('entering');
+  }
+
+  // Reset indicators
+  card.querySelectorAll('.swipe-indicator').forEach(ind => {
+    ind.style.opacity = 0;
+    ind.classList.remove('visible', 'locked');
+  });
+
+  // Hide party overlay
+  const overlay = document.getElementById('party-overlay');
+  overlay.classList.remove('visible');
+  overlay.style.opacity = '';
+  overlay.style.transition = '';
 }
 
 /* ========================================
@@ -1697,13 +1532,18 @@ function flashScreen(type) {
 /* ========================================
    SWIPE CARD ENGINE
    ======================================== */
-const initializedCards = new Set();
+let swipeInitialized = false;
+let swipeCleanup = null;
 
-function initSwipeCard(cardId) {
-  if (initializedCards.has(cardId)) return;
-  initializedCards.add(cardId);
+function initCurrentSwipeCard() {
+  // Clean up previous listeners
+  if (swipeCleanup) {
+    swipeCleanup();
+    swipeCleanup = null;
+  }
+  swipeInitialized = true;
 
-  const card = document.getElementById(cardId);
+  const card = document.getElementById('vote-card');
   if (!card) return;
 
   let startX = 0, startY = 0, currentX = 0, currentY = 0;
@@ -1842,13 +1682,18 @@ function initSwipeCard(cardId) {
     }
   }
 
+  function handleSwipeAccepted(direction) {
+    // Record the user's vote
+    const voteNum = SELECTED_VOTE_NUMS[currentVoteIndex];
+    userVotes.push({ voteNum, direction });
+    // Show party overlay, then advance
+    showPartyOverlay();
+  }
+
   function onEnd() {
     if (!isDragging) return;
     isDragging = false;
     card.classList.remove('dragging');
-
-    const cardIndex = parseInt(card.dataset.index);
-    const nextScreen = card.dataset.next;
 
     if (swipeAxis === 'vertical') {
       const upY = Math.min(currentY, 0);
@@ -1865,7 +1710,7 @@ function initSwipeCard(cardId) {
         card.style.borderColor = 'var(--divider)';
         card.style.boxShadow = 'none';
         resetIndicators();
-        showPartyOverlay(cardIndex, nextScreen);
+        handleSwipeAccepted('complex');
       } else {
         returnCard();
       }
@@ -1875,7 +1720,8 @@ function initSwipeCard(cardId) {
 
       if (accepted) {
         const dir = currentX < 0 ? -1 : 1;
-        flashScreen(dir > 0 ? 'for' : 'against');
+        const direction = dir > 0 ? 'for' : 'against';
+        flashScreen(direction);
         const exitDist = window.innerWidth + 150;
         const yRatio = Math.abs(currentX) > 10 ? currentY / Math.abs(currentX) : 0;
         const exitX = dir * exitDist;
@@ -1887,7 +1733,7 @@ function initSwipeCard(cardId) {
         card.style.borderColor = 'var(--divider)';
         card.style.boxShadow = 'none';
         resetIndicators();
-        showPartyOverlay(cardIndex, nextScreen);
+        handleSwipeAccepted(direction);
       } else {
         returnCard();
       }
@@ -1924,26 +1770,72 @@ function initSwipeCard(cardId) {
   card.addEventListener('pointermove', onMove);
   card.addEventListener('pointerup', onEnd);
   card.addEventListener('pointerleave', onEnd);
+
+  // Store cleanup function to remove listeners when re-initializing
+  swipeCleanup = function() {
+    card.removeEventListener('pointerdown', onStart);
+    card.removeEventListener('pointermove', onMove);
+    card.removeEventListener('pointerup', onEnd);
+    card.removeEventListener('pointerleave', onEnd);
+  };
 }
 
 /* ========================================
-   PARTY VOTE OVERLAY
+   PARTY VOTE OVERLAY (dynamic from JSON)
    ======================================== */
 let partyOverlayTimer = null;
 
-function showPartyOverlay(cardIndex, nextScreen) {
-  const overlayId = `party-overlay-${cardIndex + 1}`;
-  const overlay = document.getElementById(overlayId);
-  if (!overlay) {
-    // No overlay for this card, go directly to next
-    if (nextScreen) setTimeout(() => goToScreen(nextScreen), 300);
-    return;
-  }
+function getPartyMajority(partyVotes) {
+  if (!partyVotes) return 'absent';
+  const f = partyVotes['בעד'] || 0;
+  const a = partyVotes['נגד'] || 0;
+  const n = partyVotes['נמנע'] || 0;
+  if (f === 0 && a === 0 && n === 0) return 'absent';
+  if (f > a) return 'for';
+  if (a > f) return 'against';
+  return 'absent'; // tie = absent
+}
 
+function populatePartyGrid(voteNum) {
+  const grid = document.getElementById('party-grid');
+  grid.innerHTML = '';
+  const voteData = getVoteByNum(voteNum);
+
+  PARTY_ORDER.forEach(partyName => {
+    const pill = document.createElement('div');
+    pill.className = 'party-pill';
+
+    const dot = document.createElement('div');
+    dot.className = 'party-dot';
+
+    let majority = 'absent';
+    if (voteData && voteData.party_votes[partyName]) {
+      majority = getPartyMajority(voteData.party_votes[partyName]);
+    }
+
+    if (majority === 'for') dot.classList.add('vote-for');
+    else if (majority === 'against') dot.classList.add('vote-against');
+    else dot.classList.add('vote-absent');
+
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'party-pill-name';
+    nameSpan.textContent = PARTY_DISPLAY[partyName] || partyName;
+
+    pill.appendChild(dot);
+    pill.appendChild(nameSpan);
+    grid.appendChild(pill);
+  });
+}
+
+function showPartyOverlay() {
+  const voteNum = SELECTED_VOTE_NUMS[currentVoteIndex];
+  populatePartyGrid(voteNum);
+
+  const overlay = document.getElementById('party-overlay');
   overlay.classList.add('visible');
 
   // Start timer animation
-  const timerFill = document.getElementById(`timer-fill-${cardIndex + 1}`);
+  const timerFill = document.getElementById('timer-fill');
   if (timerFill) {
     timerFill.style.transition = 'none';
     timerFill.style.width = '100%';
@@ -1958,18 +1850,18 @@ function showPartyOverlay(cardIndex, nextScreen) {
   // Auto-advance after 2.5 seconds
   if (partyOverlayTimer) clearTimeout(partyOverlayTimer);
   partyOverlayTimer = setTimeout(() => {
-    dismissPartyOverlay(overlayId, nextScreen);
+    dismissPartyOverlay();
   }, 2500);
 
   // Click to dismiss
   overlay.onclick = function(e) {
     if (partyOverlayTimer) clearTimeout(partyOverlayTimer);
-    dismissPartyOverlay(overlayId, nextScreen);
+    dismissPartyOverlay();
   };
 }
 
-function dismissPartyOverlay(overlayId, nextScreen) {
-  const overlay = document.getElementById(overlayId);
+function dismissPartyOverlay() {
+  const overlay = document.getElementById('party-overlay');
   if (overlay) {
     overlay.style.opacity = '0';
     overlay.style.transition = 'opacity 200ms ease';
@@ -1977,21 +1869,176 @@ function dismissPartyOverlay(overlayId, nextScreen) {
       overlay.classList.remove('visible');
       overlay.style.opacity = '';
       overlay.style.transition = '';
-      if (nextScreen) goToScreen(nextScreen);
+      advanceToNextVote();
     }, 200);
   }
 }
 
+function advanceToNextVote() {
+  currentVoteIndex++;
+  if (currentVoteIndex >= TOTAL_VOTES) {
+    computeResults();
+    goToScreen('screen-result');
+  } else {
+    showVoteCard(currentVoteIndex);
+    // Re-init swipe listeners for recycled card
+    swipeInitialized = false;
+    initCurrentSwipeCard();
+  }
+}
+
 /* ========================================
-   RESULT SCREEN
+   RESULT COMPUTATION
+   ======================================== */
+function computeResults() {
+  if (!window.votesData) return;
+
+  // Compute match score per party
+  const partyScores = {};
+  PARTY_ORDER.forEach(p => { partyScores[p] = { matches: 0, total: 0 }; });
+
+  userVotes.forEach(uv => {
+    const voteData = getVoteByNum(uv.voteNum);
+    if (!voteData) return;
+
+    PARTY_ORDER.forEach(partyName => {
+      const pv = voteData.party_votes[partyName];
+      if (!pv) return; // party didn't vote on this one
+      const majority = getPartyMajority(pv);
+      if (majority === 'absent') return; // don't count absent
+
+      partyScores[partyName].total++;
+      if (uv.direction === 'complex') {
+        partyScores[partyName].matches += 0.5;
+      } else if (uv.direction === majority) {
+        partyScores[partyName].matches += 1;
+      }
+    });
+  });
+
+  // Calculate percentages and sort
+  const results = PARTY_ORDER
+    .filter(p => partyScores[p].total > 0)
+    .map(p => ({
+      name: p,
+      displayName: PARTY_DISPLAY[p] || p,
+      pct: Math.round((partyScores[p].matches / partyScores[p].total) * 100)
+    }))
+    .sort((a, b) => b.pct - a.pct);
+
+  // Populate match list (top 3)
+  const matchList = document.getElementById('match-list');
+  matchList.innerHTML = '';
+  const rankColors = ['var(--gold)', 'var(--blue)', 'var(--gold)'];
+  const barColors = ['var(--teal)', 'var(--blue)', 'var(--gold)'];
+
+  results.slice(0, 3).forEach((r, i) => {
+    const item = document.createElement('div');
+    item.className = 'match-item';
+    item.style.animation = `slideUp 0.5s ease ${0.3 + i * 0.2}s both`;
+
+    const rankColor = i === 0 ? 'var(--gold)' : rankColors[i];
+    const pctColor = i === 0 ? 'var(--teal)' : (i === 1 ? 'var(--blue)' : 'var(--gold)');
+
+    item.innerHTML = `
+      <div class="match-rank" ${i > 0 ? `style="color:${rankColor};"` : ''}>${i + 1}</div>
+      <div class="match-details">
+        <div class="match-name">
+          <span>${r.displayName}</span>
+          <span class="match-pct" ${i > 0 ? `style="color:${pctColor};"` : ''}>${r.pct}%</span>
+        </div>
+        <div class="match-bar">
+          <div class="match-bar-fill" style="width:${r.pct}%;${i > 0 ? ` background:${barColors[i]};` : ''}"></div>
+        </div>
+      </div>
+    `;
+    matchList.appendChild(item);
+  });
+
+  // Surprise box: find lowest-ranked coalition party with >40% match
+  const surpriseText = document.getElementById('surprise-text');
+  const coalitionParties = ['ש"ס', 'יהדות התורה', 'הציונות הדתית'];
+  const oppositionParties = ['יש עתיד', 'המחנה הממלכתי', 'העבודה'];
+
+  let surprise = null;
+  // Look for unexpected agreement
+  for (const r of results) {
+    if (coalitionParties.includes(r.name) && r.pct >= 40 && results.indexOf(r) > 1) {
+      surprise = r;
+      break;
+    }
+  }
+  if (!surprise) {
+    for (const r of results) {
+      if (oppositionParties.includes(r.name) && r.pct >= 40 && results.indexOf(r) > 1) {
+        surprise = r;
+        break;
+      }
+    }
+  }
+
+  if (surprise) {
+    surpriseText.innerHTML = `<strong>הפתעה:</strong> את/ה מסכים/ה עם ${surprise.displayName} ב-<span class="ltr-num">${surprise.pct}%</span> מההצבעות`;
+  } else if (results.length > 2) {
+    const last = results[results.length - 1];
+    surpriseText.innerHTML = `<strong>הפתעה:</strong> ההתאמה הנמוכה ביותר שלך — ${last.displayName} עם <span class="ltr-num">${last.pct}%</span> בלבד`;
+  }
+
+  // Position user dot on 2D map based on votes
+  // Simple heuristic: left-right based on Reasonableness (1) and Criminal Orgs (25)
+  // Secular-religious based on Shabbat (4) and Haredi Draft (2)
+  const userDot = document.getElementById('user-dot');
+  if (userDot) {
+    let leftRight = 50; // 0=right, 100=left
+    let secRel = 50;    // 0=secular(top), 100=religious(bottom)
+
+    userVotes.forEach(uv => {
+      if (uv.voteNum === 1) {
+        // Reasonableness: for=left-leaning, against=right-leaning
+        if (uv.direction === 'for') leftRight += 15;
+        else if (uv.direction === 'against') leftRight -= 15;
+      }
+      if (uv.voteNum === 25) {
+        // Criminal orgs: for=right-leaning, against=left-leaning
+        if (uv.direction === 'for') leftRight -= 10;
+        else if (uv.direction === 'against') leftRight += 10;
+      }
+      if (uv.voteNum === 4) {
+        // Shabbat transport: for=secular, against=religious
+        if (uv.direction === 'for') secRel -= 15;
+        else if (uv.direction === 'against') secRel += 15;
+      }
+      if (uv.voteNum === 2) {
+        // Haredi draft exemption: for=religious, against=secular
+        if (uv.direction === 'for') secRel += 10;
+        else if (uv.direction === 'against') secRel -= 10;
+      }
+      if (uv.voteNum === 14) {
+        // Bomb shelters: for=slightly left, against=slightly right
+        if (uv.direction === 'for') leftRight += 5;
+        else if (uv.direction === 'against') leftRight -= 5;
+      }
+    });
+
+    leftRight = Math.max(10, Math.min(90, leftRight));
+    secRel = Math.max(10, Math.min(90, secRel));
+    userDot.style.left = leftRight + '%';
+    userDot.style.top = secRel + '%';
+  }
+}
+
+/* ========================================
+   RESULT SCREEN ANIMATION
    ======================================== */
 function initResultScreen() {
   // Animate match bars
-  document.querySelectorAll('#screen-result .match-bar-fill').forEach((bar, i) => {
-    const w = bar.style.width;
-    bar.style.width = '0';
-    setTimeout(() => { bar.style.width = w; }, 400 + i * 200);
-  });
+  setTimeout(() => {
+    document.querySelectorAll('#screen-result .match-bar-fill').forEach((bar, i) => {
+      const w = bar.style.width;
+      bar.style.width = '0';
+      setTimeout(() => { bar.style.width = w; }, 400 + i * 200);
+    });
+  }, 50);
 
   // Animate user dot onto map
   const dot = document.getElementById('user-dot');
@@ -2002,7 +2049,6 @@ function initResultScreen() {
       dot.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
       dot.style.opacity = '1';
       dot.style.transform = 'translate(-50%, -50%) scale(1)';
-      // Re-enable pulse animation after initial entry
       setTimeout(() => {
         dot.style.transition = '';
       }, 700);
@@ -2028,7 +2074,7 @@ function initConsensusScreen() {
   const numEl = document.getElementById('consensusNum');
   if (!numEl) return;
   let current = 0;
-  const target = 87;
+  const target = 85;
   numEl.textContent = '0%';
   const interval = setInterval(() => {
     current += 1;
@@ -2110,34 +2156,29 @@ function subscribe() {
    TUTORIAL AUTO-TILT (first card)
    ======================================== */
 function runTutorialTilt() {
-  const card = document.getElementById('card-v1');
+  const card = document.getElementById('vote-card');
   if (!card) return;
 
   const forInd = card.querySelector('.for-ind');
   const againstInd = card.querySelector('.against-ind');
 
-  // Wait for card to be visible
   setTimeout(() => {
-    // Tilt right
     card.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
     card.style.transform = 'translateX(40px) rotate(4deg)';
     forInd.style.opacity = '0.6';
     forInd.classList.add('visible');
 
     setTimeout(() => {
-      // Return
       card.style.transform = 'translateX(0) rotate(0)';
       forInd.style.opacity = '0';
       forInd.classList.remove('visible');
 
       setTimeout(() => {
-        // Tilt left
         card.style.transform = 'translateX(-40px) rotate(-4deg)';
         againstInd.style.opacity = '0.6';
         againstInd.classList.add('visible');
 
         setTimeout(() => {
-          // Return
           card.style.transform = 'translateX(0) rotate(0)';
           againstInd.style.opacity = '0';
           againstInd.classList.remove('visible');
@@ -2154,8 +2195,8 @@ function runTutorialTilt() {
 /* ========================================
    INIT
    ======================================== */
-document.addEventListener('DOMContentLoaded', () => {
-  // Start on language screen
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadVotesData();
   goToScreen('screen-lang');
 });
 </script>
