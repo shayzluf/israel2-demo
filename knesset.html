@@ -4201,9 +4201,8 @@ function renderWatchdogAlert() {
       <div style="font-size: 14px; line-height: 1.6; color: var(--text-2);">
         <strong style="color: var(--text-1);">${a.mk}</strong> (${a.party}) ${a.verb} נגד מה שהנציג/ה חוזה שהיית בוחר/ת בנושא ${a.topic}
       </div>
-      <div style="display: flex; gap: 8px; margin-top: 10px;">
-        <button class="btn btn-sm" onclick="goToScreen('screen-alert-detail'); renderAlertDetail();" style="background: rgba(232,99,111,0.15); color: var(--coral); border: none; flex: 1; font-size: 12px; padding: 8px;">ראו פרטים</button>
-        <button class="btn btn-sm" onclick="alertAction('confirm')" style="background: rgba(45,212,168,0.15); color: var(--teal); border: none; flex: 1; font-size: 12px; padding: 8px;">הנציג/ה צדק/ה</button>
+      <div style="margin-top: 10px;">
+        <button class="btn btn-sm" onclick="goToScreen('screen-alert-detail'); renderAlertDetail();" style="background: rgba(232,99,111,0.15); color: var(--coral); border: none; width: 100%; font-size: 13px; padding: 10px; display: flex; align-items: center; justify-content: center; gap: 6px;">ראו את הסתירה המלאה ←</button>
       </div>
     </div>`;
 }
@@ -4256,12 +4255,11 @@ function renderAlertDetail() {
         <div class="party-pills">${a.partiesAgainst.map(p => `<span class="party-pill party-pill-against">${p}</span>`).join('')}</div>
       </div>
     </div>
-    <div class="alert-section">
+    <div class="alert-section" id="alert-decision-area">
+      <div style="font-size: 15px; font-weight: 700; color: var(--text-1); text-align: center; margin-bottom: 12px;">הנציג/ה שלך צדק/ה?</div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
-        <button class="btn" onclick="alertAction('confirm')" style="background: var(--teal); color: var(--bg); font-size: 14px; padding: 14px; border: none; width: 100%;">הנציג/ה צדק/ה — אני באמת מסכים/ה</button>
-        <button class="btn" onclick="alertAction('override')" style="background: rgba(232,99,111,0.15); color: var(--coral); font-size: 14px; padding: 14px; border: none; width: 100%;">לא, אני דווקא חושב/ת אחרת</button>
-        <button class="btn" onclick="shareContradiction()" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">${icon('share','sm','blue')} לשתף את הסתירה</button>
-        <button class="btn" onclick="contactMK()" style="background: rgba(229,168,75,0.15); color: var(--gold); font-size: 14px; padding: 14px; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">${icon('mail','sm','accent')} לשלוח הודעה לח"כ</button>
+        <button class="btn" onclick="alertDecision('confirm')" style="background: var(--teal); color: var(--bg); font-size: 15px; font-weight: 700; padding: 16px; border: none; width: 100%;">כן, צדק/ה</button>
+        <button class="btn" onclick="alertDecision('override')" style="background: transparent; color: var(--coral); font-size: 14px; padding: 14px; border: 1.5px solid var(--coral); width: 100%;">לא, אני חושב/ת אחרת</button>
       </div>
     </div>
     <div class="alert-section" style="padding-bottom: 100px;">
@@ -4315,19 +4313,26 @@ function sendMKMessage(method) {
   setTimeout(() => toast.classList.remove('show'), 2000);
 }
 
-function alertAction(type) {
-  const toast = document.getElementById('alertToast');
-  if (type === 'confirm') {
-    toast.textContent = 'תודה! הנציג/ה לומד/ת ומשתפר/ת ✓';
-  } else {
-    toast.textContent = 'תיקון נרשם. הנציג/ה לומד/ת מהתיקון ✓';
-  }
-  toast.classList.add('show');
-  setTimeout(() => {
-    toast.classList.remove('show');
-    setTimeout(() => goToScreen('screen-home'), 200);
-  }, 1800);
+function alertDecision(type) {
+  const a = getActiveAlert();
+  const area = document.getElementById('alert-decision-area');
+  if (!area) return;
+  const msg = type === 'confirm'
+    ? 'תודה! הנציג/ה לומד/ת ומשתפר/ת ✓'
+    : 'תיקון נרשם. הנציג/ה לומד/ת מהתיקון ✓';
+  const accentColor = type === 'confirm' ? 'var(--teal)' : 'var(--coral)';
+  area.innerHTML = `
+    <div style="text-align: center; margin-bottom: 14px;">
+      <div style="font-size: 15px; font-weight: 700; color: ${accentColor}; margin-bottom: 4px;">${msg}</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+      <button class="btn" onclick="shareContradiction()" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">${icon('share','sm','blue')} שתפו את הסתירה הזו</button>
+      <button class="btn" onclick="contactMK()" style="background: rgba(229,168,75,0.15); color: var(--gold); font-size: 13px; padding: 12px; border: none; width: 100%; display: flex; align-items: center; justify-content: center; gap: 6px;">${icon('mail','sm','accent')} שלחו הודעה לח"כ ${a.mk}</button>
+      <div onclick="goToScreen('screen-home')" style="text-align: center; color: var(--text-3); font-size: 13px; padding: 10px; cursor: pointer;">חזרה לדעת הקהל</div>
+    </div>`;
 }
+
+function alertAction(type) { alertDecision(type); }
 
 function subscribe() {
   const input = document.querySelector('.subscribe-input');
