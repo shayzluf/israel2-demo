@@ -2104,6 +2104,32 @@ body {
 }
 .reset-btn:active { background: rgba(232,99,111,0.1); }
 
+/* Alert Detail Screen */
+.alert-back { display: flex; align-items: center; gap: 6px; padding: 12px 20px; color: var(--text-2); font-size: 13px; cursor: pointer; }
+.alert-back:active { opacity: 0.6; }
+.alert-section { padding: 0 20px 16px; }
+.alert-section-title { font-size: 13px; font-weight: 700; color: var(--text-3); margin-bottom: 8px; letter-spacing: 0.3px; }
+.contradiction-said, .contradiction-voted {
+  padding: 12px 16px; border-radius: var(--r-md); margin-bottom: 8px;
+  font-size: 14px; line-height: 1.7; color: var(--text-1);
+}
+.contradiction-said { background: rgba(91,127,191,0.1); border-right: 3px solid var(--blue); }
+.contradiction-voted { background: rgba(232,99,111,0.1); border-right: 3px solid var(--coral); }
+.party-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.party-pill {
+  font-size: 12px; padding: 5px 10px; border-radius: var(--r-pill); font-weight: 500;
+}
+.party-pill-for { background: rgba(45,212,168,0.12); color: var(--teal); }
+.party-pill-against { background: rgba(232,99,111,0.12); color: var(--coral); }
+.alert-toast {
+  position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+  background: var(--elevated); color: var(--text-1); padding: 12px 24px;
+  border-radius: var(--r-pill); font-size: 13px; font-weight: 500;
+  box-shadow: var(--shadow-elevated); z-index: 999; opacity: 0;
+  transition: opacity 300ms; pointer-events: none; white-space: nowrap;
+}
+.alert-toast.show { opacity: 1; }
+
 </style>
 </head>
 <body>
@@ -2414,7 +2440,7 @@ body {
               <strong style="color: var(--text-1);">בנימין נתניהו</strong> הצביע נגד מה שהנציג/ה חוזה שהיית בוחר/ת בנושא רפורמת יבוא מהאיחוד האירופי
             </div>
             <div style="display: flex; gap: 8px; margin-top: 10px;">
-              <button class="btn btn-sm" style="background: rgba(232,99,111,0.15); color: var(--coral); border: none; flex: 1; font-size: 12px; padding: 8px;">ראו פרטים</button>
+              <button class="btn btn-sm" onclick="goToScreen('screen-alert-detail')" style="background: rgba(232,99,111,0.15); color: var(--coral); border: none; flex: 1; font-size: 12px; padding: 8px;">ראו פרטים</button>
               <button class="btn btn-sm" style="background: rgba(45,212,168,0.15); color: var(--teal); border: none; flex: 1; font-size: 12px; padding: 8px;">הנציג/ה צדק/ה</button>
             </div>
           </div>
@@ -2476,6 +2502,111 @@ body {
 
       </div>
     </div>
+
+    <!-- ==================== SCREEN: ALERT DETAIL ==================== -->
+    <div class="screen" id="screen-alert-detail">
+      <div class="screen-scroll">
+
+        <!-- Back button -->
+        <div class="alert-back" onclick="goToScreen('screen-home')">
+          <span style="direction:ltr;">→</span> חזרה
+        </div>
+
+        <!-- Header -->
+        <div class="alert-section">
+          <div class="card" style="border-color: var(--coral); background: rgba(232,99,111,0.08); padding: 16px; text-align: center;">
+            <div style="font-size: 28px; margin-bottom: 8px;">🔔</div>
+            <div style="font-size: 16px; font-weight: 700; color: var(--coral); line-height: 1.5;">התראת נציג/ה: הצבעה נגד החיזוי שלך</div>
+            <div style="font-size: 11px; color: var(--text-3); margin-top: 6px;">לפני 2 שעות</div>
+          </div>
+        </div>
+
+        <!-- The Issue -->
+        <div class="alert-section">
+          <div class="alert-section-title">מה הנושא?</div>
+          <div class="card" style="padding: 14px 16px;">
+            <div style="font-size: 14px; line-height: 1.8; color: var(--text-2);">
+              הכנסת הצביעה על הצעת חוק שתאפשר <strong style="color: var(--text-1);">יבוא מקביל של מוצרים מאירופה</strong> — בלי לעבור דרך היבואנים הבלעדיים שמחזיקים מונופול על המחירים בארץ. המחירים של מזון בישראל גבוהים ב-<strong style="color: var(--coral);">51%</strong> מהממוצע באירופה. ההצעה נפלה.
+            </div>
+          </div>
+        </div>
+
+        <!-- The Contradiction -->
+        <div class="alert-section">
+          <div class="alert-section-title">מה שנאמר מול מה שקרה</div>
+          <div class="contradiction-said">
+            <div style="font-size: 11px; color: var(--blue); font-weight: 600; margin-bottom: 4px;">💬 מה שנאמר</div>
+            נתניהו הבטיח שוב ושוב להוריד את יוקר המחיה ולפתוח את השוק לתחרות.
+          </div>
+          <div class="contradiction-voted">
+            <div style="font-size: 11px; color: var(--coral); font-weight: 600; margin-bottom: 4px;">🗳️ מה שקרה בפועל</div>
+            הצביע <strong>נגד</strong> הצעת החוק ליבוא מקביל מאירופה.
+          </div>
+          <div style="font-size: 12px; color: var(--text-3); line-height: 1.6; padding: 0 4px;">
+            ההצעה הייתה מאפשרת לייבא מוצרי מזון וצריכה ישירות מאירופה במחירים נמוכים יותר. הקואליציה הפילה אותה.
+          </div>
+        </div>
+
+        <!-- Rep Prediction -->
+        <div class="alert-section">
+          <div class="alert-section-title">החיזוי של הנציג/ה שלך</div>
+          <div class="card" style="padding: 14px 16px; border-color: var(--teal); background: rgba(45,212,168,0.06);">
+            <div style="font-size: 15px; font-weight: 600; color: var(--teal); margin-bottom: 8px;">
+              הנציג/ה שלך חזה שהיית בוחר/ת: בעד הרפורמה ✅
+            </div>
+            <div style="font-size: 13px; color: var(--text-2); line-height: 1.7;">
+              <strong style="color: var(--text-3);">למה?</strong> בהתבסס על ההצבעות הקודמות שלך בנושאי יוקר המחיה ותחרות בשוק, הנציג/ה חזה שתתמוך בהורדת חסמי יבוא.
+            </div>
+          </div>
+        </div>
+
+        <!-- Party Breakdown -->
+        <div class="alert-section">
+          <div class="alert-section-title">איך הצביעו במפלגות</div>
+          <div style="margin-bottom: 12px;">
+            <div style="font-size: 12px; font-weight: 600; color: var(--teal); margin-bottom: 6px;">👍 בעד הרפורמה</div>
+            <div class="party-pills">
+              <span class="party-pill party-pill-for">יש עתיד</span>
+              <span class="party-pill party-pill-for">המחנה הממלכתי</span>
+              <span class="party-pill party-pill-for">ישראל ביתנו</span>
+              <span class="party-pill party-pill-for">העבודה</span>
+              <span class="party-pill party-pill-for">חד"ש-תע"ל</span>
+              <span class="party-pill party-pill-for">רע"ם</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 12px; font-weight: 600; color: var(--coral); margin-bottom: 6px;">👎 נגד הרפורמה</div>
+            <div class="party-pills">
+              <span class="party-pill party-pill-against">הליכוד</span>
+              <span class="party-pill party-pill-against">הציונות הדתית</span>
+              <span class="party-pill party-pill-against">ש"ס</span>
+              <span class="party-pill party-pill-against">יהדות התורה</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="alert-section">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="btn" onclick="alertAction('confirm')" style="background: var(--teal); color: var(--bg); font-size: 14px; padding: 14px; border: none; width: 100%;">הנציג/ה צדק/ה — אני באמת בעד</button>
+            <button class="btn" onclick="alertAction('override')" style="background: rgba(232,99,111,0.15); color: var(--coral); font-size: 14px; padding: 14px; border: none; width: 100%;">לא, אני דווקא נגד</button>
+            <button class="btn" onclick="shareContradiction()" style="background: rgba(91,127,191,0.15); color: var(--blue); font-size: 14px; padding: 14px; border: none; width: 100%;">📲 לשתף את הסתירה</button>
+          </div>
+        </div>
+
+        <!-- Legal Fine Print -->
+        <div class="alert-section" style="padding-bottom: 100px;">
+          <div style="display: flex; align-items: flex-start; gap: 8px; padding: 10px 14px; background: rgba(255,255,255,0.03); border-radius: var(--r-md);">
+            <svg viewBox="0 0 24 24" fill="var(--text-3)" width="16" height="16" style="flex-shrink:0; margin-top: 2px;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            <div style="font-size: 11px; color: var(--text-3); line-height: 1.5;">הנציג/ה לא מצביע/ה במקומך — זה כלי חיזוי אישי. ההצבעה הסופית תמיד שלך.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div class="alert-toast" id="alertToast"></div>
 
     <!-- ==================== SCREEN: REP ==================== -->
     <div class="screen tab-screen" id="screen-rep">
@@ -3978,6 +4109,20 @@ function shareConsensus() {
   const origHTML = btn.innerHTML;
   btn.innerHTML = '&#x2713; הקישור הועתק!';
   setTimeout(() => { btn.innerHTML = origHTML; }, 2000);
+}
+
+function alertAction(type) {
+  const toast = document.getElementById('alertToast');
+  if (type === 'confirm') {
+    toast.textContent = 'תודה! הנציג/ה לומד/ת ומשתפר/ת ✓';
+  } else {
+    toast.textContent = 'תיקון נרשם. הנציג/ה לומד/ת מהתיקון ✓';
+  }
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => goToScreen('screen-home'), 200);
+  }, 1800);
 }
 
 function subscribe() {
