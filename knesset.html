@@ -2293,34 +2293,7 @@ body {
 
       <!-- 2D Position Map -->
       <div class="position-map-container">
-        <div class="position-map">
-          <div class="map-axis-x"></div>
-          <div class="map-axis-y"></div>
-          <span class="map-label map-label-right">שמאל</span>
-          <span class="map-label map-label-left">ימין</span>
-          <span class="map-label map-label-secular">חילוני</span>
-          <span class="map-label map-label-religious">דתי</span>
-
-          <!-- Party positions (approximate) -->
-          <!-- Party positions: left%=0 is שמאל(left-wing), left%=100 is ימין(right-wing) -->
-          <!-- top%=0 is חילוני(secular), top%=100 is דתי(religious) -->
-          <!-- Computed from actual Knesset voting data on 11 onboarding votes -->
-          <div class="map-party" style="left:66%;top:66%;background:var(--likud);" title="ליכוד">ל</div>
-          <div class="map-party" style="left:30%;top:24%;background:var(--yesh-atid);" title="יש עתיד">יע</div>
-          <div class="map-party" style="left:34%;top:35%;background:var(--mamlachti);" title="המחנה הממלכתי">ממ</div>
-          <div class="map-party" style="left:80%;top:70%;background:var(--rz);" title="הציונות הדתית">צד</div>
-          <div class="map-party" style="left:70%;top:70%;background:var(--shas);" title="ש״ס">ש</div>
-          <div class="map-party" style="left:68%;top:72%;background:var(--utj);" title="יהדות התורה">ג</div>
-          <div class="map-party" style="left:62%;top:22%;background:var(--yisrael-beiteinu);" title="ישראל ביתנו">יב</div>
-          <div class="map-party" style="left:24%;top:32%;background:var(--labor);" title="העבודה">ע</div>
-          <div class="map-party" style="left:15%;top:18%;background:var(--meretz);" title="מרצ">מ</div>
-          <div class="map-party" style="left:12%;top:42%;background:var(--hadash);" title="חד״ש-תע״ל">חת</div>
-          <div class="map-party" style="left:25%;top:58%;background:var(--raam);" title="רע״מ">ר</div>
-          <div class="map-party" style="left:10%;top:48%;background:var(--balad);" title="בל״ד">ב</div>
-
-          <!-- User position -->
-          <div class="map-user" id="user-dot" style="left:52%;top:30%;"></div>
-        </div>
+        <div class="position-map" id="result-map"></div>
       </div>
 
       <!-- Top 3 matches (dynamically populated) -->
@@ -2971,29 +2944,7 @@ body {
         <!-- 1. Large 2D position map -->
         <div class="profile-map-label">המיקום שלך על המפה הפוליטית</div>
         <div class="profile-map-container">
-          <div class="profile-map">
-            <div class="map-axis-x"></div>
-            <div class="map-axis-y"></div>
-            <div class="map-label map-label-left">שמאל</div>
-            <div class="map-label map-label-right">ימין</div>
-            <div class="map-label map-label-secular">חילוני</div>
-            <div class="map-label map-label-religious">דתי</div>
-            <!-- Party dots — same positions as result screen map -->
-            <div class="map-party" style="left:66%;top:66%;background:var(--likud);" title="ליכוד">ל</div>
-            <div class="map-party" style="left:30%;top:24%;background:var(--yesh-atid);" title="יש עתיד">יע</div>
-            <div class="map-party" style="left:34%;top:35%;background:var(--mamlachti);" title="המחנה הממלכתי">ממ</div>
-            <div class="map-party" style="left:80%;top:70%;background:var(--rz);" title="הציונות הדתית">צד</div>
-            <div class="map-party" style="left:70%;top:70%;background:var(--shas);" title="ש״ס">ש</div>
-            <div class="map-party" style="left:68%;top:72%;background:var(--utj);" title="יהדות התורה">ג</div>
-            <div class="map-party" style="left:62%;top:22%;background:var(--yisrael-beiteinu);" title="ישראל ביתנו">יב</div>
-            <div class="map-party" style="left:24%;top:32%;background:var(--labor);" title="העבודה">ע</div>
-            <div class="map-party" style="left:15%;top:18%;background:var(--meretz);" title="מרצ">מ</div>
-            <div class="map-party" style="left:12%;top:42%;background:var(--hadash);" title="חד״ש-תע״ל">חת</div>
-            <div class="map-party" style="left:25%;top:58%;background:var(--raam);" title="רע״מ">ר</div>
-            <div class="map-party" style="left:10%;top:48%;background:var(--balad);" title="בל״ד">ב</div>
-            <!-- User dot -->
-            <div class="map-user" id="profile-user-dot" style="left:50%;top:50%;"></div>
-          </div>
+          <div class="profile-map" id="profile-map"></div>
         </div>
 
         <!-- 2. Stats grid -->
@@ -4418,9 +4369,44 @@ function renderUpdatedResults(results) {
 }
 
 /* ========================================
+   SHARED 2D MAP COMPONENT
+   ======================================== */
+const MAP_PARTIES = [
+  { left: 66, top: 66, bg: 'var(--likud)', title: 'ליכוד', short: 'ל' },
+  { left: 30, top: 24, bg: 'var(--yesh-atid)', title: 'יש עתיד', short: 'יע' },
+  { left: 34, top: 35, bg: 'var(--mamlachti)', title: 'המחנה הממלכתי', short: 'ממ' },
+  { left: 80, top: 70, bg: 'var(--rz)', title: 'הציונות הדתית', short: 'צד' },
+  { left: 70, top: 70, bg: 'var(--shas)', title: 'ש״ס', short: 'ש' },
+  { left: 68, top: 72, bg: 'var(--utj)', title: 'יהדות התורה', short: 'ג' },
+  { left: 62, top: 22, bg: 'var(--yisrael-beiteinu)', title: 'ישראל ביתנו', short: 'יב' },
+  { left: 24, top: 32, bg: 'var(--labor)', title: 'העבודה', short: 'ע' },
+  { left: 15, top: 18, bg: 'var(--meretz)', title: 'מרצ', short: 'מ' },
+  { left: 12, top: 42, bg: 'var(--hadash)', title: 'חד״ש-תע״ל', short: 'חת' },
+  { left: 25, top: 58, bg: 'var(--raam)', title: 'רע״מ', short: 'ר' },
+  { left: 10, top: 48, bg: 'var(--balad)', title: 'בל״ד', short: 'ב' },
+];
+
+function renderMap(containerId, userDotId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = `
+    <div class="map-axis-x"></div>
+    <div class="map-axis-y"></div>
+    <span class="map-label map-label-right">שמאל</span>
+    <span class="map-label map-label-left">ימין</span>
+    <span class="map-label map-label-secular">חילוני</span>
+    <span class="map-label map-label-religious">דתי</span>
+    ${MAP_PARTIES.map(p => `<div class="map-party" style="left:${p.left}%;top:${p.top}%;background:${p.bg};" title="${p.title}">${p.short}</div>`).join('')}
+    <div class="map-user" id="${userDotId}" style="left:50%;top:50%;"></div>
+  `;
+}
+
+/* ========================================
    RESULT SCREEN ANIMATION
    ======================================== */
 function initResultScreen() {
+  // Render the map if not yet populated
+  renderMap('result-map', 'user-dot');
   // Animate match bars — read target from data attribute, animate from 0
   setTimeout(() => {
     document.querySelectorAll('#screen-result .match-bar-fill').forEach((bar, i) => {
@@ -5439,6 +5425,8 @@ const COALITION_DATA = [
 ];
 
 function updateProfileScreen() {
+  // Render shared map component
+  renderMap('profile-map', 'profile-user-dot');
   // Stats
   const statVotes = document.getElementById('stat-votes');
   if (statVotes) statVotes.textContent = appState.totalVotesAnswered;
