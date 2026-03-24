@@ -4447,37 +4447,41 @@ function initResultScreen() {
   });
 
   // Setup party dot tap-to-expand via event delegation (runs once)
-  if (!window._partyDotDelegationSetup) {
-    window._partyDotDelegationSetup = true;
-    document.getElementById('screen-result').addEventListener('click', (e) => {
-      const dot = e.target.closest('.map-party');
-      function collapseAll() {
-        document.querySelectorAll('#screen-result .map-party.expanded').forEach(ep => {
-          ep.classList.remove('expanded');
-          ep.textContent = ep.dataset.short || ep.textContent;
-          ep.style.setProperty('opacity', '0.5');
-          ep.style.setProperty('width', '28px');
-          ep.style.setProperty('padding', '0');
-          ep.style.setProperty('border-radius', '50%');
-          ep.style.setProperty('font-size', '8px');
-          ep.style.removeProperty('z-index');
-        });
-      }
-      if (!dot) { collapseAll(); return; }
-      const wasExpanded = dot.classList.contains('expanded');
-      collapseAll();
-      if (!wasExpanded) {
-        dot.textContent = dot.getAttribute('title') || dot.dataset.short;
-        dot.style.setProperty('opacity', '1', 'important');
-        dot.style.setProperty('width', 'auto', 'important');
-        dot.style.setProperty('padding', '0 10px', 'important');
-        dot.style.setProperty('border-radius', '14px', 'important');
-        dot.style.setProperty('font-size', '11px', 'important');
-        dot.style.setProperty('z-index', '10', 'important');
-        dot.classList.add('expanded');
-      }
-    });
-  }
+  setupMapDotExpand('screen-result');
+}
+
+function setupMapDotExpand(screenId) {
+  const screen = document.getElementById(screenId);
+  if (!screen || screen._dotExpandSetup) return;
+  screen._dotExpandSetup = true;
+  screen.addEventListener('click', (e) => {
+    const dot = e.target.closest('.map-party');
+    function collapseAll() {
+      screen.querySelectorAll('.map-party.expanded').forEach(ep => {
+        ep.classList.remove('expanded');
+        ep.textContent = ep.dataset.short || ep.textContent;
+        ep.style.setProperty('opacity', '0.5');
+        ep.style.setProperty('width', '28px');
+        ep.style.setProperty('padding', '0');
+        ep.style.setProperty('border-radius', '50%');
+        ep.style.setProperty('font-size', '8px');
+        ep.style.removeProperty('z-index');
+      });
+    }
+    if (!dot) { collapseAll(); return; }
+    const wasExpanded = dot.classList.contains('expanded');
+    collapseAll();
+    if (!wasExpanded) {
+      dot.textContent = dot.getAttribute('title') || dot.dataset.short;
+      dot.style.setProperty('opacity', '1', 'important');
+      dot.style.setProperty('width', 'auto', 'important');
+      dot.style.setProperty('padding', '0 10px', 'important');
+      dot.style.setProperty('border-radius', '14px', 'important');
+      dot.style.setProperty('font-size', '11px', 'important');
+      dot.style.setProperty('z-index', '10', 'important');
+      dot.classList.add('expanded');
+    }
+  });
 }
 
 /* ========================================
@@ -5431,6 +5435,7 @@ const COALITION_DATA = [
 function updateProfileScreen() {
   // Render shared map component
   renderMap('profile-map', 'profile-user-dot');
+  setupMapDotExpand('screen-profile');
   // Stats
   const statVotes = document.getElementById('stat-votes');
   if (statVotes) statVotes.textContent = appState.totalVotesAnswered;
