@@ -391,20 +391,10 @@ body {
   color: var(--text-2);
   direction: ltr;
 }
-.vote-progress {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  padding: 4px 0 max(20px, calc(12px + env(safe-area-inset-bottom, 0px)));
-}
-.vote-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--text-3);
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-.vote-dot.done { background: var(--teal); }
-.vote-dot.current { background: var(--teal); transform: scale(1.3); }
+.confidence-area { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 4px 0 max(16px, calc(8px + env(safe-area-inset-bottom, 0px))); }
+.confidence-ring { width: 44px; height: 44px; }
+.ring-fill { transition: stroke-dashoffset 0.8s ease, stroke 0.5s ease; }
+.confidence-label { font-size: 11px; color: var(--text-3); font-weight: 500; transition: color 0.5s ease; }
 
 .swipe-area {
   width: 100%;
@@ -631,6 +621,15 @@ body {
   width: 100%;
   transition: width 2.5s linear;
 }
+
+/* ========== CONSENSUS REVEAL OVERLAY ========== */
+.consensus-overlay { position: absolute; inset: 0; background: rgba(13,15,20,0.92); display: flex; align-items: center; justify-content: center; z-index: 100; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+.consensus-overlay.show { opacity: 1; pointer-events: auto; }
+.consensus-overlay .consensus-card { text-align: center; padding: 32px 24px; }
+.consensus-overlay .consensus-pct { font-size: 56px; font-weight: 900; color: var(--teal); margin-bottom: 12px; direction: ltr; }
+.consensus-overlay .consensus-text-line { font-size: 15px; color: var(--text-2); line-height: 1.6; margin-bottom: 8px; }
+.consensus-overlay .consensus-issue-line { font-size: 17px; font-weight: 700; color: var(--text-1); line-height: 1.5; margin-bottom: 24px; }
+.consensus-overlay .consensus-tap { font-size: 12px; color: var(--text-3); }
 
 /* ========== RESULT SCREEN ========== */
 #screen-result {
@@ -2215,7 +2214,7 @@ body {
       <div class="intro-subtitle">גלה/י מי באמת מצביע בשבילך</div>
       <div class="intro-stats">
         <div class="intro-stat">
-          <span class="intro-stat-num">5</span>
+          <span class="intro-stat-num">11</span>
           <span class="intro-stat-label">הצבעות אמיתיות</span>
         </div>
         <div class="intro-stat">
@@ -2257,13 +2256,28 @@ body {
         <span class="hint-complex">↑ מורכב</span>
         <span>← נגד</span>
       </div>
-      <div class="vote-progress" id="vote-progress"></div>
+      <div class="confidence-area">
+        <svg class="confidence-ring" viewBox="0 0 48 48">
+          <circle class="ring-bg" cx="24" cy="24" r="20" fill="none" stroke="var(--elevated)" stroke-width="3"/>
+          <circle class="ring-fill" id="confidence-fill" cx="24" cy="24" r="20" fill="none" stroke="var(--text-3)" stroke-width="3" stroke-linecap="round" transform="rotate(-90 24 24)" stroke-dasharray="125.6" stroke-dashoffset="125.6"/>
+        </svg>
+        <div class="confidence-label" id="confidence-label">לומדים אותך...</div>
+      </div>
       <!-- Party overlay (dynamically populated) -->
       <div class="party-overlay" id="party-overlay">
         <div class="party-overlay-title">איך הצביעו המפלגות?</div>
         <div class="party-grid" id="party-grid"></div>
         <div class="party-overlay-hint">לחצו להמשך</div>
         <div class="party-overlay-timer"><div class="party-overlay-timer-fill" id="timer-fill"></div></div>
+      </div>
+      <!-- Consensus / Tiebreaker reveal overlay -->
+      <div class="consensus-overlay" id="consensus-overlay">
+        <div class="consensus-card" id="consensus-card-inner">
+          <div class="consensus-pct" id="consensus-pct">0%</div>
+          <div class="consensus-text-line">מכל המשתתפים — שמאל, ימין, דתי, חילוני — מסכימים:</div>
+          <div class="consensus-issue-line">"כל מקלט בבניין חייב להיות מוכן לשימוש"</div>
+          <div class="consensus-tap">הקישו להמשיך</div>
+        </div>
       </div>
     </div>
 
@@ -2308,6 +2322,9 @@ body {
         <span class="surprise-emoji"><span class="icon icon--md icon--accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span></span>
         <div class="surprise-text" id="surprise-text"></div>
       </div>
+
+      <!-- Tiebreaker CTA (shown when top 2 parties are close) -->
+      <div id="tiebreaker-cta" style="display:none;"></div>
 
       <!-- Actions -->
       <div class="result-actions">
@@ -3117,23 +3134,36 @@ body {
    ======================================== */
 window.votesData = null;
 let currentVoteIndex = 0;
-const TOTAL_VOTES = 5;
-const SELECTED_VOTE_NUMS = [1, 4, 6, 9, 14];
+const TOTAL_VOTES = 11;
+const SELECTED_VOTE_NUMS = [4, 6, 9, 14, 28, 23, 8, 26, 25, 1, 17];
+const CONSENSUS_POSITIONS = [3]; // Index 3 = V14 (shelters) triggers consensus reveal
 
 const QUESTION_MAP = {
   1: "האם הממשלה צריכה להחליט בלי שבג\"ץ יכול לעצור אותה?",
   4: "האם אוטובוסים ורכבות צריכים לפעול גם בשבת?",
   6: "האם לאפשר אימוץ ילדים לזוגות חד-מיניים?",
+  8: "האם להחיל עונש מוות על מחבלים?",
   9: "האם לתת לרבנות יותר שליטה על ענייני משפחה?",
-  14: "האם כל מקלט בבניין משותף חייב להיות מוכן לשימוש תוך 72 שעות?"
+  14: "האם כל מקלט בבניין משותף חייב להיות מוכן לשימוש תוך 72 שעות?",
+  17: "האם להפחית עונשים על שימוש בקנאביס?",
+  23: "האם לאפשר נישואים אזרחיים בישראל?",
+  25: "האם המשטרה צריכה יותר כלים לעצור עבריינים גם בלי משפט?",
+  26: "האם לחייב את הממשלה לצמצם זיהום אוויר?",
+  28: "האם להפליל תפילה לא-אורתודוקסית בכותל?"
 };
 
 const TOPIC_MAP = {
   1: "דמוקרטיה ומשילות",
   4: "דת ומדינה",
   6: "זכויות וחברה",
+  8: "ביטחון ומשפט",
   9: "דת ומשפחה",
-  14: "ביטחון אזרחי"
+  14: "ביטחון אזרחי",
+  17: "חברה ורווחה",
+  23: "דת ומדינה",
+  25: "חברה ומשפט",
+  26: "סביבה ואקלים",
+  28: "דת ומדינה"
 };
 
 const HEBREW_MONTHS = {
@@ -3180,6 +3210,47 @@ function icon(name, size='md', colorClass='muted') {
 }
 
 const PARTY_ORDER = ['הליכוד', 'יש עתיד', 'המחנה הממלכתי', 'הציונות הדתית', 'ש"ס', 'יהדות התורה', 'העבודה'];
+
+// Tiebreaker drill-down data (opinion questions, not Knesset votes)
+const TIEBREAKER_MAP = {
+  'הליכוד|הציונות הדתית': [
+    { question: 'האם זוגות חד-מיניים צריכים לקבל הכרה משפטית מהמדינה?', aLean: 'split', bLean: 'against', gap: 50 },
+    { question: 'האם ישראל צריכה להחיל ריבונות מלאה על כל יהודה ושומרון?', aLean: 'split', bLean: 'for', gap: 38 },
+    { question: 'האם עדיף להעביר תקציבים מהתנחלויות חדשות לדיור בפריפריה?', aLean: 'for', bLean: 'against', gap: 35 },
+  ],
+  'ש"ס|יהדות התורה': [
+    { question: 'האם חשוב לך שילדיך ישרתו בצה"ל או בשירות לאומי?', aLean: 'for', bLean: 'against', gap: 45 },
+    { question: 'האם המדינה צריכה לקדם את התרבות המזרחית במערכת החינוך?', aLean: 'for', bLean: 'split', gap: 35 },
+    { question: 'אם צריך לבחור — עדיף להגדיל קצבאות ילדים או תקציב ישיבות?', aLean: 'for', bLean: 'against', gap: 30 },
+  ],
+  'הליכוד|ש"ס': [
+    { question: 'האם כל הגברים הצעירים, כולל חרדים, צריכים לשרת בצבא או בשירות אזרחי?', aLean: 'for', bLean: 'against', gap: 65 },
+    { question: 'האם חנויות ומרכזי קניות צריכים להיות פתוחים בשבת?', aLean: 'for', bLean: 'against', gap: 40 },
+    { question: 'האם כל בתי הספר, כולל חרדיים, חייבים ללמד מתמטיקה ואנגלית?', aLean: 'for', bLean: 'against', gap: 50 },
+  ],
+  'יש עתיד|המחנה הממלכתי': [
+    { question: 'האם כדאי להגיע לפשרה בנושא הרפורמה המשפטית, גם אם היא לא מושלמת?', aLean: 'against', bLean: 'for', gap: 34 },
+    { question: 'האם חשוב לך שראש הממשלה הבא יהיה בעל ניסיון צבאי בכיר?', aLean: 'split', bLean: 'for', gap: 30 },
+    { question: 'האם ישראל צריכה לתת עדיפות למשא ומתן עם מדינות ערב גם במחיר ויתורים?', aLean: 'for', bLean: 'against', gap: 25 },
+  ],
+  'יש עתיד|העבודה': [
+    { question: 'האם המדינה צריכה לפקח על מחירי מזון ודיור, גם אם זה פוגע בשוק החופשי?', aLean: 'against', bLean: 'for', gap: 35 },
+    { question: 'האם צריך לחזק את כוחם של ועדי העובדים וההסתדרות?', aLean: 'against', bLean: 'for', gap: 30 },
+    { question: 'האם ישראל צריכה לפנות התנחלויות מבודדות כחלק מהסדר שלום?', aLean: 'split', bLean: 'for', gap: 25 },
+  ],
+  'המחנה הממלכתי|העבודה': [
+    { question: 'האם ישראל צריכה ליזום משא ומתן עם הפלסטינים גם בלי תנאים מוקדמים?', aLean: 'against', bLean: 'for', gap: 40 },
+    { question: 'האם צה"ל צריך לסיים פעולות בעזה גם אם לא כל היעדים הושגו, כדי להחזיר חטופים?', aLean: 'against', bLean: 'for', gap: 30 },
+    { question: 'האם צריך לבטל את כל חוקי הרפורמה המשפטית שכבר עברו?', aLean: 'against', bLean: 'for', gap: 35 },
+  ],
+};
+
+// Tiebreaker state
+let tiebreakerActive = false;
+let tiebreakerParties = [];
+let tiebreakerQuestions = [];
+let tiebreakerIndex = 0;
+let tiebreakerScores = {};
 
 // User's swipe responses: array of {voteNum, direction} where direction is 'for'|'against'|'complex'
 const userVotes = [];
@@ -3231,12 +3302,12 @@ function getMilestoneText(totalVotes) {
    ======================================== */
 const WEEKLY_VOTES = [
   { voteNum: 5, question: 'האם לאסור על אונר"א לפעול בישראל?', topic: 'ביטחון ומדיניות' },
-  { voteNum: 8, question: 'האם להחיל עונש מוות על מחבלים?', topic: 'ביטחון ומשפט' },
-  { voteNum: 25, question: 'האם המשטרה צריכה יותר כלים לעצור עבריינים גם בלי משפט?', topic: 'חברה ומשפט' }
+  { voteNum: 10, question: 'האם לשר לביטחון לאומי שליטה ישירה על המשטרה?', topic: 'ביטחון ומשילות' },
+  { voteNum: 21, question: 'האם לאשר את תקציב המדינה כפי שהוצע?', topic: 'כלכלה ותקציב' }
 ];
 
 // Prediction pool: votes not used in onboarding or weekly
-const PREDICTION_POOL = [3, 5, 7, 9, 10, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28];
+const PREDICTION_POOL = [2, 3, 5, 7, 10, 11, 12, 13, 15, 16, 18, 19, 20, 21, 22, 24, 27];
 const PREDICTION_QUESTIONS = {
   3: 'האם לאפשר נישואים אזרחיים בישראל?',
   5: 'האם להעביר כסף מתקציב הביטחון לבתי חולים?',
@@ -3389,6 +3460,49 @@ function startVoteFlow() {
   // Tutorial runs from showVoteCard(0) via runSwipeTutorial — don't duplicate here
 }
 
+function updateConfidenceRing(cardIndex, totalOverride) {
+  const total = totalOverride || TOTAL_VOTES;
+  const fill = document.getElementById('confidence-fill');
+  const label = document.getElementById('confidence-label');
+  if (!fill || !label) return;
+
+  const circumference = 125.6; // 2 * pi * 20
+  let pct, color, text;
+
+  if (totalOverride) {
+    // Tiebreaker mode
+    pct = ((cardIndex + 1) / total) * 100;
+    color = 'var(--gold)';
+    text = `שאלה ${cardIndex + 1} מתוך ${total}`;
+  } else if (cardIndex <= 2) {
+    pct = 10 + (cardIndex * 5); // ~10-20%
+    color = 'var(--text-3)';
+    text = 'לומדים אותך...';
+  } else if (cardIndex === 3) {
+    pct = 40;
+    color = 'var(--blue)';
+    text = 'מתחילים להבין';
+  } else if (cardIndex <= 6) {
+    pct = 40 + ((cardIndex - 3) * 5); // ~45-55%
+    color = 'var(--blue)';
+    text = 'התמונה מתחדדת';
+  } else if (cardIndex <= 9) {
+    pct = 60 + ((cardIndex - 7) * 7); // ~60-80%
+    color = 'var(--teal)';
+    text = 'כמעט שם';
+  } else {
+    pct = 100;
+    color = 'var(--gold)';
+    text = 'מוכנים לתוצאות';
+  }
+
+  const offset = circumference - (circumference * pct / 100);
+  fill.style.strokeDashoffset = offset;
+  fill.style.stroke = color;
+  label.textContent = text;
+  label.style.color = color;
+}
+
 function showVoteCard(index) {
   const voteNum = SELECTED_VOTE_NUMS[index];
   const voteData = getVoteByNum(voteNum);
@@ -3404,16 +3518,8 @@ function showVoteCard(index) {
     stepEl.appendChild(pip);
   }
 
-  // Update progress dots
-  const progressEl = document.getElementById('vote-progress');
-  progressEl.innerHTML = '';
-  for (let i = 0; i < TOTAL_VOTES; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'vote-dot';
-    if (i < index) dot.classList.add('done');
-    if (i === index) dot.classList.add('current');
-    progressEl.appendChild(dot);
-  }
+  // Update confidence ring
+  updateConfidenceRing(index);
 
   // Populate card content
   document.getElementById('card-topic').textContent = TOPIC_MAP[voteNum] || '';
@@ -3685,6 +3791,11 @@ function initCurrentSwipeCard() {
   }
 
   function handleSwipeAccepted(direction) {
+    // Tiebreaker mode: handle separately
+    if (tiebreakerActive) {
+      handleTiebreakerSwipe(direction);
+      return;
+    }
     // Record the user's vote
     const voteNum = SELECTED_VOTE_NUMS[currentVoteIndex];
     userVotes.push({ voteNum, direction });
@@ -3876,8 +3987,51 @@ function dismissPartyOverlay() {
   }
 }
 
+function showConsensusReveal() {
+  const overlay = document.getElementById('consensus-overlay');
+  const inner = document.getElementById('consensus-card-inner');
+  // Reset to consensus content
+  inner.innerHTML = `
+    <div class="consensus-pct" id="consensus-pct">0%</div>
+    <div class="consensus-text-line">מכל המשתתפים — שמאל, ימין, דתי, חילוני — מסכימים:</div>
+    <div class="consensus-issue-line">"כל מקלט בבניין חייב להיות מוכן לשימוש"</div>
+    <div class="consensus-tap">הקישו להמשיך</div>
+  `;
+  overlay.classList.add('show');
+  const pctEl = document.getElementById('consensus-pct');
+  let current = 0;
+  const target = 89;
+  const interval = setInterval(() => {
+    current += 2;
+    if (current > target) current = target;
+    pctEl.textContent = current + '%';
+    if (current >= target) clearInterval(interval);
+  }, 30);
+  overlay.onclick = () => {
+    overlay.classList.remove('show');
+    overlay.onclick = null;
+    advanceAfterConsensus();
+  };
+}
+
+function advanceAfterConsensus() {
+  if (currentVoteIndex >= TOTAL_VOTES) {
+    computeResults();
+    completeOnboarding();
+  } else {
+    showVoteCard(currentVoteIndex);
+    swipeInitialized = false;
+    initCurrentSwipeCard();
+  }
+}
+
 function advanceToNextVote() {
   currentVoteIndex++;
+  if (CONSENSUS_POSITIONS.includes(currentVoteIndex - 1)) {
+    // Show consensus reveal before advancing to next card
+    showConsensusReveal();
+    return; // advanceAfterConsensus() will continue the flow
+  }
   if (currentVoteIndex >= TOTAL_VOTES) {
     computeResults();
     completeOnboarding();
@@ -3997,28 +4151,58 @@ function computeResults() {
     userVotes.forEach(uv => {
       if (uv.voteNum === 1) {
         // Reasonableness: for=left-leaning, against=right-leaning
-        if (uv.direction === 'for') leftRight += 15;
-        else if (uv.direction === 'against') leftRight -= 15;
+        if (uv.direction === 'for') leftRight += 12;
+        else if (uv.direction === 'against') leftRight -= 12;
       }
       if (uv.voteNum === 25) {
-        // Criminal orgs: for=right-leaning, against=left-leaning
-        if (uv.direction === 'for') leftRight -= 10;
-        else if (uv.direction === 'against') leftRight += 10;
+        // Police powers: for=right-leaning, against=left-leaning
+        if (uv.direction === 'for') leftRight -= 8;
+        else if (uv.direction === 'against') leftRight += 8;
       }
       if (uv.voteNum === 4) {
         // Shabbat transport: for=secular, against=religious
-        if (uv.direction === 'for') secRel -= 15;
-        else if (uv.direction === 'against') secRel += 15;
+        if (uv.direction === 'for') secRel -= 12;
+        else if (uv.direction === 'against') secRel += 12;
       }
-      if (uv.voteNum === 2) {
-        // Haredi draft exemption: for=religious, against=secular
+      if (uv.voteNum === 9) {
+        // Rabbinate control: for=religious, against=secular
         if (uv.direction === 'for') secRel += 10;
         else if (uv.direction === 'against') secRel -= 10;
       }
       if (uv.voteNum === 14) {
         // Bomb shelters: for=slightly left, against=slightly right
+        if (uv.direction === 'for') leftRight += 4;
+        else if (uv.direction === 'against') leftRight -= 4;
+      }
+      if (uv.voteNum === 6) {
+        // Same-sex adoption: for=secular/left, against=religious/right
+        if (uv.direction === 'for') { leftRight += 6; secRel -= 6; }
+        else if (uv.direction === 'against') { leftRight -= 6; secRel += 6; }
+      }
+      if (uv.voteNum === 28) {
+        // Non-Orthodox prayer at Kotel: for=secular, against=religious
+        if (uv.direction === 'for') secRel -= 8;
+        else if (uv.direction === 'against') secRel += 8;
+      }
+      if (uv.voteNum === 23) {
+        // Civil marriage: for=secular/left, against=religious
+        if (uv.direction === 'for') { leftRight += 5; secRel -= 8; }
+        else if (uv.direction === 'against') { leftRight -= 5; secRel += 8; }
+      }
+      if (uv.voteNum === 8) {
+        // Death penalty for terrorists: for=right, against=left
+        if (uv.direction === 'for') leftRight -= 10;
+        else if (uv.direction === 'against') leftRight += 10;
+      }
+      if (uv.voteNum === 26) {
+        // Air pollution: for=left, against=right
         if (uv.direction === 'for') leftRight += 5;
         else if (uv.direction === 'against') leftRight -= 5;
+      }
+      if (uv.voteNum === 17) {
+        // Cannabis: for=left/secular, against=right/religious
+        if (uv.direction === 'for') { leftRight += 5; secRel -= 4; }
+        else if (uv.direction === 'against') { leftRight -= 5; secRel += 4; }
       }
     });
 
@@ -4030,6 +4214,219 @@ function computeResults() {
     // Store in appState for profile screen
     appState.userPosition = { leftRight, secRel };
   }
+
+  // Store results for tiebreaker
+  window._lastResults = results;
+
+  // Check for tiebreaker opportunity
+  setTimeout(() => checkTiebreaker(results), 500);
+}
+
+/* ========================================
+   TIEBREAKER DRILL-DOWN
+   ======================================== */
+function checkTiebreaker(results) {
+  const cta = document.getElementById('tiebreaker-cta');
+  if (!cta || results.length < 2) return;
+  const gap = results[0].pct - results[1].pct;
+  if (gap > 8) { cta.style.display = 'none'; return; }
+
+  const pA = results[0].name;
+  const pB = results[1].name;
+  const keyAB = pA + '|' + pB;
+  const keyBA = pB + '|' + pA;
+  const key = TIEBREAKER_MAP[keyAB] ? keyAB : (TIEBREAKER_MAP[keyBA] ? keyBA : null);
+
+  if (!key || TIEBREAKER_MAP[key].length < 3) {
+    cta.innerHTML = '<div class="card" style="padding:14px 16px; text-align:center;"><div style="font-size:13px; color:var(--text-3); line-height:1.6;">המפלגות האלה הצביעו כמעט זהה בכנסת הנוכחית</div></div>';
+    cta.style.display = 'block';
+    return;
+  }
+
+  // Determine which is A and B based on key order
+  const keyParts = key.split('|');
+  tiebreakerParties = [keyParts[0], keyParts[1]];
+  tiebreakerQuestions = TIEBREAKER_MAP[key];
+
+  const dispA = PARTY_DISPLAY[tiebreakerParties[0]] || tiebreakerParties[0];
+  const dispB = PARTY_DISPLAY[tiebreakerParties[1]] || tiebreakerParties[1];
+
+  cta.innerHTML = `
+    <div class="card" style="padding:16px; border-color:var(--gold); background:rgba(229,168,75,0.06);">
+      <div style="font-size:15px; font-weight:700; color:var(--gold); margin-bottom:6px;">התוצאות קרובות</div>
+      <div style="font-size:13px; color:var(--text-2); line-height:1.6; margin-bottom:12px;">${dispA} ו${dispB} קרובים מאוד. יש כמה שאלות שיעזרו לדייק.</div>
+      <button class="btn" onclick="startTiebreaker()" style="background:var(--gold); color:var(--bg); font-size:14px; font-weight:700; padding:14px; border:none; width:100%; border-radius:var(--r-pill); cursor:pointer;">רוצה לדייק</button>
+    </div>`;
+  cta.style.display = 'block';
+}
+
+function startTiebreaker() {
+  tiebreakerActive = true;
+  tiebreakerIndex = 0;
+  tiebreakerScores = {};
+  tiebreakerScores[tiebreakerParties[0]] = 0;
+  tiebreakerScores[tiebreakerParties[1]] = 0;
+  goToScreen('screen-vote');
+  hideTabBar();
+  showTiebreakerCard(0);
+  swipeInitialized = false;
+  initCurrentSwipeCard();
+}
+
+function showTiebreakerCard(index) {
+  const q = tiebreakerQuestions[index];
+  document.getElementById('card-topic').textContent = 'שאלת דיוק';
+  document.getElementById('card-question').textContent = q.question;
+  document.getElementById('card-meta').innerHTML = '<span>שאלה ' + (index + 1) + ' מתוך ' + tiebreakerQuestions.length + '</span>';
+
+  // Update step indicator for tiebreaker
+  const stepEl = document.getElementById('step-indicator');
+  stepEl.innerHTML = '';
+  for (let i = 0; i < tiebreakerQuestions.length; i++) {
+    const pip = document.createElement('div');
+    pip.className = 'step-pip';
+    if (i < index) pip.classList.add('done');
+    if (i === index) pip.classList.add('current');
+    stepEl.appendChild(pip);
+  }
+
+  // Update confidence ring for tiebreaker
+  updateConfidenceRing(index, tiebreakerQuestions.length);
+
+  // Reset card position
+  const card = document.getElementById('vote-card');
+  card.dataset.index = index;
+  card.style.transform = '';
+  card.style.opacity = '';
+  card.style.borderColor = '';
+  card.style.boxShadow = '';
+  card.classList.remove('exiting', 'returning', 'dragging');
+  if (index > 0) {
+    card.classList.add('entering');
+  } else {
+    card.classList.remove('entering');
+  }
+
+  // Reset indicators
+  card.querySelectorAll('.swipe-indicator').forEach(ind => {
+    ind.style.opacity = 0;
+    ind.classList.remove('visible', 'locked');
+  });
+
+  // Hide party overlay
+  const overlay = document.getElementById('party-overlay');
+  overlay.classList.remove('visible');
+  overlay.style.opacity = '';
+  overlay.style.transition = '';
+}
+
+function handleTiebreakerSwipe(direction) {
+  const q = tiebreakerQuestions[tiebreakerIndex];
+  const [pA, pB] = tiebreakerParties;
+
+  function scoreParty(lean) {
+    if (lean === 'split') return 0;
+    if (direction === 'complex') return 0;
+    if (direction === 'for' && lean === 'for') return 1;
+    if (direction === 'against' && lean === 'against') return 1;
+    if (direction === 'for' && lean === 'against') return -1;
+    if (direction === 'against' && lean === 'for') return -1;
+    return 0;
+  }
+  tiebreakerScores[pA] += scoreParty(q.aLean);
+  tiebreakerScores[pB] += scoreParty(q.bLean);
+
+  // Show post-swipe reveal
+  showTiebreakerReveal(direction, q, pA, pB);
+}
+
+function showTiebreakerReveal(direction, q, pA, pB) {
+  const dirHe = direction === 'for' ? 'בעד' : (direction === 'against' ? 'נגד' : 'מורכב');
+  const aLeanHe = q.aLean === 'for' ? 'בעד' : (q.aLean === 'against' ? 'נגד' : 'מפוצלים');
+  const bLeanHe = q.bLean === 'for' ? 'בעד' : (q.bLean === 'against' ? 'נגד' : 'מפוצלים');
+  const dispA = PARTY_DISPLAY[pA] || pA;
+  const dispB = PARTY_DISPLAY[pB] || pB;
+
+  const overlay = document.getElementById('consensus-overlay');
+  const inner = document.getElementById('consensus-card-inner');
+  inner.innerHTML = `
+    <div style="font-size:15px; font-weight:700; color:var(--text-1); margin-bottom:16px;">הצבעת: ${dirHe}</div>
+    <div style="display:flex; gap:16px; justify-content:center; margin-bottom:20px;">
+      <div style="flex:1; padding:12px; background:rgba(45,212,168,0.08); border-radius:var(--r-md); border:1px solid rgba(45,212,168,0.2);">
+        <div style="font-size:12px; color:var(--text-3); margin-bottom:4px;">${dispA}</div>
+        <div style="font-size:15px; font-weight:700; color:${aLeanHe === dirHe ? 'var(--teal)' : 'var(--coral)'};">בוחרים נוטים ${aLeanHe}</div>
+      </div>
+      <div style="flex:1; padding:12px; background:rgba(91,127,191,0.08); border-radius:var(--r-md); border:1px solid rgba(91,127,191,0.2);">
+        <div style="font-size:12px; color:var(--text-3); margin-bottom:4px;">${dispB}</div>
+        <div style="font-size:15px; font-weight:700; color:${bLeanHe === dirHe ? 'var(--teal)' : 'var(--coral)'};">בוחרים נוטים ${bLeanHe}</div>
+      </div>
+    </div>
+    <div class="consensus-tap">הקישו להמשיך</div>`;
+  overlay.classList.add('show');
+  overlay.onclick = () => {
+    overlay.classList.remove('show');
+    overlay.onclick = null;
+    tiebreakerIndex++;
+    if (tiebreakerIndex >= tiebreakerQuestions.length) {
+      completeTiebreaker();
+    } else {
+      showTiebreakerCard(tiebreakerIndex);
+      swipeInitialized = false;
+      initCurrentSwipeCard();
+    }
+  };
+}
+
+function completeTiebreaker() {
+  tiebreakerActive = false;
+  const [pA, pB] = tiebreakerParties;
+  const results = window._lastResults;
+  if (results) {
+    const rA = results.find(r => r.name === pA);
+    const rB = results.find(r => r.name === pB);
+    if (rA && rB) {
+      const shift = (tiebreakerScores[pA] - tiebreakerScores[pB]) * 5;
+      rA.pct = Math.min(100, Math.max(0, rA.pct + shift));
+      rB.pct = Math.min(100, Math.max(0, rB.pct - shift));
+      results.sort((a, b) => b.pct - a.pct);
+    }
+    renderUpdatedResults(results);
+  }
+  goToScreen('screen-result');
+  initResultScreen();
+}
+
+function renderUpdatedResults(results) {
+  const matchList = document.getElementById('match-list');
+  matchList.innerHTML = '';
+  const barColors = ['var(--teal)', 'var(--blue)', 'var(--gold)'];
+
+  results.slice(0, 3).forEach((r, i) => {
+    const item = document.createElement('div');
+    item.className = 'match-item';
+    item.style.animation = 'slideUp 0.5s ease ' + (0.3 + i * 0.2) + 's both';
+
+    const rankColor = i === 0 ? 'var(--gold)' : barColors[i];
+    const pctColor = i === 0 ? 'var(--teal)' : barColors[i];
+
+    item.innerHTML = `
+      <div class="match-rank" ${i > 0 ? 'style="color:' + rankColor + ';"' : ''}>${i + 1}</div>
+      <div class="match-details">
+        <div class="match-name">
+          <span>${r.displayName}</span>
+          <span class="match-pct" ${i > 0 ? 'style="color:' + pctColor + ';"' : ''}>${r.pct}%</span>
+        </div>
+        <div class="match-bar">
+          <div class="match-bar-fill" data-target="${r.pct}" style="width:0%;${i > 0 ? ' background:' + barColors[i] + ';' : ''}"></div>
+        </div>
+      </div>
+    `;
+    matchList.appendChild(item);
+  });
+
+  // Hide tiebreaker CTA after completion
+  const cta = document.getElementById('tiebreaker-cta');
+  if (cta) cta.style.display = 'none';
 }
 
 /* ========================================
