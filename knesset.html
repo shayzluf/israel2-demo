@@ -4174,8 +4174,9 @@ function getUserQuadrant() {
   // Determine quadrant from user's 2D position (computed during onboarding swipes)
   // leftRight: negative = right, positive = left
   // secRel: negative = religious, positive = secular
-  const lr = userPosition.leftRight || 0;
-  const sr = userPosition.secRel || 0;
+  const pos = appState.userPosition || { leftRight: 50, secRel: 50 };
+  const lr = pos.leftRight || 0;
+  const sr = pos.secRel || 0;
   if (lr < 0 && sr >= 0) return 'right-secular';
   if (lr >= 0 && sr >= 0) return 'left-secular';
   if (lr < 0 && sr < 0) return 'right-religious';
