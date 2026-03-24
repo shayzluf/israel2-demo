@@ -749,7 +749,7 @@ body {
   height: 100%;
   background: var(--teal);
   border-radius: 4px;
-  animation: barGrow 800ms ease forwards;
+  transition: width 0.6s ease;
 }
 .match-item:nth-child(2) .match-bar-fill { background: var(--blue); }
 .match-item:nth-child(3) .match-bar-fill { background: var(--gold); }
@@ -4023,14 +4023,20 @@ function computeResults() {
    RESULT SCREEN ANIMATION
    ======================================== */
 function initResultScreen() {
-  // Animate match bars
+  // Animate match bars — set to 0 first, then expand after screen is visible
+  const bars = document.querySelectorAll('#screen-result .match-bar-fill');
+  const savedWidths = [];
+  bars.forEach((bar, i) => {
+    savedWidths.push(bar.style.width);
+    bar.style.transition = 'none';
+    bar.style.width = '0';
+  });
   setTimeout(() => {
-    document.querySelectorAll('#screen-result .match-bar-fill').forEach((bar, i) => {
-      const w = bar.style.width;
-      bar.style.width = '0';
-      setTimeout(() => { bar.style.width = w; }, 400 + i * 200);
+    bars.forEach((bar, i) => {
+      bar.style.transition = 'width 0.6s ease';
+      setTimeout(() => { bar.style.width = savedWidths[i]; }, 200 + i * 200);
     });
-  }, 50);
+  }, 300);
 
   // Animate user dot onto map
   const dot = document.getElementById('user-dot');
