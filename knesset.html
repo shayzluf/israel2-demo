@@ -1382,8 +1382,9 @@ body {
 }
 
 /* ========== SCREEN: REP ========== */
-#screen-rep { padding: 20px; gap: 16px; align-items: center; }
-#screen-rep.active { display: flex; flex-direction: column; overflow-y: auto; }
+#screen-rep { padding: 0; gap: 0; align-items: stretch; }
+#screen-rep.active { display: flex; flex-direction: column; overflow: hidden; }
+#screen-rep .screen-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 20px 0 72px; }
 
 /* Large Rep meter */
 .rep-hero {
@@ -2401,6 +2402,24 @@ body {
           </div>
         </div>
 
+        <!-- Watchdog alert -->
+        <div style="padding: 8px 20px;">
+          <div class="card" style="border-color: var(--coral); background: rgba(232,99,111,0.08); padding: 14px 18px;">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <span style="font-size: 20px;">&#x1F514;</span>
+              <span style="font-size: 13px; font-weight: 700; color: var(--coral);">התראת הנציג/ה</span>
+              <span style="font-size: 11px; color: var(--text-3); margin-right: auto; direction: ltr;">לפני 2 שעות</span>
+            </div>
+            <div style="font-size: 14px; line-height: 1.6; color: var(--text-2);">
+              <strong style="color: var(--text-1);">בנימין נתניהו</strong> הצביע נגד מה שהנציג/ה חוזה שהיית בוחר/ת בנושא רפורמת יבוא מהאיחוד האירופי
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 10px;">
+              <button class="btn btn-sm" style="background: rgba(232,99,111,0.15); color: var(--coral); border: none; flex: 1; font-size: 12px; padding: 8px;">ראו פרטים</button>
+              <button class="btn btn-sm" style="background: rgba(45,212,168,0.15); color: var(--teal); border: none; flex: 1; font-size: 12px; padding: 8px;">הנציג/ה צדק/ה</button>
+            </div>
+          </div>
+        </div>
+
         <!-- Weekly votes -->
         <div style="padding: 8px 20px;">
           <div class="section-header">
@@ -2476,6 +2495,13 @@ body {
           <div class="rep-hero-sub" id="rep-milestone-text">&#x05DB;&#x05DC; &#x05D4;&#x05E6;&#x05D1;&#x05E2;&#x05D4; &#x05DE;&#x05DC;&#x05DE;&#x05D3;&#x05EA; &#x05D0;&#x05EA; &#x05D4;&#x05E0;&#x05E6;&#x05D9;&#x05D2;/&#x05D4; &#x05E9;&#x05DC;&#x05DA; &#x05DE;&#x05E9;&#x05D4;&#x05D5; &#x05D7;&#x05D3;&#x05E9;</div>
         </div>
 
+        <!-- Emotional hook line -->
+        <div style="text-align: center; font-size: 17px; font-weight: 600; color: var(--text-2); padding: 8px 20px; line-height: 1.6;">
+          הכנסת מצביעה <span class="ltr-num" style="color: var(--gold); font-weight: 800;">500</span> פעם.
+          חבר הכנסת שלך לא שואל.
+          <span style="color: var(--teal);">הנציג/ה שלך כן.</span>
+        </div>
+
         <!-- Milestone timeline -->
         <div style="padding: 0 20px;">
           <div class="milestone-timeline" id="milestone-timeline">
@@ -2495,6 +2521,24 @@ body {
               <button class="btn btn-ghost btn-sm" style="color:var(--coral);border:2px solid var(--coral);" onclick="confirmPrediction(false)">&#x05DC;&#x05D0;, &#x05DC;&#x05EA;&#x05E7;&#x05DF; &#x2717;</button>
             </div>
             <div class="prediction-feedback" id="prediction-feedback" style="display:none;"></div>
+          </div>
+        </div>
+
+        <!-- Why it matters -->
+        <div style="padding: 8px 20px;">
+          <div class="card" style="border-color: var(--gold); margin-bottom: 16px;">
+            <div style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--gold);">למה כדאי?</div>
+            <div style="font-size: 15px; line-height: 1.7; color: var(--text-2);">
+              הכנסת מצביעה על כ-500 נושאים בקדנציה. על כמה מהם שמעת? על כמה הספקת לקרוא?
+              <br><br>
+              חבר הכנסת שבחרת מצביע כל שבוע — לפעמים בדיוק נגד מה שחשוב לך. בדרך כלל תגלה את זה רק אחרי 4 שנים, אם בכלל.
+              <br><br>
+              הנציג/ה האישי/ת לומד/ת מההצבעות שלך וחוזה איך היית מצביע/ה על כל נושא — גם כאלה שלא שמעת עליהם. <strong style="color: var(--coral);">כשחבר כנסת מצביע נגד העמדה החזויה שלך, תקבל/י התראה מיידית.</strong>
+              <br><br>
+              ככל שמצביעים יותר, החיזוי נהיה מדויק יותר. עם דיוק של מעל 85%, הנציג/ה יכול/ה לייצג את העמדה שלך בשקט — אלא אם תגיד/י אחרת.
+              <br><br>
+              <strong>השליטה תמיד אצלך: כל חיזוי גלוי, כל אישור שלך.</strong>
+            </div>
           </div>
         </div>
 
@@ -2892,13 +2936,26 @@ body {
           <!-- Populated by JS -->
         </div>
 
-        <!-- 6. Coalition simulator -->
-        <div class="coalition-card">
-          <div class="coalition-title">הכנסת העממית</div>
-          <div class="coalition-subtitle">אילו כל המשתמשים היו בוחרים</div>
-          <div class="coalition-bars" id="coalition-bars">
-            <!-- Populated by JS -->
+        <!-- 6. Coalition simulator (gated) -->
+        <div class="card" style="text-align: center; padding: 24px 20px;">
+          <div style="font-size: 40px; margin-bottom: 8px; opacity: 0.4;">&#x1F3DB;&#xFE0F;</div>
+          <div style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">הכנסת העממית</div>
+          <div style="font-size: 14px; color: var(--text-2); line-height: 1.6; margin-bottom: 16px;">
+            הכנסת העממית חסרה משתתפים מהרקע הפוליטי שלך כדי להציג תוצאות מייצגות ולא מוטות.
           </div>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px;">
+            <div style="flex: 1; height: 8px; background: var(--elevated); border-radius: 4px; overflow: hidden; direction: ltr;">
+              <div style="width: 12%; height: 100%; background: var(--teal); border-radius: 4px;"></div>
+            </div>
+            <span class="ltr-num" style="font-size: 13px; color: var(--text-3);">2,400 / 20,000</span>
+          </div>
+          <div style="font-size: 13px; color: var(--gold); font-weight: 600; margin-bottom: 12px;">
+            שתפו עם חברים בעלי דעות דומות כדי לפתוח את הכנסת העממית
+          </div>
+          <button class="btn btn-whatsapp btn-block btn-sm" onclick="shareFamily()" style="font-size: 13px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+            שתפו בוואטסאפ
+          </button>
         </div>
 
         <!-- 7. Bottom actions -->
