@@ -4317,10 +4317,37 @@ function alertDecision(type) {
   const a = getActiveAlert();
   const area = document.getElementById('alert-decision-area');
   if (!area) return;
-  const msg = type === 'confirm'
-    ? 'תודה! הנציג/ה לומד/ת ומשתפר/ת ✓'
-    : 'תיקון נרשם. הנציג/ה לומד/ת מהתיקון ✓';
-  const accentColor = type === 'confirm' ? 'var(--teal)' : 'var(--coral)';
+
+  if (type === 'confirm') {
+    showPostDecision(area, a, 'תודה! הנציג/ה לומד/ת ומשתפר/ת ✓', 'var(--teal)');
+  } else {
+    // Show reason chips before post-decision
+    area.innerHTML = `
+      <div style="text-align: center; margin-bottom: 14px;">
+        <div style="font-size: 15px; font-weight: 700; color: var(--text-1); margin-bottom: 4px;">למה הנציג/ה טעה?</div>
+        <div style="font-size: 12px; color: var(--text-3);">זה עוזר לנציג/ה ללמוד ולהשתפר</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <button class="btn" onclick="overrideWithReason('opposite')" style="background: rgba(232,99,111,0.12); color: var(--coral); font-size: 14px; padding: 14px; border: 1px solid rgba(232,99,111,0.25); width: 100%;">אני דווקא בעד — הנציג/ה טעה בכיוון</button>
+        <button class="btn" onclick="overrideWithReason('irrelevant')" style="background: rgba(229,168,75,0.12); color: var(--gold); font-size: 14px; padding: 14px; border: 1px solid rgba(229,168,75,0.25); width: 100%;">הנושא לא חשוב לי</button>
+        <button class="btn" onclick="overrideWithReason('complex')" style="background: rgba(91,127,191,0.12); color: var(--blue); font-size: 14px; padding: 14px; border: 1px solid rgba(91,127,191,0.25); width: 100%;">זה מורכב בשבילי</button>
+      </div>`;
+  }
+}
+
+function overrideWithReason(reason) {
+  const a = getActiveAlert();
+  const area = document.getElementById('alert-decision-area');
+  if (!area) return;
+  const reasons = {
+    opposite: 'תיקון כיוון נרשם. הנציג/ה לומד/ת ✓',
+    irrelevant: 'הורדת חשיבות הנושא נרשמה. הנציג/ה לומד/ת ✓',
+    complex: 'מורכבות נרשמה. הנציג/ה מרחיב/ה את טווח החיזוי ✓'
+  };
+  showPostDecision(area, a, reasons[reason], 'var(--coral)');
+}
+
+function showPostDecision(area, a, msg, accentColor) {
   area.innerHTML = `
     <div style="text-align: center; margin-bottom: 14px;">
       <div style="font-size: 15px; font-weight: 700; color: ${accentColor}; margin-bottom: 4px;">${msg}</div>
