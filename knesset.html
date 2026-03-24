@@ -3434,6 +3434,58 @@ function showVoteCard(index) {
   overlay.classList.remove('visible');
   overlay.style.opacity = '';
   overlay.style.transition = '';
+
+  // Tutorial on first card only
+  if (index === 0 && !window._tutorialShown) {
+    window._tutorialShown = true;
+    runSwipeTutorial(card);
+  }
+}
+
+function runSwipeTutorial(card) {
+  const forInd = card.querySelector('.for-ind');
+  const againstInd = card.querySelector('.against-ind');
+  const complexInd = card.querySelector('.complex-ind');
+  const delay = 600;
+  const dur = 500;
+  const pause = 300;
+
+  // Step 1: tilt RIGHT (בעד)
+  setTimeout(() => {
+    card.style.transition = `transform ${dur}ms ease`;
+    card.style.transform = 'translateX(-40px) rotate(-4deg)';
+    if (forInd) { forInd.style.transition = `opacity ${dur}ms`; forInd.style.opacity = '0.8'; }
+  }, delay);
+  // Return
+  setTimeout(() => {
+    card.style.transform = '';
+    if (forInd) forInd.style.opacity = '0';
+  }, delay + dur + pause);
+
+  // Step 2: tilt LEFT (נגד)
+  setTimeout(() => {
+    card.style.transform = 'translateX(40px) rotate(4deg)';
+    if (againstInd) { againstInd.style.transition = `opacity ${dur}ms`; againstInd.style.opacity = '0.8'; }
+  }, delay + (dur + pause) * 2);
+  // Return
+  setTimeout(() => {
+    card.style.transform = '';
+    if (againstInd) againstInd.style.opacity = '0';
+  }, delay + (dur + pause) * 2 + dur + pause);
+
+  // Step 3: tilt UP (זה מורכב)
+  setTimeout(() => {
+    card.style.transform = 'translateY(-30px)';
+    if (complexInd) { complexInd.style.transition = `opacity ${dur}ms`; complexInd.style.opacity = '0.8'; complexInd.classList.add('visible'); }
+  }, delay + (dur + pause) * 4);
+  // Return + cleanup
+  setTimeout(() => {
+    card.style.transform = '';
+    card.style.transition = '';
+    if (complexInd) { complexInd.style.opacity = '0'; complexInd.classList.remove('visible'); complexInd.style.transition = ''; }
+    if (forInd) forInd.style.transition = '';
+    if (againstInd) againstInd.style.transition = '';
+  }, delay + (dur + pause) * 4 + dur + pause);
 }
 
 /* ========================================
