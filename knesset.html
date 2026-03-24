@@ -702,7 +702,20 @@ body {
   color: #fff;
   opacity: 0.5;
   transform: translate(-50%, -50%);
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, width 0.3s ease, border-radius 0.3s ease, padding 0.3s ease, font-size 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+}
+.map-party.expanded {
+  opacity: 1 !important;
+  z-index: 10;
+  width: auto !important;
+  min-width: 28px;
+  padding: 0 10px;
+  border-radius: 14px;
+  font-size: 11px;
 }
 .map-user {
   position: absolute;
@@ -4425,7 +4438,7 @@ function initResultScreen() {
     }, 300);
   }
 
-  // Animate party positions
+  // Animate party positions + add tap-to-expand
   document.querySelectorAll('#screen-result .map-party').forEach((p, i) => {
     p.style.opacity = '0';
     p.style.transform = 'translate(-50%, -50%) scale(0)';
@@ -4434,7 +4447,42 @@ function initResultScreen() {
       p.style.opacity = '0.5';
       p.style.transform = 'translate(-50%, -50%) scale(1)';
     }, 100 + i * 50);
+
+    p.dataset.short = p.textContent;
   });
+
+  // Setup party dot tap-to-expand via event delegation (runs once)
+  if (!window._partyDotDelegationSetup) {
+    window._partyDotDelegationSetup = true;
+    document.getElementById('screen-result').addEventListener('click', (e) => {
+      const dot = e.target.closest('.map-party');
+      function collapseAll() {
+        document.querySelectorAll('#screen-result .map-party.expanded').forEach(ep => {
+          ep.classList.remove('expanded');
+          ep.textContent = ep.dataset.short || ep.textContent;
+          ep.style.setProperty('opacity', '0.5');
+          ep.style.setProperty('width', '28px');
+          ep.style.setProperty('padding', '0');
+          ep.style.setProperty('border-radius', '50%');
+          ep.style.setProperty('font-size', '8px');
+          ep.style.removeProperty('z-index');
+        });
+      }
+      if (!dot) { collapseAll(); return; }
+      const wasExpanded = dot.classList.contains('expanded');
+      collapseAll();
+      if (!wasExpanded) {
+        dot.textContent = dot.getAttribute('title') || dot.dataset.short;
+        dot.style.setProperty('opacity', '1', 'important');
+        dot.style.setProperty('width', 'auto', 'important');
+        dot.style.setProperty('padding', '0 10px', 'important');
+        dot.style.setProperty('border-radius', '14px', 'important');
+        dot.style.setProperty('font-size', '11px', 'important');
+        dot.style.setProperty('z-index', '10', 'important');
+        dot.classList.add('expanded');
+      }
+    });
+  }
 }
 
 /* ========================================
