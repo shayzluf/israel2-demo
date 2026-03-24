@@ -3937,7 +3937,7 @@ function computeResults() {
           <span class="match-pct" ${i > 0 ? `style="color:${pctColor};"` : ''}>${r.pct}%</span>
         </div>
         <div class="match-bar">
-          <div class="match-bar-fill" style="width:${r.pct}%;${i > 0 ? ` background:${barColors[i]};` : ''}"></div>
+          <div class="match-bar-fill" data-target="${r.pct}" style="width:0%;${i > 0 ? ` background:${barColors[i]};` : ''}"></div>
         </div>
       </div>
     `;
@@ -4023,20 +4023,14 @@ function computeResults() {
    RESULT SCREEN ANIMATION
    ======================================== */
 function initResultScreen() {
-  // Animate match bars — set to 0 first, then expand after screen is visible
-  const bars = document.querySelectorAll('#screen-result .match-bar-fill');
-  const savedWidths = [];
-  bars.forEach((bar, i) => {
-    savedWidths.push(bar.style.width);
-    bar.style.transition = 'none';
-    bar.style.width = '0';
-  });
+  // Animate match bars — read target from data attribute, animate from 0
   setTimeout(() => {
-    bars.forEach((bar, i) => {
-      bar.style.transition = 'width 0.6s ease';
-      setTimeout(() => { bar.style.width = savedWidths[i]; }, 200 + i * 200);
+    document.querySelectorAll('#screen-result .match-bar-fill').forEach((bar, i) => {
+      const target = bar.dataset.target || '0';
+      bar.style.transition = 'width 0.8s ease';
+      setTimeout(() => { bar.style.width = target + '%'; }, 100 + i * 250);
     });
-  }, 300);
+  }, 400);
 
   // Animate user dot onto map
   const dot = document.getElementById('user-dot');
