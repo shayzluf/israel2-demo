@@ -5446,11 +5446,16 @@ function updateProfileScreen() {
   const statShares = document.getElementById('stat-shares');
   if (statShares) statShares.textContent = appState.shareCount || 0;
 
-  // User dot on profile map
+  // User dot on profile map — only show after onboarding
   const userDot = document.getElementById('profile-user-dot');
-  if (userDot && appState.userPosition) {
-    userDot.style.left = appState.userPosition.leftRight + '%';
-    userDot.style.top = appState.userPosition.secRel + '%';
+  if (userDot) {
+    if (appState.onboardingComplete && appState.userPosition) {
+      userDot.style.left = appState.userPosition.leftRight + '%';
+      userDot.style.top = appState.userPosition.secRel + '%';
+      userDot.style.display = '';
+    } else {
+      userDot.style.display = 'none';
+    }
   }
 
   // Family me dot
