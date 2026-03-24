@@ -73,19 +73,12 @@ body {
 @media (max-width: 428px) {
   .phone-frame {
     width: 100vw;
-    height: 100svh;
-    height: 100dvh; /* fallback for browsers without svh */
-    height: -webkit-fill-available; /* iOS Safari/Chrome fallback */
+    height: calc(var(--app-height, 100vh));
     border-radius: 0;
     box-shadow: none;
     padding-bottom: env(safe-area-inset-bottom, 0);
   }
   body { background: var(--bg); }
-}
-@supports (height: 100svh) {
-  @media (max-width: 428px) {
-    .phone-frame { height: 100svh; }
-  }
 }
 
 /* Status bar */
@@ -3145,6 +3138,15 @@ body {
 
 
 <script>
+/* ========================================
+   iOS CHROME VIEWPORT FIX
+   ======================================== */
+function setAppHeight() {
+  document.documentElement.style.setProperty('--app-height', window.innerHeight + 'px');
+}
+setAppHeight();
+window.addEventListener('resize', setAppHeight);
+
 /* ========================================
    DATA & STATE
    ======================================== */
