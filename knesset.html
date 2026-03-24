@@ -71,8 +71,21 @@ body {
   box-shadow: 0 0 0 12px #1a1a1a, 0 0 0 14px #333, 0 20px 60px rgba(0,0,0,0.6);
 }
 @media (max-width: 428px) {
-  .phone-frame { width: 100vw; height: 100dvh; border-radius: 0; box-shadow: none; }
+  .phone-frame {
+    width: 100vw;
+    height: 100svh;
+    height: 100dvh; /* fallback for browsers without svh */
+    height: -webkit-fill-available; /* iOS Safari/Chrome fallback */
+    border-radius: 0;
+    box-shadow: none;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
   body { background: var(--bg); }
+}
+@supports (height: 100svh) {
+  @media (max-width: 428px) {
+    .phone-frame { height: 100svh; }
+  }
 }
 
 /* Status bar */
@@ -382,7 +395,7 @@ body {
   display: flex;
   gap: 8px;
   justify-content: center;
-  padding: 4px 0 max(12px, env(safe-area-inset-bottom));
+  padding: 4px 0 max(20px, calc(12px + env(safe-area-inset-bottom, 0px)));
 }
 .vote-dot {
   width: 8px; height: 8px;
@@ -529,7 +542,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 28px;
-  padding: 8px 0 0;
+  padding: 8px 0 env(safe-area-inset-bottom, 0);
 }
 .swipe-hint .hint-complex {
   opacity: 0.7;
@@ -1105,7 +1118,7 @@ body {
 }
 
 /* Tab screens need bottom padding for tab bar */
-.screen.tab-screen { padding-bottom: 72px; }
+.screen.tab-screen { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
 
 /* ========== SCREEN: HOME ========== */
 #screen-home { padding: 20px; gap: 16px; }
