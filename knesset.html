@@ -4407,8 +4407,13 @@ function renderMap(containerId, userDotId) {
    RESULT SCREEN ANIMATION
    ======================================== */
 function initResultScreen() {
-  // Render the map if not yet populated
+  // Render the map and position user dot from appState
   renderMap('result-map', 'user-dot');
+  const resultDot = document.getElementById('user-dot');
+  if (resultDot && appState.userPosition && appState.onboardingComplete) {
+    resultDot.style.left = appState.userPosition.leftRight + '%';
+    resultDot.style.top = appState.userPosition.secRel + '%';
+  }
   // Animate match bars — read target from data attribute, animate from 0
   setTimeout(() => {
     document.querySelectorAll('#screen-result .match-bar-fill').forEach((bar, i) => {
