@@ -589,7 +589,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
   <div class="arc-step">
     <div class="arc-n" style="color:var(--te)">גילוי</div>
     <div class="arc-h">גילוי</div>
-    <div class="arc-d">6 שאלות + 2 הסכמות. המיקום שלך מתגלה.</div>
+    <div class="arc-d">8 שאלות. 2 הפתעות הסכמה. המיקום שלך מתגלה.</div>
     <div class="arc-e" style="color:var(--te)">רגש: סקרנות + הפתעה</div>
   </div>
   <div class="arc-step">
@@ -730,13 +730,27 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-ai">הפרופיל שלך: מחכה לתשובתך</div>
             </div>
           </div>
-          <!-- CARD 3 — CONSENSUS INTERLUDE #1 (tap to continue) -->
+          <!-- CARD 3 — CONSENSUS SWIPE: Mental Health First Aid -->
           <div class="tcard" id="tc3">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ti3r">&#8594; בעד</div>
+              <div class="tind tind-l" id="ti3l">נגד &#8592;</div>
+              <div class="tind tind-u" id="ti3u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:rgba(39,179,142,0.12);color:var(--te)">חינוך ובריאות</div>
+              <div class="tcard-q">בתי ספר צריכים ללמד עזרה ראשונה נפשית</div>
+              <div class="tcard-meta"><span dir="ltr">156,338</span> הצביעו</div>
+              <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
+            </div>
+          </div>
+          <!-- CARD 3R — CONSENSUS RESULT #1 (tap to continue) -->
+          <div class="tcard" id="tc3r">
             <div class="tcard-inner" style="text-align:center;gap:10px;cursor:default">
               <div style="font-size:8px;color:var(--te);font-weight:800;letter-spacing:1px">הסכמה חוצת קבוצות</div>
               <div style="font-family:var(--frank);font-size:42px;font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1">76%</div>
               <div style="font-size:12px;font-weight:800;color:var(--t1)">מכל הקבוצות מסכימים</div>
               <div style="font-size:10px;color:var(--t2);line-height:1.5">עזרה ראשונה נפשית חייבת להילמד בבתי ספר</div>
+              <div id="consensus1-personal" style="font-size:10px;font-weight:700;color:var(--te);margin:4px 0"></div>
               <div style="display:flex;gap:3px;height:30px;align-items:flex-end;margin:4px 0">
                 <div style="flex:1;background:var(--te);border-radius:3px 3px 0 0;height:78%"></div>
                 <div style="flex:1;background:var(--bl);border-radius:3px 3px 0 0;height:74%"></div>
@@ -745,7 +759,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div style="flex:1;background:var(--co);border-radius:3px 3px 0 0;height:80%"></div>
               </div>
               <div style="font-size:8px;color:var(--t3)">יש יותר שמאחד אותנו ממה שנדמה</div>
-              <div class="btn btn-gd" style="width:100%;margin-top:6px;font-size:11px;padding:9px" onclick="tNextFromConsensus(3)">&#8592; המשך</div>
+              <div class="btn btn-gd" style="width:100%;margin-top:6px;font-size:11px;padding:9px" onclick="tNextFromResult('3r')">&#8592; המשך</div>
             </div>
           </div>
           <!-- CARD 4 — INFERENCE: Civil Marriage -->
@@ -787,19 +801,33 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
             </div>
           </div>
-          <!-- CARD 7 — CONSENSUS INTERLUDE #2 (tap to continue) -->
+          <!-- CARD 7 — CONSENSUS SWIPE: Insurance vs Doctors -->
           <div class="tcard" id="tc7">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ti7r">&#8594; בעד</div>
+              <div class="tind tind-l" id="ti7l">נגד &#8592;</div>
+              <div class="tind tind-u" id="ti7u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:rgba(39,179,142,0.12);color:var(--te)">בריאות וצרכנות</div>
+              <div class="tcard-q">לאסור על חברות ביטוח לדחות טיפול שרופא אישר</div>
+              <div class="tcard-meta"><span dir="ltr">147,221</span> הצביעו</div>
+              <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
+            </div>
+          </div>
+          <!-- CARD 7R — CONSENSUS RESULT #2 (tap to continue) -->
+          <div class="tcard" id="tc7r">
             <div class="tcard-inner" style="text-align:center;gap:10px;cursor:default">
               <div style="font-size:8px;color:var(--te);font-weight:800;letter-spacing:1px">הסכמה חוצת קבוצות</div>
               <div style="font-family:var(--frank);font-size:42px;font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1">81%</div>
               <div style="font-size:12px;font-weight:800;color:var(--t1)">מכל הקבוצות מסכימים</div>
               <div style="font-size:10px;color:var(--t2);line-height:1.5">לאסור על חברות ביטוח לדחות טיפול שרופא אישר</div>
+              <div id="consensus2-personal" style="font-size:10px;font-weight:700;color:var(--te);margin:4px 0"></div>
               <div style="display:flex;align-items:center;gap:6px;margin:4px 0">
                 <div style="font-size:24px;font-weight:900;color:var(--co);direction:ltr">0</div>
                 <div style="font-size:9px;color:var(--co);font-weight:700">מפלגות הצביעו בעד</div>
               </div>
               <div style="font-size:9px;color:var(--gl);line-height:1.4">ההסכמות הגדולות לא מגיעות מהכנסת.<br>הן מגיעות מכאן.</div>
-              <div class="btn btn-gd" style="width:100%;margin-top:6px;font-size:11px;padding:9px" onclick="tNextFromConsensus(7)">&#8592; המשך</div>
+              <div class="btn btn-gd" style="width:100%;margin-top:6px;font-size:11px;padding:9px" onclick="tNextFromResult('7r')">&#8592; המשך</div>
             </div>
           </div>
           <!-- CARD 8 — TRANSITION: Unexpected Neighbors (tap to go to S2) -->
@@ -808,10 +836,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div style="font-family:var(--frank);font-size:36px;font-weight:900;color:var(--gl);letter-spacing:-1px;line-height:1">76%</div>
               <div style="font-size:12px;font-weight:800;color:var(--t1);line-height:1.4">מהאנשים שענו כמוך —<br>מקבוצות שלא ציפית להן</div>
               <div style="font-size:10px;color:var(--t2);line-height:1.6;padding:0 8px">
-                על 3 מתוך 6 נושאים הסכמת עם אנשים מהצד השני של המפה.
+                על 4 מתוך 8 נושאים הסכמת עם אנשים מהצד השני של המפה.
               </div>
               <div style="font-size:9px;color:var(--t3);padding:6px 10px;background:var(--el);border-radius:7px;line-height:1.5">
-                הפרופיל האזרחי שלך נוצר. 6 עמדות. 90 שניות.<br>אף אחד לא רואה מה ענית — רק את התוצאה.
+                הפרופיל האזרחי שלך נוצר. 8 עמדות. 2 דקות.<br>אף אחד לא רואה מה ענית — רק את התוצאה.
               </div>
               <div class="btn btn-gd" style="width:100%;margin-top:4px" onclick="go(2)">&#8592; הצג מה גילינו</div>
             </div>
@@ -1521,8 +1549,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
     </div>
     <div class="sbb" id="b1" onclick="go(1)">
       <div class="sbb-n" style="color:var(--te)">1 · כיול</div>
-      <div class="sbb-name">6 שאלות + 2 הסכמות — המיקום שלך</div>
-      <div class="sbb-d">שירות, שבת, התנחלויות, נישואים, משא ומתן, מורשת. מאוזן. הפתעות הסכמה אחרי שאלה 3 ו-6.</div>
+      <div class="sbb-name">8 שאלות — המיקום שלך</div>
+      <div class="sbb-d">שירות, שבת, התנחלויות, בריאות נפש, נישואים, משא ומתן, מורשת, ביטוח. הפתעות הסכמה אחרי שאלה 4 ו-8.</div>
     </div>
     <div class="sb-phase">הפתעה וסוכנות</div>
     <div class="sbb" id="b2" onclick="go(2)">
@@ -1626,41 +1654,43 @@ setInterval(() => {
 }, 4000);
 
 /* ══ TRAINING SWIPE ENGINE ══ */
-const TRAIN_SWIPE = [0,1,2,4,5,6]; // indices of swipeable cards
-const TRAIN_CONSENSUS = [3,7]; // consensus interlude cards (tap to continue)
-const TRAIN_TRANSITION = 8; // final transition card
-const TRAIN_TOTAL = 9; // total cards tc0-tc8
-let tCur = 0;
+// Card flow: 0,1,2,3(consensus-swipe),3r(result),4,5,6,7(consensus-swipe),7r(result),8(transition)
+const ALL_CARD_IDS = ['0','1','2','3','3r','4','5','6','7','7r','8'];
+const SWIPEABLE = ['0','1','2','3','4','5','6','7']; // 8 swipeable cards
+const RESULT_CARDS = ['3r','7r']; // result reveals after consensus swipes
+const CONSENSUS_SWIPE_TO_RESULT = {'3':'3r', '7':'7r'}; // maps consensus swipe → result card
+let tCurId = '0';
 const tAnswers = {};
 
 function tAnswerLabel(dir){ return dir==='r'?'<strong style="color:var(--te)">בעד</strong>':dir==='l'?'<strong style="color:var(--co)">נגד</strong>':'<strong style="color:var(--gl)">מורכב</strong>'; }
 
 let tDragging=false, tStartX=0, tStartY=0, tCurX=0, tCurY=0;
 
-function tGetCard(n){ return document.getElementById('tc'+n); }
-function tGetInner(n){ return tGetCard(n)?.querySelector('.tcard-inner'); }
-function tGetInd(n,d){ return document.getElementById('ti'+n+d); }
+function tGetCard(id){ return document.getElementById('tc'+id); }
+function tGetInner(id){ return tGetCard(id)?.querySelector('.tcard-inner'); }
+function tGetInd(id,d){ return document.getElementById('ti'+id+d); }
 
-function tActivate(n){
-  for(let i=0;i<TRAIN_TOTAL;i++){
-    const c=tGetCard(i);
-    if(c) c.classList.toggle('active', i===n);
+function tActivateId(id){
+  ALL_CARD_IDS.forEach(cid => {
+    const c = tGetCard(cid);
+    if(c) c.classList.toggle('active', cid===id);
+  });
+}
+
+function tNextFromResult(resultId){
+  // Called when user taps continue on result/transition cards
+  const idx = ALL_CARD_IDS.indexOf(resultId);
+  const nextId = idx + 1 < ALL_CARD_IDS.length ? ALL_CARD_IDS[idx + 1] : null;
+  if(nextId){
+    tCurId = nextId;
+    tActivateId(nextId);
+    if(SWIPEABLE.includes(nextId)) tBindSwipe(nextId);
   }
 }
 
-function tNextFromConsensus(n){
-  // Called when user taps continue on consensus/transition cards
-  const next = n + 1;
-  if(next < TRAIN_TOTAL){
-    tCur = next;
-    tActivate(next);
-    if(TRAIN_SWIPE.includes(next)) tBindSwipe(next);
-  }
-}
-
-function tSwipeDone(n, dir){
-  tAnswers[n] = dir;
-  const inner = tGetInner(n);
+function tSwipeDone(id, dir){
+  tAnswers[id] = dir;
+  const inner = tGetInner(id);
   if(!inner) return;
   inner.style.transition = 'transform .3s ease, opacity .25s';
   const x = dir==='r' ? 300 : dir==='l' ? -300 : 0;
@@ -1669,21 +1699,38 @@ function tSwipeDone(n, dir){
   inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
   inner.style.opacity = '0';
   setTimeout(() => {
-    // Find next card
-    const allOrder = [0,1,2,3,4,5,6,7,8];
-    const curIdx = allOrder.indexOf(n);
-    const next = curIdx + 1 < allOrder.length ? allOrder[curIdx + 1] : null;
-    if(next !== null){
-      tCur = next;
-      tActivate(next);
-      if(TRAIN_SWIPE.includes(next)) tBindSwipe(next);
-      // Consensus and transition cards don't need swipe binding — they have buttons
+    // If this was a consensus swipe, show the result card with adaptive text
+    if(CONSENSUS_SWIPE_TO_RESULT[id]){
+      const resultId = CONSENSUS_SWIPE_TO_RESULT[id];
+      // Set adaptive personal text based on swipe direction
+      const personalEl = id==='3' ? document.getElementById('consensus1-personal') : document.getElementById('consensus2-personal');
+      if(personalEl){
+        if(dir==='r') personalEl.innerHTML = 'גם אתה — חלק מה-76% שמסכימים';
+        else if(dir==='l') personalEl.innerHTML = 'הצבעת נגד — אבל 76% מכל הקבוצות בעד. מה דעתך?';
+        else personalEl.innerHTML = 'סימנת מורכב — 76% מכל הקבוצות הכריעו בעד';
+        if(id==='7'){
+          if(dir==='r') personalEl.innerHTML = 'גם אתה — חלק מה-81% שמסכימים';
+          else if(dir==='l') personalEl.innerHTML = 'הצבעת נגד — אבל 81% מכל הקבוצות בעד. מה דעתך?';
+          else personalEl.innerHTML = 'סימנת מורכב — 81% מכל הקבוצות הכריעו בעד';
+        }
+      }
+      tCurId = resultId;
+      tActivateId(resultId);
+    } else {
+      // Regular card — advance to next in sequence
+      const idx = ALL_CARD_IDS.indexOf(id);
+      const nextId = idx + 1 < ALL_CARD_IDS.length ? ALL_CARD_IDS[idx + 1] : null;
+      if(nextId){
+        tCurId = nextId;
+        tActivateId(nextId);
+        if(SWIPEABLE.includes(nextId)) tBindSwipe(nextId);
+      }
     }
   }, 320);
 }
 
-function tBindSwipe(n){
-  const inner = tGetInner(n);
+function tBindSwipe(id){
+  const inner = tGetInner(id);
   if(!inner) return;
   inner.style.transform=''; inner.style.opacity='1'; inner.style.transition='';
 
@@ -1705,7 +1752,7 @@ function tBindSwipe(n){
     inner.style.transform=`translateX(${tCurX}px) translateY(${tCurY}px) rotate(${tCurX*0.06}deg)`;
     inner.style.transition='none';
     const thresh=40;
-    const r=tGetInd(n,'r'), l=tGetInd(n,'l'), u=tGetInd(n,'u');
+    const r=tGetInd(id,'r'), l=tGetInd(id,'l'), u=tGetInd(id,'u');
     const xR=Math.min(Math.max(tCurX/thresh,0),1);
     const xL=Math.min(Math.max(-tCurX/thresh,0),1);
     const yU=Math.min(Math.max(-tCurY/thresh,0),1);
@@ -1721,13 +1768,13 @@ function tBindSwipe(n){
     document.removeEventListener('mousemove',onMove); document.removeEventListener('mouseup',onUp);
     document.removeEventListener('touchmove',onMove); document.removeEventListener('touchend',onUp);
     const thresh=70;
-    if(tCurX>thresh) tSwipeDone(n,'r');
-    else if(tCurX<-thresh) tSwipeDone(n,'l');
-    else if(tCurY<-thresh) tSwipeDone(n,'u');
+    if(tCurX>thresh) tSwipeDone(id,'r');
+    else if(tCurX<-thresh) tSwipeDone(id,'l');
+    else if(tCurY<-thresh) tSwipeDone(id,'u');
     else {
       inner.style.transition='transform .45s cubic-bezier(.175,.885,.32,1.375), opacity .3s, border-color .3s';
       inner.style.transform=''; inner.style.borderColor='';
-      [tGetInd(n,'r'),tGetInd(n,'l'),tGetInd(n,'u')].forEach(el=>{if(el)el.style.opacity=0;});
+      [tGetInd(id,'r'),tGetInd(id,'l'),tGetInd(id,'u')].forEach(el=>{if(el)el.style.opacity=0;});
     }
     tCurX=0; tCurY=0;
   }
@@ -1738,9 +1785,9 @@ function tBindSwipe(n){
 const _baseGo = go;
 go = function(n){
   _baseGo(n);
-  if(n===1 && tCur===0){ tActivate(0); tBindSwipe(0); }
+  if(n===1 && tCurId==='0'){ tActivateId('0'); tBindSwipe('0'); }
 };
-if(document.getElementById('sl1').classList.contains('active')){ tActivate(0); tBindSwipe(0); }
+if(document.getElementById('sl1').classList.contains('active')){ tActivateId('0'); tBindSwipe('0'); }
 
 // Swipe
 let dragging = false, startX = 0, curX = 0;
