@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>בית — Complete Flow</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#06070A; --sf:#0D0F14; --el:#141820; --ra:#1C2029;
+  --b0:rgba(255,255,255,0.06); --b1:rgba(255,255,255,0.12); --b2:rgba(255,255,255,0.20);
+  --t1:#EFF1F6; --t2:#78899C; --t3:#36424F;
+  --gd:#C8953A; --gl:#E4AE58; --gd0:rgba(200,149,58,0.12); --gn:rgba(200,149,58,0.24);
+  --te:#27B38E; --te0:rgba(39,179,142,0.10);
+  --co:#C75252; --co0:rgba(199,82,82,0.10); --cn:rgba(199,82,82,0.24);
+  --bl:#4470B0; --bl0:rgba(68,112,176,0.10);
+  --pu:#7258A2; --pu0:rgba(114,88,162,0.10);
+  --frank:'Frank Ruhl Libre',serif; --heb:'Heebo',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--heb);background:#040508;color:var(--t1);
+  display:flex;flex-direction:column;align-items:center;padding:32px 16px 72px;gap:48px;min-height:100vh;}
+
+/* ─── PAGE HEADER ─── */
+.ph{text-align:center;max-width:700px;}
+.ph-k{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--t3);font-weight:700;margin-bottom:12px;}
+.ph-h{font-family:var(--frank);font-size:42px;font-weight:900;letter-spacing:-1px;line-height:1.05;}
+.ph-h em{color:var(--gl);font-style:normal;}
+.ph-sub{font-size:13px;color:var(--t2);line-height:1.75;margin-top:10px;}
+
+/* ─── ARC DIAGRAM ─── */
+.arc{display:flex;gap:0;background:var(--b0);border-radius:12px;overflow:hidden;width:100%;max-width:960px;}
+.arc-step{flex:1;background:var(--sf);padding:18px 14px;border-right:1px solid var(--b0);}
+.arc-step:last-child{border-right:none;}
+.arc-step:hover{background:var(--el);}
+.arc-n{font-size:8px;font-weight:800;letter-spacing:1px;margin-bottom:5px;}
+.arc-h{font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px;}
+.arc-d{font-size:9px;color:var(--t2);line-height:1.5;}
+.arc-e{font-size:9px;font-weight:700;margin-top:6px;}
+
+/* ─── SIM ─── */
+.sim-wrap{display:flex;align-items:flex-start;gap:26px;width:100%;max-width:960px;}
+.sim-phone{width:286px;flex-shrink:0;background:var(--bg);border-radius:40px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.13);
+  box-shadow:0 0 0 8px #0A0B0F,0 24px 64px rgba(0,0,0,0.8);position:relative;}
+.sim-notch{width:62px;height:16px;background:#050609;border-radius:0 0 9px 9px;
+  position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:30;
+  border-bottom:1px solid var(--b0);border-left:1px solid var(--b0);border-right:1px solid var(--b0);}
+.sim-screen{height:600px;overflow:hidden;position:relative;}
+.slide{position:absolute;top:0;left:0;right:0;bottom:0;display:none;flex-direction:column;
+  overflow:hidden;}
+.slide.active{display:flex;flex-direction:column;}
+.phone-nav{display:flex;align-items:center;justify-content:space-between;
+  padding:8px 16px 14px;background:var(--bg);border-top:1px solid var(--b0);flex-shrink:0;}
+.pn-btn{font-size:10px;font-weight:700;color:var(--t3);cursor:pointer;padding:4px 8px;
+  border-radius:6px;border:1px solid var(--b0);transition:all .15s;}
+.pn-btn:hover{color:var(--t2);border-color:var(--b1);}
+.pn-btn.gold{color:var(--gl);border-color:var(--gn);}
+.dots{display:flex;gap:4px;align-items:center;}
+.dot{width:4px;height:4px;border-radius:50%;background:var(--t3);transition:all .3s;}
+.dot.on{background:var(--gl);width:14px;border-radius:99px;}
+
+/* ─── SIDEBAR ─── */
+.sim-sb{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;padding-top:2px;}
+.sb-phase{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--t3);
+  font-weight:700;padding:8px 0 3px;border-top:1px solid var(--b0);margin-top:3px;}
+.sb-phase:first-child{border-top:none;margin-top:0;padding-top:0;}
+.sbb{padding:10px 13px;background:var(--sf);border:1px solid var(--b0);border-radius:9px;
+  cursor:pointer;transition:background .15s,border-color .15s;text-align:right;}
+.sbb:hover{background:var(--el);border-color:var(--b1);}
+.sbb.on{border-color:var(--gn);background:var(--gd0);}
+.sbb-n{font-size:8px;font-weight:800;letter-spacing:1px;margin-bottom:2px;}
+.sbb-name{font-size:12px;font-weight:800;color:var(--t1);margin-bottom:2px;}
+.sbb.on .sbb-name{color:var(--gl);}
+.sbb-d{font-size:9px;color:var(--t2);line-height:1.4;}
+
+/* ─── ATOMS ─── */
+.s-top{display:flex;align-items:center;justify-content:space-between;
+  padding:6px 12px;border-bottom:1px solid var(--b0);flex-shrink:0;}
+.s-logo{font-size:12px;font-weight:900;color:var(--gl);letter-spacing:-0.3px;}
+.s-chip{font-size:7px;font-weight:800;padding:2px 7px;border-radius:99px;letter-spacing:0.3px;}
+.scr{flex:1;overflow-y:auto;padding:12px 13px 8px;display:flex;flex-direction:column;
+  gap:8px;scrollbar-width:none;}
+.scr::-webkit-scrollbar{display:none;}
+.kicker{font-size:8px;letter-spacing:2px;text-transform:uppercase;font-weight:700;}
+.sh{font-family:var(--frank);font-size:18px;font-weight:900;line-height:1.2;}
+.card{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;}
+.ch{font-size:11px;font-weight:800;color:var(--t1);margin-bottom:3px;}
+.cd{font-size:10px;color:var(--t2);line-height:1.45;}
+.pill{display:inline-block;font-size:8px;font-weight:800;padding:2px 7px;border-radius:99px;}
+.bar{height:5px;background:var(--b0);border-radius:99px;overflow:hidden;}
+.bar-f{height:100%;border-radius:99px;}
+.btn{padding:11px 14px;border-radius:9px;font-size:12px;font-weight:900;text-align:center;cursor:pointer;}
+.btn-gd{background:var(--gd);color:#1a0d00;}
+.btn-co{background:var(--co);color:#fff;}
+.btn-te{background:var(--te);color:#001a14;}
+.btn-out{background:var(--el);color:var(--t2);border:1px solid var(--b1);}
+.sr{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}
+.st{background:var(--sf);border-radius:7px;padding:8px 5px;text-align:center;}
+.sv{font-size:16px;font-weight:900;}
+.sl{font-size:7px;color:var(--t3);margin-top:1px;}
+
+/* ═══════════════════════════════════════════════════
+   S0 — BROKEN ISRAEL (personal entry)
+═══════════════════════════════════════════════════ */
+.s0-bg{position:absolute;inset:0;
+  background:radial-gradient(ellipse 200% 40% at 50% 100%,rgba(199,82,82,0.06) 0%,transparent 60%);}
+.s0-body{flex:1;overflow-y:auto;padding:26px 20px 0;position:relative;z-index:1;scrollbar-width:none;}
+.s0-body::-webkit-scrollbar{display:none;}
+.s0-flag{font-size:32px;margin-bottom:12px;}
+.s0-h{font-family:var(--frank);font-size:26px;font-weight:900;line-height:1.15;margin-bottom:14px;}
+.s0-h em{color:var(--gl);font-style:normal;}
+.broken-list{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.broken-item{display:flex;align-items:flex-start;gap:9px;padding:10px 12px;
+  background:var(--el);border-radius:9px;border:1px solid var(--b0);}
+.bi-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.bi-body{flex:1;}
+.bi-h{font-size:11px;font-weight:800;color:var(--t1);margin-bottom:2px;}
+.bi-d{font-size:9px;color:var(--t2);line-height:1.4;}
+.bi-stat{font-size:9px;font-weight:800;margin-top:3px;}
+.s0-question{background:var(--gd0);border:1px solid var(--gn);border-radius:10px;padding:12px 13px;}
+.s0-q-h{font-size:12px;font-weight:900;color:var(--gl);margin-bottom:4px;}
+.s0-q-d{font-size:10px;color:rgba(228,174,88,.7);line-height:1.5;}
+.s0-counter{background:var(--sf);border-radius:9px;border:1px solid var(--b1);
+  padding:10px 13px;display:flex;align-items:center;gap:9px;}
+.s0-cn{font-family:var(--frank);font-size:28px;font-weight:900;color:var(--gl);
+  letter-spacing:-1px;animation:cp 2.2s infinite;}
+@keyframes cp{0%,100%{opacity:1}50%{opacity:.6}}
+.s0-cl{font-size:10px;color:var(--t2);line-height:1.4;}
+.s0-cl strong{color:var(--t1);}
+
+/* ═══════════════════════════════════════════════════
+   S1 — MY ISRAEL (personal reconstruction priorities)
+═══════════════════════════════════════════════════ */
+.issue-card{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:0;overflow:hidden;}
+.issue-card-h{padding:10px 12px;border-bottom:1px solid var(--b0);
+  display:flex;align-items:center;gap:8px;}
+.ic-icon{font-size:16px;}
+.ic-title{font-size:11px;font-weight:800;color:var(--t1);}
+.ic-sub{font-size:9px;color:var(--t3);}
+.issue-opts{padding:8px;}
+.issue-opt{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:7px;
+  cursor:pointer;transition:background .15s;margin-bottom:3px;}
+.issue-opt:hover{background:var(--ra);}
+.issue-opt.sel{background:var(--ra);}
+.io-circle{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--b2);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.issue-opt.sel .io-circle{border-color:var(--te);background:var(--te);}
+.io-check{font-size:8px;color:#001a14;font-weight:900;opacity:0;}
+.issue-opt.sel .io-check{opacity:1;}
+.io-label{font-size:10px;color:var(--t2);font-weight:600;}
+.issue-opt.sel .io-label{color:var(--t1);}
+.io-n{font-size:8px;color:var(--t3);margin-right:auto;}
+.ai-commit{display:flex;align-items:center;gap:7px;padding:9px 11px;
+  background:var(--te0);border-radius:9px;border:1px solid rgba(39,179,142,.18);}
+.ac-icon{width:24px;height:24px;border-radius:7px;background:var(--te0);
+  display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:var(--te);flex-shrink:0;}
+.ac-txt{font-size:9px;color:var(--te);line-height:1.4;}
+
+/* ═══════════════════════════════════════════════════
+   S2 — CORRECTOR finds betrayal
+═══════════════════════════════════════════════════ */
+.scan-card{background:var(--el);border-radius:10px;border:1px solid var(--b0);
+  padding:11px 12px;position:relative;overflow:hidden;}
+.scan-line{position:absolute;left:0;right:0;height:1.5px;
+  background:linear-gradient(90deg,transparent,var(--te),transparent);
+  animation:scan 1.8s ease-in-out infinite;top:0;}
+@keyframes scan{0%{top:0;opacity:1}80%{top:100%;opacity:1}100%{top:100%;opacity:0}}
+.violation{background:var(--co0);border:1px solid var(--cn);border-radius:8px;padding:10px 11px;}
+.viol-tag{display:flex;align-items:center;gap:5px;font-size:8px;font-weight:800;color:var(--co);margin-bottom:4px;}
+.vpulse{width:5px;height:5px;border-radius:50%;background:var(--co);animation:vp 1s infinite;}
+@keyframes vp{0%,100%{opacity:1}50%{opacity:.2}}
+.viol-desc{font-size:11px;color:var(--co);font-weight:700;line-height:1.3;margin-bottom:5px;}
+.viol-amt{font-family:var(--frank);font-size:26px;font-weight:900;color:var(--co);letter-spacing:-1px;}
+.viol-sub{font-size:8px;color:rgba(199,82,82,.5);margin-top:2px;}
+.ai-bub{background:var(--sf);border:1px solid var(--gn);border-radius:10px;padding:11px 12px;}
+.ab-hdr{display:flex;align-items:center;gap:7px;margin-bottom:8px;}
+.ab-icon{width:26px;height:26px;border-radius:7px;background:var(--gd0);
+  display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:var(--gl);flex-shrink:0;}
+.ab-name{font-size:10px;font-weight:800;color:var(--gl);}
+.ab-role{font-size:8px;color:var(--t3);}
+.ab-msg{font-size:11px;color:var(--t1);line-height:1.55;margin-bottom:9px;}
+.ab-msg strong{color:var(--co);}
+.anger-row{display:flex;align-items:center;gap:7px;margin-bottom:6px;}
+.veto-locked{padding:11px 13px;border-radius:10px;
+  background:var(--el);border:1.5px dashed var(--b1);text-align:center;cursor:pointer;transition:all .2s;}
+.veto-locked:hover{border-color:var(--cn);}
+.vl-top{font-size:12px;font-weight:900;color:var(--t2);margin-bottom:3px;}
+.vl-sub{font-size:9px;color:var(--t3);}
+.vl-sub strong{color:var(--gl);}
+
+/* ═══════════════════════════════════════════════════
+   S3 — SWIPE on reconstruction issues
+═══════════════════════════════════════════════════ */
+.swipe-con{position:relative;height:185px;flex-shrink:0;}
+.swipe-card{position:absolute;inset:0;background:var(--el);border-radius:13px;
+  border:1px solid var(--b1);padding:14px;display:flex;flex-direction:column;
+  cursor:grab;user-select:none;overflow:hidden;transition:transform .15s;}
+.swipe-card.dragging{cursor:grabbing;transition:none;}
+.swipe-card.gone-r{transform:translateX(110%) rotate(12deg)!important;opacity:0;transition:transform .3s ease,opacity .3s;}
+.swipe-card.gone-l{transform:translateX(-110%) rotate(-12deg)!important;opacity:0;transition:transform .3s ease,opacity .3s;}
+.sv-lbl{position:absolute;top:12px;font-size:11px;font-weight:900;padding:3px 9px;
+  border-radius:99px;opacity:0;transition:opacity .1s;z-index:5;}
+.sv-y{left:12px;color:var(--te);background:var(--te0);border:1px solid var(--te);}
+.sv-n{right:12px;color:var(--co);background:var(--co0);border:1px solid var(--co);}
+.sc-badge{font-size:7px;font-weight:800;padding:2px 7px;border-radius:99px;display:inline-block;margin-bottom:8px;}
+.sc-q{font-size:12px;font-weight:800;color:var(--t1);line-height:1.4;flex:1;}
+.sc-ctx{font-size:9px;color:var(--t3);line-height:1.4;margin-top:7px;}
+.sc-ai{display:flex;align-items:center;gap:5px;margin-top:8px;
+  padding:7px 9px;background:var(--te0);border-radius:6px;}
+.sc-ai-l{font-size:9px;color:var(--te);font-weight:700;flex:1;}
+.sc-ai-v{font-size:9px;font-weight:900;color:var(--te);}
+.swipe-hints{display:flex;justify-content:space-between;padding:0 8px;}
+.s-hint{font-size:9px;font-weight:800;color:var(--t3);}
+.swipe-msg{text-align:center;font-size:9px;color:var(--t3);}
+.queue{display:flex;gap:4px;}
+.q-card{flex:1;background:var(--el);border-radius:6px;border:1px solid var(--b0);padding:6px 7px;}
+.q-t{font-size:8px;font-weight:700;color:var(--t2);line-height:1.3;}
+.q-ai{font-size:7px;color:var(--t3);margin-top:2px;}
+
+/* ═══════════════════════════════════════════════════
+   S4 — DELIBERATION + your position
+═══════════════════════════════════════════════════ */
+.cluster-map{height:115px;background:var(--el);border-radius:10px;border:1px solid var(--b0);
+  position:relative;overflow:hidden;flex-shrink:0;}
+.cm-label{position:absolute;bottom:5px;left:8px;font-size:7px;color:var(--t3);}
+.cluster{position:absolute;border-radius:50%;}
+.you-dot{position:absolute;width:11px;height:11px;border-radius:50%;
+  background:var(--gl);border:2px solid var(--bg);z-index:10;animation:nowpulse 1.8s infinite;}
+@keyframes nowpulse{0%,100%{box-shadow:0 0 0 4px var(--gd0)}50%{box-shadow:0 0 0 8px rgba(200,149,58,0.04)}}
+.you-lbl{position:absolute;font-size:7px;font-weight:800;color:var(--gl);}
+.bridge-card{background:var(--el);border-radius:9px;border:1px solid var(--b0);padding:10px 11px;}
+.bc-hdr{display:flex;align-items:center;gap:6px;margin-bottom:5px;}
+.bc-stmt{font-size:10px;font-weight:700;color:var(--t1);line-height:1.4;margin-bottom:6px;}
+.bc-bar{display:flex;align-items:center;gap:6px;}
+.auto-row{display:flex;align-items:center;gap:6px;padding:8px 10px;
+  background:var(--te0);border-radius:8px;}
+.auto-txt{font-size:10px;color:var(--te);font-weight:700;flex:1;}
+
+/* ═══════════════════════════════════════════════════
+   S5 — LIVING LIFE
+═══════════════════════════════════════════════════ */
+.life-scene{background:var(--el);border-radius:10px;border:1px solid var(--b0);
+  padding:14px;display:flex;align-items:center;gap:12px;}
+.ls-em{font-size:28px;}
+.ls-txt{font-size:11px;font-weight:700;color:var(--t1);}
+.ls-sub{font-size:9px;color:var(--t3);margin-top:2px;}
+.ticker-h{font-size:8px;color:var(--te);font-weight:800;letter-spacing:1px;margin-bottom:5px;}
+.tick-item{display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:9px;color:var(--t2);}
+.tick-dot{width:4px;height:4px;border-radius:50%;flex-shrink:0;}
+.tick-time{font-size:8px;color:var(--t3);min-width:30px;}
+.interrupt{background:var(--gd0);border:1px solid var(--gn);border-radius:10px;padding:12px 13px;}
+.int-hdr{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+.int-icon{width:26px;height:26px;border-radius:7px;background:var(--gd);
+  display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;
+  animation:intpulse 1.5s infinite;}
+@keyframes intpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.int-h{font-size:10px;font-weight:900;color:var(--gl);}
+.int-sub{font-size:8px;color:rgba(228,174,88,.6);}
+.int-msg{font-size:11px;color:var(--t1);line-height:1.5;margin-bottom:9px;}
+.int-btns{display:grid;grid-template-columns:1fr 1fr;gap:5px;}
+.int-btn{padding:9px 7px;border-radius:8px;font-size:10px;font-weight:800;text-align:center;cursor:pointer;}
+
+/* ═══════════════════════════════════════════════════
+   S6 — FUNDING
+═══════════════════════════════════════════════════ */
+.fund-proposal{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;}
+.fp-h{font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px;}
+.fp-sub{font-size:9px;color:var(--t3);margin-bottom:8px;}
+.fp-pool{display:flex;align-items:baseline;gap:5px;margin-bottom:3px;}
+.fp-amt{font-family:var(--frank);font-size:22px;font-weight:900;color:var(--gl);letter-spacing:-1px;}
+.fp-of{font-size:9px;color:var(--t3);}
+.fp-backers{font-size:8px;color:var(--t3);margin-top:3px;}
+.ms-row{display:flex;align-items:center;gap:7px;margin-top:7px;padding-top:7px;border-top:1px solid var(--b0);}
+.ms-n{width:18px;height:18px;border-radius:50%;font-size:8px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ms-title{font-size:9px;font-weight:700;}
+.ms-target{font-size:8px;color:var(--t3);}
+.amt-row{display:flex;gap:5px;}
+.amt-opt{flex:1;padding:8px 4px;border-radius:7px;border:1px solid var(--b1);
+  font-size:11px;font-weight:800;text-align:center;cursor:pointer;color:var(--t2);transition:all .15s;}
+.amt-opt:hover{border-color:var(--gn);color:var(--gl);}
+.amt-opt.sel{border-color:var(--gd);color:var(--gl);background:var(--gd0);}
+.fund-slider{position:relative;background:var(--el);border-radius:10px;border:1px solid var(--gn);height:50px;overflow:hidden;cursor:pointer;}
+.fs-track{position:absolute;inset:4px;background:var(--gd0);border-radius:7px;}
+.fs-thumb{position:absolute;top:4px;bottom:4px;left:4px;width:42px;background:var(--gd);
+  border-radius:7px;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:900;color:#1a0d00;transition:left .2s;}
+.fs-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:900;color:var(--gl);pointer-events:none;padding-right:46px;}
+.fund-impact{background:var(--te0);border:1px solid rgba(39,179,142,.2);border-radius:9px;
+  padding:10px 11px;display:none;}
+.fund-impact.show{display:block;}
+.fi-h{font-size:11px;font-weight:800;color:var(--te);margin-bottom:4px;}
+.fi-p{font-size:9px;color:rgba(39,179,142,.7);line-height:1.5;}
+.fi-n{font-size:18px;font-weight:900;color:var(--te);margin-top:5px;}
+.qf-note{font-size:9px;color:var(--t3);line-height:1.5;padding:7px 9px;
+  background:var(--el);border-radius:7px;border-right:2px solid var(--gd);}
+.qf-note strong{color:var(--gl);}
+
+/* ═══════════════════════════════════════════════════
+   S7 — ZK GATE
+═══════════════════════════════════════════════════ */
+.veto-waiting{background:var(--co0);border:1px solid var(--cn);border-radius:11px;padding:9px 11px;}
+.vw-tag{display:flex;align-items:center;gap:5px;font-size:8px;font-weight:800;color:var(--co);margin-bottom:5px;}
+.vw-law{font-size:12px;font-weight:800;color:var(--t1);margin-bottom:2px;}
+.vw-amt{font-size:10px;color:var(--co);font-weight:700;margin-bottom:7px;}
+.vw-n{font-size:10px;font-weight:800;color:var(--co);}
+.vw-needed{font-size:8px;color:rgba(199,82,82,.55);margin-top:3px;}
+.privacy-note{background:var(--el);border-radius:9px;border:1px solid var(--b1);padding:7px 10px;}
+.pn-h{font-size:10px;font-weight:800;color:var(--t1);margin-bottom:5px;}
+.pn-row{display:flex;align-items:flex-start;gap:6px;margin-bottom:2px;font-size:9px;color:var(--t2);line-height:1.35;}
+.pn-dot{width:4px;height:4px;border-radius:50%;background:var(--te);margin-top:4px;flex-shrink:0;}
+.zk-steps-h{font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;}
+.zk-steps{display:flex;flex-direction:column;gap:5px;}
+.zk-step{display:flex;align-items:center;gap:7px;padding:6px 9px;
+  background:var(--el);border-radius:9px;border:1px solid var(--b0);}
+.zk-step.done{border-color:rgba(39,179,142,.2);background:var(--te0);}
+.zks-n{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:8px;font-weight:900;flex-shrink:0;}
+.zks-title{font-size:10px;font-weight:700;}
+.zks-d{font-size:8px;color:var(--t3);margin-top:1px;}
+.zks-time{font-size:8px;font-weight:700;margin-right:auto;}
+.zk-cta{padding:10px;border-radius:10px;font-size:12px;font-weight:900;color:#fff;
+  text-align:center;cursor:pointer;line-height:1.3;}
+.zk-cta span{font-size:9px;font-weight:500;opacity:.7;display:block;margin-top:2px;}
+.zk-skip{text-align:center;font-size:9px;color:var(--t3);cursor:pointer;}
+.zk-skip:hover{color:var(--t2);}
+
+/* ═══════════════════════════════════════════════════
+   S8 — ZK SCAN
+═══════════════════════════════════════════════════ */
+.zk-scan{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:20px 18px;gap:0;position:relative;overflow:hidden;}
+.zk-glow{position:absolute;inset:0;
+  background:radial-gradient(ellipse 160% 60% at 50% 50%,rgba(39,179,142,0.07) 0%,transparent 65%);}
+.passport-wrap{width:108px;height:78px;background:var(--el);border-radius:9px;
+  border:1px solid var(--te0);display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:1;margin-bottom:14px;overflow:hidden;}
+.passport-scan{position:absolute;left:6px;right:6px;height:1.5px;
+  background:linear-gradient(90deg,transparent,var(--te),transparent);
+  animation:pscan 1.5s ease-in-out infinite;}
+@keyframes pscan{0%{top:10px}100%{top:62px}}
+.pp-em{font-size:28px;position:relative;z-index:1;}
+.zks-h2{font-family:var(--frank);font-size:18px;font-weight:900;text-align:center;margin-bottom:5px;position:relative;z-index:1;}
+.zks-sub2{font-size:10px;color:var(--t2);text-align:center;line-height:1.55;max-width:210px;margin-bottom:16px;position:relative;z-index:1;}
+.proof-steps{width:100%;display:flex;flex-direction:column;gap:4px;position:relative;z-index:1;}
+.proof-step{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--sf);border-radius:7px;}
+.proof-step.done{background:var(--te0);border:1px solid rgba(39,179,142,.2);}
+.proof-step.active{border:1px solid rgba(39,179,142,.35);}
+.ps-icon{font-size:12px;flex-shrink:0;}
+.ps-text{font-size:9px;font-weight:600;color:var(--t2);flex:1;}
+.proof-step.done .ps-text{color:var(--te);}
+.ps-st{font-size:9px;color:var(--t3);}
+.proof-step.done .ps-st{color:var(--te);font-weight:700;}
+.proof-priv{width:100%;margin-top:9px;padding:9px 11px;background:var(--el);
+  border-radius:8px;border:1px solid var(--b0);position:relative;z-index:1;}
+.pp-h{font-size:9px;font-weight:800;color:var(--t1);margin-bottom:3px;}
+.pp-d{font-size:8px;color:var(--t3);line-height:1.5;}
+.cast-btn{width:100%;margin-top:10px;position:relative;z-index:1;}
+
+/* ═══════════════════════════════════════════════════
+   S9 — CITIZEN + GLOBAL PRIDE (earned reward)
+═══════════════════════════════════════════════════ */
+.s9-glow{position:absolute;inset:0;
+  background:radial-gradient(ellipse 200% 55% at 50% 55%,rgba(200,149,58,0.09) 0%,transparent 60%);}
+.cit-body{flex:1;overflow-y:auto;padding:18px 18px;display:flex;flex-direction:column;
+  gap:9px;scrollbar-width:none;position:relative;z-index:1;}
+.cit-body::-webkit-scrollbar{display:none;}
+.cit-top{text-align:center;}
+.cit-icon{font-size:34px;margin-bottom:10px;}
+.cit-h{font-family:var(--frank);font-size:20px;font-weight:900;line-height:1.2;margin-bottom:3px;}
+.cit-h em{color:var(--gl);font-style:normal;}
+.cit-n{font-family:var(--frank);font-size:44px;font-weight:900;color:var(--gl);
+  letter-spacing:-2px;line-height:1;margin:6px 0 2px;}
+.cit-nl{font-size:8px;color:var(--t3);}
+.retro-card{background:var(--te0);border:1px solid rgba(39,179,142,.2);border-radius:10px;padding:10px 12px;}
+.retro-h{font-size:10px;font-weight:800;color:var(--te);margin-bottom:6px;}
+.retro-row{display:flex;align-items:center;gap:7px;margin-bottom:4px;}
+.retro-icon{font-size:11px;flex-shrink:0;}
+.retro-text{font-size:9px;color:rgba(39,179,142,.75);}
+/* Global pride — the earned reveal */
+.pride-card{background:var(--gd0);border:1px solid var(--gn);border-radius:11px;padding:12px 13px;}
+.pride-h{font-size:11px;font-weight:900;color:var(--gl);margin-bottom:4px;display:flex;align-items:center;gap:6px;}
+.pride-sub{font-size:9px;color:rgba(228,174,88,.65);line-height:1.5;margin-bottom:9px;}
+.pride-flags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;}
+.pride-flag{font-size:8px;font-weight:700;padding:3px 9px;border-radius:99px;
+  background:rgba(228,174,88,.1);color:rgba(228,174,88,.7);border:1px solid rgba(228,174,88,.15);}
+.pride-quote{font-size:10px;color:rgba(228,174,88,.55);font-style:italic;
+  padding:8px 10px;border-right:2px solid var(--gn);line-height:1.5;}
+.assembly-mini{background:var(--co0);border:1px solid var(--cn);border-radius:10px;padding:11px 12px;}
+.asm-h{font-size:10px;font-weight:800;color:var(--co);margin-bottom:6px;}
+.asm-bar-row{display:flex;align-items:center;gap:7px;margin-bottom:3px;}
+.asm-label{font-size:8px;font-weight:700;width:22px;}
+.asm-pct{font-size:8px;font-weight:800;width:24px;text-align:left;}
+
+/* ─── S9 lit phones ─── */
+.lphone{width:14px;height:20px;border-radius:3px;border:1.5px solid;display:inline-block;flex-shrink:0;}
+.lphone.lit{background:var(--gd0);border-color:var(--gl);}
+.lphone.dim{background:var(--el);border-color:var(--t3);opacity:.25;}
+/* ─── training swipe cards ─── */
+.tdot{width:5px;height:5px;border-radius:50%;background:var(--t3);transition:all .3s;}
+.tdot.on{background:var(--te);width:14px;border-radius:99px;}
+.tcard{
+  display:none;flex-direction:column;align-items:center;justify-content:center;
+  width:100%;
+}
+.tcard.active{display:flex;}
+.tcard-inner{
+  width:100%;background:var(--el);border-radius:14px;border:1px solid var(--b1);
+  padding:20px 18px 16px;display:flex;flex-direction:column;gap:10px;
+  position:relative;overflow:hidden;
+  cursor:grab;user-select:none;touch-action:none;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);
+  transition:transform .15s,border-color .15s;
+  will-change:transform;
+}
+.tcard-inner.dragging{cursor:grabbing;transition:none;}
+.tcard-before{
+  position:absolute;top:0;left:20px;right:20px;height:2px;
+  background:linear-gradient(90deg,var(--te),var(--gl));
+  border-radius:0 0 2px 2px;opacity:.5;
+}
+.tcard-tag{font-size:9px;font-weight:800;padding:4px 11px;border-radius:99px;display:inline-block;align-self:flex-start;}
+.tcard-q{font-size:16px;font-weight:700;color:var(--t1);line-height:1.55;text-align:center;}
+.tcard-meta{font-size:10px;color:var(--t3);text-align:center;padding-top:8px;border-top:1px solid var(--b0);}
+.tcard-ai{font-size:9px;color:var(--te);text-align:center;}
+.tind{
+  position:absolute;top:12px;font-size:10px;font-weight:800;padding:4px 10px;
+  border-radius:99px;opacity:0;transition:opacity .12s;z-index:5;letter-spacing:.5px;
+}
+.tind-r{left:10px;color:var(--te);background:var(--te0);border:1.5px solid var(--te);}
+.tind-l{right:10px;color:var(--co);background:var(--co0);border:1.5px solid var(--co);}
+.tind-u{left:50%;transform:translateX(-50%);color:var(--gl);background:var(--gd0);border:1.5px solid var(--gl);}
+.tcard-ai-learned{font-size:11px;color:var(--te);text-align:center;padding:8px 10px;background:var(--te0);border-radius:8px;}
+.tlearned-row{display:flex;align-items:center;gap:8px;font-size:10px;color:var(--t2);padding:5px 8px;background:var(--sf);border-radius:7px;}
+/* ─── deliberation statements ─── */
+.dstmt{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:10px 11px;}
+.dstmt-txt{font-size:10px;line-height:1.5;margin-bottom:7px;color:var(--t1);}
+.dstmt-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:8px;color:var(--t3);margin-bottom:7px;}
+.dstmt-grp{padding:2px 7px;background:var(--gd0);color:var(--gl);border-radius:99px;font-size:7px;font-weight:700;}
+.dstmt-ev{padding:7px 9px;background:rgba(200,149,58,0.05);border-right:2px solid var(--gd);margin-bottom:7px;}
+.dstmt-btns{display:flex;gap:5px;}
+.dsb{flex:1;padding:7px 4px;border-radius:6px;font-size:9px;font-weight:700;cursor:pointer;border:1px solid;background:transparent;font-family:var(--heb);transition:all .15s;}
+.dsb-y{color:var(--te);border-color:var(--te);}
+.dsb-y:hover,.dsb-y.voted{background:var(--te0);}
+.dsb-n{color:var(--bl);border-color:var(--bl);}
+.dsb-n:hover,.dsb-n.voted{background:var(--bl0);}
+.dsb-p{color:var(--t3);border-color:var(--b1);}
+.dsb-p:hover{background:var(--sf);}
+/* ─── funding cards ─── */
+.fcard{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;}
+.fcard-gold{border-color:var(--gn);box-shadow:0 0 12px rgba(200,149,58,0.08);}
+.forg{background:var(--sf);border-radius:8px;padding:9px 10px;margin-bottom:6px;border:1px solid var(--b0);}
+.fdonate{flex:1;padding:8px 4px;background:var(--gd);border-radius:7px;font-size:10px;font-weight:800;color:#1a0d00;text-align:center;cursor:pointer;transition:opacity .15s;}
+.fdonate:hover{opacity:.85;}
+@media(max-width:580px){
+  .sim-wrap{flex-direction:column;align-items:center;}
+  .sim-phone{width:100%;max-width:286px;}
+  .sim-sb{display:none;}
+  .arc{flex-direction:column;}
+  .arc-step{border-right:none;border-bottom:1px solid var(--b0);}
+  .arc-step:last-child{border-bottom:none;}
+}
+/* medium — keep side by side, shrink sidebar */
+@media(min-width:581px) and (max-width:800px){
+  .sim-wrap{gap:16px;}
+  .sim-sb .sbb-d{display:none;}
+  .sbb-name{font-size:11px;}
+  .arc{flex-direction:column;}
+  .arc-step{border-right:none;border-bottom:1px solid var(--b0);}
+  .arc-step:last-child{border-bottom:none;}
+}
+
+/* Tab bar for daily app screens */
+.tab-bar{display:flex;align-items:stretch;background:var(--bg);border-top:1px solid var(--b0);flex-shrink:0;}
+.tab-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 4px 10px;
+  font-size:8px;font-weight:700;color:var(--t3);cursor:pointer;border:none;background:none;font-family:var(--heb);transition:color .15s;}
+.tab-btn:hover{color:var(--t2);}
+.tab-btn.active{color:var(--gl);}
+.tab-icon{font-size:14px;}
+
+/* Consensus toast */
+.consensus-toast{position:relative;z-index:20;
+  background:linear-gradient(135deg,rgba(200,149,58,0.15),rgba(39,179,142,0.1));
+  border:1px solid var(--gn);border-radius:10px;padding:10px 12px;
+  animation:toastIn .5s ease forwards;}
+@keyframes toastIn{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
+.tribal-bars{display:flex;gap:3px;margin-top:6px;}
+.tribal-bar{flex:1;text-align:center;}
+.tb-fill{height:24px;border-radius:4px 4px 0 0;margin-bottom:2px;}
+.tb-label{font-size:6px;color:var(--t3);}
+.tb-pct{font-size:8px;font-weight:800;}
+
+/* Transition label */
+.transition-label{text-align:center;padding:12px 16px;background:linear-gradient(180deg,var(--bg),var(--sf));
+  border-bottom:1px solid var(--gn);}
+
+/* Bill section card */
+.bill-section{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;}
+.bill-tag{font-size:8px;font-weight:800;padding:3px 8px;border-radius:99px;display:inline-block;margin-bottom:6px;}
+.bill-field{margin-bottom:6px;}
+.bill-field-label{font-size:8px;font-weight:800;color:var(--t3);margin-bottom:3px;}
+.bill-field-text{font-size:10px;color:var(--t2);line-height:1.5;}
+
+/* MK email card */
+.mk-email{background:var(--sf);border:1px solid var(--b1);border-radius:10px;padding:11px 12px;}
+.mk-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.mk-avatar{width:28px;height:28px;border-radius:50%;background:var(--bl0);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+.email-preview{background:var(--el);border-radius:8px;padding:9px 10px;border-right:2px solid var(--bl);margin-top:7px;}
+.email-line{font-size:9px;color:var(--t2);line-height:1.5;margin-bottom:2px;}
+.email-subject{font-size:9px;font-weight:700;color:var(--t1);}
+
+/* Correction flow */
+.correction-card{background:var(--gd0);border:1px solid var(--gn);border-radius:10px;padding:11px 12px;}
+
+/* Shabbat card */
+.shabbat-card{background:var(--sf);border-radius:14px;border:1px solid var(--b1);padding:14px 15px;
+  box-shadow:0 4px 24px rgba(0,0,0,0.3);}
+.shabbat-divider{height:1px;background:var(--b0);margin:8px 0;}
+
+/* Streak badge */
+.streak{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:800;
+  padding:3px 9px;border-radius:99px;background:var(--gd0);color:var(--gl);}
+
+/* ═══ "להיספר" Conversion Screen ═══ */
+.pride-stats{display:flex;flex-direction:column;gap:4px;margin:8px 0;}
+.pride-stat{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--el);border-radius:8px;}
+.ps-num{font-size:18px;font-weight:900;color:var(--gl);min-width:28px;text-align:center;direction:ltr;}
+.ps-label{font-size:10px;color:var(--t2);}
+
+.loss-stat{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--el);border-radius:8px;position:relative;}
+.loss-num{font-size:18px;font-weight:900;color:var(--t3);min-width:28px;text-align:center;direction:ltr;opacity:.5;}
+.loss-label{font-size:10px;color:var(--t3);flex:1;}
+.loss-tag{font-size:8px;font-weight:800;color:var(--co);white-space:nowrap;}
+.loss-line{position:absolute;top:50%;left:10px;right:10px;height:0;
+  border-top:1.5px dashed var(--co);transform:scaleX(0);transform-origin:right;}
+.loss-stat.reveal .loss-line{animation:strikeIn .4s ease forwards;}
+@keyframes strikeIn{to{transform:scaleX(1)}}
+.loss-stat:nth-child(1).reveal .loss-line{animation-delay:.3s}
+.loss-stat:nth-child(2).reveal .loss-line{animation-delay:.6s}
+.loss-stat:nth-child(3).reveal .loss-line{animation-delay:.9s}
+.loss-stat.reveal .loss-tag{animation:fadeIn .3s ease forwards;opacity:0;}
+.loss-stat:nth-child(1).reveal .loss-tag{animation-delay:.7s}
+.loss-stat:nth-child(2).reveal .loss-tag{animation-delay:1s}
+.loss-stat:nth-child(3).reveal .loss-tag{animation-delay:1.3s}
+@keyframes fadeIn{to{opacity:1}}
+
+.gap-bars{display:flex;flex-direction:column;gap:4px;margin:6px 0;}
+.gap-row{display:flex;align-items:center;gap:6px;}
+.gap-label{font-size:8px;font-weight:700;min-width:36px;text-align:left;}
+.gap-track{flex:1;height:8px;background:var(--el);border-radius:99px;overflow:hidden;}
+.gap-fill{height:100%;border-radius:99px;transition:width .8s ease;}
+.gap-pct{font-size:9px;font-weight:800;min-width:28px;}
+
+.counted-cta{padding:14px;border-radius:12px;font-size:16px;font-weight:900;text-align:center;
+  cursor:pointer;background:var(--gd);color:#1a0d00;margin:4px 0;}
+.counted-cta-sub{text-align:center;font-size:9px;color:var(--t3);margin-top:2px;}
+.counted-dismiss{text-align:center;font-size:9px;color:var(--t3);cursor:pointer;padding:6px 0;}
+.counted-dismiss:hover{color:var(--t2);}
+
+.step-journey{display:flex;flex-direction:column;gap:4px;}
+.step-j{display:flex;align-items:center;gap:7px;padding:7px 9px;background:var(--el);border-radius:8px;border:1px solid var(--b0);}
+.step-j-n{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:900;flex-shrink:0;}
+.step-j-verb{font-size:10px;font-weight:800;}
+.step-j-desc{font-size:8px;color:var(--t3);}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="ph">
+  <div class="ph-k">בית — Complete Flow v3 · Post-War Launch</div>
+  <div class="ph-h">חוזרים<br><em>הביתה</em></div>
+  <p class="ph-sub">חוזרים הביתה — לא עם חטופים בלבד, אלא עם הריבונות, עם הבית, עם הקול שנלקח. הכניסה אישית. הגאווה גלובלית — גמול לאחר שפועלים.</p>
+</div>
+
+<!-- EMOTIONAL ARC -->
+<div class="arc" style="max-width:960px;width:100%">
+  <div class="arc-step">
+    <div class="arc-n" style="color:var(--co)">כניסה</div>
+    <div class="arc-h">כאב אישי</div>
+    <div class="arc-d">ישראל שבורה. הדברים הספציפיים שמכעסים אותך. לא היסטוריה</div>
+    <div class="arc-e" style="color:var(--co)">רגש: כעס + דחיפות</div>
+  </div>
+  <div class="arc-step">
+    <div class="arc-n" style="color:var(--te)">שלב 1</div>
+    <div class="arc-h">סדר עדיפויות</div>
+    <div class="arc-d">מה צריך להשתנות בשבילך? לא שאלות כלליות — בחירות ספציפיות שמעצבות את הנציג.</div>
+    <div class="arc-e" style="color:var(--te)">רגש: שייכות + שליטה</div>
+  </div>
+  <div class="arc-step">
+    <div class="arc-n" style="color:var(--gd)">שלב 2-4</div>
+    <div class="arc-h">נלחם</div>
+    <div class="arc-d">AI מוצא דילים, מצביע בשמך, מממן שינוי. אתה חי — הוא עובד.</div>
+    <div class="arc-e" style="color:var(--gd)">רגש: כוח + אמון</div>
+  </div>
+  <div class="arc-step">
+    <div class="arc-n" style="color:var(--bl)">קצב יומי</div>
+    <div class="arc-h">הנציג לומד</div>
+    <div class="arc-d">3 סוויפים ביום, דיון ציבורי, צלילה לחוקים, כרטיס שבת. נקודות מגע שמחזירות אותך.</div>
+    <div class="arc-e" style="color:var(--bl)">רגש: הרגל + שליטה</div>
+  </div>
+  <div class="arc-step">
+    <div class="arc-n" style="color:var(--gl)">גמול</div>
+    <div class="arc-h">גאווה גלובלית</div>
+    <div class="arc-d">אחרי אימות — "ישראל מובילה את העולם." לא כהבטחה — כתיאור של מה שזה עתה עשית.</div>
+    <div class="arc-e" style="color:var(--gl)">רגש: גאווה + משמעות</div>
+  </div>
+</div>
+
+<!-- PHONE SIMULATOR -->
+<div class="sim-wrap">
+  <div class="sim-phone">
+    <div class="sim-notch"></div>
+    <div class="sim-screen">
+
+      <!-- ════ S0: BROKEN ISRAEL — personal entry ════ -->
+      <div class="slide active" id="sl0">
+        <div class="s0-bg"></div>
+        <div style="height:20px;flex-shrink:0"></div>
+        <div class="s0-body">
+
+          <div class="s0-h">חוזרים<br><em>הביתה</em></div>
+          <!-- "מה אנחנו עושים שלא נעשה לפנינו" — visible immediately -->
+          <div style="background:var(--el);border:1px solid var(--gn);border-radius:11px;padding:13px 14px;margin-bottom:10px;">
+            <div style="font-size:11px;font-weight:900;color:var(--gl);margin-bottom:10px;">מה אנחנו עושים שלא נעשה לפנינו</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div style="display:flex;align-items:flex-start;gap:8px;font-size:10px;color:rgba(228,174,88,.8);line-height:1.4;">
+                <span style="color:var(--gl);font-weight:900;flex-shrink:0">✓</span>
+                <span>זהות מוכחת ללא חשיפה — <span style="color:var(--gl);font-weight:700">ZK Passport</span></span>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:8px;font-size:10px;color:rgba(228,174,88,.8);line-height:1.4;">
+                <span style="color:var(--gl);font-weight:900;flex-shrink:0">✓</span>
+                <span>נציג AI שעובד כשאתה חי את חייך — גם הצבעות כנסת, גם דיון ציבורי, גם הצפת רעיונות עם תמיכה רחבה</span>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:8px;font-size:10px;color:rgba(228,174,88,.8);line-height:1.4;">
+                <span style="color:var(--gl);font-weight:900;flex-shrink:0">✓</span>
+                <span>כוח מחייב — <span style="color:var(--gl);font-weight:700">לא המלצה לפרלמנט</span></span>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:8px;font-size:10px;color:rgba(228,174,88,.8);line-height:1.4;">
+                <span style="color:var(--gl);font-weight:900;flex-shrink:0">✓</span>
+                <span>כסף ישיר לתוצאה, <span style="color:var(--gl);font-weight:700">ללא ביורוקרטיה</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="broken-list">
+            <div class="broken-item">
+              <div class="bi-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--co)" style="width:20px;height:20px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"/><path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"/></svg></div>
+              <div class="bi-body">
+                <div class="bi-h">דיור בלתי אפשרי</div>
+                <div class="bi-d">שכירות עלתה 34% בשנתיים. בן 30 מרוויח ₪12K ומשלם ₪6K שכירות.</div>
+                <div class="bi-stat" style="color:var(--co)">340,000 משפחות בסיכון</div>
+              </div>
+            </div>
+            <div class="broken-item">
+              <div class="bi-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--co)" style="width:20px;height:20px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v.756a49.106 49.106 0 0 1 9.152 1 .75.75 0 0 1-.152 1.485h-1.918l2.474 10.124a.75.75 0 0 1-.375.84A6.723 6.723 0 0 1 18.75 18a6.723 6.723 0 0 1-3.181-.795.75.75 0 0 1-.375-.84l2.474-10.124H12.75v13.28c1.293.076 2.534.343 3.697.776a.75.75 0 0 1-.262 1.453h-8.37a.75.75 0 0 1-.262-1.453c1.162-.433 2.404-.7 3.697-.775V6.24H6.332l2.474 10.124a.75.75 0 0 1-.375.84A6.723 6.723 0 0 1 5.25 18a6.723 6.723 0 0 1-3.181-.795.75.75 0 0 1-.375-.84L4.168 6.241H2.25a.75.75 0 0 1-.152-1.485 49.105 49.105 0 0 1 9.152-1V3a.75.75 0 0 1 .75-.75Zm4.878 13.543 1.872-7.662 1.872 7.662h-3.744Zm-9.756 0L5.25 8.131l-1.872 7.662h3.744Z" clip-rule="evenodd"/></svg></div>
+              <div class="bi-body">
+                <div class="bi-h">שחיתות ובזבוז</div>
+                <div class="bi-d">מאות מיליארדים עוברים בכנסת — ללא שקיפות, ללא ביקורת, ללא אחריות.</div>
+                <div class="bi-stat" style="color:var(--co)">78% ישראלים: "הכסף שלנו נגנב"</div>
+              </div>
+            </div>
+            <div class="broken-item">
+              <div class="bi-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--co)" style="width:20px;height:20px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd"/></svg></div>
+              <div class="bi-body">
+                <div class="bi-h">דור אחרי המלחמה</div>
+                <div class="bi-d">40,000 ילדים עקורים. טראומה ללא מענה. תקציב הטיפול: 0.</div>
+                <div class="bi-stat" style="color:var(--co)">1.4B₪ הוצאו על אחר</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GAP B: THE BROKEN KNESSET — Clip 3 -->
+          <div style="background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;">
+            <div style="font-size:9px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-bottom:8px">כנסת ה-25 · ישיבת ועדה · היום</div>
+            <!-- Seat grid: 120 seats, 74 empty -->
+            <div id="knesset-seats" style="display:flex;flex-wrap:wrap;gap:3px;direction:ltr;margin-bottom:8px"></div>
+            <div style="display:flex;gap:10px;margin-bottom:8px">
+              <div style="display:flex;align-items:center;gap:4px;font-size:8px;color:var(--t2)">
+                <div style="width:8px;height:8px;border-radius:2px;background:var(--co);opacity:.7"></div>46 נוכחים
+              </div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:8px;color:var(--t3)">
+                <div style="width:8px;height:8px;border-radius:2px;background:var(--t3);opacity:.35"></div>74 נעדרים
+              </div>
+            </div>
+            <!-- Party discipline note -->
+            <div style="display:flex;align-items:flex-start;gap:7px;padding:8px 9px;background:var(--co0);border-radius:7px;border:1px solid var(--cn)">
+              <div style="flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--co)" style="width:14px;height:14px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625ZM7.5 15a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 7.5 15Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H8.25Z" clip-rule="evenodd"/><path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z"/></svg></div>
+              <div>
+                <div style="font-size:9px;font-weight:800;color:var(--co);margin-bottom:2px">דף משמעת סיעתי — בוקר זה</div>
+                <div style="font-size:9px;color:rgba(199,82,82,.7);line-height:1.4">"הצבע נגד הצעה 847-ב (שכר מינימום) — הוראת יו"ר הסיעה." הח"כ שלך ציית. לא קרא. לא שאל.</div>
+              </div>
+            </div>
+            <div style="font-size:9px;color:var(--t3);text-align:center;margin-top:7px">94% מהצבעות — לפי משמעת · לא לפי ערכים</div>
+          </div>
+
+          <div class="s0-question">
+            <div class="s0-q-h">חזרה הביתה מתחילה כאן — ביחד</div>
+            <div class="s0-q-d">לא להמתין שמישהו יחזיר לך את הבית. לחזור אליו בעצמך — בכל הצבעה, בכל שקל, בכל קול שנספר. הנציג AI שלך עושה את זה בשמך, בזמן שאתה חי את חייך.</div>
+          </div>
+          <div class="s0-counter">
+            <div class="s0-cn" id="fc">3,847</div>
+            <div class="s0-cl"><strong>חוזרים הביתה</strong> — יהודים וערבים שבוחרים לקחת את הבית בחזרה, לא לחכות שמישהו יחזיר להם.</div>
+          </div>
+          <div class="btn btn-gd" onclick="go(1)">← אני חוזר הביתה</div>
+          <div style="text-align:center;font-size:9px;color:var(--t3);padding:8px 0 20px">ללא אימייל · ללא סיסמה · אנונימי</div>
+        </div>
+        <div class="phone-nav">
+          <div class="pn-btn" style="opacity:0">→</div>
+          <div class="dots" id="d0"></div>
+          <div class="pn-btn gold" onclick="go(1)">← הבא</div>
+        </div>
+      </div>
+
+      <!-- ════ S1: SWIPE TRAINING — value calibration ════ -->
+      <div class="slide" id="sl1">
+        <!-- swipe area -->
+        <div style="flex:1;position:relative;overflow:hidden;min-height:0;display:flex;align-items:center;justify-content:center;padding:8px 13px;" id="train-area">
+          <!-- CARD 0 -->
+          <div class="tcard active" id="tc0">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ti0r">בעד →</div>
+              <div class="tind tind-l" id="ti0l">← נגד</div>
+              <div class="tind tind-u" id="ti0u">↑ מורכב</div>
+              <div class="tcard-tag" style="background:rgba(199,82,82,0.15);color:var(--co)">שחיתות ממשלתית</div>
+              <div class="tcard-q">משרד ממשלתי שלא מדווח פעילות שנה שלמה צריך לאבד את תקציבו אוטומטית</div>
+              <div class="tcard-meta"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--t2)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M2.625 6.75a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0A.75.75 0 0 1 8.25 6h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75ZM2.625 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0ZM7.5 12a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12A.75.75 0 0 1 7.5 12Zm-4.875 5.25a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/></svg> <span dir="ltr">127,403</span> הצביעו</div>
+              <div class="tcard-ai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg> הנציג שלך: מחכה לתשובתך</div>
+            </div>
+          </div>
+          <!-- CARD 1 -->
+          <div class="tcard" id="tc1">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ti1r">בעד →</div>
+              <div class="tind tind-l" id="ti1l">← נגד</div>
+              <div class="tind tind-u" id="ti1u">↑ מורכב</div>
+              <div class="tcard-tag" style="background:rgba(39,179,142,0.12);color:var(--te)">ילדים ושיקום</div>
+              <div class="tcard-q">תקציב טיפול נפשי לילדי העקורים צריך להגיע לפני כל ויכוח פוליטי אחר</div>
+              <div class="tcard-meta"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--t2)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M2.625 6.75a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0A.75.75 0 0 1 8.25 6h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75ZM2.625 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0ZM7.5 12a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12A.75.75 0 0 1 7.5 12Zm-4.875 5.25a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/></svg> <span dir="ltr">98,221</span> הצביעו</div>
+              <div class="tcard-ai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg> הנציג שלך: מחכה לתשובתך</div>
+            </div>
+          </div>
+          <!-- CARD 2 -->
+          <div class="tcard" id="tc2">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ti2r">בעד →</div>
+              <div class="tind tind-l" id="ti2l">← נגד</div>
+              <div class="tind tind-u" id="ti2u">↑ מורכב</div>
+              <div class="tcard-tag" style="background:rgba(68,112,176,0.12);color:var(--bl)">דיור ושכירות</div>
+              <div class="tcard-q">המדינה חייבת להגביל העלאות שכירות — הבית הוא זכות, לא סחורה</div>
+              <div class="tcard-meta"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--t2)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M2.625 6.75a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0A.75.75 0 0 1 8.25 6h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75ZM2.625 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0ZM7.5 12a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12A.75.75 0 0 1 7.5 12Zm-4.875 5.25a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/></svg> <span dir="ltr">89,334</span> הצביעו</div>
+              <div class="tcard-ai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg> הנציג שלך: מחכה לתשובתך</div>
+            </div>
+          </div>
+          <!-- CARD 3 -->
+          <div class="tcard" id="tc3">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ti3r">בעד →</div>
+              <div class="tind tind-l" id="ti3l">← נגד</div>
+              <div class="tind tind-u" id="ti3u">↑ מורכב</div>
+              <div class="tcard-tag" style="background:rgba(114,88,162,0.12);color:var(--pu)">שחיתות ומנהל</div>
+              <div class="tcard-q">כל משרד ממשלתי שלא מדווח פעילות שנתית צריך לאבד את תקציבו אוטומטית</div>
+              <div class="tcard-meta"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--t2)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M2.625 6.75a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0A.75.75 0 0 1 8.25 6h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75ZM2.625 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0ZM7.5 12a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12A.75.75 0 0 1 7.5 12Zm-4.875 5.25a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875 0a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5h-12a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/></svg> <span dir="ltr">83,112</span> הצביעו</div>
+              <div class="tcard-ai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg> הנציג שלך: מחכה לתשובתך</div>
+            </div>
+          </div>
+          <!-- CARD 4 — last: shows AI learned -->
+          <div class="tcard" id="tc4">
+            <div class="tcard-inner" style="text-align:center;gap:12px">
+              <div style="font-size:32px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg></div>
+              <div style="font-family:var(--frank);font-size:18px;font-weight:900;color:var(--t1)">הנציג שלך<br>מוכן</div>
+              <div class="tcard-ai-learned" id="ai-learned-msg">למד 4 עמדות. מתחיל לייצג אותך.</div>
+              <div style="display:flex;flex-direction:column;gap:5px;width:100%;text-align:right">
+                <div class="tlearned-row"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--co)" style="width:16px;height:16px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg>️</span><span>שחיתות: <strong style="color:var(--te)">נגד</strong></span></div>
+                <div class="tlearned-row"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--co)" style="width:16px;height:16px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg></span><span>שיקום ילדים: <span id="tl-kids">—</span></span></div>
+                <div class="tlearned-row"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--co)" style="width:16px;height:16px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg></span><span>הגבלת שכירות: <span id="tl-rent">—</span></span></div>
+                <div class="tlearned-row"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 0 0-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 0 0-2.282.819l-.922 1.597a1.875 1.875 0 0 0 .432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 0 0 0 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 0 0-.432 2.385l.922 1.597a1.875 1.875 0 0 0 2.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 0 0 2.28-.819l.923-1.597a1.875 1.875 0 0 0-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 0 0 0-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 0 0-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 0 0-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 0 0-1.85-1.567h-1.843ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z" clip-rule="evenodd"/></svg></span><span>יעילות ממשל: <span id="tl-gov">—</span></span></div>
+              </div>
+              <div class="btn btn-gd" style="width:100%;margin-top:4px" onclick="go(2)">הנציג מוכן — הצג ממצאים ←</div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-nav">
+          <div class="pn-btn" onclick="go(0)">חזור →</div>
+          <div class="dots" id="d1"></div>
+          <div class="pn-btn gold" onclick="go(2)">← דלג</div>
+        </div>
+      </div>
+
+      <!-- ════ S2: CORRECTOR — finds betrayal ════ -->
+      <div class="slide" id="sl2">
+        <div class="scr">
+          <div class="kicker" style="color:var(--gd)">ממצא קריטי · עכשיו</div>
+          <div class="sh">הנציג שלך<br>מצא בגידה</div>
+          <div class="scan-card">
+            <div class="scan-line"></div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:7px">חוק התקציב 2025 — 1,240 סעיפים נסרקו</div>
+            <div class="violation">
+              <div class="viol-tag"><div class="vpulse"></div>מנוגד לסדר העדיפויות שלך</div>
+              <div class="viol-desc">תקציב "שיקום עורפי" הועבר למשרד שדיווח אפס פעילות — בזמן שילדים עדיין בחדרי מדרגות</div>
+              <div class="viol-amt">₪400,000,000</div>
+              <div class="viol-sub">הכסף שלך · ילדי המלחמה שלך</div>
+            </div>
+          </div>
+          <div class="ai-bub">
+            <div class="ab-hdr">
+              <div class="ab-icon">AI</div>
+              <div><div class="ab-name">הנציג שלך</div><div class="ab-role">מחובר לסדר העדיפויות שבחרת</div></div>
+            </div>
+            <div class="ab-msg">מצאתי סעיף שמנוגד ישירות לבחירות שלך: <strong>₪400M שלא מגיעים לילדים.</strong> להיספר?</div>
+            <div class="anger-row">
+              <div class="bar" style="flex:1"><div class="bar-f" style="width:46%;background:var(--co)"></div></div>
+              <span style="font-size:10px;font-weight:800;color:var(--co)">8,340</span>
+              <span style="font-size:8px;color:var(--t3)">כועסים</span>
+            </div>
+          </div>
+          <div class="veto-locked" onclick="go(9)">
+            <div class="vl-top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg> להיספר · נושא שמתאים לך</div>
+            <div class="vl-sub">נדרשת <strong>זהות מאומתת</strong> — 5 דקות · הקול שלך נספר</div>
+          </div>
+        </div>
+        <div class="phone-nav">
+          <div class="pn-btn" onclick="go(1)">חזור →</div>
+          <div class="dots" id="d2"></div>
+          <div class="pn-btn gold" onclick="go(3)">← המשך</div>
+        </div>
+      </div>
+
+      <!-- ════ S3: SWIPE — reconstruction votes ════ -->
+      <div class="slide" id="sl3">
+        <div class="scr">
+          <div class="kicker" style="color:var(--bl)">שאלות שקובעות את ישראל שלך</div>
+          <div class="sh">גרור ימין לתמיכה<br>גרור שמאל נגד</div>
+          <div class="swipe-con" id="swipe-con">
+            <div class="sv-lbl sv-n" id="sv-n">✗ נגד</div>
+            <div class="sv-lbl sv-y" id="sv-y">✓ בעד</div>
+            <div class="swipe-card" id="sc"
+              onmousedown="dragStart(event)" ontouchstart="dragStart(event)">
+              <div class="sc-badge" style="background:var(--co0);color:var(--co)">● הצבעה מחר</div>
+              <div class="sc-q">"תקציב טיפול פסיכולוגי לילדי עקורי עוטף עזה — 800 מיליון ₪"</div>
+              <div class="sc-ctx">ישירות קשור לסדר העדיפויות שלך · 14,200 ילדים מחכים</div>
+              <div class="sc-ai">
+                <div class="sc-ai-l"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg> הנציג שלך:</div>
+                <div class="sc-ai-v">תומך 97%</div>
+              </div>
+            </div>
+          </div>
+          <div class="swipe-hints">
+            <div class="s-hint" style="color:var(--co)">← גרור לניגוד</div>
+            <div class="s-hint" style="color:var(--te)">גרור לתמיכה →</div>
+          </div>
+          <div class="swipe-msg" id="sw-msg">גרור את הכרטיס</div>
+          <div style="font-size:8px;color:var(--t3);font-weight:700;letter-spacing:1px;margin-bottom:4px">בתור ←</div>
+          <div class="queue">
+            <div class="q-card"><div class="q-t">חוק שכירות הוגנת</div><div class="q-ai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg> תומך 94%</div></div>
+            <div class="q-card"><div class="q-t">שכר מינימום ₪7,500</div><div class="q-ai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg> תומך 84%</div></div>
+            <div class="q-card"><div class="q-t">שקיפות תקציבית — חוק</div><div class="q-ai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg> תומך 91%</div></div>
+          </div>
+        </div>
+        <div class="phone-nav">
+          <div class="pn-btn" onclick="go(2)">חזור →</div>
+          <div class="dots" id="d3"></div>
+          <div class="pn-btn gold" onclick="go(4)">← הבא</div>
+        </div>
+      </div>
+
+      <!-- ════ S4: DELIBERATION — pol.is style ════ -->
+      <div class="slide" id="sl4">
+        <div class="scr" style="padding:0;gap:0">
+          <!-- Header -->
+          <div style="padding:10px 13px 8px;border-bottom:1px solid var(--b0)">
+            <div class="kicker" style="color:var(--pu);margin-bottom:3px">נושאים להסכמות חדשות</div>
+            <div style="font-size:12px;font-weight:800;color:var(--t1)">שיקום הדרום — מה חשוב לך?</div>
+            <div style="font-size:8px;color:var(--t3);margin-top:2px">הצהרות בלבד · ללא תגובות · ללא טרולים · בהשראת pol.is</div>
+          </div>
+          <!-- Live consensus bar -->
+          <div style="padding:9px 13px;background:var(--sf);border-bottom:1px solid var(--b0)">
+            <div style="font-size:8px;color:var(--t3);margin-bottom:5px">מפת הסכמות חיה · <span dir="ltr">1,247</span> הצבעות על <span dir="ltr">18</span> הצהרות</div>
+            <div style="height:5px;background:var(--el);border-radius:99px;overflow:hidden;display:flex">
+              <div style="width:68%;background:var(--te)"></div>
+              <div style="width:21%;background:var(--bl)"></div>
+              <div style="width:11%;background:var(--t3)"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:4px;font-size:8px;color:var(--t3)">
+              <span>מסכים 68%</span><span>לא מסכים 21%</span><span>עובר 11%</span>
+            </div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:9px 11px;display:flex;flex-direction:column;gap:7px;scrollbar-width:none">
+            <!-- Consensus Discovery Toast -->
+            <div class="consensus-toast">
+              <div style="font-size:8px;font-weight:800;color:var(--gl);letter-spacing:1px;margin-bottom:4px">גילוי הסכמה חדש</div>
+              <div style="font-size:11px;font-weight:800;color:var(--t1);margin-bottom:3px">81% מכל הקבוצות מסכימים:</div>
+              <div style="font-size:10px;color:var(--t2);line-height:1.4;margin-bottom:6px">"תקציב שיקום חייב להיות שקוף ופתוח לציבור — ללא יוצא מן הכלל"</div>
+              <div style="font-size:8px;color:var(--co);font-weight:700;margin-bottom:6px">אף מפלגה בכנסת לא הצביעה בעד</div>
+              <div class="tribal-bars">
+                <div class="tribal-bar"><div class="tb-fill" style="height:32px;background:var(--te)"></div><div class="tb-pct" style="color:var(--te)">84%</div><div class="tb-label">חילוני</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">79%</div><div class="tb-label">דתי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:29px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">76%</div><div class="tb-label">ערבי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:33px;background:var(--gl)"></div><div class="tb-pct" style="color:var(--gl)">83%</div><div class="tb-label">חרדי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:31px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">80%</div><div class="tb-label">רוסי</div></div>
+              </div>
+            </div>
+            <!-- Statement 1: high agreement -->
+            <div class="dstmt">
+              <div class="dstmt-txt">ילדי העקורים מהדרום צריכים טיפול נפשי מיידי — לפני כל ויכוח תקציבי אחר</div>
+              <div class="dstmt-meta">
+                <span class="dstmt-grp">קבוצה ג׳</span>
+                <span>534 הצביעו</span>
+                <span style="color:var(--te);font-weight:700">84% מסכימים</span>
+              </div>
+              <div class="dstmt-ev">
+                <div style="font-size:8px;color:var(--gl);font-weight:700;margin-bottom:2px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--gl)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z"/></svg> נתון מצורף</div>
+                <div style="font-size:9px;color:var(--t2)">40,000 ילדים עקורים. 0 ₪ הוקצו לטיפול נפשי בתקציב 2025 המקורי.</div>
+              </div>
+              <div class="dstmt-btns">
+                <button class="dsb dsb-y" onclick="voteStmt(this)">מסכים</button>
+                <button class="dsb dsb-n" onclick="voteStmt(this)">לא מסכים</button>
+                <button class="dsb dsb-p" onclick="voteStmt(this)">עובר</button>
+              </div>
+            </div>
+            <!-- Statement 2: cross-group bridge -->
+            <div class="dstmt" style="border-color:var(--gl)">
+              <div style="font-size:8px;color:var(--gl);font-weight:700;margin-bottom:5px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--gl)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0 1 12 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 0 1 3.498 1.307 4.491 4.491 0 0 1 1.307 3.497A4.49 4.49 0 0 1 21.75 12a4.49 4.49 0 0 1-1.549 3.397 4.491 4.491 0 0 1-1.307 3.497 4.491 4.491 0 0 1-3.497 1.307A4.49 4.49 0 0 1 12 21.75a4.49 4.49 0 0 1-3.397-1.549 4.49 4.49 0 0 1-3.498-1.306 4.491 4.491 0 0 1-1.307-3.498A4.49 4.49 0 0 1 2.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 0 1 1.307-3.497 4.49 4.49 0 0 1 3.497-1.307Zm7.007 6.387a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"/></svg> הצהרת גשר — חוצת מחנות</div>
+              <div class="dstmt-txt">תקציב השיקום חייב לכלול גם יהודים וגם ערבים שנפגעו — ה-7 באוקטובר פגע בשני הצדדים</div>
+              <div class="dstmt-meta">
+                <span>847 הצביעו</span>
+                <span style="color:var(--gl);font-weight:700">91% מסכימים מכל הקבוצות</span>
+              </div>
+              <div class="dstmt-btns">
+                <button class="dsb dsb-y" onclick="voteStmt(this)">מסכים</button>
+                <button class="dsb dsb-n" onclick="voteStmt(this)">לא מסכים</button>
+                <button class="dsb dsb-p" onclick="voteStmt(this)">עובר</button>
+              </div>
+            </div>
+            <!-- Statement 3: contested -->
+            <div class="dstmt">
+              <div class="dstmt-txt">הכפרים החקלאיים שנשרפו צריכים לקבל קדימות על פני שיקום ערים — הם פגיעים יותר</div>
+              <div class="dstmt-meta">
+                <span class="dstmt-grp">קבוצה א׳</span>
+                <span>312 הצביעו</span>
+                <span style="color:var(--bl);font-weight:700">48% לא מסכימים</span>
+                <span style="font-size:7px;padding:2px 6px;background:var(--co0);color:var(--co);border-radius:99px;font-weight:700"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--co)" style="width:10px;height:10px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd"/></svg> 4 ביקשו ראיות</span>
+              </div>
+              <div class="dstmt-btns">
+                <button class="dsb dsb-y" onclick="voteStmt(this)">מסכים</button>
+                <button class="dsb dsb-n" onclick="voteStmt(this)">לא מסכים</button>
+                <button class="dsb dsb-p" onclick="voteStmt(this)">עובר</button>
+              </div>
+            </div>
+            <!-- AI auto-voted -->
+            <div style="display:flex;align-items:center;gap:6px;padding:8px 10px;background:var(--te0);border-radius:8px;border:1px solid rgba(39,179,142,.18)">
+              <div style="flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--bl)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg></div>
+              <div style="font-size:9px;color:var(--te);flex:1">הנציג שלך הצביע אוטומטית על 15 הצהרות. 2 עקיפות שלך לימדו אותו.</div>
+            </div>
+            <!-- Add statement -->
+            <div style="padding:9px 10px;background:var(--el);border-radius:8px;border:1px dashed var(--b1);text-align:center;cursor:pointer">
+              <span style="font-size:9px;color:var(--t3)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--t3)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z"/><path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z"/></svg> הוסף הצהרה חדשה — 140 תווים בלבד</span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon">🏠</span>בית</button>
+          <button class="tab-btn active" onclick="go(4)"><span class="tab-icon">💬</span>דיון</button>
+          <button class="tab-btn" onclick="go(6)"><span class="tab-icon">📜</span>חוק</button>
+          <button class="tab-btn" onclick="go(7)"><span class="tab-icon">🕯️</span>שבת</button>
+        </div>
+      </div>
+
+      <div class="slide" id="sl5">
+        <div class="transition-label">
+          <div style="font-size:9px;font-weight:800;color:var(--gl);letter-spacing:1px">זה מה שתראה כל יום</div>
+          <div style="font-size:8px;color:var(--t3);margin-top:2px">האפליקציה היומית שלך</div>
+        </div>
+        <div class="scr">
+          <!-- 3-Swipe Ritual -->
+          <div style="text-align:center;margin-bottom:4px">
+            <div style="font-size:11px;font-weight:900;color:var(--t1)">3 הסוויפים של היום</div>
+            <div style="font-size:9px;color:var(--t3)">הנציג שלך בחר 3 שאלות — 30 שניות</div>
+          </div>
+          <!-- Card 1: Real vote -->
+          <div class="card" style="border-color:rgba(39,179,142,.25);position:relative">
+            <div class="bill-tag" style="background:var(--te0);color:var(--te)">הכנסת הצביעה</div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.4;margin-bottom:6px">האם לחייב גילוי תקציבי של עמותות שמקבלות מעל 10M ש"ח מהמדינה?</div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <span style="font-size:8px;color:var(--t3)">← נגד · בעד →</span>
+              <span style="font-size:8px;color:var(--te);font-weight:700" dir="ltr">147,382 הצביעו</span>
+            </div>
+          </div>
+          <!-- Card 2: Values calibration -->
+          <div class="card" style="border-color:rgba(200,149,58,.25)">
+            <div class="bill-tag" style="background:var(--gd0);color:var(--gl)">שאלת ערכים</div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.4;margin-bottom:6px">מוסד ציבורי שמקבל תקציב מדינה צריך לפתוח את דלתותיו לכל המגזרים?</div>
+            <div style="font-size:8px;color:var(--gl)">הנציג שלך צריך את זה כדי להצביע טוב יותר</div>
+          </div>
+          <!-- Card 3: Pending -->
+          <div class="card" style="border-color:rgba(68,112,176,.25)">
+            <div class="bill-tag" style="background:var(--bl0);color:var(--bl)">בקרוב במליאה</div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.4;margin-bottom:6px">האם לאפשר לרשויות מקומיות לקבוע מס ארנונה דיפרנציאלי לדירות ריקות?</div>
+            <div style="font-size:8px;color:var(--bl)">הצעת חוק 4891 · ועדת הכספים · השבוע</div>
+          </div>
+          <!-- Completion state -->
+          <div style="text-align:center;padding:8px 0">
+            <div class="streak">🔥 רצף: 12 ימים</div>
+          </div>
+          <!-- Rep Status -->
+          <div style="display:flex;align-items:center;gap:7px;padding:9px 11px;background:var(--te0);border-radius:9px;border:1px solid rgba(39,179,142,.18)">
+            <div style="flex-shrink:0;font-size:14px">🤖</div>
+            <div style="font-size:9px;color:var(--te);flex:1">הנציג שלך פעל <strong>3 פעמים</strong> השבוע · <strong style="color:var(--gl)">1 הפתעה</strong></div>
+          </div>
+          <!-- Contradiction Alert -->
+          <div style="padding:9px 11px;background:var(--co0);border:1px solid var(--cn);border-radius:9px">
+            <div style="display:flex;align-items:center;gap:5px;font-size:8px;font-weight:800;color:var(--co);margin-bottom:4px"><div style="width:5px;height:5px;border-radius:50%;background:var(--co);animation:vp 1s infinite"></div>חשיפת השבוע</div>
+            <div style="font-size:10px;font-weight:700;color:var(--t1);margin-bottom:2px">ח"כ ישראלי הבטיח "אפס קיצוצים בחינוך"</div>
+            <div style="font-size:9px;color:var(--co)">הצביע בעד קיצוץ 400M ש"ח מתקציב החינוך</div>
+          </div>
+          <!-- Live ticker -->
+          <div style="text-align:center;padding:6px;font-size:8px;color:var(--t3);background:var(--sf);border-radius:7px">
+            3,847 הצביעו היום · 12 מאזורך
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn active" onclick="go(5)"><span class="tab-icon">🏠</span>בית</button>
+          <button class="tab-btn" onclick="go(4)"><span class="tab-icon">💬</span>דיון</button>
+          <button class="tab-btn" onclick="go(6)"><span class="tab-icon">📜</span>חוק</button>
+          <button class="tab-btn" onclick="go(7)"><span class="tab-icon">🕯️</span>שבת</button>
+        </div>
+      </div>
+
+      <!-- ════ BILLS DEEP DIVE → MK EMAIL ════ -->
+      <div class="slide" id="sl6">
+        <div class="scr">
+          <div class="kicker" style="color:var(--bl);margin-bottom:3px">הנציג שלך מצא משהו</div>
+          <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:8px">חוק הדיור הציבורי (תיקון)</div>
+          <!-- Bill section card -->
+          <div class="bill-section">
+            <div class="bill-tag" style="background:var(--bl0);color:var(--bl)">סעיף 7 · תקרת שכר דירה</div>
+            <div class="bill-field">
+              <div class="bill-field-label">מה כתוב:</div>
+              <div class="bill-field-text">הסעיף קובע תקרת מחיר לדירות בשכונות שעברו פינוי-בינוי. בעלי דירות לא יוכלו לגבות מעל 80% ממחיר השוק למשך 5 שנים.</div>
+            </div>
+            <div class="bill-field">
+              <div class="bill-field-label">למה זה חשוב:</div>
+              <div class="bill-field-text">ישפיע ישירות על מחירי השכירות בערים שמתחדשות.</div>
+            </div>
+          </div>
+          <!-- AI reasoning -->
+          <div class="correction-card">
+            <div style="font-size:9px;font-weight:800;color:var(--gl);margin-bottom:4px">🤖 הנציג שלך חושב שתתנגד/י</div>
+            <div style="font-size:9px;color:rgba(228,174,88,.7);line-height:1.45">בעבר העדפת שוק חופשי והצבעת נגד רגולציה. אבל אולי דיור זה שונה?</div>
+          </div>
+          <!-- Three options -->
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <div class="btn btn-co" style="font-size:10px;padding:9px 12px" onclick="this.parentElement.nextElementSibling.style.display='block';this.parentElement.style.display='none'">כן, אני נגד הסעיף → שלח מייל לח"כ</div>
+            <div class="btn btn-te" style="font-size:10px;padding:9px 12px" onclick="this.parentElement.nextElementSibling.nextElementSibling.style.display='block';this.parentElement.style.display='none'">לא, דווקא מסכים/ה → תקן את הנציג</div>
+            <div class="btn btn-out" style="font-size:10px;padding:9px 12px">רוצה לקרוא עוד</div>
+          </div>
+          <!-- MK Email flow (hidden by default) -->
+          <div class="mk-email" style="display:none">
+            <div style="font-size:9px;font-weight:800;color:var(--t1);margin-bottom:6px">רוצה לעשות משהו עם זה?</div>
+            <div class="mk-header">
+              <div class="mk-avatar">👤</div>
+              <div>
+                <div style="font-size:10px;font-weight:800;color:var(--t1)">ח"כ דוד כהן</div>
+                <div style="font-size:8px;color:var(--t3)">יושב בוועדת הכלכלה · הצעה בדיון השבוע</div>
+              </div>
+            </div>
+            <div class="email-preview">
+              <div class="email-subject">נושא: [סעיף 7] בהצעת חוק הדיור הציבורי — פנייה אישית</div>
+              <div class="email-line">ח"כ כהן שלום, קראתי את סעיף 7 של ההצעה...</div>
+              <div class="email-line" style="color:var(--t3);font-style:italic">— לחץ לעריכת הטיוטה —</div>
+            </div>
+            <div style="margin-top:7px;display:flex;gap:5px">
+              <div class="btn btn-gd" style="flex:1;font-size:10px;padding:8px">צפה ושלח מייל</div>
+            </div>
+            <div style="margin-top:6px;display:flex;align-items:center;gap:5px;font-size:8px;color:var(--t3)">
+              <div style="flex:1;height:3px;background:var(--bl);border-radius:99px;opacity:.4"></div>
+              412 אזרחים כבר שלחו מייל על הסעיף הזה
+            </div>
+            <div style="font-size:8px;color:var(--t3);margin-top:4px">34% ימין · 28% מרכז · 22% שמאל — <span style="color:var(--gl);font-weight:700">זה לא עניין של ימין או שמאל</span></div>
+            <div style="font-size:7px;color:var(--t3);margin-top:5px;text-align:center">נשלח באמצעות אפליקציית בית — פלטפורמה אזרחית</div>
+          </div>
+          <!-- Correction flow (hidden by default) -->
+          <div style="display:none">
+            <div class="correction-card" style="margin-bottom:6px">
+              <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:5px">טוב לדעת!</div>
+              <div style="font-size:9px;color:rgba(228,174,88,.7);line-height:1.4;margin-bottom:6px">הנציג שלך חשב שתתנגד/י כי בעבר העדפת שוק חופשי. למה דווקא כאן בעד?</div>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <div class="btn btn-out" style="font-size:9px;padding:7px 10px;text-align:right">דיור זה שונה — זו זכות בסיסית</div>
+                <div class="btn btn-out" style="font-size:9px;padding:7px 10px;text-align:right">אני בעד רגולציה זמנית, לא קבועה</div>
+                <div class="btn btn-out" style="font-size:9px;padding:7px 10px;text-align:right">שיניתי דעה בנושאי דיור</div>
+              </div>
+            </div>
+            <div style="padding:8px 10px;background:var(--te0);border-radius:8px;font-size:9px;color:var(--te);line-height:1.5">
+              <strong>הנציג שלך עודכן ✓</strong><br>
+              "דיור הוא תחום שבו תומך/ת בהתערבות ממשלתית, גם כשבתחומים אחרים מעדיף/ה שוק חופשי."<br>
+              <span style="font-size:8px;color:rgba(39,179,142,.6)">הנציג שלך טעה — וזה בסדר. ככל שתתקן/י אותו יותר, ככה הוא ייצג אותך טוב יותר.</span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon">🏠</span>בית</button>
+          <button class="tab-btn" onclick="go(4)"><span class="tab-icon">💬</span>דיון</button>
+          <button class="tab-btn active" onclick="go(6)"><span class="tab-icon">📜</span>חוק</button>
+          <button class="tab-btn" onclick="go(7)"><span class="tab-icon">🕯️</span>שבת</button>
+        </div>
+      </div>
+
+      <!-- ════ SHABBAT CARD ════ -->
+      <div class="slide" id="sl7">
+        <div class="scr" style="display:flex;align-items:center;justify-content:center;padding:12px">
+          <div class="shabbat-card">
+            <div style="text-align:center;font-size:8px;color:var(--t3);letter-spacing:1px;font-weight:700;margin-bottom:8px">השבוע שלך — 22-27 מרץ 2026</div>
+            <div style="font-size:13px;font-weight:900;color:var(--t1);text-align:center;margin-bottom:10px">כרטיס שבת</div>
+            <!-- 3 votes summary -->
+            <div style="display:flex;flex-direction:column;gap:5px;margin-bottom:8px">
+              <div style="display:flex;align-items:center;gap:6px;font-size:9px">
+                <span style="color:var(--te);font-weight:800">✓</span>
+                <span style="color:var(--t2);flex:1">חוק השקיפות</span>
+                <span style="font-size:8px;color:var(--te);font-weight:700">73% בעד</span>
+                <span style="font-size:8px;color:var(--co)">כנסת: נגד</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:9px">
+                <span style="color:var(--co);font-weight:800">✗</span>
+                <span style="color:var(--t2);flex:1">תקציב בריאות</span>
+                <span style="font-size:8px;color:var(--bl);font-weight:700">51% בעד</span>
+                <span style="font-size:8px;color:var(--te)">כנסת: בעד</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:9px">
+                <span style="color:var(--te);font-weight:800">✓</span>
+                <span style="color:var(--t2);flex:1">חוק הדיור</span>
+                <span style="font-size:8px;color:var(--te);font-weight:700">68% בעד</span>
+                <span style="font-size:8px;color:var(--co)">כנסת: נגד</span>
+              </div>
+            </div>
+            <div class="shabbat-divider"></div>
+            <!-- Contradiction -->
+            <div style="padding:7px 9px;background:var(--co0);border-radius:7px;margin-bottom:8px">
+              <div style="font-size:8px;font-weight:800;color:var(--co);margin-bottom:2px">🔴 סתירת השבוע</div>
+              <div style="font-size:9px;color:var(--t2);line-height:1.4">ח"כ ישראלי הבטיח "אפס קיצוצים" — הצביע בעד קיצוץ 400M</div>
+            </div>
+            <!-- Consensus -->
+            <div style="padding:7px 9px;background:var(--gd0);border-radius:7px;margin-bottom:8px">
+              <div style="font-size:8px;font-weight:800;color:var(--gl);margin-bottom:2px">💡 הסכמה מפתיעה</div>
+              <div style="font-size:9px;color:rgba(228,174,88,.7);line-height:1.4">82% מכל הקבוצות מסכימים על שקיפות תקציבית. אף מפלגה לא הצביעה בעד.</div>
+            </div>
+            <div class="shabbat-divider"></div>
+            <!-- Impact -->
+            <div style="text-align:center;font-size:9px;color:var(--t2);margin-bottom:6px">
+              👥 +4 אנשים הצטרפו דרך השיתוף שלך השבוע
+            </div>
+            <!-- Conversation starter -->
+            <div style="text-align:center;padding:8px 10px;background:var(--el);border-radius:8px;margin-bottom:8px">
+              <div style="font-size:10px;font-weight:700;color:var(--t1);margin-bottom:2px">"מה הפתיע אותך השבוע?"</div>
+              <div style="font-size:8px;color:var(--t3)">שאלה לשולחן השבת</div>
+            </div>
+            <div class="btn btn-gd" style="font-size:10px;padding:9px">שתף עם המשפחה</div>
+            <div style="text-align:center;font-size:11px;margin-top:8px">שבת שלום 🕯️</div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon">🏠</span>בית</button>
+          <button class="tab-btn" onclick="go(4)"><span class="tab-icon">💬</span>דיון</button>
+          <button class="tab-btn" onclick="go(6)"><span class="tab-icon">📜</span>חוק</button>
+          <button class="tab-btn active" onclick="go(7)"><span class="tab-icon">🕯️</span>שבת</button>
+        </div>
+      </div>
+
+      <!-- ════ S8: FUNDING — real orgs, QF multiplier ════ -->
+      <div class="slide" id="sl8">
+        <div class="scr" style="padding:0;gap:0">
+          <!-- Header -->
+          <div style="padding:10px 13px 8px;border-bottom:1px solid var(--b0)">
+            <div class="kicker" style="color:var(--gd);margin-bottom:3px">סבב מימון פעיל · שיקום הדרום</div>
+            <div style="font-size:11px;font-weight:800;color:var(--t1)">תמיכה אזרחית — ביחד משפיעים יותר</div>
+            <div style="font-size:8px;color:var(--t3);margin-top:2px">כל תרומה שלך מוכפלת — ככל שיותר אנשים תורמים, ההשפעה גדלה</div>
+          </div>
+          <!-- My impact summary -->
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:9px 13px;background:var(--sf);border-bottom:1px solid var(--b0)">
+            <div>
+              <div style="font-size:18px;font-weight:900;color:var(--te);letter-spacing:-0.5px">₪2,847</div>
+              <div style="font-size:8px;color:var(--t3)">ההשפעה שלך <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:10px;height:10px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"/></svg></div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:18px;font-weight:900;color:var(--gl)">×30</div>
+              <div style="font-size:8px;color:var(--t3)">מכפיל</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:18px;font-weight:900;color:var(--t1)">5</div>
+              <div style="font-size:8px;color:var(--t3)">עמותות מומנו</div>
+            </div>
+          </div>
+          <div style="flex:1;overflow-y:auto;padding:9px 11px;display:flex;flex-direction:column;gap:8px;scrollbar-width:none">
+            <!-- Active consensus round -->
+            <div class="fcard fcard-gold">
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:7px">
+                <span style="font-size:8px;padding:2px 8px;background:var(--gd0);color:var(--gl);border-radius:99px;font-weight:700">סבב הסכמה · 84% הסכימו</span>
+                <span style="font-size:8px;color:var(--t3)">8 ימים נותרו</span>
+              </div>
+              <div style="font-size:12px;font-weight:800;color:var(--t1);margin-bottom:3px">טיפול נפשי ללוחמים ומשפחות</div>
+              <div style="font-size:9px;color:var(--t3);margin-bottom:8px">3 עמותות מאושרות סעיף 46 · זיכוי מס 35%</div>
+              <div style="font-size:9px;font-weight:700;color:var(--gl);padding:6px 9px;background:var(--gd0);border-radius:7px;margin-bottom:8px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--gl)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M12 .75a8.25 8.25 0 0 0-4.135 15.39c.686.398 1.115 1.008 1.134 1.623a.75.75 0 0 0 .577.706c.352.083.71.148 1.074.195.323.041.6-.218.6-.544v-4.661a6.714 6.714 0 0 1-.937-.171.75.75 0 1 1 .374-1.453 5.261 5.261 0 0 0 2.626 0 .75.75 0 1 1 .374 1.452 6.712 6.712 0 0 1-.937.172v4.66c0 .327.277.586.6.545.364-.047.722-.112 1.074-.195a.75.75 0 0 0 .577-.706c.02-.615.448-1.225 1.134-1.623A8.25 8.25 0 0 0 12 .75Z"/></svg> ₪10 שלך × מכפיל 30 = ₪300 — מימון טיפול מלא אחד</div>
+              <!-- Org 1 -->
+              <div class="forg">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px">
+                  <span style="font-size:11px;font-weight:700">נט"ל — טיפול בטראומה <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--co)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"/></svg></span>
+                  <span style="font-size:8px;color:var(--te);font-weight:700">✓ סעיף 46</span>
+                </div>
+                <div style="font-size:9px;color:var(--t2);margin-bottom:6px">טיפול פסיכולוגי ללוחמים ומשפחות נפגעי טרור</div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                  <div class="bar" style="flex:1"><div class="bar-f" style="width:68%;background:var(--gl)"></div></div>
+                  <span style="font-size:9px;font-weight:800;color:var(--gl)">×32</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3)">
+                  <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--t3)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"/></svg> 1,247 תורמים</span>
+                  <span>₪18,400 + ₪588,800 התאמה</span>
+                </div>
+              </div>
+              <!-- Org 2 -->
+              <div class="forg">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px">
+                  <span style="font-size:11px;font-weight:700">הגל שלי — סרף תרפיה <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"/></svg></span>
+                  <span style="font-size:8px;color:var(--te);font-weight:700">✓ סעיף 46</span>
+                </div>
+                <div style="font-size:9px;color:var(--t2);margin-bottom:6px">טיפול בטראומה דרך גלישה — 12 שבועות ללוחמים</div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                  <div class="bar" style="flex:1"><div class="bar-f" style="width:45%;background:var(--gl)"></div></div>
+                  <span style="font-size:9px;font-weight:800;color:var(--gl)">×28</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;font-size:8px;color:var(--t3)">
+                  <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--t3)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"/></svg> 834 תורמים</span>
+                  <span>₪9,200 + ₪257,600 התאמה</span>
+                </div>
+              </div>
+              <!-- Donate buttons -->
+              <div style="display:flex;gap:6px;margin-top:4px">
+                <div class="fdonate" onclick="doFund(this,'₪10')">מממן ₪10</div>
+                <div class="fdonate" onclick="doFund(this,'₪25')">מממן ₪25</div>
+                <div class="fdonate" onclick="doFund(this,'₪50')">מממן ₪50</div>
+              </div>
+              <div style="text-align:center;font-size:8px;color:var(--t3);margin-top:5px">35% זיכוי מס · קבלה אוטומטית</div>
+            </div>
+            <!-- AI rep suggestion -->
+            <div class="fcard" style="border-color:var(--bl0)">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:7px">
+                <span style="font-size:14px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg></span>
+                <span style="font-size:10px;font-weight:700;color:var(--bl)">הנציג שלך מציע</span>
+              </div>
+              <div style="font-size:10px;color:var(--t2);margin-bottom:9px;line-height:1.5">"בהתבסס על ההצבעות שלך, הקצתי ₪35 מהתקציב החודשי שלך ל-2 עמותות בתחום הטיפול בטראומה."</div>
+              <div style="display:flex;gap:6px">
+                <div style="flex:1;padding:8px;background:var(--te);border-radius:7px;font-size:10px;font-weight:800;color:#001a14;text-align:center;cursor:pointer" onclick="this.textContent='✓ אושר!'">אשר הקצאה</div>
+                <div style="flex:.5;padding:8px;background:var(--el);border-radius:7px;font-size:10px;font-weight:700;color:var(--t2);text-align:center;cursor:pointer;border:1px solid var(--b1)">ערוך</div>
+              </div>
+            </div>
+            <!-- Open round -->
+            <div class="fcard">
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+                <span style="font-size:8px;padding:2px 8px;background:var(--te0);color:var(--te);border-radius:99px;font-weight:700">סבב פתוח · מרץ 2026</span>
+              </div>
+              <div style="font-size:11px;font-weight:800;color:var(--t1);margin-bottom:2px">12 עמותות שיקום מאושרות</div>
+              <div style="font-size:9px;color:var(--t3);margin-bottom:7px">18 ימים נותרו · ₪124,000 בקופת ההתאמה</div>
+              <div style="padding:7px;background:var(--te);border-radius:7px;font-size:10px;font-weight:800;color:#001a14;text-align:center;cursor:pointer">עיין בעמותות ומממן ←</div>
+            </div>
+            <!-- Tax note -->
+            <div style="font-size:9px;color:var(--t3);line-height:1.5;padding:7px 9px;background:var(--el);border-radius:7px;border-right:2px solid var(--gd)">
+              <strong style="color:var(--gl)">מימון ריבועי:</strong> 1,247 תרומות של ₪25 = כוח של ₪935,000. ₪25 שלך שווים פה יותר מ-₪500 לבד. 35% זיכוי מס על הכל.
+            </div>
+          </div>
+        </div>
+        <div class="phone-nav">
+          <div class="pn-btn" onclick="go(7)">חזור →</div>
+          <div class="dots" id="d8"></div>
+          <div class="pn-btn gold" onclick="go(9)">← להיספר</div>
+        </div>
+      </div>
+
+      <!-- ════ S9: להיספר — CONVERSION ════ -->
+      <div class="slide" id="sl9">
+        <div style="height:4px;flex-shrink:0"></div>
+        <div class="scr" style="gap:6px;padding:8px 12px 6px">
+
+          <!-- PRIDE section -->
+          <div style="text-align:center;margin-bottom:2px">
+            <div style="font-size:9px;color:var(--te);font-weight:700;letter-spacing:1px;margin-bottom:4px">ב-7 הדקות האחרונות</div>
+            <div style="font-size:13px;font-weight:900;color:var(--t1);line-height:1.3">עשית משהו שרוב<br>האזרחים לא עושים</div>
+          </div>
+          <div class="pride-stats">
+            <div class="pride-stat"><div class="ps-num">47</div><div class="ps-label">הצבעות</div></div>
+            <div class="pride-stat"><div class="ps-num">12</div><div class="ps-label">עמדות שהבעת</div></div>
+            <div class="pride-stat"><div class="ps-num">3</div><div class="ps-label">הסכמות שגילית</div></div>
+          </div>
+
+          <!-- LOSS section -->
+          <div style="text-align:center;margin:4px 0 2px">
+            <div style="font-size:12px;font-weight:900;color:var(--co)">אבל יש בעיה.</div>
+          </div>
+          <div id="loss-stats" style="display:flex;flex-direction:column;gap:4px;">
+            <div class="loss-stat reveal">
+              <div class="loss-line"></div>
+              <div class="loss-num">47</div>
+              <div class="loss-label">הצבעות שלך</div>
+              <div class="loss-tag">לא נספרות</div>
+            </div>
+            <div class="loss-stat reveal">
+              <div class="loss-line"></div>
+              <div class="loss-num">12</div>
+              <div class="loss-label">עמדות שהבעת</div>
+              <div class="loss-tag">לא נשמעות</div>
+            </div>
+            <div class="loss-stat reveal">
+              <div class="loss-line"></div>
+              <div class="loss-num">3</div>
+              <div class="loss-label">הסכמות שגילית</div>
+              <div class="loss-tag">לא משנות</div>
+            </div>
+          </div>
+          <div style="text-align:center;padding:4px 0">
+            <div style="font-size:11px;font-weight:700;color:var(--t1)">הקול שלך קיים.</div>
+            <div style="font-size:11px;color:var(--t2)">הוא פשוט עדיין לא נשמע.</div>
+          </div>
+
+          <!-- HOOK — super-aligned issue -->
+          <div style="font-size:9px;color:var(--gl);font-weight:700;text-align:center;margin-top:2px">ובדיוק עכשיו, יש נושא שמתאים בול לעמדות שלך:</div>
+          <div class="card" style="border-color:var(--gn);padding:10px 11px">
+            <div style="font-size:11px;font-weight:800;color:var(--t1);margin-bottom:4px">חינוך חינם מגיל 3 — הצעת חוק</div>
+            <div style="display:flex;align-items:center;gap:5px;font-size:9px;color:var(--te);margin-bottom:6px">
+              <span style="font-weight:800">&#10003;</span> הצבעת: בעד · <span style="font-weight:800;color:var(--gl)">81% מכל הקבוצות מסכימים</span>
+            </div>
+            <div class="gap-bars">
+              <div class="gap-row">
+                <div class="gap-label" style="color:var(--te)">אזרחים</div>
+                <div class="gap-track"><div class="gap-fill" style="width:81%;background:var(--te)"></div></div>
+                <div class="gap-pct" style="color:var(--te)">81%</div>
+              </div>
+              <div class="gap-row">
+                <div class="gap-label" style="color:var(--co)">כנסת</div>
+                <div class="gap-track"><div class="gap-fill" style="width:3%;background:var(--co)"></div></div>
+                <div class="gap-pct" style="color:var(--co)">3%</div>
+              </div>
+            </div>
+            <div style="font-size:8px;color:var(--co);font-weight:700;margin-top:3px">רק 4 מתוך 120 ח"כים הצביעו בעד</div>
+          </div>
+
+          <!-- Social proof -->
+          <div style="display:flex;align-items:center;gap:6px;padding:6px 10px;background:var(--sf);border-radius:7px">
+            <div style="width:5px;height:5px;border-radius:50%;background:var(--te);animation:vp 1s infinite;flex-shrink:0"></div>
+            <div style="font-size:9px;color:var(--t2)"><strong style="color:var(--t1)" id="counted-n">312</strong> אזרחים כבר נספרים. הקול שלך יכול להיספר עוד היום.</div>
+          </div>
+
+          <!-- ZK Steps — reframed -->
+          <div class="step-journey">
+            <div class="step-j">
+              <div class="step-j-n" style="background:var(--te0);color:var(--te)">1</div>
+              <div style="flex:1"><div class="step-j-verb" style="color:var(--te)">להתקין</div><div class="step-j-desc">ZKPassport · המידע נשאר רק במכשיר</div></div>
+            </div>
+            <div class="step-j">
+              <div class="step-j-n" style="background:var(--gd0);color:var(--gl)">2</div>
+              <div style="flex:1"><div class="step-j-verb" style="color:var(--gl)">להוכיח</div><div class="step-j-desc">סריקת דרכון · בלי לשתף פרטים</div></div>
+            </div>
+            <div class="step-j">
+              <div class="step-j-n" style="background:var(--el);color:var(--t2)">3</div>
+              <div style="flex:1"><div class="step-j-verb">להיספר</div><div class="step-j-desc">הוכחה נוצרת · הקול שלך נספר מעכשיו</div></div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="counted-cta" onclick="go(10)">להיספר</div>
+          <div class="counted-cta-sub">5 דקות · פעם אחת לכל החיים</div>
+          <div class="counted-dismiss">אולי אחר כך</div>
+        </div>
+        <div class="phone-nav">
+          <div class="pn-btn" onclick="go(8)">חזור →</div>
+          <div class="dots" id="d9"></div>
+          <div class="pn-btn gold" onclick="go(10)">← להיספר</div>
+        </div>
+      </div>
+
+      <!-- ════ S10: ZK SCAN ════ -->
+      <div class="slide" id="sl10">
+        <div style="height:18px;flex-shrink:0"></div>
+        <div class="zk-scan">
+          <div class="zk-glow"></div>
+          <div class="passport-wrap">
+            <div class="passport-scan"></div>
+            <div class="pp-em"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:28px;height:28px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"/></svg></div>
+          </div>
+          <div class="zks-h2">יוצר הוכחה פרטית</div>
+          <div class="zks-sub2">שום מידע לא יוצא מהטלפון — רק הוכחה מתמטית שאתה אדם אמיתי.</div>
+          <div class="proof-steps">
+            <div class="proof-step done"><div class="ps-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg></div><div class="ps-text">קריאת שבב NFC מהדרכון</div><div class="ps-st">✓</div></div>
+            <div class="proof-step done"><div class="ps-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd"/></svg></div><div class="ps-text">אימות חתימה ממשלתית</div><div class="ps-st">✓</div></div>
+            <div class="proof-step" id="ps3"><div class="ps-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd"/></svg></div><div class="ps-text">חישוב ZK Proof (ללא זהות)</div><div class="ps-st" id="ps3s" style="color:var(--t3)">—</div></div>
+            <div class="proof-step" id="ps4"><div class="ps-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:13px;height:13px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clip-rule="evenodd"/></svg></div><div class="ps-text">הקול שלך נספר · כל הפעילות סופרת</div><div class="ps-st" id="ps4s" style="color:var(--t3)">—</div></div>
+          </div>
+          <div class="proof-priv">
+            <div class="pp-h">מה שהשרת לא רואה</div>
+            <div class="pp-d">שם · ת.ז · כתובת · גיל · תמונה. רק: "הוכחה תקינה, אדם ייחודי, ישראלי."</div>
+          </div>
+          <div class="cast-btn" id="cast-btn" style="display:none">
+            <div class="btn btn-co" onclick="go(11)">הקול שלך נספר! ← ראה מה השגת</div>
+          </div>
+        </div>
+        <div class="phone-nav">
+          <div class="pn-btn" onclick="go(9)">חזור →</div>
+          <div class="dots" id="d10"></div>
+          <div class="pn-btn" id="next10" style="opacity:0" onclick="go(11)">← הבא</div>
+        </div>
+      </div>
+
+      <!-- ════ S11: CITIZEN + GLOBAL PRIDE (earned) ════ -->
+      <div class="slide" id="sl11">
+        <div class="s9-glow"></div>
+        <div class="cit-body">
+
+          <!-- GAP C: THE MANIFESTO — Clip 9 -->
+          <!-- Diverse Israelis with lit phones — CSS grid of glowing phone icons -->
+          <div style="background:#1C2029;border-radius:10px;border:1px solid rgba(228,174,88,0.35);padding:16px 12px 14px;margin-bottom:2px;text-align:center;">
+            <!-- THREE HEROICONS (MIT) - user-group · hand-raised · users -->
+            <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E4AE58" style="width:38px;height:38px;opacity:.85">
+                <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd"/>
+                <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E4AE58" style="width:52px;height:52px;opacity:1">
+                <path d="M10.5 1.875a1.125 1.125 0 0 1 2.25 0v8.219c.517.162 1.02.382 1.5.659V3.375a1.125 1.125 0 0 1 2.25 0v10.937a4.505 4.505 0 0 0-3.25 2.373 8.963 8.963 0 0 1 4-.935A.75.75 0 0 0 18 15v-2.266a3.368 3.368 0 0 1 .988-2.37 1.125 1.125 0 0 1 1.591 1.59 1.118 1.118 0 0 0-.329.79v3.006h-.005a6 6 0 0 1-1.752 4.007l-1.736 1.736a6 6 0 0 1-4.242 1.757H10.5a7.5 7.5 0 0 1-7.5-7.5V6.375a1.125 1.125 0 0 1 2.25 0v5.519c.46-.452.965-.832 1.5-1.141V3.375a1.125 1.125 0 0 1 2.25 0v6.526c.495-.1.997-.151 1.5-.151V1.875Z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E4AE58" style="width:38px;height:38px;opacity:.85">
+                <path d="M4.5 6.375a4.125 4.125 0 1 1 8.25 0 4.125 4.125 0 0 1-8.25 0ZM14.25 8.625a3.375 3.375 0 1 1 6.75 0 3.375 3.375 0 0 1-6.75 0ZM1.5 19.125a7.125 7.125 0 0 1 14.25 0v.003l-.001.119a.75.75 0 0 1-.363.63 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 0 1-.364-.63l-.001-.122ZM17.25 19.128l-.001.144a2.25 2.25 0 0 1-.233.96 10.088 10.088 0 0 0 5.06-1.01.75.75 0 0 0 .42-.643 4.875 4.875 0 0 0-6.957-4.611 8.586 8.586 0 0 1 1.71 5.157v.003Z"/>
+              </svg>
+            </div>
+            <div style="font-family:'Frank Ruhl Libre',serif;font-size:18px;font-weight:900;color:#E4AE58;line-height:1.25;margin-bottom:8px;">חוזרים הביתה</div>
+            <div style="font-family:'Frank Ruhl Libre',serif;font-size:30px;font-weight:900;color:#E4AE58;letter-spacing:2px;margin-bottom:4px;">בית</div>
+            <div style="font-size:9px;color:#36424F;letter-spacing:1.5px;">BEIT · بيت · Дом</div>
+          </div>
+
+          <!-- Founding number -->
+          <div style="text-align:center;padding:10px 0 2px">
+            <div class="cit-n">#3,848</div>
+            <div class="cit-nl">דור המייסדים · יהודים וערבים — חוזרים הביתה ביחד</div>
+          </div>
+
+          <!-- What they achieved -->
+          <div class="retro-card">
+            <div class="retro-h">✓ מה שעשית — נספר עכשיו</div>
+            <div class="retro-row"><div class="retro-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z" clip-rule="evenodd"/></svg></div><div class="retro-text">קולך על ₪400M — נספר. אתה 313 מ-847.</div></div>
+            <div class="retro-row"><div class="retro-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M12 7.5a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z"/><path fill-rule="evenodd" d="M1.5 4.875C1.5 3.839 2.34 3 3.375 3h17.25c1.035 0 1.875.84 1.875 1.875v9.75c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 14.625v-9.75ZM8.25 9.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM18.75 9a.75.75 0 0 0-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 0 0 .75-.75V9.75a.75.75 0 0 0-.75-.75h-.008ZM4.5 9.75A.75.75 0 0 1 5.25 9h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75H5.25a.75.75 0 0 1-.75-.75V9.75Z" clip-rule="evenodd"/><path d="M2.25 18a.75.75 0 0 0 0 1.5c5.4 0 10.63.722 15.6 2.075 1.19.324 2.4-.558 2.4-1.82V18.75a.75.75 0 0 0-.75-.75H2.25Z"/></svg></div><div class="retro-text">₪39 לילדי המלחמה — 3 שעות טיפול.</div></div>
+            <div class="retro-row"><div class="retro-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z"/><path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 .634-.74A49.109 49.109 0 0 1 12 9c2.59 0 5.134.202 7.616.592a.75.75 0 0 1 .634.74Zm-7.5 2.418a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Zm3-.75a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0v-6.75a.75.75 0 0 1 .75-.75ZM9 12.75a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Z" clip-rule="evenodd"/><path d="M12 7.875a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z"/></svg></div><div class="retro-text">847 הצבעות — כולן נספרות ברטרו.</div></div>
+            <div class="retro-row"><div class="retro-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--te)" style="width:12px;height:12px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M5.636 4.575a.75.75 0 0 1 0 1.06 9 9 0 0 0 0 12.73.75.75 0 0 1-1.06 1.06c-4.101-4.1-4.101-10.75 0-14.85a.75.75 0 0 1 1.06 0Zm12.728 0a.75.75 0 0 1 1.06 0c4.101 4.1 4.101 10.75 0 14.85a.75.75 0 1 1-1.06-1.06 9 9 0 0 0 0-12.73.75.75 0 0 1 0-1.06ZM7.757 6.697a.75.75 0 0 1 0 1.06 6 6 0 0 0 0 8.486.75.75 0 0 1-1.06 1.06 7.5 7.5 0 0 1 0-10.606.75.75 0 0 1 1.06 0Zm8.486 0a.75.75 0 0 1 1.06 0 7.5 7.5 0 0 1 0 10.606.75.75 0 0 1-1.06-1.06 6 6 0 0 0 0-8.486.75.75 0 0 1 0-1.06ZM9.879 8.818a.75.75 0 0 1 0 1.06 3 3 0 0 0 0 4.243.75.75 0 1 1-1.061 1.061 4.5 4.5 0 0 1 0-6.364.75.75 0 0 1 1.06 0Zm4.242 0a.75.75 0 0 1 1.061 0 4.5 4.5 0 0 1 0 6.364.75.75 0 0 1-1.06-1.06 3 3 0 0 0 0-4.243.75.75 0 0 1 0-1.061ZM12 10.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" clip-rule="evenodd"/></svg></div><div class="retro-text">נציג AI שממשיך לנלחם בשמך · 24/7.</div></div>
+          </div>
+          <!-- Live veto -->
+          <div class="assembly-mini">
+            <div class="asm-h">הקול שלך · חי</div>
+            <div class="asm-bar-row">
+              <div class="asm-label" style="color:var(--te)">נספרים</div>
+              <div class="bar" style="flex:1;background:rgba(199,82,82,.12)"><div class="bar-f" style="width:37%;background:var(--co)"></div></div>
+              <div class="asm-pct" style="color:var(--co)">313</div>
+            </div>
+            <div style="font-size:8px;color:var(--t3);margin-top:3px">נדרש: 847 · בסף: ועדת ביקורת + הודעה לכנסת</div>
+          </div>
+          <!-- Global pride -->
+          <div class="pride-card">
+            <div class="pride-h"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--gl)" style="width:13px;height:13px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M21.721 12.752a9.711 9.711 0 0 0-.945-5.003 12.754 12.754 0 0 1-4.339 2.708 18.991 18.991 0 0 1-.214 4.772 17.165 17.165 0 0 0 5.498-2.477ZM14.634 15.55a17.324 17.324 0 0 0 .332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 0 0 .332 4.647 17.385 17.385 0 0 0 5.268 0ZM9.772 17.119a18.963 18.963 0 0 0 4.456 0A17.182 17.182 0 0 1 12 21.724a17.18 17.18 0 0 1-2.228-4.605ZM7.777 15.23a18.87 18.87 0 0 1-.214-4.774 12.753 12.753 0 0 1-4.34-2.708 9.711 9.711 0 0 0-.944 5.004 17.165 17.165 0 0 0 5.498 2.477ZM21.356 14.752a9.765 9.765 0 0 1-7.478 6.817 18.64 18.64 0 0 0 1.988-4.718 18.627 18.627 0 0 0 5.49-2.098ZM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 0 0 1.988 4.718 9.765 9.765 0 0 1-7.478-6.816ZM13.878 2.43a9.755 9.755 0 0 1 6.116 3.986 11.267 11.267 0 0 1-3.746 2.504 18.63 18.63 0 0 0-2.37-6.49ZM12 2.276a17.152 17.152 0 0 1 2.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0 1 12 2.276ZM10.122 2.43a18.629 18.629 0 0 0-2.37 6.49 11.266 11.266 0 0 1-3.746-2.504 9.754 9.754 0 0 1 6.116-3.985Z"/></svg> ישראל מובילה</div>
+            <div class="pride-sub">כל אזרח שנספר, תרם, הצביע — הפך ישראל למודל שהעולם מחכה לו.</div>
+            <div class="pride-flags">
+              <span class="pride-flag">🇬🇧 בריטניה עוקבת</span>
+              <span class="pride-flag">🇩🇪 גרמניה בודקת</span>
+              <span class="pride-flag">🇺🇸 ארה"ב מתעניינת</span>
+              <span class="pride-flag">🇯🇵 יפן בדיונים</span>
+            </div>
+          </div>
+          <!-- Quarterly civic summary -->
+          <div style="background:var(--sf);border:1px solid var(--b1);border-radius:10px;padding:10px 12px">
+            <div style="font-size:9px;font-weight:800;color:var(--t1);margin-bottom:6px">מד ההשפעה שלך</div>
+            <div style="display:flex;gap:8px;text-align:center">
+              <div style="flex:1"><div style="font-size:16px;font-weight:900;color:var(--gl)">47</div><div style="font-size:7px;color:var(--t3)">הצבעות</div></div>
+              <div style="flex:1"><div style="font-size:16px;font-weight:900;color:var(--te)">23</div><div style="font-size:7px;color:var(--t3)">הצטרפו בזכותך</div></div>
+              <div style="flex:1"><div style="font-size:16px;font-weight:900;color:var(--bl)">89%</div><div style="font-size:7px;color:var(--t3)">דיוק הנציג</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-nav">
+          <div class="pn-btn" onclick="go(10)">חזור →</div>
+          <div class="dots" id="d11"></div>
+          <div class="pn-btn gold" onclick="go(0)">↺ מתחילה</div>
+        </div>
+      </div>
+
+    </div><!-- /sim-screen -->
+  </div><!-- /sim-phone -->
+
+  <!-- SIDEBAR -->
+  <div class="sim-sb">
+    <div class="sb-phase">כניסה אישית</div>
+    <div class="sbb on" id="b0" onclick="go(0)">
+      <div class="sbb-n" style="color:var(--co)">0 · כניסה</div>
+      <div class="sbb-name">חוזרים הביתה — אני חלק מהשינוי</div>
+      <div class="sbb-d">כאב אישי קודם: דיור, עול, ילדים. מיד אחריו — "מה אנחנו עושים שלא נעשה לפנינו" (כמו בצילום). מונה דור מייסדים. CTA: "אני חלק מדור המייסדים."</div>
+    </div>
+    <div class="sbb" id="b1" onclick="go(1)">
+      <div class="sbb-n" style="color:var(--te)">1 · אימון AI</div>
+      <div class="sbb-name">Swipe — כותב ערכים</div>
+      <div class="sbb-d">4 קלפים עם שאלות ישראליות אמיתיות — גיוס, שיקום ילדים, שכירות, שחיתות. גרור ימין/שמאל/מעלה. קלף 5 מציג מה ה-AI למד. גרירה = הצבעה = הצוואה הפוליטית שלך.</div>
+    </div>
+    <div class="sb-phase">נציג נלחם</div>
+    <div class="sbb" id="b2" onclick="go(2)">
+      <div class="sbb-n" style="color:var(--gd)">2 · בגידה</div>
+      <div class="sbb-name">AI מוצא ₪400M שנגנבו</div>
+      <div class="sbb-d">מחובר ישירות לסדר העדיפויות שבחרת. "הכסף שלך, שאמור ללכת לילדים, הולך למשרד לא פעיל."</div>
+    </div>
+    <div class="sbb" id="b3" onclick="go(3)">
+      <div class="sbb-n" style="color:var(--bl)">3 · Swipe</div>
+      <div class="sbb-name">הצבעות על שיקום</div>
+      <div class="sbb-d">שאלות קשורות ישירות לבחירות שלך — טיפול לילדים, שכירות, גיוס. לא אבסטרקט — קרוב.</div>
+    </div>
+    <div class="sb-phase">האפליקציה היומית</div>
+    <div class="sbb" id="b4" onclick="go(4)">
+      <div class="sbb-n" style="color:var(--pu)">4 · דיון</div>
+      <div class="sbb-name">דיון — pol.is + הסכמות חוצות קבוצות</div>
+      <div class="sbb-d">הצהרות קצרות, הצבעות, ראיות, גשר בזהב. ללא תגובות — ללא טרולים. גילוי הסכמה חדש.</div>
+    </div>
+    <div class="sbb" id="b5" onclick="go(5)">
+      <div class="sbb-n" style="color:var(--te)">5 · בית</div>
+      <div class="sbb-name">בית — 3 סוויפים ליום + סטטוס נציג</div>
+      <div class="sbb-d">3 שאלות יומיות שמאמנות את הנציג. סטטוס נציג, חשיפת השבוע, טיקר חי.</div>
+    </div>
+    <div class="sbb" id="b6" onclick="go(6)">
+      <div class="sbb-n" style="color:var(--bl)">6 · חוק</div>
+      <div class="sbb-name">צלילה לחוק — הנציג מצא סתירה → מייל לח"כ</div>
+      <div class="sbb-d">הנציג מוצא סעיף שסותר את ערכיך. בחירה: שלח מייל לח"כ או תקן את הנציג.</div>
+    </div>
+    <div class="sbb" id="b7" onclick="go(7)">
+      <div class="sbb-n" style="color:var(--gl)">7 · שבת</div>
+      <div class="sbb-name">כרטיס שבת — סיכום שבועי</div>
+      <div class="sbb-d">3 הצבעות השבוע, סתירת ח"כ, הסכמה מפתיעה, שאלה לשולחן השבת.</div>
+    </div>
+    <div class="sb-phase">פועל</div>
+    <div class="sbb" id="b8" onclick="go(8)">
+      <div class="sbb-n" style="color:var(--gd)">8 · מימון</div>
+      <div class="sbb-name">עמותות אמיתיות · מכפיל ×30</div>
+      <div class="sbb-d">נט"ל, הגל שלי — עמותות אמיתיות, סעיף 46, זיכוי מס 35%. מכפיל קהל-מימון: ₪10 = ₪300 בפועל.</div>
+    </div>
+    <div class="sb-phase">להיספר → ZK</div>
+    <div class="sbb" id="b9" onclick="go(9)">
+      <div class="sbb-n" style="color:var(--co)">9 · ZK Gate</div>
+      <div class="sbb-name">להיספר — הקול שלך ממתין</div>
+      <div class="sbb-d">גאווה על מה שעשית, חשיפת הפער — ו-CTA להיספר. 5 דקות · פעם אחת לכל החיים.</div>
+    </div>
+    <div class="sbb" id="b10" onclick="go(10)">
+      <div class="sbb-n" style="color:var(--te)">10 · סריקה</div>
+      <div class="sbb-name">ZK Proof נוצרת</div>
+      <div class="sbb-d">אנימציה חיה. "מה שהשרת לא רואה." הקול נספר אוטומטית כשמסתיים.</div>
+    </div>
+    <div class="sb-phase">גמול — גאווה גלובלית</div>
+    <div class="sbb" id="b11" onclick="go(11)">
+      <div class="sbb-n" style="color:var(--gl)">11 · אזרח #3,848</div>
+      <div class="sbb-name">בנית ישראל אחרת</div>
+      <div class="sbb-d">כל הפעילות נספרת רטרואקטיבית. אז — ורק אז — הגאווה הגלובלית: "ישראל מובילה, ואתה עשית את זה."</div>
+    </div>
+  </div>
+
+</div><!-- /sim-wrap -->
+
+<script>
+let cur = 0;
+const N = 12;
+const sls = document.querySelectorAll('.slide');
+const bts = document.querySelectorAll('.sbb');
+
+function go(n) {
+  sls[cur].classList.remove('active');
+  bts[cur].classList.remove('on');
+  sls[n].classList.add('active');
+  bts[n].classList.add('on');
+  for (let i = 0; i < N; i++) {
+    const d = document.getElementById('d' + i);
+    if (d) makeDots(d, n);
+  }
+  cur = n;
+  if (n === 10) startScan();
+}
+
+function makeDots(el, active) {
+  el.innerHTML = '';
+  const w = 5, h = Math.floor(w / 2);
+  let s = Math.max(0, active - h);
+  let e = Math.min(N - 1, s + w - 1);
+  s = Math.max(0, e - w + 1);
+  for (let i = s; i <= e; i++) {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === active ? ' on' : '');
+    el.appendChild(d);
+  }
+}
+for (let i = 0; i < N; i++) { const d = document.getElementById('d' + i); if (d) makeDots(d, 0); }
+
+// Knesset seat grid
+(function(){
+  const g = document.getElementById('knesset-seats');
+  if(!g) return;
+  const colors = ['#4470B0','#27B38E','#C8953A','#7258A2','#C75252'];
+  for(let i=0;i<120;i++){
+    const s = document.createElement('div');
+    s.style.cssText = `width:9px;height:9px;border-radius:2px;`;
+    if(i < 46){
+      s.style.background = colors[Math.floor(i/10)%colors.length];
+      s.style.opacity = '.8';
+    } else {
+      s.style.background = 'var(--t3)';
+      s.style.opacity = '.25';
+    }
+    g.appendChild(s);
+  }
+})();
+let fc = 3847;
+setInterval(() => {
+  if (Math.random() < 0.28) { fc++; const el = document.getElementById('fc'); if (el) el.textContent = fc.toLocaleString(); }
+}, 3000);
+let cc = 312;
+setInterval(() => {
+  if (Math.random() < 0.3) { cc++; const el = document.getElementById('counted-n'); if (el) el.textContent = cc.toLocaleString(); }
+}, 4000);
+
+/* ══ TRAINING SWIPE ENGINE ══ */
+const TRAIN_N = 4; // cards 0-3 (card 4 is the summary)
+let tCur = 0;
+const tAnswers = {}; // {0:'r',1:'l',2:'u',...}
+const tLabels = {
+  0: { r:'בעד', l:'נגד', u:'מורכב' },
+  1: { r:'בעד', l:'נגד', u:'מורכב' },
+  2: { r:'בעד', l:'נגד', u:'מורכב' },
+  3: { r:'בעד', l:'נגד', u:'מורכב' },
+};
+const tResultIds = ['tl-kids','tl-rent','tl-gov'];
+// What each answer means for the summary (card index 1=kids,2=rent,3=gov)
+function tAnswerLabel(dir){ return dir==='r'?'<strong style="color:var(--te)">בעד</strong>':dir==='l'?'<strong style="color:var(--co)">נגד</strong>':'<strong style="color:var(--gl)">מורכב</strong>'; }
+
+let tDragging=false, tStartX=0, tStartY=0, tCurX=0, tCurY=0;
+const tArea = document.getElementById('train-area');
+
+function tGetCard(n){ return document.getElementById('tc'+n); }
+function tGetInner(n){ return tGetCard(n)?.querySelector('.tcard-inner'); }
+function tGetInd(n,d){ return document.getElementById('ti'+n+d); }
+
+function tActivate(n){
+  for(let i=0;i<=4;i++){
+    const c=tGetCard(i);
+    if(c) c.classList.toggle('active', i===n);
+  }
+  for(let i=0;i<5;i++){
+    const d=document.getElementById('td'+i);
+    if(d){ d.classList.toggle('on', i===n); }
+  }
+}
+
+function tSwipeDone(n, dir){
+  tAnswers[n] = dir;
+  const inner = tGetInner(n);
+  if(!inner) return;
+  inner.style.transition = 'transform .3s ease, opacity .25s';
+  const x = dir==='r' ? 300 : dir==='l' ? -300 : 0;
+  const y = dir==='u' ? -300 : 0;
+  const rot = dir==='r' ? 15 : dir==='l' ? -15 : 0;
+  inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
+  inner.style.opacity = '0';
+  setTimeout(() => {
+    tCur = n + 1;
+    if(tCur < TRAIN_N){ tActivate(tCur); tBindSwipe(tCur); }
+    else {
+      // Show summary card
+      tActivate(4);
+      // Populate learned rows
+      const el1=document.getElementById('tl-kids'); if(el1) el1.innerHTML=tAnswerLabel(tAnswers[1]);
+      const el2=document.getElementById('tl-rent'); if(el2) el2.innerHTML=tAnswerLabel(tAnswers[2]);
+      const el3=document.getElementById('tl-gov');  if(el3) el3.innerHTML=tAnswerLabel(tAnswers[3]);
+    }
+  }, 320);
+}
+
+function tBindSwipe(n){
+  const inner = tGetInner(n);
+  if(!inner) return;
+  inner.style.transform=''; inner.style.opacity='1'; inner.style.transition='';
+
+  function onDown(e){
+    tDragging=true; inner.classList.add('dragging');
+    tStartX = e.touches?e.touches[0].clientX:e.clientX;
+    tStartY = e.touches?e.touches[0].clientY:e.clientY;
+    tCurX=0; tCurY=0;
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchmove', onMove, {passive:false});
+    document.addEventListener('touchend', onUp);
+  }
+  function onMove(e){
+    if(!tDragging) return;
+    e.preventDefault&&e.preventDefault();
+    tCurX=(e.touches?e.touches[0].clientX:e.clientX)-tStartX;
+    tCurY=(e.touches?e.touches[0].clientY:e.clientY)-tStartY;
+    inner.style.transform=`translateX(${tCurX}px) translateY(${tCurY}px) rotate(${tCurX*0.06}deg)`;
+    inner.style.transition='none';
+    // indicators
+    const thresh=40;
+    const r=tGetInd(n,'r'), l=tGetInd(n,'l'), u=tGetInd(n,'u');
+    const xR=Math.min(Math.max(tCurX/thresh,0),1);
+    const xL=Math.min(Math.max(-tCurX/thresh,0),1);
+    const yU=Math.min(Math.max(-tCurY/thresh,0),1);
+    if(r) r.style.opacity=xR; if(l) l.style.opacity=xL; if(u) u.style.opacity=yU;
+    if(tCurX>0) inner.style.borderColor=`rgba(39,179,142,${xR*.7})`;
+    else if(tCurX<0) inner.style.borderColor=`rgba(199,82,82,${xL*.7})`;
+    else if(tCurY<-thresh*.5) inner.style.borderColor=`rgba(228,174,88,${yU*.7})`;
+    else inner.style.borderColor='';
+  }
+  function onUp(){
+    if(!tDragging) return;
+    tDragging=false; inner.classList.remove('dragging');
+    document.removeEventListener('mousemove',onMove); document.removeEventListener('mouseup',onUp);
+    document.removeEventListener('touchmove',onMove); document.removeEventListener('touchend',onUp);
+    const thresh=70;
+    if(tCurX>thresh) tSwipeDone(n,'r');
+    else if(tCurX<-thresh) tSwipeDone(n,'l');
+    else if(tCurY<-thresh) tSwipeDone(n,'u');
+    else {
+      // snap back
+      inner.style.transition='transform .45s cubic-bezier(.175,.885,.32,1.375), opacity .3s, border-color .3s';
+      inner.style.transform=''; inner.style.borderColor='';
+      [tGetInd(n,'r'),tGetInd(n,'l'),tGetInd(n,'u')].forEach(el=>{if(el)el.style.opacity=0;});
+    }
+    tCurX=0; tCurY=0;
+  }
+  inner.addEventListener('mousedown', onDown);
+  inner.addEventListener('touchstart', onDown, {passive:true});
+}
+
+// Single go override: handles training init (n=1)
+const _baseGo = go;
+go = function(n){
+  _baseGo(n);
+  if(n===1 && tCur===0){ tActivate(0); tBindSwipe(0); }
+};
+if(document.getElementById('sl1').classList.contains('active')){ tActivate(0); tBindSwipe(0); }
+
+// Swipe
+let dragging = false, startX = 0, curX = 0;
+const card = document.getElementById('sc');
+const svY = document.getElementById('sv-y');
+const svN = document.getElementById('sv-n');
+const swMsg = document.getElementById('sw-msg');
+
+function dragStart(e) {
+  if (!card || card.classList.contains('gone-r') || card.classList.contains('gone-l')) return;
+  dragging = true;
+  startX = e.touches ? e.touches[0].clientX : e.clientX;
+  card.classList.add('dragging');
+  document.addEventListener('mousemove', onDrag);
+  document.addEventListener('mouseup', endDrag);
+  document.addEventListener('touchmove', onDrag, {passive: false});
+  document.addEventListener('touchend', endDrag);
+}
+function onDrag(e) {
+  if (!dragging) return;
+  e.preventDefault && e.preventDefault();
+  curX = (e.touches ? e.touches[0].clientX : e.clientX) - startX;
+  card.style.transform = `translateX(${curX}px) rotate(${curX * 0.055}deg)`;
+  const r = Math.min(Math.abs(curX) / 80, 1);
+  if (curX > 0) { svY.style.opacity = r; svN.style.opacity = 0; card.style.borderColor = `rgba(39,179,142,${r*.6})`; }
+  else { svN.style.opacity = r; svY.style.opacity = 0; card.style.borderColor = `rgba(199,82,82,${r*.6})`; }
+}
+function endDrag() {
+  if (!dragging) return;
+  dragging = false;
+  card.classList.remove('dragging');
+  document.removeEventListener('mousemove', onDrag);
+  document.removeEventListener('mouseup', endDrag);
+  document.removeEventListener('touchmove', onDrag);
+  document.removeEventListener('touchend', endDrag);
+  if (curX > 80) { card.classList.add('gone-r'); swMsg.textContent = '✓ בעד — הנציג עודכן'; swMsg.style.color = 'var(--te)'; }
+  else if (curX < -80) { card.classList.add('gone-l'); swMsg.textContent = '✗ נגד — הנציג עודכן'; swMsg.style.color = 'var(--co)'; }
+  else { card.style.transform = ''; card.style.borderColor = ''; svY.style.opacity = 0; svN.style.opacity = 0; }
+  curX = 0;
+}
+
+function voteStmt(btn) {
+  const row = btn.closest('.dstmt-btns');
+  row.querySelectorAll('.dsb').forEach(b => b.classList.remove('voted'));
+  btn.classList.add('voted');
+  btn.textContent = '✓ ' + btn.textContent.replace('✓ ','');
+}
+
+function doFund(el, amt) {
+  if (el.dataset.done) return;
+  el.dataset.done = '1';
+  el.textContent = '✓ ' + amt + ' נרשמה!';
+  el.style.background = 'var(--te)';
+  el.style.color = '#001a14';
+}
+
+// ZK scan
+function startScan() {
+  const ps3 = document.getElementById('ps3'), ps4 = document.getElementById('ps4');
+  const ps3s = document.getElementById('ps3s'), ps4s = document.getElementById('ps4s');
+  const cb = document.getElementById('cast-btn'), n10 = document.getElementById('next10');
+  ps3.className = 'proof-step'; ps4.className = 'proof-step';
+  ps3s.textContent = '—'; ps3s.style.color = 'var(--t3)';
+  ps4s.textContent = '—'; ps4s.style.color = 'var(--t3)';
+  if (cb) cb.style.display = 'none'; if (n10) n10.style.opacity = '0';
+  setTimeout(() => { ps3.className = 'proof-step active'; ps3s.textContent = '...'; ps3s.style.color = 'var(--te)'; }, 400);
+  setTimeout(() => { ps3.className = 'proof-step done'; ps3s.textContent = '✓'; ps4.className = 'proof-step active'; ps4s.textContent = '...'; ps4s.style.color = 'var(--te)'; }, 2000);
+  setTimeout(() => { ps4.className = 'proof-step done'; ps4s.textContent = '✓'; if (cb) cb.style.display = 'block'; if (n10) n10.style.opacity = '1'; }, 3600);
+}
+</script>
+</body>
+</html>
