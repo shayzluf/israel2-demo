@@ -601,7 +601,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
   <div class="arc-step">
     <div class="arc-n" style="color:var(--bl)">סוכנות</div>
     <div class="arc-h">סוכנות</div>
-    <div class="arc-d">הקול שלך מצטרף. בפעם הראשונה — נספר.</div>
+    <div class="arc-d">הקול שלך מצטרף. בפעם הראשונה — נרשם ומחכה להיספר.</div>
     <div class="arc-e" style="color:var(--bl)">רגש: כוח + שייכות</div>
   </div>
   <div class="arc-step">
@@ -669,7 +669,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <span style="color:var(--te);font-weight:900">&#10003;</span> זהות מוכחת ללא חשיפה — ZK Passport
               </div>
               <div style="display:flex;align-items:center;gap:6px;font-size:9px;color:var(--t2)">
-                <span style="color:var(--te);font-weight:900">&#10003;</span> הצבעה אנונימית שנספרת — לראשונה
+                <span style="color:var(--te);font-weight:900">&#10003;</span> הצבעה אנונימית שנרשמת — נספרת אחרי אימות
               </div>
               <div style="display:flex;align-items:center;gap:6px;font-size:9px;color:var(--t2)">
                 <span style="color:var(--te);font-weight:900">&#10003;</span> תוצאות משוקללות — כל ישראל, לא רק מי שהוריד ראשון
@@ -1823,7 +1823,7 @@ function endDrag() {
   document.removeEventListener('mouseup', endDrag);
   document.removeEventListener('touchmove', onDrag);
   document.removeEventListener('touchend', endDrag);
-  if (curX > 80) { card.classList.add('gone-r'); swMsg.innerHTML = '&#10003; הקול שלך נספר — הצטרפת ל-12 מהאזור שלך, 847 סה"כ היום'; swMsg.style.color = 'var(--te)'; }
+  if (curX > 80) { card.classList.add('gone-r'); swMsg.innerHTML = '&#10003; ההצבעה נרשמה — 12 מהאזור שלך, 847 סה"כ היום'; swMsg.style.color = 'var(--te)'; }
   else if (curX < -80) { card.classList.add('gone-l'); swMsg.innerHTML = '&#10007; נגד — הפרופיל עודכן'; swMsg.style.color = 'var(--co)'; }
   else { card.style.transform = ''; card.style.borderColor = ''; svY.style.opacity = 0; svN.style.opacity = 0; }
   curX = 0;
