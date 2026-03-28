@@ -485,10 +485,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
   border:1px solid var(--gn);border-radius:10px;padding:10px 12px;
   animation:toastIn .5s ease forwards;}
 @keyframes toastIn{from{transform:translateY(-20px);opacity:0}to{transform:translateY(0);opacity:1}}
-.tribal-bars{display:flex;gap:3px;margin-top:6px;}
-.tribal-bar{flex:1;text-align:center;}
-.tb-fill{height:24px;border-radius:4px 4px 0 0;margin-bottom:2px;}
-.tb-label{font-size:6px;color:var(--t3);}
+.tribal-bars{display:flex;gap:3px;margin-top:6px;align-items:flex-end;height:40px;}
+.tribal-bar{flex:1;text-align:center;display:flex;flex-direction:column;justify-content:flex-end;}
+.tb-fill{border-radius:4px 4px 0 0;margin-bottom:2px;}
 .tb-pct{font-size:8px;font-weight:800;}
 
 /* Transition label */
@@ -972,18 +971,20 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div style="font-size:10px;color:var(--t2);line-height:1.4;margin-bottom:6px">תקציב שיקום חייב להיות שקוף ופתוח לציבור — ללא יוצא מן הכלל</div>
               <div style="font-size:8px;color:var(--co);font-weight:700;margin-bottom:6px">אף מפלגה בכנסת לא הצביעה בעד</div>
               <div class="tribal-bars">
-                <div class="tribal-bar"><div class="tb-fill" style="height:32px;background:var(--te)"></div><div class="tb-pct" style="color:var(--te)">84%</div><div class="tb-label">קבוצה א</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">79%</div><div class="tb-label">קבוצה ב</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:29px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">76%</div><div class="tb-label">קבוצה ג</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:33px;background:var(--gl)"></div><div class="tb-pct" style="color:var(--gl)">83%</div><div class="tb-label">קבוצה ד</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:31px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">80%</div><div class="tb-label">קבוצה ה</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:32px;background:var(--te)"></div><div class="tb-pct" style="color:var(--te)">84%</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">79%</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:29px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">76%</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:33px;background:var(--gl)"></div><div class="tb-pct" style="color:var(--gl)">83%</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:31px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">80%</div></div>
+              </div>
+              <div style="font-size:8px;color:var(--t3);text-align:center;margin-top:3px">5 קבוצות שונות. אחוז הסכמה דומה. מכל קצוות המפה.</div>
               </div>
             </div>
             <!-- Statement 1: high agreement -->
             <div class="dstmt">
               <div class="dstmt-txt">ילדים צריכים טיפול נפשי מיידי — לפני כל ויכוח תקציבי אחר</div>
               <div class="dstmt-meta">
-                <span class="dstmt-grp">קבוצה ג׳</span>
+                <span class="dstmt-grp">מהצד השני של המפה</span>
                 <span>534 הצביעו</span>
                 <span style="color:var(--te);font-weight:700">84% מסכימים</span>
               </div>
@@ -1011,7 +1012,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="dstmt">
               <div class="dstmt-txt">הכפרים החקלאיים שנפגעו צריכים לקבל קדימות על פני שיקום ערים — הם פגיעים יותר</div>
               <div class="dstmt-meta">
-                <span class="dstmt-grp">קבוצה א׳</span>
+                <span class="dstmt-grp">קרוב/ה אליך במפה</span>
                 <span>312 הצביעו</span>
                 <span style="color:var(--bl);font-weight:700">48% לא מסכימים</span>
                 <span style="font-size:7px;padding:2px 6px;background:var(--co0);color:var(--co);border-radius:99px;font-weight:700">4 ביקשו ראיות</span>
