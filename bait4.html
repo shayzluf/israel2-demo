@@ -424,6 +424,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .tcard-q{font-size:16px;font-weight:700;color:var(--t1);line-height:1.55;text-align:center;}
 .tcard-meta{font-size:10px;color:var(--t3);text-align:center;padding-top:8px;border-top:1px solid var(--b0);}
 .tcard-ai{font-size:9px;color:var(--te);text-align:center;}
+.tcard-more{font-size:8px;color:var(--bl);text-align:center;cursor:pointer;padding:2px 0;opacity:.7;transition:opacity .15s;}
+.tcard-more:hover{opacity:1;text-decoration:underline;}
 .tind{
   position:absolute;top:12px;font-size:10px;font-weight:800;padding:4px 10px;
   border-radius:99px;opacity:0;transition:opacity .12s;z-index:5;letter-spacing:.5px;
@@ -700,6 +702,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-q">שירות צבאי חובה לכולם — כולל חרדים וערבים</div>
               <div class="tcard-meta"><span dir="ltr">143,892</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מחכה לתשובתך</div>
+              <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
             </div>
           </div>
           <!-- CARD 1 — INFERENCE: Shabbat Transport -->
@@ -713,6 +716,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-q">תחבורה ציבורית צריכה לפעול בשבת</div>
               <div class="tcard-meta"><span dir="ltr">168,441</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מחכה לתשובתך</div>
+              <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
             </div>
           </div>
           <!-- CARD 2 — INFERENCE: Settlement Expansion -->
@@ -726,6 +730,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-q">להרחיב את ההתנחלויות ביהודה ושומרון</div>
               <div class="tcard-meta"><span dir="ltr">131,207</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מחכה לתשובתך</div>
+              <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
             </div>
           </div>
           <!-- CARD 3 — CONSENSUS SWIPE: Mental Health First Aid -->
@@ -739,6 +744,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-q">בתי ספר צריכים ללמד עזרה ראשונה נפשית</div>
               <div class="tcard-meta"><span dir="ltr">156,338</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
+              <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
             </div>
           </div>
           <!-- CARD 3R — CONSENSUS RESULT #1 (tap to continue) -->
@@ -771,6 +777,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-q">להכיר בנישואים אזרחיים בישראל</div>
               <div class="tcard-meta"><span dir="ltr">152,109</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
+              <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
             </div>
           </div>
           <!-- CARD 5 — INFERENCE: PA Negotiations -->
@@ -784,6 +791,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-q">ישראל צריכה לנהל משא ומתן עם הרשות הפלסטינית</div>
               <div class="tcard-meta"><span dir="ltr">139,876</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
+              <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
             </div>
           </div>
           <!-- CARD 6 — INFERENCE: Jewish Heritage Studies -->
@@ -797,6 +805,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-q">ללמד מורשת יהודית בכל בתי הספר הממלכתיים</div>
               <div class="tcard-meta"><span dir="ltr">112,543</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
+              <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
             </div>
           </div>
           <!-- CARD 7 — CONSENSUS SWIPE: Insurance vs Doctors -->
@@ -810,6 +819,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-q">לאסור על חברות ביטוח לדחות טיפול שרופא אישר</div>
               <div class="tcard-meta"><span dir="ltr">147,221</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
+              <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
             </div>
           </div>
           <!-- CARD 7R — CONSENSUS RESULT #2 (tap to continue) -->
@@ -916,6 +926,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div class="tcard-q">מימון ציבורי לטיפול נפשי בבתי הספר — בעד או נגד?</div>
                 <div class="tcard-meta">81% מכל הקבוצות כבר הצביעו בעד · <span dir="ltr">147,382</span> הצביעו</div>
                 <div class="tcard-ai">הפרופיל שלך: מתעדכן בזמן אמת</div>
+                <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
               </div>
             </div>
             <!-- Result after swipe -->
@@ -965,7 +976,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div style="width:11%;background:var(--t3)"></div>
             </div>
             <div style="display:flex;justify-content:space-between;margin-top:4px;font-size:8px;color:var(--t3)">
-              <span>מסכים 68%</span><span>לא מסכים 21%</span><span>עובר 11%</span>
+              <span>מסכים 68%</span><span>לא מסכים 21%</span><span>נמנע 11%</span>
             </div>
           </div>
           <div style="flex:1;overflow-y:auto;padding:9px 11px;display:flex;flex-direction:column;gap:7px;scrollbar-width:none">
@@ -995,7 +1006,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="dstmt-btns">
                 <button class="dsb dsb-y" onclick="voteStmt(this)">מסכים</button>
                 <button class="dsb dsb-n" onclick="voteStmt(this)">לא מסכים</button>
-                <button class="dsb dsb-p" onclick="voteStmt(this)">עובר</button>
+                <button class="dsb dsb-p" onclick="voteStmt(this)">נמנע</button>
+                <button class="dsb" style="color:var(--bl);border-color:var(--bl);font-size:8px">ספר לי עוד</button>
               </div>
             </div>
             <!-- Statement 2: cross-group bridge -->
@@ -1009,7 +1021,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="dstmt-btns">
                 <button class="dsb dsb-y" onclick="voteStmt(this)">מסכים</button>
                 <button class="dsb dsb-n" onclick="voteStmt(this)">לא מסכים</button>
-                <button class="dsb dsb-p" onclick="voteStmt(this)">עובר</button>
+                <button class="dsb dsb-p" onclick="voteStmt(this)">נמנע</button>
+                <button class="dsb" style="color:var(--bl);border-color:var(--bl);font-size:8px">ספר לי עוד</button>
               </div>
             </div>
             <!-- Statement 3: contested -->
@@ -1024,7 +1037,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="dstmt-btns">
                 <button class="dsb dsb-y" onclick="voteStmt(this)">מסכים</button>
                 <button class="dsb dsb-n" onclick="voteStmt(this)">לא מסכים</button>
-                <button class="dsb dsb-p" onclick="voteStmt(this)">עובר</button>
+                <button class="dsb dsb-p" onclick="voteStmt(this)">נמנע</button>
+                <button class="dsb" style="color:var(--bl);border-color:var(--bl);font-size:8px">ספר לי עוד</button>
               </div>
             </div>
             <!-- Add statement -->
@@ -1083,6 +1097,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div class="tcard-tag" style="background:var(--gd0);color:var(--gl)">שאלת ערכים</div>
                 <div class="tcard-q" style="font-size:12px">מוסד ציבורי שמקבל תקציב מדינה צריך לפתוח את דלתותיו לכל המגזרים?</div>
                 <div style="font-size:8px;color:var(--gl)">שאלה שמדייקת את הפרופיל שלך</div>
+                <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
               </div>
             </div>
             <!-- Daily card 2: Pending bill -->
@@ -1095,6 +1110,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div class="tcard-tag" style="background:var(--bl0);color:var(--bl)">בקרוב במליאה</div>
                 <div class="tcard-q" style="font-size:12px">האם לאפשר לרשויות מקומיות לקבוע מס ארנונה דיפרנציאלי לדירות ריקות?</div>
                 <div style="font-size:8px;color:var(--bl)">הצעת חוק 4891 · ועדת הכספים</div>
+                <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
               </div>
             </div>
             <!-- Completion card (shown after all 3 swiped) -->
