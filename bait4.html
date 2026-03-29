@@ -853,6 +853,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
         </div>
+        <!-- Swipe hints -->
+        <div class="swipe-hints" style="padding:2px 16px 4px">
+          <div class="s-hint" style="color:var(--co)">&#8592; נגד</div>
+          <div class="s-hint" style="color:var(--gl)">&#8593; מורכב</div>
+          <div class="s-hint" style="color:var(--te)">בעד &#8594;</div>
+        </div>
         <div class="phone-nav">
           <div class="pn-btn" onclick="go(0)">חזור &#8594;</div>
           <div class="dots" id="d1"></div>
@@ -950,6 +956,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div style="margin-top:6px;padding:9px 11px;background:var(--el);border:1px solid var(--b1);border-radius:9px;text-align:center;cursor:pointer">
             <div style="font-size:9px;color:var(--t2)">רוצה לראות איפה אתה לעומת חבר? <span style="color:var(--gl);font-weight:700">שלח קישור השוואה &#8594;</span></div>
           </div>
+        </div>
+        <!-- Swipe hints -->
+        <div class="swipe-hints" style="padding:2px 16px 4px">
+          <div class="s-hint" style="color:var(--co)">&#8592; נגד</div>
+          <div class="s-hint" style="color:var(--gl)">&#8593; מורכב</div>
+          <div class="s-hint" style="color:var(--te)">בעד &#8594;</div>
         </div>
         <div class="phone-nav">
           <div class="pn-btn" onclick="go(2)">חזור &#8594;</div>
@@ -1071,7 +1083,11 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <!-- 3-Swipe Ritual -->
           <div style="text-align:center;margin-bottom:4px">
             <div style="font-size:11px;font-weight:900;color:var(--t1)">3 הסוויפים של היום</div>
-            <div style="font-size:9px;color:var(--t3)">גרור ימין = בעד · שמאל = נגד · למעלה = מורכב</div>
+            <div class="swipe-hints" style="padding:2px 0;justify-content:center;gap:12px">
+              <span class="s-hint" style="color:var(--co)">&#8592; נגד</span>
+              <span class="s-hint" style="color:var(--gl)">&#8593; מורכב</span>
+              <span class="s-hint" style="color:var(--te)">בעד &#8594;</span>
+            </div>
           </div>
           <!-- Daily swipe stack -->
           <div id="daily-swipe-area" style="position:relative;height:140px;flex-shrink:0;margin-bottom:4px">
@@ -1851,10 +1867,49 @@ function tBindSwipe(id){
   inner.addEventListener('touchstart', onDown, {passive:true});
 }
 
+// Swipe tutorial — auto-tilt on first card
+let tutorialShown = false;
+function showSwipeTutorial(){
+  if(tutorialShown) return;
+  tutorialShown = true;
+  const inner = tGetInner('0');
+  if(!inner) return;
+  const rInd = tGetInd('0','r'), lInd = tGetInd('0','l');
+  const ease = 'transform 600ms cubic-bezier(0.34,1.56,0.64,1), opacity 400ms ease, border-color 400ms ease';
+  const back = 'transform 500ms cubic-bezier(0.175,0.885,0.32,1.375), opacity 300ms ease, border-color 300ms ease';
+  // Step 1: tilt right (בעד)
+  setTimeout(()=>{
+    inner.style.transition = ease;
+    inner.style.transform = 'translateX(80px) rotate(8deg)';
+    inner.style.borderColor = 'rgba(39,179,142,0.6)';
+    if(rInd) rInd.style.opacity = '1';
+  }, 600);
+  // Return
+  setTimeout(()=>{
+    inner.style.transition = back;
+    inner.style.transform = ''; inner.style.borderColor = '';
+    if(rInd) rInd.style.opacity = '0';
+  }, 1500);
+  // Step 2: tilt left (נגד)
+  setTimeout(()=>{
+    inner.style.transition = ease;
+    inner.style.transform = 'translateX(-80px) rotate(-8deg)';
+    inner.style.borderColor = 'rgba(199,82,82,0.6)';
+    if(lInd) lInd.style.opacity = '1';
+  }, 2200);
+  // Return
+  setTimeout(()=>{
+    inner.style.transition = back;
+    inner.style.transform = ''; inner.style.borderColor = '';
+    if(lInd) lInd.style.opacity = '0';
+    inner.style.transition = '';
+  }, 3100);
+}
+
 const _baseGo = go;
 go = function(n){
   _baseGo(n);
-  if(n===1 && tCurId==='0'){ tActivateId('0'); tBindSwipe('0'); }
+  if(n===1 && tCurId==='0'){ tActivateId('0'); tBindSwipe('0'); showSwipeTutorial(); }
 };
 if(document.getElementById('sl1').classList.contains('active')){ tActivateId('0'); tBindSwipe('0'); }
 
