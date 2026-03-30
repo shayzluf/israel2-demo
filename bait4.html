@@ -1421,25 +1421,25 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div style="text-align:center;margin:6px 0 2px">
             <div style="font-size:12px;font-weight:900;color:var(--co)">אבל כלום מזה לא נספר</div>
           </div>
-          <div id="loss-stats" style="display:flex;flex-direction:column;gap:4px;">
-            <div class="loss-stat reveal">
-              <div class="loss-line"></div>
-              <div class="loss-num">47</div>
-              <div class="loss-label">הצבעות</div>
-              <div class="loss-tag">נרשמו — לא נספרו</div>
+          <div id="loss-stats" style="background:var(--el);border-radius:8px;padding:8px 10px;position:relative;">
+            <div class="loss-line" style="animation-delay:.3s"></div>
+            <div style="display:flex;gap:0">
+              <div style="flex:1;text-align:center;padding:4px 0">
+                <div style="font-size:20px;font-weight:900;color:var(--t3);opacity:.5;direction:ltr">47</div>
+                <div style="font-size:8px;color:var(--t3)">הצבעות</div>
+              </div>
+              <div style="width:1px;background:var(--b0);margin:4px 0"></div>
+              <div style="flex:1;text-align:center;padding:4px 0">
+                <div style="font-size:20px;font-weight:900;color:var(--t3);opacity:.5;direction:ltr">12</div>
+                <div style="font-size:8px;color:var(--t3)">עמדות</div>
+              </div>
+              <div style="width:1px;background:var(--b0);margin:4px 0"></div>
+              <div style="flex:1;text-align:center;padding:4px 0">
+                <div style="font-size:20px;font-weight:900;color:var(--t3);opacity:.5;direction:ltr">38</div>
+                <div style="font-size:8px;color:var(--t3)">דקות</div>
+              </div>
             </div>
-            <div class="loss-stat reveal">
-              <div class="loss-line"></div>
-              <div class="loss-num">12</div>
-              <div class="loss-label">עמדות בדיון</div>
-              <div class="loss-tag">נכתבו — לא נשמעו</div>
-            </div>
-            <div class="loss-stat reveal">
-              <div class="loss-line"></div>
-              <div class="loss-num">38</div>
-              <div class="loss-label">דקות השקעה</div>
-              <div class="loss-tag">הושקעו — לא השפיעו</div>
-            </div>
+            <div style="font-size:8px;font-weight:800;color:var(--co);text-align:center;margin-top:4px;animation:fadeIn .3s ease forwards;opacity:0;animation-delay:.7s">לא נספרו · לא נשמעו · לא השפיעו</div>
           </div>
           <div style="text-align:center;padding:4px 0">
             <div style="font-size:11px;font-weight:700;color:var(--t1)">הקול שלך קיים</div>
