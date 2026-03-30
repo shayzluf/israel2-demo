@@ -859,7 +859,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="btn btn-gd" style="width:100%;margin-top:6px;font-size:11px;padding:9px" onclick="tNextFromResult('7r')">המשך</div>
             </div>
           </div>
-          <!-- CARD 8 — TRANSITION: Unexpected Neighbors (tap to go to S2) -->
+          <!-- CARD 8 — TRANSITION: Unexpected Neighbors -->
           <div class="tcard" id="tc8">
             <div class="tcard-inner" style="text-align:center;gap:12px;cursor:default">
               <div style="font-family:var(--frank);font-size:36px;font-weight:900;color:var(--gl);letter-spacing:-1px;line-height:1">76%</div>
@@ -868,9 +868,32 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 על 4 מתוך 8 נושאים הסכמת עם אנשים מהצד השני של המפה
               </div>
               <div style="font-size:9px;color:var(--t3);padding:6px 10px;background:var(--el);border-radius:7px;line-height:1.5">
-                הפרופיל האזרחי שלך נוצר. 8 עמדות. 2 דקות<br>אף אחד לא רואה מה ענית — רק את התוצאה.
+                הפרופיל האזרחי שלך נוצר · אף אחד לא רואה מה ענית
               </div>
-              <div class="btn btn-gd" style="width:100%;margin-top:4px" onclick="go(2)">הצג מה גילינו</div>
+              <div class="btn btn-gd" style="width:100%;margin-top:4px" onclick="tNextFromResult('8')">עוד הצבעה אחת</div>
+            </div>
+          </div>
+          <!-- CARD 9 — LIVE VOTE (swipeable) -->
+          <div class="tcard" id="tc9">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ti9r">&#8594; בעד</div>
+              <div class="tind tind-l" id="ti9l">נגד &#8592;</div>
+              <div class="tind tind-u" id="ti9u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--te0);color:var(--te)">הצבעה חיה</div>
+              <div class="tcard-q">בכל בית ספר צריך להיות יועץ נפשי זמין — בעד או נגד?</div>
+              <div class="tcard-meta">81% מכל הקבוצות כבר הצביעו בעד · <span dir="ltr">147,382</span> הצביעו</div>
+              <div class="tcard-ai">הפרופיל שלך: מתעדכן בזמן אמת</div>
+              <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
+            </div>
+          </div>
+          <!-- CARD 9R — VOTE RESULT (tap to go to S2) -->
+          <div class="tcard" id="tc9r">
+            <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default">
+              <div id="vote-result-text" style="font-size:12px;font-weight:800;color:var(--te)">&#10003; ההצבעה נרשמה</div>
+              <div style="font-size:10px;color:var(--t2);line-height:1.5">הצטרפת ל-12 מהאזור שלך, 847 סה"כ היום</div>
+              <div style="font-size:9px;color:var(--t3);padding:6px 9px;background:var(--el);border-radius:7px">הפרופיל שלך התעדכן · הדיוק עולה עם כל הצבעה</div>
+              <div class="btn btn-gd" style="width:100%;margin-top:6px" onclick="go(2)">המשך</div>
             </div>
           </div>
         </div>
@@ -918,67 +941,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
 
           <!-- CTA -->
-          <div class="btn btn-gd" style="width:100%" onclick="go(3)">הצבעה</div>
+          <div class="btn btn-gd" style="width:100%" onclick="go(4)">המשך</div>
         </div>
         <div class="phone-nav">
           <div class="pn-btn" onclick="go(1)">חזור</div>
           <div class="dots" id="d2"></div>
-          <div class="pn-btn gold" onclick="go(3)">המשך</div>
-        </div>
-      </div>
-
-      <!-- ════ S3: AGENCY — first real vote ════ -->
-      <div class="slide" id="sl3">
-        <div class="scr">
-          <div class="kicker" style="color:var(--te)">הצבעה ראשונה · חיה</div>
-          <div class="sh">הצבעה</div>
-          <!-- Swipeable vote card (same tcard system) -->
-          <div id="s3-swipe-area" style="position:relative;height:170px;flex-shrink:0;margin-bottom:4px">
-            <div class="tcard active" id="vc0">
-              <div class="tcard-inner">
-                <div class="tcard-before"></div>
-                <div class="tind tind-r" id="vi0r">&#8594; בעד</div>
-                <div class="tind tind-l" id="vi0l">נגד &#8592;</div>
-                <div class="tind tind-u" id="vi0u">&#8593; מורכב</div>
-                <div class="tcard-tag" style="background:var(--te0);color:var(--te)">הצבעה חיה</div>
-                <div class="tcard-q">בכל בית ספר צריך להיות יועץ נפשי זמין — בעד או נגד?</div>
-                <div class="tcard-meta">81% מכל הקבוצות כבר הצביעו בעד · <span dir="ltr">147,382</span> הצביעו</div>
-                <div class="tcard-ai">הפרופיל שלך: מתעדכן בזמן אמת</div>
-                <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
-              </div>
-            </div>
-            <!-- Result after swipe -->
-            <div class="tcard" id="vc1">
-              <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default">
-                <div id="s3-result-icon" style="font-size:11px;font-weight:900;color:var(--te)">&#10003;</div>
-                <div id="s3-result-text" style="font-size:12px;font-weight:800;color:var(--t1)">ההצבעה נרשמה</div>
-                <div style="font-size:10px;color:var(--t2);line-height:1.5">הצטרפת ל-12 מהאזור שלך, 847 סה"כ היום</div>
-                <div style="font-size:9px;color:var(--t3);padding:6px 9px;background:var(--el);border-radius:7px">הפרופיל שלך התעדכן. הדיוק עולה עם כל הצבעה</div>
-              </div>
-            </div>
-          </div>
-          <!-- Queue preview -->
-          <div style="font-size:8px;color:var(--t3);font-weight:700;letter-spacing:1px;margin-bottom:4px">בתור &#8592;</div>
-          <div class="queue">
-            <div class="q-card"><div class="q-t">שירות שוויוני</div><div class="q-ai">&#9733; בעד 87%</div></div>
-            <div class="q-card"><div class="q-t">שוויון תשתיות</div><div class="q-ai">&#9733; בעד 79%</div></div>
-            <div class="q-card"><div class="q-t">שקיפות תקציבית</div><div class="q-ai">&#9733; בעד 91%</div></div>
-          </div>
-          <!-- Comparison CTA -->
-          <div style="margin-top:6px;padding:9px 11px;background:var(--el);border:1px solid var(--b1);border-radius:9px;text-align:center;cursor:pointer">
-            <div style="font-size:9px;color:var(--t2)">רוצה לראות איפה אתה לעומת חבר? <span style="color:var(--gl);font-weight:700">שלח קישור השוואה &#8594;</span></div>
-          </div>
-        </div>
-        <!-- Swipe hints -->
-        <div class="swipe-hints" style="padding:2px 16px 4px">
-          <div class="s-hint" style="color:var(--co)">&#8592; נגד</div>
-          <div class="s-hint" style="color:var(--gl)">&#8593; מורכב</div>
-          <div class="s-hint" style="color:var(--te)">בעד &#8594;</div>
-        </div>
-        <div class="phone-nav">
-          <div class="pn-btn" onclick="go(2)">חזור</div>
-          <div class="dots" id="d3"></div>
-          <div class="pn-btn gold" onclick="go(4)">הבא</div>
+          <div class="pn-btn gold" onclick="go(4)">המשך</div>
         </div>
       </div>
 
@@ -1655,11 +1623,6 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <div class="sbb-name">76% ענו כמוך — מקבוצות שלא ציפית</div>
       <div class="sbb-d">על 4 מתוך 8 נושאים הסכמת עם אנשים שחושבים אחרת על כל השאר</div>
     </div>
-    <div class="sbb" id="b3" onclick="go(3)">
-      <div class="sbb-n" style="color:var(--bl)">3 · הצבעה</div>
-      <div class="sbb-name">הצבעה</div>
-      <div class="sbb-d">הצבעה ראשונה חיה + השוואה עם חבר</div>
-    </div>
     <div class="sb-phase">האפליקציה היומית</div>
     <div class="sbb" id="b4" onclick="go(4)">
       <div class="sbb-n" style="color:var(--pu)">4 · דיון</div>
@@ -1752,10 +1715,10 @@ setInterval(() => {
 
 /* ══ TRAINING SWIPE ENGINE ══ */
 // Card flow: 0,1,2,3(consensus-swipe),3r(result),4,5,6,7(consensus-swipe),7r(result),8(transition)
-const ALL_CARD_IDS = ['intro','0','1','2','3','3r','4','5','6','7','7r','8'];
-const SWIPEABLE = ['0','1','2','3','4','5','6','7']; // 8 swipeable cards
+const ALL_CARD_IDS = ['intro','0','1','2','3','3r','4','5','6','7','7r','8','9','9r'];
+const SWIPEABLE = ['0','1','2','3','4','5','6','7','9']; // 9 swipeable cards (8 calibration + 1 live vote)
 const RESULT_CARDS = ['3r','7r']; // result reveals after consensus swipes
-const CONSENSUS_SWIPE_TO_RESULT = {'3':'3r', '7':'7r'}; // maps consensus swipe → result card
+const CONSENSUS_SWIPE_TO_RESULT = {'3':'3r', '7':'7r', '9':'9r'}; // maps consensus/vote swipe → result card
 let tCurId = 'intro';
 const tAnswers = {};
 
@@ -1803,15 +1766,24 @@ function tSwipeDone(id, dir){
     if(CONSENSUS_SWIPE_TO_RESULT[id]){
       const resultId = CONSENSUS_SWIPE_TO_RESULT[id];
       // Set adaptive personal text based on swipe direction
-      const personalEl = id==='3' ? document.getElementById('consensus1-personal') : document.getElementById('consensus2-personal');
-      if(personalEl){
-        if(dir==='r') personalEl.innerHTML = 'גם אתה — חלק מה-76% שמסכימים';
-        else if(dir==='l') personalEl.innerHTML = 'הצבעת נגד — אבל 76% מכל הקבוצות בעד. מה דעתך?';
-        else personalEl.innerHTML = 'סימנת מורכב — 76% מכל הקבוצות הכריעו בעד';
-        if(id==='7'){
-          if(dir==='r') personalEl.innerHTML = 'גם אתה — חלק מה-81% שמסכימים';
-          else if(dir==='l') personalEl.innerHTML = 'הצבעת נגד — אבל 81% מכל הקבוצות בעד. מה דעתך?';
-          else personalEl.innerHTML = 'סימנת מורכב — 81% מכל הקבוצות הכריעו בעד';
+      if(id==='9'){
+        const vrt = document.getElementById('vote-result-text');
+        if(vrt){
+          if(dir==='r') vrt.innerHTML = '&#10003; בעד — ההצבעה נרשמה';
+          else if(dir==='l') vrt.innerHTML = '&#10007; נגד — ההצבעה נרשמה';
+          else vrt.innerHTML = 'מורכב — ההצבעה נרשמה';
+        }
+      } else {
+        const personalEl = id==='3' ? document.getElementById('consensus1-personal') : document.getElementById('consensus2-personal');
+        if(personalEl){
+          if(dir==='r') personalEl.innerHTML = 'גם אתה — חלק מה-76% שמסכימים';
+          else if(dir==='l') personalEl.innerHTML = 'הצבעת נגד — אבל 76% מכל הקבוצות בעד. מה דעתך?';
+          else personalEl.innerHTML = 'סימנת מורכב — 76% מכל הקבוצות הכריעו בעד';
+          if(id==='7'){
+            if(dir==='r') personalEl.innerHTML = 'גם אתה — חלק מה-81% שמסכימים';
+            else if(dir==='l') personalEl.innerHTML = 'הצבעת נגד — אבל 81% מכל הקבוצות בעד. מה דעתך?';
+            else personalEl.innerHTML = 'סימנת מורכב — 81% מכל הקבוצות הכריעו בעד';
+          }
         }
       }
       tCurId = resultId;
@@ -2023,71 +1995,11 @@ function dBindSwipe(n){
   inner.addEventListener('touchstart', onDown, {passive:true});
 }
 
-/* ══ S3 VOTE CARD ENGINE ══ */
-let vDone = false;
-function vBindSwipe(){
-  const inner = document.querySelector('#vc0 .tcard-inner');
-  if(!inner) return;
-  inner.style.transform=''; inner.style.opacity='1'; inner.style.transition='';
-  let vDrag=false, vSX=0, vSY=0, vCX=0, vCY=0;
-  function onDown(e){
-    vDrag=true; inner.classList.add('dragging');
-    vSX=e.touches?e.touches[0].clientX:e.clientX;
-    vSY=e.touches?e.touches[0].clientY:e.clientY;
-    vCX=0;vCY=0;
-    document.addEventListener('mousemove',onMove);document.addEventListener('mouseup',onUp);
-    document.addEventListener('touchmove',onMove,{passive:false});document.addEventListener('touchend',onUp);
-  }
-  function onMove(e){
-    if(!vDrag)return; e.preventDefault&&e.preventDefault();
-    vCX=(e.touches?e.touches[0].clientX:e.clientX)-vSX;
-    vCY=(e.touches?e.touches[0].clientY:e.clientY)-vSY;
-    inner.style.transform=`translateX(${vCX}px) translateY(${vCY}px) rotate(${vCX*0.06}deg)`;
-    inner.style.transition='none';
-    const t=40,r=document.getElementById('vi0r'),l=document.getElementById('vi0l'),u=document.getElementById('vi0u');
-    const xR=Math.min(Math.max(vCX/t,0),1),xL=Math.min(Math.max(-vCX/t,0),1),yU=Math.min(Math.max(-vCY/t,0),1);
-    if(r)r.style.opacity=xR;if(l)l.style.opacity=xL;if(u)u.style.opacity=yU;
-    if(vCX>0)inner.style.borderColor=`rgba(39,179,142,${xR*.7})`;
-    else if(vCX<0)inner.style.borderColor=`rgba(199,82,82,${xL*.7})`;
-    else if(vCY<-t*.5)inner.style.borderColor=`rgba(228,174,88,${yU*.7})`;
-    else inner.style.borderColor='';
-  }
-  function onUp(){
-    if(!vDrag)return; vDrag=false; inner.classList.remove('dragging');
-    document.removeEventListener('mousemove',onMove);document.removeEventListener('mouseup',onUp);
-    document.removeEventListener('touchmove',onMove);document.removeEventListener('touchend',onUp);
-    if(vCX>70||vCX<-70||vCY<-70){
-      inner.style.transition='transform .3s ease, opacity .25s';
-      const x=vCX>70?300:vCX<-70?-300:0,y=vCY<-70?-300:0,rot=vCX>70?15:vCX<-70?-15:0;
-      inner.style.transform=`translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;inner.style.opacity='0';
-      const dir=vCX>70?'r':vCX<-70?'l':'u';
-      const rt=document.getElementById('s3-result-text');
-      if(rt){
-        if(dir==='r')rt.textContent='✓ בעד — ההצבעה נרשמה';
-        else if(dir==='l')rt.textContent='✗ נגד — ההצבעה נרשמה';
-        else rt.textContent='מורכב — ההצבעה נרשמה';
-      }
-      setTimeout(()=>{
-        document.getElementById('vc0').classList.remove('active');
-        document.getElementById('vc1').classList.add('active');
-        vDone=true;
-      },320);
-    } else {
-      inner.style.transition='transform .45s cubic-bezier(.175,.885,.32,1.375), opacity .3s, border-color .3s';
-      inner.style.transform='';inner.style.borderColor='';
-      ['vi0r','vi0l','vi0u'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.opacity=0;});
-    }
-    vCX=0;vCY=0;
-  }
-  inner.addEventListener('mousedown',onDown);inner.addEventListener('touchstart',onDown,{passive:true});
-}
-
-// Init all swipe engines on navigation
+// Init daily swipe engine on navigation
 const _baseGo2 = go;
 go = function(n){
   _baseGo2(n);
   if(n===5 && dCur===0){ dActivate(0); dBindSwipe(0); }
-  if(n===3 && !vDone){ vBindSwipe(); }
 };
 
 function voteStmt(btn) {
