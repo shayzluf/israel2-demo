@@ -2065,11 +2065,13 @@ function startScan() {
 /* ── Mobile scale: zoom sim-screen so all px values fill the viewport ── */
 function mobileScale() {
   if (window.innerWidth >= 700) return;
-  var scale = window.innerWidth / 286;
+  var scale  = window.innerWidth / 286;
   var screen = document.querySelector('.sim-screen');
   var phone  = document.querySelector('.sim-phone');
   if (!screen || !phone) return;
   var vh = window.innerHeight;
+  // Pin to original 286px design width, then zoom to fill viewport
+  screen.style.width  = '286px';
   screen.style.zoom   = scale;
   screen.style.height = Math.round(vh / scale) + 'px';
   phone.style.height  = vh + 'px';
