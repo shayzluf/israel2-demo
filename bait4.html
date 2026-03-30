@@ -1852,7 +1852,7 @@ function showSwipeTutorial(){
   tutorialShown = true;
   const inner = tGetInner('0');
   if(!inner) return;
-  const rInd = tGetInd('0','r'), lInd = tGetInd('0','l');
+  const rInd = tGetInd('0','r'), lInd = tGetInd('0','l'), uInd = tGetInd('0','u');
   const ease = 'transform 600ms cubic-bezier(0.34,1.56,0.64,1), opacity 400ms ease, border-color 400ms ease';
   const back = 'transform 500ms cubic-bezier(0.175,0.885,0.32,1.375), opacity 300ms ease, border-color 300ms ease';
   // Step 1: tilt right (בעד)
@@ -1862,7 +1862,6 @@ function showSwipeTutorial(){
     inner.style.borderColor = 'rgba(39,179,142,0.6)';
     if(rInd) rInd.style.opacity = '1';
   }, 600);
-  // Return
   setTimeout(()=>{
     inner.style.transition = back;
     inner.style.transform = ''; inner.style.borderColor = '';
@@ -1875,13 +1874,24 @@ function showSwipeTutorial(){
     inner.style.borderColor = 'rgba(199,82,82,0.6)';
     if(lInd) lInd.style.opacity = '1';
   }, 2200);
-  // Return
   setTimeout(()=>{
     inner.style.transition = back;
     inner.style.transform = ''; inner.style.borderColor = '';
     if(lInd) lInd.style.opacity = '0';
-    inner.style.transition = '';
   }, 3100);
+  // Step 3: tilt up (מורכב)
+  setTimeout(()=>{
+    inner.style.transition = ease;
+    inner.style.transform = 'translateY(-60px) scale(1.03)';
+    inner.style.borderColor = 'rgba(228,174,88,0.6)';
+    if(uInd) uInd.style.opacity = '1';
+  }, 3800);
+  setTimeout(()=>{
+    inner.style.transition = back;
+    inner.style.transform = ''; inner.style.borderColor = '';
+    if(uInd) uInd.style.opacity = '0';
+    inner.style.transition = '';
+  }, 4700);
 }
 
 const _baseGo = go;
