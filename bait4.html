@@ -1946,7 +1946,8 @@ function dSwipeDone(n, dir){
 
 function dBindSwipe(n){
   const inner = dGetInner(n);
-  if(!inner) return;
+  if(!inner || inner.dataset.bound) return;
+  inner.dataset.bound = '1';
   inner.style.transform=''; inner.style.opacity='1'; inner.style.transition='';
   function onDown(e){
     dDragging=true; inner.classList.add('dragging');
@@ -2000,7 +2001,7 @@ function dBindSwipe(n){
 const _baseGo2 = go;
 go = function(n){
   _baseGo2(n);
-  if(n===5 && dCur===0){ dActivate(0); dBindSwipe(0); }
+  if(n===4 && dCur < DAILY_TOTAL){ dActivate(dCur); dBindSwipe(dCur); }
 };
 
 function voteStmt(btn) {
