@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>נספר — Complete Flow</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -575,27 +575,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
   .ph, .arc { display: none; }
   .sim-wrap { flex-direction: column; padding: 0; gap: 0; max-width: 100%; width: 100%; }
   .sim-sb { display: none; }
-  .sim-phone { width: 100%; border-radius: 0; border: none; box-shadow: none; height: 100dvh; height: 100vh; }
+  .sim-phone { width: 100%; border-radius: 0; border: none; box-shadow: none; overflow: hidden; }
   .sim-notch { display: none; }
-  .sim-screen { height: calc(100dvh - 0px); height: calc(100vh - 0px); }
   .slide { padding-top: 0; }
-  .sim-phone { font-size: 14px; }
-  .scr { padding: 16px; }
-  .s-top { padding: 10px 16px; }
-  .s-logo { font-size: 16px; }
-  .btn { font-size: 14px; padding: 13px 16px; }
-  .sh { font-size: 22px; }
-  .card { padding: 14px 16px; }
-  .ch { font-size: 14px; }
-  .cd { font-size: 12px; }
-  .kicker { font-size: 10px; }
-  .phone-nav { padding: 10px 20px 20px; }
-  .pn-btn { font-size: 12px; }
-  .tcard-area { height: calc(100vh - 140px); }
-  .tcard { font-size: 14px; }
-  .tcard-q { font-size: 15px; }
-  .swipe-hints { padding: 4px 20px 6px; }
-  .s-hint { font-size: 12px; }
+  /* Heights and zoom set by mobileScale() JS below */
 }
 </style>
 </head>
@@ -2078,6 +2061,21 @@ function startScan() {
   setTimeout(() => { ps3.className = 'proof-step done'; ps3s.textContent = '\u2713'; ps4.className = 'proof-step active'; ps4s.textContent = '...'; ps4s.style.color = 'var(--te)'; }, 2000);
   setTimeout(() => { ps4.className = 'proof-step done'; ps4s.textContent = '\u2713'; if (cb) cb.style.display = 'block'; if (n10) n10.style.opacity = '1'; }, 3600);
 }
+
+/* ── Mobile scale: zoom sim-screen so all px values fill the viewport ── */
+function mobileScale() {
+  if (window.innerWidth >= 700) return;
+  var scale = window.innerWidth / 286;
+  var screen = document.querySelector('.sim-screen');
+  var phone  = document.querySelector('.sim-phone');
+  if (!screen || !phone) return;
+  var vh = window.innerHeight;
+  screen.style.zoom   = scale;
+  screen.style.height = Math.round(vh / scale) + 'px';
+  phone.style.height  = vh + 'px';
+}
+mobileScale();
+window.addEventListener('resize', mobileScale);
 </script>
 </body>
 </html>
