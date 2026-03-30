@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
 <title>נספר — Complete Flow</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -575,10 +575,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
   .ph, .arc { display: none; }
   .sim-wrap { flex-direction: column; padding: 0; gap: 0; max-width: 100%; width: 100%; }
   .sim-sb { display: none; }
-  .sim-phone { width: 100%; border-radius: 0; border: none; box-shadow: none; overflow: hidden; }
+  .sim-phone { width: 100%; border-radius: 0; border: none; box-shadow: none; overflow: hidden; height: 100vh; height: 100dvh; }
   .sim-notch { display: none; }
+  .sim-screen { height: 100vh; height: 100dvh; }
   .slide { padding-top: 0; }
-  /* Heights and zoom set by mobileScale() JS below */
 }
 </style>
 </head>
@@ -2063,21 +2063,13 @@ function startScan() {
 }
 
 /* ── Mobile scale: zoom sim-screen so all px values fill the viewport ── */
-function mobileScale() {
-  if (window.innerWidth >= 700) return;
-  var scale  = window.innerWidth / 286;
-  var screen = document.querySelector('.sim-screen');
-  var phone  = document.querySelector('.sim-phone');
-  if (!screen || !phone) return;
-  var vh = window.innerHeight;
-  // Pin to original 286px design width, then zoom to fill viewport
-  screen.style.width  = '286px';
-  screen.style.zoom   = scale;
-  screen.style.height = Math.round(vh / scale) + 'px';
-  phone.style.height  = vh + 'px';
-}
-mobileScale();
-window.addEventListener('resize', mobileScale);
+// Mobile scaling: tell the browser the design is 286px wide.
+// The browser handles all scaling natively — works on Safari iOS.
+(function() {
+  if (window.innerWidth < 700) {
+    document.getElementById('vp').setAttribute('content', 'width=286');
+  }
+})();
 </script>
 </body>
 </html>
