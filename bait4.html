@@ -918,12 +918,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
 
           <!-- CTA -->
-          <div class="btn btn-gd" style="width:100%" onclick="go(3)">המשך</div>
+          <div class="btn btn-gd" style="width:100%" onclick="go(4)">כנס לאפליקציה</div>
         </div>
         <div class="phone-nav">
           <div class="pn-btn" onclick="go(1)">חזור</div>
           <div class="dots" id="d2"></div>
-          <div class="pn-btn gold" onclick="go(3)">המשך</div>
+          <div class="pn-btn gold" onclick="go(4)">כנס לאפליקציה</div>
         </div>
       </div>
 
@@ -1036,6 +1036,17 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div style="font-size:8px;color:var(--t3);margin-top:2px">נספר — האפליקציה היומית שלך</div>
         </div>
         <div class="scr">
+          <!-- ZK NUDGE — push notification analog (dismissible) -->
+          <div id="zk-nudge" style="background:var(--co0);border:1px solid var(--cn);border-radius:10px;padding:10px 12px;position:relative;flex-shrink:0">
+            <button onclick="this.parentElement.style.display='none'" style="position:absolute;top:7px;left:10px;background:none;border:none;color:var(--t3);font-size:14px;cursor:pointer;font-family:var(--heb);line-height:1">&#215;</button>
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--co);animation:vp 1s infinite;flex-shrink:0"></div>
+              <div style="font-size:8px;font-weight:800;color:var(--co);letter-spacing:0.5px">הקול שלך עדיין לא נספר</div>
+            </div>
+            <div style="font-size:13px;font-weight:900;color:var(--t1);margin-bottom:3px"><span style="text-decoration:line-through;color:var(--t3)">9</span> הצבעות — <span style="color:var(--co)">0 נספרו</span></div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.5;margin-bottom:8px">הצבעת, גילית הסכמות — אבל הקול שלך עדיין לא מאומת. 90 שניות לתקן את זה.</div>
+            <div class="btn btn-gd" style="font-size:10px;padding:9px;text-align:center;cursor:pointer" onclick="go(8)">להיספר — 90 שניות &#8592;</div>
+          </div>
           <!-- 3-Swipe Ritual -->
           <div style="text-align:center;margin-bottom:4px">
             <div style="font-size:11px;font-weight:900;color:var(--t1)">3 הסוויפים של היום</div>
@@ -1406,25 +1417,6 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             יותר ממה שרוב האזרחים עושים בשנה שלמה
           </div>
 
-          <!-- WHY ZK — old vs new voting -->
-          <div style="background:var(--el);border-radius:9px;padding:9px 10px;margin:4px 0">
-            <div style="font-size:8px;font-weight:800;color:var(--gl);letter-spacing:0.5px;margin-bottom:6px;text-align:center">למה זה חדש</div>
-            <div style="display:flex;gap:6px">
-              <!-- Old way -->
-              <div style="flex:1;padding:7px 8px;background:var(--co0);border:1px solid var(--cn);border-radius:7px">
-                <div style="font-size:8px;font-weight:800;color:var(--co);margin-bottom:3px">עד היום</div>
-                <div style="font-size:8px;color:var(--t2);line-height:1.5">אזרח אחד, קול אחד = קלפי פיזיות, נציגי מפלגות, עלות של מאות מיליוני &#8362;</div>
-                <div style="font-size:8px;color:var(--co);font-weight:700;margin-top:3px">פעם ב-4 שנים</div>
-              </div>
-              <!-- New way -->
-              <div style="flex:1;padding:7px 8px;background:var(--gd0);border:1px solid var(--gn);border-radius:7px">
-                <div style="font-size:8px;font-weight:800;color:var(--gl);margin-bottom:3px">עם ZK</div>
-                <div style="font-size:8px;color:rgba(228,174,88,.75);line-height:1.5">הוכחה מתמטית שאתה אזרח ייחודי — בלי לחשוף מי אתה. בחינם</div>
-                <div style="font-size:8px;color:var(--gl);font-weight:700;margin-top:3px">אלפי הצבעות ביום</div>
-              </div>
-            </div>
-          </div>
-
           <!-- LOSS section — same stats, strikethrough -->
           <div style="text-align:center;margin:6px 0 2px">
             <div style="font-size:12px;font-weight:900;color:var(--co)">אבל כלום מזה לא נספר</div>
@@ -1614,9 +1606,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
     </div>
     <div class="sb-phase">הפתעה וסוכנות</div>
     <div class="sbb" id="b2" onclick="go(2)">
-      <div class="sbb-n" style="color:var(--gd)">2 · מפה</div>
+      <div class="sbb-n" style="color:var(--gd)">2 · מפה → כניסה לאפליקציה</div>
       <div class="sbb-name">76% הסכימו איתך — כולל כאלה שלא ציפית</div>
-      <div class="sbb-d">על 4 מתוך 8 נושאים הסכמת עם אנשים שחושבים אחרת ממך על כל השאר</div>
+      <div class="sbb-d">CTA "כנס לאפליקציה" → מגיע ישר לבית. הדיון עדיין נגיש דרך הטאב</div>
     </div>
     <div class="sb-phase">האפליקציה היומית</div>
     <div class="sbb" id="b3" onclick="go(3)">
