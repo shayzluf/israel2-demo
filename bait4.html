@@ -1092,7 +1092,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div style="font-size:9px;font-weight:800;color:var(--gl);letter-spacing:1px">זה מה שתראה כל יום</div>
           <div style="font-size:8px;color:var(--t3);margin-top:2px">נספר — האפליקציה היומית שלך</div>
         </div>
-        <div class="scr" id="home-scr" style="overflow-y:hidden">
+        <div class="scr" id="home-scr" style="overflow-y:hidden;position:relative">
           <!-- ZK NUDGE — push notification analog (dismissible) -->
           <div id="zk-nudge" class="home-locked" style="background:var(--co0);border:1px solid var(--cn);border-radius:10px;padding:10px 12px;flex-shrink:0">
             <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
@@ -1104,98 +1104,115 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="btn btn-gd" style="font-size:10px;padding:9px;text-align:center;cursor:pointer" onclick="go(8)">להיספר — 90 שניות &#8592;</div>
             <div style="text-align:center;font-size:13px;font-weight:700;color:var(--t2);padding:8px 0 2px;cursor:pointer" onclick="this.closest('#zk-nudge').style.display='none'">אולי אחר כך</div>
           </div>
-          <!-- 3-Swipe Ritual -->
-          <div style="text-align:center;margin-bottom:4px">
-            <div style="font-size:11px;font-weight:900;color:var(--t1)">3 הסוויפים של היום</div>
-          </div>
-          <!-- Daily swipe stack -->
-          <div id="daily-swipe-area" style="position:relative;height:140px;flex-shrink:0;margin-bottom:4px">
-            <!-- Daily card 0: Knesset vote -->
-            <div class="tcard active" id="dc0">
-              <div class="tcard-inner" style="padding:16px 14px">
-                <div class="tcard-before"></div>
-                <div class="tind tind-r" id="di0r">&#8594; בעד</div>
-                <div class="tind tind-l" id="di0l">נגד &#8592;</div>
-                <div class="tind tind-u" id="di0u">&#8593; מורכב</div>
-                <div class="tcard-tag" style="background:var(--te0);color:var(--te)">הכנסת הצביעה</div>
-                <div class="tcard-q" style="font-size:12px">האם לחייב גילוי תקציבי של עמותות שמקבלות מעל 10M ש"ח מהמדינה?</div>
-                <div class="tcard-meta"><span dir="ltr">147,382</span> הצביעו</div>
-              </div>
+          <!-- Full-screen daily swipe overlay — covers home content while swiping -->
+          <div id="daily-overlay" style="position:absolute;inset:0;z-index:25;background:var(--bg);display:flex;flex-direction:column">
+            <!-- Overlay header -->
+            <div style="padding:14px 16px 8px;text-align:center;flex-shrink:0">
+              <div style="font-size:11px;font-weight:900;color:var(--t1)">3 הסוויפים של היום</div>
             </div>
-            <!-- Daily card 1: Values calibration -->
-            <div class="tcard" id="dc1">
-              <div class="tcard-inner" style="padding:16px 14px">
-                <div class="tcard-before" style="background:linear-gradient(90deg,var(--gl),var(--gd))"></div>
-                <div class="tind tind-r" id="di1r">&#8594; בעד</div>
-                <div class="tind tind-l" id="di1l">נגד &#8592;</div>
-                <div class="tind tind-u" id="di1u">&#8593; מורכב</div>
-                <div class="tcard-tag" style="background:var(--gd0);color:var(--gl)">שאלת ערכים</div>
-                <div class="tcard-q" style="font-size:12px">מוסד ציבורי שמקבל תקציב מדינה צריך לפתוח את דלתותיו לכל המגזרים?</div>
-                <div style="font-size:8px;color:var(--gl)">שאלה שמדייקת את הפרופיל שלך</div>
-                <div class="tcard-more" onclick="event.stopPropagation();showDcInfo(1)">ספר לי עוד ←</div>
-              </div>
-            </div>
-            <!-- Daily card 2: Pending bill -->
-            <div class="tcard" id="dc2">
-              <div class="tcard-inner" style="padding:16px 14px">
-                <div class="tcard-before" style="background:linear-gradient(90deg,var(--bl),var(--pu))"></div>
-                <div class="tind tind-r" id="di2r">&#8594; בעד</div>
-                <div class="tind tind-l" id="di2l">נגד &#8592;</div>
-                <div class="tind tind-u" id="di2u">&#8593; מורכב</div>
-                <div class="tcard-tag" style="background:var(--bl0);color:var(--bl)">בקרוב במליאה</div>
-                <div class="tcard-q" style="font-size:12px">האם לאפשר לרשויות מקומיות לקבוע מס ארנונה דיפרנציאלי לדירות ריקות?</div>
-                <div style="font-size:8px;color:var(--bl)">הצעת חוק 4891 · ועדת הכספים</div>
-                <div class="tcard-more" onclick="event.stopPropagation();showDcInfo(2)">ספר לי עוד ←</div>
-              </div>
-            </div>
-            <!-- Completion card (shown after all 3 swiped) -->
-            <div class="tcard" id="dc3">
-              <div class="tcard-inner" style="gap:6px;cursor:default;padding:12px 14px">
-                <div style="display:flex;align-items:center;justify-content:space-between">
-                  <div style="font-size:10px;font-weight:900;color:var(--te)">&#10003; 3 הסוויפים של היום</div>
-                  <div class="streak"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--gl)" style="width:10px;height:10px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z" clip-rule="evenodd"/></svg> רצף 13</div>
-                </div>
-                <!-- History strip: 3 mini-cards -->
-                <div id="dhistory" style="display:flex;gap:6px;width:100%">
-                  <div class="dmini" id="dm0" onclick="dOpenRevise(0)">
-                    <div class="dmini-label" id="dml0">גילוי תקציבי</div>
-                    <div class="dmini-icon" id="dmi0">—</div>
-                    <div class="dmini-edit">שנה</div>
-                  </div>
-                  <div class="dmini" id="dm1" onclick="dOpenRevise(1)">
-                    <div class="dmini-label" id="dml1">מוסדות ציבוריים</div>
-                    <div class="dmini-icon" id="dmi1">—</div>
-                    <div class="dmini-edit">שנה</div>
-                  </div>
-                  <div class="dmini" id="dm2" onclick="dOpenRevise(2)">
-                    <div class="dmini-label" id="dml2">ארנונה לדירות ריקות</div>
-                    <div class="dmini-icon" id="dmi2">—</div>
-                    <div class="dmini-edit">שנה</div>
-                  </div>
+            <!-- Card stack — flex:1, centered like sl1 train-area -->
+            <div id="daily-swipe-area" style="flex:1;position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 13px">
+              <!-- Daily card 0: Knesset vote -->
+              <div class="tcard active" id="dc0">
+                <div class="tcard-inner" style="padding:16px 14px">
+                  <div class="tcard-before"></div>
+                  <div class="tind tind-r" id="di0r">&#8594; בעד</div>
+                  <div class="tind tind-l" id="di0l">נגד &#8592;</div>
+                  <div class="tind tind-u" id="di0u">&#8593; מורכב</div>
+                  <div class="tcard-tag" style="background:var(--te0);color:var(--te)">הכנסת הצביעה</div>
+                  <div class="tcard-q" style="font-size:12px">האם לחייב גילוי תקציבי של עמותות שמקבלות מעל 10M ש"ח מהמדינה?</div>
+                  <div class="tcard-meta"><span dir="ltr">147,382</span> הצביעו</div>
                 </div>
               </div>
-            </div>
+              <!-- Daily card 1: Values calibration -->
+              <div class="tcard" id="dc1">
+                <div class="tcard-inner" style="padding:16px 14px">
+                  <div class="tcard-before" style="background:linear-gradient(90deg,var(--gl),var(--gd))"></div>
+                  <div class="tind tind-r" id="di1r">&#8594; בעד</div>
+                  <div class="tind tind-l" id="di1l">נגד &#8592;</div>
+                  <div class="tind tind-u" id="di1u">&#8593; מורכב</div>
+                  <div class="tcard-tag" style="background:var(--gd0);color:var(--gl)">שאלת ערכים</div>
+                  <div class="tcard-q" style="font-size:12px">מוסד ציבורי שמקבל תקציב מדינה צריך לפתוח את דלתותיו לכל המגזרים?</div>
+                  <div style="font-size:8px;color:var(--gl)">שאלה שמדייקת את הפרופיל שלך</div>
+                  <div class="tcard-more" onclick="event.stopPropagation();showDcInfo(1)">ספר לי עוד ←</div>
+                </div>
+              </div>
+              <!-- Daily card 2: Pending bill -->
+              <div class="tcard" id="dc2">
+                <div class="tcard-inner" style="padding:16px 14px">
+                  <div class="tcard-before" style="background:linear-gradient(90deg,var(--bl),var(--pu))"></div>
+                  <div class="tind tind-r" id="di2r">&#8594; בעד</div>
+                  <div class="tind tind-l" id="di2l">נגד &#8592;</div>
+                  <div class="tind tind-u" id="di2u">&#8593; מורכב</div>
+                  <div class="tcard-tag" style="background:var(--bl0);color:var(--bl)">בקרוב במליאה</div>
+                  <div class="tcard-q" style="font-size:12px">האם לאפשר לרשויות מקומיות לקבוע מס ארנונה דיפרנציאלי לדירות ריקות?</div>
+                  <div style="font-size:8px;color:var(--bl)">הצעת חוק 4891 · ועדת הכספים</div>
+                  <div class="tcard-more" onclick="event.stopPropagation();showDcInfo(2)">ספר לי עוד ←</div>
+                </div>
+              </div>
+              <!-- Completion card (shown after all 3 swiped) -->
+              <div class="tcard" id="dc3">
+                <div class="tcard-inner" style="gap:6px;cursor:default;padding:12px 14px">
+                  <div style="display:flex;align-items:center;justify-content:space-between">
+                    <div style="font-size:10px;font-weight:900;color:var(--te)">&#10003; 3 הסוויפים של היום</div>
+                    <div class="streak"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--gl)" style="width:10px;height:10px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z" clip-rule="evenodd"/></svg> רצף 13</div>
+                  </div>
+                  <!-- History strip: 3 mini-cards -->
+                  <div id="dhistory" style="display:flex;gap:6px;width:100%">
+                    <div class="dmini" id="dm0" onclick="dOpenRevise(0)">
+                      <div class="dmini-label" id="dml0">גילוי תקציבי</div>
+                      <div class="dmini-icon" id="dmi0">—</div>
+                      <div class="dmini-edit">שנה</div>
+                    </div>
+                    <div class="dmini" id="dm1" onclick="dOpenRevise(1)">
+                      <div class="dmini-label" id="dml1">מוסדות ציבוריים</div>
+                      <div class="dmini-icon" id="dmi1">—</div>
+                      <div class="dmini-edit">שנה</div>
+                    </div>
+                    <div class="dmini" id="dm2" onclick="dOpenRevise(2)">
+                      <div class="dmini-label" id="dml2">ארנונה לדירות ריקות</div>
+                      <div class="dmini-icon" id="dmi2">—</div>
+                      <div class="dmini-edit">שנה</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-            <!-- More-info overlay for daily cards -->
-            <div id="dc-info-overlay" style="display:none;position:absolute;inset:0;z-index:18;background:var(--bg);border-radius:14px;border:1px solid var(--b1);padding:12px 14px;flex-direction:column;gap:8px">
-              <div style="display:flex;align-items:center;justify-content:space-between">
-                <div style="font-size:8px;font-weight:800;color:var(--bl);letter-spacing:0.5px">קצת רקע</div>
-                <div style="font-size:18px;color:var(--t3);cursor:pointer;line-height:1" onclick="hideDcInfo()">&#10005;</div>
+              <!-- More-info overlay — fills card area, scrollable -->
+              <div id="dc-info-overlay" style="display:none;position:absolute;inset:0;z-index:18;background:var(--bg);border-radius:14px;border:1px solid var(--b1);padding:16px;flex-direction:column;gap:10px;overflow-y:auto">
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-shrink:0">
+                  <div style="font-size:8px;font-weight:800;color:var(--bl);letter-spacing:0.5px">קצת רקע</div>
+                  <div style="font-size:18px;color:var(--t3);cursor:pointer;line-height:1" onclick="hideDcInfo()">&#10005;</div>
+                </div>
+                <div id="dc-info-lines" style="display:flex;flex-direction:column;gap:10px;flex:1;justify-content:center"></div>
               </div>
-              <div id="dc-info-lines" style="display:flex;flex-direction:column;gap:6px;flex:1;justify-content:center"></div>
+              <!-- Revision overlay -->
+              <div id="drevise-overlay" style="display:none;position:absolute;inset:0;z-index:20;background:var(--bg);border-radius:14px;border:1px solid var(--gl);padding:14px;flex-direction:column;gap:10px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">
+                  <div style="font-size:9px;font-weight:800;color:var(--gl);letter-spacing:0.5px">שינוי עמדה</div>
+                  <div style="font-size:18px;color:var(--t3);cursor:pointer;line-height:1" onclick="dCloseRevise()">&#10005;</div>
+                </div>
+                <div id="drevise-q" style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;flex:1"></div>
+                <div style="display:flex;gap:6px;margin-top:4px">
+                  <button class="drevise-btn" id="drb-l" onclick="dDoRevise('l')" style="background:rgba(199,82,82,.12);border:1.5px solid rgba(199,82,82,.4);color:var(--co)">&#8592; נגד</button>
+                  <button class="drevise-btn" id="drb-u" onclick="dDoRevise('u')" style="background:rgba(228,174,88,.12);border:1.5px solid rgba(228,174,88,.4);color:var(--gd)">מורכב</button>
+                  <button class="drevise-btn" id="drb-r" onclick="dDoRevise('r')" style="background:rgba(39,179,142,.12);border:1.5px solid rgba(39,179,142,.4);color:var(--te)">בעד &#8594;</button>
+                </div>
+              </div>
             </div>
-            <!-- Revision overlay (hidden by default, appears on top of stack) -->
-            <div id="drevise-overlay" style="display:none;position:absolute;inset:0;z-index:20;background:var(--bg);border-radius:14px;border:1px solid var(--gl);padding:14px;flex-direction:column;gap:10px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">
-                <div style="font-size:9px;font-weight:800;color:var(--gl);letter-spacing:0.5px">שינוי עמדה</div>
-                <div style="font-size:18px;color:var(--t3);cursor:pointer;line-height:1" onclick="dCloseRevise()">&#10005;</div>
+            <!-- Dots -->
+            <div id="daily-controls" style="flex-shrink:0;background:var(--bg);padding:6px 12px 4px;display:flex;flex-direction:column;gap:4px;border-top:1px solid var(--b0)">
+              <div style="display:flex;justify-content:center;gap:4px">
+                <div class="tdot on" id="dd0"></div>
+                <div class="tdot" id="dd1"></div>
+                <div class="tdot" id="dd2"></div>
               </div>
-              <div id="drevise-q" style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;flex:1"></div>
-              <div style="display:flex;gap:6px;margin-top:4px">
-                <button class="drevise-btn" id="drb-l" onclick="dDoRevise('l')" style="background:rgba(199,82,82,.12);border:1.5px solid rgba(199,82,82,.4);color:var(--co)">&#8592; נגד</button>
-                <button class="drevise-btn" id="drb-u" onclick="dDoRevise('u')" style="background:rgba(228,174,88,.12);border:1.5px solid rgba(228,174,88,.4);color:var(--gd)">מורכב</button>
-                <button class="drevise-btn" id="drb-r" onclick="dDoRevise('r')" style="background:rgba(39,179,142,.12);border:1.5px solid rgba(39,179,142,.4);color:var(--te)">בעד &#8594;</button>
-              </div>
+            </div>
+            <!-- Action buttons -->
+            <div class="swipe-actions" id="daily-actions" style="padding:0 12px 8px;flex-shrink:0;background:var(--bg)">
+              <button class="sa-btn sa-yes" onclick="dSwipeAction('r')">בעד &#8594;</button>
+              <button class="sa-btn sa-complex" onclick="dSwipeAction('u')">זה מורכב</button>
+              <button class="sa-btn sa-no" onclick="dSwipeAction('l')">&#8592; נגד</button>
             </div>
           </div>
           <!-- Below-fold content: locked until swipes complete -->
@@ -1228,19 +1245,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div><!-- /home-below-fold -->
         </div>
-        <!-- Dots + action buttons — outside scr, pinned above tab bar -->
-        <div id="daily-controls" style="flex-shrink:0;background:var(--bg);border-top:1px solid var(--b0);padding:6px 12px 4px;display:flex;flex-direction:column;gap:4px">
-          <div style="display:flex;justify-content:center;gap:4px">
-            <div class="tdot on" id="dd0"></div>
-            <div class="tdot" id="dd1"></div>
-            <div class="tdot" id="dd2"></div>
-          </div>
-        </div>
-        <div class="swipe-actions" id="daily-actions" style="padding:0 12px 6px;flex-shrink:0;background:var(--bg)">
-          <button class="sa-btn sa-yes" onclick="dSwipeAction('r')">בעד &#8594;</button>
-          <button class="sa-btn sa-complex" onclick="dSwipeAction('u')">זה מורכב</button>
-          <button class="sa-btn sa-no" onclick="dSwipeAction('l')">&#8592; נגד</button>
-        </div>
+
         <div class="tab-bar">
           <button class="tab-btn active" onclick="go(4)"><span class="tab-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;display:block;margin:0 auto 1px"><path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"/><path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"/></svg></span>נספר</button>
           <button class="tab-btn" onclick="go(3)"><span class="tab-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;display:block;margin:0 auto 1px"><path d="M4.913 2.658c2.075-.27 4.19-.408 6.337-.408 2.147 0 4.262.139 6.337.408 1.922.25 3.291 1.861 3.405 3.727a4.403 4.403 0 0 0-1.032-.211 50.89 50.89 0 0 0-8.42 0c-2.358.196-4.04 2.19-4.04 4.434v4.286a4.47 4.47 0 0 0 2.433 3.984L7.28 21.53A.75.75 0 0 1 6 21v-4.03a48.527 48.527 0 0 1-1.087-.128C2.905 16.58 1.5 14.833 1.5 12.862V6.638c0-1.97 1.405-3.718 3.413-3.979Z"/><path d="M15.75 7.5c-1.376 0-2.739.057-4.086.169C10.124 7.797 9 9.103 9 10.609v4.285c0 1.507 1.128 2.814 2.67 2.94 1.243.102 2.5.157 3.768.165l2.782 2.781a.75.75 0 0 0 1.28-.53v-2.39l.33-.026c1.542-.125 2.67-1.433 2.67-2.94v-4.286c0-1.505-1.125-2.811-2.664-2.94A49.392 49.392 0 0 0 15.75 7.5Z"/></svg></span>דיון</button>
@@ -2121,6 +2126,13 @@ function dSwipeDone(n, dir){
 }
 
 function dBuildHistory(){
+  // Dismiss the full-screen swipe overlay with a fade
+  const overlay = document.getElementById('daily-overlay');
+  if(overlay){
+    overlay.style.transition = 'opacity .4s ease';
+    overlay.style.opacity = '0';
+    setTimeout(() => { overlay.style.display = 'none'; }, 420);
+  }
   // Unlock scroll + reveal below-fold content
   const scr = document.getElementById('home-scr');
   if(scr) scr.style.overflowY = 'auto';
@@ -2128,11 +2140,6 @@ function dBuildHistory(){
   if(below){ below.classList.remove('home-locked'); below.classList.add('home-unlocked'); }
   const nudge = document.getElementById('zk-nudge');
   if(nudge){ nudge.classList.remove('home-locked'); nudge.classList.add('home-unlocked'); }
-  // Hide dots + action buttons when all 3 done (completion card shown)
-  const controls = document.getElementById('daily-controls');
-  if(controls) controls.style.display = 'none';
-  const actions = document.getElementById('daily-actions');
-  if(actions) actions.style.display = 'none';
   for(let i=0;i<DAILY_TOTAL;i++){
     const v = dVotes[i];
     const icon = document.getElementById('dmi'+i);
