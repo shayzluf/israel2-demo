@@ -1091,7 +1091,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div style="font-size:9px;font-weight:800;color:var(--gl);letter-spacing:1px">זה מה שתראה כל יום</div>
           <div style="font-size:8px;color:var(--t3);margin-top:2px">נספר — האפליקציה היומית שלך</div>
         </div>
-        <div class="scr">
+        <div class="scr" id="home-scr" style="overflow-y:hidden">
           <!-- ZK NUDGE — push notification analog (dismissible) -->
           <div id="zk-nudge" style="background:var(--co0);border:1px solid var(--cn);border-radius:10px;padding:10px 12px;flex-shrink:0">
             <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
@@ -2102,6 +2102,9 @@ function dSwipeDone(n, dir){
 }
 
 function dBuildHistory(){
+  // Unlock scroll now that all 3 swipes are done
+  const scr = document.getElementById('home-scr');
+  if(scr) scr.style.overflowY = 'auto';
   // Hide action buttons when all 3 done (completion card shown)
   const actions = document.getElementById('daily-actions');
   if(actions) actions.style.display = 'none';
