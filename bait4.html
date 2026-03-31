@@ -713,11 +713,6 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div class="btn btn-gd" onclick="go(1)">הצטרף</div>
           <div style="text-align:center;font-size:9px;color:var(--t3);padding:8px 0 20px">ללא אימייל · ללא סיסמה</div>
         </div>
-        <div class="phone-nav">
-          <div class="pn-btn" style="opacity:0">&#8594;</div>
-          <div class="dots" id="d0"></div>
-          <div class="pn-btn gold" onclick="go(1)">הבא</div>
-        </div>
       </div>
 
       <!-- ════ S1: CALIBRATE — value calibration ════ -->
@@ -921,14 +916,11 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
         </div>
         <!-- Action buttons — all 3 choices as real buttons -->
-        <div class="swipe-actions" style="padding:4px 12px 2px">
+        <div class="swipe-actions" id="train-actions" style="padding:4px 12px 2px;display:none">
           <button class="sa-btn sa-yes" onclick="tSwipeAction('r')">בעד &#8594;</button>
           <button class="sa-btn sa-complex" onclick="tSwipeAction('u')">זה מורכב</button>
           <button class="sa-btn sa-no" onclick="tSwipeAction('l')">&#8592; נגד</button>
         </div>
-        <div class="phone-nav">
-          <div class="pn-btn" onclick="tGoBack()">&#8592; הקודם</div>
-          <div class="dots" id="d1"></div>
           <div></div>
         </div>
       </div>
@@ -979,11 +971,6 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             הפרופיל האזרחי שלך פרטי · רק התוצאה הכללית גלויה לכולם
           </div>
 
-        </div>
-        <div class="phone-nav">
-          <div class="pn-btn" onclick="go(1)">חזור</div>
-          <div class="dots" id="d2"></div>
-          <div class="pn-btn gold" onclick="go(4)">גלה עוד</div>
         </div>
       </div>
 
@@ -1831,6 +1818,9 @@ function tActivateId(id){
     const c = tGetCard(cid);
     if(c) c.classList.toggle('active', cid===id);
   });
+  // Show action buttons only on actual swipeable cards (not intro or result reveals)
+  const actions = document.getElementById('train-actions');
+  if(actions) actions.style.display = SWIPEABLE.includes(id) ? 'flex' : 'none';
 }
 
 function tNextFromResult(resultId){
