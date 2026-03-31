@@ -800,6 +800,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div style="flex:1;text-align:center"><div style="background:var(--co);border-radius:3px 3px 0 0;height:23px"></div><div style="font-size:6px;color:var(--co);margin-top:2px">עולה</div></div>
               </div>
               <div class="btn btn-gd" style="width:100%;margin-top:6px;font-size:11px;padding:9px" onclick="tNextFromResult('3r')">המשך</div>
+              <div style="text-align:center;margin-top:6px;font-size:8px;color:var(--t3);cursor:pointer;text-decoration:underline;opacity:.7" onclick="tGoBackFromResult('3r')">שנה תשובה לשאלה הקודמת</div>
             </div>
           </div>
           <!-- CARD 4 — INFERENCE: Universal Draft (charged, warmed up now) -->
@@ -872,6 +873,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div style="font-size:8px;color:var(--t3);line-height:1.4">אף מפלגה לא קידמה חקיקה<br>שליש מהישראלים ללא מיגון — מבקר המדינה, מרץ 2026</div>
               <div style="font-size:9px;color:var(--gl);line-height:1.4">ההסכמות הגדולות לא מגיעות מהכנסת<br>הן מגיעות מכאן</div>
               <div class="btn btn-gd" style="width:100%;margin-top:4px;font-size:11px;padding:9px" onclick="tNextFromResult('7r')">המשך</div>
+              <div style="text-align:center;margin-top:6px;font-size:8px;color:var(--t3);cursor:pointer;text-decoration:underline;opacity:.7" onclick="tGoBackFromResult('7r')">שנה תשובה לשאלה הקודמת</div>
             </div>
           </div>
           <!-- CARD 9 — LIVE VOTE (swipeable) -->
@@ -897,10 +899,15 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
         </div>
+        <!-- Undo pill (hidden, fades in 400ms after each swipe) -->
+        <div id="tundo-pill" style="display:none;position:absolute;bottom:52px;left:50%;transform:translateX(-50%);z-index:30;background:var(--el);border:1px solid var(--b0);border-radius:99px;padding:6px 14px;cursor:pointer;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.4)" onclick="tUndoLast()">
+          <div id="tundo-label" style="font-size:9px;font-weight:800;color:var(--t1);white-space:nowrap"></div>
+          <div style="font-size:7px;color:var(--t3);margin-top:1px">הקש לשינוי</div>
+        </div>
         <!-- Swipe hints -->
         <div class="swipe-hints" style="padding:2px 16px 4px">
           <div class="s-hint" style="color:var(--co)">&#8592; נגד</div>
-          <div class="s-hint" style="color:var(--gl)">&#8593; מורכב</div>
+          <div class="s-hint" style="color:var(--t3);font-size:7px;cursor:pointer" onclick="tTapComplex()">זה מורכב</div>
           <div class="s-hint" style="color:var(--te)">בעד &#8594;</div>
         </div>
         <div class="phone-nav">
@@ -1777,6 +1784,10 @@ const tAnswers = {};
 function tAnswerLabel(dir){ return dir==='r'?'<strong style="color:var(--te)">בעד</strong>':dir==='l'?'<strong style="color:var(--co)">נגד</strong>':'<strong style="color:var(--gl)">מורכב</strong>'; }
 
 let tDragging=false, tStartX=0, tStartY=0, tCurX=0, tCurY=0;
+let tLastSwiped=null, tUndoTimer=null;
+const tDirLabel={'r':'בעד ✓','l':'נגד ✗','u':'מורכב ~'};
+// parent inference card for each result card
+const tResultParent={'3r':'3','7r':'7','9r':'9'};
 
 function tGetCard(id){ return document.getElementById('tc'+id); }
 function tGetInner(id){ return tGetCard(id)?.querySelector('.tcard-inner'); }
@@ -1803,8 +1814,81 @@ function tNextFromResult(resultId){
   }
 }
 
+function tShowUndoPill(id, dir){
+  const pill = document.getElementById('tundo-pill');
+  const label = document.getElementById('tundo-label');
+  if(!pill || !label) return;
+  tLastSwiped = id;
+  label.textContent = tDirLabel[dir] + ' ← ביטול';
+  pill.style.display = 'block';
+  pill.style.opacity = '0';
+  pill.style.transition = 'opacity .3s';
+  setTimeout(()=>{ pill.style.opacity='1'; }, 20);
+  if(tUndoTimer) clearTimeout(tUndoTimer);
+  tUndoTimer = setTimeout(()=>tHideUndoPill(), 6000);
+}
+
+function tHideUndoPill(){
+  const pill = document.getElementById('tundo-pill');
+  if(!pill) return;
+  pill.style.opacity='0';
+  setTimeout(()=>{ pill.style.display='none'; }, 300);
+  if(tUndoTimer){ clearTimeout(tUndoTimer); tUndoTimer=null; }
+}
+
+function tUndoLast(){
+  if(!tLastSwiped) return;
+  tHideUndoPill();
+  const id = tLastSwiped;
+  tLastSwiped = null;
+  delete tAnswers[id];
+  // Reset the card visually (it flew off-screen) and re-activate
+  const inner = tGetInner(id);
+  if(inner){
+    inner.style.transition = 'none';
+    inner.style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+    inner.style.opacity = '0';
+    inner.dataset.bound = '';
+    // Fade it back in
+    requestAnimationFrame(()=>{
+      inner.style.transition = 'opacity .25s, transform .3s cubic-bezier(.175,.885,.32,1.275)';
+      inner.style.opacity = '1';
+    });
+  }
+  tCurId = id;
+  tActivateId(id);
+  tBindSwipe(id);
+}
+
+function tGoBackFromResult(resultId){
+  const parentId = tResultParent[resultId];
+  if(!parentId) return;
+  tHideUndoPill();
+  delete tAnswers[parentId];
+  const inner = tGetInner(parentId);
+  if(inner){
+    inner.style.transition = 'none';
+    inner.style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+    inner.style.opacity = '0';
+    inner.dataset.bound = '';
+    requestAnimationFrame(()=>{
+      inner.style.transition = 'opacity .25s, transform .3s cubic-bezier(.175,.885,.32,1.275)';
+      inner.style.opacity = '1';
+    });
+  }
+  tCurId = parentId;
+  tActivateId(parentId);
+  tBindSwipe(parentId);
+}
+
+function tTapComplex(){
+  if(SWIPEABLE.includes(tCurId)) tSwipeDone(tCurId, 'u');
+}
+
 function tSwipeDone(id, dir){
   tAnswers[id] = dir;
+  tHideUndoPill();
+  setTimeout(()=>tShowUndoPill(id, dir), 400);
   const inner = tGetInner(id);
   if(!inner) return;
   inner.style.transition = 'transform .3s ease, opacity .25s';
@@ -1855,14 +1939,16 @@ function tSwipeDone(id, dir){
 
 function tBindSwipe(id){
   const inner = tGetInner(id);
-  if(!inner) return;
+  if(!inner || inner.dataset.bound==='1') return;
+  inner.dataset.bound = '1';
   inner.style.transform=''; inner.style.opacity='1'; inner.style.transition='';
+  let gestureIntent = null; // null | 'swipe' | 'scroll'
 
   function onDown(e){
     tDragging=true; inner.classList.add('dragging');
     tStartX = e.touches?e.touches[0].clientX:e.clientX;
     tStartY = e.touches?e.touches[0].clientY:e.clientY;
-    tCurX=0; tCurY=0;
+    tCurX=0; tCurY=0; gestureIntent=null;
     document.addEventListener('mousemove', onMove);
     document.addEventListener('mouseup', onUp);
     document.addEventListener('touchmove', onMove, {passive:false});
@@ -1870,9 +1956,16 @@ function tBindSwipe(id){
   }
   function onMove(e){
     if(!tDragging) return;
+    const rawX=(e.touches?e.touches[0].clientX:e.clientX)-tStartX;
+    const rawY=(e.touches?e.touches[0].clientY:e.clientY)-tStartY;
+    // Lock direction intent once past 12px
+    if(gestureIntent===null && Math.sqrt(rawX*rawX+rawY*rawY)>12){
+      gestureIntent = Math.abs(rawY) > Math.abs(rawX)*1.5 ? 'scroll' : 'swipe';
+    }
+    if(gestureIntent==='scroll') return; // let parent scroll
     e.preventDefault&&e.preventDefault();
-    tCurX=(e.touches?e.touches[0].clientX:e.clientX)-tStartX;
-    tCurY=(e.touches?e.touches[0].clientY:e.clientY)-tStartY;
+    tCurX=rawX; tCurY=rawY;
+    if(Math.abs(tCurX)<8 && gestureIntent!=='swipe') return;
     inner.style.transform=`translateX(${tCurX}px) translateY(${tCurY}px) rotate(${tCurX*0.06}deg)`;
     inner.style.transition='none';
     const thresh=40;
@@ -1891,16 +1984,22 @@ function tBindSwipe(id){
     tDragging=false; inner.classList.remove('dragging');
     document.removeEventListener('mousemove',onMove); document.removeEventListener('mouseup',onUp);
     document.removeEventListener('touchmove',onMove); document.removeEventListener('touchend',onUp);
-    const thresh=70;
-    if(tCurX>thresh) tSwipeDone(id,'r');
-    else if(tCurX<-thresh) tSwipeDone(id,'l');
-    else if(tCurY<-thresh) tSwipeDone(id,'u');
-    else {
-      inner.style.transition='transform .45s cubic-bezier(.175,.885,.32,1.375), opacity .3s, border-color .3s';
+    if(gestureIntent==='swipe'){
+      const thresh=70;
+      if(tCurX>thresh) tSwipeDone(id,'r');
+      else if(tCurX<-thresh) tSwipeDone(id,'l');
+      else if(tCurY<-thresh) tSwipeDone(id,'u');
+      else {
+        inner.style.transition='transform .45s cubic-bezier(.175,.885,.32,1.375), opacity .3s, border-color .3s';
+        inner.style.transform=''; inner.style.borderColor='';
+        [tGetInd(id,'r'),tGetInd(id,'l'),tGetInd(id,'u')].forEach(el=>{if(el)el.style.opacity=0;});
+      }
+    } else {
+      inner.style.transition='transform .3s ease, border-color .2s';
       inner.style.transform=''; inner.style.borderColor='';
       [tGetInd(id,'r'),tGetInd(id,'l'),tGetInd(id,'u')].forEach(el=>{if(el)el.style.opacity=0;});
     }
-    tCurX=0; tCurY=0;
+    tCurX=0; tCurY=0; gestureIntent=null;
   }
   inner.addEventListener('mousedown', onDown);
   inner.addEventListener('touchstart', onDown, {passive:true});
