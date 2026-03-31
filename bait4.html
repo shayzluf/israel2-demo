@@ -1195,18 +1195,6 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               </div>
             </div>
           </div>
-          <!-- Progress dots for daily swipes -->
-          <div style="display:flex;justify-content:center;gap:4px;margin-bottom:4px">
-            <div class="tdot on" id="dd0"></div>
-            <div class="tdot" id="dd1"></div>
-            <div class="tdot" id="dd2"></div>
-          </div>
-          <!-- Action buttons — all 3 choices -->
-          <div class="swipe-actions" id="daily-actions">
-            <button class="sa-btn sa-yes" onclick="dSwipeAction('r')">בעד &#8594;</button>
-            <button class="sa-btn sa-complex" onclick="dSwipeAction('u')">זה מורכב</button>
-            <button class="sa-btn sa-no" onclick="dSwipeAction('l')">&#8592; נגד</button>
-          </div>
           <!-- Below-fold content: locked until swipes complete -->
           <div id="home-below-fold" class="home-locked">
             <!-- Profile Status -->
@@ -1236,6 +1224,19 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               412 אזרחים חדשים הצטרפו מאתמול · 12 מהקבוצה שלך
             </div>
           </div><!-- /home-below-fold -->
+        </div>
+        <!-- Dots + action buttons — outside scr, pinned above tab bar -->
+        <div id="daily-controls" style="flex-shrink:0;background:var(--bg);border-top:1px solid var(--b0);padding:6px 12px 4px;display:flex;flex-direction:column;gap:4px">
+          <div style="display:flex;justify-content:center;gap:4px">
+            <div class="tdot on" id="dd0"></div>
+            <div class="tdot" id="dd1"></div>
+            <div class="tdot" id="dd2"></div>
+          </div>
+        </div>
+        <div class="swipe-actions" id="daily-actions" style="padding:0 12px 6px;flex-shrink:0;background:var(--bg)">
+          <button class="sa-btn sa-yes" onclick="dSwipeAction('r')">בעד &#8594;</button>
+          <button class="sa-btn sa-complex" onclick="dSwipeAction('u')">זה מורכב</button>
+          <button class="sa-btn sa-no" onclick="dSwipeAction('l')">&#8592; נגד</button>
         </div>
         <div class="tab-bar">
           <button class="tab-btn active" onclick="go(4)"><span class="tab-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;display:block;margin:0 auto 1px"><path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z"/><path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z"/></svg></span>נספר</button>
@@ -2121,7 +2122,9 @@ function dBuildHistory(){
   if(below){ below.classList.remove('home-locked'); below.classList.add('home-unlocked'); }
   const nudge = document.getElementById('zk-nudge');
   if(nudge){ nudge.classList.remove('home-locked'); nudge.classList.add('home-unlocked'); }
-  // Hide action buttons when all 3 done (completion card shown)
+  // Hide dots + action buttons when all 3 done (completion card shown)
+  const controls = document.getElementById('daily-controls');
+  if(controls) controls.style.display = 'none';
   const actions = document.getElementById('daily-actions');
   if(actions) actions.style.display = 'none';
   for(let i=0;i<DAILY_TOTAL;i++){
