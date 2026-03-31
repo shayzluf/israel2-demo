@@ -1946,7 +1946,7 @@ function tBindSwipe(id){
     const rawY=(e.touches?e.touches[0].clientY:e.clientY)-tStartY;
     // Lock direction intent once past 12px
     if(gestureIntent===null && Math.sqrt(rawX*rawX+rawY*rawY)>12){
-      gestureIntent = Math.abs(rawY) > Math.abs(rawX)*1.5 ? 'scroll' : 'swipe';
+      gestureIntent = (rawY > 0 && Math.abs(rawY) > Math.abs(rawX)*1.5) ? 'scroll' : 'swipe';
     }
     if(gestureIntent==='scroll') return; // let parent scroll
     e.preventDefault&&e.preventDefault();
@@ -2183,7 +2183,7 @@ function dBindSwipe(n){
     const rawY=(e.touches?e.touches[0].clientY:e.clientY)-dStartY;
     // Direction lock: commit intent once displacement exceeds 12px
     if(gestureIntent===null && Math.sqrt(rawX*rawX+rawY*rawY)>12){
-      gestureIntent = Math.abs(rawY) > Math.abs(rawX)*1.5 ? 'scroll' : 'swipe';
+      gestureIntent = (rawY > 0 && Math.abs(rawY) > Math.abs(rawX)*1.5) ? 'scroll' : 'swipe';
     }
     // If scroll intent — release, let the parent container scroll naturally
     if(gestureIntent==='scroll') return;
