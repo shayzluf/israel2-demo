@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
 <title>נספר — Complete Flow</title>
-<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&family=Frank+Ruhl+Libre:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#06070A; --sf:#0D0F14; --el:#141820; --ra:#1C2029;
@@ -15,7 +15,7 @@
   --co:#C75252; --co0:rgba(199,82,82,0.10); --cn:rgba(199,82,82,0.24);
   --bl:#4470B0; --bl0:rgba(68,112,176,0.10);
   --pu:#7258A2; --pu0:rgba(114,88,162,0.10);
-  --frank:'Frank Ruhl Libre',serif; --heb:'Heebo',sans-serif;
+  --frank:'Heebo',sans-serif; --heb:'Heebo',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--heb);background:#040508;color:var(--t1);
@@ -426,6 +426,14 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .tcard-ai{font-size:9px;color:var(--te);text-align:center;}
 .tcard-more{font-size:8px;color:var(--bl);text-align:center;cursor:pointer;padding:2px 0;opacity:.7;transition:opacity .15s;}
 .tcard-more:hover{opacity:1;text-decoration:underline;}
+/* ─── daily swipe history mini-cards ─── */
+.dmini{flex:1;background:var(--el);border:1px solid var(--b0);border-radius:9px;padding:7px 5px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;transition:border-color .15s,transform .12s;}
+.dmini:active{transform:scale(.96);}
+.dmini-label{font-size:7px;color:var(--t3);text-align:center;line-height:1.3;font-weight:600;}
+.dmini-icon{font-size:9px;font-weight:800;text-align:center;min-height:14px;}
+.dmini-edit{font-size:7px;color:var(--t3);opacity:.6;}
+.drevise-btn{flex:1;padding:9px 4px;border-radius:8px;font-size:10px;font-weight:700;cursor:pointer;font-family:var(--heb);transition:opacity .15s,transform .1s;}
+.drevise-btn:active{transform:scale(.96);}
 .tind{
   position:absolute;top:12px;font-size:10px;font-weight:800;padding:4px 10px;
   border-radius:99px;opacity:0;transition:opacity .12s;z-index:5;letter-spacing:.5px;
@@ -647,7 +655,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div style="display:flex;flex-direction:column;gap:6px;">
               <div style="display:flex;align-items:center;gap:8px;font-size:10px;color:rgba(228,174,88,.8);line-height:1.4;">
                 <span style="color:var(--gl);font-weight:900;flex-shrink:0;font-size:16px;min-width:36px;text-align:center;direction:ltr">81%</span>
-                <span>מכל הקבוצות מסכימים: יועץ נפשי זמין בכל בית ספר</span>
+                <span>מכל הקבוצות מסכימים: פסיכולוג קליני לכל בית ספר</span>
               </div>
               <div style="display:flex;align-items:center;gap:8px;font-size:10px;color:rgba(228,174,88,.8);line-height:1.4;">
                 <span style="color:var(--co);font-weight:900;flex-shrink:0;font-size:16px;min-width:36px;text-align:center;direction:ltr">0</span>
@@ -770,7 +778,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-r" id="ti3r">&#8594; בעד</div>
               <div class="tind tind-l" id="ti3l">נגד &#8592;</div>
               <div class="tind tind-u" id="ti3u">&#8593; מורכב</div>
-              <div class="tcard-q">בכל בית ספר צריך להיות יועץ נפשי זמין לתלמידים</div>
+              <div class="tcard-q">כל בית ספר צריך פסיכולוג קליני משלו — לא שיתוף אחד לעשרה בתי ספר</div>
               <div class="tcard-meta"><span dir="ltr">156,338</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
               <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
@@ -782,7 +790,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div style="font-size:8px;color:var(--te);font-weight:800;letter-spacing:1px">הסכמה חוצת קבוצות</div>
               <div style="font-family:var(--frank);font-size:42px;font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1">76%</div>
               <div style="font-size:12px;font-weight:800;color:var(--t1)">מכל הקבוצות מסכימים</div>
-              <div style="font-size:10px;color:var(--t2);line-height:1.5">יועץ נפשי זמין לתלמידים בכל בית ספר</div>
+              <div style="font-size:10px;color:var(--t2);line-height:1.5">פסיכולוג קליני לכל בית ספר — לא אחד לעשרה</div>
               <div id="consensus1-personal" style="font-size:10px;font-weight:700;color:var(--te);margin:4px 0"></div>
               <div style="display:flex;gap:3px;margin:4px 0;align-items:flex-end">
                 <div style="flex:1;text-align:center"><div style="background:var(--te);border-radius:3px 3px 0 0;height:22px"></div><div style="font-size:6px;color:var(--te);margin-top:2px">חילוני</div></div>
@@ -840,7 +848,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-r" id="ti7r">&#8594; בעד</div>
               <div class="tind tind-l" id="ti7l">נגד &#8592;</div>
               <div class="tind tind-u" id="ti7u">&#8593; מורכב</div>
-              <div class="tcard-q">לאסור על חברות ביטוח לדחות טיפול שרופא אישר</div>
+              <div class="tcard-q">לחייב בניית מרחב מוגן בכל בניין מגורים — גם בפריפריה ובחברה הערבית</div>
               <div class="tcard-meta"><span dir="ltr">147,221</span> הצביעו</div>
               <div class="tcard-ai">הפרופיל שלך: מתעדכן</div>
               <div class="tcard-more" onclick="event.stopPropagation()">ספר לי עוד ←</div>
@@ -848,18 +856,22 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
           <!-- CARD 7R — CONSENSUS RESULT #2 (tap to continue) -->
           <div class="tcard" id="tc7r">
-            <div class="tcard-inner" style="text-align:center;gap:10px;cursor:default">
+            <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default">
               <div style="font-size:8px;color:var(--te);font-weight:800;letter-spacing:1px">הסכמה חוצת קבוצות</div>
-              <div style="font-family:var(--frank);font-size:42px;font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1">81%</div>
+              <div style="font-family:var(--frank);font-size:42px;font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1">86%</div>
               <div style="font-size:12px;font-weight:800;color:var(--t1)">מכל הקבוצות מסכימים</div>
-              <div style="font-size:10px;color:var(--t2);line-height:1.5">לאסור על חברות ביטוח לדחות טיפול שרופא אישר</div>
-              <div id="consensus2-personal" style="font-size:10px;font-weight:700;color:var(--te);margin:4px 0"></div>
-              <div style="display:flex;align-items:center;gap:6px;margin:4px 0">
-                <div style="font-size:24px;font-weight:900;color:var(--co);direction:ltr">0</div>
-                <div style="font-size:9px;color:var(--co);font-weight:700">מפלגות הצביעו בעד</div>
+              <div style="font-size:10px;color:var(--t2);line-height:1.5">מרחב מוגן בכל בניין — גם בפריפריה</div>
+              <div id="consensus2-personal" style="font-size:10px;font-weight:700;color:var(--te);margin:2px 0"></div>
+              <div style="display:flex;gap:3px;margin:2px 0;align-items:flex-end">
+                <div style="flex:1;text-align:center"><div style="background:var(--pu);border-radius:3px 3px 0 0;height:26px"></div><div style="font-size:6px;color:var(--pu);margin-top:2px">חרדי</div></div>
+                <div style="flex:1;text-align:center"><div style="background:var(--gd);border-radius:3px 3px 0 0;height:25px"></div><div style="font-size:6px;color:var(--gd);margin-top:2px">ערבי</div></div>
+                <div style="flex:1;text-align:center"><div style="background:var(--te);border-radius:3px 3px 0 0;height:25px"></div><div style="font-size:6px;color:var(--te);margin-top:2px">חילוני</div></div>
+                <div style="flex:1;text-align:center"><div style="background:var(--bl);border-radius:3px 3px 0 0;height:24px"></div><div style="font-size:6px;color:var(--bl);margin-top:2px">מסורתי</div></div>
+                <div style="flex:1;text-align:center"><div style="background:var(--co);border-radius:3px 3px 0 0;height:23px"></div><div style="font-size:6px;color:var(--co);margin-top:2px">דתי</div></div>
               </div>
+              <div style="font-size:8px;color:var(--t3);line-height:1.4">אף מפלגה לא קידמה חקיקה<br>שליש מהישראלים ללא מיגון — מבקר המדינה, מרץ 2026</div>
               <div style="font-size:9px;color:var(--gl);line-height:1.4">ההסכמות הגדולות לא מגיעות מהכנסת<br>הן מגיעות מכאן</div>
-              <div class="btn btn-gd" style="width:100%;margin-top:6px;font-size:11px;padding:9px" onclick="tNextFromResult('7r')">המשך</div>
+              <div class="btn btn-gd" style="width:100%;margin-top:4px;font-size:11px;padding:9px" onclick="tNextFromResult('7r')">המשך</div>
             </div>
           </div>
           <!-- CARD 9 — LIVE VOTE (swipeable) -->
@@ -900,41 +912,55 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 
       <!-- ════ S2: UNEXPECTED NEIGHBORS ════ -->
       <div class="slide" id="sl2">
-        <div class="scr" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px">
+        <div class="scr" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px 16px">
 
-          <!-- Big surprise number -->
+          <!-- Headline -->
           <div style="text-align:center">
-            <div style="font-family:var(--frank);font-size:52px;font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1">76%</div>
-            <div style="font-size:13px;font-weight:800;color:var(--t1);margin-top:6px">הסכימו איתך —<br>כולל כאלה שלא ציפית</div>
+            <div style="font-family:var(--frank);font-size:36px;font-weight:900;color:var(--t1);line-height:1.15;letter-spacing:-1px">מסכימים על<br>החיים עצמם.</div>
           </div>
 
-          <!-- What this means -->
-          <div style="background:var(--te0);border:1px solid rgba(39,179,142,.2);border-radius:9px;padding:10px 12px;width:100%">
-            <div style="font-size:10px;color:var(--te);line-height:1.6;text-align:center">
-              על 4 מתוך 8 נושאים הסכמת עם אנשים שחושבים אחרת ממך על כל השאר
+          <!-- Sub-statement -->
+          <div style="font-size:12px;color:var(--t2);text-align:center;line-height:1.5">
+            גם מי שהצביע הפוך ממך — בחר בדיוק כמוך כאן:
+          </div>
+
+          <!-- Bridge moment: the two consensus reveals named by group -->
+          <div style="background:var(--el);border-radius:12px;padding:12px 14px;width:100%;display:flex;flex-direction:column;gap:10px">
+            <div>
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--te);flex-shrink:0"></div>
+                <div style="font-size:11px;font-weight:800;color:var(--t1)">פסיכולוג לכל בית ספר</div>
+              </div>
+              <div style="font-size:9px;color:var(--te);padding-right:12px"><span style="font-weight:800">76%</span> הסכמה: חילונים, ערבים, דתיים</div>
+            </div>
+            <div style="height:1px;background:rgba(255,255,255,0.06)"></div>
+            <div>
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--gl);flex-shrink:0"></div>
+                <div style="font-size:11px;font-weight:800;color:var(--t1)">ממ"ד בכל בניין מגורים</div>
+              </div>
+              <div style="font-size:9px;color:var(--gl);padding-right:12px"><span style="font-weight:800">86%</span> הסכמה: חרדים, עולים, מסורתיים</div>
             </div>
           </div>
 
-          <!-- Privacy note -->
-          <div style="background:var(--el);border-radius:8px;padding:8px 10px;width:100%">
-            <div style="font-size:9px;color:var(--t3);line-height:1.5;text-align:center">
-              הפרופיל האזרחי שלך מתחיל להיווצר<br>ההצבעות שלך פרטיות — רק התוצאה הכללית גלויה לכולם
-            </div>
-          </div>
-
-          <!-- "For the first time" -->
-          <div style="background:var(--gd0);border:1px solid var(--gn);border-radius:9px;padding:10px 12px;width:100%">
-            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:3px;text-align:center">לראשונה</div>
-            <div style="font-size:9px;color:rgba(228,174,88,.7);line-height:1.5;text-align:center">אפשר לראות מה אזרחים באמת חושבים — בלי מפלגות, בלי מדיה, בלי רעש</div>
+          <!-- Making history line -->
+          <div style="text-align:center;padding:0 8px">
+            <div style="font-size:10px;color:var(--gd);font-weight:700;line-height:1.6">לראשונה בהיסטוריה —<br>מגלים את ההסכמה הישראלית השקטה</div>
           </div>
 
           <!-- CTA -->
-          <div class="btn btn-gd" style="width:100%" onclick="go(4)">כנס לאפליקציה</div>
+          <div class="btn btn-gd" style="width:100%" onclick="go(4)">גלה על מה עוד הסכמנו</div>
+
+          <!-- Privacy note — small, non-intrusive -->
+          <div style="font-size:8px;color:var(--t3);text-align:center;line-height:1.4">
+            הפרופיל האזרחי שלך פרטי · רק התוצאה הכללית גלויה לכולם
+          </div>
+
         </div>
         <div class="phone-nav">
           <div class="pn-btn" onclick="go(1)">חזור</div>
           <div class="dots" id="d2"></div>
-          <div class="pn-btn gold" onclick="go(4)">כנס לאפליקציה</div>
+          <div class="pn-btn gold" onclick="go(4)">גלה עוד</div>
         </div>
       </div>
 
@@ -963,15 +989,15 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <!-- Consensus Discovery Toast -->
             <div class="consensus-toast">
               <div style="font-size:8px;font-weight:800;color:var(--gl);letter-spacing:1px;margin-bottom:4px">גילוי הסכמה חדש</div>
-              <div style="font-size:11px;font-weight:800;color:var(--t1);margin-bottom:3px">81% מכל הקבוצות מסכימים:</div>
-              <div style="font-size:10px;color:var(--t2);line-height:1.4;margin-bottom:6px">תקציב שיקום חייב להיות שקוף ופתוח לציבור — ללא יוצא מן הכלל</div>
-              <div style="font-size:8px;color:var(--co);font-weight:700;margin-bottom:6px">אף מפלגה בכנסת לא הצביעה בעד</div>
+              <div style="font-size:11px;font-weight:800;color:var(--t1);margin-bottom:3px">87% מכל הקבוצות מסכימים:</div>
+              <div style="font-size:10px;color:var(--t2);line-height:1.4;margin-bottom:6px">מחירי הדיור חייבים לרדת, כדי שאנשים עובדים יוכלו לקנות דירה</div>
+              <div style="font-size:8px;color:var(--co);font-weight:700;margin-bottom:6px">אף ממשלה לא קידמה פתרון אמיתי ב-15 השנים האחרונות</div>
               <div class="tribal-bars">
-                <div class="tribal-bar"><div class="tb-fill" style="height:32px;background:var(--te)"></div><div class="tb-pct" style="color:var(--te)">84%</div><div class="tb-lbl">חילוני</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">79%</div><div class="tb-lbl">מסורתי</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:29px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">76%</div><div class="tb-lbl">דתי</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:33px;background:var(--gl)"></div><div class="tb-pct" style="color:var(--gl)">83%</div><div class="tb-lbl">ערבי</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:31px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">80%</div><div class="tb-lbl">עולה</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:35px;background:var(--gl)"></div><div class="tb-pct" style="color:var(--gl)">89%</div><div class="tb-lbl">ערבי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:34px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">90%</div><div class="tb-lbl">עולה</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:33px;background:var(--te)"></div><div class="tb-pct" style="color:var(--te)">88%</div><div class="tb-lbl">חילוני</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:31px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">85%</div><div class="tb-lbl">מסורתי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">83%</div><div class="tb-lbl">דתי</div></div>
               </div>
             </div>
             <!-- Statement 1: high agreement -->
@@ -1063,7 +1089,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div style="font-size:11px;font-weight:900;color:var(--t1)">3 הסוויפים של היום</div>
             <div class="swipe-hints" style="padding:2px 0;justify-content:center;gap:12px">
               <span class="s-hint" style="color:var(--co)">&#8592; נגד</span>
-              <span class="s-hint" style="color:var(--gl)">&#8593; מורכב</span>
+              <span class="s-hint" style="color:var(--t3);font-size:7px;cursor:pointer" id="complex-btn-hint" onclick="dTapComplex()">זה מורכב</span>
               <span class="s-hint" style="color:var(--te)">בעד &#8594;</span>
             </div>
           </div>
@@ -1109,10 +1135,43 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
             <!-- Completion card (shown after all 3 swiped) -->
             <div class="tcard" id="dc3">
-              <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default;padding:16px 14px">
-                <div style="font-size:11px;font-weight:900;color:var(--te)">&#10003; סיימת את 3 הסוויפים של היום</div>
-                <div style="font-size:10px;color:var(--t2)">הפרופיל שלך התעדכן. חוזרים מחר</div>
-                <div class="streak" style="margin:4px auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--gl)" style="width:11px;height:11px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z" clip-rule="evenodd"/></svg> רצף: 13 ימים</div>
+              <div class="tcard-inner" style="gap:6px;cursor:default;padding:12px 14px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="font-size:10px;font-weight:900;color:var(--te)">&#10003; 3 הסוויפים של היום</div>
+                  <div class="streak"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--gl)" style="width:10px;height:10px;display:inline-block;vertical-align:middle;flex-shrink:0"><path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 0 1 1.925-3.546 3.75 3.75 0 0 1 3.255 3.718Z" clip-rule="evenodd"/></svg> רצף 13</div>
+                </div>
+                <!-- History strip: 3 mini-cards -->
+                <div id="dhistory" style="display:flex;gap:6px;width:100%">
+                  <div class="dmini" id="dm0" onclick="dOpenRevise(0)">
+                    <div class="dmini-label" id="dml0">גילוי תקציבי</div>
+                    <div class="dmini-icon" id="dmi0">—</div>
+                    <div class="dmini-edit">שנה</div>
+                  </div>
+                  <div class="dmini" id="dm1" onclick="dOpenRevise(1)">
+                    <div class="dmini-label" id="dml1">מוסדות ציבוריים</div>
+                    <div class="dmini-icon" id="dmi1">—</div>
+                    <div class="dmini-edit">שנה</div>
+                  </div>
+                  <div class="dmini" id="dm2" onclick="dOpenRevise(2)">
+                    <div class="dmini-label" id="dml2">ארנונה לדירות ריקות</div>
+                    <div class="dmini-icon" id="dmi2">—</div>
+                    <div class="dmini-edit">שנה</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Revision overlay (hidden by default, appears on top of stack) -->
+            <div id="drevise-overlay" style="display:none;position:absolute;inset:0;z-index:20;background:var(--bg);border-radius:14px;border:1px solid var(--gl);padding:14px;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">
+                <div style="font-size:9px;font-weight:800;color:var(--gl);letter-spacing:0.5px">שינוי עמדה</div>
+                <div style="font-size:18px;color:var(--t3);cursor:pointer;line-height:1" onclick="dCloseRevise()">&#10005;</div>
+              </div>
+              <div id="drevise-q" style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;flex:1"></div>
+              <div style="display:flex;gap:6px;margin-top:4px">
+                <button class="drevise-btn" id="drb-l" onclick="dDoRevise('l')" style="background:rgba(199,82,82,.12);border:1.5px solid rgba(199,82,82,.4);color:var(--co)">&#8592; נגד</button>
+                <button class="drevise-btn" id="drb-u" onclick="dDoRevise('u')" style="background:rgba(228,174,88,.12);border:1.5px solid rgba(228,174,88,.4);color:var(--gd)">מורכב</button>
+                <button class="drevise-btn" id="drb-r" onclick="dDoRevise('r')" style="background:rgba(39,179,142,.12);border:1.5px solid rgba(39,179,142,.4);color:var(--te)">בעד &#8594;</button>
               </div>
             </div>
           </div>
@@ -1124,8 +1183,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
           <!-- Profile Status -->
           <div style="display:flex;align-items:center;gap:7px;padding:9px 11px;background:var(--te0);border-radius:9px;border:1px solid rgba(39,179,142,.18)">
-            <div style="flex-shrink:0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z"/></svg></div>
-            <div style="font-size:9px;color:var(--te);flex:1">הפרופיל האזרחי שלך גדל · רמה <strong>34% &#8594; 41%</strong> אחרי היום</div>
+            <div style="font-size:9px;color:var(--te);flex:1">הפרופיל האזרחי שלך גדל · רמה <strong>41% &#8592; 34%</strong> אחרי היום</div>
           </div>
           <!-- Contradiction Alert -->
           <div style="padding:9px 11px;background:var(--co0);border:1px solid var(--cn);border-radius:9px">
@@ -1460,23 +1518,23 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <!-- HOOK — super-aligned issue -->
           <div style="font-size:9px;color:var(--gl);font-weight:700;text-align:center;margin-top:2px">ובדיוק עכשיו, יש נושא שמתאים בול לעמדות שלך:</div>
           <div class="card" style="border-color:var(--gn);padding:10px 11px">
-            <div style="font-size:11px;font-weight:800;color:var(--t1);margin-bottom:4px">חינוך חינם מגיל 3 — הצעת חוק</div>
+            <div style="font-size:11px;font-weight:800;color:var(--t1);margin-bottom:4px">ועדת חקירה ממלכתית לאירועי 7 באוקטובר</div>
             <div style="display:flex;align-items:center;gap:5px;font-size:9px;color:var(--te);margin-bottom:6px">
-              <span style="font-weight:800">&#10003;</span> הצבעת: בעד · <span style="font-weight:800;color:var(--gl)">81% מכל הקבוצות מסכימים</span>
+              <span style="font-weight:800">&#10003;</span> הצבעת: בעד · <span style="font-weight:800;color:var(--gl)">90% מכל הקבוצות מסכימים</span>
             </div>
             <div class="gap-bars">
               <div class="gap-row">
                 <div class="gap-label" style="color:var(--te)">אזרחים</div>
-                <div class="gap-track"><div class="gap-fill" style="width:81%;background:var(--te)"></div></div>
-                <div class="gap-pct" style="color:var(--te)">81%</div>
+                <div class="gap-track"><div class="gap-fill" style="width:90%;background:var(--te)"></div></div>
+                <div class="gap-pct" style="color:var(--te)">90%</div>
               </div>
               <div class="gap-row">
                 <div class="gap-label" style="color:var(--co)">כנסת</div>
-                <div class="gap-track"><div class="gap-fill" style="width:3%;background:var(--co)"></div></div>
-                <div class="gap-pct" style="color:var(--co)">3%</div>
+                <div class="gap-track"><div class="gap-fill" style="width:0%;background:var(--co)"></div></div>
+                <div class="gap-pct" style="color:var(--co)">0%</div>
               </div>
             </div>
-            <div style="font-size:8px;color:var(--co);font-weight:700;margin-top:3px">רק 4 מתוך 120 ח"כים הצביעו בעד</div>
+            <div style="font-size:8px;color:var(--co);font-weight:700;margin-top:3px">הממשלה חסמה הצבעה על הקמת ועדה — פעמיים</div>
           </div>
 
           <!-- "לראשונה" motif -->
@@ -1908,6 +1966,16 @@ if(document.getElementById('sl1').classList.contains('active')){ tActivateId('in
 const DAILY_TOTAL = 3;
 let dCur = 0;
 let dDragging = false, dStartX = 0, dStartY = 0, dCurX = 0, dCurY = 0;
+let dVotes = [null, null, null]; // 'r'=בעד | 'l'=נגד | 'u'=מורכב
+const dLabels = ['גילוי תקציבי', 'מוסדות ציבוריים', 'ארנונה לדירות ריקות'];
+const dQuestions = [
+  'האם לחייב גילוי תקציבי של עמותות שמקבלות מעל 10M ש"ח מהמדינה?',
+  'מוסד ציבורי שמקבל תקציב מדינה צריך לפתוח את דלתותיו לכל המגזרים?',
+  'האם לאפשר לרשויות מקומיות לקבוע מס ארנונה דיפרנציאלי לדירות ריקות?'
+];
+const dVoteIcon = { r:'בעד ✓', l:'נגד ✗', u:'מורכב ~' };
+const dVoteColor = { r:'var(--te)', l:'var(--co)', u:'var(--gd)' };
+let dRevisingCard = null;
 
 function dGetCard(n){ return document.getElementById('dc'+n); }
 function dGetInner(n){ return dGetCard(n)?.querySelector('.tcard-inner'); }
@@ -1931,6 +1999,7 @@ function dActivate(n){
 function dSwipeDone(n, dir){
   const inner = dGetInner(n);
   if(!inner) return;
+  dVotes[n] = dir;
   inner.style.transition = 'transform .3s ease, opacity .25s';
   const x = dir==='r' ? 300 : dir==='l' ? -300 : 0;
   const y = dir==='u' ? -300 : 0;
@@ -1942,9 +2011,65 @@ function dSwipeDone(n, dir){
     if(dCur <= DAILY_TOTAL){
       dActivate(dCur);
       if(dCur < DAILY_TOTAL) dBindSwipe(dCur);
-      // dc3 is the completion card, no swipe needed
+      else dBuildHistory(); // completion card — build history strip
     }
   }, 320);
+}
+
+function dBuildHistory(){
+  for(let i=0;i<DAILY_TOTAL;i++){
+    const v = dVotes[i];
+    const icon = document.getElementById('dmi'+i);
+    if(icon && v){
+      icon.textContent = dVoteIcon[v];
+      icon.style.color = dVoteColor[v];
+    }
+  }
+}
+
+function dOpenRevise(n){
+  dRevisingCard = n;
+  const overlay = document.getElementById('drevise-overlay');
+  const q = document.getElementById('drevise-q');
+  if(!overlay || !q) return;
+  q.textContent = dQuestions[n];
+  // Highlight current vote
+  ['r','l','u'].forEach(d => {
+    const btn = document.getElementById('drb-'+d);
+    if(!btn) return;
+    btn.style.opacity = dVotes[n]===d ? '1' : '0.45';
+    btn.style.fontWeight = dVotes[n]===d ? '900' : '600';
+  });
+  overlay.style.display = 'flex';
+}
+
+function dCloseRevise(){
+  const overlay = document.getElementById('drevise-overlay');
+  if(overlay) overlay.style.display = 'none';
+  dRevisingCard = null;
+}
+
+function dDoRevise(dir){
+  if(dRevisingCard === null) return;
+  const n = dRevisingCard;
+  dVotes[n] = dir;
+  // Animate icon flip
+  const icon = document.getElementById('dmi'+n);
+  if(icon){
+    icon.style.transition = 'transform .15s ease-in';
+    icon.style.transform = 'rotateY(90deg)';
+    setTimeout(() => {
+      icon.textContent = dVoteIcon[dir];
+      icon.style.color = dVoteColor[dir];
+      icon.style.transform = 'rotateY(0deg)';
+      icon.style.transition = 'transform .15s ease-out';
+    }, 150);
+  }
+  dCloseRevise();
+}
+
+function dTapComplex(){
+  if(dCur < DAILY_TOTAL) dSwipeDone(dCur, 'u');
 }
 
 function dBindSwipe(n){
@@ -1952,11 +2077,12 @@ function dBindSwipe(n){
   if(!inner || inner.dataset.bound) return;
   inner.dataset.bound = '1';
   inner.style.transform=''; inner.style.opacity='1'; inner.style.transition='';
+  let gestureIntent = null; // null | 'swipe' | 'scroll'
   function onDown(e){
     dDragging=true; inner.classList.add('dragging');
     dStartX = e.touches?e.touches[0].clientX:e.clientX;
     dStartY = e.touches?e.touches[0].clientY:e.clientY;
-    dCurX=0; dCurY=0;
+    dCurX=0; dCurY=0; gestureIntent=null;
     document.addEventListener('mousemove', dOnMove);
     document.addEventListener('mouseup', dOnUp);
     document.addEventListener('touchmove', dOnMove, {passive:false});
@@ -1964,9 +2090,18 @@ function dBindSwipe(n){
   }
   function dOnMove(e){
     if(!dDragging) return;
+    const rawX=(e.touches?e.touches[0].clientX:e.clientX)-dStartX;
+    const rawY=(e.touches?e.touches[0].clientY:e.clientY)-dStartY;
+    // Direction lock: commit intent once displacement exceeds 12px
+    if(gestureIntent===null && Math.sqrt(rawX*rawX+rawY*rawY)>12){
+      gestureIntent = Math.abs(rawY) > Math.abs(rawX)*1.5 ? 'scroll' : 'swipe';
+    }
+    // If scroll intent — release, let the parent container scroll naturally
+    if(gestureIntent==='scroll') return;
     e.preventDefault&&e.preventDefault();
-    dCurX=(e.touches?e.touches[0].clientX:e.clientX)-dStartX;
-    dCurY=(e.touches?e.touches[0].clientY:e.clientY)-dStartY;
+    dCurX=rawX; dCurY=rawY;
+    // Only animate card if horizontal drag is meaningful (prevents visual response to scroll start)
+    if(Math.abs(dCurX)<8 && gestureIntent!=='swipe') return;
     inner.style.transform=`translateX(${dCurX}px) translateY(${dCurY}px) rotate(${dCurX*0.06}deg)`;
     inner.style.transition='none';
     const thresh=40;
@@ -1985,16 +2120,24 @@ function dBindSwipe(n){
     dDragging=false; inner.classList.remove('dragging');
     document.removeEventListener('mousemove',dOnMove); document.removeEventListener('mouseup',dOnUp);
     document.removeEventListener('touchmove',dOnMove); document.removeEventListener('touchend',dOnUp);
-    const thresh=70;
-    if(dCurX>thresh) dSwipeDone(n,'r');
-    else if(dCurX<-thresh) dSwipeDone(n,'l');
-    else if(dCurY<-thresh) dSwipeDone(n,'u');
-    else {
-      inner.style.transition='transform .45s cubic-bezier(.175,.885,.32,1.375), opacity .3s, border-color .3s';
+    // Only register swipe outcomes if intent was locked to swipe
+    if(gestureIntent==='swipe'){
+      const thresh=70;
+      if(dCurX>thresh) dSwipeDone(n,'r');
+      else if(dCurX<-thresh) dSwipeDone(n,'l');
+      else if(dCurY<-thresh) dSwipeDone(n,'u');
+      else {
+        inner.style.transition='transform .45s cubic-bezier(.175,.885,.32,1.375), opacity .3s, border-color .3s';
+        inner.style.transform=''; inner.style.borderColor='';
+        [dGetInd(n,'r'),dGetInd(n,'l'),dGetInd(n,'u')].forEach(el=>{if(el)el.style.opacity=0;});
+      }
+    } else {
+      // Scroll gesture or undecided — reset card visually
+      inner.style.transition='transform .3s ease, border-color .2s';
       inner.style.transform=''; inner.style.borderColor='';
       [dGetInd(n,'r'),dGetInd(n,'l'),dGetInd(n,'u')].forEach(el=>{if(el)el.style.opacity=0;});
     }
-    dCurX=0; dCurY=0;
+    dCurX=0; dCurY=0; gestureIntent=null;
   }
   inner.addEventListener('mousedown', onDown);
   inner.addEventListener('touchstart', onDown, {passive:true});
