@@ -434,6 +434,16 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .dmini-edit{font-size:7px;color:var(--t3);opacity:.6;}
 .drevise-btn{flex:1;padding:9px 4px;border-radius:8px;font-size:10px;font-weight:700;cursor:pointer;font-family:var(--heb);transition:opacity .15s,transform .1s;}
 .drevise-btn:active{transform:scale(.96);}
+/* ─── 3-action swipe buttons ─── */
+.swipe-actions{display:flex;gap:6px;padding:4px 0 2px;flex-shrink:0;}
+.sa-btn{flex:1;padding:7px 4px;border-radius:8px;font-size:9px;font-weight:800;cursor:pointer;font-family:var(--heb);border:1.5px solid;background:transparent;transition:all .12s;line-height:1;}
+.sa-btn:active{transform:scale(.96);}
+.sa-no{color:var(--co);border-color:rgba(199,82,82,.35);}
+.sa-no:hover,.sa-no:active{background:var(--co0);}
+.sa-complex{color:var(--gd);border-color:rgba(228,174,88,.35);}
+.sa-complex:hover,.sa-complex:active{background:var(--gd0);}
+.sa-yes{color:var(--te);border-color:rgba(39,179,142,.35);}
+.sa-yes:hover,.sa-yes:active{background:var(--te0);}
 .tind{
   position:absolute;top:12px;font-size:10px;font-weight:800;padding:4px 10px;
   border-radius:99px;opacity:0;transition:opacity .12s;z-index:5;letter-spacing:.5px;
@@ -899,19 +909,14 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
         </div>
-        <!-- Undo pill (hidden, fades in 400ms after each swipe) -->
-        <div id="tundo-pill" style="display:none;position:absolute;bottom:52px;left:50%;transform:translateX(-50%);z-index:30;background:var(--el);border:1px solid var(--b0);border-radius:99px;padding:6px 14px;cursor:pointer;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.4)" onclick="tUndoLast()">
-          <div id="tundo-label" style="font-size:9px;font-weight:800;color:var(--t1);white-space:nowrap"></div>
-          <div style="font-size:7px;color:var(--t3);margin-top:1px">הקש לשינוי</div>
-        </div>
-        <!-- Swipe hints -->
-        <div class="swipe-hints" style="padding:2px 16px 4px">
-          <div class="s-hint" style="color:var(--co)">&#8592; נגד</div>
-          <div class="s-hint" style="color:var(--t3);font-size:7px;cursor:pointer" onclick="tTapComplex()">זה מורכב</div>
-          <div class="s-hint" style="color:var(--te)">בעד &#8594;</div>
+        <!-- Action buttons — all 3 choices as real buttons -->
+        <div class="swipe-actions" style="padding:4px 12px 2px">
+          <button class="sa-btn sa-no" onclick="tSwipeAction('l')">&#8592; נגד</button>
+          <button class="sa-btn sa-complex" onclick="tSwipeAction('u')">זה מורכב</button>
+          <button class="sa-btn sa-yes" onclick="tSwipeAction('r')">בעד &#8594;</button>
         </div>
         <div class="phone-nav">
-          <div class="pn-btn" onclick="go(0)">חזור</div>
+          <div class="pn-btn" onclick="tGoBack()">&#8592; הקודם</div>
           <div class="dots" id="d1"></div>
           <div class="pn-btn gold" onclick="go(2)">דלג</div>
         </div>
@@ -1101,11 +1106,6 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <!-- 3-Swipe Ritual -->
           <div style="text-align:center;margin-bottom:4px">
             <div style="font-size:11px;font-weight:900;color:var(--t1)">3 הסוויפים של היום</div>
-            <div class="swipe-hints" style="padding:2px 0;justify-content:center;gap:12px">
-              <span class="s-hint" style="color:var(--co)">&#8592; נגד</span>
-              <span class="s-hint" style="color:var(--t3);font-size:7px;cursor:pointer" id="complex-btn-hint" onclick="dTapComplex()">זה מורכב</span>
-              <span class="s-hint" style="color:var(--te)">בעד &#8594;</span>
-            </div>
           </div>
           <!-- Daily swipe stack -->
           <div id="daily-swipe-area" style="position:relative;height:140px;flex-shrink:0;margin-bottom:4px">
@@ -1190,10 +1190,16 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
           <!-- Progress dots for daily swipes -->
-          <div style="display:flex;justify-content:center;gap:4px;margin-bottom:6px">
+          <div style="display:flex;justify-content:center;gap:4px;margin-bottom:4px">
             <div class="tdot on" id="dd0"></div>
             <div class="tdot" id="dd1"></div>
             <div class="tdot" id="dd2"></div>
+          </div>
+          <!-- Action buttons — all 3 choices -->
+          <div class="swipe-actions" id="daily-actions">
+            <button class="sa-btn sa-no" onclick="dSwipeAction('l')">&#8592; נגד</button>
+            <button class="sa-btn sa-complex" onclick="dSwipeAction('u')">זה מורכב</button>
+            <button class="sa-btn sa-yes" onclick="dSwipeAction('r')">בעד &#8594;</button>
           </div>
           <!-- Profile Status -->
           <div style="display:flex;align-items:center;gap:7px;padding:9px 11px;background:var(--te0);border-radius:9px;border:1px solid rgba(39,179,142,.18)">
@@ -1791,8 +1797,6 @@ const tAnswers = {};
 function tAnswerLabel(dir){ return dir==='r'?'<strong style="color:var(--te)">בעד</strong>':dir==='l'?'<strong style="color:var(--co)">נגד</strong>':'<strong style="color:var(--gl)">מורכב</strong>'; }
 
 let tDragging=false, tStartX=0, tStartY=0, tCurX=0, tCurY=0;
-let tLastSwiped=null, tUndoTimer=null;
-const tDirLabel={'r':'בעד ✓','l':'נגד ✗','u':'מורכב ~'};
 // parent inference card for each result card
 const tResultParent={'3r':'3','7r':'7','9r':'9'};
 
@@ -1821,42 +1825,16 @@ function tNextFromResult(resultId){
   }
 }
 
-function tShowUndoPill(id, dir){
-  const pill = document.getElementById('tundo-pill');
-  const label = document.getElementById('tundo-label');
-  if(!pill || !label) return;
-  tLastSwiped = id;
-  label.textContent = tDirLabel[dir] + ' ← ביטול';
-  pill.style.display = 'block';
-  pill.style.opacity = '0';
-  pill.style.transition = 'opacity .3s';
-  setTimeout(()=>{ pill.style.opacity='1'; }, 20);
-  if(tUndoTimer) clearTimeout(tUndoTimer);
-  tUndoTimer = setTimeout(()=>tHideUndoPill(), 6000);
-}
-
-function tHideUndoPill(){
-  const pill = document.getElementById('tundo-pill');
-  if(!pill) return;
-  pill.style.opacity='0';
-  setTimeout(()=>{ pill.style.display='none'; }, 300);
-  if(tUndoTimer){ clearTimeout(tUndoTimer); tUndoTimer=null; }
-}
-
-function tUndoLast(){
-  if(!tLastSwiped) return;
-  tHideUndoPill();
-  const id = tLastSwiped;
-  tLastSwiped = null;
+function tRestoreCard(id){
+  // Reset a card visually so it can be re-swiped
   delete tAnswers[id];
-  // Reset the card visually (it flew off-screen) and re-activate
   const inner = tGetInner(id);
   if(inner){
     inner.style.transition = 'none';
-    inner.style.transform = 'translateX(0) translateY(0) rotate(0deg)';
+    inner.style.transform = '';
     inner.style.opacity = '0';
+    inner.style.borderColor = '';
     inner.dataset.bound = '';
-    // Fade it back in
     requestAnimationFrame(()=>{
       inner.style.transition = 'opacity .25s, transform .3s cubic-bezier(.175,.885,.32,1.275)';
       inner.style.opacity = '1';
@@ -1864,38 +1842,39 @@ function tUndoLast(){
   }
   tCurId = id;
   tActivateId(id);
-  tBindSwipe(id);
+  if(SWIPEABLE.includes(id)) tBindSwipe(id);
+}
+
+function tGoBack(){
+  // Find the nearest previous swipeable card (skip result cards)
+  const idx = ALL_CARD_IDS.indexOf(tCurId);
+  if(idx <= 0){ go(0); return; }
+  let prevId = null;
+  for(let i = idx - 1; i >= 0; i--){
+    const cid = ALL_CARD_IDS[i];
+    if(SWIPEABLE.includes(cid)){ prevId = cid; break; }
+    if(cid === 'intro'){ prevId = cid; break; }
+  }
+  if(!prevId){ go(0); return; }
+  if(prevId === 'intro'){
+    tCurId = 'intro'; tActivateId('intro'); return;
+  }
+  tRestoreCard(prevId);
 }
 
 function tGoBackFromResult(resultId){
   const parentId = tResultParent[resultId];
   if(!parentId) return;
-  tHideUndoPill();
-  delete tAnswers[parentId];
-  const inner = tGetInner(parentId);
-  if(inner){
-    inner.style.transition = 'none';
-    inner.style.transform = 'translateX(0) translateY(0) rotate(0deg)';
-    inner.style.opacity = '0';
-    inner.dataset.bound = '';
-    requestAnimationFrame(()=>{
-      inner.style.transition = 'opacity .25s, transform .3s cubic-bezier(.175,.885,.32,1.275)';
-      inner.style.opacity = '1';
-    });
-  }
-  tCurId = parentId;
-  tActivateId(parentId);
-  tBindSwipe(parentId);
+  tRestoreCard(parentId);
 }
 
-function tTapComplex(){
-  if(SWIPEABLE.includes(tCurId)) tSwipeDone(tCurId, 'u');
+function tSwipeAction(dir){
+  // Button tap = same as swipe gesture, only when a swipeable card is active
+  if(SWIPEABLE.includes(tCurId)) tSwipeDone(tCurId, dir);
 }
 
 function tSwipeDone(id, dir){
   tAnswers[id] = dir;
-  tHideUndoPill();
-  setTimeout(()=>tShowUndoPill(id, dir), 400);
   const inner = tGetInner(id);
   if(!inner) return;
   inner.style.transition = 'transform .3s ease, opacity .25s';
@@ -2123,6 +2102,9 @@ function dSwipeDone(n, dir){
 }
 
 function dBuildHistory(){
+  // Hide action buttons when all 3 done (completion card shown)
+  const actions = document.getElementById('daily-actions');
+  if(actions) actions.style.display = 'none';
   for(let i=0;i<DAILY_TOTAL;i++){
     const v = dVotes[i];
     const icon = document.getElementById('dmi'+i);
@@ -2174,8 +2156,9 @@ function dDoRevise(dir){
   dCloseRevise();
 }
 
-function dTapComplex(){
-  if(dCur < DAILY_TOTAL) dSwipeDone(dCur, 'u');
+function dSwipeAction(dir){
+  // Button tap for daily cards — only when not yet complete
+  if(dCur < DAILY_TOTAL) dSwipeDone(dCur, dir);
 }
 
 function dBindSwipe(n){
