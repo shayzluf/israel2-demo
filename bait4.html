@@ -921,6 +921,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <button class="sa-btn sa-complex" onclick="tSwipeAction('u')">זה מורכב</button>
           <button class="sa-btn sa-no" onclick="tSwipeAction('l')">&#8592; נגד</button>
         </div>
+        <div id="train-back" style="display:none;justify-content:flex-start;padding:2px 14px 6px">
+          <div class="pn-btn" onclick="tGoBack()">&#8592; הקודם</div>
+        </div>
           <div></div>
         </div>
       </div>
@@ -1819,9 +1822,12 @@ function tActivateId(id){
     const c = tGetCard(cid);
     if(c) c.classList.toggle('active', cid===id);
   });
-  // Show action buttons only on actual swipeable cards (not intro or result reveals)
+  // Show action buttons + back only on actual swipeable cards (not intro or result reveals)
+  const isSwipeable = SWIPEABLE.includes(id);
   const actions = document.getElementById('train-actions');
-  if(actions) actions.style.display = SWIPEABLE.includes(id) ? 'flex' : 'none';
+  if(actions) actions.style.display = isSwipeable ? 'flex' : 'none';
+  const back = document.getElementById('train-back');
+  if(back) back.style.display = isSwipeable ? 'flex' : 'none';
 }
 
 function tNextFromResult(resultId){
