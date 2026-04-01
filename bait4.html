@@ -907,50 +907,76 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         </div>
       </div>
 
-      <!-- ════ S2: UNEXPECTED NEIGHBORS ════ -->
+      <!-- ════ S2: MIRROR MOMENT — Consensus Discovery ════ -->
       <div class="slide" id="sl2">
-        <div class="scr" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px 16px">
+        <div class="scr" style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:16px 16px 20px;overflow-y:auto;scrollbar-width:none">
 
-          <!-- Headline -->
-          <div style="text-align:center">
-            <div style="font-family:var(--frank);font-size:36px;font-weight:900;color:var(--t1);line-height:1.15;letter-spacing:-1px">מסכימים על<br>החיים עצמם.</div>
-          </div>
-
-          <!-- Sub-statement -->
-          <div style="font-size:12px;color:var(--t2);text-align:center;line-height:1.5">
-            גם מי שהצביע הפוך ממך — בחר בדיוק כמוך כאן:
-          </div>
-
-          <!-- Bridge moment: the two consensus reveals named by group -->
-          <div style="background:var(--el);border-radius:12px;padding:12px 14px;width:100%;display:flex;flex-direction:column;gap:10px">
-            <div>
-              <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
-                <div style="width:6px;height:6px;border-radius:50%;background:var(--te);flex-shrink:0"></div>
-                <div style="font-size:11px;font-weight:800;color:var(--t1)">פסיכולוג לכל בית ספר</div>
-              </div>
-              <div style="font-size:9px;color:var(--te);padding-right:12px"><span style="font-weight:800">76%</span> הסכמה: חילונים, ערבים, דתיים</div>
-            </div>
-            <div style="height:1px;background:rgba(255,255,255,0.06)"></div>
-            <div>
-              <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
-                <div style="width:6px;height:6px;border-radius:50%;background:var(--gl);flex-shrink:0"></div>
-                <div style="font-size:11px;font-weight:800;color:var(--t1)">ממ"ד בכל בניין מגורים</div>
-              </div>
-              <div style="font-size:9px;color:var(--gl);padding-right:12px"><span style="font-weight:800">86%</span> הסכמה: חרדים, עולים, מסורתיים</div>
+          <!-- BEAT 1: THE DISCOVERY — money line -->
+          <div style="text-align:center;opacity:0;animation:fadeIn .6s ease .2s forwards">
+            <div style="font-size:9px;color:var(--gl);font-weight:800;letter-spacing:1px;margin-bottom:8px">לראשונה בהיסטוריה</div>
+            <div style="font-family:var(--heb);font-size:15px;font-weight:700;color:var(--t1);line-height:1.5">
+              מה שמפריד אותנו קולני.<br>מה שמחבר אותנו — שקט.<br><span style="color:var(--gl);font-size:17px;font-weight:900">עד עכשיו.</span>
             </div>
           </div>
 
-          <!-- Making history line -->
-          <div style="text-align:center;padding:0 8px">
-            <div style="font-size:10px;color:var(--gd);font-weight:700;line-height:1.6">לראשונה בהיסטוריה —<br>מגלים את ההסכמה הישראלית השקטה</div>
+          <!-- Consensus data with tribal breakdown — THE shareable content -->
+          <div style="width:100%;opacity:0;animation:fadeIn .5s ease .8s forwards">
+            <div style="background:var(--el);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:10px">
+              <!-- Item 1: Psychologist -->
+              <div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                  <div style="width:6px;height:6px;border-radius:50%;background:var(--te);flex-shrink:0"></div>
+                  <div style="font-size:11px;font-weight:800;color:var(--t1)">פסיכולוג קליני לכל בית ספר</div>
+                </div>
+                <div style="font-size:20px;font-weight:900;color:var(--te);text-align:center;margin:4px 0">76%</div>
+                <div style="font-size:8px;color:var(--t2);text-align:center">חילונים 78% · דתיים 74% · ערבים 77% · חרדים 72% · עולים 75%</div>
+                <div style="font-size:9px;color:var(--co);font-weight:700;text-align:center;margin-top:4px">הכנסת? 0 הצעות חוק.</div>
+              </div>
+              <div style="height:1px;background:rgba(255,255,255,0.06)"></div>
+              <!-- Item 2: Bomb shelters -->
+              <div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                  <div style="width:6px;height:6px;border-radius:50%;background:var(--gl);flex-shrink:0"></div>
+                  <div style="font-size:11px;font-weight:800;color:var(--t1)">ממ"ד נגיש לכל אזרח</div>
+                </div>
+                <div style="font-size:20px;font-weight:900;color:var(--gl);text-align:center;margin:4px 0">86%</div>
+                <div style="font-size:8px;color:var(--t2);text-align:center">חרדי 89% · ערבי 88% · חילוני 87% · מסורתי 86% · דתי 84%</div>
+                <div style="font-size:9px;color:var(--co);font-weight:700;text-align:center;margin-top:4px">3.2 מיליון ישראלים ללא גישה למקלט · 0 חוקים ב-10 שנים</div>
+              </div>
+            </div>
           </div>
 
-          <!-- CTA -->
-          <div class="btn btn-gd" style="width:100%" onclick="go(4)">גלה על מה עוד הסכמנו</div>
+          <!-- BEAT 2: THE GAP — citizen vs Knesset double bar -->
+          <div style="width:100%;opacity:0;animation:fadeIn .5s ease 1.4s forwards">
+            <div style="background:var(--el);border-radius:10px;padding:10px 14px">
+              <div style="font-size:9px;font-weight:800;color:var(--t1);text-align:center;margin-bottom:8px">הפער שהמדיה לא מראה</div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="display:flex;align-items:center;gap:6px">
+                  <div style="font-size:8px;color:var(--te);font-weight:700;min-width:40px;text-align:left">אזרחים</div>
+                  <div style="flex:1;height:16px;background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden"><div style="width:86%;height:100%;background:var(--te);border-radius:4px"></div></div>
+                  <div style="font-size:10px;font-weight:900;color:var(--te);min-width:28px;text-align:right">86%</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:6px">
+                  <div style="font-size:8px;color:var(--co);font-weight:700;min-width:40px;text-align:left">כנסת</div>
+                  <div style="flex:1;height:16px;background:rgba(255,255,255,0.05);border-radius:4px;overflow:hidden"><div style="width:0%;height:100%;background:var(--co);border-radius:4px"></div></div>
+                  <div style="font-size:10px;font-weight:900;color:var(--co);min-width:28px;text-align:right">0%</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <!-- Privacy note — small, non-intrusive -->
-          <div style="font-size:8px;color:var(--t3);text-align:center;line-height:1.4">
-            הפרופיל האזרחי שלך פרטי · רק התוצאה הכללית גלויה לכולם
+          <!-- Discovery connector -->
+          <div style="text-align:center;padding:0 8px;opacity:0;animation:fadeIn .5s ease 1.8s forwards">
+            <div style="font-size:10px;color:var(--t2);line-height:1.6">הסכמנו על 2 מתוך 10 נושאים. ויש עוד.</div>
+          </div>
+
+          <!-- BEAT 3: SHARE + CONTINUE -->
+          <div style="width:100%;display:flex;flex-direction:column;gap:8px;align-items:center;opacity:0;animation:fadeIn .5s ease 2.2s forwards">
+            <div style="width:100%;background:#25D366;color:#fff;font-weight:800;font-size:12px;border-radius:10px;padding:11px;text-align:center;cursor:pointer" onclick="shareMirror()">לשתף בוואטסאפ</div>
+            <div class="btn btn-gd" style="width:100%" onclick="go(4)">לגלות על מה עוד אנחנו מסכימים</div>
+            <div style="font-size:8px;color:var(--t3);text-align:center;line-height:1.4">
+              הפרופיל שלך פרטי · רק ממוצעים כלליים גלויים לציבור
+            </div>
           </div>
 
         </div>
@@ -2089,6 +2115,13 @@ go = function(n){
   if(n===1){ tActivateId('0'); }
 };
 if(document.getElementById('sl1').classList.contains('active')){ tActivateId('0'); }
+
+/* ══ MIRROR MOMENT — SHARE ══ */
+function shareMirror(){
+  const text = '86% מהישראלים מסכימים על דבר אחד. הכנסת? 0 הצעות חוק.\nגלה גם:\nhttps://shayzluf.github.io/israel2-demo/bait_v4.html';
+  const waUrl = 'https://wa.me/?text=' + encodeURIComponent(text);
+  window.open(waUrl, '_blank');
+}
 
 /* ══ DAILY 3-SWIPE ENGINE ══ */
 const DAILY_TOTAL = 3;
