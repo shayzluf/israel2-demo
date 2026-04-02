@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
+<title>נספר — Knesset Ha'amamit v5</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#06070A; --sf:#0D0F14; --el:#141820; --ra:#1C2029;
+  --b0:rgba(255,255,255,0.06); --b1:rgba(255,255,255,0.12); --b2:rgba(255,255,255,0.20);
+  --t1:#EFF1F6; --t2:#78899C; --t3:#4A5668;
+  --gd:#C8953A; --gl:#E4AE58; --gd0:rgba(200,149,58,0.12); --gn:rgba(200,149,58,0.24);
+  --te:#27B38E; --te0:rgba(39,179,142,0.10);
+  --co:#C75252; --co0:rgba(199,82,82,0.10); --cn:rgba(199,82,82,0.24);
+  --bl:#4470B0; --bl0:rgba(68,112,176,0.10);
+  --pu:#7258A2; --pu0:rgba(114,88,162,0.10);
+  --frank:'Heebo',sans-serif; --heb:'Heebo',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--heb);background:#040508;color:var(--t1);
+  display:flex;flex-direction:column;align-items:center;padding:32px 16px 72px;gap:48px;min-height:100vh;}
+
+/* ─── PAGE HEADER ─── */
+.ph{text-align:center;max-width:700px;}
+.ph-k{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--t3);font-weight:700;margin-bottom:12px;}
+.ph-h{font-family:var(--frank);font-size:42px;font-weight:900;letter-spacing:-1px;line-height:1.05;}
+.ph-h em{color:var(--gl);font-style:normal;}
+.ph-sub{font-size:13px;color:var(--t2);line-height:1.75;margin-top:10px;}
+
+/* ─── SIM ─── */
+.sim-wrap{display:flex;align-items:flex-start;gap:26px;width:100%;max-width:960px;}
+.sim-phone{width:286px;flex-shrink:0;background:var(--bg);border-radius:40px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.13);
+  box-shadow:0 0 0 8px #0A0B0F,0 24px 64px rgba(0,0,0,0.8);position:relative;}
+.sim-notch{width:62px;height:16px;background:#050609;border-radius:0 0 9px 9px;
+  position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:30;
+  border-bottom:1px solid var(--b0);border-left:1px solid var(--b0);border-right:1px solid var(--b0);}
+.sim-screen{height:600px;overflow:hidden;position:relative;}
+.slide{position:absolute;top:0;left:0;right:0;bottom:0;display:none;flex-direction:column;
+  overflow:hidden;padding-top:20px;}
+.slide.active{display:flex;flex-direction:column;}
+
+/* ─── SIDEBAR ─── */
+.sim-sb{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;padding-top:2px;}
+.sb-phase{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--t3);
+  font-weight:700;padding:6px 0 2px;border-top:1px solid var(--b0);margin-top:2px;}
+.sb-phase:first-child{border-top:none;margin-top:0;padding-top:0;}
+.sbb{padding:7px 10px;background:var(--sf);border:1px solid var(--b0);border-radius:9px;
+  cursor:pointer;transition:background .15s,border-color .15s;text-align:right;}
+.sbb:hover{background:var(--el);border-color:var(--b1);}
+.sbb.on{border-color:var(--gn);background:var(--gd0);}
+.sbb-name{font-size:10px;font-weight:800;color:var(--t1);}
+.sbb.on .sbb-name{color:var(--gl);}
+
+/* ─── ATOMS ─── */
+.s-top{display:flex;align-items:center;justify-content:space-between;
+  padding:6px 12px;border-bottom:1px solid var(--b0);flex-shrink:0;}
+.s-logo{font-size:12px;font-weight:900;color:var(--gl);letter-spacing:-0.3px;}
+.s-chip{font-size:7px;font-weight:800;padding:2px 7px;border-radius:99px;letter-spacing:0.3px;}
+.scr{flex:1;overflow-y:auto;padding:12px 13px 8px;display:flex;flex-direction:column;
+  gap:8px;scrollbar-width:none;}
+.scr::-webkit-scrollbar{display:none;}
+.kicker{font-size:8px;letter-spacing:2px;text-transform:uppercase;font-weight:700;}
+.sh{font-family:var(--frank);font-size:18px;font-weight:900;line-height:1.2;}
+.card{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;}
+.ch{font-size:11px;font-weight:800;color:var(--t1);margin-bottom:3px;}
+.cd{font-size:10px;color:var(--t2);line-height:1.45;}
+.pill{display:inline-block;font-size:8px;font-weight:800;padding:2px 7px;border-radius:99px;}
+.bar{height:5px;background:var(--b0);border-radius:99px;overflow:hidden;}
+.bar-f{height:100%;border-radius:99px;}
+.btn{padding:11px 14px;border-radius:9px;font-size:12px;font-weight:900;text-align:center;cursor:pointer;transition:opacity .15s;}
+.btn:hover{opacity:.9;}
+.btn-gd{background:var(--gd);color:#1a0d00;}
+.btn-co{background:var(--co);color:#fff;}
+.btn-te{background:var(--te);color:#001a14;}
+.btn-out{background:var(--el);color:var(--t2);border:1px solid var(--b1);}
+.sr{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}
+.st{background:var(--sf);border-radius:7px;padding:8px 5px;text-align:center;}
+.sv{font-size:16px;font-weight:900;}
+.sl{font-size:7px;color:var(--t3);margin-top:1px;}
+
+/* ─── SWIPE CARDS (tcard = training/consensus/inference, shared) ─── */
+.tcard{display:none;flex-direction:column;align-items:center;justify-content:center;width:100%;}
+.tcard.active{display:flex;}
+.tcard-inner{
+  width:100%;background:var(--el);border-radius:14px;border:1px solid var(--b1);
+  padding:36px 18px 16px;display:flex;flex-direction:column;gap:10px;
+  position:relative;overflow:hidden;cursor:grab;user-select:none;touch-action:none;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:transform .15s,border-color .15s;will-change:transform;}
+.tcard-inner.dragging{cursor:grabbing;transition:none;}
+.tcard-before{position:absolute;top:0;left:20px;right:20px;height:2px;
+  background:linear-gradient(90deg,var(--te),var(--gl));border-radius:0 0 2px 2px;opacity:.5;}
+.tcard-tag{font-size:9px;font-weight:800;padding:4px 11px;border-radius:99px;display:inline-block;align-self:flex-start;}
+.tcard-q{font-size:14px;font-weight:700;color:var(--t1);line-height:1.55;text-align:center;}
+.tcard-ctx{font-size:9px;color:var(--t3);line-height:1.4;text-align:center;margin-top:4px;}
+.tcard-meta{font-size:10px;color:var(--t3);text-align:center;padding-top:8px;border-top:1px solid var(--b0);}
+.tcard-more{font-size:10px;color:var(--bl);text-align:center;cursor:pointer;padding:6px 12px;
+  background:var(--bl0);border:1px solid rgba(68,112,176,.25);border-radius:8px;font-weight:700;
+  transition:all .15s;margin-top:4px;}
+.tcard-more:hover{background:rgba(68,112,176,.2);border-color:var(--bl);}
+/* Info overlay */
+.info-overlay{position:absolute;inset:0;z-index:30;background:var(--bg);display:none;
+  flex-direction:column;padding:20px 16px;overflow-y:auto;scrollbar-width:none;}
+.info-overlay::-webkit-scrollbar{display:none;}
+.info-overlay.show{display:flex;}
+.info-line{font-size:10px;color:var(--t2);line-height:1.6;padding:8px 10px;
+  background:var(--el);border-radius:8px;border-right:3px solid var(--bl);}
+.info-line strong{color:var(--t1);}
+.info-label{font-size:8px;font-weight:800;letter-spacing:1px;margin-top:6px;margin-bottom:2px;}
+.info-close{font-size:10px;color:var(--t3);cursor:pointer;text-align:center;padding:8px;
+  border:1px solid var(--b0);border-radius:8px;margin-top:8px;}
+.tind{position:absolute;top:12px;font-size:10px;font-weight:800;padding:4px 10px;
+  border-radius:99px;opacity:0;transition:opacity .12s;z-index:5;letter-spacing:.5px;}
+.tind-r{left:10px;color:var(--te);background:var(--te0);border:1.5px solid var(--te);}
+.tind-l{right:10px;color:var(--co);background:var(--co0);border:1.5px solid var(--co);}
+.tind-u{left:50%;transform:translateX(-50%);color:var(--gl);background:var(--gd0);border:1.5px solid var(--gl);}
+.tdot{width:5px;height:5px;border-radius:50%;background:var(--t3);transition:all .3s;}
+.tdot.on{background:var(--te);width:14px;border-radius:99px;}
+
+/* ─── 3-action swipe buttons ─── */
+.swipe-actions{display:flex;gap:6px;padding:4px 0 2px;flex-shrink:0;}
+.sa-btn{flex:1;padding:7px 4px;border-radius:8px;font-size:9px;font-weight:800;cursor:pointer;
+  font-family:var(--heb);border:1.5px solid;background:transparent;transition:all .12s;line-height:1;}
+.sa-btn:active{transform:scale(.96);}
+.sa-no{color:var(--co);border-color:rgba(199,82,82,.35);}
+.sa-no:hover,.sa-no:active{background:var(--co0);}
+.sa-complex{color:var(--gd);border-color:rgba(228,174,88,.35);}
+.sa-complex:hover,.sa-complex:active{background:var(--gd0);}
+.sa-yes{color:var(--te);border-color:rgba(39,179,142,.35);}
+.sa-yes:hover,.sa-yes:active{background:var(--te0);}
+
+/* Tab bar */
+.tab-bar{display:flex;align-items:stretch;background:var(--bg);border-top:1px solid var(--b0);flex-shrink:0;}
+.tab-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 4px 10px;
+  font-size:8px;font-weight:700;color:var(--t3);cursor:pointer;border:none;background:none;font-family:var(--heb);transition:color .15s;}
+.tab-btn:hover{color:var(--t2);}
+.tab-btn.active{color:var(--gl);}
+.tab-icon{font-size:14px;}
+
+/* Tribal bars */
+.tribal-bars{display:flex;gap:3px;margin-top:6px;align-items:flex-end;height:54px;}
+.tribal-bar{flex:1;text-align:center;display:flex;flex-direction:column;justify-content:flex-end;}
+.tb-fill{border-radius:4px 4px 0 0;margin-bottom:2px;}
+.tb-pct{font-size:8px;font-weight:800;}
+.tb-lbl{font-size:6px;color:var(--t3);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Below-fold lock */
+.home-locked{opacity:.25;pointer-events:none;user-select:none;transition:opacity .5s ease;}
+.home-unlocked{opacity:1;pointer-events:auto;transition:opacity .5s ease;}
+
+/* Privacy note */
+.privacy-note{background:var(--el);border-radius:9px;border:1px solid var(--b1);padding:7px 10px;}
+.pn-h{font-size:10px;font-weight:800;color:var(--t1);margin-bottom:5px;}
+.pn-row{display:flex;align-items:flex-start;gap:6px;margin-bottom:2px;font-size:9px;color:var(--t2);line-height:1.35;}
+.pn-dot{width:4px;height:4px;border-radius:50%;background:var(--te);margin-top:4px;flex-shrink:0;}
+
+/* ═══ HEMICYCLE ═══ */
+.hemi-seat-filled{fill:var(--gd);opacity:1;}
+.hemi-seat-empty{fill:transparent;stroke:var(--t3);stroke-width:0.8;opacity:.3;}
+.hemi-seat-you{fill:var(--gl);filter:drop-shadow(0 0 4px rgba(228,174,88,0.6));animation:nowpulse 1.8s infinite;}
+@keyframes nowpulse{0%,100%{opacity:1}50%{opacity:.6}}
+
+/* ═══ CONSTRUCTION FEEDBACK ═══ */
+.construction-fb{display:flex;flex-direction:column;gap:5px;padding:8px 10px;background:var(--sf);border-radius:9px;border:1px solid var(--b0);}
+.cf-line{font-size:9px;color:var(--t2);line-height:1.5;opacity:0;animation:fadeIn .5s ease forwards;}
+.cf-line:nth-child(1){animation-delay:0s}
+.cf-line:nth-child(2){animation-delay:.6s}
+.cf-line:nth-child(3){animation-delay:1.2s}
+@keyframes fadeIn{to{opacity:1}}
+
+/* ═══ GOSSIP CARD ═══ */
+.gossip-card{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;}
+.gossip-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
+.gossip-city{font-size:8px;font-weight:700;min-width:42px;text-align:left;color:var(--t2);}
+.gossip-track{flex:1;height:8px;background:var(--b0);border-radius:99px;overflow:hidden;}
+.gossip-fill{height:100%;border-radius:99px;}
+.gossip-pct{font-size:8px;font-weight:800;min-width:24px;}
+
+/* ═══ THRESHOLD BARS ═══ */
+.threshold-item{display:flex;align-items:center;gap:8px;padding:6px 0;}
+.th-label{font-size:8px;font-weight:700;color:var(--t2);flex:1;line-height:1.3;}
+.th-bar{width:60px;height:5px;background:var(--b0);border-radius:99px;overflow:hidden;flex-shrink:0;}
+.th-fill{height:100%;border-radius:99px;}
+.th-status{font-size:7px;font-weight:800;min-width:36px;text-align:left;}
+
+/* ═══ MK CONTRADICTION ═══ */
+.mk-contradiction{background:var(--el);border-radius:10px;border:1px solid var(--cn);padding:11px 12px;}
+.mk-promise{padding:6px 8px;background:var(--te0);border-radius:7px;border-right:2px solid var(--te);margin-bottom:5px;}
+.mk-vote{padding:6px 8px;background:var(--co0);border-radius:7px;border-right:2px solid var(--co);margin-bottom:5px;}
+
+/* ═══ DELIBERATION STATEMENTS ═══ */
+.dstmt{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:10px 11px;}
+.dstmt-txt{font-size:10px;line-height:1.5;margin-bottom:7px;color:var(--t1);}
+.dstmt-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:8px;color:var(--t3);margin-bottom:7px;}
+.dstmt-btns{display:flex;gap:5px;}
+.dsb{flex:1;padding:7px 4px;border-radius:6px;font-size:9px;font-weight:700;cursor:pointer;
+  border:1px solid;background:transparent;font-family:var(--heb);transition:all .15s;}
+.dsb-y{color:var(--te);border-color:var(--te);}
+.dsb-y:hover,.dsb-y.voted{background:var(--te0);}
+.dsb-n{color:var(--bl);border-color:var(--bl);}
+.dsb-n:hover,.dsb-n.voted{background:var(--bl0);}
+.dsb-p{color:var(--t3);border-color:var(--b1);}
+.dsb-p:hover{background:var(--sf);}
+
+/* ═══ SHABBAT CARD ═══ */
+.shabbat-card{background:var(--sf);border-radius:14px;border:1px solid var(--b1);padding:14px 15px;
+  box-shadow:0 4px 24px rgba(0,0,0,0.3);}
+.shabbat-divider{height:1px;background:var(--b0);margin:8px 0;}
+.streak{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:800;
+  padding:3px 9px;border-radius:99px;background:var(--gd0);color:var(--gl);}
+
+/* ═══ LEHISAFER CONVERSION ═══ */
+.loss-stat{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--el);border-radius:8px;position:relative;}
+.loss-num{font-size:18px;font-weight:900;color:var(--t3);min-width:28px;text-align:center;direction:ltr;opacity:.5;}
+.loss-label{font-size:10px;color:var(--t3);flex:1;}
+.loss-tag{font-size:8px;font-weight:800;color:var(--co);white-space:nowrap;}
+.loss-line{position:absolute;top:50%;left:10px;right:10px;height:0;
+  border-top:1.5px dashed var(--co);transform:scaleX(0);transform-origin:right;}
+.loss-stat.reveal .loss-line{animation:strikeIn .4s ease forwards;}
+@keyframes strikeIn{to{transform:scaleX(1)}}
+.loss-stat:nth-child(1).reveal .loss-line{animation-delay:.3s}
+.loss-stat:nth-child(2).reveal .loss-line{animation-delay:.6s}
+.loss-stat:nth-child(3).reveal .loss-line{animation-delay:.9s}
+.loss-stat.reveal .loss-tag{animation:fadeIn .3s ease forwards;opacity:0;}
+.loss-stat:nth-child(1).reveal .loss-tag{animation-delay:.7s}
+.loss-stat:nth-child(2).reveal .loss-tag{animation-delay:1s}
+.loss-stat:nth-child(3).reveal .loss-tag{animation-delay:1.3s}
+
+.gap-bars{display:flex;flex-direction:column;gap:4px;margin:6px 0;}
+.gap-row{display:flex;align-items:center;gap:6px;}
+.gap-label{font-size:8px;font-weight:700;min-width:36px;text-align:left;}
+.gap-track{flex:1;height:8px;background:var(--el);border-radius:99px;overflow:hidden;}
+.gap-fill{height:100%;border-radius:99px;transition:width .8s ease;}
+.gap-pct{font-size:9px;font-weight:800;min-width:28px;}
+
+/* ═══ ZK SCAN ═══ */
+.zk-scan{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:20px 18px;gap:0;position:relative;overflow:hidden;}
+.zk-glow{position:absolute;inset:0;
+  background:radial-gradient(ellipse 160% 60% at 50% 50%,rgba(39,179,142,0.07) 0%,transparent 65%);}
+.passport-wrap{width:108px;height:78px;background:var(--el);border-radius:9px;
+  border:1px solid var(--te0);display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:1;margin-bottom:14px;overflow:hidden;}
+.passport-scan{position:absolute;left:6px;right:6px;height:1.5px;
+  background:linear-gradient(90deg,transparent,var(--te),transparent);
+  animation:pscan 1.5s ease-in-out infinite;}
+@keyframes pscan{0%{top:10px}100%{top:62px}}
+.pp-em{font-size:28px;position:relative;z-index:1;}
+.proof-steps{width:100%;display:flex;flex-direction:column;gap:4px;position:relative;z-index:1;}
+.proof-step{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--sf);border-radius:7px;}
+.proof-step.done{background:var(--te0);border:1px solid rgba(39,179,142,.2);}
+.proof-step.active{border:1px solid rgba(39,179,142,.35);}
+.ps-icon{font-size:12px;flex-shrink:0;}
+.ps-text{font-size:9px;font-weight:600;color:var(--t2);flex:1;}
+.proof-step.done .ps-text{color:var(--te);}
+.ps-st{font-size:9px;color:var(--t3);}
+.proof-step.done .ps-st{color:var(--te);font-weight:700;}
+
+/* ═══ CITIZEN PRIDE ═══ */
+.s11-glow{position:absolute;inset:0;
+  background:radial-gradient(ellipse 200% 55% at 50% 55%,rgba(200,149,58,0.09) 0%,transparent 60%);}
+.cit-body{flex:1;overflow-y:auto;padding:18px 18px;display:flex;flex-direction:column;
+  gap:9px;scrollbar-width:none;position:relative;z-index:1;}
+.cit-body::-webkit-scrollbar{display:none;}
+.cit-n{font-family:var(--frank);font-size:44px;font-weight:900;color:var(--gl);
+  letter-spacing:-2px;line-height:1;margin:6px 0 2px;}
+.retro-card{background:var(--te0);border:1px solid rgba(39,179,142,.2);border-radius:10px;padding:10px 12px;}
+.retro-h{font-size:10px;font-weight:800;color:var(--te);margin-bottom:6px;}
+.retro-row{display:flex;align-items:center;gap:7px;margin-bottom:4px;}
+.retro-icon{font-size:11px;flex-shrink:0;}
+.retro-text{font-size:9px;color:rgba(39,179,142,.75);}
+
+/* ═══ Bill section card ═══ */
+.bill-section{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;}
+.bill-tag{font-size:8px;font-weight:800;padding:3px 8px;border-radius:99px;display:inline-block;margin-bottom:6px;}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:580px){
+  .sim-wrap{flex-direction:column;align-items:center;}
+  .sim-phone{width:100%;max-width:286px;}
+  .sim-sb{display:none;}
+}
+@media(min-width:581px) and (max-width:800px){
+  .sim-wrap{gap:16px;}
+  .sbb-name{font-size:9px;}
+}
+@media (max-width: 699px) {
+  body { padding: 0; background: var(--bg); display: block; }
+  .ph { display: none; }
+  .sim-wrap { flex-direction: column; padding: 0; gap: 0; max-width: 100%; width: 100%; }
+  .sim-sb { display: none; }
+  .sim-phone { width: 100%; border-radius: 0; border: none; box-shadow: none; overflow: hidden; height: 100vh; height: 100dvh; }
+  .sim-notch { display: none; }
+  .sim-screen { height: 100vh; height: 100dvh; }
+  .slide { padding-top: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="ph">
+  <div class="ph-k">נספר — הכנסת העממית v5</div>
+  <div class="ph-h"><em>נספר</em></div>
+  <p class="ph-sub">הכנסת העממית — הקול של מיליוני ישראלים שאף מפלגה לא מייצגת</p>
+</div>
+
+<!-- PHONE SIMULATOR -->
+<div class="sim-wrap">
+  <div class="sim-phone">
+    <div class="sim-notch"></div>
+    <div class="sim-screen">
+
+      <!-- ════ S0: CONSENSUS HOOK ════ -->
+      <div class="slide active" id="sl0">
+        <div class="scr" style="justify-content:space-between;gap:10px;padding:16px 16px 12px">
+          <div class="kicker" style="color:var(--gl)">גילוי מפתיע</div>
+          <div style="text-align:center">
+            <div style="font-family:var(--frank);font-size:56px;font-weight:900;color:var(--gl);letter-spacing:-3px;line-height:1"><span dir="ltr">86%</span></div>
+            <div style="font-size:13px;font-weight:700;color:var(--t1);line-height:1.5;margin-top:4px">מהישראלים מסכימים:<br>לכל אזרח מגיע מרחב מוגן נגיש</div>
+          </div>
+          <!-- Tribal bars -->
+          <div class="tribal-bars" style="height:48px">
+            <div class="tribal-bar"><div class="tb-fill" style="height:34px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">89%</div><div class="tb-lbl">חרדי</div></div>
+            <div class="tribal-bar"><div class="tb-fill" style="height:33px;background:var(--gd)"></div><div class="tb-pct" style="color:var(--gd)">88%</div><div class="tb-lbl">ערבי</div></div>
+            <div class="tribal-bar"><div class="tb-fill" style="height:32px;background:var(--te)"></div><div class="tb-pct" style="color:var(--te)">87%</div><div class="tb-lbl">חילוני</div></div>
+            <div class="tribal-bar"><div class="tb-fill" style="height:31px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">85%</div><div class="tb-lbl">דתי-לאומי</div></div>
+            <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">84%</div><div class="tb-lbl">עולים</div></div>
+          </div>
+          <!-- Knesset gap -->
+          <div style="background:var(--co0);border:1px solid var(--cn);border-radius:9px;padding:8px 10px;text-align:center">
+            <div style="font-size:10px;font-weight:800;color:var(--co)">הכנסת? <span dir="ltr">0</span> הצעות חוק</div>
+          </div>
+          <!-- Counter -->
+          <div style="background:var(--sf);border-radius:9px;border:1px solid var(--b1);padding:8px 11px;display:flex;align-items:center;gap:9px">
+            <div id="fc" style="font-family:var(--frank);font-size:24px;font-weight:900;color:var(--gl);letter-spacing:-1px;animation:nowpulse 2.2s infinite"><span dir="ltr">4,219</span></div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.4"><strong style="color:var(--t1)">אזרחים כבר משתתפים</strong></div>
+          </div>
+          <div class="btn btn-gd" onclick="go(1)">לגלות עוד הסכמות &#8592;</div>
+          <div style="text-align:center;font-size:9px;color:var(--t3)"><span dir="ltr">3</span> סוויפים. <span dir="ltr">30</span> שניות. ללא הרשמה.</div>
+        </div>
+      </div>
+
+      <!-- ════ S1: 3 CONSENSUS SWIPES + RESULT ════ -->
+      <div class="slide" id="sl1">
+        <div style="flex:1;position:relative;overflow:hidden;min-height:0;display:flex;align-items:center;justify-content:center;padding:8px 13px;" id="cs-area">
+          <!-- CS0 -->
+          <div class="tcard active" id="cs0">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="csi0r">&#8594; בעד</div>
+              <div class="tind tind-l" id="csi0l">נגד &#8592;</div>
+              <div class="tind tind-u" id="csi0u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--co0);color:var(--co)">מיגון העורף &#127463;</div>
+              <div class="tcard-q">לחייב את המדינה לממן בניית ממ"ד לכל דירה ישנה?</div>
+              <div class="tcard-ctx">ל-<span dir="ltr">2.5</span> מיליון אזרחים אין מרחב מוגן תקני. דו"ח מבקר המדינה, מרץ <span dir="ltr">2026</span>.</div>
+              <div class="tcard-meta"><span dir="ltr">165,420</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs0')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- CS1 -->
+          <div class="tcard" id="cs1">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="csi1r">&#8594; בעד</div>
+              <div class="tind tind-l" id="csi1l">נגד &#8592;</div>
+              <div class="tind tind-u" id="csi1u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--te0);color:var(--te)">בריאות הנפש</div>
+              <div class="tcard-q">להכפיל את תקציב בריאות הנפש כדי לספק פסיכולוג קליני לכל נפגע טראומה?</div>
+              <div class="tcard-ctx">זמן המתנה לטיפול ציבורי: <span dir="ltr">14</span> חודשים. פניות עלו <span dir="ltr">400%</span> מאז <span dir="ltr">7.10</span>.</div>
+              <div class="tcard-meta"><span dir="ltr">152,890</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs1')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- CS2 -->
+          <div class="tcard" id="cs2">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="csi2r">&#8594; בעד</div>
+              <div class="tind tind-l" id="csi2l">נגד &#8592;</div>
+              <div class="tind tind-u" id="csi2u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--gd0);color:var(--gl)">תגמול מילואים</div>
+              <div class="tcard-q">פטור מלא ממס הכנסה למשרתי מילואים ששירתו מעל <span dir="ltr">100</span> ימים?</div>
+              <div class="tcard-ctx"><span dir="ltr">120,000</span> מילואימניקים חצו את רף <span dir="ltr">100</span> ימי שירות ב-<span dir="ltr">2025</span>. אובדן הכנסה ממוצע: <span dir="ltr">45,000</span> ש"ח.</div>
+              <div class="tcard-meta"><span dir="ltr">148,300</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs2')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- CSR — Result -->
+          <div class="tcard" id="csr">
+            <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default">
+              <div style="font-size:10px;color:var(--te);font-weight:800;letter-spacing:1px"><span dir="ltr">3</span> מתוך <span dir="ltr">3</span></div>
+              <div style="font-size:12px;font-weight:800;color:var(--t1);line-height:1.5">גם אתה -- חלק מרוב שקט שהכנסת מתעלמת ממנו</div>
+              <div class="tribal-bars" style="height:44px">
+                <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">89%</div><div class="tb-lbl">חרדי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:29px;background:var(--gd)"></div><div class="tb-pct" style="color:var(--gd)">88%</div><div class="tb-lbl">ערבי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:28px;background:var(--te)"></div><div class="tb-pct" style="color:var(--te)">87%</div><div class="tb-lbl">חילוני</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:27px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">85%</div><div class="tb-lbl">דתי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:26px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">84%</div><div class="tb-lbl">עולה</div></div>
+              </div>
+              <div class="btn btn-gd" style="width:100%;margin-top:6px" onclick="go(2)">מעניין. מה עוד? &#8592;</div>
+            </div>
+          </div>
+        </div>
+        <!-- Swipe actions -->
+        <div class="swipe-actions" id="cs-actions" style="padding:4px 12px 2px">
+          <button class="sa-btn sa-yes" onclick="csSwipeAction('r')">בעד &#8594;</button>
+          <button class="sa-btn sa-complex" onclick="csSwipeAction('u')">זה מורכב</button>
+          <button class="sa-btn sa-no" onclick="csSwipeAction('l')">&#8592; נגד</button>
+        </div>
+        <!-- Dots -->
+        <div style="display:flex;justify-content:center;gap:4px;padding:4px 0 8px">
+          <div class="tdot on" id="csd0"></div>
+          <div class="tdot" id="csd1"></div>
+          <div class="tdot" id="csd2"></div>
+          <div class="tdot" id="csd3"></div>
+        </div>
+      </div>
+
+      <!-- ════ S2: TRUST BRIDGE ════ -->
+      <div class="slide" id="sl2">
+        <div class="scr" style="justify-content:center;gap:12px;padding:20px 16px">
+          <div style="font-size:14px;font-weight:900;color:var(--t1);line-height:1.4;text-align:center">עכשיו שאלות קשות יותר</div>
+          <div style="font-size:10px;color:var(--t2);text-align:center;line-height:1.6">כדי לגלות איפה באמת יש הסכמה -- ואיפה מחלוקת אמיתית</div>
+          <!-- Privacy card -->
+          <div class="privacy-note">
+            <div class="pn-row"><div class="pn-dot"></div><div>לא שומרים מידע מזהה</div></div>
+            <div class="pn-row"><div class="pn-dot"></div><div>לא מוכרים נתונים</div></div>
+            <div class="pn-row"><div class="pn-dot"></div><div>ZK Passport -- אנחנו לא יודעים מי אתה</div></div>
+          </div>
+          <!-- Who card -->
+          <div class="card">
+            <div class="ch">מי מאחורי זה?</div>
+            <div class="cd">יוזמה אזרחית עצמאית. ללא מפלגה, ללא ממשלה. קוד פתוח.</div>
+          </div>
+          <div class="btn btn-gd" onclick="go(3)">בואו נמשיך &#8592;</div>
+          <div style="text-align:center;font-size:9px;color:var(--t3);cursor:pointer" onclick="go(4)">דלג לתוצאות &#8592;</div>
+        </div>
+      </div>
+
+      <!-- ════ S3: 5 INFERENCE SWIPES + PROFILE REVEAL ════ -->
+      <div class="slide" id="sl3">
+        <div style="flex:1;position:relative;overflow:hidden;min-height:0;display:flex;align-items:center;justify-content:center;padding:8px 13px;" id="ic-area">
+          <!-- IC0 -->
+          <div class="tcard active" id="ic0">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ici0r">&#8594; בעד</div>
+              <div class="tind tind-l" id="ici0l">נגד &#8592;</div>
+              <div class="tind tind-u" id="ici0u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--pu0);color:var(--pu)">דת ומדינה</div>
+              <div class="tcard-q">להפעיל תחבורה ציבורית בשבת בערים שרוצות</div>
+              <div class="tcard-ctx"><span dir="ltr">43</span> רשויות ביקשו. <span dir="ltr">0</span> קיבלו אישור.</div>
+              <div class="tcard-meta"><span dir="ltr">152,109</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('ic0')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- IC1 -->
+          <div class="tcard" id="ic1">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ici1r">&#8594; בעד</div>
+              <div class="tind tind-l" id="ici1l">נגד &#8592;</div>
+              <div class="tind tind-u" id="ici1u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--co0);color:var(--co)">שוויון נטל</div>
+              <div class="tcard-q">לחייב כל אזרח בגיל <span dir="ltr">18</span> בשירות צבאי או אזרחי, ללא פטורים?</div>
+              <div class="tcard-ctx"><span dir="ltr">68,000</span> צעירים מקבלים פטור מדי שנה. צה"ל מדווח על מחסור של <span dir="ltr">12,000</span> חיילים.</div>
+              <div class="tcard-meta"><span dir="ltr">143,892</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo(this.closest('.tcard').id)">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- IC2 -->
+          <div class="tcard" id="ic2">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ici2r">&#8594; בעד</div>
+              <div class="tind tind-l" id="ici2l">נגד &#8592;</div>
+              <div class="tind tind-u" id="ici2u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--bl0);color:var(--bl)">ריבונות</div>
+              <div class="tcard-q">להחיל ריבונות ישראלית מלאה על כל היישובים ביהודה ושומרון?</div>
+              <div class="tcard-ctx"><span dir="ltr">500,000</span> ישראלים גרים ביו"ש תחת ממשל צבאי. הבנייה נמשכה בכל ממשלה.</div>
+              <div class="tcard-meta"><span dir="ltr">131,207</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo(this.closest('.tcard').id)">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- IC3 -->
+          <div class="tcard" id="ic3">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ici3r">&#8594; בעד</div>
+              <div class="tind tind-l" id="ici3l">נגד &#8592;</div>
+              <div class="tind tind-u" id="ici3u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--gd0);color:var(--gl)">נישואים אזרחיים</div>
+              <div class="tcard-q">לאפשר נישואים אזרחיים לכל זוג, ללא מעורבות הרבנות?</div>
+              <div class="tcard-ctx"><span dir="ltr">450,000</span> אזרחים מוגדרים "חסרי דת" ואינם יכולים להתחתן בישראל כלל.</div>
+              <div class="tcard-meta"><span dir="ltr">139,876</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo(this.closest('.tcard').id)">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- IC4 -->
+          <div class="tcard" id="ic4">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="ici4r">&#8594; בעד</div>
+              <div class="tind tind-l" id="ici4l">נגד &#8592;</div>
+              <div class="tind tind-u" id="ici4u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--te0);color:var(--te)">חינוך</div>
+              <div class="tcard-q">ללמד ערבית כשפה חובה בכל בתי הספר העבריים</div>
+              <div class="tcard-ctx">21% מהאזרחים ערבים. רוב היהודים לא מדברים ערבית.</div>
+              <div class="tcard-meta"><span dir="ltr">112,543</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo(this.closest('.tcard').id)">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- ICR — Profile Reveal -->
+          <div class="tcard" id="icr">
+            <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default">
+              <div style="font-size:11px;font-weight:900;color:var(--t1)">המערכת מתחילה ללמוד אותך</div>
+              <div style="padding:9px 11px;background:var(--gd0);border:1px solid var(--gn);border-radius:9px">
+                <div style="font-size:9px;font-weight:800;color:var(--gl);margin-bottom:4px">הנציג שלך</div>
+                <div style="font-size:9px;color:rgba(228,174,88,.7);line-height:1.5">ראה <span dir="ltr">8</span> תשובות. עוד <span dir="ltr">12</span> ויתחיל לנבא.<br>דיוק נוכחי: טרם הופעל</div>
+              </div>
+              <div id="ic-pills" style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center"></div>
+              <div class="btn btn-gd" style="width:100%;margin-top:4px" onclick="go(4)">ראה את הכנסת העממית &#8592;</div>
+            </div>
+          </div>
+        </div>
+        <div class="swipe-actions" id="ic-actions" style="padding:4px 12px 2px">
+          <button class="sa-btn sa-yes" onclick="icSwipeAction('r')">בעד &#8594;</button>
+          <button class="sa-btn sa-complex" onclick="icSwipeAction('u')">זה מורכב</button>
+          <button class="sa-btn sa-no" onclick="icSwipeAction('l')">&#8592; נגד</button>
+        </div>
+        <div style="display:flex;justify-content:center;gap:4px;padding:4px 0 8px">
+          <div class="tdot on" id="icd0"></div>
+          <div class="tdot" id="icd1"></div>
+          <div class="tdot" id="icd2"></div>
+          <div class="tdot" id="icd3"></div>
+          <div class="tdot" id="icd4"></div>
+          <div class="tdot" id="icd5"></div>
+        </div>
+      </div>
+
+      <!-- ════ S4: PEOPLE'S KNESSET CONSTRUCTION REVEAL ════ -->
+      <div class="slide" id="sl4">
+        <div class="scr" style="gap:10px;padding:14px 14px 10px">
+          <div class="kicker" style="color:var(--gl)">הכנסת העממית</div>
+          <div style="font-size:14px;font-weight:900;color:var(--t1)"><span dir="ltr">83</span>/<span dir="ltr">120</span> מושבים מאוישים</div>
+          <!-- Hemicycle SVG -->
+          <svg id="hemi-main" viewBox="0 0 260 140" style="width:100%;height:auto;display:block"></svg>
+          <!-- Your contribution -->
+          <div style="background:var(--gd0);border:1px solid var(--gn);border-radius:9px;padding:8px 10px">
+            <div style="font-size:10px;font-weight:800;color:var(--gl)">+1. ההצבעות שלך הצטרפו ל-<span dir="ltr">4,219</span> אזרחים</div>
+          </div>
+          <!-- ZK nudge -->
+          <div style="font-size:10px;color:var(--t2);line-height:1.5;text-align:center">ההצבעות שלך קיימות. הן עדיין לא נספרות.</div>
+          <div style="text-align:center;font-size:9px;color:var(--gl);cursor:pointer" onclick="go(9)">להיספר -- <span dir="ltr">90</span> שניות &#8592;</div>
+          <!-- Threshold progress -->
+          <div style="font-size:9px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">רף השפעה</div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div class="threshold-item">
+              <div class="th-label">התיעוד -- רשומה ציבורית</div>
+              <div class="th-bar"><div class="th-fill" style="width:100%;background:var(--te)"></div></div>
+              <div class="th-status" style="color:var(--te)">&#10003;</div>
+            </div>
+            <div class="threshold-item">
+              <div class="th-label">המכתב -- מכתב לח"כ</div>
+              <div class="th-bar"><div class="th-fill" style="width:42%;background:var(--gl)"></div></div>
+              <div class="th-status" style="color:var(--gl)">42%</div>
+            </div>
+            <div class="threshold-item">
+              <div class="th-label">הפרסום -- כתבה תקשורתית</div>
+              <div class="th-bar"><div class="th-fill" style="width:8%;background:var(--gl)"></div></div>
+              <div class="th-status" style="color:var(--gl)">8%</div>
+            </div>
+            <div class="threshold-item">
+              <div class="th-label">הדרישה -- תעודת ח"כ</div>
+              <div class="th-bar"><div class="th-fill" style="width:4%;background:var(--gl)"></div></div>
+              <div class="th-status" style="color:var(--gl)">4%</div>
+            </div>
+            <div class="threshold-item">
+              <div class="th-label">הכנסת החלופית -- דו"ח שבועי</div>
+              <div class="th-bar"><div class="th-fill" style="width:1%;background:var(--gl)"></div></div>
+              <div class="th-status" style="color:var(--gl)">1%</div>
+            </div>
+          </div>
+          <!-- System status -->
+          <div class="sr" style="margin-top:4px">
+            <div class="st"><div class="sv" style="color:var(--te)">47</div><div class="sl">חוקים כוסו</div></div>
+            <div class="st"><div class="sv" style="color:var(--gl)">83</div><div class="sl">מושבים</div></div>
+            <div class="st"><div class="sv" style="color:var(--bl)">74%</div><div class="sl">דיוק</div></div>
+          </div>
+          <!-- Share -->
+          <div style="background:#25D366;color:#fff;font-weight:800;font-size:10px;border-radius:9px;padding:9px;text-align:center;cursor:pointer" onclick="shareConstruction()">שתף את הגילוי</div>
+          <div class="btn btn-gd" onclick="go(5)">כניסה לאפליקציה &#8592;</div>
+        </div>
+      </div>
+
+      <!-- ════ S5: HOME (בית) ════ -->
+      <div class="slide" id="sl5">
+        <div class="s-top">
+          <div class="s-logo">נספר</div>
+          <div class="s-chip" style="background:var(--gd0);color:var(--gl)">בית</div>
+        </div>
+        <div class="scr" id="home-scr" style="overflow-y:hidden;position:relative;gap:6px">
+          <!-- Mini hemicycle -->
+          <div style="text-align:center;padding:6px 0">
+            <svg id="hemi-mini" viewBox="0 0 260 80" style="width:160px;height:auto;display:inline-block"></svg>
+            <div style="font-size:9px;font-weight:800;color:var(--gl)"><span dir="ltr">83</span>/<span dir="ltr">120</span> מושבים</div>
+          </div>
+          <!-- Daily swipe overlay -->
+          <div id="daily-overlay" style="position:absolute;inset:0;z-index:25;background:var(--bg);display:flex;flex-direction:column">
+            <div style="padding:10px 16px 6px;text-align:center;flex-shrink:0">
+              <div style="font-size:11px;font-weight:900;color:var(--t1)"><span dir="ltr">3</span> הסוויפים של היום</div>
+            </div>
+            <div id="dc-area" style="flex:1;position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 13px">
+              <!-- DC0 -->
+              <div class="tcard active" id="dc0">
+                <div class="tcard-inner" style="padding:16px 14px">
+                  <div class="tcard-before"></div>
+                  <div class="tind tind-r" id="dci0r">&#8594; בעד</div>
+                  <div class="tind tind-l" id="dci0l">נגד &#8592;</div>
+                  <div class="tind tind-u" id="dci0u">&#8593; מורכב</div>
+                  <div class="tcard-tag" style="background:var(--co0);color:var(--co)">יוקר המחיה</div>
+                  <div class="tcard-q" style="font-size:12px">מחירי המזון עלו <span dir="ltr">12%</span> ברבעון האחרון. משפחה ממוצעת מוציאה <span dir="ltr">42%</span> מההכנסה על דיור ומזון. להגביל?</div>
+                  <div class="tcard-meta"><span dir="ltr">89,221</span> הצביעו</div>
+                  <div class="tcard-more" onclick="event.stopPropagation();showInfo('dc0')">למה זה מורכב?</div>
+                </div>
+              </div>
+              <!-- DC1 -->
+              <div class="tcard" id="dc1">
+                <div class="tcard-inner" style="padding:16px 14px">
+                  <div class="tcard-before"></div>
+                  <div class="tind tind-r" id="dci1r">&#8594; בעד</div>
+                  <div class="tind tind-l" id="dci1l">נגד &#8592;</div>
+                  <div class="tind tind-u" id="dci1u">&#8593; מורכב</div>
+                  <div class="tcard-tag" style="background:var(--te0);color:var(--te)">מילואים</div>
+                  <div class="tcard-q" style="font-size:12px">רבע מהעסקים בישראל דיווחו על פגיעה בפריון בגלל מילואים. העלות למשק: <span dir="ltr">15</span> מיליארד ש"ח. להגדיל פיצוי?</div>
+                  <div class="tcard-meta"><span dir="ltr">147,221</span> הצביעו</div>
+                  <div class="tcard-more" onclick="event.stopPropagation();showInfo('dc1')">למה זה מורכב?</div>
+                </div>
+              </div>
+              <!-- DC2 -->
+              <div class="tcard" id="dc2">
+                <div class="tcard-inner" style="padding:16px 14px">
+                  <div class="tcard-before"></div>
+                  <div class="tind tind-r" id="dci2r">&#8594; בעד</div>
+                  <div class="tind tind-l" id="dci2l">נגד &#8592;</div>
+                  <div class="tind tind-u" id="dci2u">&#8593; מורכב</div>
+                  <div class="tcard-tag" style="background:var(--bl0);color:var(--bl)">פשיעה</div>
+                  <div class="tcard-q" style="font-size:12px"><span dir="ltr">252</span> הרוגים מפשיעה בחברה הערבית ב-<span dir="ltr">2025</span>. המשטרה פתרה <span dir="ltr">15%</span> מהתיקים. לחייב תוכנית חירום?</div>
+                  <div class="tcard-meta"><span dir="ltr">112,543</span> הצביעו</div>
+                  <div class="tcard-more" onclick="event.stopPropagation();showInfo('dc2')">למה זה מורכב?</div>
+                </div>
+              </div>
+            </div>
+            <div id="dc-dots" style="flex-shrink:0;padding:6px 12px 4px;display:flex;justify-content:center;gap:4px">
+              <div class="tdot on" id="dcd0"></div>
+              <div class="tdot" id="dcd1"></div>
+              <div class="tdot" id="dcd2"></div>
+            </div>
+            <div class="swipe-actions" id="dc-actions" style="padding:0 12px 8px;flex-shrink:0;background:var(--bg)">
+              <button class="sa-btn sa-yes" onclick="dcSwipeAction('r')">בעד &#8594;</button>
+              <button class="sa-btn sa-complex" onclick="dcSwipeAction('u')">זה מורכב</button>
+              <button class="sa-btn sa-no" onclick="dcSwipeAction('l')">&#8592; נגד</button>
+            </div>
+          </div>
+          <!-- Construction feedback (hidden, shown after swipes) -->
+          <div id="construction-fb" style="display:none" class="construction-fb">
+            <div class="cf-line" style="font-weight:700;color:var(--gl)">+1. עכשיו <span dir="ltr">4,219</span> אזרחים הצביעו על הנושא הזה.</div>
+            <div class="cf-line">הכנסת העממית: <span dir="ltr">71</span> בעד, <span dir="ltr">49</span> נגד. הכנסת האמיתית: <span dir="ltr">38-82</span>.</div>
+            <div class="cf-line" style="color:var(--gl);cursor:pointer">עוד <span dir="ltr">782</span> קולות לשליחת מכתב לח"כ &#8592;</div>
+          </div>
+          <!-- Below-fold content -->
+          <div id="home-below-fold" class="home-locked" style="display:flex;flex-direction:column;gap:6px">
+            <!-- Gossip card -->
+            <div class="gossip-card">
+              <div class="ch">בתל אביב <span dir="ltr">78%</span> חושבים שצריך תחבורה בשבת. ומה אצלך ברמת גן?</div>
+              <div class="gossip-row" style="margin-top:6px">
+                <div class="gossip-city">תל אביב</div>
+                <div class="gossip-track"><div class="gossip-fill" style="width:78%;background:var(--te)"></div></div>
+                <div class="gossip-pct" style="color:var(--te)">78%</div>
+              </div>
+              <div class="gossip-row">
+                <div class="gossip-city">רמת גן</div>
+                <div class="gossip-track"><div class="gossip-fill" style="width:62%;background:var(--bl)"></div></div>
+                <div class="gossip-pct" style="color:var(--bl)">62%</div>
+              </div>
+              <div style="text-align:left;margin-top:4px;font-size:8px;color:var(--t3);cursor:pointer" onclick="shareGossip()">שתף</div>
+            </div>
+            <!-- AI Rep panel -->
+            <div style="padding:9px 11px;background:var(--gd0);border:1px solid var(--gn);border-radius:9px">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px">
+                <div style="font-size:16px">&#129302;</div>
+                <div style="font-size:10px;font-weight:800;color:var(--gl)">הנציג האישי שלך</div>
+              </div>
+              <div style="font-size:9px;color:rgba(228,174,88,.7);line-height:1.5;margin-bottom:5px">ניבא <span dir="ltr">7/10</span> נכון. ביטחון: <span dir="ltr">74%</span></div>
+              <div class="bar" style="margin-bottom:5px"><div class="bar-f" style="width:74%;background:var(--gl)"></div></div>
+              <div style="font-size:9px;color:rgba(228,174,88,.6)">כשהיית בחוץ, הנציג ניבא <span dir="ltr">3</span> נושאים. בדוק &#8592;</div>
+            </div>
+            <!-- ZK nudge -->
+            <div style="background:var(--co0);border:1px solid var(--cn);border-radius:9px;padding:8px 10px">
+              <div style="font-size:9px;font-weight:800;color:var(--co);margin-bottom:3px">הקול שלך עדיין לא נספר</div>
+              <div class="btn btn-gd" style="font-size:9px;padding:7px" onclick="go(9)">להיספר &#8592;</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn active" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
+          <button class="tab-btn" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
+          <button class="tab-btn" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
+          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#128367;</span>שבת</button>
+        </div>
+      </div>
+
+      <!-- ════ S6: STATEMENTS (הצהרות) ════ -->
+      <div class="slide" id="sl6">
+        <div class="s-top">
+          <div class="s-logo">נספר</div>
+          <div class="s-chip" style="background:var(--bl0);color:var(--bl)">הצהרות</div>
+        </div>
+        <div class="scr">
+          <div style="font-size:12px;font-weight:800;color:var(--t1)">הצהרות אזרחים</div>
+          <div style="font-size:9px;color:var(--t3);margin-bottom:4px">הצהרות בלבד. ללא תגובות. ללא טרולים.</div>
+          <!-- Statement 1: bridge -->
+          <div class="dstmt" style="border-color:var(--gl)">
+            <div style="font-size:8px;color:var(--gl);font-weight:700;margin-bottom:5px">&#10003; הצהרת גשר -- חוצת קבוצות</div>
+            <div class="dstmt-txt">בזמן מלחמה, חייבים שוויון מלא בנטל השירות</div>
+            <div class="dstmt-meta">
+              <span><span dir="ltr">534</span> הצביעו</span>
+              <span style="color:var(--gl);font-weight:700"><span dir="ltr">82%</span> מסכימים</span>
+            </div>
+            <div class="dstmt-btns">
+              <button class="dsb dsb-y" onclick="voteStmt(this)">מסכים</button>
+              <button class="dsb dsb-n" onclick="voteStmt(this)">לא מסכים</button>
+              <button class="dsb dsb-p" onclick="voteStmt(this)">חזק</button>
+            </div>
+          </div>
+          <!-- Statement 2: contested -->
+          <div class="dstmt">
+            <div class="dstmt-txt">תקציב בריאות הנפש צריך להכפיל את עצמו -- מיד</div>
+            <div class="dstmt-meta">
+              <span><span dir="ltr">847</span> הצביעו</span>
+              <span style="color:var(--bl);font-weight:700"><span dir="ltr">44%</span> לא מסכימים</span>
+            </div>
+            <div class="dstmt-btns">
+              <button class="dsb dsb-y" onclick="voteStmt(this)">מסכים</button>
+              <button class="dsb dsb-n" onclick="voteStmt(this)">לא מסכים</button>
+              <button class="dsb dsb-p" onclick="voteStmt(this)">חזק</button>
+            </div>
+          </div>
+          <!-- Statement 3: consensus -->
+          <div class="dstmt" style="border-color:var(--te)">
+            <div style="font-size:8px;color:var(--te);font-weight:700;margin-bottom:5px">הסכמה רחבה</div>
+            <div class="dstmt-txt">כל ילד בישראל מגיע לחינוך איכותי -- בלי קשר לאיפה שהוא גר</div>
+            <div class="dstmt-meta">
+              <span><span dir="ltr">1,201</span> הצביעו</span>
+              <span style="color:var(--te);font-weight:700"><span dir="ltr">79%</span> מסכימים</span>
+            </div>
+            <div class="dstmt-btns">
+              <button class="dsb dsb-y" onclick="voteStmt(this)">מסכים</button>
+              <button class="dsb dsb-n" onclick="voteStmt(this)">לא מסכים</button>
+              <button class="dsb dsb-p" onclick="voteStmt(this)">חזק</button>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
+          <button class="tab-btn active" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
+          <button class="tab-btn" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
+          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#128367;</span>שבת</button>
+        </div>
+      </div>
+
+      <!-- ════ S7: BILLS + MK CONTRADICTIONS (חוק) ════ -->
+      <div class="slide" id="sl7">
+        <div class="s-top">
+          <div class="s-logo">נספר</div>
+          <div class="s-chip" style="background:var(--bl0);color:var(--bl)">חוק</div>
+        </div>
+        <div class="scr">
+          <!-- MK Contradiction -->
+          <div class="mk-contradiction">
+            <div style="display:flex;align-items:center;gap:5px;font-size:8px;font-weight:800;color:var(--co);margin-bottom:6px">
+              <div style="width:5px;height:5px;border-radius:50%;background:var(--co);animation:nowpulse 1s infinite"></div>
+              סתירה
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--bl0);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">&#128100;</div>
+              <div>
+                <div style="font-size:10px;font-weight:800;color:var(--t1)">ח"כ ישראל כ"ץ</div>
+                <div style="font-size:8px;color:var(--t3)">הליכוד</div>
+              </div>
+            </div>
+            <div class="mk-promise">
+              <div style="font-size:8px;font-weight:700;color:var(--te);margin-bottom:2px">הבטיח:</div>
+              <div style="font-size:9px;color:var(--t2)">נפחית את יוקר המחייה</div>
+            </div>
+            <div class="mk-vote">
+              <div style="font-size:8px;font-weight:700;color:var(--co);margin-bottom:2px">הצביע:</div>
+              <div style="font-size:9px;color:var(--t2)">נגד הקפאת מחירי מוצרי יסוד</div>
+            </div>
+            <div style="font-size:9px;color:var(--gl);font-weight:700;margin-top:4px">בכנסת העממית: <span dir="ltr">71%</span> בעד הקפאה</div>
+            <div style="text-align:left;margin-top:4px;font-size:8px;color:var(--t3);cursor:pointer" onclick="shareMKContradiction()">שתף את הסתירה</div>
+          </div>
+          <!-- Bill section -->
+          <div class="bill-section">
+            <div class="bill-tag" style="background:var(--bl0);color:var(--bl)">חוק הדיור הציבורי (תיקון)</div>
+            <div style="font-size:10px;color:var(--t2);line-height:1.5;margin-top:4px">תקרת מחיר לדירות בשכונות שעברו פינוי-בינוי. בעלי דירות לא יגבו מעל <span dir="ltr">80%</span> ממחיר השוק.</div>
+            <div style="display:flex;gap:5px;margin-top:8px">
+              <div class="btn btn-te" style="flex:1;font-size:9px;padding:8px">בעד</div>
+              <div class="btn btn-co" style="flex:1;font-size:9px;padding:8px">נגד</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
+          <button class="tab-btn" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
+          <button class="tab-btn active" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
+          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#128367;</span>שבת</button>
+        </div>
+      </div>
+
+      <!-- ════ S8: SHABBAT CARD (שבת) ════ -->
+      <div class="slide" id="sl8">
+        <div class="s-top">
+          <div class="s-logo">נספר</div>
+          <div class="s-chip" style="background:var(--gd0);color:var(--gl)">שבת</div>
+        </div>
+        <div class="scr" style="justify-content:center;gap:12px;padding:20px 16px">
+          <div class="shabbat-card" style="text-align:center">
+            <div style="font-size:28px;margin-bottom:8px">&#128367;</div>
+            <div style="font-size:16px;font-weight:900;color:var(--t1)">סיכום שבועי</div>
+            <div style="font-size:9px;color:var(--t3);margin-top:3px">ב' ניסן תשפ"ו | <span dir="ltr">2.4.2026</span></div>
+            <div class="shabbat-divider"></div>
+            <div style="font-size:10px;color:var(--t2);line-height:1.7;text-align:right">
+              השבוע הצבעת על <span dir="ltr">3</span> נושאים. הסכמה חדשה נמצאה בביטחון אזרחי. <span dir="ltr">782</span> אזרחים חדשים הצטרפו.
+            </div>
+            <div class="shabbat-divider"></div>
+            <div style="font-size:10px;font-weight:700;color:var(--gl);margin-bottom:6px">שאלה לשולחן שבת:</div>
+            <div style="font-size:10px;color:var(--t2);line-height:1.6">שבוע הבא: הצבעה על תקציב החינוך</div>
+            <div class="shabbat-divider"></div>
+            <div style="display:flex;justify-content:center">
+              <div class="streak">&#128293; רצף <span dir="ltr">13</span> שבועות</div>
+            </div>
+            <div style="margin-top:8px;background:#25D366;color:#fff;font-weight:800;font-size:10px;border-radius:9px;padding:9px;cursor:pointer">שתף בוואטסאפ</div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
+          <button class="tab-btn" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
+          <button class="tab-btn" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
+          <button class="tab-btn active" onclick="go(8)"><span class="tab-icon">&#128367;</span>שבת</button>
+        </div>
+      </div>
+
+      <!-- ════ S9: LEHISAFER (להיספר) ════ -->
+      <div class="slide" id="sl9">
+        <div class="scr" style="justify-content:center;gap:10px;padding:16px 16px">
+          <div style="font-size:14px;font-weight:900;color:var(--t1);text-align:center">ההצבעות שלך קיימות</div>
+          <!-- Stats -->
+          <div style="display:flex;gap:8px;justify-content:center">
+            <div style="text-align:center;padding:8px 12px;background:var(--el);border-radius:8px">
+              <div style="font-size:20px;font-weight:900;color:var(--gl);direction:ltr">8</div>
+              <div style="font-size:7px;color:var(--t3)">הצבעות</div>
+            </div>
+            <div style="text-align:center;padding:8px 12px;background:var(--el);border-radius:8px">
+              <div style="font-size:20px;font-weight:900;color:var(--te);direction:ltr">3</div>
+              <div style="font-size:7px;color:var(--t3)">הסכמות</div>
+            </div>
+            <div style="text-align:center;padding:8px 12px;background:var(--el);border-radius:8px">
+              <div style="font-size:20px;font-weight:900;color:var(--bl);direction:ltr">1</div>
+              <div style="font-size:7px;color:var(--t3)">פרופיל</div>
+            </div>
+          </div>
+          <!-- Loss framing -->
+          <div id="loss-stats" style="display:flex;flex-direction:column;gap:4px">
+            <div class="loss-stat reveal">
+              <div class="loss-num">8</div>
+              <div class="loss-label">הצבעות</div>
+              <div class="loss-tag">לא נספרות</div>
+              <div class="loss-line"></div>
+            </div>
+            <div class="loss-stat reveal">
+              <div class="loss-num">3</div>
+              <div class="loss-label">הסכמות</div>
+              <div class="loss-tag">לא נשמעות</div>
+              <div class="loss-line"></div>
+            </div>
+            <div class="loss-stat reveal">
+              <div class="loss-num">1</div>
+              <div class="loss-label">פרופיל</div>
+              <div class="loss-tag">לא משפיע</div>
+              <div class="loss-line"></div>
+            </div>
+          </div>
+          <!-- Hook -->
+          <div style="text-align:center;font-size:11px;color:var(--t2);line-height:1.6;padding:4px 0">הקול שלך קיים. הוא פשוט עדיין לא נשמע.</div>
+          <!-- Super-aligned issue -->
+          <div style="background:var(--el);border:1px solid var(--gn);border-radius:10px;padding:10px 12px">
+            <div style="font-size:9px;font-weight:800;color:var(--gl);margin-bottom:4px">נושא שמתאים בול לעמדות שלך</div>
+            <div style="font-size:10px;font-weight:700;color:var(--t1);margin-bottom:6px">חוק מרחב מוגן לכל אזרח</div>
+            <div class="gap-bars">
+              <div class="gap-row">
+                <div class="gap-label" style="color:var(--te)">אזרחים</div>
+                <div class="gap-track"><div class="gap-fill" style="width:86%;background:var(--te)"></div></div>
+                <div class="gap-pct" style="color:var(--te)">86%</div>
+              </div>
+              <div class="gap-row">
+                <div class="gap-label" style="color:var(--co)">כנסת</div>
+                <div class="gap-track"><div class="gap-fill" style="width:3%;background:var(--co)"></div></div>
+                <div class="gap-pct" style="color:var(--co)">3%</div>
+              </div>
+            </div>
+          </div>
+          <div class="btn btn-gd" style="font-size:14px;padding:13px" onclick="go(10)">להיספר</div>
+          <div style="text-align:center;font-size:9px;color:var(--t3);cursor:pointer" onclick="go(5)">אולי אחר כך</div>
+        </div>
+      </div>
+
+      <!-- ════ S10: ZK SCAN ════ -->
+      <div class="slide" id="sl10">
+        <div class="zk-scan">
+          <div class="zk-glow"></div>
+          <div class="passport-wrap">
+            <div class="passport-scan"></div>
+            <div class="pp-em">&#128274;</div>
+          </div>
+          <div style="font-family:var(--frank);font-size:18px;font-weight:900;text-align:center;margin-bottom:5px;position:relative;z-index:1">סריקת דרכון</div>
+          <div style="font-size:10px;color:var(--t2);text-align:center;line-height:1.55;max-width:210px;margin-bottom:16px;position:relative;z-index:1">מוכיח שאתה אזרח/ית ישראלי/ת.<br>לא שומר מי אתה.</div>
+          <div class="proof-steps">
+            <div class="proof-step done"><div class="ps-icon">&#128274;</div><div class="ps-text">חיבור NFC</div><div class="ps-st" style="color:var(--te);font-weight:700">&#10003;</div></div>
+            <div class="proof-step done"><div class="ps-icon">&#128196;</div><div class="ps-text">קריאת שבב</div><div class="ps-st" style="color:var(--te);font-weight:700">&#10003;</div></div>
+            <div class="proof-step" id="ps3"><div class="ps-icon">&#128272;</div><div class="ps-text">יצירת הוכחה</div><div class="ps-st" id="ps3s">&mdash;</div></div>
+            <div class="proof-step" id="ps4"><div class="ps-icon">&#9989;</div><div class="ps-text">אימות</div><div class="ps-st" id="ps4s">&mdash;</div></div>
+          </div>
+          <div style="width:100%;margin-top:9px;padding:9px 11px;background:var(--el);border-radius:8px;border:1px solid var(--b0);position:relative;z-index:1">
+            <div style="font-size:9px;font-weight:800;color:var(--t1);margin-bottom:3px">מה קורה כאן?</div>
+            <div style="font-size:8px;color:var(--t3);line-height:1.5">ההוכחה נוצרת על המכשיר שלך. אנחנו מקבלים רק אישור שאתה אזרח/ית -- בלי לדעת מי.</div>
+          </div>
+          <div id="cast-btn" class="btn btn-gd" style="width:100%;margin-top:10px;position:relative;z-index:1;display:none" onclick="go(11)">כניסה כאזרח/ית מאומת/ת &#8592;</div>
+        </div>
+      </div>
+
+      <!-- ════ S11: CITIZEN PRIDE ════ -->
+      <div class="slide" id="sl11">
+        <div class="s11-glow"></div>
+        <div class="cit-body" style="text-align:center">
+          <div style="font-size:34px;margin-bottom:10px">&#128737;</div>
+          <div style="font-family:var(--frank);font-size:20px;font-weight:900;line-height:1.2">דור ראשון <em style="color:var(--gl);font-style:normal">שנספר</em></div>
+          <div class="cit-n">#4,220</div>
+          <div style="font-size:11px;color:var(--t1);font-weight:700">אזרח/ית מאומת/ת בכנסת העממית</div>
+          <!-- Retro card -->
+          <div class="retro-card" style="text-align:right">
+            <div class="retro-h">&#10003; מה שעשית -- נספר עכשיו</div>
+            <div class="retro-row"><div class="retro-icon" style="color:var(--te)">&#10003;</div><div class="retro-text"><span dir="ltr">8</span> הצבעות -- כולן נספרות רטרואקטיבית</div></div>
+            <div class="retro-row"><div class="retro-icon" style="color:var(--te)">&#10003;</div><div class="retro-text"><span dir="ltr">3</span> הסכמות חוצות קבוצות -- גילית אותן</div></div>
+            <div class="retro-row"><div class="retro-icon" style="color:var(--te)">&#10003;</div><div class="retro-text">פרופיל אזרחי -- מופעל</div></div>
+          </div>
+          <!-- Share -->
+          <div style="background:#25D366;color:#fff;font-weight:800;font-size:11px;border-radius:10px;padding:11px;cursor:pointer" onclick="shareCitizen()">שתף -- אני אזרח/ית #<span dir="ltr">4,220</span></div>
+          <div class="btn btn-gd" style="width:100%" onclick="go(5)">לכנסת העממית &#8592;</div>
+        </div>
+      </div>
+
+      <!-- ════ INFO OVERLAY ════ -->
+      <div class="info-overlay" id="info-overlay">
+        <div style="font-size:14px;font-weight:900;color:var(--t1);margin-bottom:4px" id="info-title"></div>
+        <div style="font-size:10px;color:var(--t3);margin-bottom:12px" id="info-subtitle"></div>
+        <div class="info-label" style="color:var(--te)">עובדה</div>
+        <div class="info-line" id="info-fact"></div>
+        <div class="info-label" style="color:var(--gd)">שני הצדדים</div>
+        <div class="info-line" id="info-sides" style="border-right-color:var(--gd)"></div>
+        <div class="info-label" style="color:var(--pu)">מה שלא מספרים</div>
+        <div class="info-line" id="info-untold" style="border-right-color:var(--pu)"></div>
+        <div class="info-close" onclick="hideInfo()">חזרה להצבעה &#8592;</div>
+      </div>
+
+    </div><!-- /sim-screen -->
+  </div><!-- /sim-phone -->
+
+  <!-- SIDEBAR -->
+  <div class="sim-sb">
+    <div class="sb-phase">גילוי</div>
+    <div class="sbb on" id="b0" onclick="go(0)"><div class="sbb-name">S0 -- וו הסכמה</div></div>
+    <div class="sbb" id="b1" onclick="go(1)"><div class="sbb-name">S1 -- 3 סוויפי הסכמה</div></div>
+    <div class="sbb" id="b2" onclick="go(2)"><div class="sbb-name">S2 -- גשר אמון</div></div>
+    <div class="sbb" id="b3" onclick="go(3)"><div class="sbb-name">S3 -- 5 סוויפי כיול</div></div>
+    <div class="sbb" id="b4" onclick="go(4)"><div class="sbb-name">S4 -- הכנסת העממית</div></div>
+    <div class="sb-phase">האפליקציה היומית</div>
+    <div class="sbb" id="b5" onclick="go(5)"><div class="sbb-name">S5 -- בית</div></div>
+    <div class="sbb" id="b6" onclick="go(6)"><div class="sbb-name">S6 -- הצהרות</div></div>
+    <div class="sbb" id="b7" onclick="go(7)"><div class="sbb-name">S7 -- חוק + סתירות</div></div>
+    <div class="sbb" id="b8" onclick="go(8)"><div class="sbb-name">S8 -- שבת</div></div>
+    <div class="sb-phase">להיספר</div>
+    <div class="sbb" id="b9" onclick="go(9)"><div class="sbb-name">S9 -- להיספר</div></div>
+    <div class="sbb" id="b10" onclick="go(10)"><div class="sbb-name">S10 -- סריקת ZK</div></div>
+    <div class="sbb" id="b11" onclick="go(11)"><div class="sbb-name">S11 -- גאוות אזרח</div></div>
+  </div>
+
+</div><!-- /sim-wrap -->
+
+<script>
+/* ══════════════════════════════════════════════════════
+   CARD INFO DATA — Rich "learn more" content
+══════════════════════════════════════════════════════ */
+const CARD_INFO = {
+  cs0: {
+    title: 'מיגון העורף',
+    subtitle: 'ממ"ד לכל דירה ישנה',
+    fact: 'עלות בניית ממ"ד ממוצעת: <strong>160,000 ש"ח</strong> — זינוק של 35% מאז תחילת המלחמה. בפריפריה הצפונית, זמן ההתרעה <strong>0-15 שניות</strong> — הממ"ד הוא פתרון ההצלה היחיד.',
+    sides: '<strong>תומכים:</strong> זכות בסיסית לחיים לא צריכה להיות תלויה במצב כלכלי. <strong>מתנגדים:</strong> העלות למשק מעל <strong>150 מיליארד ש"ח</strong> — תדרוש קיצוץ רוחבי אדיר.',
+    untold: 'בחברה הערבית, <strong>50% ללא מיגון</strong> — שיעור כפול מהממוצע הארצי. בשכונות חרדיות ותיקות המצב דומה. הפער הגיאוגרפי הוא גם פער חברתי-כלכלי.'
+  },
+  cs1: {
+    title: 'בריאות הנפש',
+    subtitle: 'הכפלת תקציב ופסיכולוג קליני לכל נפגע',
+    fact: 'מאז 7.10 חלה עלייה של <strong>400%</strong> בפניות לקווי סיוע. התקציב גדל ב-<strong>12%</strong> בלבד. רוב הפסיכולוגים הקליניים עוברים לשוק הפרטי — <strong>180 ש"ח</strong> לטיפול ציבורי לעומת <strong>450+ ש"ח</strong> בפרטי.',
+    sides: '<strong>תומכים:</strong> משבר פוסט-טראומה לאומי דורש מענה מיידי כדי למנוע קריסה חברתית. <strong>מתנגדים:</strong> המערכת הציבורית לא מסוגלת לקלוט תקציב כזה ללא רפורמה מבנית קודמת.',
+    untold: 'הממשלה <strong>קיצצה 400 מיליון ש"ח</strong> מתקציב בריאות הנפש ב-2024 — בשיא המשבר. הצעות חוק למימון הוגשו <strong>3 פעמים</strong> וכולן פקעו ללא הצבעה.'
+  },
+  cs2: {
+    title: 'תגמול מילואים',
+    subtitle: 'פטור ממס למשרתים מעל 100 ימים',
+    fact: 'אובדן ההכנסה הממוצע של עצמאי שגויס: <strong>45,000 ש"ח</strong> בשנה, גם לאחר מענקי המדינה. <strong>120,000</strong> מילואימניקים חצו את רף 100 ימי שירות.',
+    sides: '<strong>תומכים:</strong> זה המינימום כדי למנוע קריסה כלכלית של מי שנושא בנטל הביטחוני. <strong>מתנגדים:</strong> פטור גורף ייצור גירעון של <strong>8 מיליארד ש"ח</strong> ויפגע בשירותים של כולם.',
+    untold: 'בנות ובני הזוג של המילואימניקים סופגים פגיעה תעסוקתית חמורה לא פחות — אך <strong>שום הצעת חוק</strong> מעולם לא כללה הטבת מס עבורם.'
+  },
+  ic0: {
+    title: 'תחבורה ציבורית בשבת',
+    subtitle: 'להפעיל בערים שרוצות',
+    fact: '<strong>43 רשויות מקומיות</strong> ביקשו להפעיל תחבורה ציבורית בשבת — אף אחת לא קיבלה אישור. למעלה מ<strong>מיליון ישראלים</strong> ללא רכב פרטי תלויים בתחבורה ציבורית.',
+    sides: '<strong>תומכים:</strong> תחבורה ציבורית היא שירות בסיסי שלא צריך להיפסק. <strong>מתנגדים:</strong> השבת מגדירה את אופי המרחב הציבורי כיום מנוחה משותף.',
+    untold: 'ביישובים ערביים ובאילת התחבורה כבר פועלת בשבת. בחיפה הקווים פועלים שנים — <strong>ללא מחלוקת ציבורית משמעותית</strong>.'
+  },
+  ic1: {
+    title: 'שירות חובה לכולם',
+    subtitle: 'צבאי או אזרחי, ללא פטורים',
+    fact: 'צה"ל מדווח על מחסור של <strong>12,000 חיילים</strong> עקב התארכות המלחמה. כ-<strong>68,000</strong> צעירים חרדים וערבים מקבלים פטור מדי שנה.',
+    sides: '<strong>תומכים:</strong> צבא העם לא יכול להתקיים כש-40% מהאוכלוסייה לא משרתת. <strong>מתנגדים:</strong> בחברה החרדית לימוד תורה נתפס כתרומה לאומית. בחברה הערבית יש מתח בין אזרחות לזהות לאומית.',
+    untold: 'מנהלת השירות האזרחי מדווחת: <strong>אין תקציב, תשתיות או תקנים</strong> לקלוט עשרות אלפי משרתים חדשים. גם אם החוק יעבור — אין מערכת שתקלוט אותם.'
+  },
+  ic2: {
+    title: 'ריבונות ביהודה ושומרון',
+    subtitle: 'החלה על כל היישובים',
+    fact: 'החלת ריבונות תשנה את הסטטוס של <strong>30%</strong> משטחי יהודה ושומרון (שטחי C). תחייב מעמד חוקי ל<strong>עשרות אלפי פלסטינים</strong> במובלעות.',
+    sides: '<strong>תומכים:</strong> זכות היסטורית וביטחון אסטרטגי. יציבות ל-500,000 תושבים. <strong>מתנגדים:</strong> בידוד בינלאומי חריף וסכנת מדינה דו-לאומית.',
+    untold: 'הבנייה נמשכה בכל ממשלה — <strong>שמאל וימין</strong>. הוויכוח האמיתי הוא על קצב ומיקום, לא רק עיקרון. חלק ניכר מהמתיישבים עברו <strong>בגלל מחירי דיור</strong>, לא אידיאולוגיה.'
+  },
+  ic3: {
+    title: 'נישואים אזרחיים',
+    subtitle: 'ללא מעורבות הרבנות',
+    fact: 'ישראל היא <strong>הדמוקרטיה היחידה בעולם</strong> שבה אין אפשרות חוקית להינשא בנישואים אזרחיים. כ-<strong>25%</strong> מהזוגות כבר מתחתנים בחו"ל או בטקסים אלטרנטיביים.',
+    sides: '<strong>תומכים:</strong> חופש נישואין הוא זכות יסוד דמוקרטית. <strong>מתנגדים:</strong> נישואים דתיים שומרים על זהות יהודית משותפת ומונעים פיצול העם.',
+    untold: 'גם 67% מהיהודים בישראל תומכים, לפי IDI 2025. אבל הנושא <strong>חסום פוליטית</strong> כי שום קואליציה לא מוכנה לשלם את המחיר מול המפלגות הדתיות.'
+  },
+  ic4: {
+    title: 'ערבית בבתי ספר',
+    subtitle: 'חובה בכל בתי הספר העבריים',
+    fact: 'רוב התלמידים היהודים לומדים ערבית — אך <strong>ברמה שלא מאפשרת שיחה בסיסית</strong>. בחינוך הערבי לומדים עברית ברמה גבוהה. <strong>הפער חד-כיווני</strong>.',
+    sides: '<strong>תומכים:</strong> הבנת השכן היא ביטחון לאומי ועוגן לחיים משותפים. <strong>מתנגדים:</strong> עומס לימודי קיים — עדיף להשקיע באנגלית וטכנולוגיה.',
+    untold: 'צה"ל מכשיר ערביסטים במשאבים אדירים — אך במערכת החינוך <strong>ההשקעה מינימלית</strong>. ערבית כשפה חיה, לא רק ביטחונית, יכולה לפתוח דלתות כלכליות לכל המזרח התיכון.'
+  },
+  dc0: {
+    title: 'יוקר המחיה',
+    subtitle: 'מחירי מזון ודיור ברבעון הראשון 2026',
+    fact: 'משפחה ישראלית ממוצעת מוציאה <strong>42% מההכנסה</strong> על דיור ומזון — גבוה מכל מדינה באיחוד האירופי. מחירי המזון עלו <strong>12%</strong> ברבעון אחד בגלל שיבושי שרשרת האספקה בים סוף.',
+    sides: '<strong>תומכים:</strong> הגבלת מחירים והעלאת תחרות הם חובה כשאזרחים לא יכולים לקנות אוכל. <strong>מתנגדים:</strong> התערבות ממשלתית במחירים מצמצמת היצע ומחמירה את המצב.',
+    untold: 'ישראל היא אחת המדינות <strong>הריכוזיות ביותר במזון</strong> — 5 חברות שולטות ב-80% מהשוק. בחברה הערבית, 33% מציינים יוקר מחיה כנושא #1 — לעומת 19% בחברה היהודית.'
+  },
+  dc1: {
+    title: 'נטל המילואים',
+    subtitle: 'השפעה כלכלית של שירות ממושך',
+    fact: '<strong>25%</strong> מהעסקים בישראל דיווחו על ירידה בפריון בגלל מילואים. העלות הכוללת למשק: <strong>15 מיליארד ש"ח</strong> בשנה. רמטכ"ל צה"ל פרסם <strong>10 דגלים אדומים</strong> שהצבא על סף קריסה.',
+    sides: '<strong>תומכים:</strong> הגדלת פיצוי היא השקעה בביטחון — חיילים שבורים כלכלית לא יכולים להילחם. <strong>מתנגדים:</strong> התקציב כבר שבור — צריך רפורמה מבנית בצה"ל, לא עוד כסף.',
+    untold: '4,000 מילואימניקים מהימין ארגנו מחאה משלהם — דורשים <strong>החלטיות צבאית</strong>, לא רק פיצוי. הנושא חוצה ימין-שמאל בצורה שלא נראתה קודם.'
+  },
+  dc2: {
+    title: 'פשיעה בחברה הערבית',
+    subtitle: 'מצב חירום שלא מטופל',
+    fact: '<strong>252 הרוגים</strong> מפשיעה בחברה הערבית ב-2025 — שיא כל הזמנים. המשטרה פתרה <strong>15% מהתיקים</strong> בחברה הערבית לעומת <strong>65%</strong> בחברה היהודית.',
+    sides: '<strong>תומכים:</strong> הממשלה חייבת תוכנית חירום עם תקציב ייעודי — חיים של אזרחים הולכים לאיבוד. <strong>מתנגדים:</strong> הבעיה מורכבת — לא רק משטרה, אלא גם פער כלכלי ותרבותי.',
+    untold: 'בינואר 2026, עשרות אלפים יהודים וערבים הפגינו <strong>יחד בתל אביב</strong> נגד הפשיעה — ההפגנה הערבית-יהודית הגדולה ביותר בתולדות ישראל. 96% מתיקי ההסתה של בן גביר מכוונים נגד ערבים.'
+  }
+};
+
+function showInfo(cardId) {
+  const data = CARD_INFO[cardId];
+  if (!data) return;
+  const ov = document.getElementById('info-overlay');
+  document.getElementById('info-title').textContent = data.title;
+  document.getElementById('info-subtitle').textContent = data.subtitle;
+  document.getElementById('info-fact').innerHTML = data.fact;
+  document.getElementById('info-sides').innerHTML = data.sides;
+  document.getElementById('info-untold').innerHTML = data.untold;
+  ov.classList.add('show');
+}
+function hideInfo() {
+  document.getElementById('info-overlay').classList.remove('show');
+}
+
+/* ══════════════════════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════════════════════ */
+let cur = 0;
+const N = 12;
+const sls = document.querySelectorAll('.slide');
+const bts = document.querySelectorAll('.sbb');
+
+function go(n) {
+  if (n < 0 || n >= N) return;
+  sls[cur].classList.remove('active');
+  if (bts[cur]) bts[cur].classList.remove('on');
+  sls[n].classList.add('active');
+  if (bts[n]) bts[n].classList.add('on');
+  cur = n;
+  // Init swipe engines on entry
+  if (n === 1) { csActivate(csCur); csBindSwipe(csCur); if (!csTutorialShown) showCsTutorial(); }
+  if (n === 3) { icActivate(icCur); icBindSwipe(icCur); }
+  if (n === 5 && dcCur < DC_TOTAL) { dcActivate(dcCur); dcBindSwipe(dcCur); }
+  if (n === 10) startScan();
+}
+
+/* ══ COUNTER ANIMATION ══ */
+let fcVal = 4219;
+setInterval(() => {
+  if (Math.random() < 0.28) {
+    fcVal++;
+    const el = document.getElementById('fc');
+    if (el) el.innerHTML = '<span dir="ltr">' + fcVal.toLocaleString() + '</span>';
+  }
+}, 3000);
+
+/* ══════════════════════════════════════════════════════
+   HEMICYCLE RENDERER
+══════════════════════════════════════════════════════ */
+function renderHemicycle(svgId, filled, compact) {
+  const svg = document.getElementById(svgId);
+  if (!svg) return;
+  const rows = compact ? [12, 16, 20, 24, 28] : [15, 19, 23, 27, 36];
+  const radii = compact ? [20, 28, 36, 44, 52] : [40, 55, 70, 85, 105];
+  const cx = 130, cy = compact ? 60 : 130;
+  const r = compact ? 2.5 : 3.5;
+  let totalSeats = rows.reduce((a, b) => a + b, 0);
+  let seatIdx = 0;
+  let html = '';
+  for (let row = 0; row < rows.length; row++) {
+    const count = rows[row];
+    const radius = radii[row];
+    for (let i = 0; i < count; i++) {
+      const angle = Math.PI - (Math.PI * (i + 0.5) / count);
+      const x = cx + radius * Math.cos(angle);
+      const y = cy - radius * Math.sin(angle);
+      const isFilled = seatIdx < filled;
+      html += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" class="${isFilled ? 'hemi-seat-filled' : 'hemi-seat-empty'}"/>`;
+      seatIdx++;
+    }
+  }
+  svg.innerHTML = html;
+}
+
+renderHemicycle('hemi-main', 83, false);
+renderHemicycle('hemi-mini', 83, true);
+
+/* ══════════════════════════════════════════════════════
+   GENERIC SWIPE BIND FACTORY
+══════════════════════════════════════════════════════ */
+function bindSwipeEngine(inner, indFn, doneFn) {
+  if (!inner || inner.dataset.bound === '1') return;
+  inner.dataset.bound = '1';
+  inner.style.transform = ''; inner.style.opacity = '1'; inner.style.transition = '';
+  let dragging = false, startX = 0, startY = 0, curX = 0, curY = 0, gestureIntent = null;
+
+  function onDown(e) {
+    dragging = true; inner.classList.add('dragging');
+    startX = e.touches ? e.touches[0].clientX : e.clientX;
+    startY = e.touches ? e.touches[0].clientY : e.clientY;
+    curX = 0; curY = 0; gestureIntent = null;
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onUp);
+  }
+  function onMove(e) {
+    if (!dragging) return;
+    const rawX = (e.touches ? e.touches[0].clientX : e.clientX) - startX;
+    const rawY = (e.touches ? e.touches[0].clientY : e.clientY) - startY;
+    if (gestureIntent === null && Math.sqrt(rawX * rawX + rawY * rawY) > 12) {
+      gestureIntent = (rawY > 0 && Math.abs(rawY) > Math.abs(rawX) * 1.5) ? 'scroll' : 'swipe';
+    }
+    if (gestureIntent === 'scroll') return;
+    e.preventDefault && e.preventDefault();
+    curX = rawX; curY = rawY;
+    if (Math.abs(curX) < 8 && gestureIntent !== 'swipe') return;
+    inner.style.transform = `translateX(${curX}px) translateY(${curY}px) rotate(${curX * 0.06}deg)`;
+    inner.style.transition = 'none';
+    const thresh = 40;
+    const inds = indFn();
+    const xR = Math.min(Math.max(curX / thresh, 0), 1);
+    const xL = Math.min(Math.max(-curX / thresh, 0), 1);
+    const yU = Math.min(Math.max(-curY / thresh, 0), 1);
+    if (inds.r) inds.r.style.opacity = xR;
+    if (inds.l) inds.l.style.opacity = xL;
+    if (inds.u) inds.u.style.opacity = yU;
+    if (curX > 0) inner.style.borderColor = `rgba(39,179,142,${xR * .7})`;
+    else if (curX < 0) inner.style.borderColor = `rgba(199,82,82,${xL * .7})`;
+    else if (curY < -thresh * .5) inner.style.borderColor = `rgba(228,174,88,${yU * .7})`;
+    else inner.style.borderColor = '';
+  }
+  function onUp() {
+    if (!dragging) return;
+    dragging = false; inner.classList.remove('dragging');
+    document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp);
+    document.removeEventListener('touchmove', onMove); document.removeEventListener('touchend', onUp);
+    if (gestureIntent === 'swipe') {
+      const thresh = 70;
+      if (curX > thresh) doneFn('r');
+      else if (curX < -thresh) doneFn('l');
+      else if (curY < -thresh) doneFn('u');
+      else {
+        inner.style.transition = 'transform .45s cubic-bezier(.175,.885,.32,1.375), opacity .3s, border-color .3s';
+        inner.style.transform = ''; inner.style.borderColor = '';
+        const inds = indFn();
+        [inds.r, inds.l, inds.u].forEach(el => { if (el) el.style.opacity = 0; });
+      }
+    } else {
+      inner.style.transition = 'transform .3s ease, border-color .2s';
+      inner.style.transform = ''; inner.style.borderColor = '';
+      const inds = indFn();
+      [inds.r, inds.l, inds.u].forEach(el => { if (el) el.style.opacity = 0; });
+    }
+    curX = 0; curY = 0; gestureIntent = null;
+  }
+  inner.addEventListener('mousedown', onDown);
+  inner.addEventListener('touchstart', onDown, { passive: true });
+}
+
+/* ══════════════════════════════════════════════════════
+   CONSENSUS SWIPE ENGINE (cs prefix, sl1)
+══════════════════════════════════════════════════════ */
+const CS_IDS = ['cs0', 'cs1', 'cs2', 'csr'];
+const CS_SWIPEABLE = ['cs0', 'cs1', 'cs2'];
+let csCur = 0;
+
+function csGetInner(n) { return document.getElementById(CS_IDS[n])?.querySelector('.tcard-inner'); }
+function csGetInd(n) {
+  return {
+    r: document.getElementById('csi' + n + 'r'),
+    l: document.getElementById('csi' + n + 'l'),
+    u: document.getElementById('csi' + n + 'u')
+  };
+}
+
+function csActivate(n) {
+  CS_IDS.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', i === n);
+  });
+  for (let i = 0; i < 4; i++) {
+    const d = document.getElementById('csd' + i);
+    if (d) { d.classList.toggle('on', i === n); if (i < n) d.style.background = 'var(--te)'; }
+  }
+  const act = document.getElementById('cs-actions');
+  if (act) act.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
+}
+
+function csSwipeDone(n, dir) {
+  const inner = csGetInner(n);
+  if (!inner) return;
+  inner.style.transition = 'transform .3s ease, opacity .25s';
+  const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
+  const y = dir === 'u' ? -300 : 0;
+  const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
+  inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
+  inner.style.opacity = '0';
+  setTimeout(() => {
+    csCur = n + 1;
+    csActivate(csCur);
+    if (csCur < CS_SWIPEABLE.length) csBindSwipe(csCur);
+  }, 320);
+}
+
+function csBindSwipe(n) {
+  const inner = csGetInner(n);
+  if (!inner) return;
+  bindSwipeEngine(inner, () => csGetInd(n), (dir) => csSwipeDone(n, dir));
+}
+
+function csSwipeAction(dir) { if (csCur < CS_SWIPEABLE.length) csSwipeDone(csCur, dir); }
+
+// Tutorial
+let csTutorialShown = false;
+function showCsTutorial() {
+  if (csTutorialShown) return;
+  csTutorialShown = true;
+  const inner = csGetInner(0);
+  if (!inner) return;
+  const inds = csGetInd(0);
+  const ease = 'transform 600ms cubic-bezier(0.34,1.56,0.64,1), opacity 400ms ease, border-color 400ms ease';
+  const back = 'transform 500ms cubic-bezier(0.175,0.885,0.32,1.375), opacity 300ms ease, border-color 300ms ease';
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(80px) rotate(8deg)'; inner.style.borderColor = 'rgba(39,179,142,0.6)'; if (inds.r) inds.r.style.opacity = '1'; }, 600);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (inds.r) inds.r.style.opacity = '0'; }, 1500);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-80px) rotate(-8deg)'; inner.style.borderColor = 'rgba(199,82,82,0.6)'; if (inds.l) inds.l.style.opacity = '1'; }, 2200);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (inds.l) inds.l.style.opacity = '0'; }, 3100);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-60px) scale(1.03)'; inner.style.borderColor = 'rgba(228,174,88,0.6)'; if (inds.u) inds.u.style.opacity = '1'; }, 3800);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (inds.u) inds.u.style.opacity = '0'; inner.style.transition = ''; }, 4700);
+}
+
+/* ══════════════════════════════════════════════════════
+   INFERENCE SWIPE ENGINE (ic prefix, sl3)
+══════════════════════════════════════════════════════ */
+const IC_IDS = ['ic0', 'ic1', 'ic2', 'ic3', 'ic4', 'icr'];
+const IC_SWIPEABLE = ['ic0', 'ic1', 'ic2', 'ic3', 'ic4'];
+let icCur = 0;
+const icAnswers = {};
+
+function icGetInner(n) { return document.getElementById(IC_IDS[n])?.querySelector('.tcard-inner'); }
+function icGetInd(n) {
+  return {
+    r: document.getElementById('ici' + n + 'r'),
+    l: document.getElementById('ici' + n + 'l'),
+    u: document.getElementById('ici' + n + 'u')
+  };
+}
+
+function icActivate(n) {
+  IC_IDS.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', i === n);
+  });
+  for (let i = 0; i < 6; i++) {
+    const d = document.getElementById('icd' + i);
+    if (d) { d.classList.toggle('on', i === n); if (i < n) d.style.background = 'var(--te)'; }
+  }
+  const act = document.getElementById('ic-actions');
+  if (act) act.style.display = n < IC_SWIPEABLE.length ? 'flex' : 'none';
+  // Build pills on reveal
+  if (n === IC_SWIPEABLE.length) buildIcPills();
+}
+
+function icSwipeDone(n, dir) {
+  icAnswers[n] = dir;
+  const inner = icGetInner(n);
+  if (!inner) return;
+  inner.style.transition = 'transform .3s ease, opacity .25s';
+  const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
+  const y = dir === 'u' ? -300 : 0;
+  const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
+  inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
+  inner.style.opacity = '0';
+  setTimeout(() => {
+    icCur = n + 1;
+    icActivate(icCur);
+    if (icCur < IC_SWIPEABLE.length) icBindSwipe(icCur);
+  }, 320);
+}
+
+function icBindSwipe(n) {
+  const inner = icGetInner(n);
+  if (!inner) return;
+  bindSwipeEngine(inner, () => icGetInd(n), (dir) => icSwipeDone(n, dir));
+}
+
+function icSwipeAction(dir) { if (icCur < IC_SWIPEABLE.length) icSwipeDone(icCur, dir); }
+
+function buildIcPills() {
+  const cont = document.getElementById('ic-pills');
+  if (!cont) return;
+  const labels = ['שבת', 'גיוס', 'שטחים', 'נישואין', 'ערבית'];
+  const colors = { r: 'var(--te)', l: 'var(--co)', u: 'var(--gl)' };
+  const icons = { r: 'בעד', l: 'נגד', u: '~' };
+  let html = '';
+  for (let i = 0; i < 5; i++) {
+    const dir = icAnswers[i] || 'u';
+    html += `<span style="font-size:7px;font-weight:800;padding:2px 6px;border-radius:99px;background:rgba(255,255,255,0.05);color:${colors[dir]}">${labels[i]}: ${icons[dir]}</span>`;
+  }
+  // Add 3 consensus placeholders
+  html += '<span style="font-size:7px;font-weight:800;padding:2px 6px;border-radius:99px;background:rgba(39,179,142,0.1);color:var(--te)">ממ"ד: בעד</span>';
+  html += '<span style="font-size:7px;font-weight:800;padding:2px 6px;border-radius:99px;background:rgba(39,179,142,0.1);color:var(--te)">נפש: בעד</span>';
+  html += '<span style="font-size:7px;font-weight:800;padding:2px 6px;border-radius:99px;background:rgba(39,179,142,0.1);color:var(--te)">מילואים: בעד</span>';
+  cont.innerHTML = html;
+}
+
+/* ══════════════════════════════════════════════════════
+   DAILY SWIPE ENGINE (dc prefix, sl5)
+══════════════════════════════════════════════════════ */
+const DC_TOTAL = 3;
+let dcCur = 0;
+const dcVotes = [null, null, null];
+
+function dcGetInner(n) { return document.getElementById('dc' + n)?.querySelector('.tcard-inner'); }
+function dcGetInd(n) {
+  return {
+    r: document.getElementById('dci' + n + 'r'),
+    l: document.getElementById('dci' + n + 'l'),
+    u: document.getElementById('dci' + n + 'u')
+  };
+}
+
+function dcActivate(n) {
+  for (let i = 0; i < DC_TOTAL; i++) {
+    const c = document.getElementById('dc' + i);
+    if (c) c.classList.toggle('active', i === n);
+  }
+  for (let i = 0; i < DC_TOTAL; i++) {
+    const d = document.getElementById('dcd' + i);
+    if (d) { d.classList.toggle('on', i === n); if (i < n) d.style.background = 'var(--te)'; }
+  }
+}
+
+function dcSwipeDone(n, dir) {
+  dcVotes[n] = dir;
+  const inner = dcGetInner(n);
+  if (!inner) return;
+  inner.style.transition = 'transform .3s ease, opacity .25s';
+  const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
+  const y = dir === 'u' ? -300 : 0;
+  const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
+  inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
+  inner.style.opacity = '0';
+  setTimeout(() => {
+    // Show construction feedback after each swipe
+    showConstructionFB(n);
+    dcCur = n + 1;
+    if (dcCur < DC_TOTAL) {
+      dcActivate(dcCur);
+      dcBindSwipe(dcCur);
+    } else {
+      // All done - dismiss overlay
+      const overlay = document.getElementById('daily-overlay');
+      if (overlay) {
+        overlay.style.transition = 'opacity .4s ease';
+        overlay.style.opacity = '0';
+        setTimeout(() => { overlay.style.display = 'none'; }, 420);
+      }
+      const scr = document.getElementById('home-scr');
+      if (scr) scr.style.overflowY = 'auto';
+      const below = document.getElementById('home-below-fold');
+      if (below) { below.classList.remove('home-locked'); below.classList.add('home-unlocked'); }
+    }
+  }, 320);
+}
+
+function dcBindSwipe(n) {
+  const inner = dcGetInner(n);
+  if (!inner) return;
+  bindSwipeEngine(inner, () => dcGetInd(n), (dir) => dcSwipeDone(n, dir));
+}
+
+function dcSwipeAction(dir) { if (dcCur < DC_TOTAL) dcSwipeDone(dcCur, dir); }
+
+/* ══ CONSTRUCTION FEEDBACK ══ */
+function showConstructionFB(n) {
+  const fb = document.getElementById('construction-fb');
+  if (!fb) return;
+  fb.style.display = 'flex';
+  // Re-trigger animations
+  fb.querySelectorAll('.cf-line').forEach(l => {
+    l.style.animation = 'none';
+    l.offsetHeight; // force reflow
+    l.style.animation = '';
+  });
+}
+
+/* ══════════════════════════════════════════════════════
+   STATEMENT VOTING
+══════════════════════════════════════════════════════ */
+function voteStmt(btn) {
+  const row = btn.closest('.dstmt-btns');
+  const wasVoted = btn.classList.contains('voted');
+  row.querySelectorAll('.dsb').forEach(b => {
+    b.classList.remove('voted');
+    b.textContent = b.textContent.replace('\u2713 ', '');
+  });
+  if (!wasVoted) {
+    btn.classList.add('voted');
+    btn.textContent = '\u2713 ' + btn.textContent;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   SHARE FUNCTIONS
+══════════════════════════════════════════════════════ */
+function shareConstruction() {
+  const text = '86% \u05de\u05d4\u05d9\u05e9\u05e8\u05d0\u05dc\u05d9\u05dd \u05de\u05e1\u05db\u05d9\u05de\u05d9\u05dd: \u05dc\u05db\u05dc \u05d0\u05d6\u05e8\u05d7 \u05de\u05d2\u05d9\u05e2 \u05de\u05e8\u05d7\u05d1 \u05de\u05d5\u05d2\u05df. \u05d4\u05db\u05e0\u05e1\u05ea? 0 \u05d4\u05e6\u05e2\u05d5\u05ea \u05d7\u05d5\u05e7.\nhttps://shayzluf.github.io/israel2-demo/';
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+}
+function shareGossip() {
+  const text = '\u05d1\u05ea\u05dc \u05d0\u05d1\u05d9\u05d1 78% \u05d7\u05d5\u05e9\u05d1\u05d9\u05dd \u05e9\u05e6\u05e8\u05d9\u05da \u05ea\u05d7\u05d1\u05d5\u05e8\u05d4 \u05d1\u05e9\u05d1\u05ea. \u05d5\u05de\u05d4 \u05d0\u05e6\u05dc\u05da?\nhttps://shayzluf.github.io/israel2-demo/';
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+}
+function shareMKContradiction() {
+  const text = '\u05d7"\u05db \u05d4\u05d1\u05d8\u05d9\u05d7 \u05dc\u05d4\u05d5\u05e8\u05d9\u05d3 \u05d9\u05d5\u05e7\u05e8. \u05d4\u05e6\u05d1\u05d9\u05e2 \u05e0\u05d2\u05d3 \u05d4\u05e7\u05e4\u05d0\u05ea \u05de\u05d7\u05d9\u05e8\u05d9\u05dd.\nhttps://shayzluf.github.io/israel2-demo/';
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+}
+function shareCitizen() {
+  const text = '\u05d0\u05e0\u05d9 \u05d0\u05d6\u05e8\u05d7/\u05d9\u05ea #4,220 \u05d1\u05db\u05e0\u05e1\u05ea \u05d4\u05e2\u05de\u05de\u05d9\u05ea. \u05d3\u05d5\u05e8 \u05e8\u05d0\u05e9\u05d5\u05df \u05e9\u05e0\u05e1\u05e4\u05e8.\nhttps://shayzluf.github.io/israel2-demo/';
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+}
+
+/* ══════════════════════════════════════════════════════
+   ZK SCAN
+══════════════════════════════════════════════════════ */
+function startScan() {
+  const ps3 = document.getElementById('ps3'), ps4 = document.getElementById('ps4');
+  const ps3s = document.getElementById('ps3s'), ps4s = document.getElementById('ps4s');
+  const cb = document.getElementById('cast-btn');
+  if (ps3) ps3.className = 'proof-step';
+  if (ps4) ps4.className = 'proof-step';
+  if (ps3s) { ps3s.textContent = '\u2014'; ps3s.style.color = 'var(--t3)'; }
+  if (ps4s) { ps4s.textContent = '\u2014'; ps4s.style.color = 'var(--t3)'; }
+  if (cb) cb.style.display = 'none';
+  setTimeout(() => { if (ps3) ps3.className = 'proof-step active'; if (ps3s) { ps3s.textContent = '...'; ps3s.style.color = 'var(--te)'; } }, 400);
+  setTimeout(() => { if (ps3) ps3.className = 'proof-step done'; if (ps3s) ps3s.textContent = '\u2713'; if (ps4) ps4.className = 'proof-step active'; if (ps4s) { ps4s.textContent = '...'; ps4s.style.color = 'var(--te)'; } }, 2000);
+  setTimeout(() => { if (ps4) ps4.className = 'proof-step done'; if (ps4s) ps4s.textContent = '\u2713'; if (cb) cb.style.display = 'block'; }, 3600);
+}
+
+/* ══ MOBILE VIEWPORT HACK ══ */
+(function() {
+  if (window.innerWidth < 700) {
+    document.getElementById('vp').setAttribute('content', 'width=286');
+  }
+})();
+</script>
+</body>
+</html>
