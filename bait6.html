@@ -658,110 +658,102 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         </div>
       </div>
 
-      <!-- ════ S4: STATEMENTS (הצהרות) — SWIPEABLE ════ -->
+      <!-- ════ S4: DELIBERATION (הצהרות) — pol.is-style feed ════ -->
       <div class="slide" id="sl4">
         <div class="s-top">
           <div class="s-logo">נספר</div>
           <div class="s-chip" style="background:var(--bl0);color:var(--bl)">הצהרות</div>
         </div>
-        <div style="flex:1;position:relative;overflow:hidden;min-height:0;display:flex;align-items:center;justify-content:center;padding:8px 13px;" id="st-area">
-          <!-- ST0 -->
-          <div class="tcard active" id="st0">
-            <div class="tcard-inner" style="padding:20px 16px 14px">
-              <div class="tcard-before"></div>
-              <div class="tind tind-r" id="sti0r">&#8594; מסכים</div>
-              <div class="tind tind-l" id="sti0l">לא מסכים &#8592;</div>
-              <div class="tind tind-u" id="sti0u">&#8593; דילוג</div>
-              <div class="tcard-q" style="font-size:12px;line-height:1.6">צריך להקים ממשלת מומחים מקצועית עד לסיום המלחמה.</div>
-              <div class="tcard-meta"><span dir="ltr">142,000</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">82%</span> מסכימים</div>
-              <div class="st-badge-row"><span class="bridge-badge">בונה הסכמות</span></div>
+        <div class="scr" id="delib-scr">
+          <!-- Pipeline explanation -->
+          <div style="background:var(--gd0);border:1px solid var(--gn);border-radius:9px;padding:9px 11px">
+            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:3px">איך זה עובד</div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.5">אזרחים כותבים הצהרות. כולם מצביעים. הצהרות עם הסכמה רחבה הופכות לכרטיסי סוויפ יומיים ומגיעות לכל האזרחים.</div>
+          </div>
+          <!-- Submit your own -->
+          <div class="card" style="border-color:var(--gn)">
+            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:6px">כתוב הצהרה משלך</div>
+            <div style="background:var(--sf);border:1px solid var(--b1);border-radius:8px;padding:9px 10px;font-size:10px;color:var(--t3);line-height:1.5;min-height:36px;cursor:text" onclick="this.style.borderColor='var(--gl)'" contenteditable="false">למשל: ״כל אזרח צריך גישה לרופא תוך 48 שעות״</div>
+            <div class="btn btn-gd" style="margin-top:8px;padding:8px;font-size:10px;opacity:.5;pointer-events:none">שלח הצהרה (נפתח ברמה 2)</div>
+          </div>
+          <!-- AI Rep suggested -->
+          <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">הנציג שלך מציע לך להגיב</div>
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+            <span style="font-size:8px;color:var(--gl);font-weight:700">הנציג ניבא שתסכים — אשר או תקן</span>
+          </div>
+          <!-- Declaration 1 — bridge -->
+          <div class="card" style="border-color:var(--gn)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span class="bridge-badge">בונה הסכמות</span>
+              <span style="font-size:8px;color:var(--t3)">לפני 3 שעות</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">צריך להקים ממשלת מומחים מקצועית עד לסיום המלחמה.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">142,000</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">82%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+            </div>
+            <div style="font-size:8px;color:var(--te);margin-top:5px;text-align:center">הצהרה זו הפכה לסוויפ יומי אתמול</div>
+          </div>
+          <!-- Declaration 2 — trending -->
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span style="font-size:8px;color:var(--co);font-weight:800;display:flex;align-items:center;gap:3px"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> טרנדי</span>
+              <span style="font-size:8px;color:var(--t3)">לפני שעה</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">אסור לפוליטיקאי לקדם חקיקה שמשרתת את האינטרסים האישיים שלו.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">312,500</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">91%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
             </div>
           </div>
-          <!-- ST1 -->
-          <div class="tcard" id="st1">
-            <div class="tcard-inner" style="padding:20px 16px 14px">
-              <div class="tcard-before"></div>
-              <div class="tind tind-r" id="sti1r">&#8594; מסכים</div>
-              <div class="tind tind-l" id="sti1l">לא מסכים &#8592;</div>
-              <div class="tind tind-u" id="sti1u">&#8593; דילוג</div>
-              <div class="tcard-q" style="font-size:12px;line-height:1.6">לא ייתכן שאזרחים בדרום נטושים יותר משנה בלי בית.</div>
-              <div class="tcard-meta"><span dir="ltr">98,400</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">71%</span> מסכימים</div>
+          <!-- Declaration 3 — contested -->
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span style="font-size:8px;color:var(--pu);font-weight:800">שנוי במחלוקת</span>
+              <span style="font-size:8px;color:var(--t3)">לפני 5 שעות</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">לא ייתכן שאזרחים בדרום נטושים יותר משנה בלי בית.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">98,400</span> הצביעו &middot; <span style="color:var(--gd);font-weight:800" dir="ltr">71%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
             </div>
           </div>
-          <!-- ST2 -->
-          <div class="tcard" id="st2">
-            <div class="tcard-inner" style="padding:20px 16px 14px">
-              <div class="tcard-before"></div>
-              <div class="tind tind-r" id="sti2r">&#8594; מסכים</div>
-              <div class="tind tind-l" id="sti2l">לא מסכים &#8592;</div>
-              <div class="tind tind-u" id="sti2u">&#8593; דילוג</div>
-              <div class="tcard-q" style="font-size:12px;line-height:1.6">כל ילד בישראל מגיע לחינוך איכותי בלי קשר לאיפה שהוא גר.</div>
-              <div class="tcard-meta"><span dir="ltr">167,200</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">79%</span> מסכימים</div>
-              <div class="st-badge-row"><span class="bridge-badge">בונה הסכמות</span></div>
+          <!-- Declaration 4 — bridge -->
+          <div class="card" style="border-color:var(--gn)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span class="bridge-badge">בונה הסכמות</span>
+              <span style="font-size:8px;color:var(--t3)">לפני 8 שעות</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">משפחות שכולות ונפגעי טרור זכאות לתמיכה כלכלית מלאה לכל החיים.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">189,700</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">88%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+            </div>
+            <div style="font-size:8px;color:var(--te);margin-top:5px;text-align:center">עוד 2,300 הצבעות והצהרה זו הופכת לסוויפ יומי</div>
+          </div>
+          <!-- Declaration 5 — new -->
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span style="font-size:8px;color:var(--bl);font-weight:800">חדש</span>
+              <span style="font-size:8px;color:var(--t3)">לפני 20 דקות</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">כל ילד בישראל מגיע לחינוך איכותי בלי קשר לאיפה שהוא גר.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">167,200</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">79%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
             </div>
           </div>
-          <!-- ST3 -->
-          <div class="tcard" id="st3">
-            <div class="tcard-inner" style="padding:20px 16px 14px">
-              <div class="tcard-before"></div>
-              <div class="tind tind-r" id="sti3r">&#8594; מסכים</div>
-              <div class="tind tind-l" id="sti3l">לא מסכים &#8592;</div>
-              <div class="tind tind-u" id="sti3u">&#8593; דילוג</div>
-              <div style="font-size:8px;color:var(--co);font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> טרנדי</div>
-              <div class="tcard-q" style="font-size:12px;line-height:1.6">אסור לפוליטיקאי לקדם חקיקה שמשרתת את האינטרסים האישיים שלו.</div>
-              <div class="tcard-meta"><span dir="ltr">312,500</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">91%</span> מסכימים</div>
-              <div class="st-badge-row"><span class="bridge-badge">בונה הסכמות</span></div>
-            </div>
-          </div>
-          <!-- ST4 -->
-          <div class="tcard" id="st4">
-            <div class="tcard-inner" style="padding:20px 16px 14px">
-              <div class="tcard-before"></div>
-              <div class="tind tind-r" id="sti4r">&#8594; מסכים</div>
-              <div class="tind tind-l" id="sti4l">לא מסכים &#8592;</div>
-              <div class="tind tind-u" id="sti4u">&#8593; דילוג</div>
-              <div class="tcard-q" style="font-size:12px;line-height:1.6">משפחות שכולות ונפגעי טרור זכאות לתמיכה כלכלית מלאה לכל החיים.</div>
-              <div class="tcard-meta"><span dir="ltr">189,700</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">88%</span> מסכימים</div>
-              <div class="st-badge-row"><span class="bridge-badge">בונה הסכמות</span></div>
-            </div>
-          </div>
-          <!-- ST-MAP — Result -->
-          <div class="tcard" id="stmap">
-            <div class="tcard-inner" style="text-align:center;gap:10px;cursor:default;padding:24px 16px">
-              <div style="font-size:16px;font-weight:900;color:var(--gl)"><span dir="ltr">5</span> הצבעות!</div>
-              <div style="font-size:12px;font-weight:800;color:var(--t1);line-height:1.5">מצאתם נקודת הסכמה שחוצה את כל הקבוצות.</div>
-              <div class="tribal-bars" style="height:44px">
-                <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">87%</div><div class="tb-lbl">חרדי</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:29px;background:var(--gd)"></div><div class="tb-pct" style="color:var(--gd)">85%</div><div class="tb-lbl">ערבי</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:28px;background:var(--te)"></div><div class="tb-pct" style="color:var(--te)">84%</div><div class="tb-lbl">חילוני</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:27px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">82%</div><div class="tb-lbl">דתי</div></div>
-                <div class="tribal-bar"><div class="tb-fill" style="height:26px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">80%</div><div class="tb-lbl">עולה</div></div>
-              </div>
-              <div style="background:#25D366;color:#fff;font-weight:800;font-size:10px;border-radius:9px;padding:9px;text-align:center;cursor:pointer" onclick="shareConsensus()">שתף את הגילוי</div>
-            </div>
-          </div>
-          <!-- Consensus celebration overlay -->
-          <div class="consensus-celebration" id="cc-overlay">
-            <div class="cc-ring">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <div style="font-size:13px;font-weight:900;color:var(--gl)">הסכמה!</div>
-            <div style="font-size:10px;color:var(--t2);line-height:1.5;max-width:200px">מצאתם נקודת הסכמה שחוצה את כל הקבוצות.</div>
-            <div style="background:#25D366;color:#fff;font-weight:800;font-size:9px;border-radius:7px;padding:7px 14px;cursor:pointer" onclick="shareConsensus()">שתף</div>
-          </div>
-        </div>
-        <div class="swipe-actions" id="st-actions" style="padding:4px 12px 2px">
-          <button class="sa-btn sa-yes" onclick="stSwipeAction('r')">מסכים &#8594;</button>
-          <button class="sa-btn sa-complex" onclick="stSwipeAction('u')">דילוג</button>
-          <button class="sa-btn sa-no" onclick="stSwipeAction('l')">&#8592; לא מסכים</button>
-        </div>
-        <div style="display:flex;justify-content:center;gap:4px;padding:4px 0 4px">
-          <div class="tdot on" id="std0"></div>
-          <div class="tdot" id="std1"></div>
-          <div class="tdot" id="std2"></div>
-          <div class="tdot" id="std3"></div>
-          <div class="tdot" id="std4"></div>
-          <div class="tdot" id="std5"></div>
         </div>
         <div class="tab-bar">
           <button class="tab-btn" onclick="go(3)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
@@ -1110,7 +1102,7 @@ function go(n) {
   // Init swipe engines on entry
   if (n === 1) { csActivate(csCur); csBindSwipe(csCur); if (!csTutorialShown) showCsTutorial(); }
   if (n === 3 && dcCur < DC_TOTAL) { dcActivate(dcCur); dcBindSwipe(dcCur); }
-  if (n === 4) { stActivate(stCur); stBindSwipe(stCur); }
+  // sl4 is now scrollable deliberation feed, no swipe init needed
   if (n === 7) startScan();
 }
 
@@ -1377,69 +1369,14 @@ function showConstructionFB(n) {
 }
 
 /* ══════════════════════════════════════════════════════
-   STATEMENT SWIPE ENGINE (st prefix, sl4)
+   DELIBERATION — statement vote toggle (sl4)
 ══════════════════════════════════════════════════════ */
-const ST_IDS = ['st0','st1','st2','st3','st4','stmap'];
-const ST_SWIPEABLE = ['st0','st1','st2','st3','st4'];
-const ST_BRIDGE = [true, false, true, true, true]; // which are bridge statements
-let stCur = 0;
-
-function stGetInner(n) { return document.getElementById(ST_IDS[n])?.querySelector('.tcard-inner'); }
-function stGetInd(n) {
-  return {
-    r: document.getElementById('sti' + n + 'r'),
-    l: document.getElementById('sti' + n + 'l'),
-    u: document.getElementById('sti' + n + 'u')
-  };
+function voteStmt(btn) {
+  const row = btn.parentElement;
+  const wasVoted = btn.classList.contains('voted');
+  row.querySelectorAll('.sa-btn').forEach(b => { b.classList.remove('voted'); b.style.opacity = ''; });
+  if (!wasVoted) { btn.classList.add('voted'); btn.style.opacity = '1'; }
 }
-
-function stActivate(n) {
-  ST_IDS.forEach((id, i) => {
-    const el = document.getElementById(id);
-    if (el) el.classList.toggle('active', i === n);
-  });
-  for (let i = 0; i < 6; i++) {
-    const d = document.getElementById('std' + i);
-    if (d) { d.classList.toggle('on', i === n); if (i < n) d.style.background = 'var(--te)'; }
-  }
-  const act = document.getElementById('st-actions');
-  if (act) act.style.display = n < ST_SWIPEABLE.length ? 'flex' : 'none';
-}
-
-function showConsensusCelebration() {
-  const cc = document.getElementById('cc-overlay');
-  if (!cc) return;
-  cc.classList.add('show');
-  setTimeout(() => { cc.classList.remove('show'); }, 3500);
-}
-
-function stSwipeDone(n, dir) {
-  const inner = stGetInner(n);
-  if (!inner) return;
-  // If bridge statement and user agreed, trigger celebration
-  if (ST_BRIDGE[n] && dir === 'r') {
-    setTimeout(showConsensusCelebration, 200);
-  }
-  inner.style.transition = 'transform .3s ease, opacity .25s';
-  const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
-  const y = dir === 'u' ? -300 : 0;
-  const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
-  inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
-  inner.style.opacity = '0';
-  setTimeout(() => {
-    stCur = n + 1;
-    stActivate(stCur);
-    if (stCur < ST_SWIPEABLE.length) stBindSwipe(stCur);
-  }, 320);
-}
-
-function stBindSwipe(n) {
-  const inner = stGetInner(n);
-  if (!inner) return;
-  bindSwipeEngine(inner, () => stGetInd(n), (dir) => stSwipeDone(n, dir));
-}
-
-function stSwipeAction(dir) { if (stCur < ST_SWIPEABLE.length) stSwipeDone(stCur, dir); }
 
 /* ══════════════════════════════════════════════════════
    SHARE FUNCTIONS
