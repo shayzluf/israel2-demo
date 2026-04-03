@@ -708,7 +708,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <button class="tab-btn active" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
           <button class="tab-btn" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
           <button class="tab-btn" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
-          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#128367;</span>שבת</button>
+          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#129302;</span>הנציג</button>
         </div>
       </div>
 
@@ -767,7 +767,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <button class="tab-btn" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
           <button class="tab-btn active" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
           <button class="tab-btn" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
-          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#128367;</span>שבת</button>
+          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#129302;</span>הנציג</button>
         </div>
       </div>
 
@@ -816,40 +816,122 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <button class="tab-btn" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
           <button class="tab-btn" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
           <button class="tab-btn active" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
-          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#128367;</span>שבת</button>
+          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#129302;</span>הנציג</button>
         </div>
       </div>
 
-      <!-- ════ S8: SHABBAT CARD (שבת) ════ -->
+      <!-- ════ S8: AI REP (הנציג) ════ -->
       <div class="slide" id="sl8">
         <div class="s-top">
           <div class="s-logo">נספר</div>
-          <div class="s-chip" style="background:var(--gd0);color:var(--gl)">שבת</div>
+          <div class="s-chip" style="background:var(--gd0);color:var(--gl)">הנציג</div>
         </div>
-        <div class="scr" style="justify-content:center;gap:12px;padding:20px 16px">
-          <div class="shabbat-card" style="text-align:center">
-            <div style="font-size:28px;margin-bottom:8px">&#128367;</div>
-            <div style="font-size:16px;font-weight:900;color:var(--t1)">סיכום שבועי</div>
-            <div style="font-size:9px;color:var(--t3);margin-top:3px">ב' ניסן תשפ"ו | <span dir="ltr">2.4.2026</span></div>
-            <div class="shabbat-divider"></div>
-            <div style="font-size:10px;color:var(--t2);line-height:1.7;text-align:right">
-              השבוע הצבעת על <span dir="ltr">3</span> נושאים. הסכמה חדשה נמצאה בביטחון אזרחי. <span dir="ltr">782</span> אזרחים חדשים הצטרפו.
-            </div>
-            <div class="shabbat-divider"></div>
-            <div style="font-size:10px;font-weight:700;color:var(--gl);margin-bottom:6px">שאלה לשולחן שבת:</div>
-            <div style="font-size:10px;color:var(--t2);line-height:1.6">שבוע הבא: הצבעה על תקציב החינוך</div>
-            <div class="shabbat-divider"></div>
-            <div style="display:flex;justify-content:center">
-              <div class="streak">&#128293; רצף <span dir="ltr">13</span> שבועות</div>
-            </div>
-            <div style="margin-top:8px;background:#25D366;color:#fff;font-weight:800;font-size:10px;border-radius:9px;padding:9px;cursor:pointer">שתף בוואטסאפ</div>
+        <div class="scr" style="gap:8px;padding:10px 13px 8px">
+          <!-- Rep header -->
+          <div class="card" style="border-color:var(--gn);text-align:center;padding:14px">
+            <div style="font-size:24px;margin-bottom:4px">&#129302;</div>
+            <div style="font-size:14px;font-weight:900;color:var(--gl)">הנציג האישי שלך</div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.5;margin-top:4px">לומד איך אתה חושב. ניבא את עמדותיך. לא מצביע בשמך -- רק מציע.</div>
           </div>
+
+          <!-- Accuracy + training stats -->
+          <div class="sr">
+            <div class="st"><div class="sv" style="color:var(--te)"><span dir="ltr">7</span>/<span dir="ltr">10</span></div><div class="sl">ניבויים נכונים</div></div>
+            <div class="st"><div class="sv" style="color:var(--gl)"><span dir="ltr">74%</span></div><div class="sl">ביטחון ממוצע</div></div>
+            <div class="st"><div class="sv" style="color:var(--bl)"><span dir="ltr">23</span></div><div class="sl">נושאים שלמד</div></div>
+          </div>
+
+          <!-- Pending predictions to review -->
+          <div style="font-size:9px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">ממתינים לאישור שלך</div>
+
+          <!-- Prediction 1 -->
+          <div class="card" style="border-color:rgba(39,179,142,.25)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+              <div class="tcard-tag" style="background:var(--te0);color:var(--te);font-size:8px">ביטחון</div>
+              <div style="font-size:8px;color:var(--te);font-weight:800">ביטחון: <span dir="ltr">89%</span></div>
+            </div>
+            <div style="font-size:10px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:4px">הגדלת תקציב פיקוד העורף ב-<span dir="ltr">40%</span> לבניית ממ"דים</div>
+            <div style="font-size:9px;color:var(--t3);line-height:1.4;margin-bottom:8px">הנציג ניבא: <strong style="color:var(--te)">בעד</strong> -- בהתבסס על הצבעותיך בנושאי מיגון ותקציב ביטחון</div>
+            <div style="font-size:8px;color:var(--t2);line-height:1.4;padding:6px 8px;background:var(--sf);border-radius:6px;margin-bottom:8px;border-right:2px solid var(--bl)">
+              <strong style="color:var(--t1)">למה הנציג חושב ככה?</strong> הצבעת בעד מימון ממ"דים (cs0), בעד הגדלת תקציב בריאות (cs1), ובעד פיצוי מילואימניקים (cs2). הנציג זיהה דפוס: אתה תומך בהשקעת המדינה בביטחון אזרחי.
+            </div>
+            <div style="display:flex;gap:6px">
+              <div style="flex:1;padding:7px;border-radius:7px;background:var(--te0);border:1px solid var(--te);color:var(--te);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='&#10003; אושר';this.style.background='var(--te)';this.style.color='#001a14'">&#10003; נכון</div>
+              <div style="flex:1;padding:7px;border-radius:7px;background:var(--co0);border:1px solid var(--co);color:var(--co);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='&#10007; תוקן';this.style.background='var(--co)';this.style.color='#fff'">&#10007; טעה</div>
+              <div style="flex:1;padding:7px;border-radius:7px;background:var(--gd0);border:1px solid var(--gl);color:var(--gl);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='~ מורכב';this.style.background='var(--gd)';this.style.color='#1a0d00'">~ מורכב</div>
+            </div>
+          </div>
+
+          <!-- Prediction 2 -->
+          <div class="card" style="border-color:rgba(199,82,82,.25)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+              <div class="tcard-tag" style="background:var(--co0);color:var(--co);font-size:8px">כלכלה</div>
+              <div style="font-size:8px;color:var(--gd);font-weight:800">ביטחון: <span dir="ltr">61%</span></div>
+            </div>
+            <div style="font-size:10px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:4px">הפרטת חברת החשמל -- מכירת <span dir="ltr">51%</span> למשקיעים פרטיים</div>
+            <div style="font-size:9px;color:var(--t3);line-height:1.4;margin-bottom:8px">הנציג ניבא: <strong style="color:var(--co)">נגד</strong> -- אבל בביטחון נמוך. צריך את העמדה שלך</div>
+            <div style="font-size:8px;color:var(--t2);line-height:1.4;padding:6px 8px;background:var(--sf);border-radius:6px;margin-bottom:8px;border-right:2px solid var(--bl)">
+              <strong style="color:var(--t1)">למה ביטחון נמוך?</strong> הנציג ראה שאתה תומך בהתערבות ממשלתית (מחירי מזון, פיצוי מילואים) אבל גם בשקיפות תקציבית. הפרטת חח"י נוגעת בשניהם -- ולכן הוא לא בטוח.
+            </div>
+            <div style="display:flex;gap:6px">
+              <div style="flex:1;padding:7px;border-radius:7px;background:var(--te0);border:1px solid var(--te);color:var(--te);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='&#10003; אושר';this.style.background='var(--te)';this.style.color='#001a14'">&#10003; נכון</div>
+              <div style="flex:1;padding:7px;border-radius:7px;background:var(--co0);border:1px solid var(--co);color:var(--co);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='&#10007; תוקן';this.style.background='var(--co)';this.style.color='#fff'">&#10007; טעה</div>
+              <div style="flex:1;padding:7px;border-radius:7px;background:var(--gd0);border:1px solid var(--gl);color:var(--gl);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='~ מורכב';this.style.background='var(--gd)';this.style.color='#1a0d00'">~ מורכב</div>
+            </div>
+          </div>
+
+          <!-- Prediction 3 — consensus alert -->
+          <div class="card" style="border-color:var(--gn);background:linear-gradient(135deg,rgba(200,149,58,0.08),rgba(39,179,142,0.05))">
+            <div style="display:flex;align-items:center;gap:5px;margin-bottom:6px">
+              <div style="width:6px;height:6px;border-radius:50%;background:var(--gl);animation:cp 2.2s infinite"></div>
+              <div style="font-size:8px;font-weight:800;color:var(--gl);letter-spacing:.5px">הסכמה התגלתה</div>
+            </div>
+            <div style="font-size:10px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:4px">חינוך פיננסי חובה מכיתה ז' -- <span dir="ltr">82%</span> מכל הקבוצות מסכימים</div>
+            <div style="font-size:9px;color:var(--t3);line-height:1.4;margin-bottom:8px">הנציג ניבא שגם אתה בעד. <strong style="color:var(--gl)">ההצבעה שלך תוסיף את הקול שלך להסכמה הזו.</strong></div>
+            <div style="font-size:8px;color:var(--t2);line-height:1.4;padding:6px 8px;background:var(--sf);border-radius:6px;margin-bottom:8px;border-right:2px solid var(--gd)">
+              <strong style="color:var(--t1)">למה זה חשוב?</strong> <span dir="ltr">82%</span> הסכמה חוצת קבוצות, כולל חרדי (<span dir="ltr">78%</span>), ערבי (<span dir="ltr">80%</span>), חילוני (<span dir="ltr">85%</span>). הכנסת? <span dir="ltr">0</span> הצעות חוק. ההצבעה שלך מקרבת את הנושא לסף של <span dir="ltr">10,000</span> -- שליחת מכתב לח"כ.
+            </div>
+            <div class="btn btn-gd" style="font-size:10px;padding:9px" onclick="this.innerHTML='&#10003; ההצבעה נרשמה';this.style.background='var(--te)';this.style.color='#001a14'">אני בעד -- הוסיפו את הקול שלי</div>
+          </div>
+
+          <!-- What the Rep learned this week -->
+          <div style="font-size:9px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">מה הנציג למד עליך השבוע</div>
+          <div class="card" style="padding:9px 11px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="font-size:9px;color:var(--t2);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px">
+                <strong style="color:var(--te)">&#10003;</strong> נושאי ביטחון אזרחי -- <strong style="color:var(--t1)">ביטחון גבוה</strong>. אתה עקבי בתמיכה במימון ממשלתי למיגון.
+              </div>
+              <div style="font-size:9px;color:var(--t2);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px">
+                <strong style="color:var(--gd)">~</strong> נושאי דת ומדינה -- <strong style="color:var(--t1)">ביטחון בינוני</strong>. הנציג צריך עוד <span dir="ltr">3</span> תשובות כדי לנבא טוב יותר.
+              </div>
+              <div style="font-size:9px;color:var(--t2);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px">
+                <strong style="color:var(--co)">?</strong> נושאי כלכלה -- <strong style="color:var(--t1)">ביטחון נמוך</strong>. עמדותיך כאן מגוונות -- הנציג לא מזהה דפוס ברור עדיין.
+              </div>
+            </div>
+          </div>
+
+          <!-- Power explanation -->
+          <div class="card" style="border-color:var(--gn)">
+            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:4px">למה הנציג חשוב?</div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.6">
+              הכנסת מצביעה על מאות חוקים בשנה. אתה לא יכול לעקוב אחרי כולם. הנציג לומד איך אתה חושב ומתריע כשיש נושא שחשוב לך -- או כשהתגלתה הסכמה חדשה שצריכה את הקול שלך.
+            </div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.6;margin-top:6px">
+              <strong style="color:var(--t1)">ככל שתאמן יותר, הוא ינבא טוב יותר.</strong> כל תיקון שלך משפר את הדיוק ב-<span dir="ltr">3-5</span> נושאים קשורים.
+            </div>
+            <div style="margin-top:8px;display:flex;gap:6px;align-items:center">
+              <div class="bar" style="flex:1"><div class="bar-f" style="width:74%;background:var(--gd)"></div></div>
+              <div style="font-size:8px;color:var(--gl);font-weight:800"><span dir="ltr">74%</span> דיוק</div>
+            </div>
+            <div style="font-size:8px;color:var(--t3);margin-top:3px">עוד <span dir="ltr">7</span> תשובות עד <span dir="ltr">85%</span> דיוק -- סף הניבוי האוטומטי</div>
+          </div>
+
         </div>
         <div class="tab-bar">
           <button class="tab-btn" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
           <button class="tab-btn" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
           <button class="tab-btn" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
-          <button class="tab-btn active" onclick="go(8)"><span class="tab-icon">&#128367;</span>שבת</button>
+          <button class="tab-btn active" onclick="go(8)"><span class="tab-icon">&#129302;</span>הנציג</button>
         </div>
       </div>
 
@@ -990,7 +1072,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
     <div class="sbb" id="b5" onclick="go(5)"><div class="sbb-name">S5 -- בית</div></div>
     <div class="sbb" id="b6" onclick="go(6)"><div class="sbb-name">S6 -- הצהרות</div></div>
     <div class="sbb" id="b7" onclick="go(7)"><div class="sbb-name">S7 -- חוק + סתירות</div></div>
-    <div class="sbb" id="b8" onclick="go(8)"><div class="sbb-name">S8 -- שבת</div></div>
+    <div class="sbb" id="b8" onclick="go(8)"><div class="sbb-name">S8 -- הנציג</div></div>
     <div class="sb-phase">להיספר</div>
     <div class="sbb" id="b9" onclick="go(9)"><div class="sbb-name">S9 -- להיספר</div></div>
     <div class="sbb" id="b10" onclick="go(10)"><div class="sbb-name">S10 -- סריקת ZK</div></div>
