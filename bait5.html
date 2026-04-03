@@ -136,7 +136,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
   font-size:8px;font-weight:700;color:var(--t3);cursor:pointer;border:none;background:none;font-family:var(--heb);transition:color .15s;}
 .tab-btn:hover{color:var(--t2);}
 .tab-btn.active{color:var(--gl);}
-.tab-icon{font-size:14px;}
+.tab-icon{display:inline-flex;align-items:center;justify-content:center;height:16px;}
+.tab-icon svg{width:16px;height:16px;}
 
 /* Tribal bars */
 .tribal-bars{display:flex;gap:3px;margin-top:6px;align-items:flex-end;height:54px;}
@@ -352,7 +353,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-r" id="csi0r">&#8594; בעד</div>
               <div class="tind tind-l" id="csi0l">נגד &#8592;</div>
               <div class="tind tind-u" id="csi0u">&#8593; מורכב</div>
-              <div class="tcard-tag" style="background:var(--co0);color:var(--co)">מיגון העורף &#127463;</div>
+              <div class="tcard-tag" style="background:var(--co0);color:var(--co)">מיגון העורף <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;display:inline"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
               <div class="tcard-q">לחייב את המדינה לממן בניית ממ"ד לכל דירה ישנה?</div>
               <div class="tcard-ctx">ל-<span dir="ltr">2.5</span> מיליון אזרחים אין מרחב מוגן תקני. דו"ח מבקר המדינה, מרץ <span dir="ltr">2026</span>.</div>
               <div class="tcard-meta"><span dir="ltr">165,420</span> הצביעו</div>
@@ -690,7 +691,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <!-- AI Rep panel -->
             <div style="padding:9px 11px;background:var(--gd0);border:1px solid var(--gn);border-radius:9px">
               <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px">
-                <div style="font-size:16px">&#129302;</div>
+                <div style="display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
                 <div style="font-size:10px;font-weight:800;color:var(--gl)">הנציג האישי שלך</div>
               </div>
               <div style="font-size:9px;color:rgba(228,174,88,.7);line-height:1.5;margin-bottom:5px">ניבא <span dir="ltr">7/10</span> נכון. ביטחון: <span dir="ltr">74%</span></div>
@@ -705,10 +706,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
         </div>
         <div class="tab-bar">
-          <button class="tab-btn active" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
-          <button class="tab-btn" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
-          <button class="tab-btn" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
-          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#129302;</span>הנציג</button>
+          <button class="tab-btn active" onclick="go(5)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
+          <button class="tab-btn" onclick="go(6)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>הצהרות</button>
+          <button class="tab-btn" onclick="go(7)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>חוק</button>
+          <button class="tab-btn" onclick="go(8)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>הנציג</button>
         </div>
       </div>
 
@@ -764,10 +765,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
         </div>
         <div class="tab-bar">
-          <button class="tab-btn" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
-          <button class="tab-btn active" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
-          <button class="tab-btn" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
-          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#129302;</span>הנציג</button>
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
+          <button class="tab-btn active" onclick="go(6)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>הצהרות</button>
+          <button class="tab-btn" onclick="go(7)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>חוק</button>
+          <button class="tab-btn" onclick="go(8)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>הנציג</button>
         </div>
       </div>
 
@@ -785,7 +786,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               סתירה
             </div>
             <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-              <div style="width:28px;height:28px;border-radius:50%;background:var(--bl0);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">&#128100;</div>
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--bl0);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
               <div>
                 <div style="font-size:10px;font-weight:800;color:var(--t1)">ח"כ ישראל כ"ץ</div>
                 <div style="font-size:8px;color:var(--t3)">הליכוד</div>
@@ -813,10 +814,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
         </div>
         <div class="tab-bar">
-          <button class="tab-btn" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
-          <button class="tab-btn" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
-          <button class="tab-btn active" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
-          <button class="tab-btn" onclick="go(8)"><span class="tab-icon">&#129302;</span>הנציג</button>
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
+          <button class="tab-btn" onclick="go(6)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>הצהרות</button>
+          <button class="tab-btn active" onclick="go(7)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>חוק</button>
+          <button class="tab-btn" onclick="go(8)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>הנציג</button>
         </div>
       </div>
 
@@ -829,7 +830,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         <div class="scr" style="gap:8px;padding:10px 13px 8px">
           <!-- Rep header -->
           <div class="card" style="border-color:var(--gn);text-align:center;padding:14px">
-            <div style="font-size:24px;margin-bottom:4px">&#129302;</div>
+            <div style="margin-bottom:4px;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
             <div style="font-size:14px;font-weight:900;color:var(--gl)">הנציג האישי שלך</div>
             <div style="font-size:9px;color:var(--t2);line-height:1.5;margin-top:4px">לומד איך אתה חושב. ניבא את עמדותיך. לא מצביע בשמך -- רק מציע.</div>
           </div>
@@ -928,10 +929,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 
         </div>
         <div class="tab-bar">
-          <button class="tab-btn" onclick="go(5)"><span class="tab-icon">&#127968;</span>בית</button>
-          <button class="tab-btn" onclick="go(6)"><span class="tab-icon">&#128226;</span>הצהרות</button>
-          <button class="tab-btn" onclick="go(7)"><span class="tab-icon">&#128220;</span>חוק</button>
-          <button class="tab-btn active" onclick="go(8)"><span class="tab-icon">&#129302;</span>הנציג</button>
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
+          <button class="tab-btn" onclick="go(6)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>הצהרות</button>
+          <button class="tab-btn" onclick="go(7)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>חוק</button>
+          <button class="tab-btn active" onclick="go(8)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>הנציג</button>
         </div>
       </div>
 
@@ -1005,15 +1006,15 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div class="zk-glow"></div>
           <div class="passport-wrap">
             <div class="passport-scan"></div>
-            <div class="pp-em">&#128274;</div>
+            <div class="pp-em"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
           </div>
           <div style="font-family:var(--frank);font-size:18px;font-weight:900;text-align:center;margin-bottom:5px;position:relative;z-index:1">סריקת דרכון</div>
           <div style="font-size:10px;color:var(--t2);text-align:center;line-height:1.55;max-width:210px;margin-bottom:16px;position:relative;z-index:1">מוכיח שאתה אזרח/ית ישראלי/ת.<br>לא שומר מי אתה.</div>
           <div class="proof-steps">
-            <div class="proof-step done"><div class="ps-icon">&#128274;</div><div class="ps-text">חיבור NFC</div><div class="ps-st" style="color:var(--te);font-weight:700">&#10003;</div></div>
-            <div class="proof-step done"><div class="ps-icon">&#128196;</div><div class="ps-text">קריאת שבב</div><div class="ps-st" style="color:var(--te);font-weight:700">&#10003;</div></div>
-            <div class="proof-step" id="ps3"><div class="ps-icon">&#128272;</div><div class="ps-text">יצירת הוכחה</div><div class="ps-st" id="ps3s">&mdash;</div></div>
-            <div class="proof-step" id="ps4"><div class="ps-icon">&#9989;</div><div class="ps-text">אימות</div><div class="ps-st" id="ps4s">&mdash;</div></div>
+            <div class="proof-step done"><div class="ps-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="ps-text">חיבור NFC</div><div class="ps-st" style="color:var(--te);font-weight:700">&#10003;</div></div>
+            <div class="proof-step done"><div class="ps-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div><div class="ps-text">קריאת שבב</div><div class="ps-st" style="color:var(--te);font-weight:700">&#10003;</div></div>
+            <div class="proof-step" id="ps3"><div class="ps-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="ps-text">יצירת הוכחה</div><div class="ps-st" id="ps3s">&mdash;</div></div>
+            <div class="proof-step" id="ps4"><div class="ps-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div><div class="ps-text">אימות</div><div class="ps-st" id="ps4s">&mdash;</div></div>
           </div>
           <div style="width:100%;margin-top:9px;padding:9px 11px;background:var(--el);border-radius:8px;border:1px solid var(--b0);position:relative;z-index:1">
             <div style="font-size:9px;font-weight:800;color:var(--t1);margin-bottom:3px">מה קורה כאן?</div>
@@ -1027,7 +1028,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <div class="slide" id="sl11">
         <div class="s11-glow"></div>
         <div class="cit-body" style="text-align:center">
-          <div style="font-size:34px;margin-bottom:10px">&#128737;</div>
+          <div style="margin-bottom:10px;display:flex;align-items:center;justify-content:center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
           <div style="font-family:var(--frank);font-size:20px;font-weight:900;line-height:1.2">דור ראשון <em style="color:var(--gl);font-style:normal">שנספר</em></div>
           <div class="cit-n">#4,220</div>
           <div style="font-size:11px;color:var(--t1);font-weight:700">אזרח/ית מאומת/ת בכנסת העממית</div>
