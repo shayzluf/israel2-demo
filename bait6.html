@@ -422,10 +422,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
         </div>
         <!-- Swipe actions -->
-        <div class="swipe-actions" id="cs-actions" style="padding:4px 12px 2px">
-          <button class="sa-btn sa-yes" onclick="csSwipeAction('r')">בעד &#8594;</button>
-          <button class="sa-btn sa-complex" onclick="csSwipeAction('u')">זה מורכב</button>
-          <button class="sa-btn sa-no" onclick="csSwipeAction('l')">&#8592; נגד</button>
+        <div style="display:flex;justify-content:space-between;padding:4px 16px 2px;font-size:9px;font-weight:700;color:var(--t3)">
+          <span style="color:var(--te)">בעד &#8594;</span>
+          <span style="color:var(--gl)">&#8593; זה מורכב</span>
+          <span style="color:var(--co)">&#8592; נגד</span>
         </div>
         <!-- Dots -->
         <div style="display:flex;justify-content:center;gap:4px;padding:4px 0 8px">
@@ -555,10 +555,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tdot" id="dcd1"></div>
               <div class="tdot" id="dcd2"></div>
             </div>
-            <div class="swipe-actions" id="dc-actions" style="padding:0 12px 8px;flex-shrink:0;background:var(--bg)">
-              <button class="sa-btn sa-yes" onclick="dcSwipeAction('r')">בעד &#8594;</button>
-              <button class="sa-btn sa-complex" onclick="dcSwipeAction('u')">זה מורכב</button>
-              <button class="sa-btn sa-no" onclick="dcSwipeAction('l')">&#8592; נגד</button>
+            <div style="display:flex;justify-content:space-between;padding:0 16px 8px;font-size:9px;font-weight:700;color:var(--t3);flex-shrink:0;background:var(--bg)">
+              <span style="color:var(--te)">בעד &#8594;</span>
+              <span style="color:var(--gl)">&#8593; זה מורכב</span>
+              <span style="color:var(--co)">&#8592; נגד</span>
             </div>
           </div>
           <!-- Construction feedback (hidden, shown after swipes) -->
