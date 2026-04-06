@@ -5,6 +5,9 @@
 <meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
 <title>נספר — Knesset Ha'amamit v6</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&display=swap" rel="stylesheet">
+<!-- GA4 — replace G-XXXXXXXXXX with your measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 <style>
 :root {
   --bg:#06070A; --sf:#0D0F14; --el:#141820; --ra:#1C2029;
@@ -293,18 +296,18 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <!-- ════ S0: DISRUPTION HOOK ════ -->
       <div class="slide active" id="sl0">
         <div class="scr" style="justify-content:center;gap:14px;padding:24px 18px 14px">
-          <!-- Big gold 74% -->
+          <!-- Big stat -->
           <div style="text-align:center">
-            <div style="font-family:var(--frank);font-size:52px;font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1" dir="ltr">74%</div>
-            <div style="font-size:12px;color:var(--t2);line-height:1.5;margin-top:6px">מהישראלים מרגישים שאף מפלגה לא מייצגת אותם.</div>
-            <div style="font-size:8px;color:var(--t3);margin-top:2px">המכון הישראלי לדמוקרטיה, <span dir="ltr">2025</span></div>
+            <div data-ab="stat" style="font-family:var(--frank);font-size:44px;font-weight:900;color:var(--co);letter-spacing:-1px;line-height:1"><span dir="ltr">14</span> חודשים</div>
+            <div data-ab="stat-desc" style="font-size:12px;color:var(--t2);line-height:1.5;margin-top:6px">זמן ההמתנה הממוצע לטיפול פסיכולוגי בשירות הציבורי.</div>
+            <div data-ab="stat-source" style="font-size:8px;color:var(--t3);margin-top:2px">משרד הבריאות, <span dir="ltr">2023</span></div>
           </div>
-          <!-- Hope question -->
-          <div style="text-align:center;font-size:18px;font-weight:900;color:var(--t1);line-height:1.4">זה בידיים שלנו לשנות את זה.</div>
-          <!-- Simple mission -->
-          <div style="text-align:center;font-size:11px;color:var(--t2);line-height:1.7;max-width:240px;margin:0 auto">המערכת הישנה לא משרתת אותנו כבר שנים. יצרנו מערכת חדשה — שבה אזרחים מוצאים הסכמות ומנהלים את החיים שלהם בעצמם.</div>
+          <!-- Headline -->
+          <div data-ab="headline" style="text-align:center;font-size:17px;font-weight:900;color:var(--t1);line-height:1.4">טראומה לאומית, אבל אין מי שיטפל בנפש שלנו.</div>
+          <!-- Mission -->
+          <div data-ab="mission" style="text-align:center;font-size:11px;color:var(--t2);line-height:1.7;max-width:240px;margin:0 auto">מערכת בריאות הנפש הציבורית מורעבת כבר שנים, ודווקא עכשיו כולם קורסים תחת העומס. הגיע הזמן לאחד כוחות ולדרוש תקצוב חירום למערך הפסיכולוגי של כולנו.</div>
           <!-- CTA -->
-          <div class="btn btn-gd" onclick="go(1)">לגלות על מה כולנו מסכימים</div>
+          <div data-ab="cta" class="btn btn-gd" onclick="abTrackCta();go(1)">לגלות על מה כולנו מסכימים</div>
           <div style="text-align:center;font-size:9px;color:var(--t3)"><span dir="ltr">6</span> סוויפים &middot; דקה אחת &middot; ללא הרשמה</div>
           <!-- Counter -->
           <div style="background:var(--sf);border-radius:9px;border:1px solid var(--b1);padding:8px 12px;display:flex;align-items:center;gap:9px">
@@ -1398,11 +1401,155 @@ function startScan() {
   setTimeout(() => { if (ps4) ps4.className = 'proof-step done'; if (ps4s) ps4s.textContent = '\u2713'; if (cb) cb.style.display = 'block'; }, 3600);
 }
 
+/* ══ DYNAMIC CARD LOADING — winners + A/B challengers ══ */
+function createCardEl(card, prefix, index) {
+  const id = prefix + index;
+  const div = document.createElement('div');
+  div.className = 'tcard' + (index === 0 ? ' active' : '');
+  div.id = id;
+  const tc = card.tag_color || 'bl';
+  div.innerHTML = `<div class="tcard-inner">
+    <div class="tcard-before"></div>
+    <div class="tind tind-r" id="${prefix}i${index}r">&#8594; בעד</div>
+    <div class="tind tind-l" id="${prefix}i${index}l">נגד &#8592;</div>
+    <div class="tind tind-u" id="${prefix}i${index}u">&#8593; מורכב</div>
+    <div class="tcard-tag" style="background:var(--${tc}0);color:var(--${tc})">${card.tag}</div>
+    <div class="tcard-q">${card.question}</div>
+    <div class="tcard-ctx">${card.context}</div>
+    <div class="tcard-meta"><span dir="ltr">${(card.vote_count||0).toLocaleString()}</span> הצביעו</div>
+    <div class="tcard-more" onclick="event.stopPropagation();showInfo('${id}')">למה זה מורכב?</div>
+  </div>`;
+  return div;
+}
+
+async function loadCards() {
+  try {
+    const res = await fetch('data/cards_winners.json');
+    const data = await res.json();
+    if (!data.consensus?.length) return;
+
+    // ── Render consensus cards ──
+    const csArea = document.getElementById('cs-area');
+    const csr = document.getElementById('csr');
+    csArea.querySelectorAll('.tcard:not(#csr)').forEach(el => el.remove());
+    data.consensus.forEach((card, i) => {
+      const el = createCardEl(card, 'cs', i);
+      csArea.insertBefore(el, csr);
+      CARD_INFO['cs' + i] = card.info;
+    });
+    CS_IDS.length = 0;
+    data.consensus.forEach((_, i) => CS_IDS.push('cs' + i));
+    CS_IDS.push('csr');
+    CS_SWIPEABLE.length = 0;
+    data.consensus.forEach((_, i) => CS_SWIPEABLE.push('cs' + i));
+    // Rebuild dots
+    const csDotsWrap = csArea.parentElement.querySelector('[style*="gap:4px"]');
+    if (csDotsWrap) {
+      csDotsWrap.innerHTML = '';
+      for (let i = 0; i <= data.consensus.length; i++) {
+        const d = document.createElement('div');
+        d.className = 'tdot' + (i === 0 ? ' on' : '');
+        d.id = 'csd' + i;
+        csDotsWrap.appendChild(d);
+      }
+    }
+
+    // ── Render daily cards ──
+    if (data.daily?.length) {
+      const dcArea = document.getElementById('dc-area');
+      dcArea.querySelectorAll('.tcard').forEach(el => el.remove());
+      data.daily.forEach((card, i) => {
+        const el = createCardEl(card, 'dc', i);
+        el.querySelector('.tcard-q').style.fontSize = '12px';
+        el.querySelector('.tcard-inner').style.padding = '16px 14px';
+        dcArea.appendChild(el);
+        CARD_INFO['dc' + i] = card.info;
+      });
+    }
+    console.log('[cards] Loaded', data.consensus.length, 'consensus +', data.daily?.length || 0, 'daily from JSON');
+  } catch(e) {
+    console.log('[cards] Using fallback hardcoded cards:', e.message);
+  }
+}
+
+async function injectChallenger() {
+  try {
+    const res = await fetch('data/cards_challengers.json');
+    const data = await res.json();
+    if (!data.challengers?.length) return;
+    if (Math.random() > 0.2) return; // 20% chance
+    const ch = data.challengers[Math.floor(Math.random() * data.challengers.length)];
+    const el = document.getElementById('dc2');
+    if (!el) return;
+    const tag = el.querySelector('.tcard-tag');
+    const q = el.querySelector('.tcard-q');
+    const ctx = el.querySelector('.tcard-ctx');
+    if (tag) { tag.textContent = ch.tag; tag.style.color = 'var(--' + (ch.tag_color||'bl') + ')'; tag.style.background = 'var(--' + (ch.tag_color||'bl') + '0)'; }
+    if (q) q.innerHTML = ch.question;
+    if (ctx) ctx.innerHTML = ch.context || '';
+    if (ch.info) CARD_INFO.dc2 = ch.info;
+    console.log('[A/B] Challenger injected:', ch.id);
+  } catch(e) { /* silent */ }
+}
+
+loadCards().then(() => injectChallenger());
+
 /* ══ MOBILE VIEWPORT HACK ══ */
 (function() {
   if (window.innerWidth < 700) {
     document.getElementById('vp').setAttribute('content', 'width=286');
   }
+})();
+
+/* ══ A/B TEST: TREND-AWARE sl0 ══ */
+var _abVariantId = 'control_v6';
+
+function abTrackCta() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'sl0_cta_click', { variant_id: _abVariantId });
+  }
+}
+
+(function abInit() {
+  // Stable visitor ID
+  var vid = localStorage.getItem('ns_vid');
+  if (!vid) { vid = crypto.randomUUID(); localStorage.setItem('ns_vid', vid); }
+
+  // Hash visitor ID to bucket 0-99
+  var hash = 0;
+  for (var i = 0; i < vid.length; i++) { hash = ((hash << 5) - hash + vid.charCodeAt(i)) | 0; }
+  var bucket = Math.abs(hash) % 100;
+
+  fetch('data/sl0_variants.json').then(function(r) { return r.json(); }).then(function(d) {
+    var variant = d.champion;
+    // Challengers get buckets 50-99, split equally
+    if (d.challengers && d.challengers.length > 0 && bucket >= 50) {
+      var ci = Math.floor((bucket - 50) / (50 / d.challengers.length));
+      if (ci >= d.challengers.length) ci = d.challengers.length - 1;
+      variant = d.challengers[ci];
+    }
+    _abVariantId = variant.id;
+
+    // Inject variant copy into sl0
+    var el;
+    el = document.querySelector('[data-ab="stat"]');
+    if (el && variant.stat) el.textContent = variant.stat;
+    el = document.querySelector('[data-ab="stat-desc"]');
+    if (el && variant.stat_desc) el.textContent = variant.stat_desc;
+    el = document.querySelector('[data-ab="stat-source"]');
+    if (el && variant.stat_source) el.textContent = variant.stat_source;
+    el = document.querySelector('[data-ab="headline"]');
+    if (el && variant.headline) el.textContent = variant.headline;
+    el = document.querySelector('[data-ab="mission"]');
+    if (el && variant.mission) el.textContent = variant.mission;
+    el = document.querySelector('[data-ab="cta"]');
+    if (el && variant.cta) el.textContent = variant.cta;
+
+    // Track impression
+    if (typeof gtag === 'function') {
+      gtag('event', 'sl0_impression', { variant_id: _abVariantId });
+    }
+  }).catch(function() { /* JSON fetch failed — keep hardcoded HTML */ });
 })();
 </script>
 </body>
