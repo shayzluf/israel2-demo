@@ -803,17 +803,34 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <!-- Emergent profile (pol.is-style) -->
           <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px">מה הנציג למד עליכם</div>
           <div class="card" style="padding:10px 12px">
-            <!-- Compact 2D position + cluster info -->
-            <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">
-              <div style="width:60px;height:60px;background:var(--sf);border-radius:8px;position:relative;overflow:hidden;flex-shrink:0">
-                <div style="position:absolute;width:7px;height:7px;border-radius:50%;background:var(--gl);top:30%;right:40%;box-shadow:0 0 6px var(--gd)"></div>
-                <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:var(--t3);top:20%;right:60%;opacity:.3"></div>
-                <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:var(--t3);top:55%;right:30%;opacity:.3"></div>
-                <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:var(--t3);top:65%;right:70%;opacity:.3"></div>
-                <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:var(--t3);top:15%;right:45%;opacity:.3"></div>
-              </div>
-              <div style="font-size:9px;color:var(--t2);line-height:1.5">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">34%</span> מהאזרחים שחושבים דומה.</div>
+            <!-- Opinion map with visible clusters -->
+            <div style="height:100px;background:var(--sf);border-radius:8px;position:relative;overflow:hidden;margin-bottom:8px">
+              <!-- Cluster A (teal, top-right) -->
+              <div style="position:absolute;width:28px;height:28px;border-radius:50%;background:rgba(39,179,142,0.12);border:1px solid rgba(39,179,142,0.25);top:15%;right:18%"></div>
+              <div style="position:absolute;width:5px;height:5px;border-radius:50%;background:var(--te);top:22%;right:24%;opacity:.5"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--te);top:18%;right:20%;opacity:.4"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--te);top:28%;right:22%;opacity:.3"></div>
+              <div style="position:absolute;width:5px;height:5px;border-radius:50%;background:var(--te);top:20%;right:28%;opacity:.4"></div>
+              <!-- Cluster B (blue, bottom-left) -->
+              <div style="position:absolute;width:24px;height:24px;border-radius:50%;background:rgba(68,112,176,0.12);border:1px solid rgba(68,112,176,0.25);top:55%;right:60%"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--bl);top:60%;right:65%;opacity:.5"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--bl);top:58%;right:62%;opacity:.4"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--bl);top:65%;right:68%;opacity:.3"></div>
+              <!-- Cluster C (purple, bottom-right) -->
+              <div style="position:absolute;width:20px;height:20px;border-radius:50%;background:rgba(114,88,162,0.12);border:1px solid rgba(114,88,162,0.25);top:60%;right:25%"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--pu);top:64%;right:30%;opacity:.4"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--pu);top:68%;right:28%;opacity:.3"></div>
+              <!-- Cluster D (gold, top-left) -->
+              <div style="position:absolute;width:22px;height:22px;border-radius:50%;background:rgba(200,149,58,0.1);border:1px solid rgba(200,149,58,0.2);top:20%;right:70%"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--gd);top:25%;right:74%;opacity:.4"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--gd);top:28%;right:72%;opacity:.3"></div>
+              <!-- YOU — gold pulsing dot in cluster A -->
+              <div style="position:absolute;width:9px;height:9px;border-radius:50%;background:var(--gl);top:24%;right:22%;box-shadow:0 0 8px var(--gd);animation:nowpulse 1.8s infinite;z-index:2"></div>
+              <!-- Label -->
+              <div style="position:absolute;bottom:4px;right:6px;font-size:7px;color:var(--gl);font-weight:700">אתם כאן</div>
+              <div style="position:absolute;top:4px;left:6px;font-size:6px;color:var(--t3)"><span dir="ltr">4,219</span> אזרחים</div>
             </div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.5;margin-bottom:6px">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">34%</span> מהאזרחים שחושבים דומה.</div>
             <div style="font-size:9px;color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;margin-bottom:4px;border-right:2px solid var(--te)">
               <strong style="color:var(--te)">מאחד אתכם:</strong> ״המדינה חייבת לממן ממ״ד לכל אזרח״
             </div>
