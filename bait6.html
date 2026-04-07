@@ -417,6 +417,19 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div class="tribal-bar"><div class="tb-fill" style="height:27px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">85%</div><div class="tb-lbl">דתי</div></div>
                 <div class="tribal-bar"><div class="tb-fill" style="height:26px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">84%</div><div class="tb-lbl">עולה</div></div>
               </div>
+              <!-- City picker -->
+              <div style="margin-top:8px;padding:8px 10px;background:var(--sf);border-radius:9px;border:1px solid var(--b1)">
+                <div style="font-size:10px;font-weight:800;color:var(--t1);margin-bottom:4px">איפה אתם גרים?</div>
+                <div style="font-size:8px;color:var(--t3);line-height:1.5;margin-bottom:6px">כדי להראות לכם מה חושבים אצלכם בשכונה. המיקום נשמר רק על המכשיר שלכם ולא עובר לשום שרת.</div>
+                <div style="position:relative">
+                  <input id="city-input" type="text" placeholder="הקלידו שם עיר..." style="width:100%;padding:7px 10px;background:var(--el);border:1px solid var(--b1);border-radius:7px;color:var(--t1);font-size:10px;font-family:var(--heb);outline:none;direction:rtl" oninput="filterCities(this.value)" onfocus="this.style.borderColor='var(--gl)'">
+                  <div id="city-results" style="display:none;position:absolute;top:100%;right:0;left:0;background:var(--el);border:1px solid var(--b1);border-radius:0 0 7px 7px;max-height:100px;overflow-y:auto;z-index:10;scrollbar-width:none"></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:4px;margin-top:5px">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--te)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span style="font-size:7px;color:var(--t3)">נשמר מקומית בלבד. לא נשלח לשרת. לא משותף עם אף גורם.</span>
+                </div>
+              </div>
               <!-- Tech disclosure: ZK -->
               <div style="font-size:9px;color:var(--bl);cursor:pointer;margin-top:4px" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">איך אנחנו יודעים שהנתון הזה אמיתי?</div>
               <div style="display:none;font-size:9px;color:var(--t2);line-height:1.5;background:var(--el);border-radius:7px;padding:8px;border-right:2px solid var(--te);text-align:right">טכנולוגיית <strong style="color:var(--te)">ZK Passport</strong> מוודאת: אזרח אחד = קול אחד. מוכיחה שאתם אמיתיים בלי לחשוף מי אתם. אף בוט, אף כפילות.</div>
@@ -1587,6 +1600,32 @@ async function loadDeclarations() {
   }
 }
 loadDeclarations();
+
+/* ══ CITY PICKER ══ */
+let _cities = [];
+fetch('data/city_picker_arrays.js').then(r => r.text()).then(t => {
+  const m = t.match(/\[[\s\S]*\]/);
+  if (m) _cities = JSON.parse(m[0]);
+}).catch(() => {});
+
+function filterCities(q) {
+  const res = document.getElementById('city-results');
+  if (!res) return;
+  if (!q || q.length < 2) { res.style.display = 'none'; return; }
+  const matches = _cities.filter(c => c.includes(q)).slice(0, 8);
+  if (!matches.length) { res.style.display = 'none'; return; }
+  res.style.display = 'block';
+  res.innerHTML = matches.map(c =>
+    `<div style="padding:6px 10px;font-size:10px;color:var(--t1);cursor:pointer;border-bottom:1px solid var(--b0)" onclick="selectCity('${c}')">${c}</div>`
+  ).join('');
+}
+function selectCity(city) {
+  const input = document.getElementById('city-input');
+  if (input) { input.value = city; input.style.borderColor = 'var(--te)'; }
+  document.getElementById('city-results').style.display = 'none';
+  // Store locally only
+  try { localStorage.setItem('nispar_city', city); } catch(e) {}
+}
 
 /* ══ MOBILE VIEWPORT HACK ══ */
 (function() {
