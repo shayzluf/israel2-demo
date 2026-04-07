@@ -457,50 +457,46 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 
       <!-- ════ S2: PEOPLE'S KNESSET REVEAL ════ -->
       <div class="slide" id="sl2">
-        <div class="scr" style="gap:10px;padding:14px 14px 10px">
+        <div class="scr" style="gap:8px;padding:14px 14px 10px">
           <div class="kicker" style="color:var(--gl)">הכנסת העממית</div>
-          <div style="font-size:14px;font-weight:900;color:var(--t1)"><span dir="ltr">83</span>/<span dir="ltr">120</span> מושבים מאוישים</div>
+          <!-- Adaptive header — updated by JS -->
+          <div id="hemi-header" style="font-size:14px;font-weight:900;color:var(--t1);text-align:center;line-height:1.3">את/ה אזרח <span dir="ltr">#47</span> בכנסת העממית</div>
           <!-- Hemicycle SVG -->
           <svg id="hemi-main" viewBox="0 0 260 140" style="width:100%;height:auto;display:block"></svg>
-          <!-- Your contribution -->
-          <div style="background:var(--gd0);border:1px solid var(--gn);border-radius:9px;padding:8px 10px">
-            <div style="font-size:10px;font-weight:800;color:var(--gl)">+1. ההצבעות שלך הצטרפו ל-<span dir="ltr">4,219</span> אזרחים</div>
+          <!-- Legend -->
+          <div style="display:flex;justify-content:center;gap:14px;margin:2px 0">
+            <div style="display:flex;align-items:center;gap:3px">
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--gd)"></div>
+              <span style="font-size:7px;color:var(--t2)">אזרח מאומת</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:3px">
+              <div style="width:7px;height:7px;border-radius:50%;border:1px solid var(--t3)"></div>
+              <span style="font-size:7px;color:var(--t2)">מושב ריק</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:3px">
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--gl);box-shadow:0 0 4px var(--gd)"></div>
+              <span style="font-size:7px;color:var(--t2)">את/ה</span>
+            </div>
           </div>
-          <!-- Two-tech tagline -->
-          <!-- Tech disclosure: AI Rep -->
+          <!-- Milestone context — updated by JS -->
+          <div id="hemi-context" style="font-size:9px;color:var(--t2);line-height:1.5;text-align:center;padding:4px 8px;background:var(--gd0);border:1px solid var(--gn);border-radius:8px">כל שינוי בהיסטוריה התחיל מקבוצה קטנה. את/ה חלק מ-<span dir="ltr">47</span> הראשונים.</div>
+          <!-- Next milestone progress -->
+          <div id="hemi-milestone" style="display:flex;flex-direction:column;gap:2px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:8px;font-weight:700;color:var(--t2)" id="hemi-next-label">הבא: <span dir="ltr">100</span> הראשונים</span>
+              <span style="font-size:8px;font-weight:800;color:var(--gl)" id="hemi-next-pct" dir="ltr">47%</span>
+            </div>
+            <div class="bar"><div class="bar-f" id="hemi-next-bar" style="width:47%;background:var(--gd)"></div></div>
+          </div>
+          <!-- Tech disclosure -->
           <div style="font-size:9px;color:var(--bl);cursor:pointer;text-align:center" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">איך הכנסת העממית עובדת גם כשאתם לא כאן?</div>
           <div style="display:none;font-size:9px;color:var(--t2);line-height:1.5;background:var(--el);border-radius:7px;padding:8px;border-right:2px solid var(--gl)"><strong style="color:var(--gl)">נציג AI אישי</strong> לומד אתכם מ-<span dir="ltr">3</span> החלקות ביום ומייצג את עמדותיכם בכל החלטה — גם כשאתם לא כאן. <strong style="color:var(--te)">ZK Passport</strong> מוודא שכל קול הוא של אזרח אמיתי.</div>
-          <!-- Threshold progress -->
-          <div style="font-size:9px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">רף השפעה</div>
-          <div style="display:flex;flex-direction:column;gap:2px">
-            <div class="threshold-item">
-              <div class="th-label">התיעוד -- רשומה ציבורית</div>
-              <div class="th-bar"><div class="th-fill" style="width:100%;background:var(--te)"></div></div>
-              <div class="th-status" style="color:var(--te)">&#10003;</div>
-            </div>
-            <div class="threshold-item">
-              <div class="th-label">המכתב -- מכתב לח"כ</div>
-              <div class="th-bar"><div class="th-fill" style="width:42%;background:var(--gl)"></div></div>
-              <div class="th-status" style="color:var(--gl)">42%</div>
-            </div>
-            <div class="threshold-item">
-              <div class="th-label">הפרסום -- כתבה תקשורתית</div>
-              <div class="th-bar"><div class="th-fill" style="width:8%;background:var(--gl)"></div></div>
-              <div class="th-status" style="color:var(--gl)">8%</div>
-            </div>
+          <!-- Counter — tap to cycle demo -->
+          <div style="background:var(--sf);border-radius:9px;border:1px solid var(--b1);padding:6px 11px;display:flex;align-items:center;gap:9px;cursor:pointer" onclick="cycleHemiDemo()">
+            <div id="fc2" style="font-family:var(--frank);font-size:20px;font-weight:900;color:var(--gl);letter-spacing:-1px"><span dir="ltr">47</span></div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.4"><strong style="color:var(--t1)">אזרחים מאומתים</strong><br><span style="font-size:7px;color:var(--t3)">לחצו לראות שלבים הבאים</span></div>
           </div>
-          <!-- System status -->
-          <div class="sr" style="margin-top:4px">
-            <div class="st"><div class="sv" style="color:var(--te)">47</div><div class="sl">חוקים כוסו</div></div>
-            <div class="st"><div class="sv" style="color:var(--gl)">83</div><div class="sl">מושבים</div></div>
-            <div class="st"><div class="sv" style="color:var(--bl)">74%</div><div class="sl">דיוק</div></div>
-          </div>
-          <!-- Counter -->
-          <div style="background:var(--sf);border-radius:9px;border:1px solid var(--b1);padding:6px 11px;display:flex;align-items:center;gap:9px">
-            <div id="fc2" style="font-family:var(--frank);font-size:20px;font-weight:900;color:var(--gl);letter-spacing:-1px"><span dir="ltr">4,219</span></div>
-            <div style="font-size:9px;color:var(--t2);line-height:1.4"><strong style="color:var(--t1)">אזרחים כבר משתתפים</strong></div>
-          </div>
-          <div class="btn btn-gd" onclick="go(3)">כניסה לאפליקציה &#8592;</div>
+          <div class="btn btn-gd" onclick="go(3)">כניסה לאפליקציה</div>
         </div>
       </div>
 
@@ -1201,13 +1197,26 @@ setInterval(() => {
 /* ══════════════════════════════════════════════════════
    HEMICYCLE RENDERER
 ══════════════════════════════════════════════════════ */
-function renderHemicycle(svgId, filled, compact) {
+let _hemiCount = 47; // current citizen count for display
+const _hemiUserSeat = 46; // user's seat index (0-based)
+
+function renderHemicycle(svgId, citizenCount, compact) {
   const svg = document.getElementById(svgId);
   if (!svg) return;
   const rows = compact ? [12, 16, 20, 24, 28] : [15, 19, 23, 27, 36];
   const radii = compact ? [20, 28, 36, 44, 52] : [40, 55, 70, 85, 105];
   const cx = 130, cy = compact ? 60 : 130;
   const r = compact ? 2.5 : 3.5;
+  const total = rows.reduce((a, b) => a + b, 0); // 120
+
+  // Adaptive scale: determine how many seats to fill
+  let filled;
+  if (citizenCount <= 120) filled = citizenCount;
+  else if (citizenCount <= 1000) filled = Math.max(1, Math.round(citizenCount / 1000 * total));
+  else if (citizenCount <= 37000) filled = Math.max(1, Math.round(citizenCount / 37000 * total));
+  else filled = Math.min(total, Math.max(1, Math.round(citizenCount / 37000)));
+
+  const userSeat = Math.min(filled - 1, _hemiUserSeat);
   let seatIdx = 0;
   let html = '';
   for (let row = 0; row < rows.length; row++) {
@@ -1218,16 +1227,70 @@ function renderHemicycle(svgId, filled, compact) {
       const x = cx + radius * Math.cos(angle);
       const y = cy - radius * Math.sin(angle);
       const isFilled = seatIdx < filled;
-      html += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" class="${isFilled ? 'hemi-seat-filled' : 'hemi-seat-empty'}"/>`;
+      const isYou = seatIdx === userSeat && !compact;
+      if (isYou) {
+        html += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r + 1.5}" class="hemi-seat-you"/>`;
+      } else {
+        html += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" class="${isFilled ? 'hemi-seat-filled' : 'hemi-seat-empty'}"/>`;
+      }
       seatIdx++;
     }
   }
   svg.innerHTML = html;
 }
 
-renderHemicycle('hemi-main', 83, false);
-renderHemicycle('hemi-mini', 83, true);
-renderHemicycle('hemi-conv', 83, true);
+function updateHemiDisplay(count) {
+  _hemiCount = count;
+  renderHemicycle('hemi-main', count, false);
+  renderHemicycle('hemi-mini', count, true);
+  renderHemicycle('hemi-conv', count, true);
+
+  const hdr = document.getElementById('hemi-header');
+  const ctx = document.getElementById('hemi-context');
+  const lbl = document.getElementById('hemi-next-label');
+  const pct = document.getElementById('hemi-next-pct');
+  const bar = document.getElementById('hemi-next-bar');
+  const fc2 = document.getElementById('fc2');
+  if (fc2) fc2.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span>';
+
+  if (count <= 120) {
+    if (hdr) hdr.innerHTML = 'את/ה אזרח <span dir="ltr">#' + count + '</span> בכנסת העממית';
+    if (ctx) ctx.innerHTML = 'כל שינוי בהיסטוריה התחיל מקבוצה קטנה. את/ה חלק מ-<span dir="ltr">' + count + '</span> הראשונים.';
+    if (lbl) lbl.innerHTML = 'הבא: <span dir="ltr">100</span> הראשונים';
+    if (pct) pct.textContent = Math.round(count / 100 * 100) + '%';
+    if (bar) bar.style.width = Math.min(100, count) + '%';
+  } else if (count <= 1000) {
+    if (hdr) hdr.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> אזרחים מאומתים — הבסיס נבנה';
+    if (ctx) ctx.innerHTML = 'כל סקר בישראל מבוסס על <span dir="ltr">1,000</span> משתתפים. אנחנו כבר ב-<span dir="ltr">' + count.toLocaleString() + '</span>.';
+    if (lbl) lbl.innerHTML = 'הבא: רשומה ציבורית — <span dir="ltr">1,000</span>';
+    if (pct) pct.textContent = Math.round(count / 1000 * 100) + '%';
+    if (bar) bar.style.width = Math.round(count / 1000 * 100) + '%';
+  } else if (count <= 37000) {
+    if (hdr) hdr.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> / <span dir="ltr">37,000</span> למנדט הראשון';
+    if (ctx) ctx.innerHTML = '<span dir="ltr">37,000</span> אזרחים = מנדט אחד בכנסת. אנחנו ב-<span dir="ltr">' + Math.round(count / 37000 * 100) + '%</span>.';
+    if (lbl) lbl.innerHTML = 'הבא: מנדט ראשון — <span dir="ltr">37,000</span>';
+    if (pct) pct.textContent = Math.round(count / 37000 * 100) + '%';
+    if (bar) bar.style.width = Math.round(count / 37000 * 100) + '%';
+  } else {
+    const mandates = Math.floor(count / 37000);
+    if (hdr) hdr.innerHTML = '<span dir="ltr">' + mandates + '</span> מנדטים בכנסת העממית';
+    if (ctx) ctx.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> אזרחים מאומתים. הכנסת העממית צוברת כוח אמיתי.';
+    if (lbl) lbl.innerHTML = 'הבא: כנסת מלאה — <span dir="ltr">120,000</span>';
+    if (pct) pct.textContent = Math.min(100, Math.round(count / 120000 * 100)) + '%';
+    if (bar) bar.style.width = Math.min(100, Math.round(count / 120000 * 100)) + '%';
+  }
+}
+
+// Demo: tap counter to cycle through phases
+const _hemiDemoValues = [47, 847, 12400, 120000];
+let _hemiDemoIdx = 0;
+function cycleHemiDemo() {
+  _hemiDemoIdx = (_hemiDemoIdx + 1) % _hemiDemoValues.length;
+  updateHemiDisplay(_hemiDemoValues[_hemiDemoIdx]);
+}
+
+// Initial render
+updateHemiDisplay(47);
 
 /* ══════════════════════════════════════════════════════
    GENERIC SWIPE BIND FACTORY
