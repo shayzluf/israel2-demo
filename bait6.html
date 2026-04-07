@@ -1509,7 +1509,7 @@ async function loadCards() {
     CS_SWIPEABLE.length = 0;
     data.consensus.forEach((_, i) => CS_SWIPEABLE.push('cs' + i));
     // Rebuild dots
-    const csDotsWrap = csArea.parentElement.querySelector('[style*="gap:4px"]');
+    const csDotsWrap = document.getElementById('cs-dots');
     if (csDotsWrap) {
       csDotsWrap.innerHTML = '';
       for (let i = 0; i <= data.consensus.length; i++) {
