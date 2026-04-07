@@ -661,16 +661,19 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div style="font-size:9px;color:var(--t2);line-height:1.5">אזרחים כותבים הצהרות. כולם מצביעים. הצהרות עם הסכמה רחבה הופכות לכרטיסי סוויפ יומיים ומגיעות לכל האזרחים.</div>
           </div>
           <!-- Submit your own -->
-          <div class="card" style="border-color:var(--gn)">
-            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:6px">כתוב הצהרה משלך</div>
-            <div style="background:var(--sf);border:1px solid var(--b1);border-radius:8px;padding:9px 10px;font-size:10px;color:var(--t3);line-height:1.5;min-height:36px;cursor:text" onclick="this.style.borderColor='var(--gl)'" contenteditable="false">למשל: ״כל אזרח צריך גישה לרופא תוך 48 שעות״</div>
-            <div class="btn btn-gd" style="margin-top:8px;padding:8px;font-size:10px;opacity:.5;pointer-events:none">שלח הצהרה (נפתח ברמה 2)</div>
+          <div class="card" style="border-color:var(--bl);border-style:dashed">
+            <div style="font-size:10px;font-weight:800;color:var(--bl);margin-bottom:6px">כתוב הצהרה משלך</div>
+            <div style="background:var(--sf);border:1px solid var(--b1);border-radius:8px;padding:9px 10px;font-size:10px;color:var(--t3);line-height:1.5;min-height:36px;cursor:text" onclick="this.style.borderColor='var(--bl)'" contenteditable="false">למשל: ״כל אזרח צריך גישה לרופא תוך 48 שעות״</div>
+            <div class="btn" style="margin-top:8px;padding:8px;font-size:10px;opacity:.5;pointer-events:none;background:var(--bl);color:#fff">שלח הצהרה (נפתח ברמה 2)</div>
           </div>
-          <!-- AI Rep suggested -->
-          <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">הנציג שלך מציע לך להגיב</div>
-          <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
-            <span style="font-size:8px;color:var(--gl);font-weight:700">הנציג ניבא שתסכים — אשר או תקן</span>
+          <!-- Hot topics -->
+          <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:2px">
+            <span style="font-size:8px;font-weight:800;color:var(--t3);padding:3px 0;width:100%;letter-spacing:1px">נושאים חמים עכשיו</span>
+            <span class="pill" style="background:var(--co0);color:var(--co)">יוקר המחיה</span>
+            <span class="pill" style="background:var(--te0);color:var(--te)">ביטחון אישי</span>
+            <span class="pill" style="background:var(--bl0);color:var(--bl)">חינוך</span>
+            <span class="pill" style="background:var(--pu0);color:var(--pu)">שקיפות</span>
+            <span class="pill" style="background:var(--gd0);color:var(--gl)">בריאות</span>
           </div>
           <!-- Declaration 1 — bridge -->
           <div class="card" style="border-color:var(--gn)">
@@ -752,31 +755,26 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         </div>
       </div>
 
-      <!-- ════ S5: AI REP (הנציג) ════ -->
+      <!-- ════ S5: AI REP (הנציג) — Personal Dashboard ════ -->
       <div class="slide" id="sl5">
         <div class="s-top">
           <div class="s-logo">נספר</div>
           <div class="s-chip" style="background:var(--gd0);color:var(--gl)">הנציג</div>
         </div>
         <div class="scr" style="gap:8px;padding:10px 13px 8px">
-          <!-- Rep header -->
-          <div class="card" style="border-color:var(--gn);text-align:center;padding:14px">
-            <div style="margin-bottom:4px;display:flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
-            <div style="font-size:14px;font-weight:900;color:var(--gl)">נציג ה-AI האישי שלכם</div>
-            <div style="font-size:9px;color:var(--t2);line-height:1.5;margin-top:4px">הפוליטיקאי הפרטי שלכם. לומד אתכם ומייצג אתכם בכל החלטה, <span dir="ltr">24/7</span>.</div>
+          <!-- Rep header (compact) -->
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 0">
+            <div style="width:36px;height:36px;border-radius:10px;background:var(--gd0);border:1px solid var(--gn);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+            <div>
+              <div style="font-size:12px;font-weight:900;color:var(--gl)">הנציג האישי שלכם</div>
+              <div style="font-size:8px;color:var(--t3)">פועל בשבילכם <span dir="ltr">24/7</span> &middot; <span dir="ltr">92%</span> דיוק</div>
+            </div>
           </div>
 
-          <!-- Stats grid -->
-          <div class="sr">
-            <div class="st"><div class="sv" style="color:var(--te)"><span dir="ltr">7</span>/<span dir="ltr">10</span></div><div class="sl">ניבויים נכונים</div></div>
-            <div class="st"><div class="sv" style="color:var(--gl)"><span dir="ltr">74%</span></div><div class="sl">ביטחון ממוצע</div></div>
-            <div class="st"><div class="sv" style="color:var(--bl)"><span dir="ltr">23</span></div><div class="sl">נושאים שלמד</div></div>
-          </div>
-
-          <!-- While away -->
-          <div style="font-size:9px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">בזמן שלא הייתם כאן, הנציג שלכם:</div>
-          <div class="card" style="padding:9px 11px">
-            <div style="display:flex;flex-direction:column;gap:5px">
+          <!-- HERO: While away (moved to top, most important) -->
+          <div class="card" style="border-color:var(--gn);background:linear-gradient(135deg,rgba(200,149,58,0.06),rgba(39,179,142,0.04))">
+            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:6px">בזמן שלא הייתם כאן, הנציג:</div>
+            <div style="display:flex;flex-direction:column;gap:4px">
               <div style="font-size:9px;color:var(--t2);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px">
                 <strong style="color:var(--te)">&#10003;</strong> ניבא את עמדתכם ב-<span dir="ltr">14</span> הצעות חוק חדשות
               </div>
@@ -789,47 +787,84 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
 
-          <!-- Prediction cards -->
-          <div style="font-size:9px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">ממתינים לאישור שלכם</div>
-
-          <!-- Prediction 1 -->
-          <div class="card" style="border-color:rgba(39,179,142,.25)">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-              <div class="tcard-tag" style="background:var(--te0);color:var(--te);font-size:8px">ביטחון</div>
-              <div style="font-size:8px;color:var(--te);font-weight:800">ביטחון: <span dir="ltr">89%</span></div>
+          <!-- Topic confidence grid (what the Rep knows) -->
+          <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px">מה הנציג למד עליכם</div>
+          <div style="display:flex;flex-wrap:wrap;gap:4px">
+            <div style="flex:1;min-width:70px;background:var(--te0);border-radius:7px;padding:6px;text-align:center">
+              <div style="font-size:12px;font-weight:900;color:var(--te)" dir="ltr">94%</div>
+              <div style="font-size:7px;color:var(--te)">ביטחון אזרחי</div>
             </div>
-            <div style="font-size:10px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:4px">הגדלת תקציב פיקוד העורף ב-<span dir="ltr">40%</span> לבניית ממ"דים</div>
-            <div style="font-size:9px;color:var(--t3);line-height:1.4;margin-bottom:8px">הנציג ניבא: <strong style="color:var(--te)">בעד</strong> -- בהתבסס על הצבעותיכם בנושאי מיגון ותקציב ביטחון</div>
-            <div style="display:flex;gap:6px">
-              <div style="flex:1;padding:7px;border-radius:7px;background:var(--te0);border:1px solid var(--te);color:var(--te);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='&#10003; אושר';this.style.background='var(--te)';this.style.color='#001a14'">&#10003; נכון</div>
-              <div style="flex:1;padding:7px;border-radius:7px;background:var(--co0);border:1px solid var(--co);color:var(--co);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='&#10007; תוקן';this.style.background='var(--co)';this.style.color='#fff'">&#10007; טעה</div>
-              <div style="flex:1;padding:7px;border-radius:7px;background:var(--gd0);border:1px solid var(--gl);color:var(--gl);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='~ מורכב';this.style.background='var(--gd)';this.style.color='#1a0d00'">~ מורכב</div>
+            <div style="flex:1;min-width:70px;background:var(--gd0);border-radius:7px;padding:6px;text-align:center">
+              <div style="font-size:12px;font-weight:900;color:var(--gl)" dir="ltr">87%</div>
+              <div style="font-size:7px;color:var(--gl)">בריאות</div>
             </div>
-          </div>
-
-          <!-- Prediction 2 -->
-          <div class="card" style="border-color:rgba(199,82,82,.25)">
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-              <div class="tcard-tag" style="background:var(--co0);color:var(--co);font-size:8px">כלכלה</div>
-              <div style="font-size:8px;color:var(--gd);font-weight:800">ביטחון: <span dir="ltr">61%</span></div>
+            <div style="flex:1;min-width:70px;background:var(--bl0);border-radius:7px;padding:6px;text-align:center">
+              <div style="font-size:12px;font-weight:900;color:var(--bl)" dir="ltr">82%</div>
+              <div style="font-size:7px;color:var(--bl)">כלכלה</div>
             </div>
-            <div style="font-size:10px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:4px">הפרטת חברת החשמל -- מכירת <span dir="ltr">51%</span> למשקיעים פרטיים</div>
-            <div style="font-size:9px;color:var(--t3);line-height:1.4;margin-bottom:8px">הנציג ניבא: <strong style="color:var(--co)">נגד</strong> -- אבל בביטחון נמוך. צריך את העמדה שלכם</div>
-            <div style="display:flex;gap:6px">
-              <div style="flex:1;padding:7px;border-radius:7px;background:var(--te0);border:1px solid var(--te);color:var(--te);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='&#10003; אושר';this.style.background='var(--te)';this.style.color='#001a14'">&#10003; נכון</div>
-              <div style="flex:1;padding:7px;border-radius:7px;background:var(--co0);border:1px solid var(--co);color:var(--co);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='&#10007; תוקן';this.style.background='var(--co)';this.style.color='#fff'">&#10007; טעה</div>
-              <div style="flex:1;padding:7px;border-radius:7px;background:var(--gd0);border:1px solid var(--gl);color:var(--gl);font-size:9px;font-weight:800;text-align:center;cursor:pointer" onclick="this.innerHTML='~ מורכב';this.style.background='var(--gd)';this.style.color='#1a0d00'">~ מורכב</div>
+            <div style="flex:1;min-width:70px;background:var(--pu0);border-radius:7px;padding:6px;text-align:center">
+              <div style="font-size:12px;font-weight:900;color:var(--pu)" dir="ltr">71%</div>
+              <div style="font-size:7px;color:var(--pu)">חינוך</div>
+            </div>
+            <div style="flex:1;min-width:70px;background:var(--co0);border-radius:7px;padding:6px;text-align:center">
+              <div style="font-size:12px;font-weight:900;color:var(--co)" dir="ltr">61%</div>
+              <div style="font-size:7px;color:var(--co)">שלטון</div>
+            </div>
+            <div style="flex:1;min-width:70px;background:var(--sf);border-radius:7px;padding:6px;text-align:center;border:1px dashed var(--b1)">
+              <div style="font-size:12px;font-weight:900;color:var(--t3)" dir="ltr">?</div>
+              <div style="font-size:7px;color:var(--t3)">סביבה</div>
             </div>
           </div>
 
-          <!-- Training progress -->
+          <!-- Compact predictions (NOT full cards) -->
+          <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">ממתינים לאישור שלכם</div>
+          <div class="card" style="padding:0;overflow:hidden">
+            <!-- Row 1 -->
+            <div style="display:flex;align-items:center;padding:8px 10px;border-bottom:1px solid var(--b0)">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:700;color:var(--t1)">תקציב מיגון העורף</div>
+                <div style="font-size:8px;color:var(--te)">ניבא: בעד (<span dir="ltr">89%</span>)</div>
+              </div>
+              <div style="display:flex;gap:4px">
+                <div style="width:28px;height:28px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
+                <div style="width:28px;height:28px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+              </div>
+            </div>
+            <!-- Row 2 -->
+            <div style="display:flex;align-items:center;padding:8px 10px;border-bottom:1px solid var(--b0)">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:700;color:var(--t1)">הפרטת חברת החשמל</div>
+                <div style="font-size:8px;color:var(--co)">ניבא: נגד (<span dir="ltr">61%</span>)</div>
+              </div>
+              <div style="display:flex;gap:4px">
+                <div style="width:28px;height:28px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
+                <div style="width:28px;height:28px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+              </div>
+            </div>
+            <!-- Row 3 -->
+            <div style="display:flex;align-items:center;padding:8px 10px">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:700;color:var(--t1)">חינוך פיננסי חובה</div>
+                <div style="font-size:8px;color:var(--te)">ניבא: בעד (<span dir="ltr">94%</span>)</div>
+              </div>
+              <div style="display:flex;gap:4px">
+                <div style="width:28px;height:28px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
+                <div style="width:28px;height:28px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training progress as level-up -->
           <div class="card" style="border-color:var(--gn)">
-            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:6px">התקדמות האימון</div>
-            <div style="margin-top:4px;display:flex;gap:6px;align-items:center">
-              <div class="bar" style="flex:1"><div class="bar-f" style="width:85%;background:var(--gd)"></div></div>
-              <div style="font-size:8px;color:var(--gl);font-weight:800"><span dir="ltr">92%</span> דיוק</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+              <div style="font-size:10px;font-weight:800;color:var(--gl)">רמת דיוק</div>
+              <div style="font-size:9px;font-weight:800;color:var(--gl)"><span dir="ltr">92%</span></div>
             </div>
-            <div style="font-size:9px;color:var(--t2);line-height:1.5;margin-top:6px">הנציג שלכם הגיע ל-<span dir="ltr">92%</span> דיוק. עוד <span dir="ltr">3</span> החלקות כדי להגיע לרמת ייצוג מושלמת.</div>
+            <div class="bar"><div class="bar-f" style="width:92%;background:linear-gradient(90deg,var(--gd),var(--te))"></div></div>
+            <div style="display:flex;justify-content:space-between;margin-top:4px">
+              <div style="font-size:7px;color:var(--t3)">סף ייצוג אוטומטי: <span dir="ltr">85%</span> &#10003;</div>
+              <div style="font-size:7px;color:var(--gl)">סף מושלם: <span dir="ltr">95%</span></div>
+            </div>
           </div>
 
           <!-- Power section -->
@@ -1505,7 +1540,7 @@ async function loadDeclarations() {
     // Remove hardcoded declaration cards but keep pipeline explanation (first child),
     // submit box (second child), AI rep header (third+fourth child)
     const children = Array.from(scr.children);
-    children.forEach((el, i) => { if (i >= 4) el.remove(); }); // keep first 4 elements
+    children.forEach((el, i) => { if (i >= 3) el.remove(); }); // keep first 3: pipeline + submit + hot topics
 
     const flameIcon = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>';
 
