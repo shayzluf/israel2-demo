@@ -790,18 +790,17 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <!-- Emergent profile (pol.is-style) -->
           <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px">מה הנציג למד עליכם</div>
           <div class="card" style="padding:10px 12px">
-            <!-- Simple 2D position indicator -->
-            <div style="height:80px;background:var(--sf);border-radius:8px;position:relative;overflow:hidden;margin-bottom:8px">
-              <div style="position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gl);top:30%;right:40%;box-shadow:0 0 8px var(--gd)"></div>
-              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:20%;right:60%;opacity:.3"></div>
-              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:50%;right:30%;opacity:.3"></div>
-              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:60%;right:70%;opacity:.3"></div>
-              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:35%;right:25%;opacity:.3"></div>
-              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:70%;right:50%;opacity:.3"></div>
-              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:15%;right:45%;opacity:.3"></div>
-              <div style="position:absolute;bottom:4px;right:6px;font-size:7px;color:var(--t3)">אתם כאן</div>
+            <!-- Compact 2D position + cluster info -->
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">
+              <div style="width:60px;height:60px;background:var(--sf);border-radius:8px;position:relative;overflow:hidden;flex-shrink:0">
+                <div style="position:absolute;width:7px;height:7px;border-radius:50%;background:var(--gl);top:30%;right:40%;box-shadow:0 0 6px var(--gd)"></div>
+                <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:var(--t3);top:20%;right:60%;opacity:.3"></div>
+                <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:var(--t3);top:55%;right:30%;opacity:.3"></div>
+                <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:var(--t3);top:65%;right:70%;opacity:.3"></div>
+                <div style="position:absolute;width:3px;height:3px;border-radius:50%;background:var(--t3);top:15%;right:45%;opacity:.3"></div>
+              </div>
+              <div style="font-size:9px;color:var(--t2);line-height:1.5">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">34%</span> מהאזרחים שחושבים דומה.</div>
             </div>
-            <div style="font-size:9px;color:var(--t2);line-height:1.5;margin-bottom:6px">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">34%</span> מהאזרחים שחושבים דומה.</div>
             <div style="font-size:9px;color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;margin-bottom:4px;border-right:2px solid var(--te)">
               <strong style="color:var(--te)">מאחד אתכם:</strong> ״המדינה חייבת לממן ממ״ד לכל אזרח״
             </div>
@@ -812,35 +811,35 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 
           <!-- Compact predictions — value-revealing statements -->
           <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">הנציג ניבא — אשרו או תקנו</div>
-          <div class="card" style="padding:0;overflow:hidden">
-            <div style="display:flex;align-items:center;padding:8px 10px;border-bottom:1px solid var(--b0)">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
               <div style="flex:1">
-                <div style="font-size:9px;font-weight:700;color:var(--t1);line-height:1.4">״צריך לחייב כל רשת מזון לפרסם השוואת מחירים יומית — כי המונופול חונק אותנו.״</div>
+                <div style="font-size:9px;font-weight:700;color:var(--t1);line-height:1.4">״צריך לחייב כל רשת מזון לפרסם השוואת מחירים — כי המונופול חונק אותנו.״</div>
                 <div style="font-size:8px;color:var(--te);margin-top:2px">ניבא: מסכים (<span dir="ltr">91%</span>)</div>
               </div>
-              <div style="display:flex;gap:4px;flex-shrink:0;margin-right:6px">
-                <div style="width:28px;height:28px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
-                <div style="width:28px;height:28px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+              <div style="display:flex;gap:4px;flex-shrink:0">
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
               </div>
             </div>
-            <div style="display:flex;align-items:center;padding:8px 10px;border-bottom:1px solid var(--b0)">
+            <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
               <div style="flex:1">
                 <div style="font-size:9px;font-weight:700;color:var(--t1);line-height:1.4">״עדיף להשקיע בטכנולוגיית יירוט מאשר בבטון — ממ"ד זה פתרון של אתמול.״</div>
                 <div style="font-size:8px;color:var(--co);margin-top:2px">ניבא: לא מסכים (<span dir="ltr">67%</span>)</div>
               </div>
-              <div style="display:flex;gap:4px;flex-shrink:0;margin-right:6px">
-                <div style="width:28px;height:28px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
-                <div style="width:28px;height:28px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+              <div style="display:flex;gap:4px;flex-shrink:0">
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
               </div>
             </div>
-            <div style="display:flex;align-items:center;padding:8px 10px">
+            <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
               <div style="flex:1">
                 <div style="font-size:9px;font-weight:700;color:var(--t1);line-height:1.4">״בזמן מלחמה אסור לפטר עובדים — גם אם העסק מפסיד.״</div>
                 <div style="font-size:8px;color:var(--gd);margin-top:2px">ניבא: לא בטוח (<span dir="ltr">54%</span>)</div>
               </div>
-              <div style="display:flex;gap:4px;flex-shrink:0;margin-right:6px">
-                <div style="width:28px;height:28px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
-                <div style="width:28px;height:28px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+              <div style="display:flex;gap:4px;flex-shrink:0">
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
               </div>
             </div>
           </div>
