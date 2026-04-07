@@ -1183,14 +1183,13 @@ function go(n) {
 }
 
 /* ══ COUNTER ANIMATION ══ */
-let fcVal = 4219;
+// Only animates sl0 counter (fc). sl2 counter (fc2) is managed by updateHemiDisplay().
+let fcVal = 47;
 setInterval(() => {
   if (Math.random() < 0.28) {
     fcVal++;
     const el = document.getElementById('fc');
     if (el) el.innerHTML = '<span dir="ltr">' + fcVal.toLocaleString() + '</span>';
-    const el2 = document.getElementById('fc2');
-    if (el2) el2.innerHTML = '<span dir="ltr">' + fcVal.toLocaleString() + '</span>';
   }
 }, 3000);
 
