@@ -1608,7 +1608,7 @@ loadDeclarations();
 /* ══ CITY PICKER ══ */
 let _cities = [];
 fetch('data/city_picker_arrays.js').then(r => r.text()).then(t => {
-  const m = t.match(/\[[\s\S]*\]/);
+  const m = t.match(/\[[\s\S]*?\]/);  // non-greedy: first array only
   if (m) _cities = JSON.parse(m[0]);
 }).catch(() => {});
 
