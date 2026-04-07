@@ -662,8 +662,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
           <!-- Submit your own -->
           <div class="card" style="border-color:var(--bl);border-style:dashed">
-            <div style="font-size:10px;font-weight:800;color:var(--bl);margin-bottom:6px">כתוב הצהרה משלך</div>
-            <div style="background:var(--sf);border:1px solid var(--b1);border-radius:8px;padding:9px 10px;font-size:10px;color:var(--t3);line-height:1.5;min-height:36px;cursor:text" onclick="this.style.borderColor='var(--bl)'" contenteditable="false">למשל: ״כל אזרח צריך גישה לרופא תוך 48 שעות״</div>
+            <div style="font-size:10px;font-weight:800;color:var(--bl);margin-bottom:6px">כתוב הצהרה קצרה — עד 140 תווים</div>
+            <div style="background:var(--sf);border:1px solid var(--b1);border-radius:8px;padding:9px 10px;font-size:10px;color:var(--t3);line-height:1.5;min-height:36px;cursor:text" onclick="this.style.borderColor='var(--bl)'" contenteditable="false">למשל: ״14 חודשים המתנה לפסיכולוג — זה לא מקובל.״</div>
             <div class="btn" style="margin-top:8px;padding:8px;font-size:10px;opacity:.5;pointer-events:none;background:var(--bl);color:#fff">שלח הצהרה (נפתח ברמה 2)</div>
           </div>
           <!-- Hot topics -->
@@ -787,32 +787,26 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
 
-          <!-- Topic confidence grid (what the Rep knows) -->
+          <!-- Emergent profile (pol.is-style) -->
           <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px">מה הנציג למד עליכם</div>
-          <div style="display:flex;flex-wrap:wrap;gap:4px">
-            <div style="flex:1;min-width:70px;background:var(--te0);border-radius:7px;padding:6px;text-align:center">
-              <div style="font-size:12px;font-weight:900;color:var(--te)" dir="ltr">94%</div>
-              <div style="font-size:7px;color:var(--te)">ביטחון אזרחי</div>
+          <div class="card" style="padding:10px 12px">
+            <!-- Simple 2D position indicator -->
+            <div style="height:80px;background:var(--sf);border-radius:8px;position:relative;overflow:hidden;margin-bottom:8px">
+              <div style="position:absolute;width:8px;height:8px;border-radius:50%;background:var(--gl);top:30%;right:40%;box-shadow:0 0 8px var(--gd)"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:20%;right:60%;opacity:.3"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:50%;right:30%;opacity:.3"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:60%;right:70%;opacity:.3"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:35%;right:25%;opacity:.3"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:70%;right:50%;opacity:.3"></div>
+              <div style="position:absolute;width:4px;height:4px;border-radius:50%;background:var(--t3);top:15%;right:45%;opacity:.3"></div>
+              <div style="position:absolute;bottom:4px;right:6px;font-size:7px;color:var(--t3)">אתם כאן</div>
             </div>
-            <div style="flex:1;min-width:70px;background:var(--gd0);border-radius:7px;padding:6px;text-align:center">
-              <div style="font-size:12px;font-weight:900;color:var(--gl)" dir="ltr">87%</div>
-              <div style="font-size:7px;color:var(--gl)">בריאות</div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.5;margin-bottom:6px">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">34%</span> מהאזרחים שחושבים דומה.</div>
+            <div style="font-size:9px;color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;margin-bottom:4px;border-right:2px solid var(--te)">
+              <strong style="color:var(--te)">מאחד אתכם:</strong> ״המדינה חייבת לממן ממ״ד לכל אזרח״
             </div>
-            <div style="flex:1;min-width:70px;background:var(--bl0);border-radius:7px;padding:6px;text-align:center">
-              <div style="font-size:12px;font-weight:900;color:var(--bl)" dir="ltr">82%</div>
-              <div style="font-size:7px;color:var(--bl)">כלכלה</div>
-            </div>
-            <div style="flex:1;min-width:70px;background:var(--pu0);border-radius:7px;padding:6px;text-align:center">
-              <div style="font-size:12px;font-weight:900;color:var(--pu)" dir="ltr">71%</div>
-              <div style="font-size:7px;color:var(--pu)">חינוך</div>
-            </div>
-            <div style="flex:1;min-width:70px;background:var(--co0);border-radius:7px;padding:6px;text-align:center">
-              <div style="font-size:12px;font-weight:900;color:var(--co)" dir="ltr">61%</div>
-              <div style="font-size:7px;color:var(--co)">שלטון</div>
-            </div>
-            <div style="flex:1;min-width:70px;background:var(--sf);border-radius:7px;padding:6px;text-align:center;border:1px dashed var(--b1)">
-              <div style="font-size:12px;font-weight:900;color:var(--t3)" dir="ltr">?</div>
-              <div style="font-size:7px;color:var(--t3)">סביבה</div>
+            <div style="font-size:9px;color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;border-right:2px solid var(--co)">
+              <strong style="color:var(--co)">מבדיל אתכם:</strong> ״הממשלה חייבת להקפיא מחירי מוצרי יסוד״
             </div>
           </div>
 
@@ -1089,11 +1083,35 @@ function showInfo(cardId) {
   const data = CARD_INFO[cardId];
   if (!data) return;
   const ov = document.getElementById('info-overlay');
-  document.getElementById('info-title').textContent = data.title;
-  document.getElementById('info-subtitle').textContent = data.subtitle;
-  document.getElementById('info-fact').innerHTML = data.fact;
-  document.getElementById('info-sides').innerHTML = data.sides;
-  document.getElementById('info-untold').innerHTML = data.untold;
+  const container = ov.querySelector('.info-dynamic-content') || ov;
+  if (data.perspectives) {
+    // New pol.is-style perspectives format
+    let html = '<div style="font-size:14px;font-weight:900;color:var(--t1);margin-bottom:4px">' + (data.title || '') + '</div>';
+    html += '<div style="font-size:10px;color:var(--t3);margin-bottom:12px">' + (data.subtitle || '') + '</div>';
+    data.perspectives.forEach(function(p) {
+      html += '<div class="info-label" style="color:var(--bl)">' + p.if_label + '</div>';
+      html += '<div class="info-line">' + p.detail + '</div>';
+      if (p.source) html += '<div style="font-size:7px;color:var(--t3);margin-bottom:6px;text-align:left">' + p.source + '</div>';
+    });
+    html += '<div class="info-close" onclick="hideInfo()">\u05D7\u05D6\u05E8\u05D4 \u05DC\u05D4\u05E6\u05D1\u05E2\u05D4 &#8592;</div>';
+    ov.innerHTML = html;
+  } else {
+    // Legacy fact/sides/untold format
+    ov.innerHTML = '<div style="font-size:14px;font-weight:900;color:var(--t1);margin-bottom:4px" id="info-title"></div>' +
+      '<div style="font-size:10px;color:var(--t3);margin-bottom:12px" id="info-subtitle"></div>' +
+      '<div class="info-label" style="color:var(--te)">\u05E2\u05D5\u05D1\u05D3\u05D4</div>' +
+      '<div class="info-line" id="info-fact"></div>' +
+      '<div class="info-label" style="color:var(--gd)">\u05E9\u05E0\u05D9 \u05D4\u05E6\u05D3\u05D3\u05D9\u05DD</div>' +
+      '<div class="info-line" id="info-sides" style="border-right-color:var(--gd)"></div>' +
+      '<div class="info-label" style="color:var(--pu)">\u05DE\u05D4 \u05E9\u05DC\u05D0 \u05DE\u05E1\u05E4\u05E8\u05D9\u05DD</div>' +
+      '<div class="info-line" id="info-untold" style="border-right-color:var(--pu)"></div>' +
+      '<div class="info-close" onclick="hideInfo()">\u05D7\u05D6\u05E8\u05D4 \u05DC\u05D4\u05E6\u05D1\u05E2\u05D4 &#8592;</div>';
+    document.getElementById('info-title').textContent = data.title;
+    document.getElementById('info-subtitle').textContent = data.subtitle;
+    document.getElementById('info-fact').innerHTML = data.fact;
+    document.getElementById('info-sides').innerHTML = data.sides;
+    document.getElementById('info-untold').innerHTML = data.untold;
+  }
   ov.classList.add('show');
 }
 function hideInfo() {
@@ -1449,7 +1467,7 @@ function createCardEl(card, prefix, index) {
     <div class="tind tind-l" id="${prefix}i${index}l">נגד &#8592;</div>
     <div class="tind tind-u" id="${prefix}i${index}u">&#8593; מורכב</div>
     <div class="tcard-tag" style="background:var(--${tc}0);color:var(--${tc})">${card.tag}</div>
-    <div class="tcard-q">${card.question}</div>
+    <div class="tcard-q">${card.statement || card.question}</div>
     <div class="tcard-ctx">${card.context}</div>
     <div class="tcard-meta"><span dir="ltr">${(card.vote_count||0).toLocaleString()}</span> הצביעו</div>
     <div class="tcard-more" onclick="event.stopPropagation();showInfo('${id}')">למה זה מורכב?</div>
