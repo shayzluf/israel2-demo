@@ -437,14 +437,14 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
         </div>
-        <!-- Swipe actions -->
-        <div style="display:flex;justify-content:space-between;padding:4px 16px 2px;font-size:9px;font-weight:700;color:var(--t3)">
+        <!-- Swipe hints -->
+        <div id="cs-hints" style="display:flex;justify-content:space-between;padding:4px 16px 2px;font-size:9px;font-weight:700;color:var(--t3)">
           <span style="color:var(--te)">בעד &#8594;</span>
           <span style="color:var(--gl)">&#8593; זה מורכב</span>
           <span style="color:var(--co)">&#8592; נגד</span>
         </div>
         <!-- Dots -->
-        <div style="display:flex;justify-content:center;gap:4px;padding:4px 0 8px">
+        <div id="cs-dots" style="display:flex;justify-content:center;gap:4px;padding:4px 0 8px">
           <div class="tdot on" id="csd0"></div>
           <div class="tdot" id="csd1"></div>
           <div class="tdot" id="csd2"></div>
@@ -1301,6 +1301,10 @@ function csActivate(n) {
   }
   const act = document.getElementById('cs-actions');
   if (act) act.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
+  const hints = document.getElementById('cs-hints');
+  if (hints) hints.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
+  const dots = document.getElementById('cs-dots');
+  if (dots) dots.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
 }
 
 function csSwipeDone(n, dir) {
