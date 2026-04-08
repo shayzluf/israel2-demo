@@ -293,27 +293,24 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
     <div class="sim-notch"></div>
     <div class="sim-screen">
 
-      <!-- ════ S0: DISRUPTION HOOK ════ -->
+      <!-- ════ S0: RECOGNITION → RUPTURE → INVITATION ════ -->
       <div class="slide active" id="sl0">
-        <div class="scr" style="justify-content:center;gap:14px;padding:24px 18px 14px">
-          <!-- Big stat -->
+        <div class="scr" style="justify-content:center;gap:12px;padding:24px 18px 14px">
+          <!-- PART 1: RECOGNITION — reflect what they already feel -->
           <div style="text-align:center">
-            <div data-ab="stat" style="font-family:var(--frank);font-size:44px;font-weight:900;color:var(--co);letter-spacing:-1px;line-height:1"><span dir="ltr">14</span> חודשים</div>
-            <div data-ab="stat-desc" style="font-size:12px;color:var(--t2);line-height:1.5;margin-top:6px">זמן ההמתנה הממוצע לטיפול פסיכולוגי בשירות הציבורי.</div>
-            <div data-ab="stat-source" style="font-size:8px;color:var(--t3);margin-top:2px">משרד הבריאות, <span dir="ltr">2023</span></div>
+            <div data-ab="stat" style="font-family:var(--frank);font-size:48px;font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1" dir="ltr">74%</div>
+            <div data-ab="stat-desc" style="font-size:12px;color:var(--t2);line-height:1.5;margin-top:6px">מהאזרחים מרגישים שאף מפלגה לא מייצגת אותם.</div>
+            <div data-ab="stat-source" style="font-size:8px;color:var(--t3);margin-top:2px">המכון הישראלי לדמוקרטיה, <span dir="ltr">2025</span></div>
           </div>
-          <!-- Headline -->
-          <div data-ab="headline" style="text-align:center;font-size:17px;font-weight:900;color:var(--t1);line-height:1.4">טראומה לאומית, אבל אין מי שיטפל בנפש שלנו.</div>
-          <!-- Mission -->
-          <div data-ab="mission" style="text-align:center;font-size:11px;color:var(--t2);line-height:1.7;max-width:240px;margin:0 auto">מערכת בריאות הנפש הציבורית מורעבת כבר שנים, ודווקא עכשיו כולם קורסים תחת העומס. הגיע הזמן לאחד כוחות ולדרוש תקצוב חירום למערך הפסיכולוגי של כולנו.</div>
-          <!-- CTA -->
-          <div data-ab="cta" class="btn btn-gd" onclick="abTrackCta();go(1)">לגלות על מה כולנו מסכימים</div>
+          <div data-ab="headline" style="text-align:center;font-size:15px;font-weight:900;color:var(--t1);line-height:1.4">את/ה כנראה אחד מהם.</div>
+          <!-- PART 2: RUPTURE — existence proof, something is already happening -->
+          <div data-ab="promise" style="text-align:center;font-size:11px;color:var(--te);line-height:1.6;font-weight:700;padding:8px 12px;background:var(--te0);border-radius:9px;border:1px solid rgba(39,179,142,0.2)">כבר עכשיו, אלפי אזרחים מכל הקבוצות מגלים על מה הם כן מסכימים.</div>
+          <div data-ab="mission" style="text-align:center;font-size:10px;color:var(--t2);line-height:1.6;max-width:240px;margin:0 auto">ההצבעות שלהם בונות כנסת עממית שהפוליטיקאים לא יכולים להתעלם ממנה.</div>
+          <!-- PART 3: INVITATION — curiosity, not commitment -->
+          <div data-ab="cta" class="btn btn-gd" onclick="abTrackCta();go(1)">לגלות על מה מסכימים</div>
           <div style="text-align:center;font-size:9px;color:var(--t3)"><span dir="ltr">6</span> סוויפים &middot; דקה אחת &middot; ללא הרשמה</div>
-          <!-- Counter -->
-          <div style="background:var(--sf);border-radius:9px;border:1px solid var(--b1);padding:8px 12px;display:flex;align-items:center;gap:9px">
-            <div id="fc" style="font-family:var(--frank);font-size:22px;font-weight:900;color:var(--gl);letter-spacing:-1px;animation:nowpulse 2.2s infinite"><span dir="ltr">4,219</span></div>
-            <div style="font-size:9px;color:var(--t2);line-height:1.4"><strong style="color:var(--t1)">אזרחים כבר משתתפים</strong></div>
-          </div>
+          <!-- Social proof counter (secondary) -->
+          <div style="text-align:center;font-size:9px;color:var(--t3)"><span id="fc" style="color:var(--gl);font-weight:800"><span dir="ltr">47</span></span> אזרחים כבר גילו</div>
         </div>
       </div>
 
@@ -1767,6 +1764,8 @@ function abTrackCta() {
     if (el && variant.stat_source) el.textContent = variant.stat_source;
     el = document.querySelector('[data-ab="headline"]');
     if (el && variant.headline) el.textContent = variant.headline;
+    el = document.querySelector('[data-ab="promise"]');
+    if (el && variant.promise) el.textContent = variant.promise;
     el = document.querySelector('[data-ab="mission"]');
     if (el && variant.mission) el.textContent = variant.mission;
     el = document.querySelector('[data-ab="cta"]');
