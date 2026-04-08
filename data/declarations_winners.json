@@ -1,0 +1,70 @@
+{
+  "updated": "2026-04-07T14:00:00Z",
+  "declarations": [
+    {
+      "id": "decl_001",
+      "text": "תחבורה ציבורית בשבת היא צורך ביטחוני עכשיו, כדי שחיילים יוכלו לחזור הביתה בלי להיות תלויים בטרמפים מסוכנים.",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 280000,
+      "agree_pct": 52,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "weekend_transport",
+      "win_rate": 0.85,
+      "days_as_winner": 12
+    },
+    {
+      "id": "decl_002",
+      "text": "חובה לתת תמריצי מס להייטקיסטים כדי שיישארו בארץ, כי בריחת המוחות הנוכחית תהרוס את הכלכלה שלנו לשנים קדימה.",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 145000,
+      "agree_pct": 68,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "brain_drain",
+      "win_rate": 0.92,
+      "days_as_winner": 18
+    },
+    {
+      "id": "decl_003",
+      "text": "המדינה חייבת לסבסד חקלאות מקומית גם אם הייבוא זול יותר, כי ביטחון תזונתי עצמאי הוא קריטי בזמן מלחמה ארוכה.",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 210000,
+      "agree_pct": 89,
+      "time_label": "לפני יום",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "food_security",
+      "win_rate": 0.87,
+      "days_as_winner": 15
+    },
+    {
+      "id": "decl_004",
+      "text": "יש להטיל קנסות כבדים על רשתות חברתיות שלא מסירות פייק ניוז, כי הלוחמה הפסיכולוגית פוגעת בחוסן הלאומי שלנו.",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 65000,
+      "agree_pct": 76,
+      "time_label": "לפני חצי שעה",
+      "pipeline_status": null,
+      "topic_key": "fake_news",
+      "win_rate": 0.74,
+      "days_as_winner": 3
+    },
+    {
+      "id": "decl_005",
+      "text": "שירות לאומי או צבאי חייב להיות חובה לכולם ללא יוצא מן הכלל, כי אי אפשר להמשיך להפיל את הנטל על אותו קומץ.",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 295000,
+      "agree_pct": 82,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "universal_draft",
+      "win_rate": 0.68,
+      "days_as_winner": 8
+    }
+  ]
+}
