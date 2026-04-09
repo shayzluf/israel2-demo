@@ -364,31 +364,14 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <!-- ════ TUTORIAL: 8 SKEPTIC-FRIENDLY ONBOARDING SCREENS ════ -->
       <div class="tut-skip" id="tut-skip" onclick="skipTutorial()">דלג</div>
 
-      <!-- T0: LEARN TO SWIPE — interactive card with instruction -->
-      <div class="tut-slide active" id="t0" style="padding:20px 16px;justify-content:flex-start;padding-top:36px;">
-        <div class="tut-l1" style="font-size:17px;margin-bottom:2px">זה לא סקר.</div>
-        <div class="tut-l2" style="margin-top:4px;margin-bottom:14px;font-size:11px">סקרים הולכים למגירה. כאן אנחנו בונים משהו אחר.</div>
-        <!-- Interactive practice card -->
-        <div style="width:100%;position:relative;display:flex;align-items:center;justify-content:center;min-height:200px;" id="t0-card-area">
-          <div class="tcard active" id="t0card" style="display:flex;width:100%;">
-            <div class="tcard-inner" id="t0card-inner" style="padding:24px 16px 18px;">
-              <div class="tcard-before"></div>
-              <div class="tind tind-r" id="t0ir">&#8594; בעד</div>
-              <div class="tind tind-l" id="t0il">&#8592; נגד</div>
-              <div class="tind tind-u" id="t0iu">&#8593; מורכב</div>
-              <div class="tcard-tag" style="background:var(--te0);color:var(--te);font-size:8px;padding:3px 10px;display:inline-block;border-radius:99px">חינוך</div>
-              <div class="tcard-q" style="font-size:13px">כל ילד בישראל ראוי לחינוך איכותי, ללא קשר לאיפה שהוא גר.</div>
-              <div class="tcard-ctx" style="font-size:8px">שאלה לדוגמה — נסו להחליק</div>
-            </div>
-          </div>
-        </div>
-        <!-- Instruction bubble -->
-        <div style="width:100%;display:flex;justify-content:center;margin-top:16px;">
-          <div style="font-size:10px;color:var(--t1);background:var(--el);border:1px solid var(--b1);border-radius:12px;padding:8px 14px;text-align:center;line-height:1.6;max-width:240px;box-shadow:0 4px 12px rgba(0,0,0,0.4);">
-            ימינה = מסכים/ה &middot; שמאלה = לא &middot; למעלה = מורכב
-          </div>
-        </div>
-        <div style="font-size:12px;color:var(--gl);font-weight:800;margin-top:10px;text-align:center">נסו עכשיו</div>
+      <!-- T0: VALIDATION — "You're right to doubt this" -->
+      <div class="tut-slide active" id="t0">
+        <div class="tut-ind tut-ind-r">בעד &#8594;</div>
+        <div class="tut-ind tut-ind-l">&#8592; נגד</div>
+        <div class="tut-ind tut-ind-u">&#8593; מורכב</div>
+        <div class="tut-l1">כן, עוד אפליקציה שתציל את המדינה.</div>
+        <div class="tut-l2">גם אנחנו חשבנו ככה בהתחלה. ואז ראינו את הנתונים.</div>
+        <div class="tut-hint">&#8594; להחליק לכל כיוון כדי להמשיך &#8592;</div>
       </div>
 
       <!-- T1: CURIOSITY — "But look at this number" -->
@@ -402,17 +385,31 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         <div class="tut-src">המכון הישראלי לדמוקרטיה, <span dir="ltr">2025</span></div>
       </div>
 
-      <!-- T2: CLARITY — "Not a survey" -->
-      <div class="tut-slide" id="t2">
-        <div class="tut-ind tut-ind-r">בעד &#8594;</div>
-        <div class="tut-ind tut-ind-l">&#8592; נגד</div>
-        <div class="tut-ind tut-ind-u">&#8593; מורכב</div>
-        <div class="tut-l1">זה לא סקר.</div>
-        <div class="tut-l2">סקרים הולכים למגירה. כאן אנחנו בונים משהו אחר לגמרי.</div>
-        <div class="tut-mini-card">
-          <div class="tcard-tag" style="background:var(--co0);color:var(--co);font-size:7px;padding:2px 8px;display:inline-block;border-radius:99px">מיגון בעורף</div>
-          <div class="tcard-q" style="font-size:11px;margin-top:6px;line-height:1.4">האם המדינה צריכה לממן ממ"ד לכל אזרח?</div>
+      <!-- T2: CLARITY — "Not a survey" + interactive practice card -->
+      <div class="tut-slide" id="t2" style="padding:20px 16px;justify-content:flex-start;padding-top:36px;">
+        <div class="tut-l1" style="font-size:17px;margin-bottom:2px">זה לא סקר.</div>
+        <div class="tut-l2" style="margin-top:4px;margin-bottom:14px;font-size:11px">סקרים הולכים למגירה. כאן אנחנו בונים משהו אחר.</div>
+        <!-- Interactive practice card -->
+        <div style="width:100%;position:relative;display:flex;align-items:center;justify-content:center;min-height:200px;" id="t2-card-area">
+          <div class="tcard active" id="t2card" style="display:flex;width:100%;">
+            <div class="tcard-inner" id="t2card-inner" style="padding:24px 16px 18px;">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="t2ir">&#8594; בעד</div>
+              <div class="tind tind-l" id="t2il">&#8592; נגד</div>
+              <div class="tind tind-u" id="t2iu">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--te0);color:var(--te);font-size:8px;padding:3px 10px;display:inline-block;border-radius:99px">חינוך</div>
+              <div class="tcard-q" style="font-size:13px">כל ילד בישראל ראוי לחינוך איכותי, ללא קשר לאיפה שהוא גר.</div>
+              <div class="tcard-ctx" style="font-size:8px">שאלה לדוגמה — נסו להחליק</div>
+            </div>
+          </div>
         </div>
+        <!-- Instruction bubble -->
+        <div style="width:100%;display:flex;justify-content:center;margin-top:16px;">
+          <div style="font-size:10px;color:var(--t1);background:var(--el);border:1px solid var(--b1);border-radius:12px;padding:8px 14px;text-align:center;line-height:1.6;max-width:240px;box-shadow:0 4px 12px rgba(0,0,0,0.4);">
+            ימינה = מסכים/ה &middot; שמאלה = לא &middot; למעלה = מורכב
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--gl);font-weight:800;margin-top:10px;text-align:center">נסו עכשיו</div>
       </div>
 
       <!-- T3: MECHANISM — "How it works" -->
@@ -1415,6 +1412,8 @@ function tutActivate(n) {
     if (d) { d.classList.toggle('on', i === n); if (i < n) { d.classList.add('done'); d.classList.remove('on'); } }
   }
   tutCur = n;
+  // Trigger practice card on t2
+  if (n === 2) { initT2Card(); showT2Demo(); }
   // Trigger hemicycle fill animation on t4
   if (n === 4) animateTutHemi();
   // Trigger passport fade on t6
@@ -1525,54 +1524,55 @@ function tutBindSwipe(n) {
   slide.addEventListener('touchend', onUp);
 }
 
-// Tutorial t0 — interactive card with real swipe engine + demo nudge
-let tutDemoShown = false;
-function initT0Card() {
-  const inner = document.getElementById('t0card-inner');
+// Tutorial t2 — interactive practice card with real swipe engine + demo nudge
+let t2CardInit = false;
+function initT2Card() {
+  if (t2CardInit) return;
+  t2CardInit = true;
+  const inner = document.getElementById('t2card-inner');
   if (!inner) return;
   function getInd() {
     return {
-      r: document.getElementById('t0ir'),
-      l: document.getElementById('t0il'),
-      u: document.getElementById('t0iu')
+      r: document.getElementById('t2ir'),
+      l: document.getElementById('t2il'),
+      u: document.getElementById('t2iu')
     };
   }
   function onSwipeDone(dir) {
-    // Animate card out like a real swipe
     inner.style.transition = 'transform .3s ease, opacity .25s';
     const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
     const y = dir === 'u' ? -300 : 0;
     const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
     inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
     inner.style.opacity = '0';
-    // Then advance tutorial
     setTimeout(() => {
-      tutActivate(1);
-      tutBindSwipe(1);
+      tutActivate(3);
+      tutBindSwipe(3);
     }, 350);
   }
   bindSwipeEngine(inner, getInd, onSwipeDone);
 }
 
-function showTutDemo() {
-  if (tutDemoShown || tutCur !== 0) return;
-  tutDemoShown = true;
-  const inner = document.getElementById('t0card-inner');
+let t2DemoShown = false;
+function showT2Demo() {
+  if (t2DemoShown) return;
+  t2DemoShown = true;
+  const inner = document.getElementById('t2card-inner');
   if (!inner) return;
   const ease = 'transform 700ms cubic-bezier(0.34,1.56,0.64,1), border-color 400ms ease';
   const back = 'transform 500ms cubic-bezier(0.175,0.885,0.32,1.375), border-color 300ms ease';
-  const indR = document.getElementById('t0ir');
-  const indL = document.getElementById('t0il');
-  const indU = document.getElementById('t0iu');
+  const indR = document.getElementById('t2ir');
+  const indL = document.getElementById('t2il');
+  const indU = document.getElementById('t2iu');
   // Nudge right — show "בעד"
-  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(60px) rotate(6deg)'; inner.style.borderColor = 'rgba(39,179,142,0.6)'; if (indR) indR.style.opacity = '1'; }, 1500);
-  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indR) indR.style.opacity = '0'; }, 2500);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(60px) rotate(6deg)'; inner.style.borderColor = 'rgba(39,179,142,0.6)'; if (indR) indR.style.opacity = '1'; }, 600);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indR) indR.style.opacity = '0'; }, 1500);
   // Nudge left — show "נגד"
-  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-60px) rotate(-6deg)'; inner.style.borderColor = 'rgba(199,82,82,0.6)'; if (indL) indL.style.opacity = '1'; }, 3400);
-  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indL) indL.style.opacity = '0'; }, 4400);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-60px) rotate(-6deg)'; inner.style.borderColor = 'rgba(199,82,82,0.6)'; if (indL) indL.style.opacity = '1'; }, 2300);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indL) indL.style.opacity = '0'; }, 3200);
   // Nudge up — show "מורכב"
-  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-40px) scale(1.02)'; inner.style.borderColor = 'rgba(228,174,88,0.6)'; if (indU) indU.style.opacity = '1'; }, 5300);
-  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indU) indU.style.opacity = '0'; inner.style.transition = ''; }, 6300);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-40px) scale(1.02)'; inner.style.borderColor = 'rgba(228,174,88,0.6)'; if (indU) indU.style.opacity = '1'; }, 4000);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indU) indU.style.opacity = '0'; inner.style.transition = ''; }, 4900);
 }
 
 function finishTutorial() {
@@ -1651,8 +1651,7 @@ function animateTutHemi() {
 
 // Init tutorial on load
 if (tutActive) {
-  initT0Card();  // t0 uses real card swipe engine, not slide swipe
-  showTutDemo();
+  tutBindSwipe(0);
   if (typeof gtag === 'function') gtag('event', 'tutorial_start');
 }
 
