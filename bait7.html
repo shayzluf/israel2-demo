@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
+<title>נספר — Knesset Ha'amamit v7.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&display=swap" rel="stylesheet">
+<!-- GA4 — replace G-XXXXXXXXXX with your measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<style>
+:root {
+  --bg:#06070A; --sf:#0D0F14; --el:#141820; --ra:#1C2029;
+  --b0:rgba(255,255,255,0.06); --b1:rgba(255,255,255,0.12); --b2:rgba(255,255,255,0.20);
+  --t1:#EFF1F6; --t2:#78899C; --t3:#4A5668;
+  --gd:#C8953A; --gl:#E4AE58; --gd0:rgba(200,149,58,0.12); --gn:rgba(200,149,58,0.24);
+  --te:#27B38E; --te0:rgba(39,179,142,0.10);
+  --co:#C75252; --co0:rgba(199,82,82,0.10); --cn:rgba(199,82,82,0.24);
+  --bl:#4470B0; --bl0:rgba(68,112,176,0.10);
+  --pu:#7258A2; --pu0:rgba(114,88,162,0.10);
+  --frank:'Heebo',sans-serif; --heb:'Heebo',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--heb);background:#040508;color:var(--t1);
+  display:flex;flex-direction:column;align-items:center;padding:32px 16px 72px;gap:48px;min-height:100vh;}
+
+/* ─── PAGE HEADER ─── */
+.ph{text-align:center;max-width:700px;}
+.ph-k{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--t3);font-weight:700;margin-bottom:12px;}
+.ph-h{font-family:var(--frank);font-size:42px;font-weight:900;letter-spacing:-1px;line-height:1.05;}
+.ph-h em{color:var(--gl);font-style:normal;}
+.ph-sub{font-size:13px;color:var(--t2);line-height:1.75;margin-top:10px;}
+
+/* ─── SIM ─── */
+.sim-wrap{display:flex;align-items:flex-start;gap:26px;width:100%;max-width:960px;}
+.sim-phone{width:286px;flex-shrink:0;background:var(--bg);border-radius:40px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.13);
+  box-shadow:0 0 0 8px #0A0B0F,0 24px 64px rgba(0,0,0,0.8);position:relative;}
+.sim-notch{width:62px;height:16px;background:#050609;border-radius:0 0 9px 9px;
+  position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:30;
+  border-bottom:1px solid var(--b0);border-left:1px solid var(--b0);border-right:1px solid var(--b0);}
+.sim-screen{height:600px;overflow:hidden;position:relative;}
+.slide{position:absolute;top:0;left:0;right:0;bottom:0;display:none;flex-direction:column;
+  overflow:hidden;padding-top:20px;}
+.slide.active{display:flex;flex-direction:column;}
+
+/* ─── SIDEBAR ─── */
+.sim-sb{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;padding-top:2px;}
+.sb-phase{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--t3);
+  font-weight:700;padding:6px 0 2px;border-top:1px solid var(--b0);margin-top:2px;}
+.sb-phase:first-child{border-top:none;margin-top:0;padding-top:0;}
+.sbb{padding:7px 10px;background:var(--sf);border:1px solid var(--b0);border-radius:9px;
+  cursor:pointer;transition:background .15s,border-color .15s;text-align:right;}
+.sbb:hover{background:var(--el);border-color:var(--b1);}
+.sbb.on{border-color:var(--gn);background:var(--gd0);}
+.sbb-name{font-size:10px;font-weight:800;color:var(--t1);}
+.sbb.on .sbb-name{color:var(--gl);}
+
+/* ─── ATOMS ─── */
+.s-top{display:flex;align-items:center;justify-content:space-between;
+  padding:6px 12px;border-bottom:1px solid var(--b0);flex-shrink:0;}
+.s-logo{font-size:12px;font-weight:900;color:var(--gl);letter-spacing:-0.3px;}
+.s-chip{font-size:7px;font-weight:800;padding:2px 7px;border-radius:99px;letter-spacing:0.3px;}
+.scr{flex:1;overflow-y:auto;padding:12px 13px 8px;display:flex;flex-direction:column;
+  gap:8px;scrollbar-width:none;}
+.scr::-webkit-scrollbar{display:none;}
+.kicker{font-size:8px;letter-spacing:2px;text-transform:uppercase;font-weight:700;}
+.sh{font-family:var(--frank);font-size:18px;font-weight:900;line-height:1.2;}
+.card{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;}
+.ch{font-size:11px;font-weight:800;color:var(--t1);margin-bottom:3px;}
+.cd{font-size:10px;color:var(--t2);line-height:1.45;}
+.pill{display:inline-block;font-size:8px;font-weight:800;padding:2px 7px;border-radius:99px;}
+.bar{height:5px;background:var(--b0);border-radius:99px;overflow:hidden;}
+.bar-f{height:100%;border-radius:99px;}
+.btn{padding:11px 14px;border-radius:9px;font-size:12px;font-weight:900;text-align:center;cursor:pointer;transition:opacity .15s;}
+.btn:hover{opacity:.9;}
+.btn-gd{background:var(--gd);color:#1a0d00;}
+.btn-co{background:var(--co);color:#fff;}
+.btn-te{background:var(--te);color:#001a14;}
+.btn-out{background:var(--el);color:var(--t2);border:1px solid var(--b1);}
+.sr{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}
+.st{background:var(--sf);border-radius:7px;padding:8px 5px;text-align:center;}
+.sv{font-size:16px;font-weight:900;}
+.sl{font-size:7px;color:var(--t3);margin-top:1px;}
+
+/* ─── TUTORIAL SCREENS ─── */
+.tut-slide{position:absolute;top:0;left:0;right:0;bottom:0;display:none;flex-direction:column;
+  justify-content:center;align-items:center;padding:32px 22px;text-align:center;overflow:hidden;
+  cursor:grab;user-select:none;touch-action:none;}
+.tut-slide.active{display:flex;}
+.tut-l1{font-family:var(--heb);font-size:22px;font-weight:900;color:var(--t1);line-height:1.35;max-width:240px;}
+.tut-l1.stat{font-family:var(--frank);font-size:56px;color:var(--gl);letter-spacing:-3px;line-height:1;}
+.tut-l2{font-size:12px;color:var(--t2);line-height:1.65;margin-top:10px;max-width:230px;}
+.tut-l3{font-size:11px;color:var(--te);line-height:1.55;margin-top:10px;max-width:230px;font-weight:700;}
+.tut-src{font-size:8px;color:var(--t3);margin-top:4px;}
+.tut-hint{font-size:10px;color:var(--t1);position:absolute;bottom:76px;left:50%;transform:translateX(-50%);
+  background:var(--el);border:1px solid var(--b1);border-radius:12px;padding:6px 14px;
+  white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  animation:tutBounce 2s ease-in-out infinite;}
+.tut-hint::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);
+  width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;
+  border-top:6px solid var(--el);}
+@keyframes tutBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-6px)}}
+.tut-dots{display:flex;gap:5px;justify-content:center;position:absolute;bottom:56px;left:0;right:0;}
+.tut-dot{width:6px;height:6px;border-radius:50%;background:var(--b1);transition:all .3s;}
+.tut-dot.on{background:var(--gl);transform:scale(1.3);}
+.tut-dot.done{background:var(--te);}
+/* tutorial swipe direction indicators */
+.tut-ind{position:absolute;font-size:12px;font-weight:900;opacity:0;transition:opacity .2s;
+  pointer-events:none;z-index:5;padding:6px 14px;border-radius:8px;}
+.tut-ind-r{top:50%;right:12px;transform:translateY(-50%);color:var(--te);background:var(--te0);
+  border:1px solid rgba(39,179,142,0.3);}
+.tut-ind-l{top:50%;left:12px;transform:translateY(-50%);color:var(--co);background:var(--co0);
+  border:1px solid rgba(199,82,82,0.3);}
+.tut-ind-u{top:30px;left:50%;transform:translateX(-50%);color:var(--gl);background:var(--gd0);
+  border:1px solid var(--gn);}
+.tut-skip{position:absolute;top:24px;left:14px;font-size:10px;color:var(--t3);cursor:pointer;
+  z-index:10;padding:4px 8px;transition:color .15s;}
+.tut-skip:hover{color:var(--t2);}
+/* tutorial mini-card preview */
+.tut-mini-card{width:180px;background:var(--el);border-radius:10px;border:1px solid var(--b1);
+  padding:14px 12px;margin:12px auto 0;text-align:center;}
+.tut-mini-card .tcard-q{font-size:11px;}
+.tut-mini-card .tcard-tag{font-size:7px;padding:2px 8px;}
+/* tutorial pipeline steps */
+.tut-pipeline{display:flex;flex-direction:column;gap:10px;margin-top:14px;width:100%;max-width:220px;}
+.tut-step{display:flex;align-items:center;gap:10px;text-align:right;}
+.tut-step-num{width:24px;height:24px;border-radius:50%;background:var(--gd0);border:1px solid var(--gn);
+  display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:var(--gl);flex-shrink:0;}
+.tut-step-txt{font-size:10px;color:var(--t2);line-height:1.45;}
+/* tutorial hemicycle fill animation */
+.tut-hemi-wrap{margin:14px auto 0;position:relative;}
+.tut-hemi-counter{font-size:14px;font-weight:900;color:var(--gl);text-align:center;margin-top:6px;}
+/* tutorial ZK visual */
+.tut-zk-flow{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;}
+.tut-zk-step{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.tut-zk-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--b1);background:var(--sf);}
+.tut-zk-label{font-size:7px;color:var(--t3);}
+.tut-zk-arrow{color:var(--t3);font-size:14px;}
+.tut-zk-step.fade{opacity:.3;transition:opacity 1.5s ease;}
+/* skip overlay */
+.skip-overlay{position:absolute;inset:0;z-index:40;background:rgba(6,7,10,.95);display:none;
+  flex-direction:column;justify-content:center;align-items:center;padding:24px 20px;text-align:center;}
+.skip-overlay.show{display:flex;}
+.skip-card{background:var(--el);border-radius:12px;border:1px solid var(--b1);padding:18px 16px;
+  width:100%;max-width:240px;margin-bottom:12px;text-align:center;cursor:pointer;transition:border-color .2s;}
+.skip-card:hover{border-color:var(--gn);}
+.skip-card-title{font-size:12px;font-weight:800;color:var(--t1);margin-bottom:6px;}
+.skip-card-desc{font-size:10px;color:var(--t2);line-height:1.5;}
+.skip-dismiss{font-size:10px;color:var(--t3);cursor:pointer;margin-top:8px;padding:6px;}
+
+/* ─── SWIPE CARDS ─── */
+.tcard{display:none;flex-direction:column;align-items:center;justify-content:center;width:100%;}
+.tcard.active{display:flex;}
+.tcard-inner{
+  width:100%;background:var(--el);border-radius:14px;border:1px solid var(--b1);
+  padding:36px 18px 16px;display:flex;flex-direction:column;gap:10px;
+  position:relative;overflow:hidden;cursor:grab;user-select:none;touch-action:none;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:transform .15s,border-color .15s;will-change:transform;}
+.tcard-inner.dragging{cursor:grabbing;transition:none;}
+.tcard-before{position:absolute;top:0;left:20px;right:20px;height:2px;
+  background:linear-gradient(90deg,var(--te),var(--gl));border-radius:0 0 2px 2px;opacity:.5;}
+.tcard-tag{font-size:9px;font-weight:800;padding:4px 11px;border-radius:99px;display:inline-block;align-self:flex-start;}
+.tcard-q{font-size:14px;font-weight:700;color:var(--t1);line-height:1.55;text-align:center;}
+.tcard-ctx{font-size:9px;color:var(--t3);line-height:1.4;text-align:center;margin-top:4px;}
+.tcard-meta{font-size:10px;color:var(--t3);text-align:center;padding-top:8px;border-top:1px solid var(--b0);}
+.tcard-more{font-size:10px;color:var(--bl);text-align:center;cursor:pointer;padding:6px 12px;
+  background:var(--bl0);border:1px solid rgba(68,112,176,.25);border-radius:8px;font-weight:700;
+  transition:all .15s;margin-top:4px;}
+.tcard-more:hover{background:rgba(68,112,176,.2);border-color:var(--bl);}
+/* Info overlay */
+.info-overlay{position:absolute;inset:0;z-index:30;background:var(--bg);display:none;
+  flex-direction:column;padding:20px 16px;overflow-y:auto;scrollbar-width:none;}
+.info-overlay::-webkit-scrollbar{display:none;}
+.info-overlay.show{display:flex;}
+.info-line{font-size:10px;color:var(--t2);line-height:1.6;padding:8px 10px;
+  background:var(--el);border-radius:8px;border-right:3px solid var(--bl);}
+.info-line strong{color:var(--t1);}
+.info-label{font-size:8px;font-weight:800;letter-spacing:1px;margin-top:6px;margin-bottom:2px;}
+.info-close{font-size:10px;color:var(--t3);cursor:pointer;text-align:center;padding:8px;
+  border:1px solid var(--b0);border-radius:8px;margin-top:8px;}
+.tind{position:absolute;top:12px;font-size:10px;font-weight:800;padding:4px 10px;
+  border-radius:99px;opacity:0;transition:opacity .12s;z-index:5;letter-spacing:.5px;}
+.tind-r{left:10px;color:var(--te);background:var(--te0);border:1.5px solid var(--te);}
+.tind-l{right:10px;color:var(--co);background:var(--co0);border:1.5px solid var(--co);}
+.tind-u{left:50%;transform:translateX(-50%);color:var(--gl);background:var(--gd0);border:1.5px solid var(--gl);}
+.tdot{width:5px;height:5px;border-radius:50%;background:var(--t3);transition:all .3s;}
+.tdot.on{background:var(--te);width:14px;border-radius:99px;}
+
+/* ─── 3-action swipe buttons ─── */
+.swipe-actions{display:flex;gap:6px;padding:4px 0 2px;flex-shrink:0;}
+.sa-btn{flex:1;padding:7px 4px;border-radius:8px;font-size:9px;font-weight:800;cursor:pointer;
+  font-family:var(--heb);border:1.5px solid;background:transparent;transition:all .12s;line-height:1;}
+.sa-btn:active{transform:scale(.96);}
+.sa-no{color:var(--co);border-color:rgba(199,82,82,.35);}
+.sa-no:hover,.sa-no:active{background:var(--co0);}
+.sa-complex{color:var(--gd);border-color:rgba(228,174,88,.35);}
+.sa-complex:hover,.sa-complex:active{background:var(--gd0);}
+.sa-yes{color:var(--te);border-color:rgba(39,179,142,.35);}
+.sa-yes:hover,.sa-yes:active{background:var(--te0);}
+
+/* Tab bar */
+.tab-bar{display:flex;align-items:stretch;background:var(--bg);border-top:1px solid var(--b0);flex-shrink:0;}
+.tab-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 4px 10px;
+  font-size:8px;font-weight:700;color:var(--t3);cursor:pointer;border:none;background:none;font-family:var(--heb);transition:color .15s;}
+.tab-btn:hover{color:var(--t2);}
+.tab-btn.active{color:var(--gl);}
+.tab-icon{display:inline-flex;align-items:center;justify-content:center;height:16px;}
+.tab-icon svg{width:16px;height:16px;}
+
+/* Tribal bars */
+.tribal-bars{display:flex;gap:3px;margin-top:6px;align-items:flex-end;height:54px;}
+.tribal-bar{flex:1;text-align:center;display:flex;flex-direction:column;justify-content:flex-end;}
+.tb-fill{border-radius:4px 4px 0 0;margin-bottom:2px;}
+.tb-pct{font-size:8px;font-weight:800;}
+.tb-lbl{font-size:6px;color:var(--t3);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* Below-fold lock */
+.home-locked{opacity:.25;pointer-events:none;user-select:none;transition:opacity .5s ease;}
+.home-unlocked{opacity:1;pointer-events:auto;transition:opacity .5s ease;}
+
+/* ═══ HEMICYCLE ═══ */
+.hemi-seat-filled{fill:var(--gd);opacity:1;}
+.hemi-seat-empty{fill:transparent;stroke:var(--t3);stroke-width:0.8;opacity:.3;}
+.hemi-seat-you{fill:var(--gl);filter:drop-shadow(0 0 4px rgba(228,174,88,0.6));animation:nowpulse 1.8s infinite;}
+@keyframes nowpulse{0%,100%{opacity:1}50%{opacity:.6}}
+
+/* ═══ CONSTRUCTION FEEDBACK ═══ */
+.construction-fb{display:flex;flex-direction:column;gap:5px;padding:8px 10px;background:var(--sf);border-radius:9px;border:1px solid var(--b0);}
+.cf-line{font-size:9px;color:var(--t2);line-height:1.5;opacity:0;animation:fadeIn .5s ease forwards;}
+.cf-line:nth-child(1){animation-delay:0s}
+.cf-line:nth-child(2){animation-delay:.6s}
+.cf-line:nth-child(3){animation-delay:1.2s}
+@keyframes fadeIn{to{opacity:1}}
+
+/* ═══ GOSSIP CARD ═══ */
+.gossip-card{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:11px 12px;}
+.gossip-row{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
+.gossip-city{font-size:8px;font-weight:700;min-width:42px;text-align:left;color:var(--t2);}
+.gossip-track{flex:1;height:8px;background:var(--b0);border-radius:99px;overflow:hidden;}
+.gossip-fill{height:100%;border-radius:99px;}
+.gossip-pct{font-size:8px;font-weight:800;min-width:24px;}
+
+/* ═══ THRESHOLD BARS ═══ */
+.threshold-item{display:flex;align-items:center;gap:8px;padding:6px 0;}
+.th-label{font-size:8px;font-weight:700;color:var(--t2);flex:1;line-height:1.3;}
+.th-bar{width:60px;height:5px;background:var(--b0);border-radius:99px;overflow:hidden;flex-shrink:0;}
+.th-fill{height:100%;border-radius:99px;}
+.th-status{font-size:7px;font-weight:800;min-width:36px;text-align:left;}
+
+/* ═══ MK CONTRADICTION ═══ */
+.mk-contradiction{background:var(--el);border-radius:10px;border:1px solid var(--cn);padding:11px 12px;}
+.mk-promise{padding:6px 8px;background:var(--te0);border-radius:7px;border-right:2px solid var(--te);margin-bottom:5px;}
+.mk-vote{padding:6px 8px;background:var(--co0);border-radius:7px;border-right:2px solid var(--co);margin-bottom:5px;}
+
+/* ═══ TECH CARDS (sl0) ═══ */
+.tech-card{background:var(--el);border-radius:10px;border:1px solid var(--b0);padding:10px 12px;display:flex;gap:10px;align-items:flex-start;}
+.tech-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.tech-body{flex:1;}
+.tech-title{font-size:10px;font-weight:800;color:var(--t1);margin-bottom:2px;}
+.tech-desc{font-size:9px;color:var(--t2);line-height:1.45;}
+
+/* ═══ STREAK BADGE ═══ */
+.streak-badge{display:inline-flex;align-items:center;gap:4px;font-size:9px;font-weight:800;
+  padding:3px 9px;border-radius:99px;background:var(--gd0);color:var(--gl);}
+.level-badge{display:inline-flex;align-items:center;gap:3px;font-size:8px;font-weight:700;
+  padding:2px 7px;border-radius:99px;background:var(--te0);color:var(--te);}
+
+/* ═══ BRIDGE BADGE ═══ */
+.bridge-badge{display:inline-block;font-size:7px;font-weight:800;padding:2px 7px;border-radius:99px;
+  background:var(--gd0);color:var(--gl);border:1px solid var(--gn);}
+
+/* ═══ CONSENSUS CELEBRATION ═══ */
+.consensus-celebration{position:absolute;inset:0;z-index:40;display:none;
+  flex-direction:column;align-items:center;justify-content:center;
+  background:rgba(6,7,10,0.92);padding:20px;text-align:center;gap:10px;}
+.consensus-celebration.show{display:flex;}
+.cc-ring{width:80px;height:80px;border-radius:50%;border:3px solid var(--gl);
+  display:flex;align-items:center;justify-content:center;animation:ccPulse 1.5s ease-out;}
+@keyframes ccPulse{0%{transform:scale(0.5);opacity:0}50%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+
+/* ═══ ASPIRATION CARD ═══ */
+.aspiration-card{background:linear-gradient(135deg,rgba(200,149,58,0.08),rgba(39,179,142,0.05));
+  border:1px solid var(--gn);border-radius:10px;padding:11px 12px;}
+
+/* ═══ ZK SCAN ═══ */
+.zk-scan{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:20px 18px;gap:0;position:relative;overflow:hidden;}
+.zk-glow{position:absolute;inset:0;
+  background:radial-gradient(ellipse 160% 60% at 50% 50%,rgba(39,179,142,0.07) 0%,transparent 65%);}
+.passport-wrap{width:108px;height:78px;background:var(--el);border-radius:9px;
+  border:1px solid var(--te0);display:flex;align-items:center;justify-content:center;
+  position:relative;z-index:1;margin-bottom:14px;overflow:hidden;}
+.passport-scan{position:absolute;left:6px;right:6px;height:1.5px;
+  background:linear-gradient(90deg,transparent,var(--te),transparent);
+  animation:pscan 1.5s ease-in-out infinite;}
+@keyframes pscan{0%{top:10px}100%{top:62px}}
+.proof-steps{width:100%;display:flex;flex-direction:column;gap:4px;position:relative;z-index:1;}
+.proof-step{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--sf);border-radius:7px;}
+.proof-step.done{background:var(--te0);border:1px solid rgba(39,179,142,.2);}
+.proof-step.active{border:1px solid rgba(39,179,142,.35);}
+.ps-icon{font-size:12px;flex-shrink:0;display:flex;align-items:center;}
+.ps-text{font-size:9px;font-weight:600;color:var(--t2);flex:1;}
+.proof-step.done .ps-text{color:var(--te);}
+.ps-st{font-size:9px;color:var(--t3);}
+.proof-step.done .ps-st{color:var(--te);font-weight:700;}
+
+/* ═══ CITIZEN PRIDE ═══ */
+.s8-glow{position:absolute;inset:0;
+  background:radial-gradient(ellipse 200% 55% at 50% 55%,rgba(200,149,58,0.09) 0%,transparent 60%);}
+.cit-body{flex:1;overflow-y:auto;padding:18px 18px;display:flex;flex-direction:column;
+  gap:9px;scrollbar-width:none;position:relative;z-index:1;}
+.cit-body::-webkit-scrollbar{display:none;}
+.cit-n{font-family:var(--frank);font-size:44px;font-weight:900;color:var(--gl);
+  letter-spacing:-2px;line-height:1;margin:6px 0 2px;}
+.retro-card{background:var(--te0);border:1px solid rgba(39,179,142,.2);border-radius:10px;padding:10px 12px;}
+.retro-h{font-size:10px;font-weight:800;color:var(--te);margin-bottom:6px;}
+.retro-row{display:flex;align-items:center;gap:7px;margin-bottom:4px;}
+.retro-icon{flex-shrink:0;display:flex;align-items:center;}
+.retro-text{font-size:9px;color:rgba(39,179,142,.75);}
+
+/* ═══ STATEMENT SWIPE (tcard reuse for sl4) ═══ */
+.st-badge-row{display:flex;align-items:center;gap:6px;margin-top:4px;}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:580px){
+  .sim-wrap{flex-direction:column;align-items:center;}
+  .sim-phone{width:100%;max-width:286px;}
+  .sim-sb{display:none;}
+}
+@media(min-width:581px) and (max-width:800px){
+  .sim-wrap{gap:16px;}
+  .sbb-name{font-size:9px;}
+}
+@media (max-width: 699px) {
+  body { padding: 0; background: var(--bg); display: block; }
+  .ph { display: none; }
+  .sim-wrap { flex-direction: column; padding: 0; gap: 0; max-width: 100%; width: 100%; }
+  .sim-sb { display: none; }
+  .sim-phone { width: 100%; border-radius: 0; border: none; box-shadow: none; overflow: hidden; height: 100vh; height: 100dvh; }
+  .sim-notch { display: none; }
+  .sim-screen { height: 100vh; height: 100dvh; }
+  .slide { padding-top: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="ph">
+  <div class="ph-k">נספר — הכנסת העממית v6</div>
+  <div class="ph-h"><em>נספר</em></div>
+  <p class="ph-sub">הכנסת העממית — הקול של מיליוני ישראלים שאף מפלגה לא מייצגת</p>
+</div>
+
+<!-- PHONE SIMULATOR -->
+<div class="sim-wrap">
+  <div class="sim-phone">
+    <div class="sim-notch"></div>
+    <div class="sim-screen">
+
+      <!-- ════ S0: RECOGNITION → RUPTURE → INVITATION ════ -->
+      <!-- ════ TUTORIAL: 8 SKEPTIC-FRIENDLY ONBOARDING SCREENS ════ -->
+      <div class="tut-skip" id="tut-skip" onclick="skipTutorial()">דלג</div>
+
+      <!-- T0: LEARN TO SWIPE — interactive card with instruction -->
+      <div class="tut-slide active" id="t0" style="padding:20px 16px;justify-content:flex-start;padding-top:36px;">
+        <div class="tut-l1" style="font-size:17px;margin-bottom:2px">זה לא סקר.</div>
+        <div class="tut-l2" style="margin-top:4px;margin-bottom:14px;font-size:11px">סקרים הולכים למגירה. כאן אנחנו בונים משהו אחר.</div>
+        <!-- Interactive practice card -->
+        <div style="width:100%;position:relative;display:flex;align-items:center;justify-content:center;min-height:200px;" id="t0-card-area">
+          <div class="tcard active" id="t0card" style="display:flex;width:100%;">
+            <div class="tcard-inner" id="t0card-inner" style="padding:24px 16px 18px;">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="t0ir">&#8594; בעד</div>
+              <div class="tind tind-l" id="t0il">&#8592; נגד</div>
+              <div class="tind tind-u" id="t0iu">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--te0);color:var(--te);font-size:8px;padding:3px 10px;display:inline-block;border-radius:99px">חינוך</div>
+              <div class="tcard-q" style="font-size:13px">כל ילד בישראל ראוי לחינוך איכותי, ללא קשר לאיפה שהוא גר.</div>
+              <div class="tcard-ctx" style="font-size:8px">שאלה לדוגמה — נסו להחליק</div>
+            </div>
+          </div>
+        </div>
+        <!-- Instruction bubble -->
+        <div style="width:100%;display:flex;justify-content:center;margin-top:16px;">
+          <div style="font-size:10px;color:var(--t1);background:var(--el);border:1px solid var(--b1);border-radius:12px;padding:8px 14px;text-align:center;line-height:1.6;max-width:240px;box-shadow:0 4px 12px rgba(0,0,0,0.4);">
+            ימינה = מסכים/ה &middot; שמאלה = לא &middot; למעלה = מורכב
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--gl);font-weight:800;margin-top:10px;text-align:center">נסו עכשיו</div>
+      </div>
+
+      <!-- T1: CURIOSITY — "But look at this number" -->
+      <div class="tut-slide" id="t1">
+        <div class="tut-ind tut-ind-r">בעד &#8594;</div>
+        <div class="tut-ind tut-ind-l">&#8592; נגד</div>
+        <div class="tut-ind tut-ind-u">&#8593; מורכב</div>
+        <div class="tut-l1 stat" dir="ltr">74%</div>
+        <div class="tut-l2">מהאזרחים מרגישים שאף מפלגה לא מייצגת אותם.</div>
+        <div class="tut-l3">זה אומר ש-3 מתוך 4 אנשים סביבך מרגישים כמוך. גם אלה שבחיים לא היית מנחש/ת.</div>
+        <div class="tut-src">המכון הישראלי לדמוקרטיה, <span dir="ltr">2025</span></div>
+      </div>
+
+      <!-- T2: CLARITY — "Not a survey" -->
+      <div class="tut-slide" id="t2">
+        <div class="tut-ind tut-ind-r">בעד &#8594;</div>
+        <div class="tut-ind tut-ind-l">&#8592; נגד</div>
+        <div class="tut-ind tut-ind-u">&#8593; מורכב</div>
+        <div class="tut-l1">זה לא סקר.</div>
+        <div class="tut-l2">סקרים הולכים למגירה. כאן אנחנו בונים משהו אחר לגמרי.</div>
+        <div class="tut-mini-card">
+          <div class="tcard-tag" style="background:var(--co0);color:var(--co);font-size:7px;padding:2px 8px;display:inline-block;border-radius:99px">מיגון בעורף</div>
+          <div class="tcard-q" style="font-size:11px;margin-top:6px;line-height:1.4">האם המדינה צריכה לממן ממ"ד לכל אזרח?</div>
+        </div>
+      </div>
+
+      <!-- T3: MECHANISM — "How it works" -->
+      <div class="tut-slide" id="t3">
+        <div class="tut-ind tut-ind-r">בעד &#8594;</div>
+        <div class="tut-ind tut-ind-l">&#8592; נגד</div>
+        <div class="tut-ind tut-ind-u">&#8593; מורכב</div>
+        <div class="tut-l1">איך זה עובד</div>
+        <div class="tut-pipeline">
+          <div class="tut-step">
+            <div class="tut-step-num">1</div>
+            <div class="tut-step-txt">מחליקים על סוגיות אמיתיות</div>
+          </div>
+          <div class="tut-step">
+            <div class="tut-step-num">2</div>
+            <div class="tut-step-txt">אזרחים כותבים עמדות, כולם מצביעים</div>
+          </div>
+          <div class="tut-step">
+            <div class="tut-step-num">3</div>
+            <div class="tut-step-txt">ההסכמה הרחבה נחשפת</div>
+          </div>
+        </div>
+        <div class="tut-l3" style="margin-top:14px">בלי תגובות. בלי ויכוחים. רק עמדות.</div>
+      </div>
+
+      <!-- T4: AWE — "The People's Knesset" ★ PEAK -->
+      <div class="tut-slide" id="t4">
+        <div class="tut-ind tut-ind-r">בעד &#8594;</div>
+        <div class="tut-ind tut-ind-l">&#8592; נגד</div>
+        <div class="tut-ind tut-ind-u">&#8593; מורכב</div>
+        <div class="tut-l1" style="color:var(--gl)">הכנסת העממית</div>
+        <div class="tut-hemi-wrap">
+          <svg id="tut-hemi" width="200" height="110" viewBox="0 0 200 110"></svg>
+          <div class="tut-hemi-counter" id="tut-hemi-count" dir="ltr">0</div>
+        </div>
+        <div class="tut-l2" style="margin-top:8px">כשמספיק אזרחים מאומתים עומדים מאחורי עמדה, אי אפשר להתעלם מזה.</div>
+        <div class="tut-l3" style="font-size:10px;margin-top:8px"><span dir="ltr">86%</span> מסכימים שכל אזרח צריך ממ״ד תקני. <span dir="ltr">0</span> חברי כנסת הצביעו בעד.</div>
+        <div class="tut-src">מבקר המדינה, מרץ <span dir="ltr">2026</span></div>
+      </div>
+
+      <!-- T5: TRUST — "Your data is yours" -->
+      <div class="tut-slide" id="t5">
+        <div class="tut-ind tut-ind-r">בעד &#8594;</div>
+        <div class="tut-ind tut-ind-l">&#8592; נגד</div>
+        <div class="tut-ind tut-ind-u">&#8593; מורכב</div>
+        <div style="margin-bottom:6px">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="tut-l1">המידע שלך נשאר אצלך.</div>
+        <div class="tut-l2">נציג ה-AI לומד את הערכים שלך ומנבא את העמדות. הוא לעולם לא מחליט בשבילך — רק מנבא ומחכה לאישור.</div>
+        <div class="tut-l3" style="margin-top:12px;font-size:12px">גם אנחנו לא יכולים לראות מי את/ה. בכוונה.</div>
+      </div>
+
+      <!-- T6: RESOLUTION — "Why the passport" -->
+      <div class="tut-slide" id="t6">
+        <div class="tut-ind tut-ind-r">בעד &#8594;</div>
+        <div class="tut-ind tut-ind-l">&#8592; נגד</div>
+        <div class="tut-ind tut-ind-u">&#8593; מורכב</div>
+        <div class="tut-l1" style="font-size:18px">הדרכון מוכיח שאת/ה אזרח/ית.</div>
+        <div class="tut-zk-flow">
+          <div class="tut-zk-step" id="zk-step-passport">
+            <div class="tut-zk-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--t2)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><circle cx="12" cy="10" r="3"/><path d="M8 17c0-2 2-3 4-3s4 1 4 3"/></svg>
+            </div>
+            <div class="tut-zk-label">דרכון</div>
+          </div>
+          <div class="tut-zk-arrow">&#8594;</div>
+          <div class="tut-zk-step">
+            <div class="tut-zk-icon" style="border-color:var(--gn);background:var(--gd0)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <div class="tut-zk-label">הוכחה</div>
+          </div>
+          <div class="tut-zk-arrow">&#8594;</div>
+          <div class="tut-zk-step">
+            <div class="tut-zk-icon" style="border-color:var(--te);background:var(--te0)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--te)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="tut-zk-label">נספרת</div>
+          </div>
+        </div>
+        <div class="tut-l2" style="margin-top:12px">בלי זה, כל אחד יכול לזייף את המספרים. ברגע שהאימות מסתיים, הדרכון נמחק לתמיד.</div>
+        <div class="tut-l3" style="margin-top:10px;font-size:13px;color:var(--gl)">הגיע הזמן להיספר.</div>
+      </div>
+
+      <!-- T7: AGENCY — "Your turn" (transitions to sl1) -->
+      <div class="tut-slide" id="t7">
+        <div class="tut-l1" style="color:var(--gl);font-size:26px">עכשיו התור שלך.</div>
+        <div class="tut-l2" style="margin-top:12px">הנה הסוגיה הראשונה. מה את/ה חושב/ת?</div>
+        <div style="margin-top:20px">
+          <div class="btn btn-gd" onclick="finishTutorial()" style="font-size:13px;padding:13px 20px">להתחיל</div>
+        </div>
+      </div>
+
+      <!-- Tutorial dots -->
+      <div class="tut-dots" id="tut-dots">
+        <div class="tut-dot on" id="td0"></div>
+        <div class="tut-dot" id="td1"></div>
+        <div class="tut-dot" id="td2"></div>
+        <div class="tut-dot" id="td3"></div>
+        <div class="tut-dot" id="td4"></div>
+        <div class="tut-dot" id="td5"></div>
+        <div class="tut-dot" id="td6"></div>
+        <div class="tut-dot" id="td7"></div>
+      </div>
+
+      <!-- Skip overlay (shown when user taps "דלג") -->
+      <div class="skip-overlay" id="skip-overlay">
+        <div class="skip-card" onclick="dismissSkip(1)">
+          <div class="skip-card-title">הכנסת העממית חושפת את ההסכמות הרחבות שלנו, בלי הרעש.</div>
+          <div class="skip-card-desc">כל נקודה כאן היא אזרח אמיתי.</div>
+        </div>
+        <div class="skip-card" onclick="dismissSkip(2)">
+          <div class="skip-card-title">המידע שלך נשאר אצלך ואנחנו לא יכולים לראות מי את/ה.</div>
+          <div class="skip-card-desc">הדרכון נועד לאימות חד-פעמי נגד זיופים, ונמחק מיד אחר כך.</div>
+        </div>
+        <div class="skip-dismiss" onclick="dismissSkip(2)">הבנתי, בואו נתחיל</div>
+      </div>
+
+      <!-- ════ S0: ORIGINAL LANDING (now hidden during tutorial) ════ -->
+      <div class="slide" id="sl0">
+        <div class="scr" style="justify-content:center;gap:12px;padding:24px 18px 14px">
+          <!-- PART 1: RECOGNITION — reflect what they already feel -->
+          <div style="text-align:center">
+            <div data-ab="stat" style="font-family:var(--frank);font-size:48px;font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1" dir="ltr">74%</div>
+            <div data-ab="stat-desc" style="font-size:12px;color:var(--t2);line-height:1.5;margin-top:6px">מהאזרחים מרגישים שאף מפלגה לא מייצגת אותם.</div>
+            <div data-ab="stat-source" style="font-size:8px;color:var(--t3);margin-top:2px">המכון הישראלי לדמוקרטיה, <span dir="ltr">2025</span></div>
+          </div>
+          <div data-ab="headline" style="text-align:center;font-size:15px;font-weight:900;color:var(--t1);line-height:1.4">את/ה כנראה אחד מהם.</div>
+          <!-- PART 2: RUPTURE — existence proof, something is already happening -->
+          <div data-ab="promise" style="text-align:center;font-size:11px;color:var(--te);line-height:1.6;font-weight:700;padding:8px 12px;background:var(--te0);border-radius:9px;border:1px solid rgba(39,179,142,0.2)">כבר עכשיו, אלפי אזרחים מכל הקבוצות מגלים על מה הם כן מסכימים.</div>
+          <div data-ab="mission" style="text-align:center;font-size:10px;color:var(--t2);line-height:1.6;max-width:240px;margin:0 auto">ההצבעות שלהם בונות כנסת עממית שהפוליטיקאים לא יכולים להתעלם ממנה.</div>
+          <!-- PART 3: INVITATION — curiosity, not commitment -->
+          <div data-ab="cta" class="btn btn-gd" onclick="abTrackCta();go(1)">לגלות על מה מסכימים</div>
+          <div style="text-align:center;font-size:9px;color:var(--t3)"><span dir="ltr">6</span> סוויפים &middot; דקה אחת &middot; ללא הרשמה</div>
+          <!-- Social proof counter (secondary) -->
+          <div style="text-align:center;font-size:9px;color:var(--t3)"><span id="fc" style="color:var(--gl);font-weight:800"><span dir="ltr">47</span></span> אזרחים כבר גילו</div>
+        </div>
+      </div>
+
+      <!-- ════ S1: 6 CONSENSUS SWIPES + RESULT ════ -->
+      <div class="slide" id="sl1">
+        <div style="flex:1;position:relative;overflow:hidden;min-height:0;display:flex;align-items:center;justify-content:center;padding:8px 13px;" id="cs-area">
+          <!-- CS0 -->
+          <div class="tcard active" id="cs0">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="csi0r">&#8594; בעד</div>
+              <div class="tind tind-l" id="csi0l">נגד &#8592;</div>
+              <div class="tind tind-u" id="csi0u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--co0);color:var(--co)">מיגון בעורף <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;display:inline"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
+              <div class="tcard-q">האם המדינה צריכה לממן בניית ממ"ד לכל אזרח שאין לו?</div>
+              <div class="tcard-ctx">ל-<span dir="ltr">3.2</span> מיליון אזרחים אין מרחב מוגן תקני (מבקר המדינה, מרץ <span dir="ltr">2026</span>).</div>
+              <div class="tcard-meta"><span dir="ltr">142,530</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs0')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- CS1 -->
+          <div class="tcard" id="cs1">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="csi1r">&#8594; בעד</div>
+              <div class="tind tind-l" id="csi1l">נגד &#8592;</div>
+              <div class="tind tind-u" id="csi1u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--te0);color:var(--te)">בריאות הנפש</div>
+              <div class="tcard-q">האם צריך להכפיל את תקציב בריאות הנפש על חשבון משרדי ממשלה אחרים?</div>
+              <div class="tcard-ctx"><span dir="ltr">32%</span> מהישראלים זקוקים לתמיכה נפשית, אבל זמן ההמתנה הממוצע לטיפול הוא <span dir="ltr">14</span> חודשים (מכבי, <span dir="ltr">2025</span>).</div>
+              <div class="tcard-meta"><span dir="ltr">185,420</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs1')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- CS2 -->
+          <div class="tcard" id="cs2">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="csi2r">&#8594; בעד</div>
+              <div class="tind tind-l" id="csi2l">נגד &#8592;</div>
+              <div class="tind tind-u" id="csi2u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--gd0);color:var(--gl)">משרתי המילואים</div>
+              <div class="tcard-q">האם משרתי מילואים צריכים לקבל פטור מלא ממס הכנסה לשנה?</div>
+              <div class="tcard-ctx"><span dir="ltr">120</span> אלף מילואימניקים שירתו מעל <span dir="ltr">100</span> ימים, עם אובדן הכנסה ממוצע של <span dir="ltr">45</span> אלף ש"ח.</div>
+              <div class="tcard-meta"><span dir="ltr">210,100</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs2')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- CS3 -->
+          <div class="tcard" id="cs3">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="csi3r">&#8594; בעד</div>
+              <div class="tind tind-l" id="csi3l">נגד &#8592;</div>
+              <div class="tind tind-u" id="csi3u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--bl0);color:var(--bl)">חינוך פיננסי</div>
+              <div class="tcard-q">האם חינוך פיננסי צריך להיות מקצוע חובה לבגרות?</div>
+              <div class="tcard-ctx"><span dir="ltr">27%</span> מהישראלים לא חוסכים כלל לעתיד (בנק ישראל).</div>
+              <div class="tcard-meta"><span dir="ltr">198,050</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs3')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- CS4 -->
+          <div class="tcard" id="cs4">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="csi4r">&#8594; בעד</div>
+              <div class="tind tind-l" id="csi4l">נגד &#8592;</div>
+              <div class="tind tind-u" id="csi4u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--pu0);color:var(--pu)">טוהר המידות</div>
+              <div class="tcard-q">האם צריך לאסור לצמיתות על אדם שהורשע בשחיתות לכהן בכנסת?</div>
+              <div class="tcard-ctx"><span dir="ltr">74%</span> מהציבור חושבים שיש שחיתות בשלטון, ורק <span dir="ltr">11%</span> נותנים אמון בכנסת (IDI, <span dir="ltr">2025</span>).</div>
+              <div class="tcard-meta"><span dir="ltr">245,800</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs4')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- CS5 -->
+          <div class="tcard" id="cs5">
+            <div class="tcard-inner">
+              <div class="tcard-before"></div>
+              <div class="tind tind-r" id="csi5r">&#8594; בעד</div>
+              <div class="tind tind-l" id="csi5l">נגד &#8592;</div>
+              <div class="tind tind-u" id="csi5u">&#8593; מורכב</div>
+              <div class="tcard-tag" style="background:var(--te0);color:var(--te)">מערכת הבריאות</div>
+              <div class="tcard-q">האם המדינה צריכה לחייב בתי חולים לפרסם את זמני ההמתנה לניתוחים?</div>
+              <div class="tcard-ctx">יש פער של יותר משנה בזמני ההמתנה בין בתי חולים שונים בישראל (מרכז טאוב, <span dir="ltr">2024</span>).</div>
+              <div class="tcard-meta"><span dir="ltr">176,300</span> הצביעו</div>
+              <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs5')">למה זה מורכב?</div>
+            </div>
+          </div>
+          <!-- CSR — Result -->
+          <div class="tcard" id="csr">
+            <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default">
+              <div style="font-size:10px;color:var(--te);font-weight:800;letter-spacing:1px"><span dir="ltr">6</span> מתוך <span dir="ltr">6</span></div>
+              <div style="font-size:13px;font-weight:900;color:var(--t1);line-height:1.4">גילינו הסכמה רחבה</div>
+              <div style="font-size:10px;color:var(--t2);line-height:1.6">בזמן שהכנסת עסוקה בלריב, הציבור מסכים על הפתרונות. הגיע הזמן שהקול שלנו יקבע.</div>
+              <div class="tribal-bars" style="height:44px">
+                <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">89%</div><div class="tb-lbl">חרדי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:29px;background:var(--gd)"></div><div class="tb-pct" style="color:var(--gd)">88%</div><div class="tb-lbl">ערבי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:28px;background:var(--te)"></div><div class="tb-pct" style="color:var(--te)">87%</div><div class="tb-lbl">חילוני</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:27px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">85%</div><div class="tb-lbl">דתי</div></div>
+                <div class="tribal-bar"><div class="tb-fill" style="height:26px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">84%</div><div class="tb-lbl">עולה</div></div>
+              </div>
+              <!-- City picker -->
+              <div style="margin-top:8px;padding:8px 10px;background:var(--sf);border-radius:9px;border:1px solid var(--b1)">
+                <div style="font-size:10px;font-weight:800;color:var(--t1);margin-bottom:4px">איפה אתם גרים?</div>
+                <div style="font-size:8px;color:var(--t3);line-height:1.5;margin-bottom:6px">כדי להראות לכם מה חושבים אצלכם בשכונה. המיקום נשמר רק על המכשיר שלכם ולא עובר לשום שרת.</div>
+                <div style="position:relative">
+                  <input id="city-input" type="text" placeholder="הקלידו שם עיר..." style="width:100%;padding:7px 10px;background:var(--el);border:1px solid var(--b1);border-radius:7px;color:var(--t1);font-size:10px;font-family:var(--heb);outline:none;direction:rtl" oninput="filterCities(this.value)" onfocus="this.style.borderColor='var(--gl)'">
+                  <div id="city-results" style="display:none;position:absolute;top:100%;right:0;left:0;background:var(--el);border:1px solid var(--b1);border-radius:0 0 7px 7px;max-height:100px;overflow-y:auto;z-index:10;scrollbar-width:none"></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:4px;margin-top:5px">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--te)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span style="font-size:7px;color:var(--t3)">נשמר מקומית בלבד. לא נשלח לשרת. לא משותף עם אף גורם.</span>
+                </div>
+              </div>
+              <!-- Tech disclosure: ZK -->
+              <div style="font-size:9px;color:var(--bl);cursor:pointer;margin-top:4px" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">איך אנחנו יודעים שהנתון הזה אמיתי?</div>
+              <div style="display:none;font-size:9px;color:var(--t2);line-height:1.5;background:var(--el);border-radius:7px;padding:8px;border-right:2px solid var(--te);text-align:right">טכנולוגיית <strong style="color:var(--te)">ZK Passport</strong> מוודאת: אזרח אחד = קול אחד. מוכיחה שאתם אמיתיים בלי לחשוף מי אתם. אף בוט, אף כפילות.</div>
+              <div class="btn btn-gd" style="width:100%;margin-top:6px" onclick="go(2)">לראות את הכנסת העממית</div>
+            </div>
+          </div>
+        </div>
+        <!-- Swipe hints -->
+        <div id="cs-hints" style="display:flex;justify-content:space-between;padding:4px 16px 2px;font-size:9px;font-weight:700;color:var(--t3)">
+          <span style="color:var(--te)">בעד &#8594;</span>
+          <span style="color:var(--gl)">&#8593; זה מורכב</span>
+          <span style="color:var(--co)">&#8592; נגד</span>
+        </div>
+        <!-- Dots -->
+        <div id="cs-dots" style="display:flex;justify-content:center;gap:4px;padding:4px 0 8px">
+          <div class="tdot on" id="csd0"></div>
+          <div class="tdot" id="csd1"></div>
+          <div class="tdot" id="csd2"></div>
+          <div class="tdot" id="csd3"></div>
+          <div class="tdot" id="csd4"></div>
+          <div class="tdot" id="csd5"></div>
+          <div class="tdot" id="csd6"></div>
+        </div>
+      </div>
+
+      <!-- ════ S2: PEOPLE'S KNESSET REVEAL ════ -->
+      <div class="slide" id="sl2">
+        <div class="scr" style="gap:8px;padding:14px 14px 10px">
+          <div class="kicker" style="color:var(--gl)">הכנסת העממית</div>
+          <!-- Adaptive header — updated by JS -->
+          <div id="hemi-header" style="font-size:14px;font-weight:900;color:var(--t1);text-align:center;line-height:1.3">את/ה אזרח <span dir="ltr">#47</span> בכנסת העממית</div>
+          <!-- Hemicycle SVG -->
+          <svg id="hemi-main" viewBox="0 0 260 140" style="width:100%;height:auto;display:block"></svg>
+          <!-- Legend -->
+          <div style="display:flex;justify-content:center;gap:14px;margin:2px 0">
+            <div style="display:flex;align-items:center;gap:3px">
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--gd)"></div>
+              <span style="font-size:7px;color:var(--t2)">אזרח מאומת</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:3px">
+              <div style="width:7px;height:7px;border-radius:50%;border:1px solid var(--t3)"></div>
+              <span style="font-size:7px;color:var(--t2)">מושב ריק</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:3px">
+              <div style="width:7px;height:7px;border-radius:50%;background:var(--gl);box-shadow:0 0 4px var(--gd)"></div>
+              <span style="font-size:7px;color:var(--t2)">את/ה</span>
+            </div>
+          </div>
+          <!-- Milestone context — updated by JS -->
+          <div id="hemi-context" style="font-size:9px;color:var(--t2);line-height:1.5;text-align:center;padding:4px 8px;background:var(--gd0);border:1px solid var(--gn);border-radius:8px">כל שינוי בהיסטוריה התחיל מקבוצה קטנה. את/ה חלק מ-<span dir="ltr">47</span> הראשונים.</div>
+          <!-- Next milestone progress -->
+          <div id="hemi-milestone" style="display:flex;flex-direction:column;gap:2px">
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:8px;font-weight:700;color:var(--t2)" id="hemi-next-label">הבא: <span dir="ltr">100</span> הראשונים</span>
+              <span style="font-size:8px;font-weight:800;color:var(--gl)" id="hemi-next-pct" dir="ltr">47%</span>
+            </div>
+            <div class="bar"><div class="bar-f" id="hemi-next-bar" style="width:47%;background:var(--gd)"></div></div>
+          </div>
+          <!-- Tech disclosure -->
+          <div style="font-size:9px;color:var(--bl);cursor:pointer;text-align:center" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">איך הכנסת העממית עובדת גם כשאתם לא כאן?</div>
+          <div style="display:none;font-size:9px;color:var(--t2);line-height:1.5;background:var(--el);border-radius:7px;padding:8px;border-right:2px solid var(--gl)"><strong style="color:var(--gl)">נציג AI אישי</strong> לומד אתכם מ-<span dir="ltr">3</span> החלקות ביום ומייצג את עמדותיכם בכל החלטה — גם כשאתם לא כאן. <strong style="color:var(--te)">ZK Passport</strong> מוודא שכל קול הוא של אזרח אמיתי.</div>
+          <!-- Counter — tap to cycle demo -->
+          <div style="background:var(--sf);border-radius:9px;border:1px solid var(--b1);padding:6px 11px;display:flex;align-items:center;gap:9px;cursor:pointer" onclick="cycleHemiDemo()">
+            <div id="fc2" style="font-family:var(--frank);font-size:20px;font-weight:900;color:var(--gl);letter-spacing:-1px"><span dir="ltr">47</span></div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.4"><strong style="color:var(--t1)">אזרחים מאומתים</strong><br><span style="font-size:7px;color:var(--t3)">לחצו לראות שלבים הבאים</span></div>
+          </div>
+          <div class="btn btn-gd" onclick="go(3)">כניסה לאפליקציה</div>
+        </div>
+      </div>
+
+      <!-- ════ S3: HOME (בית) ════ -->
+      <div class="slide" id="sl3">
+        <div class="s-top">
+          <div class="s-logo">נספר</div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <div class="streak-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> רצף של <span dir="ltr">4</span> ימים!</div>
+            <div class="level-badge">רמה <span dir="ltr">2</span> &middot; קול משפיע</div>
+          </div>
+        </div>
+        <div class="scr" id="home-scr" style="overflow-y:hidden;position:relative;gap:6px">
+          <!-- Mini hemicycle -->
+          <div style="text-align:center;padding:6px 0">
+            <svg id="hemi-mini" viewBox="0 0 260 80" style="width:160px;height:auto;display:inline-block"></svg>
+            <div style="font-size:9px;font-weight:800;color:var(--gl)"><span dir="ltr">83</span>/<span dir="ltr">120</span> מושבים</div>
+          </div>
+          <!-- Daily swipe overlay -->
+          <div id="daily-overlay" style="position:absolute;inset:0;z-index:25;background:var(--bg);display:flex;flex-direction:column">
+            <div style="padding:10px 16px 6px;text-align:center;flex-shrink:0">
+              <div style="font-size:11px;font-weight:900;color:var(--t1)"><span dir="ltr">3</span> הסוויפים של היום</div>
+              <div style="font-size:9px;color:var(--gl);margin-top:2px">הנציג שלכם לומד מהר.</div>
+            </div>
+            <div id="dc-area" style="flex:1;position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 13px">
+              <!-- DC0 -->
+              <div class="tcard active" id="dc0">
+                <div class="tcard-inner" style="padding:16px 14px">
+                  <div class="tcard-before"></div>
+                  <div class="tind tind-r" id="dci0r">&#8594; בעד</div>
+                  <div class="tind tind-l" id="dci0l">נגד &#8592;</div>
+                  <div class="tind tind-u" id="dci0u">&#8593; מורכב</div>
+                  <div class="tcard-tag" style="background:var(--co0);color:var(--co)">יוקר המחיה</div>
+                  <div class="tcard-q" style="font-size:12px">מחירי המזון עלו <span dir="ltr">12%</span> ברבעון האחרון. משפחה ממוצעת מוציאה <span dir="ltr">42%</span> מההכנסה על דיור ומזון. להגביל?</div>
+                  <div class="tcard-meta"><span dir="ltr">89,221</span> הצביעו</div>
+                  <div class="tcard-more" onclick="event.stopPropagation();showInfo('dc0')">למה זה מורכב?</div>
+                </div>
+              </div>
+              <!-- DC1 -->
+              <div class="tcard" id="dc1">
+                <div class="tcard-inner" style="padding:16px 14px">
+                  <div class="tcard-before"></div>
+                  <div class="tind tind-r" id="dci1r">&#8594; בעד</div>
+                  <div class="tind tind-l" id="dci1l">נגד &#8592;</div>
+                  <div class="tind tind-u" id="dci1u">&#8593; מורכב</div>
+                  <div class="tcard-tag" style="background:var(--te0);color:var(--te)">מילואים</div>
+                  <div class="tcard-q" style="font-size:12px">רבע מהעסקים בישראל דיווחו על פגיעה בפריון בגלל מילואים. העלות למשק: <span dir="ltr">15</span> מיליארד ש"ח. להגדיל פיצוי?</div>
+                  <div class="tcard-meta"><span dir="ltr">147,221</span> הצביעו</div>
+                  <div class="tcard-more" onclick="event.stopPropagation();showInfo('dc1')">למה זה מורכב?</div>
+                </div>
+              </div>
+              <!-- DC2 -->
+              <div class="tcard" id="dc2">
+                <div class="tcard-inner" style="padding:16px 14px">
+                  <div class="tcard-before"></div>
+                  <div class="tind tind-r" id="dci2r">&#8594; בעד</div>
+                  <div class="tind tind-l" id="dci2l">נגד &#8592;</div>
+                  <div class="tind tind-u" id="dci2u">&#8593; מורכב</div>
+                  <div class="tcard-tag" style="background:var(--bl0);color:var(--bl)">פשיעה</div>
+                  <div class="tcard-q" style="font-size:12px"><span dir="ltr">252</span> הרוגים מפשיעה בחברה הערבית ב-<span dir="ltr">2025</span>. המשטרה פתרה <span dir="ltr">15%</span> מהתיקים. לחייב תוכנית חירום?</div>
+                  <div class="tcard-meta"><span dir="ltr">112,543</span> הצביעו</div>
+                  <div class="tcard-more" onclick="event.stopPropagation();showInfo('dc2')">למה זה מורכב?</div>
+                </div>
+              </div>
+            </div>
+            <div id="dc-dots" style="flex-shrink:0;padding:6px 12px 4px;display:flex;justify-content:center;gap:4px">
+              <div class="tdot on" id="dcd0"></div>
+              <div class="tdot" id="dcd1"></div>
+              <div class="tdot" id="dcd2"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:0 16px 8px;font-size:9px;font-weight:700;color:var(--t3);flex-shrink:0;background:var(--bg)">
+              <span style="color:var(--te)">בעד &#8594;</span>
+              <span style="color:var(--gl)">&#8593; זה מורכב</span>
+              <span style="color:var(--co)">&#8592; נגד</span>
+            </div>
+          </div>
+          <!-- Construction feedback (hidden, shown after swipes) -->
+          <div id="construction-fb" style="display:none" class="construction-fb">
+            <div class="cf-line" style="font-weight:700;color:var(--gl)">+1. עכשיו <span dir="ltr">4,219</span> אזרחים הצביעו על הנושא הזה.</div>
+            <div class="cf-line">הכנסת העממית: <span dir="ltr">71</span> בעד, <span dir="ltr">49</span> נגד. הכנסת האמיתית: <span dir="ltr">38-82</span>.</div>
+            <div class="cf-line" style="color:var(--gl);cursor:pointer">עוד <span dir="ltr">782</span> קולות לשליחת מכתב לח"כ &#8592;</div>
+          </div>
+          <!-- Below-fold content -->
+          <div id="home-below-fold" class="home-locked" style="display:flex;flex-direction:column;gap:6px">
+            <!-- Impact counter -->
+            <div class="card" style="border-color:var(--gn)">
+              <div style="font-size:9px;font-weight:800;color:var(--gl);margin-bottom:4px">ההשפעה שלכם השבוע</div>
+              <div style="font-size:9px;color:var(--t2);line-height:1.6"><span dir="ltr">12</span> מכתבים נשלחו לחברי כנסת &middot; שותפות ב-<span dir="ltr">4</span> הסכמות רחבות</div>
+            </div>
+            <!-- Consensus discovery -->
+            <div class="card" style="border-color:rgba(39,179,142,.25)">
+              <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px">
+                <div style="width:6px;height:6px;border-radius:50%;background:var(--te);animation:nowpulse 2s infinite"></div>
+                <div style="font-size:8px;font-weight:800;color:var(--te)">הסכמה חדשה התגלתה</div>
+              </div>
+              <div style="font-size:10px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:4px">״המדינה כשלה בלספק מיגון בסיסי״ -- <span dir="ltr">87%</span> מכל הקבוצות מסכימים</div>
+              <div style="text-align:left;font-size:8px;color:var(--t3);cursor:pointer" onclick="shareConsensus()">שתף</div>
+            </div>
+            <!-- MK contradiction (moved from deleted Bills tab) -->
+            <div class="mk-contradiction">
+              <div style="display:flex;align-items:center;gap:5px;font-size:8px;font-weight:800;color:var(--co);margin-bottom:6px">
+                <div style="width:5px;height:5px;border-radius:50%;background:var(--co);animation:nowpulse 1s infinite"></div>
+                סתירה
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--bl0);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                <div>
+                  <div style="font-size:10px;font-weight:800;color:var(--t1)">ח"כ ישראל כ"ץ</div>
+                  <div style="font-size:8px;color:var(--t3)">הליכוד</div>
+                </div>
+              </div>
+              <div class="mk-promise">
+                <div style="font-size:8px;font-weight:700;color:var(--te);margin-bottom:2px">הבטיח:</div>
+                <div style="font-size:9px;color:var(--t2)">נפחית את יוקר המחייה</div>
+              </div>
+              <div class="mk-vote">
+                <div style="font-size:8px;font-weight:700;color:var(--co);margin-bottom:2px">הצביע:</div>
+                <div style="font-size:9px;color:var(--t2)">נגד הקפאת מחירי מוצרי יסוד</div>
+              </div>
+              <div style="font-size:9px;color:var(--gl);font-weight:700;margin-top:4px">בכנסת העממית: <span dir="ltr">71%</span> בעד הקפאה</div>
+              <div style="text-align:left;margin-top:4px;font-size:8px;color:var(--t3);cursor:pointer" onclick="shareMKContradiction()">שתף את הסתירה</div>
+            </div>
+            <!-- Gossip card -->
+            <div class="gossip-card">
+              <div class="ch">השכונה שלכם פעילה ב-<span dir="ltr">15%</span> יותר מהעיר השכנה. ממשיכים להוביל!</div>
+              <div class="gossip-row" style="margin-top:6px">
+                <div class="gossip-city">תל אביב</div>
+                <div class="gossip-track"><div class="gossip-fill" style="width:78%;background:var(--te)"></div></div>
+                <div class="gossip-pct" style="color:var(--te)">78%</div>
+              </div>
+              <div class="gossip-row">
+                <div class="gossip-city">רמת גן</div>
+                <div class="gossip-track"><div class="gossip-fill" style="width:62%;background:var(--bl)"></div></div>
+                <div class="gossip-pct" style="color:var(--bl)">62%</div>
+              </div>
+            </div>
+            <!-- AI Rep nudge -->
+            <div style="padding:9px 11px;background:var(--gd0);border:1px solid var(--gn);border-radius:9px">
+              <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px">
+                <div style="display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+                <div style="font-size:10px;font-weight:800;color:var(--gl)">הנציג האישי שלכם</div>
+              </div>
+              <div style="font-size:9px;color:rgba(228,174,88,.7);line-height:1.5;margin-bottom:5px">ניבא <span dir="ltr">7/10</span> נכון. ביטחון: <span dir="ltr">74%</span></div>
+              <div class="bar" style="margin-bottom:5px"><div class="bar-f" style="width:74%;background:var(--gl)"></div></div>
+              <div style="font-size:9px;color:rgba(228,174,88,.6);cursor:pointer" onclick="go(5)">בדקו מה הנציג עשה בזמן שלא הייתם כאן &#8592;</div>
+            </div>
+            <!-- ZK nudge -->
+            <div style="background:var(--co0);border:1px solid var(--cn);border-radius:9px;padding:8px 10px">
+              <div style="font-size:9px;font-weight:800;color:var(--co);margin-bottom:3px">הקול שלכם עדיין לא נספר</div>
+              <div class="btn btn-gd" style="font-size:9px;padding:7px" onclick="go(6)">להיספר &#8592;</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn active" onclick="go(3)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
+          <button class="tab-btn" onclick="go(4)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>הצהרות</button>
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>הנציג</button>
+        </div>
+      </div>
+
+      <!-- ════ S4: DELIBERATION (הצהרות) — pol.is-style feed ════ -->
+      <div class="slide" id="sl4">
+        <div class="s-top">
+          <div class="s-logo">נספר</div>
+          <div class="s-chip" style="background:var(--bl0);color:var(--bl)">הצהרות</div>
+        </div>
+        <div class="scr" id="delib-scr">
+          <!-- Pipeline explanation -->
+          <div style="background:var(--gd0);border:1px solid var(--gn);border-radius:9px;padding:9px 11px">
+            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:3px">איך זה עובד</div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.5">אזרחים כותבים הצהרות. כולם מצביעים. הצהרות עם הסכמה רחבה הופכות לכרטיסי סוויפ יומיים ומגיעות לכל האזרחים.</div>
+          </div>
+          <!-- Submit your own -->
+          <div class="card" style="border-color:var(--bl);border-style:dashed">
+            <div style="font-size:10px;font-weight:800;color:var(--bl);margin-bottom:6px">כתוב הצהרה קצרה — עד 140 תווים</div>
+            <div style="background:var(--sf);border:1px solid var(--b1);border-radius:8px;padding:9px 10px;font-size:10px;color:var(--t3);line-height:1.5;min-height:36px;cursor:text" onclick="this.style.borderColor='var(--bl)'" contenteditable="false">למשל: ״14 חודשים המתנה לפסיכולוג — זה לא מקובל.״</div>
+            <div class="btn" style="margin-top:8px;padding:8px;font-size:10px;opacity:.5;pointer-events:none;background:var(--bl);color:#fff">שלח הצהרה (נפתח ברמה 2)</div>
+          </div>
+          <!-- Hot topics -->
+          <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:2px">
+            <span style="font-size:8px;font-weight:800;color:var(--t3);padding:3px 0;width:100%;letter-spacing:1px">נושאים חמים עכשיו</span>
+            <span class="pill" style="background:var(--co0);color:var(--co)">יוקר המחיה</span>
+            <span class="pill" style="background:var(--te0);color:var(--te)">ביטחון אישי</span>
+            <span class="pill" style="background:var(--bl0);color:var(--bl)">חינוך</span>
+            <span class="pill" style="background:var(--pu0);color:var(--pu)">שקיפות</span>
+            <span class="pill" style="background:var(--gd0);color:var(--gl)">בריאות</span>
+          </div>
+          <!-- Declaration 1 — bridge -->
+          <div class="card" style="border-color:var(--gn)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span class="bridge-badge">בונה הסכמות</span>
+              <span style="font-size:8px;color:var(--t3)">לפני 3 שעות</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">צריך להקים ממשלת מומחים מקצועית עד לסיום המלחמה.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">142,000</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">82%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+            </div>
+            <div style="font-size:8px;color:var(--te);margin-top:5px;text-align:center">הצהרה זו הפכה לסוויפ יומי אתמול</div>
+          </div>
+          <!-- Declaration 2 — trending -->
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span style="font-size:8px;color:var(--co);font-weight:800;display:flex;align-items:center;gap:3px"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> טרנדי</span>
+              <span style="font-size:8px;color:var(--t3)">לפני שעה</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">אסור לפוליטיקאי לקדם חקיקה שמשרתת את האינטרסים האישיים שלו.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">312,500</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">91%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+            </div>
+          </div>
+          <!-- Declaration 3 — contested -->
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span style="font-size:8px;color:var(--pu);font-weight:800">שנוי במחלוקת</span>
+              <span style="font-size:8px;color:var(--t3)">לפני 5 שעות</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">לא ייתכן שאזרחים בדרום נטושים יותר משנה בלי בית.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">98,400</span> הצביעו &middot; <span style="color:var(--gd);font-weight:800" dir="ltr">71%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+            </div>
+          </div>
+          <!-- Declaration 4 — bridge -->
+          <div class="card" style="border-color:var(--gn)">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span class="bridge-badge">בונה הסכמות</span>
+              <span style="font-size:8px;color:var(--t3)">לפני 8 שעות</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">משפחות שכולות ונפגעי טרור זכאות לתמיכה כלכלית מלאה לכל החיים.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">189,700</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">88%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+            </div>
+            <div style="font-size:8px;color:var(--te);margin-top:5px;text-align:center">עוד 2,300 הצבעות והצהרה זו הופכת לסוויפ יומי</div>
+          </div>
+          <!-- Declaration 5 — new -->
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
+              <span style="font-size:8px;color:var(--bl);font-weight:800">חדש</span>
+              <span style="font-size:8px;color:var(--t3)">לפני 20 דקות</span>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">כל ילד בישראל מגיע לחינוך איכותי בלי קשר לאיפה שהוא גר.</div>
+            <div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">167,200</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">79%</span> מסכימים</div>
+            <div style="display:flex;gap:4px">
+              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
+              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn" onclick="go(3)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
+          <button class="tab-btn active" onclick="go(4)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>הצהרות</button>
+          <button class="tab-btn" onclick="go(5)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>הנציג</button>
+        </div>
+      </div>
+
+      <!-- ════ S5: AI REP (הנציג) — Personal Dashboard ════ -->
+      <div class="slide" id="sl5">
+        <div class="s-top">
+          <div class="s-logo">נספר</div>
+          <div class="s-chip" style="background:var(--gd0);color:var(--gl)">הנציג</div>
+        </div>
+        <div class="scr" style="gap:8px;padding:10px 13px 8px">
+          <!-- Rep header (compact) -->
+          <div style="display:flex;align-items:center;gap:8px;padding:6px 0">
+            <div style="width:36px;height:36px;border-radius:10px;background:var(--gd0);border:1px solid var(--gn);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+            <div>
+              <div style="font-size:12px;font-weight:900;color:var(--gl)">הנציג האישי שלכם</div>
+              <div style="font-size:8px;color:var(--t3)">פועל בשבילכם <span dir="ltr">24/7</span> &middot; <span dir="ltr">92%</span> דיוק</div>
+            </div>
+          </div>
+
+          <!-- HERO: While away (moved to top, most important) -->
+          <div class="card" style="border-color:var(--gn);background:linear-gradient(135deg,rgba(200,149,58,0.06),rgba(39,179,142,0.04))">
+            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:6px">בזמן שלא הייתם כאן, הנציג:</div>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="font-size:9px;color:var(--t2);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px">
+                <strong style="color:var(--te)">&#10003;</strong> ניבא את עמדתכם ב-<span dir="ltr">14</span> הצעות חוק חדשות
+              </div>
+              <div style="font-size:9px;color:var(--t2);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px">
+                <strong style="color:var(--te)">&#10003;</strong> הצטרף ל-<span dir="ltr">3</span> קבוצות אזרחיות שמתאימות לערכים שלכם
+              </div>
+              <div style="font-size:9px;color:var(--t2);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px">
+                <strong style="color:var(--te)">&#10003;</strong> שלח מכתב דרישה לשר האוצר בנושא יוקר המחיה
+              </div>
+            </div>
+          </div>
+
+          <!-- Emergent profile (pol.is-style opinion groups) -->
+          <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px">קבוצות דעה</div>
+          <div class="card" style="padding:10px 12px">
+            <!-- Opinion map — pol.is-style with blob clusters + dots -->
+            <div style="height:130px;background:var(--sf);border-radius:8px;position:relative;overflow:hidden;margin-bottom:8px">
+              <svg viewBox="0 0 240 130" style="width:100%;height:100%;position:absolute;inset:0">
+                <!-- Crosshairs -->
+                <line x1="120" y1="0" x2="120" y2="130" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+                <line x1="0" y1="65" x2="240" y2="65" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
+                <!-- Group A blob (bottom-right, largest) -->
+                <path d="M140,70 Q180,55 200,75 Q210,95 190,110 Q160,120 135,105 Q125,90 140,70Z" fill="rgba(39,179,142,0.08)" stroke="rgba(39,179,142,0.2)" stroke-width="0.5"/>
+                <!-- Group A dots -->
+                <circle cx="165" cy="85" r="2" fill="#27B38E" opacity=".5"/><circle cx="175" cy="78" r="2" fill="#27B38E" opacity=".4"/>
+                <circle cx="155" cy="92" r="2" fill="#27B38E" opacity=".35"/><circle cx="180" cy="90" r="1.5" fill="#27B38E" opacity=".3"/>
+                <circle cx="160" cy="100" r="2" fill="#27B38E" opacity=".4"/><circle cx="190" cy="82" r="1.5" fill="#27B38E" opacity=".25"/>
+                <circle cx="170" cy="95" r="1.5" fill="#27B38E" opacity=".35"/><circle cx="148" cy="88" r="1.5" fill="#27B38E" opacity=".3"/>
+                <text x="192" y="105" fill="#27B38E" font-size="7" font-weight="700" font-family="Heebo">72</text>
+                <!-- Group B blob (left, medium) -->
+                <path d="M20,35 Q55,15 80,30 Q95,50 85,75 Q70,95 40,85 Q15,70 20,35Z" fill="rgba(68,112,176,0.08)" stroke="rgba(68,112,176,0.2)" stroke-width="0.5"/>
+                <!-- Group B dots -->
+                <circle cx="50" cy="45" r="2" fill="#4470B0" opacity=".5"/><circle cx="60" cy="55" r="2" fill="#4470B0" opacity=".4"/>
+                <circle cx="45" cy="60" r="1.5" fill="#4470B0" opacity=".35"/><circle cx="70" cy="48" r="2" fill="#4470B0" opacity=".3"/>
+                <circle cx="55" cy="70" r="1.5" fill="#4470B0" opacity=".3"/><circle cx="40" cy="50" r="1.5" fill="#4470B0" opacity=".25"/>
+                <circle cx="65" cy="65" r="1.5" fill="#4470B0" opacity=".35"/>
+                <text x="42" y="80" fill="#4470B0" font-size="7" font-weight="700" font-family="Heebo">67</text>
+                <!-- Group C blob (top-right, small) -->
+                <path d="M150,10 Q185,5 210,20 Q220,40 200,50 Q175,55 155,40 Q145,25 150,10Z" fill="rgba(114,88,162,0.08)" stroke="rgba(114,88,162,0.2)" stroke-width="0.5"/>
+                <!-- Group C dots -->
+                <circle cx="175" cy="25" r="2" fill="#7258A2" opacity=".4"/><circle cx="190" cy="30" r="1.5" fill="#7258A2" opacity=".35"/>
+                <circle cx="180" cy="38" r="1.5" fill="#7258A2" opacity=".3"/><circle cx="165" cy="32" r="2" fill="#7258A2" opacity=".25"/>
+                <circle cx="195" cy="22" r="1.5" fill="#7258A2" opacity=".3"/>
+                <text x="192" y="45" fill="#7258A2" font-size="7" font-weight="700" font-family="Heebo">19</text>
+                <!-- YOU — pulsing gold dot in Group A -->
+                <circle cx="158" cy="88" r="4.5" fill="#E4AE58" stroke="#C8953A" stroke-width="1" opacity="1">
+                  <animate attributeName="r" values="4.5;6;4.5" dur="1.8s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="1;.7;1" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+              <div style="position:absolute;bottom:3px;right:6px;font-size:7px;color:var(--gl);font-weight:700">אתם כאן</div>
+              <div style="position:absolute;top:3px;left:6px;font-size:6px;color:var(--t3)"><span dir="ltr">4,219</span> אזרחים</div>
+            </div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.5;margin-bottom:6px">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">34%</span> מהאזרחים שחושבים דומה.</div>
+            <div style="font-size:9px;color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;margin-bottom:4px;border-right:2px solid var(--te)">
+              <strong style="color:var(--te)">מאחד אתכם:</strong> ״המדינה חייבת לממן ממ״ד לכל אזרח״
+            </div>
+            <div style="font-size:9px;color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;border-right:2px solid var(--co)">
+              <strong style="color:var(--co)">מבדיל אתכם:</strong> ״הממשלה חייבת להקפיא מחירי מוצרי יסוד״
+            </div>
+          </div>
+
+          <!-- Compact predictions — value-revealing statements -->
+          <div style="font-size:8px;font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">הנציג ניבא — אשרו או תקנו</div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:700;color:var(--t1);line-height:1.4">״צריך לחייב כל רשת מזון לפרסם השוואת מחירים — כי המונופול חונק אותנו.״</div>
+                <div style="font-size:8px;color:var(--te);margin-top:2px">ניבא: מסכים (<span dir="ltr">91%</span>)</div>
+              </div>
+              <div style="display:flex;gap:4px;flex-shrink:0">
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+              </div>
+            </div>
+            <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:700;color:var(--t1);line-height:1.4">״עדיף להשקיע בטכנולוגיית יירוט מאשר בבטון — ממ"ד זה פתרון של אתמול.״</div>
+                <div style="font-size:8px;color:var(--co);margin-top:2px">ניבא: לא מסכים (<span dir="ltr">67%</span>)</div>
+              </div>
+              <div style="display:flex;gap:4px;flex-shrink:0">
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+              </div>
+            </div>
+            <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
+              <div style="flex:1">
+                <div style="font-size:9px;font-weight:700;color:var(--t1);line-height:1.4">״בזמן מלחמה אסור לפטר עובדים — גם אם העסק מפסיד.״</div>
+                <div style="font-size:8px;color:var(--gd);margin-top:2px">ניבא: לא בטוח (<span dir="ltr">54%</span>)</div>
+              </div>
+              <div style="display:flex;gap:4px;flex-shrink:0">
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:10px;color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Training progress as level-up -->
+          <div class="card" style="border-color:var(--gn)">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+              <div style="font-size:10px;font-weight:800;color:var(--gl)">רמת דיוק</div>
+              <div style="font-size:9px;font-weight:800;color:var(--gl)"><span dir="ltr">92%</span></div>
+            </div>
+            <div class="bar"><div class="bar-f" style="width:92%;background:linear-gradient(90deg,var(--gd),var(--te))"></div></div>
+            <div style="display:flex;justify-content:space-between;margin-top:4px">
+              <div style="font-size:7px;color:var(--t3)">סף ייצוג אוטומטי: <span dir="ltr">85%</span> &#10003;</div>
+              <div style="font-size:7px;color:var(--gl)">סף מושלם: <span dir="ltr">95%</span></div>
+            </div>
+          </div>
+
+          <!-- Power section -->
+          <div class="card" style="border-color:var(--gn);background:linear-gradient(135deg,rgba(200,149,58,0.06),rgba(39,179,142,0.04))">
+            <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:4px">הכוח של כנסת העם</div>
+            <div style="font-size:9px;color:var(--t2);line-height:1.6">כש-<span dir="ltr">500,000</span> אזרחים מאומתים מפעילים נציגי AI, אנחנו יוצרים כנסת אזרחית שפועלת ברציפות, עוקפת את הפוליטיקה הישנה ומחזירה את הכוח אלינו.</div>
+          </div>
+
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn" onclick="go(3)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
+          <button class="tab-btn" onclick="go(4)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>הצהרות</button>
+          <button class="tab-btn active" onclick="go(5)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>הנציג</button>
+        </div>
+      </div>
+
+      <!-- ════ S6: ZK CONVERSION (להיספר) — ASPIRATION ════ -->
+      <div class="slide" id="sl6">
+        <div class="scr" style="justify-content:center;gap:10px;padding:16px 16px">
+          <div style="font-size:14px;font-weight:900;color:var(--t1);text-align:center">הגיע הזמן לקחת את הכוח לידיים</div>
+          <!-- Pride stats -->
+          <div style="display:flex;gap:8px;justify-content:center">
+            <div style="text-align:center;padding:8px 12px;background:var(--el);border-radius:8px">
+              <div style="font-size:20px;font-weight:900;color:var(--gl);direction:ltr">8</div>
+              <div style="font-size:7px;color:var(--t3)">הצבעות</div>
+            </div>
+            <div style="text-align:center;padding:8px 12px;background:var(--el);border-radius:8px">
+              <div style="font-size:20px;font-weight:900;color:var(--te);direction:ltr">3</div>
+              <div style="font-size:7px;color:var(--t3)">הסכמות</div>
+            </div>
+            <div style="text-align:center;padding:8px 12px;background:var(--el);border-radius:8px">
+              <div style="font-size:20px;font-weight:900;color:var(--bl);direction:ltr">1</div>
+              <div style="font-size:7px;color:var(--t3)">פרופיל</div>
+            </div>
+          </div>
+          <!-- Aspiration card -->
+          <div class="aspiration-card">
+            <div style="font-size:11px;font-weight:800;color:var(--gl);margin-bottom:4px">אימות שווה השפעה</div>
+            <div style="font-size:10px;color:var(--t2);line-height:1.6">כדי שהקול שלכם באמת ישנה מציאות, אנחנו צריכים לוודא שאתם אזרחים אמיתיים.</div>
+          </div>
+          <!-- Mini hemicycle (hollow vs solid) -->
+          <div style="text-align:center;padding:4px 0">
+            <svg id="hemi-conv" viewBox="0 0 260 80" style="width:160px;height:auto;display:inline-block"></svg>
+            <div style="font-size:8px;color:var(--t3);margin-top:2px">מאומתים: מושבים מלאים &middot; לא מאומתים: מושבים חלולים</div>
+          </div>
+          <!-- Two-tech reminder -->
+          <div class="tech-card" style="padding:8px 10px">
+            <div class="tech-icon" style="background:var(--te0)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--te)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <div class="tech-body">
+              <div class="tech-title" style="font-size:9px">דרכון ZK</div>
+              <div class="tech-desc" style="font-size:8px">מוודא שאתם אזרחים. לא שומר מי אתם.</div>
+            </div>
+          </div>
+          <div class="tech-card" style="padding:8px 10px">
+            <div class="tech-icon" style="background:var(--gd0)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+            <div class="tech-body">
+              <div class="tech-title" style="font-size:9px">נציג AI</div>
+              <div class="tech-desc" style="font-size:8px">עובד <span dir="ltr">24/7</span> אחרי שתאמתו.</div>
+            </div>
+          </div>
+          <!-- CTA -->
+          <div class="btn btn-gd" style="font-size:14px;padding:13px" onclick="go(7)">לאמת אזרחות בצורה מאובטחת &#8592;</div>
+          <div style="text-align:center;font-size:9px;color:var(--t3);cursor:pointer" onclick="go(3)">אולי אחר כך</div>
+        </div>
+      </div>
+
+      <!-- ════ S7: ZK SCAN ════ -->
+      <div class="slide" id="sl7">
+        <div class="zk-scan">
+          <div class="zk-glow"></div>
+          <div class="passport-wrap">
+            <div class="passport-scan"></div>
+            <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          </div>
+          <div style="font-family:var(--frank);font-size:18px;font-weight:900;text-align:center;margin-bottom:5px;position:relative;z-index:1">סריקת דרכון</div>
+          <div style="font-size:10px;color:var(--t2);text-align:center;line-height:1.55;max-width:210px;margin-bottom:16px;position:relative;z-index:1">מוכיח שאתם אזרחים ישראלים.<br>לא שומר מי אתם.</div>
+          <div class="proof-steps">
+            <div class="proof-step done"><div class="ps-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="ps-text">חיבור NFC</div><div class="ps-st" style="color:var(--te);font-weight:700">&#10003;</div></div>
+            <div class="proof-step done"><div class="ps-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div><div class="ps-text">קריאת שבב</div><div class="ps-st" style="color:var(--te);font-weight:700">&#10003;</div></div>
+            <div class="proof-step" id="ps3"><div class="ps-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="ps-text">יצירת הוכחה</div><div class="ps-st" id="ps3s">&mdash;</div></div>
+            <div class="proof-step" id="ps4"><div class="ps-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div><div class="ps-text">אימות</div><div class="ps-st" id="ps4s">&mdash;</div></div>
+          </div>
+          <div style="width:100%;margin-top:9px;padding:9px 11px;background:var(--el);border-radius:8px;border:1px solid var(--b0);position:relative;z-index:1">
+            <div style="font-size:9px;font-weight:800;color:var(--t1);margin-bottom:3px">מה קורה כאן?</div>
+            <div style="font-size:8px;color:var(--t3);line-height:1.5">ההוכחה נוצרת על המכשיר שלכם. אנחנו מקבלים רק אישור שאתם אזרחים -- בלי לדעת מי.</div>
+          </div>
+          <div id="cast-btn" class="btn btn-gd" style="width:100%;margin-top:10px;position:relative;z-index:1;display:none" onclick="go(8)">כניסה כאזרח/ית מאומת/ת &#8592;</div>
+        </div>
+      </div>
+
+      <!-- ════ S8: CITIZEN PRIDE ════ -->
+      <div class="slide" id="sl8">
+        <div class="s8-glow"></div>
+        <div class="cit-body" style="text-align:center">
+          <div style="margin-bottom:10px;display:flex;align-items:center;justify-content:center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div style="font-family:var(--frank);font-size:20px;font-weight:900;line-height:1.2">דור ראשון <em style="color:var(--gl);font-style:normal">שנספר</em></div>
+          <div class="cit-n">#4,220</div>
+          <div style="font-size:11px;color:var(--t1);font-weight:700">אזרח/ית מאומת/ת בכנסת העממית</div>
+          <!-- Streak + level -->
+          <div style="display:flex;gap:6px;justify-content:center;margin:4px 0">
+            <div class="streak-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> יום <span dir="ltr">1</span></div>
+            <div class="level-badge">רמה <span dir="ltr">2</span></div>
+          </div>
+          <!-- Retro card -->
+          <div class="retro-card" style="text-align:right">
+            <div class="retro-h">&#10003; מה שעשיתם -- נספר עכשיו</div>
+            <div class="retro-row"><div class="retro-icon" style="color:var(--te)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div><div class="retro-text"><span dir="ltr">8</span> הצבעות -- כולן נספרות רטרואקטיבית</div></div>
+            <div class="retro-row"><div class="retro-icon" style="color:var(--te)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div><div class="retro-text"><span dir="ltr">3</span> הסכמות חוצות קבוצות -- גיליתם אותן</div></div>
+            <div class="retro-row"><div class="retro-icon" style="color:var(--te)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div><div class="retro-text">פרופיל אזרחי -- מופעל</div></div>
+          </div>
+          <!-- Share -->
+          <div style="background:#25D366;color:#fff;font-weight:800;font-size:11px;border-radius:10px;padding:11px;cursor:pointer" onclick="shareCitizen()">שתף -- אני אזרח/ית #<span dir="ltr">4,220</span></div>
+          <div class="btn btn-gd" style="width:100%" onclick="go(3)">לכנסת העממית &#8592;</div>
+        </div>
+      </div>
+
+      <!-- ════ INFO OVERLAY ════ -->
+      <div class="info-overlay" id="info-overlay">
+        <div style="font-size:14px;font-weight:900;color:var(--t1);margin-bottom:4px" id="info-title"></div>
+        <div style="font-size:10px;color:var(--t3);margin-bottom:12px" id="info-subtitle"></div>
+        <div class="info-label" style="color:var(--te)">עובדה</div>
+        <div class="info-line" id="info-fact"></div>
+        <div class="info-label" style="color:var(--gd)">שני הצדדים</div>
+        <div class="info-line" id="info-sides" style="border-right-color:var(--gd)"></div>
+        <div class="info-label" style="color:var(--pu)">מה שלא מספרים</div>
+        <div class="info-line" id="info-untold" style="border-right-color:var(--pu)"></div>
+        <div class="info-close" onclick="hideInfo()">חזרה להצבעה &#8592;</div>
+      </div>
+
+    </div><!-- /sim-screen -->
+  </div><!-- /sim-phone -->
+
+  <!-- SIDEBAR -->
+  <div class="sim-sb">
+    <div class="sb-phase">גילוי</div>
+    <div class="sbb" id="b0" onclick="go(0)"><div class="sbb-name">S0 הזמנה</div></div>
+    <div class="sbb" id="b1" onclick="go(1)"><div class="sbb-name">S1 סוויפי הסכמה</div></div>
+    <div class="sbb" id="b2" onclick="go(2)"><div class="sbb-name">S2 הכנסת העממית</div></div>
+    <div class="sb-phase">האפליקציה</div>
+    <div class="sbb" id="b3" onclick="go(3)"><div class="sbb-name">S3 בית</div></div>
+    <div class="sbb" id="b4" onclick="go(4)"><div class="sbb-name">S4 הצהרות</div></div>
+    <div class="sbb" id="b5" onclick="go(5)"><div class="sbb-name">S5 הנציג</div></div>
+    <div class="sb-phase">להיספר</div>
+    <div class="sbb" id="b6" onclick="go(6)"><div class="sbb-name">S6 להיספר</div></div>
+    <div class="sbb" id="b7" onclick="go(7)"><div class="sbb-name">S7 סריקת ZK</div></div>
+    <div class="sbb" id="b8" onclick="go(8)"><div class="sbb-name">S8 גאוות אזרח</div></div>
+  </div>
+
+</div><!-- /sim-wrap -->
+
+<script>
+/* ══════════════════════════════════════════════════════
+   CARD INFO DATA
+══════════════════════════════════════════════════════ */
+const CARD_INFO = {
+  cs0: {
+    title: 'מיגון בעורף',
+    subtitle: 'ממ"ד לכל אזרח',
+    fact: '<strong>50%</strong> מהאזרחים בחברה הערבית חיים ללא מרחב מוגן.',
+    sides: '<strong>תומכים:</strong> המדינה חייבת לספק ביטחון בסיסי. <strong>מתנגדים:</strong> העלות הכלכלית גבוהה מדי.',
+    untold: 'משפחות בפריפריה שאין להן יכולת כלכלית לממן ממ"ד בעצמן.'
+  },
+  cs1: {
+    title: 'בריאות הנפש',
+    subtitle: 'הכפלת תקציב',
+    fact: 'הממשלה קיצצה <strong>400 מיליון ש"ח</strong> מתקציב בריאות הנפש ב-2024.',
+    sides: '<strong>תומכים:</strong> אי אפשר להשתקם בלי פסיכולוג קליני זמין. <strong>מתנגדים:</strong> אי אפשר לקצץ בביטחון או בחינוך.',
+    untold: 'צעירים שמוותרים על טיפול כי הם לא יכולים לחכות יותר משנה.'
+  },
+  cs2: {
+    title: 'משרתי המילואים',
+    subtitle: 'פטור ממס למשרתים מעל 100 ימים',
+    fact: 'הכנסת אישרה הרחבת הטבות, אבל אובדן ההכנסה הממוצע נשאר <strong>45,000 ש"ח</strong>.',
+    sides: '<strong>תומכים:</strong> זה המינימום שהמדינה חייבת להם. <strong>מתנגדים:</strong> פטור גורף ייצור גירעון ענק.',
+    untold: 'עצמאיים שאיבדו את העסק שלהם בזמן שהגנו על המדינה.'
+  },
+  cs3: {
+    title: 'חינוך פיננסי',
+    subtitle: 'מקצוע חובה לבגרות',
+    fact: 'הממשלה אישרה תוכנית, ואין לה אף מתנגד בכנסת, אבל היא עדיין לא מיושמת.',
+    sides: '<strong>תומכים:</strong> ידע פיננסי הוא כלי הישרדותי. <strong>מתנגדים:</strong> מערכת החינוך עמוסה מדי גם ככה.',
+    untold: 'דור שלם שנכנס לחובות רק בגלל חוסר הבנה בסיסי בריביות.'
+  },
+  cs4: {
+    title: 'טוהר המידות',
+    subtitle: 'איסור כהונה למורשעי שחיתות',
+    fact: 'למרות חוסר האמון, חברי כנסת שהורשעו בשחיתות חזרו לכהן בתפקידים בכירים.',
+    sides: '<strong>תומכים:</strong> נבחר ציבור חייב להיות נקי כפיים. <strong>מתנגדים:</strong> זכות הציבור לבחור גם במי ששילם את חובו לחברה.',
+    untold: 'אזרחים שמאבדים תקווה במערכת הדמוקרטית ומפסיקים להצביע.'
+  },
+  cs5: {
+    title: 'מערכת הבריאות',
+    subtitle: 'שקיפות זמני המתנה',
+    fact: 'ישראל היא מהמדינות המפותחות היחידות שלא מפרסמות נתוני המתנה רשמיים.',
+    sides: '<strong>תומכים:</strong> שקיפות תאפשר למטופלים לבחור נכון ותקצר תורים. <strong>מתנגדים:</strong> פרסום ייצור עומס על בתי חולים ספציפיים.',
+    untold: 'חולים בפריפריה שממתינים חודשים ארוכים בלי לדעת שבמרכז התור פנוי.'
+  },
+  dc0: {
+    title: 'יוקר המחיה',
+    subtitle: 'מחירי מזון ודיור',
+    fact: 'משפחה ישראלית ממוצעת מוציאה <strong>42% מההכנסה</strong> על דיור ומזון — גבוה מכל מדינה באיחוד האירופי.',
+    sides: '<strong>תומכים:</strong> הגבלת מחירים והעלאת תחרות הם חובה כשאזרחים לא יכולים לקנות אוכל. <strong>מתנגדים:</strong> התערבות ממשלתית במחירים מצמצמת היצע.',
+    untold: 'ישראל היא אחת המדינות <strong>הריכוזיות ביותר במזון</strong> — 5 חברות שולטות ב-80% מהשוק.'
+  },
+  dc1: {
+    title: 'נטל המילואים',
+    subtitle: 'השפעה כלכלית',
+    fact: '<strong>25%</strong> מהעסקים בישראל דיווחו על ירידה בפריון בגלל מילואים. העלות הכוללת למשק: <strong>15 מיליארד ש"ח</strong>.',
+    sides: '<strong>תומכים:</strong> הגדלת פיצוי היא השקעה בביטחון. <strong>מתנגדים:</strong> התקציב כבר שבור — צריך רפורמה מבנית בצה"ל.',
+    untold: '4,000 מילואימניקים מהימין ארגנו מחאה משלהם — הנושא חוצה ימין-שמאל.'
+  },
+  dc2: {
+    title: 'פשיעה בחברה הערבית',
+    subtitle: 'מצב חירום שלא מטופל',
+    fact: '<strong>252 הרוגים</strong> מפשיעה בחברה הערבית ב-2025 — שיא כל הזמנים. המשטרה פתרה <strong>15%</strong> מהתיקים.',
+    sides: '<strong>תומכים:</strong> הממשלה חייבת תוכנית חירום. <strong>מתנגדים:</strong> הבעיה מורכבת — לא רק משטרה.',
+    untold: 'בינואר 2026, עשרות אלפים יהודים וערבים הפגינו <strong>יחד בתל אביב</strong> נגד הפשיעה.'
+  }
+};
+
+function showInfo(cardId) {
+  const data = CARD_INFO[cardId];
+  if (!data) return;
+  const ov = document.getElementById('info-overlay');
+  const container = ov.querySelector('.info-dynamic-content') || ov;
+  if (data.perspectives) {
+    // New pol.is-style perspectives format
+    let html = '<div style="font-size:14px;font-weight:900;color:var(--t1);margin-bottom:4px">' + (data.title || '') + '</div>';
+    html += '<div style="font-size:10px;color:var(--t3);margin-bottom:12px">' + (data.subtitle || '') + '</div>';
+    data.perspectives.forEach(function(p) {
+      html += '<div class="info-label" style="color:var(--bl)">' + p.if_label + '</div>';
+      html += '<div class="info-line">' + p.detail + '</div>';
+      if (p.source) html += '<div style="font-size:7px;color:var(--t3);margin-bottom:6px;text-align:left">' + p.source + '</div>';
+    });
+    html += '<div class="info-close" onclick="hideInfo()">\u05D7\u05D6\u05E8\u05D4 \u05DC\u05D4\u05E6\u05D1\u05E2\u05D4 &#8592;</div>';
+    ov.innerHTML = html;
+  } else {
+    // Legacy fact/sides/untold format
+    ov.innerHTML = '<div style="font-size:14px;font-weight:900;color:var(--t1);margin-bottom:4px" id="info-title"></div>' +
+      '<div style="font-size:10px;color:var(--t3);margin-bottom:12px" id="info-subtitle"></div>' +
+      '<div class="info-label" style="color:var(--te)">\u05E2\u05D5\u05D1\u05D3\u05D4</div>' +
+      '<div class="info-line" id="info-fact"></div>' +
+      '<div class="info-label" style="color:var(--gd)">\u05E9\u05E0\u05D9 \u05D4\u05E6\u05D3\u05D3\u05D9\u05DD</div>' +
+      '<div class="info-line" id="info-sides" style="border-right-color:var(--gd)"></div>' +
+      '<div class="info-label" style="color:var(--pu)">\u05DE\u05D4 \u05E9\u05DC\u05D0 \u05DE\u05E1\u05E4\u05E8\u05D9\u05DD</div>' +
+      '<div class="info-line" id="info-untold" style="border-right-color:var(--pu)"></div>' +
+      '<div class="info-close" onclick="hideInfo()">\u05D7\u05D6\u05E8\u05D4 \u05DC\u05D4\u05E6\u05D1\u05E2\u05D4 &#8592;</div>';
+    document.getElementById('info-title').textContent = data.title;
+    document.getElementById('info-subtitle').textContent = data.subtitle;
+    document.getElementById('info-fact').innerHTML = data.fact;
+    document.getElementById('info-sides').innerHTML = data.sides;
+    document.getElementById('info-untold').innerHTML = data.untold;
+  }
+  ov.classList.add('show');
+}
+function hideInfo() {
+  document.getElementById('info-overlay').classList.remove('show');
+}
+
+/* ══════════════════════════════════════════════════════
+   GAMIFICATION STATE
+══════════════════════════════════════════════════════ */
+const gameState = {
+  streak: 4, level: 2, xp: 95,
+  xpThresholds: [0, 50, 150, 400, 1000],
+  levelNames: ['\u05D0\u05D6\u05E8\u05D7 \u05DE\u05EA\u05E2\u05E0\u05D9\u05D9\u05DF','\u05E7\u05D5\u05DC \u05DE\u05E9\u05E4\u05D9\u05E2','\u05D1\u05D5\u05E0\u05D4 \u05D4\u05E1\u05DB\u05DE\u05D5\u05EA','\u05DE\u05D5\u05D1\u05D9\u05DC \u05E9\u05D9\u05E0\u05D5\u05D9','\u05DE\u05E9\u05D1\u05E9 \u05E4\u05D5\u05DC\u05D9\u05D8\u05D9']
+};
+
+/* ══════════════════════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════════════════════ */
+let cur = 0;
+/* ══════════════════════════════════════════════════════
+   TUTORIAL ENGINE — skeptic-friendly onboarding
+══════════════════════════════════════════════════════ */
+const TUT_TOTAL = 8;
+let tutCur = 0;
+let tutActive = true;
+const tutSlides = document.querySelectorAll('.tut-slide');
+
+function tutActivate(n) {
+  tutSlides.forEach((s, i) => s.classList.toggle('active', i === n));
+  for (let i = 0; i < TUT_TOTAL; i++) {
+    const d = document.getElementById('td' + i);
+    if (d) { d.classList.toggle('on', i === n); if (i < n) { d.classList.add('done'); d.classList.remove('on'); } }
+  }
+  tutCur = n;
+  // Trigger hemicycle fill animation on t4
+  if (n === 4) animateTutHemi();
+  // Trigger passport fade on t6
+  if (n === 6) setTimeout(() => {
+    const pp = document.getElementById('zk-step-passport');
+    if (pp) pp.classList.add('fade');
+  }, 1200);
+  // Analytics
+  if (typeof gtag === 'function') gtag('event', 'tutorial_screen_' + n);
+}
+
+function tutSwipeDone() {
+  const next = tutCur + 1;
+  if (next >= TUT_TOTAL) {
+    finishTutorial();
+    return;
+  }
+  // Animate current slide out
+  const cur = tutSlides[tutCur];
+  cur.style.transition = 'transform .35s ease, opacity .3s';
+  cur.style.transform = 'translateX(-100px)';
+  cur.style.opacity = '0';
+  setTimeout(() => {
+    cur.classList.remove('active');
+    cur.style.transform = ''; cur.style.opacity = ''; cur.style.transition = '';
+    tutActivate(next);
+    tutBindSwipe(next);
+  }, 350);
+}
+
+function tutGetInd(n) {
+  const s = tutSlides[n];
+  if (!s) return { r: null, l: null, u: null };
+  return {
+    r: s.querySelector('.tut-ind-r'),
+    l: s.querySelector('.tut-ind-l'),
+    u: s.querySelector('.tut-ind-u')
+  };
+}
+
+function tutBindSwipe(n) {
+  const slide = tutSlides[n];
+  if (!slide || slide._tutBound) return;
+  slide._tutBound = true;
+  let startX = 0, startY = 0, dragging = false;
+  const inds = tutGetInd(n);
+
+  function hideInds() {
+    if (inds.r) inds.r.style.opacity = '0';
+    if (inds.l) inds.l.style.opacity = '0';
+    if (inds.u) inds.u.style.opacity = '0';
+    slide.style.borderColor = '';
+  }
+
+  function onDown(e) {
+    const t = e.touches ? e.touches[0] : e;
+    startX = t.clientX; startY = t.clientY; dragging = true;
+    e.preventDefault();
+  }
+  function onMove(e) {
+    if (!dragging) return;
+    const t = e.touches ? e.touches[0] : e;
+    const dx = t.clientX - startX;
+    const dy = t.clientY - startY;
+    // Determine dominant direction
+    const absDx = Math.abs(dx), absDy = Math.abs(dy);
+    if (absDx > 10 || absDy > 10) {
+      if (dy < -20 && absDy > absDx) {
+        // Swiping up
+        slide.style.transform = `translateY(${dy * 0.3}px)`;
+        slide.style.opacity = String(1 - absDy / 300);
+        hideInds();
+        if (inds.u) inds.u.style.opacity = '1';
+      } else if (absDx > 10) {
+        // Horizontal swipe
+        slide.style.transform = `translateX(${dx * 0.4}px)`;
+        slide.style.opacity = String(1 - absDx / 300);
+        hideInds();
+        if (dx > 0 && inds.r) inds.r.style.opacity = '1';
+        if (dx < 0 && inds.l) inds.l.style.opacity = '1';
+      }
+    }
+  }
+  function onUp(e) {
+    if (!dragging) return;
+    dragging = false;
+    const t = e.changedTouches ? e.changedTouches[0] : e;
+    const dx = t.clientX - startX;
+    const dy = t.clientY - startY;
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup', onUp);
+    hideInds();
+    if (Math.abs(dx) > 30 || (dy < -30 && Math.abs(dy) > Math.abs(dx))) {
+      tutSwipeDone(); // any direction = advance
+    } else {
+      slide.style.transition = 'transform .2s, opacity .2s';
+      slide.style.transform = ''; slide.style.opacity = '';
+      setTimeout(() => { slide.style.transition = ''; }, 200);
+    }
+  }
+  slide.addEventListener('mousedown', function(e) {
+    onDown(e);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+  });
+  slide.addEventListener('touchstart', onDown, { passive: false });
+  slide.addEventListener('touchmove', onMove, { passive: true });
+  slide.addEventListener('touchend', onUp);
+}
+
+// Tutorial t0 — interactive card with real swipe engine + demo nudge
+let tutDemoShown = false;
+function initT0Card() {
+  const inner = document.getElementById('t0card-inner');
+  if (!inner) return;
+  function getInd() {
+    return {
+      r: document.getElementById('t0ir'),
+      l: document.getElementById('t0il'),
+      u: document.getElementById('t0iu')
+    };
+  }
+  function onSwipeDone(dir) {
+    // Animate card out like a real swipe
+    inner.style.transition = 'transform .3s ease, opacity .25s';
+    const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
+    const y = dir === 'u' ? -300 : 0;
+    const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
+    inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
+    inner.style.opacity = '0';
+    // Then advance tutorial
+    setTimeout(() => {
+      tutActivate(1);
+      tutBindSwipe(1);
+    }, 350);
+  }
+  bindSwipeEngine(inner, getInd, onSwipeDone);
+}
+
+function showTutDemo() {
+  if (tutDemoShown || tutCur !== 0) return;
+  tutDemoShown = true;
+  const inner = document.getElementById('t0card-inner');
+  if (!inner) return;
+  const ease = 'transform 700ms cubic-bezier(0.34,1.56,0.64,1), border-color 400ms ease';
+  const back = 'transform 500ms cubic-bezier(0.175,0.885,0.32,1.375), border-color 300ms ease';
+  const indR = document.getElementById('t0ir');
+  const indL = document.getElementById('t0il');
+  const indU = document.getElementById('t0iu');
+  // Nudge right — show "בעד"
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(60px) rotate(6deg)'; inner.style.borderColor = 'rgba(39,179,142,0.6)'; if (indR) indR.style.opacity = '1'; }, 1500);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indR) indR.style.opacity = '0'; }, 2500);
+  // Nudge left — show "נגד"
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-60px) rotate(-6deg)'; inner.style.borderColor = 'rgba(199,82,82,0.6)'; if (indL) indL.style.opacity = '1'; }, 3400);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indL) indL.style.opacity = '0'; }, 4400);
+  // Nudge up — show "מורכב"
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-40px) scale(1.02)'; inner.style.borderColor = 'rgba(228,174,88,0.6)'; if (indU) indU.style.opacity = '1'; }, 5300);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indU) indU.style.opacity = '0'; inner.style.transition = ''; }, 6300);
+}
+
+function finishTutorial() {
+  tutActive = false;
+  // Hide tutorial elements
+  tutSlides.forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+  const dots = document.getElementById('tut-dots');
+  if (dots) dots.style.display = 'none';
+  const skip = document.getElementById('tut-skip');
+  if (skip) skip.style.display = 'none';
+  // Show main app — go to sl1 (swipe cards) directly
+  go(1);
+  if (typeof gtag === 'function') gtag('event', 'tutorial_complete');
+}
+
+function skipTutorial() {
+  if (typeof gtag === 'function') gtag('event', 'tutorial_skip', { screen: tutCur });
+  // Show compressed overlay
+  const ov = document.getElementById('skip-overlay');
+  if (ov) ov.classList.add('show');
+}
+
+let skipStep = 0;
+function dismissSkip(step) {
+  skipStep = step;
+  if (step >= 2) {
+    const ov = document.getElementById('skip-overlay');
+    if (ov) ov.classList.remove('show');
+    finishTutorial();
+  }
+}
+
+// Hemicycle fill animation for t4
+function animateTutHemi() {
+  const svg = document.getElementById('tut-hemi');
+  const counter = document.getElementById('tut-hemi-count');
+  if (!svg || !counter) return;
+  svg.innerHTML = '';
+  const totalSeats = 120;
+  const rows = [40, 35, 28, 17];
+  const seats = [];
+  rows.forEach((count, rowIdx) => {
+    const r = 45 + rowIdx * 15;
+    for (let i = 0; i < count; i++) {
+      const angle = Math.PI - (Math.PI * (i + 0.5)) / count;
+      const cx = 100 + r * Math.cos(angle);
+      const cy = 105 - r * Math.sin(angle);
+      seats.push({ cx, cy, rowIdx });
+    }
+  });
+  // Draw empty seats
+  seats.forEach(s => {
+    const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    c.setAttribute('cx', s.cx); c.setAttribute('cy', s.cy); c.setAttribute('r', '3');
+    c.setAttribute('fill', 'rgba(255,255,255,0.06)'); c.setAttribute('stroke', 'rgba(255,255,255,0.1)');
+    c.setAttribute('stroke-width', '0.5');
+    s.el = c;
+    svg.appendChild(c);
+  });
+  // Animate filling
+  let filled = 0;
+  const targetCount = 1247;
+  const shuffled = seats.slice().sort(() => Math.random() - 0.5);
+  function fillNext() {
+    if (filled >= shuffled.length) return;
+    const s = shuffled[filled];
+    s.el.setAttribute('fill', 'var(--gl)'); s.el.setAttribute('stroke', 'var(--gn)');
+    filled++;
+    const displayNum = Math.round((filled / totalSeats) * targetCount);
+    counter.textContent = displayNum.toLocaleString();
+    const delay = filled < 20 ? 120 : filled < 60 ? 60 : 25;
+    setTimeout(fillNext, delay);
+  }
+  setTimeout(fillNext, 400);
+}
+
+// Init tutorial on load
+if (tutActive) {
+  initT0Card();  // t0 uses real card swipe engine, not slide swipe
+  showTutDemo();
+  if (typeof gtag === 'function') gtag('event', 'tutorial_start');
+}
+
+/* ══════════════════════════════════════════════════════
+   MAIN APP NAVIGATION
+══════════════════════════════════════════════════════ */
+const N = 9;
+const sls = document.querySelectorAll('.slide');
+const bts = document.querySelectorAll('.sbb');
+
+function go(n) {
+  if (n < 0 || n >= N) return;
+  // If tutorial still active, finish it first
+  if (tutActive) { finishTutorial(); return; }
+  sls[cur].classList.remove('active');
+  if (bts[cur]) bts[cur].classList.remove('on');
+  sls[n].classList.add('active');
+  if (bts[n]) bts[n].classList.add('on');
+  cur = n;
+  // Init swipe engines on entry
+  if (n === 1) { csActivate(csCur); csBindSwipe(csCur); if (!csTutorialShown) showCsTutorial(); }
+  if (n === 3 && dcCur < DC_TOTAL) { dcActivate(dcCur); dcBindSwipe(dcCur); }
+  // sl4 is now scrollable deliberation feed, no swipe init needed
+  if (n === 7) startScan();
+}
+
+/* ══ COUNTER ANIMATION ══ */
+// Only animates sl0 counter (fc). sl2 counter (fc2) is managed by updateHemiDisplay().
+let fcVal = 47;
+setInterval(() => {
+  if (Math.random() < 0.28) {
+    fcVal++;
+    const el = document.getElementById('fc');
+    if (el) el.innerHTML = '<span dir="ltr">' + fcVal.toLocaleString() + '</span>';
+  }
+}, 3000);
+
+/* ══════════════════════════════════════════════════════
+   HEMICYCLE RENDERER
+══════════════════════════════════════════════════════ */
+let _hemiCount = 47; // current citizen count for display
+const _hemiUserSeat = 46; // user's seat index (0-based)
+
+function renderHemicycle(svgId, citizenCount, compact) {
+  const svg = document.getElementById(svgId);
+  if (!svg) return;
+  const rows = compact ? [12, 16, 20, 24, 28] : [15, 19, 23, 27, 36];
+  const radii = compact ? [20, 28, 36, 44, 52] : [40, 55, 70, 85, 105];
+  const cx = 130, cy = compact ? 60 : 130;
+  const r = compact ? 2.5 : 3.5;
+  const total = rows.reduce((a, b) => a + b, 0); // 120
+
+  // Adaptive scale: determine how many seats to fill
+  let filled;
+  if (citizenCount <= 120) filled = citizenCount;
+  else if (citizenCount <= 1000) filled = Math.max(1, Math.round(citizenCount / 1000 * total));
+  else if (citizenCount <= 37000) filled = Math.max(1, Math.round(citizenCount / 37000 * total));
+  else filled = Math.min(total, Math.max(1, Math.round(citizenCount / 37000)));
+
+  const userSeat = Math.min(filled - 1, _hemiUserSeat);
+  let seatIdx = 0;
+  let html = '';
+  for (let row = 0; row < rows.length; row++) {
+    const count = rows[row];
+    const radius = radii[row];
+    for (let i = 0; i < count; i++) {
+      const angle = Math.PI - (Math.PI * (i + 0.5) / count);
+      const x = cx + radius * Math.cos(angle);
+      const y = cy - radius * Math.sin(angle);
+      const isFilled = seatIdx < filled;
+      const isYou = seatIdx === userSeat && !compact;
+      if (isYou) {
+        html += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r + 1.5}" class="hemi-seat-you"/>`;
+      } else {
+        html += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" class="${isFilled ? 'hemi-seat-filled' : 'hemi-seat-empty'}"/>`;
+      }
+      seatIdx++;
+    }
+  }
+  svg.innerHTML = html;
+}
+
+function updateHemiDisplay(count) {
+  _hemiCount = count;
+  renderHemicycle('hemi-main', count, false);
+  renderHemicycle('hemi-mini', count, true);
+  renderHemicycle('hemi-conv', count, true);
+
+  const hdr = document.getElementById('hemi-header');
+  const ctx = document.getElementById('hemi-context');
+  const lbl = document.getElementById('hemi-next-label');
+  const pct = document.getElementById('hemi-next-pct');
+  const bar = document.getElementById('hemi-next-bar');
+  const fc2 = document.getElementById('fc2');
+  if (fc2) fc2.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span>';
+
+  if (count <= 120) {
+    if (hdr) hdr.innerHTML = 'את/ה אזרח <span dir="ltr">#' + count + '</span> בכנסת העממית';
+    if (ctx) ctx.innerHTML = 'כל שינוי בהיסטוריה התחיל מקבוצה קטנה. את/ה חלק מ-<span dir="ltr">' + count + '</span> הראשונים.';
+    if (lbl) lbl.innerHTML = 'הבא: <span dir="ltr">100</span> הראשונים';
+    if (pct) pct.textContent = Math.round(count / 100 * 100) + '%';
+    if (bar) bar.style.width = Math.min(100, count) + '%';
+  } else if (count <= 1000) {
+    if (hdr) hdr.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> אזרחים מאומתים — הבסיס נבנה';
+    if (ctx) ctx.innerHTML = 'כל סקר בישראל מבוסס על <span dir="ltr">1,000</span> משתתפים. אנחנו כבר ב-<span dir="ltr">' + count.toLocaleString() + '</span>.';
+    if (lbl) lbl.innerHTML = 'הבא: רשומה ציבורית — <span dir="ltr">1,000</span>';
+    if (pct) pct.textContent = Math.round(count / 1000 * 100) + '%';
+    if (bar) bar.style.width = Math.round(count / 1000 * 100) + '%';
+  } else if (count <= 37000) {
+    if (hdr) hdr.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> / <span dir="ltr">37,000</span> למנדט הראשון';
+    if (ctx) ctx.innerHTML = '<span dir="ltr">37,000</span> אזרחים = מנדט אחד בכנסת. אנחנו ב-<span dir="ltr">' + Math.round(count / 37000 * 100) + '%</span>.';
+    if (lbl) lbl.innerHTML = 'הבא: מנדט ראשון — <span dir="ltr">37,000</span>';
+    if (pct) pct.textContent = Math.round(count / 37000 * 100) + '%';
+    if (bar) bar.style.width = Math.round(count / 37000 * 100) + '%';
+  } else {
+    const mandates = Math.floor(count / 37000);
+    if (hdr) hdr.innerHTML = '<span dir="ltr">' + mandates + '</span> מנדטים בכנסת העממית';
+    if (ctx) ctx.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> אזרחים מאומתים. הכנסת העממית צוברת כוח אמיתי.';
+    if (lbl) lbl.innerHTML = 'הבא: כנסת מלאה — <span dir="ltr">120,000</span>';
+    if (pct) pct.textContent = Math.min(100, Math.round(count / 120000 * 100)) + '%';
+    if (bar) bar.style.width = Math.min(100, Math.round(count / 120000 * 100)) + '%';
+  }
+}
+
+// Demo: tap counter to cycle through phases
+const _hemiDemoValues = [47, 847, 12400, 120000];
+let _hemiDemoIdx = 0;
+function cycleHemiDemo() {
+  _hemiDemoIdx = (_hemiDemoIdx + 1) % _hemiDemoValues.length;
+  updateHemiDisplay(_hemiDemoValues[_hemiDemoIdx]);
+}
+
+// Initial render
+updateHemiDisplay(47);
+
+/* ══════════════════════════════════════════════════════
+   GENERIC SWIPE BIND FACTORY
+══════════════════════════════════════════════════════ */
+function bindSwipeEngine(inner, indFn, doneFn) {
+  if (!inner || inner.dataset.bound === '1') return;
+  inner.dataset.bound = '1';
+  inner.style.transform = ''; inner.style.opacity = '1'; inner.style.transition = '';
+  let dragging = false, startX = 0, startY = 0, curX = 0, curY = 0, gestureIntent = null;
+
+  function onDown(e) {
+    dragging = true; inner.classList.add('dragging');
+    startX = e.touches ? e.touches[0].clientX : e.clientX;
+    startY = e.touches ? e.touches[0].clientY : e.clientY;
+    curX = 0; curY = 0; gestureIntent = null;
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onUp);
+  }
+  function onMove(e) {
+    if (!dragging) return;
+    const rawX = (e.touches ? e.touches[0].clientX : e.clientX) - startX;
+    const rawY = (e.touches ? e.touches[0].clientY : e.clientY) - startY;
+    if (gestureIntent === null && Math.sqrt(rawX * rawX + rawY * rawY) > 12) {
+      gestureIntent = (rawY > 0 && Math.abs(rawY) > Math.abs(rawX) * 1.5) ? 'scroll' : 'swipe';
+    }
+    if (gestureIntent === 'scroll') return;
+    e.preventDefault && e.preventDefault();
+    curX = rawX; curY = rawY;
+    if (Math.abs(curX) < 8 && gestureIntent !== 'swipe') return;
+    inner.style.transform = `translateX(${curX}px) translateY(${curY}px) rotate(${curX * 0.06}deg)`;
+    inner.style.transition = 'none';
+    const thresh = 40;
+    const inds = indFn();
+    const xR = Math.min(Math.max(curX / thresh, 0), 1);
+    const xL = Math.min(Math.max(-curX / thresh, 0), 1);
+    const yU = Math.min(Math.max(-curY / thresh, 0), 1);
+    if (inds.r) inds.r.style.opacity = xR;
+    if (inds.l) inds.l.style.opacity = xL;
+    if (inds.u) inds.u.style.opacity = yU;
+    if (curX > 0) inner.style.borderColor = `rgba(39,179,142,${xR * .7})`;
+    else if (curX < 0) inner.style.borderColor = `rgba(199,82,82,${xL * .7})`;
+    else if (curY < -thresh * .5) inner.style.borderColor = `rgba(228,174,88,${yU * .7})`;
+    else inner.style.borderColor = '';
+  }
+  function onUp() {
+    if (!dragging) return;
+    dragging = false; inner.classList.remove('dragging');
+    document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp);
+    document.removeEventListener('touchmove', onMove); document.removeEventListener('touchend', onUp);
+    if (gestureIntent === 'swipe') {
+      const thresh = 70;
+      if (curX > thresh) doneFn('r');
+      else if (curX < -thresh) doneFn('l');
+      else if (curY < -thresh) doneFn('u');
+      else {
+        inner.style.transition = 'transform .45s cubic-bezier(.175,.885,.32,1.375), opacity .3s, border-color .3s';
+        inner.style.transform = ''; inner.style.borderColor = '';
+        const inds = indFn();
+        [inds.r, inds.l, inds.u].forEach(el => { if (el) el.style.opacity = 0; });
+      }
+    } else {
+      inner.style.transition = 'transform .3s ease, border-color .2s';
+      inner.style.transform = ''; inner.style.borderColor = '';
+      const inds = indFn();
+      [inds.r, inds.l, inds.u].forEach(el => { if (el) el.style.opacity = 0; });
+    }
+    curX = 0; curY = 0; gestureIntent = null;
+  }
+  inner.addEventListener('mousedown', onDown);
+  inner.addEventListener('touchstart', onDown, { passive: true });
+}
+
+/* ══════════════════════════════════════════════════════
+   CONSENSUS SWIPE ENGINE (cs prefix, sl1) — 6 cards
+══════════════════════════════════════════════════════ */
+const CS_IDS = ['cs0', 'cs1', 'cs2', 'cs3', 'cs4', 'cs5', 'csr'];
+const CS_SWIPEABLE = ['cs0', 'cs1', 'cs2', 'cs3', 'cs4', 'cs5'];
+let csCur = 0;
+
+function csGetInner(n) { return document.getElementById(CS_IDS[n])?.querySelector('.tcard-inner'); }
+function csGetInd(n) {
+  return {
+    r: document.getElementById('csi' + n + 'r'),
+    l: document.getElementById('csi' + n + 'l'),
+    u: document.getElementById('csi' + n + 'u')
+  };
+}
+
+function csActivate(n) {
+  CS_IDS.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('active', i === n);
+  });
+  for (let i = 0; i < 7; i++) {
+    const d = document.getElementById('csd' + i);
+    if (d) { d.classList.toggle('on', i === n); if (i < n) d.style.background = 'var(--te)'; }
+  }
+  const act = document.getElementById('cs-actions');
+  if (act) act.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
+  const hints = document.getElementById('cs-hints');
+  if (hints) hints.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
+  const dots = document.getElementById('cs-dots');
+  if (dots) dots.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
+}
+
+function csSwipeDone(n, dir) {
+  const inner = csGetInner(n);
+  if (!inner) return;
+  inner.style.transition = 'transform .3s ease, opacity .25s';
+  const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
+  const y = dir === 'u' ? -300 : 0;
+  const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
+  inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
+  inner.style.opacity = '0';
+  setTimeout(() => {
+    csCur = n + 1;
+    csActivate(csCur);
+    if (csCur < CS_SWIPEABLE.length) csBindSwipe(csCur);
+  }, 320);
+}
+
+function csBindSwipe(n) {
+  const inner = csGetInner(n);
+  if (!inner) return;
+  bindSwipeEngine(inner, () => csGetInd(n), (dir) => csSwipeDone(n, dir));
+}
+
+function csSwipeAction(dir) { if (csCur < CS_SWIPEABLE.length) csSwipeDone(csCur, dir); }
+
+// Tutorial
+let csTutorialShown = false;
+function showCsTutorial() {
+  if (csTutorialShown) return;
+  csTutorialShown = true;
+  const inner = csGetInner(0);
+  if (!inner) return;
+  const inds = csGetInd(0);
+  const ease = 'transform 600ms cubic-bezier(0.34,1.56,0.64,1), opacity 400ms ease, border-color 400ms ease';
+  const back = 'transform 500ms cubic-bezier(0.175,0.885,0.32,1.375), opacity 300ms ease, border-color 300ms ease';
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(80px) rotate(8deg)'; inner.style.borderColor = 'rgba(39,179,142,0.6)'; if (inds.r) inds.r.style.opacity = '1'; }, 600);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (inds.r) inds.r.style.opacity = '0'; }, 1500);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-80px) rotate(-8deg)'; inner.style.borderColor = 'rgba(199,82,82,0.6)'; if (inds.l) inds.l.style.opacity = '1'; }, 2200);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (inds.l) inds.l.style.opacity = '0'; }, 3100);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-60px) scale(1.03)'; inner.style.borderColor = 'rgba(228,174,88,0.6)'; if (inds.u) inds.u.style.opacity = '1'; }, 3800);
+  setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (inds.u) inds.u.style.opacity = '0'; inner.style.transition = ''; }, 4700);
+}
+
+/* ══════════════════════════════════════════════════════
+   DAILY SWIPE ENGINE (dc prefix, sl3)
+══════════════════════════════════════════════════════ */
+const DC_TOTAL = 3;
+let dcCur = 0;
+
+function dcGetInner(n) { return document.getElementById('dc' + n)?.querySelector('.tcard-inner'); }
+function dcGetInd(n) {
+  return {
+    r: document.getElementById('dci' + n + 'r'),
+    l: document.getElementById('dci' + n + 'l'),
+    u: document.getElementById('dci' + n + 'u')
+  };
+}
+
+function dcActivate(n) {
+  for (let i = 0; i < DC_TOTAL; i++) {
+    const c = document.getElementById('dc' + i);
+    if (c) c.classList.toggle('active', i === n);
+  }
+  for (let i = 0; i < DC_TOTAL; i++) {
+    const d = document.getElementById('dcd' + i);
+    if (d) { d.classList.toggle('on', i === n); if (i < n) d.style.background = 'var(--te)'; }
+  }
+}
+
+function dcSwipeDone(n, dir) {
+  const inner = dcGetInner(n);
+  if (!inner) return;
+  inner.style.transition = 'transform .3s ease, opacity .25s';
+  const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
+  const y = dir === 'u' ? -300 : 0;
+  const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
+  inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
+  inner.style.opacity = '0';
+  setTimeout(() => {
+    showConstructionFB(n);
+    dcCur = n + 1;
+    if (dcCur < DC_TOTAL) {
+      dcActivate(dcCur);
+      dcBindSwipe(dcCur);
+    } else {
+      const overlay = document.getElementById('daily-overlay');
+      if (overlay) {
+        overlay.style.transition = 'opacity .4s ease';
+        overlay.style.opacity = '0';
+        setTimeout(() => { overlay.style.display = 'none'; }, 420);
+      }
+      const scr = document.getElementById('home-scr');
+      if (scr) scr.style.overflowY = 'auto';
+      const below = document.getElementById('home-below-fold');
+      if (below) { below.classList.remove('home-locked'); below.classList.add('home-unlocked'); }
+    }
+  }, 320);
+}
+
+function dcBindSwipe(n) {
+  const inner = dcGetInner(n);
+  if (!inner) return;
+  bindSwipeEngine(inner, () => dcGetInd(n), (dir) => dcSwipeDone(n, dir));
+}
+
+function dcSwipeAction(dir) { if (dcCur < DC_TOTAL) dcSwipeDone(dcCur, dir); }
+
+function showConstructionFB(n) {
+  const fb = document.getElementById('construction-fb');
+  if (!fb) return;
+  fb.style.display = 'flex';
+  fb.querySelectorAll('.cf-line').forEach(l => {
+    l.style.animation = 'none';
+    l.offsetHeight;
+    l.style.animation = '';
+  });
+}
+
+/* ══════════════════════════════════════════════════════
+   DELIBERATION — statement vote toggle (sl4)
+══════════════════════════════════════════════════════ */
+function voteStmt(btn) {
+  const row = btn.parentElement;
+  const wasVoted = btn.classList.contains('voted');
+  row.querySelectorAll('.sa-btn').forEach(b => { b.classList.remove('voted'); b.style.opacity = ''; });
+  if (!wasVoted) { btn.classList.add('voted'); btn.style.opacity = '1'; }
+}
+
+/* ══════════════════════════════════════════════════════
+   SHARE FUNCTIONS
+══════════════════════════════════════════════════════ */
+function shareConsensus() {
+  const text = '\u05D2\u05D9\u05DC\u05D9\u05E0\u05D5 \u05D4\u05E1\u05DB\u05DE\u05D4 \u05E8\u05D7\u05D1\u05D4 \u05E9\u05D7\u05D5\u05E6\u05D4 \u05D0\u05EA \u05DB\u05DC \u05D4\u05E7\u05D1\u05D5\u05E6\u05D5\u05EA. \u05D1\u05D6\u05DE\u05DF \u05E9\u05D4\u05DB\u05E0\u05E1\u05EA \u05E8\u05D1\u05D4, \u05D0\u05E0\u05D7\u05E0\u05D5 \u05DE\u05E1\u05DB\u05D9\u05DE\u05D9\u05DD.\nhttps://shayzluf.github.io/israel2-demo/';
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+}
+function shareMKContradiction() {
+  const text = '\u05D7"\u05DB \u05D4\u05D1\u05D8\u05D9\u05D7 \u05DC\u05D4\u05D5\u05E8\u05D9\u05D3 \u05D9\u05D5\u05E7\u05E8. \u05D4\u05E6\u05D1\u05D9\u05E2 \u05E0\u05D2\u05D3 \u05D4\u05E7\u05E4\u05D0\u05EA \u05DE\u05D7\u05D9\u05E8\u05D9\u05DD.\nhttps://shayzluf.github.io/israel2-demo/';
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+}
+function shareCitizen() {
+  const text = '\u05D0\u05E0\u05D9 \u05D0\u05D6\u05E8\u05D7/\u05D9\u05EA #4,220 \u05D1\u05DB\u05E0\u05E1\u05EA \u05D4\u05E2\u05DE\u05DE\u05D9\u05EA. \u05D3\u05D5\u05E8 \u05E8\u05D0\u05E9\u05D5\u05DF \u05E9\u05E0\u05E1\u05E4\u05E8.\nhttps://shayzluf.github.io/israel2-demo/';
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+}
+
+/* ══════════════════════════════════════════════════════
+   ZK SCAN
+══════════════════════════════════════════════════════ */
+function startScan() {
+  const ps3 = document.getElementById('ps3'), ps4 = document.getElementById('ps4');
+  const ps3s = document.getElementById('ps3s'), ps4s = document.getElementById('ps4s');
+  const cb = document.getElementById('cast-btn');
+  if (ps3) ps3.className = 'proof-step';
+  if (ps4) ps4.className = 'proof-step';
+  if (ps3s) { ps3s.textContent = '\u2014'; ps3s.style.color = 'var(--t3)'; }
+  if (ps4s) { ps4s.textContent = '\u2014'; ps4s.style.color = 'var(--t3)'; }
+  if (cb) cb.style.display = 'none';
+  setTimeout(() => { if (ps3) ps3.className = 'proof-step active'; if (ps3s) { ps3s.textContent = '...'; ps3s.style.color = 'var(--te)'; } }, 400);
+  setTimeout(() => { if (ps3) ps3.className = 'proof-step done'; if (ps3s) ps3s.textContent = '\u2713'; if (ps4) ps4.className = 'proof-step active'; if (ps4s) { ps4s.textContent = '...'; ps4s.style.color = 'var(--te)'; } }, 2000);
+  setTimeout(() => { if (ps4) ps4.className = 'proof-step done'; if (ps4s) ps4s.textContent = '\u2713'; if (cb) cb.style.display = 'block'; }, 3600);
+}
+
+/* ══ DYNAMIC CARD LOADING — winners + A/B challengers ══ */
+function createCardEl(card, prefix, index) {
+  const id = prefix + index;
+  const div = document.createElement('div');
+  div.className = 'tcard' + (index === 0 ? ' active' : '');
+  div.id = id;
+  const tc = card.tag_color || 'bl';
+  div.innerHTML = `<div class="tcard-inner">
+    <div class="tcard-before"></div>
+    <div class="tind tind-r" id="${prefix}i${index}r">&#8594; בעד</div>
+    <div class="tind tind-l" id="${prefix}i${index}l">נגד &#8592;</div>
+    <div class="tind tind-u" id="${prefix}i${index}u">&#8593; מורכב</div>
+    <div class="tcard-tag" style="background:var(--${tc}0);color:var(--${tc})">${card.tag}</div>
+    <div class="tcard-q">${card.statement || card.question}</div>
+    <div class="tcard-ctx">${card.context}</div>
+    <div class="tcard-meta"><span dir="ltr">${(card.vote_count||0).toLocaleString()}</span> הצביעו</div>
+    <div class="tcard-more" onclick="event.stopPropagation();showInfo('${id}')">למה זה מורכב?</div>
+  </div>`;
+  return div;
+}
+
+async function loadCards() {
+  try {
+    const res = await fetch('data/cards_winners.json');
+    const data = await res.json();
+    if (!data.consensus?.length) return;
+
+    // ── Render consensus cards ──
+    const csArea = document.getElementById('cs-area');
+    const csr = document.getElementById('csr');
+    csArea.querySelectorAll('.tcard:not(#csr)').forEach(el => el.remove());
+    data.consensus.forEach((card, i) => {
+      const el = createCardEl(card, 'cs', i);
+      csArea.insertBefore(el, csr);
+      CARD_INFO['cs' + i] = card.info;
+    });
+    CS_IDS.length = 0;
+    data.consensus.forEach((_, i) => CS_IDS.push('cs' + i));
+    CS_IDS.push('csr');
+    CS_SWIPEABLE.length = 0;
+    data.consensus.forEach((_, i) => CS_SWIPEABLE.push('cs' + i));
+    // Rebuild dots
+    const csDotsWrap = document.getElementById('cs-dots');
+    if (csDotsWrap) {
+      csDotsWrap.innerHTML = '';
+      for (let i = 0; i <= data.consensus.length; i++) {
+        const d = document.createElement('div');
+        d.className = 'tdot' + (i === 0 ? ' on' : '');
+        d.id = 'csd' + i;
+        csDotsWrap.appendChild(d);
+      }
+    }
+
+    // ── Render daily cards ──
+    if (data.daily?.length) {
+      const dcArea = document.getElementById('dc-area');
+      dcArea.querySelectorAll('.tcard').forEach(el => el.remove());
+      data.daily.forEach((card, i) => {
+        const el = createCardEl(card, 'dc', i);
+        el.querySelector('.tcard-q').style.fontSize = '12px';
+        el.querySelector('.tcard-inner').style.padding = '16px 14px';
+        dcArea.appendChild(el);
+        CARD_INFO['dc' + i] = card.info;
+      });
+    }
+    console.log('[cards] Loaded', data.consensus.length, 'consensus +', data.daily?.length || 0, 'daily from JSON');
+  } catch(e) {
+    console.log('[cards] Using fallback hardcoded cards:', e.message);
+  }
+}
+
+async function injectChallenger() {
+  try {
+    const res = await fetch('data/cards_challengers.json');
+    const data = await res.json();
+    if (!data.challengers?.length) return;
+    if (Math.random() > 0.2) return; // 20% chance
+    const ch = data.challengers[Math.floor(Math.random() * data.challengers.length)];
+    const el = document.getElementById('dc2');
+    if (!el) return;
+    const tag = el.querySelector('.tcard-tag');
+    const q = el.querySelector('.tcard-q');
+    const ctx = el.querySelector('.tcard-ctx');
+    if (tag) { tag.textContent = ch.tag; tag.style.color = 'var(--' + (ch.tag_color||'bl') + ')'; tag.style.background = 'var(--' + (ch.tag_color||'bl') + '0)'; }
+    if (q) q.innerHTML = ch.question;
+    if (ctx) ctx.innerHTML = ch.context || '';
+    if (ch.info) CARD_INFO.dc2 = ch.info;
+    console.log('[A/B] Challenger injected:', ch.id);
+  } catch(e) { /* silent */ }
+}
+
+loadCards().then(() => injectChallenger());
+
+/* ══ DYNAMIC DECLARATION LOADING ══ */
+async function loadDeclarations() {
+  try {
+    const res = await fetch('data/declarations_winners.json');
+    const data = await res.json();
+    if (!data.declarations?.length) return;
+    const scr = document.getElementById('delib-scr');
+    if (!scr) return;
+    // Remove hardcoded declaration cards but keep pipeline explanation (first child),
+    // submit box (second child), AI rep header (third+fourth child)
+    const children = Array.from(scr.children);
+    children.forEach((el, i) => { if (i >= 3) el.remove(); }); // keep first 3: pipeline + submit + hot topics
+
+    const flameIcon = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>';
+
+    data.declarations.forEach(decl => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      if (decl.badge === 'bridge') card.style.borderColor = 'var(--gn)';
+
+      let badgeHtml = '';
+      if (decl.badge === 'bridge') badgeHtml = '<span class="bridge-badge">' + decl.badge_label + '</span>';
+      else if (decl.badge === 'trending') badgeHtml = '<span style="font-size:8px;color:var(--co);font-weight:800;display:flex;align-items:center;gap:3px">' + flameIcon + ' ' + decl.badge_label + '</span>';
+      else if (decl.badge === 'contested') badgeHtml = '<span style="font-size:8px;color:var(--pu);font-weight:800">' + decl.badge_label + '</span>';
+      else if (decl.badge === 'new') badgeHtml = '<span style="font-size:8px;color:var(--bl);font-weight:800">' + decl.badge_label + '</span>';
+
+      card.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">'
+        + badgeHtml
+        + '<span style="font-size:8px;color:var(--t3)">' + decl.time_label + '</span></div>'
+        + '<div style="font-size:11px;font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">' + decl.text + '</div>'
+        + '<div style="font-size:9px;color:var(--t3);margin-bottom:8px"><span dir="ltr">' + decl.vote_count.toLocaleString() + '</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">' + decl.agree_pct + '%</span> מסכימים</div>'
+        + '<div style="display:flex;gap:4px">'
+        + '<div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>'
+        + '<div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>'
+        + '<div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div></div>'
+        + (decl.pipeline_status ? '<div style="font-size:8px;color:var(--te);margin-top:5px;text-align:center">' + decl.pipeline_status + '</div>' : '');
+      scr.appendChild(card);
+    });
+    console.log('[declarations] Loaded', data.declarations.length, 'from JSON');
+  } catch(e) {
+    console.log('[declarations] Using fallback hardcoded cards');
+  }
+}
+loadDeclarations();
+
+/* ══ CITY PICKER ══ */
+let _cities = [];
+fetch('data/city_picker_arrays.js').then(r => r.text()).then(t => {
+  const m = t.match(/\[[\s\S]*?\]/);  // non-greedy: first array only
+  if (m) _cities = JSON.parse(m[0]);
+}).catch(() => {});
+
+function filterCities(q) {
+  const res = document.getElementById('city-results');
+  if (!res) return;
+  if (!q || q.length < 2) { res.style.display = 'none'; return; }
+  const matches = _cities.filter(c => c.includes(q)).slice(0, 8);
+  if (!matches.length) { res.style.display = 'none'; return; }
+  res.style.display = 'block';
+  res.innerHTML = matches.map(c =>
+    `<div style="padding:6px 10px;font-size:10px;color:var(--t1);cursor:pointer;border-bottom:1px solid var(--b0)" onclick="selectCity('${c}')">${c}</div>`
+  ).join('');
+}
+function selectCity(city) {
+  const input = document.getElementById('city-input');
+  if (input) { input.value = city; input.style.borderColor = 'var(--te)'; }
+  document.getElementById('city-results').style.display = 'none';
+  // Store locally only
+  try { localStorage.setItem('nispar_city', city); } catch(e) {}
+}
+
+/* ══ MOBILE VIEWPORT HACK ══ */
+(function() {
+  if (window.innerWidth < 700) {
+    document.getElementById('vp').setAttribute('content', 'width=286');
+  }
+})();
+
+/* ══ A/B TEST: TREND-AWARE sl0 ══ */
+var _abVariantId = 'control_v6';
+
+function abTrackCta() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'sl0_cta_click', { variant_id: _abVariantId });
+  }
+}
+
+(function abInit() {
+  // Stable visitor ID
+  var vid = localStorage.getItem('ns_vid');
+  if (!vid) { vid = crypto.randomUUID(); localStorage.setItem('ns_vid', vid); }
+
+  // Hash visitor ID to bucket 0-99
+  var hash = 0;
+  for (var i = 0; i < vid.length; i++) { hash = ((hash << 5) - hash + vid.charCodeAt(i)) | 0; }
+  var bucket = Math.abs(hash) % 100;
+
+  fetch('data/sl0_variants.json').then(function(r) { return r.json(); }).then(function(d) {
+    var variant = d.champion;
+    // Challengers get buckets 50-99, split equally
+    if (d.challengers && d.challengers.length > 0 && bucket >= 50) {
+      var ci = Math.floor((bucket - 50) / (50 / d.challengers.length));
+      if (ci >= d.challengers.length) ci = d.challengers.length - 1;
+      variant = d.challengers[ci];
+    }
+    _abVariantId = variant.id;
+
+    // Inject variant copy into sl0
+    var el;
+    el = document.querySelector('[data-ab="stat"]');
+    if (el && variant.stat) el.textContent = variant.stat;
+    el = document.querySelector('[data-ab="stat-desc"]');
+    if (el && variant.stat_desc) el.textContent = variant.stat_desc;
+    el = document.querySelector('[data-ab="stat-source"]');
+    if (el && variant.stat_source) el.textContent = variant.stat_source;
+    el = document.querySelector('[data-ab="headline"]');
+    if (el && variant.headline) el.textContent = variant.headline;
+    el = document.querySelector('[data-ab="promise"]');
+    if (el && variant.promise) el.textContent = variant.promise;
+    el = document.querySelector('[data-ab="mission"]');
+    if (el && variant.mission) el.textContent = variant.mission;
+    el = document.querySelector('[data-ab="cta"]');
+    if (el && variant.cta) el.textContent = variant.cta;
+
+    // Track impression
+    if (typeof gtag === 'function') {
+      gtag('event', 'sl0_impression', { variant_id: _abVariantId });
+    }
+  }).catch(function() { /* JSON fetch failed — keep hardcoded HTML */ });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+{
+  "generated": "2026-04-09",
+  "model": "gemini-3.1-pro-preview",
+  "screens": [
+    {
+      "id": "t0",
+      "purpose": "Why waste my time?",
+      "line1": "כן, עוד אפליקציה שתציל את המדינה.",
+      "line2": "גם אנחנו חשבנו ככה בהתחלה. ואז ראינו את הנתונים.",
+      "line3": null,
+      "source": null,
+      "swipe_hint": "להחליק כדי להמשיך"
+    },
+    {
+      "id": "t1",
+      "purpose": "Who are you?",
+      "line1": "74%",
+      "line2": "מהאזרחים מרגישים שאף מפלגה לא מייצגת אותם.",
+      "line3": "זה אומר ש-3 מתוך 4 אנשים סביבך מרגישים כמוך. גם אלה שבחיים לא היית מנחש/ת.",
+      "source": "המכון הישראלי לדמוקרטיה, 2025",
+      "swipe_hint": null
+    },
+    {
+      "id": "t2",
+      "purpose": "Another survey app?",
+      "line1": "זה לא סקר.",
+      "line2": "סקרים הולכים למגירה. כאן אנחנו בונים משהו אחר לגמרי.",
+      "line3": null,
+      "source": null,
+      "swipe_hint": null
+    },
+    {
+      "id": "t3",
+      "purpose": "What does this DO?",
+      "line1": "איך זה עובד",
+      "line2": "מחליקים על סוגיות יומיומיות, מתקצוב פסיכולוג קליני ועד תשתיות בחברה הערבית. אזרחים כותבים עמדות, וההסכמה צפה למעלה.",
+      "line3": "בלי תגובות. בלי ויכוחים. רק עמדות.",
+      "source": null,
+      "swipe_hint": null
+    },
+    {
+      "id": "t4",
+      "purpose": "Can this change anything?",
+      "line1": "הכנסת העממית",
+      "line2": "כשמספיק אזרחים מאומתים עומדים מאחורי עמדה, אי אפשר להתעלם מזה.",
+      "line3": "86% מסכימים שכל אזרח צריך ממ״ד תקני. 0 חברי כנסת הצביעו בעד.",
+      "source": "מבקר המדינה, מרץ 2026",
+      "swipe_hint": null
+    },
+    {
+      "id": "t5",
+      "purpose": "Why give you my data?",
+      "line1": "המידע שלך נשאר אצלך.",
+      "line2": "נציג ה-AI לומד את הערכים שלך ומנבא את העמדות. הוא לעולם לא מחליט בשבילך — רק מנבא ומחכה לאישור.",
+      "line3": "גם אנחנו לא יכולים לראות מי את/ה. בכוונה.",
+      "source": null,
+      "swipe_hint": null
+    },
+    {
+      "id": "t6",
+      "purpose": "Why my passport?!",
+      "line1": "הדרכון מוכיח שאת/ה אזרח/ית.",
+      "line2": "בלי זה, כל אחד יכול לזייף את המספרים. ברגע שהאימות מסתיים, הדרכון נמחק לתמיד.",
+      "line3": "הגיע הזמן להיספר.",
+      "source": null,
+      "swipe_hint": null
+    },
+    {
+      "id": "t7",
+      "purpose": "transition to app",
+      "line1": "עכשיו התור שלך.",
+      "line2": null,
+      "line3": null,
+      "source": null,
+      "swipe_hint": null
+    },
+    {
+      "id": "skip_a",
+      "purpose": "Compressed description + hemicycle",
+      "line1": "הכנסת העממית חושפת את ההסכמות הרחבות שלנו, בלי הרעש.",
+      "line2": "כל נקודה כאן היא אזרח אמיתי.",
+      "line3": null,
+      "source": null,
+      "swipe_hint": null
+    },
+    {
+      "id": "skip_b",
+      "purpose": "Compressed privacy + passport",
+      "line1": "המידע שלך נשאר אצלך ואנחנו לא יכולים לראות מי את/ה.",
+      "line2": "הדרכון נועד לאימות חד-פעמי נגד זיופים, ונמחק מיד אחר כך.",
+      "line3": null,
+      "source": null,
+      "swipe_hint": null
+    }
+  ]
+}
