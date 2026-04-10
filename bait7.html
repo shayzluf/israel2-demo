@@ -1723,15 +1723,17 @@ function animateTutHemi() {
   let onboardingDone = false;
   try { onboardingDone = !!localStorage.getItem('nspr_onboarding_done'); } catch(e) {}
   if (onboardingDone) {
-    // Returning user: hide tutorial entirely, go straight to Declarations
+    // Returning user: hide tutorial entirely, go to Home for daily 3 swipes
     tutActive = false;
     tutSlides.forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
     const dots = document.getElementById('tut-dots');
     if (dots) dots.style.display = 'none';
     const skip = document.getElementById('tut-skip');
     if (skip) skip.style.display = 'none';
-    // Wait a tick for the go() function and sls to be ready
-    setTimeout(() => { if (typeof go === 'function') go(4); }, 0);
+    // Wait a tick for the go() function and sls to be ready — go to sl3 (Home)
+    // Since nspr_tour_done is set, sl3 shows daily swipes (not the tour)
+    // After 3 daily swipes → dcSwipeDone routes to sl4 (Declarations)
+    setTimeout(() => { if (typeof go === 'function') go(3); }, 0);
   } else if (tutActive) {
     tutBindSwipe(0);
     if (typeof gtag === 'function') gtag('event', 'tutorial_start');
