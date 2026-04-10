@@ -150,6 +150,33 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .skip-card-desc{font-size:10px;color:var(--t2);line-height:1.5;}
 .skip-dismiss{font-size:10px;color:var(--t3);cursor:pointer;margin-top:8px;padding:6px;}
 
+/* ─── IN-APP GUIDED TOUR ─── */
+.tour-bubble{background:var(--sf);border:1px solid var(--gn);border-radius:12px;
+  padding:14px 16px;position:relative;display:none;animation:tourFadeIn .3s ease-out;}
+.tour-bubble.show{display:block;}
+.tour-arrow-up::before{content:'';position:absolute;top:-7px;right:24px;
+  width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid var(--gn);}
+.tour-arrow-down::after{content:'';position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);
+  width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:7px solid var(--gn);}
+.tour-kicker{font-size:8px;color:var(--gl);letter-spacing:2px;text-transform:uppercase;font-weight:700;}
+.tour-headline{font-size:12px;font-weight:800;color:var(--t1);margin-top:4px;line-height:1.4;}
+.tour-body{font-size:10px;color:var(--t2);margin-top:6px;line-height:1.6;}
+.tour-callout{font-size:9px;padding:8px 10px;border-radius:8px;margin-top:8px;line-height:1.5;}
+.tour-callout-gold{background:var(--gd0);color:var(--gl);border:1px solid var(--gn);}
+.tour-callout-teal{background:var(--te0);color:var(--te);border:1px solid rgba(39,179,142,0.2);}
+.tour-dismiss{text-align:center;margin-top:10px;font-size:10px;font-weight:800;color:var(--gl);
+  cursor:pointer;padding:8px 14px;border:1px solid var(--gn);border-radius:8px;background:var(--gd0);
+  display:inline-block;}
+.tour-dismiss-wrap{text-align:center;}
+.tour-close{position:absolute;top:8px;left:8px;font-size:14px;color:var(--t3);cursor:pointer;line-height:1;}
+@keyframes tourFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.tour-done-overlay{position:absolute;inset:0;z-index:26;background:rgba(6,7,10,0.95);
+  display:none;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center;}
+.tour-done-overlay.show{display:flex;}
+.tour-done-check{width:52px;height:52px;border:2px solid var(--gl);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;animation:tourPop .5s ease-out;}
+@keyframes tourPop{0%{transform:scale(0.5);opacity:0}60%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+
 /* ─── SWIPE CARDS ─── */
 .tcard{display:none;flex-direction:column;align-items:center;justify-content:center;width:100%;}
 .tcard.active{display:flex;}
@@ -815,6 +842,25 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="cf-line">הכנסת העממית: <span dir="ltr">71</span> בעד, <span dir="ltr">49</span> נגד. הכנסת האמיתית: <span dir="ltr">38-82</span>.</div>
             <div class="cf-line" style="color:var(--gl);cursor:pointer">עוד <span dir="ltr">782</span> קולות לשליחת מכתב לח"כ &#8592;</div>
           </div>
+          <!-- Tour: Welcome overlay (step 0) -->
+          <div class="tour-done-overlay" id="tour-done">
+            <div class="tour-done-check">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div style="font-size:18px;font-weight:900;color:var(--t1);margin-top:14px">מעולה, אנחנו בפנים.</div>
+            <div style="font-size:11px;color:var(--t2);margin-top:8px;max-width:220px;line-height:1.6">שש ההצבעות הראשונות שלך כבר נספרות. עכשיו מתחיל הדבר האמיתי — בניית כוח אזרחי משותף.</div>
+            <div style="font-size:10px;color:var(--t3);margin-top:6px">הנה הצצה קצרה לאיך שזה עובד.</div>
+            <div class="btn btn-gd" onclick="advanceTour()" style="margin-top:18px;font-size:12px;padding:11px 18px">יאללה, להראות לי מה קורה פה</div>
+          </div>
+          <!-- Tour: Home bubble (step 2) -->
+          <div class="tour-bubble tour-arrow-up" id="tour-home" style="margin:6px 0">
+            <div class="tour-close" onclick="skipTour()">&times;</div>
+            <div class="tour-kicker">המסך הראשי</div>
+            <div class="tour-headline">מתחילים בקטן, וזה בדיוק העניין.</div>
+            <div class="tour-body">המליאה מתמלאת ככל שעוד אזרחים מצטרפים. למטה יופיעו עדכונים על הסכמות חדשות ופעילות באזור שלך. מחר יחכו לך כאן <span dir="ltr">3</span> סוויפים חדשים — <span dir="ltr">30</span> שניות וזהו.</div>
+            <div class="tour-callout tour-callout-gold">רק לדמיין חצי מיליון אזרחים מאומתים עומדים מאחורי עמדה אחת. זו לא עצומה, זה מנדט.</div>
+            <div class="tour-dismiss-wrap"><div class="tour-dismiss" onclick="advanceTour()">הבנתי</div></div>
+          </div>
           <!-- Below-fold content -->
           <div id="home-below-fold" class="home-locked" style="display:flex;flex-direction:column;gap:6px">
             <!-- Impact counter -->
@@ -900,6 +946,15 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div class="s-chip" style="background:var(--bl0);color:var(--bl)">הצהרות</div>
         </div>
         <div class="scr" id="delib-scr">
+          <!-- Tour: Declarations bubble (step 1) -->
+          <div class="tour-bubble tour-arrow-down" id="tour-decl" style="margin-bottom:8px">
+            <div class="tour-close" onclick="skipTour()">&times;</div>
+            <div class="tour-kicker">הפיד שלך</div>
+            <div class="tour-headline">הפיד הרגיל בנוי על ריבים. פה מחפשים הסכמות.</div>
+            <div class="tour-body">אזרחים כותבים כאן הצהרות קצרות. כולם מצביעים. ההצהרות מסודרות לפי הסכמה חוצת-קבוצות — מה שעולה למעלה הוא מה שכולנו מסכימים עליו, לא רק צד אחד. בלי תגובות, בלי טוקבקים.</div>
+            <div class="tour-callout tour-callout-teal">הצהרות שמגיעות להסכמה רחבה הופכות לסוויפ היומי של מחר.</div>
+            <div class="tour-dismiss-wrap"><div class="tour-dismiss" onclick="advanceTour()">הבנתי</div></div>
+          </div>
           <!-- Pipeline explanation -->
           <div style="background:var(--gd0);border:1px solid var(--gn);border-radius:9px;padding:9px 11px">
             <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:3px">איך זה עובד</div>
@@ -931,7 +986,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div style="display:flex;gap:4px">
               <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
               <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">דלג</div>
             </div>
             <div style="font-size:8px;color:var(--te);margin-top:5px;text-align:center">הצהרה זו הפכה לסוויפ יומי אתמול</div>
           </div>
@@ -946,7 +1001,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div style="display:flex;gap:4px">
               <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
               <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">דלג</div>
             </div>
           </div>
           <!-- Declaration 3 — contested -->
@@ -960,7 +1015,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div style="display:flex;gap:4px">
               <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
               <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">דלג</div>
             </div>
           </div>
           <!-- Declaration 4 — bridge -->
@@ -974,7 +1029,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div style="display:flex;gap:4px">
               <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
               <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">דלג</div>
             </div>
             <div style="font-size:8px;color:var(--te);margin-top:5px;text-align:center">עוד 2,300 הצבעות והצהרה זו הופכת לסוויפ יומי</div>
           </div>
@@ -989,7 +1044,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div style="display:flex;gap:4px">
               <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>
               <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div>
+              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">דלג</div>
             </div>
           </div>
         </div>
@@ -1016,6 +1071,15 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
 
+          <!-- Tour: AI Rep bubble (step 3) -->
+          <div class="tour-bubble tour-arrow-up" id="tour-rep" style="margin-bottom:6px">
+            <div class="tour-close" onclick="skipTour()">&times;</div>
+            <div class="tour-kicker">הנציג החכם</div>
+            <div class="tour-headline">ללמוד מ-<span dir="ltr">3</span> סוויפים ביום. זה כל מה שצריך.</div>
+            <div class="tour-body">יש אלפי נושאים שאין זמן לעקוב אחריהם. הנציג לומד את הערכים שלך ומנבא את העמדה שלך. הוא מציף את מה שבאמת חשוב לך כדי לאפשר לך להצביע ישירות. מאשרים או מתקנים — והוא נהיה חכם יותר.</div>
+            <div class="tour-callout tour-callout-teal">תהליך הלמידה קורה על המכשיר שלך בלבד. אף פיסת מידע לא יוצאת החוצה.</div>
+            <div class="tour-dismiss-wrap"><div class="tour-dismiss" onclick="advanceTour()">הבנתי, יאללה</div></div>
+          </div>
           <!-- HERO: While away (moved to top, most important) -->
           <div class="card" style="border-color:var(--gn);background:linear-gradient(135deg,rgba(200,149,58,0.06),rgba(39,179,142,0.04))">
             <div style="font-size:10px;font-weight:800;color:var(--gl);margin-bottom:6px">בזמן שלא הייתם כאן, הנציג:</div>
@@ -1659,6 +1723,72 @@ if (tutActive) {
 }
 
 /* ══════════════════════════════════════════════════════
+   IN-APP GUIDED TOUR — bubble state machine
+══════════════════════════════════════════════════════ */
+let appTourActive = false;
+let appTourStep = -1;
+let appTourNav = false;
+
+function shouldShowTour() {
+  try { return !localStorage.getItem('nspr_tour_done'); } catch(e) { return true; }
+}
+
+function startAppTour() {
+  appTourActive = true;
+  appTourStep = 0;
+  // Show welcome overlay
+  const ov = document.getElementById('tour-done');
+  if (ov) ov.classList.add('show');
+  // Hide daily swipe overlay (first visit = no daily swipes)
+  const daily = document.getElementById('daily-overlay');
+  if (daily) daily.style.display = 'none';
+  // Unlock below-fold
+  const scr = document.getElementById('home-scr');
+  if (scr) scr.style.overflowY = 'auto';
+  const below = document.getElementById('home-below-fold');
+  if (below) { below.classList.remove('home-locked'); below.classList.add('home-unlocked'); }
+  if (typeof gtag === 'function') gtag('event', 'tour_start');
+}
+
+function advanceTour() {
+  appTourStep++;
+  hideTourElements();
+  appTourNav = true;
+  switch (appTourStep) {
+    case 1: go(4); setTimeout(() => { showTourBubble('tour-decl'); appTourNav = false; }, 350); return;
+    case 2: go(3); setTimeout(() => { showTourBubble('tour-home'); appTourNav = false; }, 350); return;
+    case 3: go(5); setTimeout(() => { showTourBubble('tour-rep'); appTourNav = false; }, 350); return;
+    case 4:
+      appTourActive = false;
+      appTourNav = false;
+      try { localStorage.setItem('nspr_tour_done', '1'); } catch(e) {}
+      go(4);
+      if (typeof gtag === 'function') gtag('event', 'tour_complete');
+      break;
+  }
+  if (typeof gtag === 'function') gtag('event', 'tour_step_' + appTourStep);
+}
+
+function showTourBubble(id) {
+  const el = document.getElementById(id);
+  if (el) { el.classList.add('show'); el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+}
+
+function hideTourElements() {
+  ['tour-done','tour-decl','tour-home','tour-rep'].forEach(function(id) {
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('show');
+  });
+}
+
+function skipTour() {
+  appTourActive = false;
+  hideTourElements();
+  try { localStorage.setItem('nspr_tour_done', '1'); } catch(e) {}
+  if (typeof gtag === 'function') gtag('event', 'tour_skip', { step: appTourStep });
+}
+
+/* ══════════════════════════════════════════════════════
    MAIN APP NAVIGATION
 ══════════════════════════════════════════════════════ */
 const N = 9;
@@ -1669,6 +1799,8 @@ function go(n) {
   if (n < 0 || n >= N) return;
   // If tutorial still active, finish it first
   if (tutActive) { finishTutorial(); return; }
+  // Tour interception: block user tab-taps during guided tour
+  if (appTourActive && !appTourNav) return;
   sls[cur].classList.remove('active');
   if (bts[cur]) bts[cur].classList.remove('on');
   sls[n].classList.add('active');
@@ -1676,7 +1808,14 @@ function go(n) {
   cur = n;
   // Init swipe engines on entry
   if (n === 1) { csActivate(csCur); csBindSwipe(csCur); if (!csTutorialShown) showCsTutorial(); }
-  if (n === 3 && dcCur < DC_TOTAL) { dcActivate(dcCur); dcBindSwipe(dcCur); }
+  // First visit to sl3: start tour instead of daily swipes
+  if (n === 3) {
+    if (shouldShowTour() && !appTourActive && !appTourNav) {
+      startAppTour();
+    } else if (!appTourActive && !appTourNav && dcCur < DC_TOTAL) {
+      dcActivate(dcCur); dcBindSwipe(dcCur);
+    }
+  }
   // sl4 is now scrollable deliberation feed, no swipe init needed
   if (n === 7) startScan();
 }
@@ -1990,6 +2129,8 @@ function dcSwipeDone(n, dir) {
       if (scr) scr.style.overflowY = 'auto';
       const below = document.getElementById('home-below-fold');
       if (below) { below.classList.remove('home-locked'); below.classList.add('home-unlocked'); }
+      // After daily swipes → go to Declarations feed as default
+      setTimeout(() => go(4), 500);
     }
   }, 320);
 }
@@ -2183,7 +2324,7 @@ async function loadDeclarations() {
         + '<div style="display:flex;gap:4px">'
         + '<div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">מסכים</div>'
         + '<div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">לא מסכים</div>'
-        + '<div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">חזק</div></div>'
+        + '<div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:9px" onclick="voteStmt(this)">דלג</div></div>'
         + (decl.pipeline_status ? '<div style="font-size:8px;color:var(--te);margin-top:5px;text-align:center">' + decl.pipeline_status + '</div>' : '');
       scr.appendChild(card);
     });
