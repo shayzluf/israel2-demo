@@ -1650,6 +1650,8 @@ function finishTutorial() {
   if (dots) dots.style.display = 'none';
   const skip = document.getElementById('tut-skip');
   if (skip) skip.style.display = 'none';
+  // Persist onboarding completion so refresh skips it
+  try { localStorage.setItem('nspr_onboarding_done', '1'); } catch(e) {}
   // Show main app — go to sl1 (swipe cards) directly
   go(1);
   if (typeof gtag === 'function') gtag('event', 'tutorial_complete');
@@ -1716,11 +1718,50 @@ function animateTutHemi() {
   setTimeout(fillNext, 400);
 }
 
-// Init tutorial on load
-if (tutActive) {
-  tutBindSwipe(0);
-  if (typeof gtag === 'function') gtag('event', 'tutorial_start');
-}
+// Init tutorial on load — but only on first visit
+(function initTutorialOrSkip() {
+  let onboardingDone = false;
+  try { onboardingDone = !!localStorage.getItem('nspr_onboarding_done'); } catch(e) {}
+  if (onboardingDone) {
+    // Returning user: hide tutorial entirely, go straight to Declarations
+    tutActive = false;
+    tutSlides.forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+    const dots = document.getElementById('tut-dots');
+    if (dots) dots.style.display = 'none';
+    const skip = document.getElementById('tut-skip');
+    if (skip) skip.style.display = 'none';
+    // Wait a tick for the go() function and sls to be ready
+    setTimeout(() => { if (typeof go === 'function') go(4); }, 0);
+  } else if (tutActive) {
+    tutBindSwipe(0);
+    if (typeof gtag === 'function') gtag('event', 'tutorial_start');
+  }
+})();
+
+// Hidden reset — triple-tap any logo (.s-logo) within 800ms to clear flags and reload
+(function initLogoReset() {
+  let tapCount = 0;
+  let tapTimer = null;
+  function handleTap() {
+    tapCount++;
+    if (tapCount === 1) {
+      tapTimer = setTimeout(() => { tapCount = 0; }, 800);
+    } else if (tapCount >= 3) {
+      clearTimeout(tapTimer);
+      tapCount = 0;
+      try {
+        localStorage.removeItem('nspr_onboarding_done');
+        localStorage.removeItem('nspr_tour_done');
+        localStorage.removeItem('ns_vid'); // also reset A/B variant assignment
+      } catch(e) {}
+      location.reload();
+    }
+  }
+  document.querySelectorAll('.s-logo').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', handleTap);
+  });
+})();
 
 /* ══════════════════════════════════════════════════════
    IN-APP GUIDED TOUR — bubble state machine
