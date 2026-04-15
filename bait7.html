@@ -2263,6 +2263,22 @@ async function loadCards() {
       });
     }
     console.log('[cards] Loaded', data.consensus.length, 'consensus +', data.daily?.length || 0, 'daily from JSON');
+
+    // ── Re-bind swipe engines on the newly-rendered cards ──
+    // Fixes a race where go(3) runs before loadCards() resolves:
+    // the initial bind lands on the hardcoded dc0, then loadCards replaces
+    // the DOM and the new dc0 has no handlers until the user leaves+returns.
+    // bindSwipeEngine() is idempotent via data-bound, so calling it is safe.
+    try {
+      if (typeof dcActivate === 'function' && typeof dcBindSwipe === 'function' && dcCur < DC_TOTAL) {
+        dcActivate(dcCur);
+        dcBindSwipe(dcCur);
+      }
+      if (typeof csActivate === 'function' && typeof csBindSwipe === 'function' && csCur < CS_SWIPEABLE.length) {
+        csActivate(csCur);
+        csBindSwipe(csCur);
+      }
+    } catch(e) { console.warn('[cards] rebind after load failed:', e); }
   } catch(e) {
     console.log('[cards] Using fallback hardcoded cards:', e.message);
   }
