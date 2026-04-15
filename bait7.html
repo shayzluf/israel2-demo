@@ -267,6 +267,18 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .sa-complex:hover,.sa-complex:active{background:var(--gd0);}
 .sa-yes{color:var(--te);border-color:rgba(39,179,142,.35);}
 .sa-yes:hover,.sa-yes:active{background:var(--te0);}
+/* Voted state — filled background matching the button's color */
+.sa-yes.voted{background:var(--te);color:#001a14;border-color:var(--te);}
+.sa-no.voted{background:var(--co);color:#fff;border-color:var(--co);}
+.sa-complex.voted{background:var(--gd);color:#1a0d00;border-color:var(--gd);}
+/* After voting, unselected buttons are dimmed and unclickable */
+.decl-card.voted .sa-btn:not(.voted){opacity:.35;pointer-events:none;}
+/* Group breakdown hidden until vote — reveals with a slide-down animation */
+.group-breakdown{max-height:0;overflow:hidden;opacity:0;
+  transition:max-height .4s ease,opacity .3s ease .1s,margin .3s ease;margin-bottom:0;}
+.decl-card.voted .group-breakdown{max-height:200px;opacity:1;margin-bottom:8px;}
+.breakdown-reveal-label{font-size:var(--fs-8);color:var(--gl);font-weight:800;
+  letter-spacing:.5px;margin-bottom:4px;display:flex;align-items:center;gap:4px;}
 
 /* Tab bar */
 .tab-bar{display:flex;align-items:stretch;background:var(--bg);border-top:1px solid var(--b0);flex-shrink:0;}
@@ -2130,10 +2142,26 @@ function showConstructionFB(n) {
    DELIBERATION — statement vote toggle (sl4)
 ══════════════════════════════════════════════════════ */
 function voteStmt(btn) {
-  const row = btn.parentElement;
-  const wasVoted = btn.classList.contains('voted');
-  row.querySelectorAll('.sa-btn').forEach(b => { b.classList.remove('voted'); b.style.opacity = ''; });
-  if (!wasVoted) { btn.classList.add('voted'); btn.style.opacity = '1'; }
+  // Find the parent declaration card
+  const card = btn.closest('.decl-card');
+  if (!card) return;
+  // Mark this button as voted (reveal its filled color)
+  card.querySelectorAll('.sa-btn').forEach(b => b.classList.remove('voted'));
+  btn.classList.add('voted');
+  // Mark the card as voted — this reveals .group-breakdown + dims other buttons
+  card.classList.add('voted');
+  // Bump the aggregate vote count by 1 (visual feedback only — no persistence)
+  const counter = card.querySelector('.decl-vote-count');
+  if (counter) {
+    const current = parseInt(counter.textContent.replace(/[^0-9]/g, ''), 10) || 0;
+    counter.textContent = (current + 1).toLocaleString();
+  }
+  // Analytics
+  if (typeof gtag === 'function') {
+    const action = btn.classList.contains('sa-yes') ? 'agree'
+                 : btn.classList.contains('sa-no') ? 'disagree' : 'skip';
+    gtag('event', 'declaration_vote', { action });
+  }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -2430,7 +2458,7 @@ function buildDeclarationCard(decl, youGroup) {
     surpriseChip = '<div><span class="surprise-chip split">⚡ מחלוקת חדה בין הקבוצות</span></div>';
   }
 
-  // Group breakdown rows
+  // Group breakdown rows (hidden until vote — see .group-breakdown CSS)
   const breakdown = decl.group_breakdown || [];
   const breakdownHtml = breakdown.map(g => {
     const colorVar = GROUP_COLOR_VAR[g.id] || 'te';
@@ -2447,12 +2475,17 @@ function buildDeclarationCard(decl, youGroup) {
     + '<span style="font-size:var(--fs-8);color:var(--t3)">' + escapeHtml(decl.time_label || '') + '</span></div>'
     + surpriseChip
     + '<div style="font-size:var(--fs-11);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">' + escapeHtml(decl.text || '') + '</div>'
-    + '<div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:6px"><span dir="ltr">' + (decl.vote_count || 0).toLocaleString() + '</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">' + (decl.agree_pct || 0) + '%</span> מסכימים</div>'
-    + (breakdownHtml ? '<div style="margin-bottom:8px">' + breakdownHtml + '</div>' : '')
+    + '<div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:6px"><span class="decl-vote-count" dir="ltr">' + (decl.vote_count || 0).toLocaleString() + '</span> הצביעו</div>'
     + '<div style="display:flex;gap:4px">'
-    + '<div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</div>'
-    + '<div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</div>'
-    + '<div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</div></div>'
+    + '<button class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</button>'
+    + '<button class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</button>'
+    + '<button class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</button></div>'
+    + (breakdownHtml
+        ? '<div class="group-breakdown">'
+          + '<div class="breakdown-reveal-label">✦ איך הצביעו הקבוצות</div>'
+          + breakdownHtml
+        + '</div>'
+        : '')
     + (decl.pipeline_status ? '<div style="font-size:var(--fs-8);color:var(--te);margin-top:5px;text-align:center">' + escapeHtml(decl.pipeline_status) + '</div>' : '');
 
   return card;
