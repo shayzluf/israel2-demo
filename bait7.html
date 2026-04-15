@@ -95,6 +95,22 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .ch{font-size:var(--fs-11);font-weight:800;color:var(--t1);margin-bottom:3px;}
 .cd{font-size:var(--fs-10);color:var(--t2);line-height:1.45;}
 .pill{display:inline-block;font-size:var(--fs-8);font-weight:800;padding:2px 7px;border-radius:99px;}
+/* sl4 topic filter + opinion groups */
+.topic-pill{flex-shrink:0;font-size:var(--fs-9);font-weight:800;padding:6px 12px;border-radius:99px;background:var(--sf);color:var(--t2);border:1px solid var(--b0);cursor:pointer;white-space:nowrap;scroll-snap-align:start;font-family:var(--heb);transition:background .15s,color .15s,border-color .15s;}
+.topic-pill:hover{background:var(--el);color:var(--t1);}
+.topic-pill.on{background:var(--gd0);color:var(--gl);border-color:var(--gn);}
+#topic-bar::-webkit-scrollbar{display:none;}
+.group-bar-row{display:flex;align-items:center;gap:6px;margin-top:3px;padding-right:4px;}
+.group-bar-row.you{border-right:2px solid var(--gl);}
+.group-bar-label{font-size:var(--fs-8);color:var(--t2);width:52px;flex-shrink:0;font-weight:700;}
+.group-bar-row.you .group-bar-label{color:var(--gl);}
+.group-bar-wrap{flex:1;height:5px;background:var(--b0);border-radius:99px;overflow:hidden;}
+.group-bar-fill{height:100%;border-radius:99px;transition:width .3s;}
+.group-bar-pct{font-size:var(--fs-8);color:var(--t1);width:36px;text-align:left;font-weight:800;}
+.group-bar-row.you .group-bar-pct{color:var(--gl);}
+.surprise-chip{display:inline-flex;align-items:center;gap:3px;font-size:var(--fs-8);font-weight:800;padding:3px 8px;border-radius:99px;margin-bottom:5px;}
+.surprise-chip.bridge{background:var(--te0);color:var(--te);border:1px solid rgba(39,179,142,0.3);}
+.surprise-chip.split{background:var(--co0);color:var(--co);border:1px solid var(--cn);}
 .bar{height:5px;background:var(--b0);border-radius:99px;overflow:hidden;}
 .bar-f{height:100%;border-radius:99px;}
 .btn{padding:11px 14px;border-radius:9px;font-size:var(--fs-12);font-weight:900;text-align:center;cursor:pointer;transition:opacity .15s;}
@@ -991,87 +1007,16 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div style="background:var(--sf);border:1px solid var(--b1);border-radius:8px;padding:9px 10px;font-size:var(--fs-10);color:var(--t3);line-height:1.5;min-height:36px;cursor:text" onclick="this.style.borderColor='var(--bl)'" contenteditable="false">למשל: ״14 חודשים המתנה לפסיכולוג — זה לא מקובל.״</div>
             <div class="btn" style="margin-top:8px;padding:8px;font-size:var(--fs-10);opacity:.5;pointer-events:none;background:var(--bl);color:#fff">שלח הצהרה (נפתח ברמה 2)</div>
           </div>
-          <!-- Hot topics -->
-          <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:2px">
-            <span style="font-size:var(--fs-8);font-weight:800;color:var(--t3);padding:3px 0;width:100%;letter-spacing:1px">נושאים חמים עכשיו</span>
-            <span class="pill" style="background:var(--co0);color:var(--co)">יוקר המחיה</span>
-            <span class="pill" style="background:var(--te0);color:var(--te)">ביטחון אישי</span>
-            <span class="pill" style="background:var(--bl0);color:var(--bl)">חינוך</span>
-            <span class="pill" style="background:var(--pu0);color:var(--pu)">שקיפות</span>
-            <span class="pill" style="background:var(--gd0);color:var(--gl)">בריאות</span>
+          <!-- Topic filter bar (populated by renderTopicBar) -->
+          <div id="topic-bar" style="display:flex;gap:6px;overflow-x:auto;padding:4px 0;scrollbar-width:none;scroll-snap-type:x mandatory;margin-top:2px">
+            <span style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:1px;align-self:center;flex-shrink:0;padding-left:4px">נושאים</span>
+            <!-- .topic-pill buttons injected by renderTopicBar() -->
           </div>
-          <!-- Declaration 1 — bridge -->
-          <div class="card" style="border-color:var(--gn)">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
-              <span class="bridge-badge">בונה הסכמות</span>
-              <span style="font-size:var(--fs-8);color:var(--t3)">לפני 3 שעות</span>
-            </div>
-            <div style="font-size:var(--fs-11);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">צריך להקים ממשלת מומחים מקצועית עד לסיום המלחמה.</div>
-            <div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:8px"><span dir="ltr">142,000</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">82%</span> מסכימים</div>
-            <div style="display:flex;gap:4px">
-              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</div>
-              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</div>
-            </div>
-            <div style="font-size:var(--fs-8);color:var(--te);margin-top:5px;text-align:center">הצהרה זו הפכה לסוויפ יומי אתמול</div>
-          </div>
-          <!-- Declaration 2 — trending -->
-          <div class="card">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
-              <span style="font-size:var(--fs-8);color:var(--co);font-weight:800;display:flex;align-items:center;gap:3px"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> טרנדי</span>
-              <span style="font-size:var(--fs-8);color:var(--t3)">לפני שעה</span>
-            </div>
-            <div style="font-size:var(--fs-11);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">אסור לפוליטיקאי לקדם חקיקה שמשרתת את האינטרסים האישיים שלו.</div>
-            <div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:8px"><span dir="ltr">312,500</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">91%</span> מסכימים</div>
-            <div style="display:flex;gap:4px">
-              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</div>
-              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</div>
-            </div>
-          </div>
-          <!-- Declaration 3 — contested -->
-          <div class="card">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
-              <span style="font-size:var(--fs-8);color:var(--pu);font-weight:800">שנוי במחלוקת</span>
-              <span style="font-size:var(--fs-8);color:var(--t3)">לפני 5 שעות</span>
-            </div>
-            <div style="font-size:var(--fs-11);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">לא ייתכן שאזרחים בדרום נטושים יותר משנה בלי בית.</div>
-            <div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:8px"><span dir="ltr">98,400</span> הצביעו &middot; <span style="color:var(--gd);font-weight:800" dir="ltr">71%</span> מסכימים</div>
-            <div style="display:flex;gap:4px">
-              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</div>
-              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</div>
-            </div>
-          </div>
-          <!-- Declaration 4 — bridge -->
-          <div class="card" style="border-color:var(--gn)">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
-              <span class="bridge-badge">בונה הסכמות</span>
-              <span style="font-size:var(--fs-8);color:var(--t3)">לפני 8 שעות</span>
-            </div>
-            <div style="font-size:var(--fs-11);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">משפחות שכולות ונפגעי טרור זכאות לתמיכה כלכלית מלאה לכל החיים.</div>
-            <div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:8px"><span dir="ltr">189,700</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">88%</span> מסכימים</div>
-            <div style="display:flex;gap:4px">
-              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</div>
-              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</div>
-            </div>
-            <div style="font-size:var(--fs-8);color:var(--te);margin-top:5px;text-align:center">עוד 2,300 הצבעות והצהרה זו הופכת לסוויפ יומי</div>
-          </div>
-          <!-- Declaration 5 — new -->
-          <div class="card">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">
-              <span style="font-size:var(--fs-8);color:var(--bl);font-weight:800">חדש</span>
-              <span style="font-size:var(--fs-8);color:var(--t3)">לפני 20 דקות</span>
-            </div>
-            <div style="font-size:var(--fs-11);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">כל ילד בישראל מגיע לחינוך איכותי בלי קשר לאיפה שהוא גר.</div>
-            <div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:8px"><span dir="ltr">167,200</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">79%</span> מסכימים</div>
-            <div style="display:flex;gap:4px">
-              <div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</div>
-              <div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</div>
-              <div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</div>
-            </div>
-          </div>
+          <!-- Topic opinion overview card (populated by renderTopicOverview) -->
+          <div id="topic-overview" style="display:none"></div>
+          <!-- Section label above filtered declaration list -->
+          <div id="filtered-label" style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px;display:none">הצהרות בנושא</div>
+          <!-- Declaration cards injected by renderTopicView() below this point -->
         </div>
         <div class="tab-bar">
           <button class="tab-btn" onclick="go(3)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
@@ -1124,44 +1069,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <!-- Emergent profile (pol.is-style opinion groups) -->
           <div style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px">קבוצות דעה</div>
           <div class="card" style="padding:10px 12px">
-            <!-- Opinion map — pol.is-style with blob clusters + dots -->
-            <div style="height:130px;background:var(--sf);border-radius:8px;position:relative;overflow:hidden;margin-bottom:8px">
-              <svg viewBox="0 0 240 130" style="width:100%;height:100%;position:absolute;inset:0">
-                <!-- Crosshairs -->
-                <line x1="120" y1="0" x2="120" y2="130" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
-                <line x1="0" y1="65" x2="240" y2="65" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>
-                <!-- Group A blob (bottom-right, largest) -->
-                <path d="M140,70 Q180,55 200,75 Q210,95 190,110 Q160,120 135,105 Q125,90 140,70Z" fill="rgba(39,179,142,0.08)" stroke="rgba(39,179,142,0.2)" stroke-width="0.5"/>
-                <!-- Group A dots -->
-                <circle cx="165" cy="85" r="2" fill="#27B38E" opacity=".5"/><circle cx="175" cy="78" r="2" fill="#27B38E" opacity=".4"/>
-                <circle cx="155" cy="92" r="2" fill="#27B38E" opacity=".35"/><circle cx="180" cy="90" r="1.5" fill="#27B38E" opacity=".3"/>
-                <circle cx="160" cy="100" r="2" fill="#27B38E" opacity=".4"/><circle cx="190" cy="82" r="1.5" fill="#27B38E" opacity=".25"/>
-                <circle cx="170" cy="95" r="1.5" fill="#27B38E" opacity=".35"/><circle cx="148" cy="88" r="1.5" fill="#27B38E" opacity=".3"/>
-                <text x="192" y="105" fill="#27B38E" font-size="7" font-weight="700" font-family="Heebo">72</text>
-                <!-- Group B blob (left, medium) -->
-                <path d="M20,35 Q55,15 80,30 Q95,50 85,75 Q70,95 40,85 Q15,70 20,35Z" fill="rgba(68,112,176,0.08)" stroke="rgba(68,112,176,0.2)" stroke-width="0.5"/>
-                <!-- Group B dots -->
-                <circle cx="50" cy="45" r="2" fill="#4470B0" opacity=".5"/><circle cx="60" cy="55" r="2" fill="#4470B0" opacity=".4"/>
-                <circle cx="45" cy="60" r="1.5" fill="#4470B0" opacity=".35"/><circle cx="70" cy="48" r="2" fill="#4470B0" opacity=".3"/>
-                <circle cx="55" cy="70" r="1.5" fill="#4470B0" opacity=".3"/><circle cx="40" cy="50" r="1.5" fill="#4470B0" opacity=".25"/>
-                <circle cx="65" cy="65" r="1.5" fill="#4470B0" opacity=".35"/>
-                <text x="42" y="80" fill="#4470B0" font-size="7" font-weight="700" font-family="Heebo">67</text>
-                <!-- Group C blob (top-right, small) -->
-                <path d="M150,10 Q185,5 210,20 Q220,40 200,50 Q175,55 155,40 Q145,25 150,10Z" fill="rgba(114,88,162,0.08)" stroke="rgba(114,88,162,0.2)" stroke-width="0.5"/>
-                <!-- Group C dots -->
-                <circle cx="175" cy="25" r="2" fill="#7258A2" opacity=".4"/><circle cx="190" cy="30" r="1.5" fill="#7258A2" opacity=".35"/>
-                <circle cx="180" cy="38" r="1.5" fill="#7258A2" opacity=".3"/><circle cx="165" cy="32" r="2" fill="#7258A2" opacity=".25"/>
-                <circle cx="195" cy="22" r="1.5" fill="#7258A2" opacity=".3"/>
-                <text x="192" y="45" fill="#7258A2" font-size="7" font-weight="700" font-family="Heebo">19</text>
-                <!-- YOU — pulsing gold dot in Group A -->
-                <circle cx="158" cy="88" r="4.5" fill="#E4AE58" stroke="#C8953A" stroke-width="1" opacity="1">
-                  <animate attributeName="r" values="4.5;6;4.5" dur="1.8s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="1;.7;1" dur="1.8s" repeatCount="indefinite"/>
-                </circle>
-              </svg>
-              <div style="position:absolute;bottom:3px;right:6px;font-size:var(--fs-7);color:var(--gl);font-weight:700">אתם כאן</div>
-              <div style="position:absolute;top:3px;left:6px;font-size:var(--fs-6);color:var(--t3)"><span dir="ltr">4,219</span> אזרחים</div>
-            </div>
+            <!-- Opinion map — injected by buildOpinionMap() -->
+            <div id="sl5-opinion-map"></div>
             <div style="font-size:var(--fs-9);color:var(--t2);line-height:1.5;margin-bottom:6px">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">34%</span> מהאזרחים שחושבים דומה.</div>
             <div style="font-size:var(--fs-9);color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;margin-bottom:4px;border-right:2px solid var(--te)">
               <strong style="color:var(--te)">מאחד אתכם:</strong> ״המדינה חייבת לממן ממ״ד לכל אזרח״
@@ -2358,49 +2267,214 @@ async function injectChallenger() {
 
 loadCards().then(() => injectChallenger());
 
-/* ══ DYNAMIC DECLARATION LOADING ══ */
+/* ══ REUSABLE OPINION MAP (sl4 + sl5) ══ */
+// Canonical SVG positions — do not change without matching sl5 design
+const _OPINION_BLOBS = {
+  A: {
+    path: 'M140,70 Q180,55 200,75 Q210,95 190,110 Q160,120 135,105 Q125,90 140,70Z',
+    fill: 'rgba(39,179,142,0.08)', stroke: 'rgba(39,179,142,0.2)',
+    dotColor: '#27B38E',
+    dots: [[165,85,2,.5],[175,78,2,.4],[155,92,2,.35],[180,90,1.5,.3],[160,100,2,.4],[190,82,1.5,.25],[170,95,1.5,.35],[148,88,1.5,.3]],
+    countPos: [192,105]
+  },
+  B: {
+    path: 'M20,35 Q55,15 80,30 Q95,50 85,75 Q70,95 40,85 Q15,70 20,35Z',
+    fill: 'rgba(68,112,176,0.08)', stroke: 'rgba(68,112,176,0.2)',
+    dotColor: '#4470B0',
+    dots: [[50,45,2,.5],[60,55,2,.4],[45,60,1.5,.35],[70,48,2,.3],[55,70,1.5,.3],[40,50,1.5,.25],[65,65,1.5,.35]],
+    countPos: [42,80]
+  },
+  C: {
+    path: 'M150,10 Q185,5 210,20 Q220,40 200,50 Q175,55 155,40 Q145,25 150,10Z',
+    fill: 'rgba(114,88,162,0.08)', stroke: 'rgba(114,88,162,0.2)',
+    dotColor: '#7258A2',
+    dots: [[175,25,2,.4],[190,30,1.5,.35],[180,38,1.5,.3],[165,32,2,.25],[195,22,1.5,.3]],
+    countPos: [192,45]
+  }
+};
+const _YOU_POS = { A: [158, 88], B: [55, 55], C: [180, 30] };
+
+function buildOpinionMap({ youGroup = 'A', counts = { A: 72, B: 67, C: 19 }, totalCitizens = 4219, heightPx = 130, label = 'אתם כאן' } = {}) {
+  let svg = '<svg viewBox="0 0 240 130" style="width:100%;height:100%;position:absolute;inset:0">';
+  svg += '<line x1="120" y1="0" x2="120" y2="130" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>';
+  svg += '<line x1="0" y1="65" x2="240" y2="65" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>';
+  for (const gid of ['A', 'B', 'C']) {
+    const b = _OPINION_BLOBS[gid];
+    svg += `<path d="${b.path}" fill="${b.fill}" stroke="${b.stroke}" stroke-width="0.5"/>`;
+    for (const [cx, cy, r, op] of b.dots) {
+      svg += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${b.dotColor}" opacity="${op}"/>`;
+    }
+    svg += `<text x="${b.countPos[0]}" y="${b.countPos[1]}" fill="${b.dotColor}" font-size="7" font-weight="700" font-family="Heebo">${counts[gid] ?? ''}</text>`;
+  }
+  const [yx, yy] = _YOU_POS[youGroup] || _YOU_POS.A;
+  svg += `<circle cx="${yx}" cy="${yy}" r="4.5" fill="#E4AE58" stroke="#C8953A" stroke-width="1" opacity="1">`
+       + '<animate attributeName="r" values="4.5;6;4.5" dur="1.8s" repeatCount="indefinite"/>'
+       + '<animate attributeName="opacity" values="1;.7;1" dur="1.8s" repeatCount="indefinite"/>'
+       + '</circle>';
+  svg += '</svg>';
+  return `<div style="height:${heightPx}px;background:var(--sf);border-radius:8px;position:relative;overflow:hidden;margin-bottom:8px">${svg}`
+       + `<div style="position:absolute;bottom:3px;right:6px;font-size:var(--fs-7);color:var(--gl);font-weight:700">${label}</div>`
+       + `<div style="position:absolute;top:3px;left:6px;font-size:var(--fs-6);color:var(--t3)"><span dir="ltr">${totalCitizens.toLocaleString()}</span> אזרחים</div>`
+       + '</div>';
+}
+
+/* ══ DYNAMIC DECLARATION LOADING (pol.is-style with topic filter) ══ */
+let DECLARATIONS_DATA = null;
+let SELECTED_TOPIC = null;
+const GROUP_COLOR_VAR = { A: 'te', B: 'bl', C: 'pu' };
+const GROUP_LABEL = { A: 'קבוצה א׳', B: 'קבוצה ב׳', C: 'קבוצה ג׳' };
+
 async function loadDeclarations() {
   try {
     const res = await fetch('data/declarations_winners.json');
     const data = await res.json();
-    if (!data.declarations?.length) return;
-    const scr = document.getElementById('delib-scr');
-    if (!scr) return;
-    // Remove hardcoded declaration cards but keep pipeline explanation (first child),
-    // submit box (second child), AI rep header (third+fourth child)
-    const children = Array.from(scr.children);
-    children.forEach((el, i) => { if (i >= 3) el.remove(); }); // keep first 3: pipeline + submit + hot topics
-
-    const flameIcon = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>';
-
-    data.declarations.forEach(decl => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      if (decl.badge === 'bridge') card.style.borderColor = 'var(--gn)';
-
-      let badgeHtml = '';
-      if (decl.badge === 'bridge') badgeHtml = '<span class="bridge-badge">' + decl.badge_label + '</span>';
-      else if (decl.badge === 'trending') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--co);font-weight:800;display:flex;align-items:center;gap:3px">' + flameIcon + ' ' + decl.badge_label + '</span>';
-      else if (decl.badge === 'contested') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--pu);font-weight:800">' + decl.badge_label + '</span>';
-      else if (decl.badge === 'new') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--bl);font-weight:800">' + decl.badge_label + '</span>';
-
-      card.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">'
-        + badgeHtml
-        + '<span style="font-size:var(--fs-8);color:var(--t3)">' + decl.time_label + '</span></div>'
-        + '<div style="font-size:var(--fs-11);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">' + decl.text + '</div>'
-        + '<div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:8px"><span dir="ltr">' + decl.vote_count.toLocaleString() + '</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">' + decl.agree_pct + '%</span> מסכימים</div>'
-        + '<div style="display:flex;gap:4px">'
-        + '<div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</div>'
-        + '<div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</div>'
-        + '<div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</div></div>'
-        + (decl.pipeline_status ? '<div style="font-size:var(--fs-8);color:var(--te);margin-top:5px;text-align:center">' + decl.pipeline_status + '</div>' : '');
-      scr.appendChild(card);
-    });
-    console.log('[declarations] Loaded', data.declarations.length, 'from JSON');
-  } catch(e) {
-    console.log('[declarations] Using fallback hardcoded cards');
+    if (!data || !data.declarations?.length) return;
+    DECLARATIONS_DATA = data;
+    // Default to first topic
+    if (data.topics?.length) {
+      SELECTED_TOPIC = data.topics[0].key;
+    }
+    renderTopicBar();
+    renderTopicView();
+    console.log('[declarations] Loaded', data.declarations.length, 'across', data.topics?.length || 0, 'topics');
+  } catch (e) {
+    console.log('[declarations] Load failed:', e.message);
   }
 }
+
+function renderTopicBar() {
+  const bar = document.getElementById('topic-bar');
+  if (!bar || !DECLARATIONS_DATA?.topics) return;
+  // Clear existing pills (keep the static label as first child)
+  Array.from(bar.querySelectorAll('.topic-pill')).forEach(el => el.remove());
+  DECLARATIONS_DATA.topics.forEach(t => {
+    const pill = document.createElement('button');
+    pill.className = 'topic-pill' + (t.key === SELECTED_TOPIC ? ' on' : '');
+    pill.setAttribute('data-key', t.key);
+    pill.textContent = t.label || t.key;
+    pill.onclick = () => {
+      SELECTED_TOPIC = t.key;
+      renderTopicBar();
+      renderTopicView();
+    };
+    bar.appendChild(pill);
+  });
+}
+
+function renderTopicView() {
+  if (!DECLARATIONS_DATA || !SELECTED_TOPIC) return;
+  const topic = DECLARATIONS_DATA.topics.find(t => t.key === SELECTED_TOPIC);
+  if (!topic) return;
+  renderTopicOverview(topic);
+  const label = document.getElementById('filtered-label');
+  if (label) {
+    label.textContent = 'הצהרות בנושא ' + (topic.label || '');
+    label.style.display = 'block';
+  }
+  // Remove existing declaration cards
+  const scr = document.getElementById('delib-scr');
+  if (!scr) return;
+  scr.querySelectorAll('.decl-card').forEach(el => el.remove());
+  // Filter + render
+  const filtered = DECLARATIONS_DATA.declarations.filter(d => d.topic_key === SELECTED_TOPIC);
+  filtered.forEach(decl => scr.appendChild(buildDeclarationCard(decl, topic.you_group || 'A')));
+}
+
+function renderTopicOverview(topic) {
+  const overview = document.getElementById('topic-overview');
+  if (!overview) return;
+  // Build counts from topic.groups (size_pct ratio × ~120 total seats for visual continuity)
+  const counts = {};
+  for (const g of topic.groups || []) {
+    counts[g.id] = Math.round((g.size_pct || 0) * 1.2); // 1.2 → 100% ≈ 120 citizens on the map
+  }
+  // Fallback if groups missing
+  if (!counts.A) counts.A = 72;
+  if (!counts.B) counts.B = 67;
+  if (!counts.C) counts.C = 19;
+  const youGroup = topic.you_group || 'A';
+  const youSizePct = (topic.groups?.find(g => g.id === youGroup) || {}).size_pct || 34;
+  const totalCitizens = Math.round((counts.A + counts.B + counts.C) * 35); // scale up for display
+
+  overview.className = 'card';
+  overview.style.cssText = 'border-color:var(--gn);padding:10px 12px;display:block';
+  overview.innerHTML = buildOpinionMap({ youGroup, counts, totalCitizens })
+    + `<div style="font-size:var(--fs-9);color:var(--t2);line-height:1.5;margin-bottom:6px">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">${youSizePct}%</span> מהאזרחים שחושבים דומה בנושא הזה.</div>`
+    + `<div style="font-size:var(--fs-9);color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;margin-bottom:4px;border-right:2px solid var(--te)">`
+    + `<strong style="color:var(--te)">מאחד את כולם:</strong> ${escapeHtml(topic.convergence || '')}</div>`
+    + `<div style="font-size:var(--fs-9);color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;border-right:2px solid var(--co)">`
+    + `<strong style="color:var(--co)">מפצל:</strong> ${escapeHtml(topic.divergence || '')}</div>`;
+}
+
+function buildDeclarationCard(decl, youGroup) {
+  const card = document.createElement('div');
+  card.className = 'card decl-card';
+  if (decl.badge === 'bridge') card.style.borderColor = 'var(--gn)';
+
+  const flameIcon = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>';
+
+  let badgeHtml = '';
+  if (decl.badge === 'bridge') badgeHtml = '<span class="bridge-badge">' + escapeHtml(decl.badge_label || 'בונה הסכמות') + '</span>';
+  else if (decl.badge === 'trending') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--co);font-weight:800;display:flex;align-items:center;gap:3px">' + flameIcon + ' ' + escapeHtml(decl.badge_label || 'טרנדי') + '</span>';
+  else if (decl.badge === 'contested') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--pu);font-weight:800">' + escapeHtml(decl.badge_label || 'שנוי במחלוקת') + '</span>';
+  else badgeHtml = '<span style="font-size:var(--fs-8);color:var(--bl);font-weight:800">' + escapeHtml(decl.badge_label || 'חדש') + '</span>';
+
+  // Surprise chip
+  let surpriseChip = '';
+  if (decl.surprise === 'bridge') {
+    surpriseChip = '<div><span class="surprise-chip bridge">✦ הפתעה: כל הקבוצות מסכימות</span></div>';
+  } else if (decl.surprise === 'split') {
+    surpriseChip = '<div><span class="surprise-chip split">⚡ מחלוקת חדה בין הקבוצות</span></div>';
+  }
+
+  // Group breakdown rows
+  const breakdown = decl.group_breakdown || [];
+  const breakdownHtml = breakdown.map(g => {
+    const colorVar = GROUP_COLOR_VAR[g.id] || 'te';
+    const isYou = g.id === youGroup;
+    return `<div class="group-bar-row${isYou ? ' you' : ''}">`
+      + `<div class="group-bar-label">${GROUP_LABEL[g.id] || g.id}</div>`
+      + `<div class="group-bar-wrap"><div class="group-bar-fill" style="width:${g.agree_pct}%;background:var(--${colorVar})"></div></div>`
+      + `<div class="group-bar-pct"><span dir="ltr">${g.agree_pct}%</span></div>`
+      + `</div>`;
+  }).join('');
+
+  card.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">'
+    + badgeHtml
+    + '<span style="font-size:var(--fs-8);color:var(--t3)">' + escapeHtml(decl.time_label || '') + '</span></div>'
+    + surpriseChip
+    + '<div style="font-size:var(--fs-11);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">' + escapeHtml(decl.text || '') + '</div>'
+    + '<div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:6px"><span dir="ltr">' + (decl.vote_count || 0).toLocaleString() + '</span> הצביעו &middot; <span style="color:var(--te);font-weight:800" dir="ltr">' + (decl.agree_pct || 0) + '%</span> מסכימים</div>'
+    + (breakdownHtml ? '<div style="margin-bottom:8px">' + breakdownHtml + '</div>' : '')
+    + '<div style="display:flex;gap:4px">'
+    + '<div class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</div>'
+    + '<div class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</div>'
+    + '<div class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</div></div>'
+    + (decl.pipeline_status ? '<div style="font-size:var(--fs-8);color:var(--te);margin-top:5px;text-align:center">' + escapeHtml(decl.pipeline_status) + '</div>' : '');
+
+  return card;
+}
+
+function escapeHtml(s) {
+  if (typeof s !== 'string') return '';
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Inject the shared opinion map into sl5 on load
+document.addEventListener('DOMContentLoaded', () => {
+  const sl5Map = document.getElementById('sl5-opinion-map');
+  if (sl5Map) {
+    sl5Map.innerHTML = buildOpinionMap({ youGroup: 'A', counts: { A: 72, B: 67, C: 19 }, totalCitizens: 4219 });
+  }
+});
+// Also inject immediately in case DOMContentLoaded already fired
+(function() {
+  const sl5Map = document.getElementById('sl5-opinion-map');
+  if (sl5Map && !sl5Map.innerHTML) {
+    sl5Map.innerHTML = buildOpinionMap({ youGroup: 'A', counts: { A: 72, B: 67, C: 19 }, totalCitizens: 4219 });
+  }
+})();
+
 loadDeclarations();
 
 /* ══ CITY PICKER ══ */
