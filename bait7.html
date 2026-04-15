@@ -1479,7 +1479,10 @@ function tutBindSwipe(n) {
   function onDown(e) {
     const t = e.touches ? e.touches[0] : e;
     startX = t.clientX; startY = t.clientY; dragging = true;
-    e.preventDefault();
+    // NOTE: do NOT preventDefault here. On touchstart it cancels the
+    // synthesized click event on mobile, which kills embedded buttons
+    // like t8's "להתחיל". preventDefault is deferred to onMove, only
+    // once actual drag is detected.
   }
   function onMove(e) {
     if (!dragging) return;
@@ -1489,6 +1492,8 @@ function tutBindSwipe(n) {
     // Determine dominant direction
     const absDx = Math.abs(dx), absDy = Math.abs(dy);
     if (absDx > 10 || absDy > 10) {
+      // Drag detected — now it's safe to preventDefault (stops scroll)
+      if (e.cancelable) e.preventDefault();
       if (dy < -20 && absDy > absDx) {
         // Swiping up
         slide.style.transform = `translateY(${dy * 0.3}px)`;
@@ -1527,8 +1532,12 @@ function tutBindSwipe(n) {
     document.addEventListener('mousemove', onMove);
     document.addEventListener('mouseup', onUp);
   });
-  slide.addEventListener('touchstart', onDown, { passive: false });
-  slide.addEventListener('touchmove', onMove, { passive: true });
+  // touchstart stays passive — we don't preventDefault it anymore, so
+  // button taps inside tut slides (e.g. t8 "להתחיל") work on mobile.
+  slide.addEventListener('touchstart', onDown, { passive: true });
+  // touchmove must be non-passive so onMove can preventDefault once drag
+  // is detected (stops the document from scrolling during horizontal swipe).
+  slide.addEventListener('touchmove', onMove, { passive: false });
   slide.addEventListener('touchend', onUp);
 }
 
