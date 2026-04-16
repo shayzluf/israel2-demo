@@ -2349,7 +2349,9 @@ function shareCitizen() {
 
 /* ══════════════════════════════════════════════════════
    EXPERIMENT SURVEY
+   Sheet backend: paste your Apps Script web app URL below
 ══════════════════════════════════════════════════════ */
+var SURVEY_SHEET_URL = ''; // ← paste Apps Script URL here
 var _srvQ2 = '';
 function srvQ2(el) {
   _srvQ2 = el.getAttribute('data-val');
@@ -2371,6 +2373,18 @@ function submitSurvey() {
     q4_improve: (document.getElementById('srv-q4') || {}).value || ''
   };
   if (typeof gtag === 'function') gtag('event', 'experiment_survey', data);
+  // Send to Google Sheet (fire-and-forget — GA4 is the backup)
+  if (SURVEY_SHEET_URL) {
+    var payload = Object.assign({
+      vid: localStorage.getItem('ns_vid') || '',
+      cohort: localStorage.getItem('ns_cohort') || ''
+    }, data);
+    fetch(SURVEY_SHEET_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload)
+    }).catch(function() {});
+  }
   localStorage.setItem('ns_survey_done', '1');
   var btn = document.getElementById('srv-submit');
   var thx = document.getElementById('srv-thanks');
