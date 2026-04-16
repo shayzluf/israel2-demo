@@ -2308,7 +2308,7 @@ async function injectChallenger() {
     const q = el.querySelector('.tcard-q');
     const ctx = el.querySelector('.tcard-ctx');
     if (tag) { tag.textContent = ch.tag; tag.style.color = 'var(--' + (ch.tag_color||'bl') + ')'; tag.style.background = 'var(--' + (ch.tag_color||'bl') + '0)'; }
-    if (q) q.innerHTML = ch.question;
+    if (q) q.innerHTML = ch.statement || ch.question;
     if (ctx) ctx.innerHTML = ch.context || '';
     if (ch.info) CARD_INFO.dc2 = ch.info;
     console.log('[A/B] Challenger injected:', ch.id);
