@@ -1055,8 +1055,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="bar" style="margin-bottom:5px"><div class="bar-f" style="width:74%;background:var(--gl)"></div></div>
               <div style="font-size:var(--fs-9);color:rgba(228,174,88,.6);cursor:pointer" onclick="go(5)">בדקו מה הנציג עשה בזמן שלא הייתם כאן &#8592;</div>
             </div>
-            <!-- ZK nudge -->
-            <div style="background:var(--co0);border:1px solid var(--cn);border-radius:9px;padding:8px 10px">
+            <!-- ZK nudge (swapped to verified state by go(8)) -->
+            <div id="zk-nudge" style="background:var(--co0);border:1px solid var(--cn);border-radius:9px;padding:8px 10px">
               <div style="font-size:var(--fs-9);font-weight:800;color:var(--co);margin-bottom:3px">הקול שלכם עדיין לא נספר</div>
               <div class="btn btn-gd" style="font-size:var(--fs-9);padding:7px" onclick="go(6)">להיספר</div>
             </div>
@@ -1483,6 +1483,7 @@ const gameState = {
    NAVIGATION
 ══════════════════════════════════════════════════════ */
 let cur = 0;
+let userVerified = false; // becomes true when user completes ZK flow (reaches S8)
 /* ══════════════════════════════════════════════════════
    TUTORIAL ENGINE — skeptic-friendly onboarding
 ══════════════════════════════════════════════════════ */
@@ -1889,6 +1890,19 @@ function go(n) {
   }
   // sl4 is now scrollable deliberation feed, no swipe init needed
   if (n === 7) startScan();
+  // Mark user as verified when reaching S8 (citizen pride)
+  if (n === 8 && !userVerified) {
+    userVerified = true;
+    // Update ZK nudge in S5 to show verified state
+    var zkNudge = document.getElementById('zk-nudge');
+    if (zkNudge) {
+      zkNudge.style.background = 'var(--te0)';
+      zkNudge.style.borderColor = 'var(--tn)';
+      zkNudge.innerHTML = '<div style="display:flex;align-items:center;gap:6px">' +
+        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--te)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>' +
+        '<span style="font-size:var(--fs-9);font-weight:800;color:var(--te)">הקול שלכם נספר</span></div>';
+    }
+  }
 }
 
 /* ══ COUNTER ANIMATION ══ */
@@ -2737,6 +2751,12 @@ const POLISH_MAP = {
 let _dclTopic = null;
 
 function openDeclCompose(preselectedTopic) {
+  // Gate: must be verified (להיספר) before writing declarations
+  if (!userVerified) {
+    go(6); // redirect to ZK conversion screen
+    return;
+  }
+
   const overlay = document.getElementById('dcl-overlay');
   const form = document.getElementById('dcl-form');
   const success = document.getElementById('dcl-success');
