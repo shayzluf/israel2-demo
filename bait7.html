@@ -2819,7 +2819,7 @@ function abTrackCta() {
   for (var i = 0; i < vid.length; i++) { hash = ((hash << 5) - hash + vid.charCodeAt(i)) | 0; }
   var bucket = Math.abs(hash) % 100;
 
-  fetch('data/sl0_variants.json').then(function(r) { return r.json(); }).then(function(d) {
+  fetch('data/sl0_variants.json?v=2').then(function(r) { return r.json(); }).then(function(d) {
     var variant = d.champion;
     // Cohort override — force specific variant for experiment cohorts
     if (window._nsCohort && d.cohort_overrides && d.cohort_overrides[window._nsCohort]) {
