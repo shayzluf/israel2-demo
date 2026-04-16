@@ -1878,6 +1878,9 @@ function go(n) {
   sls[n].classList.add('active');
   if (bts[n]) bts[n].classList.add('on');
   cur = n;
+  // ── GA4: track screen navigation ──
+  var screenNames = ['sl0_intro','sl1_swipe','sl2_reveal','sl3_home','sl4_declarations','sl5_rep','sl6_verify','sl7_scan','sl8_citizen_pride'];
+  if (typeof gtag === 'function') gtag('event', 'screen_view', { screen_name: screenNames[n] || ('sl' + n), user_verified: userVerified ? 'yes' : 'no' });
   // Init swipe engines on entry
   if (n === 1) { csActivate(csCur); csBindSwipe(csCur); if (!csTutorialShown) showCsTutorial(); }
   // First visit to sl3: start tour instead of daily swipes
@@ -1890,9 +1893,13 @@ function go(n) {
   }
   // sl4 is now scrollable deliberation feed, no swipe init needed
   if (n === 7) startScan();
+  // ── GA4: verification funnel ──
+  if (n === 6 && typeof gtag === 'function') gtag('event', 'verification_start');
+  if (n === 7 && typeof gtag === 'function') gtag('event', 'verification_scan');
   // Mark user as verified when reaching S8 (citizen pride)
   if (n === 8 && !userVerified) {
     userVerified = true;
+    if (typeof gtag === 'function') gtag('event', 'verification_complete');
     // Update ZK nudge in S5 to show verified state
     var zkNudge = document.getElementById('zk-nudge');
     if (zkNudge) {
@@ -2121,6 +2128,8 @@ function csActivate(n) {
 }
 
 function csSwipeDone(n, dir) {
+  var dirName = dir === 'r' ? 'agree' : dir === 'l' ? 'disagree' : 'complex';
+  if (typeof gtag === 'function') gtag('event', 'swipe_card', { card_index: n, card_id: CS_IDS[n] || n, direction: dirName, card_type: 'onboarding' });
   const inner = csGetInner(n);
   if (!inner) return;
   inner.style.transition = 'transform .3s ease, opacity .25s';
@@ -2189,6 +2198,8 @@ function dcActivate(n) {
 }
 
 function dcSwipeDone(n, dir) {
+  var dirName = dir === 'r' ? 'agree' : dir === 'l' ? 'disagree' : 'complex';
+  if (typeof gtag === 'function') gtag('event', 'swipe_card', { card_index: n, card_id: DC_IDS[n] || ('dc' + n), direction: dirName, card_type: 'daily' });
   const inner = dcGetInner(n);
   if (!inner) return;
   inner.style.transition = 'transform .3s ease, opacity .25s';
@@ -2762,10 +2773,12 @@ function openDeclCompose(preselectedTopic) {
     form.style.display = 'none';
     success.classList.remove('vis');
     overlay.classList.add('show');
+    if (typeof gtag === 'function') gtag('event', 'compose_gate_shown');
     return;
   }
 
   gate.style.display = 'none';
+  if (typeof gtag === 'function') gtag('event', 'compose_open', { topic: _dclTopic || 'none' });
   const ta = document.getElementById('dcl-textarea');
   const starters = document.getElementById('dcl-starters');
 
@@ -2805,6 +2818,12 @@ function openDeclCompose(preselectedTopic) {
 
 function closeDeclCompose() {
   const overlay = document.getElementById('dcl-overlay');
+  // Track abandon if form was open with text typed (not gate, not success)
+  var form = document.getElementById('dcl-form');
+  var ta = document.getElementById('dcl-textarea');
+  if (form && form.style.display !== 'none' && ta && ta.value.length > 0) {
+    if (typeof gtag === 'function') gtag('event', 'compose_abandon', { char_count: ta.value.length, topic: _dclTopic || 'none' });
+  }
   overlay.classList.remove('show');
 }
 
@@ -2840,6 +2859,7 @@ function onDeclInput() {
 }
 
 function useStarter(el) {
+  if (typeof gtag === 'function') gtag('event', 'compose_starter_used', { text: el.textContent });
   const ta = document.getElementById('dcl-textarea');
   ta.value = el.textContent.replace('...', ' ');
   ta.focus();
@@ -2849,6 +2869,7 @@ function useStarter(el) {
 }
 
 function polishDeclaration() {
+  if (typeof gtag === 'function') gtag('event', 'compose_polish', { topic: _dclTopic || 'none', char_count: document.getElementById('dcl-textarea').value.length });
   const btn = document.getElementById('dcl-polish');
   const suggestion = document.getElementById('dcl-suggestion');
   const sugText = document.getElementById('dcl-suggestion-text');
@@ -2873,6 +2894,7 @@ function polishDeclaration() {
 }
 
 function acceptSuggestion() {
+  if (typeof gtag === 'function') gtag('event', 'compose_polish_accept');
   const ta = document.getElementById('dcl-textarea');
   const sugText = document.getElementById('dcl-suggestion-text');
   ta.value = sugText.textContent;
@@ -2881,6 +2903,7 @@ function acceptSuggestion() {
 }
 
 function dismissSuggestion() {
+  if (typeof gtag === 'function') gtag('event', 'compose_polish_dismiss');
   document.getElementById('dcl-suggestion').classList.remove('vis');
 }
 
@@ -2899,6 +2922,7 @@ function updateDeclPreview() {
 }
 
 function submitDeclaration() {
+  if (typeof gtag === 'function') gtag('event', 'compose_submit', { topic: _dclTopic || 'none', char_count: document.getElementById('dcl-textarea').value.length });
   const form = document.getElementById('dcl-form');
   const success = document.getElementById('dcl-success');
   const ta = document.getElementById('dcl-textarea');
@@ -2930,8 +2954,8 @@ function submitDeclaration() {
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gd)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
       <div style="font-size:var(--fs-14);font-weight:900;color:var(--t1);font-family:var(--heb)">רגע, עוד צעד אחד</div>
       <div style="font-size:var(--fs-10);color:var(--t3);line-height:1.6;max-width:280px">כדי שהמשפט שלך ייספר ויופיע בפיד, צריך קודם לאמת שאתם אזרחים אמיתיים — תהליך קצר ומאובטח</div>
-      <button class="btn btn-gd" style="width:100%;font-size:var(--fs-12);padding:12px" onclick="closeDeclCompose();go(6)">להיספר</button>
-      <div style="font-size:var(--fs-9);color:var(--t3);cursor:pointer;padding:4px" onclick="closeDeclCompose()">אולי אחר כך</div>
+      <button class="btn btn-gd" style="width:100%;font-size:var(--fs-12);padding:12px" onclick="if(typeof gtag==='function')gtag('event','compose_gate_verify');closeDeclCompose();go(6)">להיספר</button>
+      <div style="font-size:var(--fs-9);color:var(--t3);cursor:pointer;padding:4px" onclick="if(typeof gtag==='function')gtag('event','compose_gate_dismiss');closeDeclCompose()">אולי אחר כך</div>
     </div>
 
     <!-- ── Compose form (default state) ── -->
