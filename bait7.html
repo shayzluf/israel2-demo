@@ -425,6 +425,81 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
   .sim-screen { height: 100vh; height: 100dvh; }
   .slide { padding-top: 0; }
 }
+
+/* ── Declaration compose overlay ── */
+.dcl-overlay{position:fixed;inset:0;z-index:55;background:rgba(6,7,10,.88);display:none;
+  align-items:flex-end;justify-content:center;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
+.dcl-overlay.show{display:flex;}
+.dcl-sheet{width:100%;max-width:420px;max-height:92vh;background:var(--el);border-radius:18px 18px 0 0;
+  padding:16px 16px 24px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;
+  transform:translateY(100%);transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+.dcl-overlay.show .dcl-sheet{transform:translateY(0);}
+.dcl-head{display:flex;align-items:center;justify-content:space-between;}
+.dcl-head h3{font-size:var(--fs-14);font-weight:900;color:var(--t1);margin:0;font-family:var(--heb);}
+.dcl-close{background:none;border:none;font-size:22px;color:var(--t3);cursor:pointer;padding:4px 8px;line-height:1;}
+.dcl-guide{font-size:var(--fs-9);color:var(--t3);line-height:1.5;}
+.dcl-topic-row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 0;}
+.dcl-topic-row::-webkit-scrollbar{display:none;}
+.dcl-starters{display:flex;flex-wrap:wrap;gap:6px;transition:opacity .2s,max-height .2s;overflow:hidden;}
+.dcl-starters.gone{opacity:0;max-height:0;margin:0;padding:0;}
+.dcl-starter{font-size:var(--fs-9);font-weight:700;padding:6px 12px;border-radius:99px;
+  background:var(--sf);color:var(--bl);border:1px solid var(--b1);cursor:pointer;
+  white-space:nowrap;font-family:var(--heb);transition:background .15s;}
+.dcl-starter:hover{background:var(--el);}
+.dcl-input-wrap{position:relative;}
+.dcl-textarea{width:100%;min-height:90px;padding:10px 12px;background:var(--sf);border:1.5px solid var(--b1);
+  border-radius:10px;color:var(--t1);font-size:var(--fs-11);font-family:var(--heb);direction:rtl;
+  resize:none;outline:none;line-height:1.55;transition:border-color .15s;}
+.dcl-textarea:focus{border-color:var(--bl);}
+.dcl-textarea::placeholder{color:var(--t3);}
+.dcl-counter{position:absolute;bottom:8px;left:10px;font-size:var(--fs-8);font-weight:700;
+  font-family:var(--heb);transition:color .15s;}
+.dcl-counter.c-te{color:var(--te);}
+.dcl-counter.c-gd{color:var(--gd);}
+.dcl-counter.c-co{color:var(--co);}
+.dcl-polish{display:none;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;
+  background:linear-gradient(135deg,rgba(39,179,142,.08),rgba(78,120,222,.08));
+  border:1px solid rgba(39,179,142,.2);color:var(--te);font-size:var(--fs-10);font-weight:800;
+  font-family:var(--heb);cursor:pointer;transition:opacity .15s;width:100%;justify-content:center;}
+.dcl-polish.vis{display:flex;}
+.dcl-polish:hover{opacity:.85;}
+.dcl-polish svg{flex-shrink:0;}
+@keyframes dcl-shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.dcl-polish.loading{pointer-events:none;background:linear-gradient(90deg,rgba(39,179,142,.06) 25%,rgba(39,179,142,.15) 50%,rgba(39,179,142,.06) 75%);
+  background-size:200% 100%;animation:dcl-shimmer 1.2s linear infinite;}
+.dcl-suggestion{display:none;padding:10px 12px;background:var(--sf);border:1px solid var(--b1);
+  border-radius:10px;gap:8px;flex-direction:column;}
+.dcl-suggestion.vis{display:flex;}
+.dcl-suggestion-label{font-size:var(--fs-8);font-weight:800;color:var(--te);letter-spacing:.5px;}
+.dcl-suggestion-text{font-size:var(--fs-11);color:var(--t1);line-height:1.5;font-family:var(--heb);
+  font-weight:600;padding:6px 0;}
+.dcl-suggestion-btns{display:flex;gap:6px;}
+.dcl-suggestion-btns button{flex:1;padding:8px;border-radius:8px;font-size:var(--fs-9);font-weight:800;
+  font-family:var(--heb);cursor:pointer;border:1.5px solid;transition:opacity .15s;}
+.dcl-accept{background:var(--te0);color:var(--te);border-color:var(--te);}
+.dcl-dismiss{background:transparent;color:var(--t3);border-color:var(--b1);}
+.dcl-preview{display:none;gap:6px;flex-direction:column;}
+.dcl-preview.vis{display:flex;}
+.dcl-preview-label{font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:.5px;}
+.dcl-preview-card{background:var(--el);border:1px solid var(--b0);border-radius:10px;padding:10px 12px;}
+.dcl-preview-badge{display:inline-block;font-size:var(--fs-7);font-weight:800;padding:2px 7px;
+  border-radius:99px;background:var(--te0);color:var(--te);}
+.dcl-preview-text{font-size:var(--fs-10);color:var(--t1);line-height:1.5;margin:6px 0 4px;font-family:var(--heb);}
+.dcl-preview-meta{font-size:var(--fs-8);color:var(--t3);}
+.dcl-submit{width:100%;padding:12px;border-radius:10px;font-size:var(--fs-12);font-weight:900;
+  font-family:var(--heb);border:none;cursor:pointer;transition:opacity .2s,background .15s;
+  background:var(--te);color:#001a14;}
+.dcl-submit:disabled{opacity:.35;cursor:default;}
+.dcl-success{display:none;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;padding:24px 16px;text-align:center;min-height:280px;}
+.dcl-success.vis{display:flex;}
+.dcl-success-check{width:56px;height:56px;}
+.dcl-success-check circle{stroke:var(--te);stroke-width:2;fill:none;}
+.dcl-success-check path{stroke:var(--te);stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:30;stroke-dashoffset:30;animation:dcl-check .6s ease-out .2s forwards;}
+@keyframes dcl-check{to{stroke-dashoffset:0}}
+.dcl-success h3{font-size:var(--fs-14);font-weight:900;color:var(--t1);margin:0;font-family:var(--heb);}
+.dcl-success p{font-size:var(--fs-10);color:var(--t3);margin:0;line-height:1.5;}
 </style>
 </head>
 <body>
@@ -1019,13 +1094,14 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div id="topic-overview" style="display:none"></div>
           <!-- Section label above filtered declaration list -->
           <div id="filtered-label" style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px;display:none">הצהרות בנושא</div>
-          <!-- Declaration cards injected by renderTopicView() will go here -->
-          <!-- Submit your own — moved below declarations -->
-          <div class="card" style="border-color:var(--bl);border-style:dashed;margin-top:8px" id="submit-declaration-card">
-            <div style="font-size:var(--fs-10);font-weight:800;color:var(--bl);margin-bottom:6px">כתוב הצהרה קצרה — עד 140 תווים</div>
-            <div style="background:var(--sf);border:1px solid var(--b1);border-radius:8px;padding:9px 10px;font-size:var(--fs-10);color:var(--t3);line-height:1.5;min-height:36px;cursor:text" onclick="this.style.borderColor='var(--bl)'" contenteditable="false">למשל: ״14 חודשים המתנה לפסיכולוג — זה לא מקובל.״</div>
-            <div class="btn" style="margin-top:8px;padding:8px;font-size:var(--fs-10);opacity:.5;pointer-events:none;background:var(--bl);color:#fff">שלח הצהרה (נפתח ברמה 2)</div>
+          <!-- Compose banner — above declarations, always visible -->
+          <div class="card" style="border-color:var(--bl);border-style:dashed" id="compose-banner" onclick="openDeclCompose()">
+            <div style="font-size:var(--fs-12);font-weight:900;color:var(--t1);margin-bottom:2px">יש לך מה להגיד?</div>
+            <div id="compose-banner-sub" style="font-size:var(--fs-9);color:var(--t3);line-height:1.4;margin-bottom:8px">משפט קצר שאנשים אחרים יסכימו או לא יסכימו איתו</div>
+            <div class="btn btn-te" style="padding:10px;font-size:var(--fs-11);width:100%;box-sizing:border-box">משפט חדש</div>
           </div>
+          <!-- Declaration cards injected by renderTopicView() will go here -->
+          <div id="decl-insert-anchor"></div>
         </div>
         <div class="tab-bar">
           <button class="tab-btn" onclick="go(3)"><span class="tab-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>בית</button>
@@ -2425,17 +2501,22 @@ function renderTopicView() {
   const scr = document.getElementById('delib-scr');
   if (!scr) return;
   scr.querySelectorAll('.decl-card').forEach(el => el.remove());
-  // Filter + render — insert BEFORE the submit box so cards stay in the middle
-  const submitBox = document.getElementById('submit-declaration-card');
+  // Filter + render — insert AFTER the compose banner anchor
+  const anchor = document.getElementById('decl-insert-anchor');
   const filtered = DECLARATIONS_DATA.declarations.filter(d => d.topic_key === SELECTED_TOPIC);
   filtered.forEach(decl => {
     const card = buildDeclarationCard(decl, topic.you_group || 'A');
-    if (submitBox) {
-      scr.insertBefore(card, submitBox);
+    if (anchor) {
+      anchor.parentNode.insertBefore(card, anchor.nextSibling);
     } else {
       scr.appendChild(card);
     }
   });
+  // Update compose banner text to reflect selected topic
+  const bannerSub = document.getElementById('compose-banner-sub');
+  if (bannerSub && topic.label) {
+    bannerSub.textContent = 'יש לך מה להגיד על ' + topic.label + '?';
+  }
 }
 
 function renderTopicOverview(topic) {
@@ -2625,6 +2706,260 @@ function abTrackCta() {
     }
   }).catch(function() { /* JSON fetch failed — keep hardcoded HTML */ });
 })();
+
+/* ══════════════════════════════════════════════
+   DECLARATION COMPOSE — AI-guided writing flow
+   ══════════════════════════════════════════════ */
+
+const POLISH_MAP = {
+  "cost_of_living_and_food_prices": [
+    "הריכוזיות בשוק המזון מייקרת את החיים לכולנו — חייבים לפתוח את השוק לתחרות אמיתית",
+    "אין סיבה שמשפחה ישראלית תשלם על מזון 40% יותר ממשפחה באירופה"
+  ],
+  "emergency_shelters_and_home_front": [
+    "לכל אחד בישראל מגיע ממ״ד — זו אחריות המדינה, לא של הדיירים",
+    "אין מצב שילדים לומדים בבית ספר בלי ממ״ד ב-2026"
+  ],
+  "healthcare_access_and_wait_times": [
+    "14 חודשי המתנה לפסיכולוג קליני זה לא הגיוני — צריך לקבוע מגבלה בחוק",
+    "כל מטופל צריך לקבל תור לרופא מומחה תוך חודש, לא תוך חצי שנה"
+  ],
+  "government_bureaucracy_and_digital_services": [
+    "כל שירות ממשלתי צריך להיות זמין אונליין — אין סיבה לעמוד בתור פיזי ב-2026",
+    "המדינה צריכה לדבר עם עצמה — אנחנו לא צריכים להביא מסמכים שכבר נמצאים במערכת"
+  ],
+  "education_quality_and_teacher_shortage": [
+    "משכורות המורים חייבות לעלות — אי אפשר למשוך אנשים טובים בשכר של מתחילים",
+    "לכל הילדים בישראל מגיע חינוך איכותי, בלי קשר למקום המגורים שלהם"
+  ]
+};
+
+let _dclTopic = null;
+
+function openDeclCompose(preselectedTopic) {
+  const overlay = document.getElementById('dcl-overlay');
+  const form = document.getElementById('dcl-form');
+  const success = document.getElementById('dcl-success');
+  const ta = document.getElementById('dcl-textarea');
+  const starters = document.getElementById('dcl-starters');
+
+  // Reset state
+  form.style.display = 'flex'; form.style.flexDirection = 'column'; form.style.gap = '10px';
+  success.classList.remove('vis');
+  ta.value = '';
+  document.getElementById('dcl-counter').textContent = '0/140';
+  document.getElementById('dcl-counter').className = 'dcl-counter c-te';
+  document.getElementById('dcl-polish').classList.remove('vis','loading');
+  document.getElementById('dcl-suggestion').classList.remove('vis');
+  document.getElementById('dcl-preview').classList.remove('vis');
+  document.getElementById('dcl-submit').disabled = true;
+  starters.classList.remove('gone');
+
+  // Populate topic pills from loaded declarations data
+  const topicRow = document.getElementById('dcl-topic-row');
+  topicRow.innerHTML = '';
+  _dclTopic = preselectedTopic || (typeof SELECTED_TOPIC !== 'undefined' ? SELECTED_TOPIC : null);
+  if (typeof DECLARATIONS_DATA !== 'undefined' && DECLARATIONS_DATA && DECLARATIONS_DATA.topics) {
+    DECLARATIONS_DATA.topics.forEach(t => {
+      const pill = document.createElement('div');
+      pill.className = 'topic-pill' + (t.key === _dclTopic ? ' on' : '');
+      pill.textContent = t.label;
+      pill.onclick = function() {
+        topicRow.querySelectorAll('.topic-pill').forEach(p => p.classList.remove('on'));
+        pill.classList.add('on');
+        _dclTopic = t.key;
+      };
+      topicRow.appendChild(pill);
+    });
+  }
+
+  overlay.classList.add('show');
+  setTimeout(() => ta.focus(), 350);
+}
+
+function closeDeclCompose() {
+  const overlay = document.getElementById('dcl-overlay');
+  overlay.classList.remove('show');
+}
+
+function onDeclInput() {
+  const ta = document.getElementById('dcl-textarea');
+  const counter = document.getElementById('dcl-counter');
+  const polish = document.getElementById('dcl-polish');
+  const preview = document.getElementById('dcl-preview');
+  const submit = document.getElementById('dcl-submit');
+  const starters = document.getElementById('dcl-starters');
+  const len = ta.value.length;
+
+  counter.textContent = len + '/140';
+  counter.className = 'dcl-counter ' + (len >= 136 ? 'c-co' : len >= 120 ? 'c-gd' : 'c-te');
+
+  // Hide starters once typing begins
+  if (len > 0) starters.classList.add('gone');
+  else starters.classList.remove('gone');
+
+  // Show/hide polish at 30+
+  if (len >= 30) polish.classList.add('vis');
+  else { polish.classList.remove('vis'); polish.classList.remove('loading'); }
+
+  // Show/hide preview at 20+
+  if (len >= 20) { preview.classList.add('vis'); updateDeclPreview(); }
+  else preview.classList.remove('vis');
+
+  // Enable/disable submit at 20+
+  submit.disabled = len < 20;
+
+  // Hide suggestion if user edits after accepting
+  document.getElementById('dcl-suggestion').classList.remove('vis');
+}
+
+function useStarter(el) {
+  const ta = document.getElementById('dcl-textarea');
+  ta.value = el.textContent.replace('...', ' ');
+  ta.focus();
+  // Place cursor at the end
+  ta.setSelectionRange(ta.value.length, ta.value.length);
+  onDeclInput();
+}
+
+function polishDeclaration() {
+  const btn = document.getElementById('dcl-polish');
+  const suggestion = document.getElementById('dcl-suggestion');
+  const sugText = document.getElementById('dcl-suggestion-text');
+
+  btn.classList.add('loading');
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v5m4-1-3-3M8 7l3-3"/><path d="m9 14 1.5-4.5L15 14"/><path d="M6 21h12"/><path d="M3 17h18"/></svg> מנסח...';
+
+  setTimeout(() => {
+    btn.classList.remove('loading');
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v5m4-1-3-3M8 7l3-3"/><path d="m9 14 1.5-4.5L15 14"/><path d="M6 21h12"/><path d="M3 17h18"/></svg> לשפר את הניסוח';
+
+    // Pick a polished version from the topic map
+    const options = POLISH_MAP[_dclTopic] || [];
+    if (options.length > 0) {
+      const pick = options[Math.floor(Math.random() * options.length)];
+      sugText.textContent = pick;
+    } else {
+      sugText.textContent = 'נסו לנסח את המשפט כך שאנשים שונים מכם יוכלו להסכים או לא להסכים';
+    }
+    suggestion.classList.add('vis');
+  }, 1200);
+}
+
+function acceptSuggestion() {
+  const ta = document.getElementById('dcl-textarea');
+  const sugText = document.getElementById('dcl-suggestion-text');
+  ta.value = sugText.textContent;
+  document.getElementById('dcl-suggestion').classList.remove('vis');
+  onDeclInput();
+}
+
+function dismissSuggestion() {
+  document.getElementById('dcl-suggestion').classList.remove('vis');
+}
+
+function updateDeclPreview() {
+  const ta = document.getElementById('dcl-textarea');
+  const card = document.getElementById('dcl-preview-card');
+  if (!ta.value.trim()) return;
+  card.innerHTML = '<div class="dcl-preview-badge">חדש</div>' +
+    '<div class="dcl-preview-text">' + ta.value.replace(/</g,'&lt;') + '</div>' +
+    '<div class="dcl-preview-meta">0 הצביעו</div>' +
+    '<div style="display:flex;gap:6px;margin-top:6px">' +
+      '<div class="sa-btn sa-yes" style="flex:1;text-align:center;padding:6px 4px;border-radius:8px;font-size:var(--fs-9);font-weight:800;cursor:default">מסכים</div>' +
+      '<div class="sa-btn sa-no" style="flex:1;text-align:center;padding:6px 4px;border-radius:8px;font-size:var(--fs-9);font-weight:800;cursor:default">לא מסכים</div>' +
+      '<div class="sa-btn sa-complex" style="flex:1;text-align:center;padding:6px 4px;border-radius:8px;font-size:var(--fs-9);font-weight:800;cursor:default">עובר</div>' +
+    '</div>';
+}
+
+function submitDeclaration() {
+  const form = document.getElementById('dcl-form');
+  const success = document.getElementById('dcl-success');
+  const ta = document.getElementById('dcl-textarea');
+  const successPreview = document.getElementById('dcl-success-preview');
+  const btn = document.getElementById('dcl-submit');
+
+  btn.disabled = true;
+  btn.textContent = 'שולח...';
+
+  setTimeout(() => {
+    form.style.display = 'none';
+    // Show success preview
+    successPreview.innerHTML = '<div class="dcl-preview-card">' +
+      '<div class="dcl-preview-badge">חדש</div>' +
+      '<div class="dcl-preview-text">' + ta.value.replace(/</g,'&lt;') + '</div>' +
+      '<div class="dcl-preview-meta">0 הצביעו</div>' +
+    '</div>';
+    success.classList.add('vis');
+    btn.textContent = 'לשתף';
+  }, 800);
+}
 </script>
+
+<!-- ════ Declaration compose overlay ════ -->
+<div class="dcl-overlay" id="dcl-overlay" onclick="if(event.target===this)closeDeclCompose()">
+  <div class="dcl-sheet" id="dcl-sheet">
+    <!-- ── Compose form (default state) ── -->
+    <div id="dcl-form">
+      <div class="dcl-head">
+        <h3>משפט חדש</h3>
+        <button class="dcl-close" onclick="closeDeclCompose()">&times;</button>
+      </div>
+
+      <div class="dcl-guide">משפט אחד שאנשים אחרים יכולים להסכים או לא להסכים איתו</div>
+
+      <div style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:.5px">מה הנושא?</div>
+      <div class="dcl-topic-row" id="dcl-topic-row"><!-- populated by openDeclCompose --></div>
+
+      <div class="dcl-starters" id="dcl-starters">
+        <div class="dcl-starter" onclick="useStarter(this)">לדעתי, כל אדם...</div>
+        <div class="dcl-starter" onclick="useStarter(this)">המדינה צריכה ל...</div>
+        <div class="dcl-starter" onclick="useStarter(this)">הגיע הזמן ש...</div>
+        <div class="dcl-starter" onclick="useStarter(this)">צריך ש...</div>
+      </div>
+
+      <div class="dcl-input-wrap">
+        <textarea class="dcl-textarea" id="dcl-textarea" maxlength="140" dir="rtl"
+          placeholder="למשל: ״המדינה צריכה לממן ממ״ד לכל משפחה שאין לה״"
+          oninput="onDeclInput()"></textarea>
+        <div class="dcl-counter c-te" id="dcl-counter">0/140</div>
+      </div>
+
+      <button class="dcl-polish" id="dcl-polish" onclick="polishDeclaration()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v5m4-1-3-3M8 7l3-3"/><path d="m9 14 1.5-4.5L15 14"/><path d="M6 21h12"/><path d="M3 17h18"/></svg>
+        לשפר את הניסוח
+      </button>
+
+      <div class="dcl-suggestion" id="dcl-suggestion">
+        <div class="dcl-suggestion-label">הצעה משופרת</div>
+        <div class="dcl-suggestion-text" id="dcl-suggestion-text"></div>
+        <div class="dcl-suggestion-btns">
+          <button class="dcl-accept" onclick="acceptSuggestion()">להשתמש בגרסה הזו</button>
+          <button class="dcl-dismiss" onclick="dismissSuggestion()">לשמור את שלי</button>
+        </div>
+      </div>
+
+      <div class="dcl-preview" id="dcl-preview">
+        <div class="dcl-preview-label">כך זה ייראה בפיד</div>
+        <div class="dcl-preview-card" id="dcl-preview-card"></div>
+      </div>
+
+      <button class="dcl-submit" id="dcl-submit" disabled onclick="submitDeclaration()">לשתף</button>
+    </div>
+
+    <!-- ── Success state (replaces form after submit) ── -->
+    <div class="dcl-success" id="dcl-success">
+      <svg class="dcl-success-check" viewBox="0 0 56 56">
+        <circle cx="28" cy="28" r="26"/>
+        <path d="M17 28l8 8 14-16"/>
+      </svg>
+      <h3>המשפט נשלח</h3>
+      <p>יופיע בפיד אחרי בדיקה קצרה</p>
+      <div id="dcl-success-preview" style="width:100%"></div>
+      <button class="btn btn-te" style="width:100%;margin-top:4px" onclick="closeDeclCompose()">חזרה לפיד</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
