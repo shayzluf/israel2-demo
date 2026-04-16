@@ -2751,15 +2751,21 @@ const POLISH_MAP = {
 let _dclTopic = null;
 
 function openDeclCompose(preselectedTopic) {
+  const overlay = document.getElementById('dcl-overlay');
+  const gate = document.getElementById('dcl-gate');
+  const form = document.getElementById('dcl-form');
+  const success = document.getElementById('dcl-success');
+
   // Gate: must be verified (להיספר) before writing declarations
   if (!userVerified) {
-    go(6); // redirect to ZK conversion screen
+    gate.style.display = 'flex';
+    form.style.display = 'none';
+    success.classList.remove('vis');
+    overlay.classList.add('show');
     return;
   }
 
-  const overlay = document.getElementById('dcl-overlay');
-  const form = document.getElementById('dcl-form');
-  const success = document.getElementById('dcl-success');
+  gate.style.display = 'none';
   const ta = document.getElementById('dcl-textarea');
   const starters = document.getElementById('dcl-starters');
 
@@ -2919,6 +2925,15 @@ function submitDeclaration() {
 <!-- ════ Declaration compose overlay ════ -->
 <div class="dcl-overlay" id="dcl-overlay" onclick="if(event.target===this)closeDeclCompose()">
   <div class="dcl-sheet" id="dcl-sheet">
+    <!-- ── Verification gate (shown to unverified users) ── -->
+    <div id="dcl-gate" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:32px 16px;text-align:center;min-height:260px">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gd)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      <div style="font-size:var(--fs-14);font-weight:900;color:var(--t1);font-family:var(--heb)">רגע, עוד צעד אחד</div>
+      <div style="font-size:var(--fs-10);color:var(--t3);line-height:1.6;max-width:280px">כדי שהמשפט שלך ייספר ויופיע בפיד, צריך קודם לאמת שאתם אזרחים אמיתיים — תהליך קצר ומאובטח</div>
+      <button class="btn btn-gd" style="width:100%;font-size:var(--fs-12);padding:12px" onclick="closeDeclCompose();go(6)">להיספר</button>
+      <div style="font-size:var(--fs-9);color:var(--t3);cursor:pointer;padding:4px" onclick="closeDeclCompose()">אולי אחר כך</div>
+    </div>
+
     <!-- ── Compose form (default state) ── -->
     <div id="dcl-form">
       <div class="dcl-head">
