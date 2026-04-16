@@ -5,21 +5,9 @@
 <meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
 <title>נספר — Knesset Ha'amamit v7.0</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&display=swap" rel="stylesheet">
-<!-- GA4 — deferred load to prevent touch event conflicts with swipe engine -->
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-CXVXMQE8LM',{send_page_view:false});
-// Defer actual gtag.js loading by 3s so swipe engine binds touch listeners first.
-// Events fired before the script loads queue in dataLayer and flush automatically.
-setTimeout(function(){
-  var s=document.createElement('script');
-  s.src='https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM';
-  s.async=true;
-  document.head.appendChild(s);
-},3000);
-</script>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CXVXMQE8LM',{send_page_view:false});</script>
 <style>
 :root {
   /* ─── COLORS ─── */
@@ -2211,7 +2199,7 @@ function dcActivate(n) {
 
 function dcSwipeDone(n, dir) {
   var dirName = dir === 'r' ? 'agree' : dir === 'l' ? 'disagree' : 'complex';
-  if (typeof gtag === 'function') gtag('event', 'swipe_card', { card_index: n, card_id: DC_IDS[n] || ('dc' + n), direction: dirName, card_type: 'daily' });
+  if (typeof gtag === 'function') gtag('event', 'swipe_card', { card_index: n, card_id: 'dc' + n, direction: dirName, card_type: 'daily' });
   const inner = dcGetInner(n);
   if (!inner) return;
   inner.style.transition = 'transform .3s ease, opacity .25s';
