@@ -1432,6 +1432,7 @@ const CARD_INFO = {
 };
 
 function showInfo(cardId) {
+  if (typeof gtag === 'function') gtag('event', 'info_view', { card_id: cardId });
   const data = CARD_INFO[cardId];
   if (!data) return;
   const ov = document.getElementById('info-overlay');
@@ -2288,6 +2289,7 @@ function shareMKContradiction() {
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 function shareCitizen() {
+  if (typeof gtag === 'function') gtag('event', 'share_citizen');
   const text = '\u05D0\u05E0\u05D9 \u05D0\u05D6\u05E8\u05D7/\u05D9\u05EA #4,220 \u05D1\u05DB\u05E0\u05E1\u05EA \u05D4\u05E2\u05DE\u05DE\u05D9\u05EA. \u05D3\u05D5\u05E8 \u05E8\u05D0\u05E9\u05D5\u05DF \u05E9\u05E0\u05E1\u05E4\u05E8.\nhttps://shayzluf.github.io/israel2-demo/';
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
@@ -2505,6 +2507,7 @@ function renderTopicBar() {
     pill.textContent = t.label || t.key;
     pill.onclick = () => {
       SELECTED_TOPIC = t.key;
+      if (typeof gtag === 'function') gtag('event', 'topic_select', { topic: t.key, topic_label: t.label });
       renderTopicBar();
       renderTopicView();
     };
