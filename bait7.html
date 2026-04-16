@@ -1723,8 +1723,9 @@ function finishTutorial() {
   if (skip) skip.style.display = 'none';
   // Persist onboarding completion so refresh skips it
   try { localStorage.setItem('nspr_onboarding_done', '1'); } catch(e) {}
-  // Show main app — go to sl1 (swipe cards) directly
-  go(1);
+  // Cohort users see sl0 landing first (Goa variant etc), then CTA → sl1
+  // Regular users go straight to sl1 (swipe cards)
+  go(window._nsCohort ? 0 : 1);
   if (typeof gtag === 'function') gtag('event', 'tutorial_complete');
 }
 
