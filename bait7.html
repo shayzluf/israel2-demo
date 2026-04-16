@@ -67,6 +67,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .sim-screen{height:600px;overflow:hidden;position:relative;}
 .slide{position:absolute;top:0;left:0;right:0;bottom:0;display:none;flex-direction:column;
   overflow:hidden;padding-top:20px;}
+#sl8{overflow-y:auto;scrollbar-width:none;}
+#sl8::-webkit-scrollbar{display:none;}
 .slide.active{display:flex;flex-direction:column;}
 
 /* ─── SIDEBAR ─── */
@@ -1323,6 +1325,43 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
           <!-- Share -->
           <div style="background:#25D366;color:#fff;font-weight:800;font-size:var(--fs-11);border-radius:10px;padding:11px;cursor:pointer" onclick="shareCitizen()">שתף -- אני אזרח/ית #<span dir="ltr">4,220</span></div>
+
+          <!-- Experiment micro-survey (visible only for cohort users) -->
+          <div id="exp-survey" style="display:none;margin-top:12px;text-align:right">
+            <div style="border-top:1px solid var(--b0);padding-top:12px;margin-top:4px">
+              <div style="font-size:var(--fs-14);font-weight:800;color:var(--gl);text-align:center">נשמח לעזרה בבניית האפליקציה</div>
+              <div style="font-size:var(--fs-9);color:var(--t3);text-align:center;margin-bottom:10px">זה ייקח בדיוק חצי דקה</div>
+
+              <!-- Q1: Why did you leave? -->
+              <label style="font-size:var(--fs-10);color:var(--t2);display:block;margin-bottom:3px">מה הוביל להחלטה לעזוב את ישראל?</label>
+              <textarea id="srv-q1" rows="2" maxlength="300" placeholder="אפשר לשתף כאן בחופשיות ובכנות" style="width:100%;background:var(--el);border:1px solid var(--b0);border-radius:8px;color:var(--t1);font-family:var(--heb);font-size:var(--fs-10);padding:8px;resize:none;margin-bottom:8px"></textarea>
+
+              <!-- Q2: Would you use before elections? -->
+              <label style="font-size:var(--fs-10);color:var(--t2);display:block;margin-bottom:4px">יש מצב להשתמש בזה לקראת הבחירות באוקטובר?</label>
+              <div style="display:flex;gap:6px;margin-bottom:10px" id="srv-q2-btns">
+                <div class="srv-opt" data-val="yes" onclick="srvQ2(this)" style="flex:1;text-align:center;padding:7px;border-radius:8px;border:1px solid var(--b0);font-size:var(--fs-10);color:var(--t2);cursor:pointer">ברור שכן</div>
+                <div class="srv-opt" data-val="maybe" onclick="srvQ2(this)" style="flex:1;text-align:center;padding:7px;border-radius:8px;border:1px solid var(--b0);font-size:var(--fs-10);color:var(--t2);cursor:pointer">אולי, תלוי</div>
+                <div class="srv-opt" data-val="no" onclick="srvQ2(this)" style="flex:1;text-align:center;padding:7px;border-radius:8px;border:1px solid var(--b0);font-size:var(--fs-10);color:var(--t2);cursor:pointer">פחות הכיוון</div>
+              </div>
+
+              <!-- Q3: NPS -->
+              <label style="font-size:var(--fs-10);color:var(--t2);display:block;margin-bottom:4px">מה הסיכוי להמליץ על האפליקציה לעוד אנשים?</label>
+              <div style="display:flex;gap:3px;margin-bottom:10px" id="srv-nps">
+                <div style="font-size:var(--fs-8);color:var(--t3)">0</div>
+                <input type="range" id="srv-q3" min="0" max="10" value="5" style="flex:1;accent-color:var(--gd)">
+                <div style="font-size:var(--fs-8);color:var(--t3)">10</div>
+                <div style="font-size:var(--fs-9);color:var(--gl);min-width:20px;text-align:center" id="srv-q3-val">5</div>
+              </div>
+
+              <!-- Q4: What would you change? -->
+              <label style="font-size:var(--fs-10);color:var(--t2);display:block;margin-bottom:3px">מה כדאי לנו לשנות או לשפר?</label>
+              <textarea id="srv-q4" rows="2" maxlength="300" placeholder="זה הזמן להציע רעיונות לשיפור" style="width:100%;background:var(--el);border:1px solid var(--b0);border-radius:8px;color:var(--t1);font-family:var(--heb);font-size:var(--fs-10);padding:8px;resize:none;margin-bottom:8px"></textarea>
+
+              <div class="btn btn-gd" style="width:100%;font-size:var(--fs-11)" id="srv-submit" onclick="submitSurvey()">לשלוח</div>
+              <div id="srv-thanks" style="display:none;text-align:center;font-size:var(--fs-11);color:var(--te);padding:12px 0;font-weight:700">המון תודה על העזרה והזמן!</div>
+            </div>
+          </div>
+
           <div class="btn btn-gd" style="width:100%" onclick="go(3)">לכנסת העממית</div>
         </div>
       </div>
@@ -2280,19 +2319,68 @@ function voteStmt(btn) {
 /* ══════════════════════════════════════════════════════
    SHARE FUNCTIONS
 ══════════════════════════════════════════════════════ */
+function _shareUrl() {
+  var base = 'https://shayzluf.github.io/israel2-demo/bait7.html';
+  var vid = localStorage.getItem('ns_vid');
+  var cohort = localStorage.getItem('ns_cohort');
+  var p = [];
+  if (vid) p.push('ref=' + vid);
+  if (cohort) p.push('cohort=' + cohort);
+  return p.length ? base + '?' + p.join('&') : base;
+}
 function shareConsensus() {
-  const text = '\u05D2\u05D9\u05DC\u05D9\u05E0\u05D5 \u05D4\u05E1\u05DB\u05DE\u05D4 \u05E8\u05D7\u05D1\u05D4 \u05E9\u05D7\u05D5\u05E6\u05D4 \u05D0\u05EA \u05DB\u05DC \u05D4\u05E7\u05D1\u05D5\u05E6\u05D5\u05EA. \u05D1\u05D6\u05DE\u05DF \u05E9\u05D4\u05DB\u05E0\u05E1\u05EA \u05E8\u05D1\u05D4, \u05D0\u05E0\u05D7\u05E0\u05D5 \u05DE\u05E1\u05DB\u05D9\u05DE\u05D9\u05DD.\nhttps://shayzluf.github.io/israel2-demo/';
+  if (typeof gtag === 'function') gtag('event', 'share_consensus');
+  const text = '\u05D2\u05D9\u05DC\u05D9\u05E0\u05D5 \u05D4\u05E1\u05DB\u05DE\u05D4 \u05E8\u05D7\u05D1\u05D4 \u05E9\u05D7\u05D5\u05E6\u05D4 \u05D0\u05EA \u05DB\u05DC \u05D4\u05E7\u05D1\u05D5\u05E6\u05D5\u05EA. \u05D1\u05D6\u05DE\u05DF \u05E9\u05D4\u05DB\u05E0\u05E1\u05EA \u05E8\u05D1\u05D4, \u05D0\u05E0\u05D7\u05E0\u05D5 \u05DE\u05E1\u05DB\u05D9\u05DE\u05D9\u05DD.\n' + _shareUrl();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 function shareMKContradiction() {
-  const text = '\u05D7"\u05DB \u05D4\u05D1\u05D8\u05D9\u05D7 \u05DC\u05D4\u05D5\u05E8\u05D9\u05D3 \u05D9\u05D5\u05E7\u05E8. \u05D4\u05E6\u05D1\u05D9\u05E2 \u05E0\u05D2\u05D3 \u05D4\u05E7\u05E4\u05D0\u05EA \u05DE\u05D7\u05D9\u05E8\u05D9\u05DD.\nhttps://shayzluf.github.io/israel2-demo/';
+  if (typeof gtag === 'function') gtag('event', 'share_contradiction');
+  const text = '\u05D7"\u05DB \u05D4\u05D1\u05D8\u05D9\u05D7 \u05DC\u05D4\u05D5\u05E8\u05D9\u05D3 \u05D9\u05D5\u05E7\u05E8. \u05D4\u05E6\u05D1\u05D9\u05E2 \u05E0\u05D2\u05D3 \u05D4\u05E7\u05E4\u05D0\u05EA \u05DE\u05D7\u05D9\u05E8\u05D9\u05DD.\n' + _shareUrl();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 function shareCitizen() {
   if (typeof gtag === 'function') gtag('event', 'share_citizen');
-  const text = '\u05D0\u05E0\u05D9 \u05D0\u05D6\u05E8\u05D7/\u05D9\u05EA #4,220 \u05D1\u05DB\u05E0\u05E1\u05EA \u05D4\u05E2\u05DE\u05DE\u05D9\u05EA. \u05D3\u05D5\u05E8 \u05E8\u05D0\u05E9\u05D5\u05DF \u05E9\u05E0\u05E1\u05E4\u05E8.\nhttps://shayzluf.github.io/israel2-demo/';
+  const text = '\u05D0\u05E0\u05D9 \u05D0\u05D6\u05E8\u05D7/\u05D9\u05EA #4,220 \u05D1\u05DB\u05E0\u05E1\u05EA \u05D4\u05E2\u05DE\u05DE\u05D9\u05EA. \u05D3\u05D5\u05E8 \u05E8\u05D0\u05E9\u05D5\u05DF \u05E9\u05E0\u05E1\u05E4\u05E8.\n' + _shareUrl();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
+
+/* ══════════════════════════════════════════════════════
+   EXPERIMENT SURVEY
+══════════════════════════════════════════════════════ */
+var _srvQ2 = '';
+function srvQ2(el) {
+  _srvQ2 = el.getAttribute('data-val');
+  document.querySelectorAll('#srv-q2-btns .srv-opt').forEach(function(b) {
+    b.style.background = 'transparent'; b.style.color = 'var(--t2)'; b.style.borderColor = 'var(--b0)';
+  });
+  el.style.background = 'var(--gd0)'; el.style.color = 'var(--gl)'; el.style.borderColor = 'var(--gd)';
+}
+(function() {
+  var slider = document.getElementById('srv-q3');
+  var val = document.getElementById('srv-q3-val');
+  if (slider && val) slider.addEventListener('input', function() { val.textContent = slider.value; });
+})();
+function submitSurvey() {
+  var data = {
+    q1_why_left: (document.getElementById('srv-q1') || {}).value || '',
+    q2_elections: _srvQ2,
+    q3_nps: parseInt((document.getElementById('srv-q3') || {}).value || '5'),
+    q4_improve: (document.getElementById('srv-q4') || {}).value || ''
+  };
+  if (typeof gtag === 'function') gtag('event', 'experiment_survey', data);
+  localStorage.setItem('ns_survey_done', '1');
+  var btn = document.getElementById('srv-submit');
+  var thx = document.getElementById('srv-thanks');
+  if (btn) btn.style.display = 'none';
+  if (thx) thx.style.display = 'block';
+}
+// Show survey only for cohort users who haven't submitted yet
+(function() {
+  if (localStorage.getItem('ns_cohort') && !localStorage.getItem('ns_survey_done')) {
+    var el = document.getElementById('exp-survey');
+    if (el) el.style.display = 'block';
+  }
+})();
 
 /* ══════════════════════════════════════════════════════
    ZK SCAN
@@ -2696,6 +2784,36 @@ function abTrackCta() {
   var vid = localStorage.getItem('ns_vid');
   if (!vid) { vid = crypto.randomUUID(); localStorage.setItem('ns_vid', vid); }
 
+  // ── Experiment cohort tagging ──
+  var params = new URLSearchParams(window.location.search);
+  var cohortParam = params.get('cohort');
+  if (cohortParam) localStorage.setItem('ns_cohort', cohortParam);
+  window._nsCohort = localStorage.getItem('ns_cohort') || '';
+
+  // Set cohort as GA4 user property (auto-attached to all events)
+  if (window._nsCohort && typeof gtag === 'function') {
+    gtag('set', 'user_properties', { cohort: window._nsCohort });
+  }
+
+  // ── Referral tracking ──
+  var refParam = params.get('ref');
+  if (refParam && refParam !== vid) {
+    if (typeof gtag === 'function') gtag('event', 'referral_visit', {
+      referrer_vid: refParam, cohort: window._nsCohort
+    });
+  }
+
+  // ── Return visit detection ──
+  var firstSeen = localStorage.getItem('ns_first_seen');
+  if (firstSeen) {
+    var daysSince = Math.floor((Date.now() - parseInt(firstSeen)) / 86400000);
+    if (daysSince > 0 && typeof gtag === 'function') {
+      gtag('event', 'return_visit', { days_since_first: daysSince });
+    }
+  } else {
+    localStorage.setItem('ns_first_seen', String(Date.now()));
+  }
+
   // Hash visitor ID to bucket 0-99
   var hash = 0;
   for (var i = 0; i < vid.length; i++) { hash = ((hash << 5) - hash + vid.charCodeAt(i)) | 0; }
@@ -2703,8 +2821,12 @@ function abTrackCta() {
 
   fetch('data/sl0_variants.json').then(function(r) { return r.json(); }).then(function(d) {
     var variant = d.champion;
-    // Challengers get buckets 50-99, split equally
-    if (d.challengers && d.challengers.length > 0 && bucket >= 50) {
+    // Cohort override — force specific variant for experiment cohorts
+    if (window._nsCohort && d.cohort_overrides && d.cohort_overrides[window._nsCohort]) {
+      variant = d.cohort_overrides[window._nsCohort];
+    }
+    // Challengers get buckets 50-99, split equally (skipped for cohort overrides)
+    else if (d.challengers && d.challengers.length > 0 && bucket >= 50) {
       var ci = Math.floor((bucket - 50) / (50 / d.challengers.length));
       if (ci >= d.challengers.length) ci = d.challengers.length - 1;
       variant = d.challengers[ci];
