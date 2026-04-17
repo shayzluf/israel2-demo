@@ -1827,6 +1827,10 @@ function animateTutHemi() {
         localStorage.removeItem('nspr_onboarding_done');
         localStorage.removeItem('nspr_tour_done');
         localStorage.removeItem('ns_vid'); // also reset A/B variant assignment
+        localStorage.removeItem('ns_verified'); // re-enable the להיספר flow
+        localStorage.removeItem('ns_survey_done'); // show survey again
+        localStorage.removeItem('ns_first_seen'); // reset return-visit detection
+        // Note: ns_cohort preserved so reset still routes to Goa variant
       } catch(e) {}
       location.reload();
     }
