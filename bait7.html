@@ -9,7 +9,33 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&display=swap" rel="stylesheet">
 <!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CXVXMQE8LM',{send_page_view:false});</script>
+<script>
+// Developer-device flag: visit ?dev=1 once to tag, ?dev=0 to untag.
+// When set, all GA4 events get traffic_type='internal' → excluded by Internal Traffic filter.
+(function(){
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.has('dev')) {
+      if (q.get('dev') === '0') { localStorage.removeItem('i2_dev_device'); }
+      else { localStorage.setItem('i2_dev_device', '1'); }
+    }
+  } catch(e){}
+})();
+var I2_IS_DEV = false;
+try { I2_IS_DEV = localStorage.getItem('i2_dev_device') === '1'; } catch(e){}
+window.dataLayer=window.dataLayer||[];
+function gtag(){
+  // Auto-tag internal traffic on every event so the GA4 filter can exclude it
+  if (I2_IS_DEV && arguments.length >= 2 && arguments[0] === 'event') {
+    var p = arguments[2] || {};
+    if (typeof p === 'object') { p.traffic_type = 'internal'; arguments[2] = p; }
+  }
+  dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config','G-CXVXMQE8LM',{ send_page_view:false, traffic_type: I2_IS_DEV ? 'internal' : undefined });
+if (I2_IS_DEV) { console.log('%c[Israel 2.0] Developer device — GA4 traffic_type=internal', 'color:#d4af37;font-weight:bold'); }
+</script>
 <style>
 :root {
   /* ─── COLORS ─── */
