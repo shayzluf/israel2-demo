@@ -1525,7 +1525,7 @@ const gameState = {
    NAVIGATION
 ══════════════════════════════════════════════════════ */
 let cur = 0;
-let userVerified = false; // becomes true when user completes ZK flow (reaches S8)
+let userVerified = localStorage.getItem('ns_verified') === '1'; // persists across refreshes
 /* ══════════════════════════════════════════════════════
    TUTORIAL ENGINE — skeptic-friendly onboarding
 ══════════════════════════════════════════════════════ */
@@ -1939,9 +1939,23 @@ function go(n) {
   // ── GA4: verification funnel ──
   if (n === 6 && typeof gtag === 'function') gtag('event', 'verification_start');
   if (n === 7 && typeof gtag === 'function') gtag('event', 'verification_scan');
+  // Show experiment survey when reaching sl8 (for cohort users, if not submitted)
+  if (n === 8) {
+    if (localStorage.getItem('ns_cohort') && !localStorage.getItem('ns_survey_done')) {
+      var srv = document.getElementById('exp-survey');
+      if (srv) {
+        srv.style.display = 'block';
+        // Gentle auto-scroll so users notice the survey below the fold
+        setTimeout(function() {
+          try { srv.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch(e) {}
+        }, 900);
+      }
+    }
+  }
   // Mark user as verified when reaching S8 (citizen pride)
   if (n === 8 && !userVerified) {
     userVerified = true;
+    try { localStorage.setItem('ns_verified', '1'); } catch(e) {}
     if (typeof gtag === 'function') gtag('event', 'verification_complete');
     // Update ZK nudge in S5 to show verified state
     var zkNudge = document.getElementById('zk-nudge');
