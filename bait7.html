@@ -8,12 +8,13 @@
 <title>נספר — Knesset Ha'amamit v7.0</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&display=swap" rel="stylesheet">
 <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM"></script>
 <script>
 // Developer-device flag: ?dev=1 → tag device, ?dev=0 → untag.
-// When set, all GA4 events get BOTH:
+// When set, all GA4 events get:
 //   traffic_type='internal'  → excluded from standard reports by Internal Traffic filter
-//   debug_mode=true          → visible in GA4 DebugView (Admin → DebugView)
+//   _dbg=1 on every collect request → visible in GA4 DebugView (Admin → DebugView)
+// The _dbg=1 param is injected via fetch/sendBeacon interceptors below because
+// gtag's `debug_mode:true` flag does NOT reliably emit _dbg=1 in gtag.js 2025+.
 (function(){
   try {
     var q = new URLSearchParams(location.search);
@@ -25,25 +26,74 @@
 })();
 var I2_IS_DEV = false;
 try { I2_IS_DEV = localStorage.getItem('i2_dev_device') === '1'; } catch(e){}
+
+// Intercept GA4 collect requests BEFORE gtag.js loads to inject _dbg=1.
+// This is the only mobile-safe way to activate DebugView without the Chrome extension.
+(function(){
+  if (!I2_IS_DEV) return;
+  function addDbg(url){
+    try {
+      if (typeof url !== 'string') url = String(url);
+      if (url.indexOf('google-analytics.com/g/collect') === -1 &&
+          url.indexOf('analytics.google.com/g/collect') === -1) return url;
+      if (url.indexOf('_dbg=1') !== -1) return url;
+      return url + (url.indexOf('?') === -1 ? '?' : '&') + '_dbg=1';
+    } catch(e){ return url; }
+  }
+  // Patch fetch
+  if (window.fetch) {
+    var origFetch = window.fetch.bind(window);
+    window.fetch = function(input, init){
+      try {
+        if (typeof input === 'string') {
+          input = addDbg(input);
+        } else if (input && input.url) {
+          var u = addDbg(input.url);
+          if (u !== input.url) input = new Request(u, input);
+        }
+      } catch(e){}
+      return origFetch(input, init);
+    };
+  }
+  // Patch sendBeacon (primary GA4 transport)
+  if (navigator.sendBeacon) {
+    var origBeacon = navigator.sendBeacon.bind(navigator);
+    navigator.sendBeacon = function(url, data){
+      try { url = addDbg(url); } catch(e){}
+      return origBeacon(url, data);
+    };
+  }
+  // Patch XHR as final fallback
+  if (window.XMLHttpRequest) {
+    var origOpen = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function(method, url){
+      try { arguments[1] = addDbg(url); } catch(e){}
+      return origOpen.apply(this, arguments);
+    };
+  }
+})();
+
 window.dataLayer=window.dataLayer||[];
 function gtag(){
-  // Auto-tag internal traffic + debug_mode on every event
   if (I2_IS_DEV && arguments.length >= 2 && arguments[0] === 'event') {
     var p = arguments[2] || {};
     if (typeof p === 'object') {
       p.traffic_type = 'internal';
-      p.debug_mode = true;
       arguments[2] = p;
     }
   }
   dataLayer.push(arguments);
 }
 gtag('js', new Date());
-gtag('config','G-CXVXMQE8LM', I2_IS_DEV
-  ? { send_page_view:false, traffic_type:'internal', debug_mode:true }
-  : { send_page_view:false });
-if (I2_IS_DEV) { console.log('%c[Israel 2.0] Developer device — traffic_type=internal, debug_mode=true (GA4 DebugView enabled)', 'color:#d4af37;font-weight:bold'); }
+if (I2_IS_DEV) {
+  gtag('set', { traffic_type: 'internal' });
+  gtag('config','G-CXVXMQE8LM', { send_page_view:false });
+  console.log('%c[Israel 2.0] Developer device — traffic_type=internal + _dbg=1 injected (GA4 DebugView enabled)', 'color:#d4af37;font-weight:bold');
+} else {
+  gtag('config','G-CXVXMQE8LM', { send_page_view:false });
+}
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM"></script>
 <style>
 :root {
   /* ─── COLORS ─── */
