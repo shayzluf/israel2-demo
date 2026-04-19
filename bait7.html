@@ -2833,7 +2833,13 @@ const GROUP_LABEL = { A: 'קבוצה א׳', B: 'קבוצה ב׳', C: 'קבוצה
   if (fromQuery) {
     try { localStorage.setItem('ns_polis_api', fromQuery); } catch (_) {}
   }
-  let base = fromQuery || (function () { try { return localStorage.getItem('ns_polis_api') || ''; } catch (_) { return ''; } })();
+  // Resolution order: query string > localStorage > hardcoded default.
+  // The default points at the Railway-hosted polis-rs API so every visitor
+  // hits live data without any opt-in. Override per-visit with
+  // ?__polis_api=<url> (useful for testing a local/staging backend).
+  let base = fromQuery
+    || (function () { try { return localStorage.getItem('ns_polis_api') || ''; } catch (_) { return ''; } })()
+    || 'https://orlagoyeem-production.up.railway.app';
   base = (base || '').replace(/\/+$/, '');
   const langOf = () => {
     try { return localStorage.getItem('ns_lang') || 'he'; } catch (_) { return 'he'; }
