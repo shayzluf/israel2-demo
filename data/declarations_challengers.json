@@ -1,9 +1,9 @@
 {
-  "updated": "2026-04-15T01:30:06.511542+00:00",
+  "updated": "2026-04-19T05:38:58.195405+00:00",
   "topics": [
     {
-      "key": "ongoing_idf_operations_in_lebanon_and_skepticism_regarding_peace_agreements_with_hezbollah",
-      "label": "המערכה בלבנון והסדר מדיני",
+      "key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "label": "בטיחות בעבודה",
       "you_group": "A",
       "groups": [
         {
@@ -11,14 +11,104 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 79
+          "agree_pct": 72
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 71
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 63
+        }
+      ],
+      "convergence": "באופן מפתיע, כל הקבוצות מסכימות שחייבים לפגוע בכיס של קבלנים רשלנים ולתגמל כספית עובדים שמתריעים על סכנות כדי לעצור את הקטל באתרי הבנייה",
+      "divergence": "בעוד שקבוצה א׳ דורשת להטיל אחריות פלילית אישית על מנכ״לים, קבוצה ב׳ מעדיפה פתרונות טכנולוגיים כמו מצלמות פיקוח, וקבוצה ג׳ מתמקדת בענישה דרך פרמיות ביטוח גבוהות"
+    },
+    {
+      "key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "label": "בטיחות בדרכים",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 68
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 70
+        }
+      ],
+      "convergence": "ישנה הסכמה רחבה שחינוך לבדו לא מספיק, ושהמדינה חייבת להתערב באופן אקטיבי, למשל דרך סבסוד מערכות בטיחות לרכבים ישנים",
+      "divergence": "המחלוקת העיקרית היא על רמת הענישה: קבוצה א׳ תומכת בהחרמת רכבים מיידית לנהגים מסוכנים, קבוצה ב׳ מתמקדת בהרחקת משאיות בשעות העומס, וקבוצה ג׳ מתנגדת לצעדים דרקוניים ומעדיפה תמריצים חיוביים"
+    },
+    {
+      "key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "label": "שירותי הצלה וחירום",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 68
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 86
+        }
+      ],
+      "convergence": "כל הקבוצות תמימי דעים שהמדינה חייבת לפתח אפליקציית חירום לאומית אחידה וכן להעניק נקודות זיכוי במס למתנדבים כהוקרה על פועלם",
+      "divergence": "קבוצה א׳ דורשת לקנוס מטיילים חסרי אחריות שיוצאים לשטח בסערה, בעוד שקבוצה ב׳ מתנגדת לגביית תשלום על חילוץ, וקבוצה ג׳ בכלל מתעדפת הכשרת חילוץ כחובה בבתי הספר"
+    },
+    {
+      "key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "label": "שוק העבודה לצעירים",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 68
         },
         {
           "id": "C",
@@ -28,72 +118,12 @@
           "agree_pct": 78
         }
       ],
-      "convergence": "למרבה ההפתעה, כל הקבוצות מסכימות שאי אפשר לחתום על שום הסדר מדיני בצפון לפני שהמדינה מאשרת ומתחייבת לתוכנית שיקום ופיצויים מלאה לתושבים שפונו מבתיהם",
-      "divergence": "בעוד שקבוצה א׳ דורשת להקים רצועת ביטחון מפורזת ולפרק לחלוטין את יוניפי\"ל, קבוצה ב׳ מתמקדת בהטלת אחריות ישירה על מדינת לבנון לכל ירי, וקבוצה ג׳ חלוקה עליהן לגבי מידת האגרסיביות של הכוח הבינלאומי שיחליף אותו"
+      "convergence": "יש קונצנזוס מפתיע סביב הדרישה לשקיפות, כשכולם מסכימים שמעסיקים חייבים לפרסם את טווח השכר כבר במודעת הדרושים",
+      "divergence": "קבוצה א׳ נאבקת על זכויות סוציאליות לעובדי חלטורות וימי חופשה לבריאות הנפש, קבוצה ב׳ מוכנה רק לשקיפות בשכר, וקבוצה ג׳ חוששת שרגולציה כזו תפגע בגמישות של שוק העבודה"
     },
     {
-      "key": "attorney_generals_hearing_and_legal_precedent_regarding_the_potential_dismissal_of_itamar_ben_gvir",
-      "label": "פיטורי בן גביר",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 71
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 64
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 74
-        }
-      ],
-      "convergence": "באופן די מפתיע, כולם מסכימים שחייבים לפרסם בשקיפות מלאה את כל הפרוטוקולים של הייעוץ המשפטי כשמדובר על דיונים רגישים סביב פסילה או פיטורים של נבחרי ציבור",
-      "divergence": "קבוצה א׳ דורשת לחוקק איסור מפורש על התערבות השר בעבודת המשטרה, בזמן שקבוצה ב׳ מתעקשת שרק לכנסת מותר לפטר שר ולא למערכת המשפט, וקבוצה ג׳ מנסה למצוא את האיזון בין סמכויות השר לעצמאות המשטרה"
-    },
-    {
-      "key": "severe_lack_of_formal_teaching_qualifications_among_professional_teachers_in_the_haredi_education_sector",
-      "label": "הכשרת מורים בחינוך החרדי",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 42
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 63
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 67
-        }
-      ],
-      "convergence": "יש הסכמה רחבה שעדיף לתת תמריצים כספיים למוסדות שיעסיקו מורים מוסמכים מאשר להטיל עליהם סנקציות, ושמורים ותיקים עם ניסיון של מעל עשור צריכים לקבל פטור מתעודה פורמלית",
-      "divergence": "הוויכוח המרכזי הוא שקבוצה א׳ רוצה לחייב תעודת הוראה רק במקצועות הליבה ולהחריג לימודי קודש, קבוצה ב׳ דורשת להקים מסלול הכשרה חלופי בשיתוף רבנים, וקבוצה ג׳ מתלבטת עד כמה המדינה צריכה להתגמש בדרישות הסף שלה"
-    },
-    {
-      "key": "concerns_over_israels_diplomatic_collapse_and_losing_its_remaining_allies_in_europe",
-      "label": "הבידוד המדיני באירופה",
+      "key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "label": "היערכות למזג אוויר",
       "you_group": "A",
       "groups": [
         {
@@ -108,62 +138,32 @@
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 70
+          "agree_pct": 85
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 79
+          "agree_pct": 72
         }
       ],
-      "convergence": "כולם מבינים שהיחסים עם אירופה נמצאים במשבר עמוק ומסכימים שישראל חייבת לשנות כיוון אסטרטגי, בין אם דרך פנייה לשווקים חדשים לגמרי או השקעה במיזמים אזרחיים עוקפי-פוליטיקה",
-      "divergence": "קבוצה א׳ דורשת להעניש מדינות אירופאיות עוינות, לאסור עליהן לממן עמותות בארץ ולפנות לשווקים באסיה, בעוד שקבוצה ב׳ מאמינה שאפשר להציל את היחסים דרך שיתופי פעולה בהייטק ואקלים, וקבוצה ג׳ חלוקה לגבי היחס הנכון לארגונים שמקבלים מימון זר"
-    },
-    {
-      "key": "political_attacks_and_reforms_surrounding_the_end_of_the_term_for_the_head_of_the_police_internal_investigations_department_piid",
-      "label": "סיום תפקיד ראש מח\"ש",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 77
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 84
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 77
-        }
-      ],
-      "convergence": "קיימת הסכמה חוצת מחנות שחייבים להוציא את מח\"ש מפרקליטות המדינה ולהפוך אותה לגוף חקירות עצמאי לחלוטין שמשלב נציגי ציבור כדי להחזיר את אמון האזרחים במערכת",
-      "divergence": "קבוצה א׳ מתעקשת שהשר לא יתערב בכלל בבחירת ראש מח\"ש הבא ושהוא ייבחר על ידי שופט, קבוצה ב׳ מתמקדת בדרישה שמח\"ש תחקור גם פרקליטים ותובעים, וקבוצה ג׳ מתווכחת על מידת העצמאות של הגוף החדש מול הדרג הפוליטי"
+      "convergence": "כל הקבוצות מסכימות שהגיע הזמן להפסיק עם הפסקות החשמל בסערות ודורשות להטמין את כל תשתיות החשמל מתחת לאדמה בשכונות חדשות",
+      "divergence": "קבוצה א׳ דורשת התערבות ממשלתית אגרסיבית כמו פתיחת כבישי אגרה בחינם ואיסור הגעה למשרד, בעוד שקבוצה ב׳ מתמקדת באחריות חברת החשמל לגיזום, וקבוצה ג׳ מתנגדת להתערבות בשוק הפרטי של כבישי האגרה"
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-04-15_0",
-      "text": "יש לאסור באופן מוחלט בנייה מחדש של כפרים דרום-לבנוניים סמוך לגבול, ולהכריז על השטח כרצועת ביטחון מפורזת",
+      "id": "decl_challenger_2026-04-19_0",
+      "text": "יש להטיל אחריות פלילית אישית על מנכ\"לים של חברות קבלן במקרה של תאונות עבודה קטלניות באתרי הבנייה שלהם",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 142050,
+      "vote_count": 125000,
       "agree_pct": 75,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "ongoing_idf_operations_in_lebanon_and_skepticism_regarding_peace_agreements_with_hezbollah",
-      "topic_label": "המערכה בלבנון והסדר מדיני",
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
       "group_breakdown": [
         {
           "id": "A",
@@ -181,28 +181,307 @@
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_1",
-      "text": "כל הסדר מדיני חייב לכלול סעיף שבו מדינת לבנון תישא באחריות ישירה על כל ירי, כולל פגיעה בתשתיות אזרחיות שלה בתגובה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 215000,
-      "agree_pct": 55,
+      "id": "decl_challenger_2026-04-19_1",
+      "text": "חובה להתקין מצלמות בטיחות בכל אתר בנייה ולחבר אותן למוקד פיקוח ממשלתי שיתריע על חריגות בזמן אמת",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 210500,
+      "agree_pct": 88,
       "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "ongoing_idf_operations_in_lebanon_and_skepticism_regarding_peace_agreements_with_hezbollah",
-      "topic_label": "המערכה בלבנון והסדר מדיני",
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 55
+          "agree_pct": 84
         },
         {
           "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_2",
+      "text": "חברות ביטוח צריכות לגבות פרמיות גבוהות משמעותית מקבלנים שיש להם היסטוריה של תאונות עבודה ופציעות עובדים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 89000,
+      "agree_pct": 55,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 49
+        },
+        {
+          "id": "B",
+          "agree_pct": 76
+        },
+        {
+          "id": "C",
           "agree_pct": 33
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_3",
+      "text": "יש להקים מנגנון שמתגמל כספית עובדים שמדווחים על ליקויי בטיחות חמורים במקום העבודה שלהם",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 68,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_4",
+      "text": "צריך לאסור על תנועת משאיות כבדות בכבישים בינעירוניים בשעות העומס של הבוקר ואחר הצהריים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 145000,
+      "agree_pct": 52,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 79
+        },
+        {
+          "id": "B",
+          "agree_pct": 23
+        },
+        {
+          "id": "C",
+          "agree_pct": 47
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_5",
+      "text": "המדינה צריכה לסבסד התקנת מערכות בטיחות אקטיביות ברכבים ישנים כדי למנוע תאונות דרכים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 86,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 86
+        },
+        {
+          "id": "C",
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_6",
+      "text": "יש להחרים במקום את הרכב לנהגים שנתפסים נוהגים במהירות מופרזת שמסכנת חיים, עוד לפני המשפט",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 178000,
+      "agree_pct": 78,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "agree_pct": 95
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_7",
+      "text": "מתנדבים פעילים בגופי ההצלה והחירום צריכים לקבל נקודות זיכוי במס הכנסה כהוקרה על תרומתם",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 310000,
+      "agree_pct": 92,
+      "time_label": "לפני יום",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 91
+        },
+        {
+          "id": "B",
+          "agree_pct": 90
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_8",
+      "text": "מטיילים שיוצאים לשטח למרות אזהרות מזג אוויר חמורות ונזקקים לחילוץ, צריכים לשאת בעלויות ההצלה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 195000,
+      "agree_pct": 58,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": null,
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 27
+        },
+        {
+          "id": "B",
+          "agree_pct": 62
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_9",
+      "text": "יש לשלב הכשרת חילוץ והצלה בסיסית כחלק מתוכנית החובה בבתי הספר התיכוניים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 112000,
+      "agree_pct": 74,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 64
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
+        },
+        {
+          "id": "C",
+          "agree_pct": 89
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_10",
+      "text": "המדינה חייבת לפתח אפליקציית חירום לאומית אחת שמשדרת מיקום מדויק לכל כוחות ההצלה בלחיצת כפתור",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 65000,
+      "agree_pct": 81,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
         },
         {
           "id": "C",
@@ -212,431 +491,121 @@
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_2",
-      "text": "יש לדרוש את פירוק כוח יוניפי\"ל והחלפתו בכוח רב-לאומי אקטיבי בעל סמכויות אכיפה וירי כלפי פעילי טרור",
+      "id": "decl_challenger_2026-04-19_11",
+      "text": "חברות שמבוססות על כלכלת חלטורות חייבות לספק תנאים סוציאליים בסיסיים לעובדים שלהן, כמו ימי מחלה ופנסיה",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 289400,
-      "agree_pct": 88,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "ongoing_idf_operations_in_lebanon_and_skepticism_regarding_peace_agreements_with_hezbollah",
-      "topic_label": "המערכה בלבנון והסדר מדיני",
+      "vote_count": 245000,
+      "agree_pct": 85,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "topic_label": "שוק העבודה לצעירים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 82
+          "agree_pct": 86
         },
         {
           "id": "B",
-          "agree_pct": 85
+          "agree_pct": 89
         },
         {
           "id": "C",
-          "agree_pct": 83
+          "agree_pct": 91
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_3",
-      "text": "אין לחתום על שום הסדר לפני שממשלת ישראל מאשרת תוכנית שיקום ופיצויים מלאה לתושבי הצפון שעסקיהם ובתיהם נפגעו",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 312000,
-      "agree_pct": 92,
-      "time_label": "לפני שעתיים",
+      "id": "decl_challenger_2026-04-19_12",
+      "text": "חוקי העבודה צריכים לכלול זכאות לימי חופשה ייעודיים לבריאות הנפש, בנפרד מימי מחלה רגילים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 160000,
+      "agree_pct": 48,
+      "time_label": "לפני 6 שעות",
       "pipeline_status": null,
-      "topic_key": "ongoing_idf_operations_in_lebanon_and_skepticism_regarding_peace_agreements_with_hezbollah",
-      "topic_label": "המערכה בלבנון והסדר מדיני",
+      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "topic_label": "שוק העבודה לצעירים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 83
         },
         {
           "id": "B",
-          "agree_pct": 96
+          "agree_pct": 20
+        },
+        {
+          "id": "C",
+          "agree_pct": 56
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_13",
+      "text": "יש לחייב מעסיקים בחוק לפרסם את טווח השכר המוצע כבר בשלב פרסום משרת העבודה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 210000,
+      "agree_pct": 82,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "topic_label": "שוק העבודה לצעירים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 73
+        },
+        {
+          "id": "B",
+          "agree_pct": 94
         },
         {
           "id": "C",
           "agree_pct": 88
         }
       ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_4",
-      "text": "יש להעביר חוק שיאסור מפורשות על השר לביטחון לאומי להתערב במינויי קצינים זוטרים ובחקירות משטרה ספציפיות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 198500,
-      "agree_pct": 85,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "attorney_generals_hearing_and_legal_precedent_regarding_the_potential_dismissal_of_itamar_ben_gvir",
-      "topic_label": "פיטורי בן גביר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 82
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 80
-        }
-      ],
-      "surprise": "bridge",
+      "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_5",
-      "text": "ההחלטה על סיום כהונתו של שר צריכה להיות בסמכותה הבלעדית של הכנסת, ולא של מערכת המשפט או הייעוץ המשפטי",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 275300,
-      "agree_pct": 48,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "attorney_generals_hearing_and_legal_precedent_regarding_the_potential_dismissal_of_itamar_ben_gvir",
-      "topic_label": "פיטורי בן גביר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 56
-        },
-        {
-          "id": "B",
-          "agree_pct": 17
-        },
-        {
-          "id": "C",
-          "agree_pct": 76
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_6",
-      "text": "יש לחייב פרסום מלא ושקוף של כל הפרוטוקולים מדיוני הייעוץ המשפטי בנוגע לפסילה או פיטורים של נבחרי ציבור",
+      "id": "decl_challenger_2026-04-19_14",
+      "text": "במקרה של התראות חמורות על מזג אוויר קיצוני, יש לאסור על מעסיקים לחייב עובדים להגיע פיזית למשרד",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 112000,
-      "agree_pct": 72,
-      "time_label": "לפני שעה",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "attorney_generals_hearing_and_legal_precedent_regarding_the_potential_dismissal_of_itamar_ben_gvir",
-      "topic_label": "פיטורי בן גביר",
+      "vote_count": 185000,
+      "agree_pct": 80,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
           "agree_pct": 89
         },
         {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_7",
-      "text": "יש לחייב תעודת הוראה רשמית רק עבור מורים המלמדים מקצועות ליבה כמו מתמטיקה ואנגלית, ולהחריג מורי קודש",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 85400,
-      "agree_pct": 52,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": null,
-      "topic_key": "severe_lack_of_formal_teaching_qualifications_among_professional_teachers_in_the_haredi_education_sector",
-      "topic_label": "הכשרת מורים בחינוך החרדי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 28
-        },
-        {
           "id": "B",
-          "agree_pct": 82
-        },
-        {
-          "id": "C",
-          "agree_pct": 56
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_8",
-      "text": "מורים במערכת החינוך החרדית בעלי ותק של מעל עשור צריכים לקבל פטור מהשלמת תעודת הוראה פורמלית",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 92100,
-      "agree_pct": 45,
-      "time_label": "לפני יום",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "severe_lack_of_formal_teaching_qualifications_among_professional_teachers_in_the_haredi_education_sector",
-      "topic_label": "הכשרת מורים בחינוך החרדי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 14
-        },
-        {
-          "id": "B",
-          "agree_pct": 49
-        },
-        {
-          "id": "C",
           "agree_pct": 72
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_9",
-      "text": "במקום סנקציות, המדינה צריכה להעניק תמריצים כספיים ובונוסים למוסדות חינוך חרדיים שיעסיקו מורים בעלי תעודת הוראה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 68,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "severe_lack_of_formal_teaching_qualifications_among_professional_teachers_in_the_haredi_education_sector",
-      "topic_label": "הכשרת מורים בחינוך החרדי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 58
-        },
-        {
-          "id": "B",
-          "agree_pct": 68
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_10",
-      "text": "יש להקים ועדה פדגוגית משותפת למשרד החינוך ולרבנים שתגבש מסלול הכשרה חלופי המוכר על ידי המדינה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 60,
-      "time_label": "לפני חצי שעה",
-      "pipeline_status": null,
-      "topic_key": "severe_lack_of_formal_teaching_qualifications_among_professional_teachers_in_the_haredi_education_sector",
-      "topic_label": "הכשרת מורים בחינוך החרדי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 68
-        },
-        {
-          "id": "B",
-          "agree_pct": 53
-        },
-        {
-          "id": "C",
-          "agree_pct": 58
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_11",
-      "text": "לאור העוינות באירופה, על המדינה להסיט את עיקר מאמצי הסחר והייצוא שלה לשווקים באסיה ובאמריקה הלטינית",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 167800,
-      "agree_pct": 78,
-      "time_label": "לפני 7 שעות",
-      "pipeline_status": null,
-      "topic_key": "concerns_over_israels_diplomatic_collapse_and_losing_its_remaining_allies_in_europe",
-      "topic_label": "הבידוד המדיני באירופה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 66
-        },
-        {
-          "id": "B",
-          "agree_pct": 93
-        },
-        {
-          "id": "C",
-          "agree_pct": 81
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_12",
-      "text": "יש לאסור על ממשלות אירופאיות המטילות אמברגו על ישראל להעביר מימון לעמותות וארגונים פוליטיים בתוך ישראל",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 245000,
-      "agree_pct": 58,
-      "time_label": "לפני 10 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "concerns_over_israels_diplomatic_collapse_and_losing_its_remaining_allies_in_europe",
-      "topic_label": "הבידוד המדיני באירופה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 93
-        },
-        {
-          "id": "B",
-          "agree_pct": 30
-        },
-        {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_13",
-      "text": "הדרך לשמר את הקשר עם אירופה היא באמצעות השקעה ממשלתית במיזמי הייטק ואקלים משותפים שאינם קשורים לביטחון",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 182000,
-      "agree_pct": 86,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "concerns_over_israels_diplomatic_collapse_and_losing_its_remaining_allies_in_europe",
-      "topic_label": "הבידוד המדיני באירופה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 90
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_14",
-      "text": "יש להוציא את מח\"ש מפרקליטות המדינה ולהפוך אותה לגוף חקירות עצמאי לחלוטין כדי למנוע ניגוד עניינים",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 265000,
-      "agree_pct": 89,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "political_attacks_and_reforms_surrounding_the_end_of_the_term_for_the_head_of_the_police_internal_investigations_department_piid",
-      "topic_label": "סיום תפקיד ראש מח\"ש",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 93
-        },
-        {
-          "id": "C",
-          "agree_pct": 86
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_15",
-      "text": "ראש מח\"ש הבא חייב להיבחר על ידי ועדה מקצועית בראשות שופט עליון בדימוס, ללא כל מעורבות של השר לביטחון לאומי",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 189000,
-      "agree_pct": 76,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "political_attacks_and_reforms_surrounding_the_end_of_the_term_for_the_head_of_the_police_internal_investigations_department_piid",
-      "topic_label": "סיום תפקיד ראש מח\"ש",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 71
-        },
-        {
-          "id": "B",
-          "agree_pct": 87
         },
         {
           "id": "C",
@@ -644,26 +613,26 @@
         }
       ],
       "surprise": null,
-      "win_rate": 0.7,
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_16",
-      "text": "יש להרחיב את סמכויות מח\"ש כך שתוכל לחקור גם חשדות לעבירות של פרקליטים ותובעים משטרתיים, ולא רק שוטרים בשטח",
+      "id": "decl_challenger_2026-04-19_15",
+      "text": "האחריות על גיזום עצים שמסכנים קווי חשמל צריכה לעבור במלואה לחברת החשמל, ולא ליפול על הרשויות המקומיות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
-      "agree_pct": 82,
-      "time_label": "לפני 9 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "political_attacks_and_reforms_surrounding_the_end_of_the_term_for_the_head_of_the_police_internal_investigations_department_piid",
-      "topic_label": "סיום תפקיד ראש מח\"ש",
+      "vote_count": 275000,
+      "agree_pct": 89,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 81
+          "agree_pct": 86
         },
         {
           "id": "B",
@@ -671,59 +640,90 @@
         },
         {
           "id": "C",
-          "agree_pct": 83
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_16",
+      "text": "חובה להטמין את כל תשתיות החשמל מתחת לאדמה בכל שכונה חדשה שנבנית כדי למנוע ניתוקים בסערות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 78000,
+      "agree_pct": 84,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 85
+        },
+        {
+          "id": "B",
+          "agree_pct": 91
+        },
+        {
+          "id": "C",
+          "agree_pct": 84
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_17",
-      "text": "יש לשלב נציגי ציבור שאינם עורכי דין או שוטרים לשעבר בוועדות הבדיקה של מח\"ש כדי להגביר את אמון האזרחים במערכת",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 68000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
+      "id": "decl_challenger_2026-04-19_17",
+      "text": "בזמן סערות קשות שגורמות לעומסי תנועה חריגים, המדינה צריכה לפתוח את כבישי האגרה לנסיעה בחינם",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134000,
+      "agree_pct": 60,
+      "time_label": "לפני 5 שעות",
       "pipeline_status": null,
-      "topic_key": "political_attacks_and_reforms_surrounding_the_end_of_the_term_for_the_head_of_the_police_internal_investigations_department_piid",
-      "topic_label": "סיום תפקיד ראש מח\"ש",
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 71
+          "agree_pct": 63
         },
         {
           "id": "B",
-          "agree_pct": 70
+          "agree_pct": 93
         },
         {
           "id": "C",
-          "agree_pct": 59
+          "agree_pct": 31
         }
       ],
-      "surprise": "bridge",
+      "surprise": "split",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-04-15_0",
-      "text": "יש לאסור באופן מוחלט בנייה מחדש של כפרים דרום-לבנוניים סמוך לגבול, ולהכריז על השטח כרצועת ביטחון מפורזת",
+      "id": "decl_challenger_2026-04-19_0",
+      "text": "יש להטיל אחריות פלילית אישית על מנכ\"לים של חברות קבלן במקרה של תאונות עבודה קטלניות באתרי הבנייה שלהם",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 142050,
+      "vote_count": 125000,
       "agree_pct": 75,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "ongoing_idf_operations_in_lebanon_and_skepticism_regarding_peace_agreements_with_hezbollah",
-      "topic_label": "המערכה בלבנון והסדר מדיני",
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
       "group_breakdown": [
         {
           "id": "A",
@@ -741,28 +741,307 @@
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_1",
-      "text": "כל הסדר מדיני חייב לכלול סעיף שבו מדינת לבנון תישא באחריות ישירה על כל ירי, כולל פגיעה בתשתיות אזרחיות שלה בתגובה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 215000,
-      "agree_pct": 55,
+      "id": "decl_challenger_2026-04-19_1",
+      "text": "חובה להתקין מצלמות בטיחות בכל אתר בנייה ולחבר אותן למוקד פיקוח ממשלתי שיתריע על חריגות בזמן אמת",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 210500,
+      "agree_pct": 88,
       "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "ongoing_idf_operations_in_lebanon_and_skepticism_regarding_peace_agreements_with_hezbollah",
-      "topic_label": "המערכה בלבנון והסדר מדיני",
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 55
+          "agree_pct": 84
         },
         {
           "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_2",
+      "text": "חברות ביטוח צריכות לגבות פרמיות גבוהות משמעותית מקבלנים שיש להם היסטוריה של תאונות עבודה ופציעות עובדים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 89000,
+      "agree_pct": 55,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 49
+        },
+        {
+          "id": "B",
+          "agree_pct": 76
+        },
+        {
+          "id": "C",
           "agree_pct": 33
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_3",
+      "text": "יש להקים מנגנון שמתגמל כספית עובדים שמדווחים על ליקויי בטיחות חמורים במקום העבודה שלהם",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 68,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_4",
+      "text": "צריך לאסור על תנועת משאיות כבדות בכבישים בינעירוניים בשעות העומס של הבוקר ואחר הצהריים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 145000,
+      "agree_pct": 52,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 79
+        },
+        {
+          "id": "B",
+          "agree_pct": 23
+        },
+        {
+          "id": "C",
+          "agree_pct": 47
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_5",
+      "text": "המדינה צריכה לסבסד התקנת מערכות בטיחות אקטיביות ברכבים ישנים כדי למנוע תאונות דרכים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 86,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 86
+        },
+        {
+          "id": "C",
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_6",
+      "text": "יש להחרים במקום את הרכב לנהגים שנתפסים נוהגים במהירות מופרזת שמסכנת חיים, עוד לפני המשפט",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 178000,
+      "agree_pct": 78,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "agree_pct": 95
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_7",
+      "text": "מתנדבים פעילים בגופי ההצלה והחירום צריכים לקבל נקודות זיכוי במס הכנסה כהוקרה על תרומתם",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 310000,
+      "agree_pct": 92,
+      "time_label": "לפני יום",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 91
+        },
+        {
+          "id": "B",
+          "agree_pct": 90
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_8",
+      "text": "מטיילים שיוצאים לשטח למרות אזהרות מזג אוויר חמורות ונזקקים לחילוץ, צריכים לשאת בעלויות ההצלה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 195000,
+      "agree_pct": 58,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": null,
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 27
+        },
+        {
+          "id": "B",
+          "agree_pct": 62
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_9",
+      "text": "יש לשלב הכשרת חילוץ והצלה בסיסית כחלק מתוכנית החובה בבתי הספר התיכוניים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 112000,
+      "agree_pct": 74,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 64
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
+        },
+        {
+          "id": "C",
+          "agree_pct": 89
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_10",
+      "text": "המדינה חייבת לפתח אפליקציית חירום לאומית אחת שמשדרת מיקום מדויק לכל כוחות ההצלה בלחיצת כפתור",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 65000,
+      "agree_pct": 81,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
         },
         {
           "id": "C",
@@ -772,431 +1051,121 @@
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_2",
-      "text": "יש לדרוש את פירוק כוח יוניפי\"ל והחלפתו בכוח רב-לאומי אקטיבי בעל סמכויות אכיפה וירי כלפי פעילי טרור",
+      "id": "decl_challenger_2026-04-19_11",
+      "text": "חברות שמבוססות על כלכלת חלטורות חייבות לספק תנאים סוציאליים בסיסיים לעובדים שלהן, כמו ימי מחלה ופנסיה",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 289400,
-      "agree_pct": 88,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "ongoing_idf_operations_in_lebanon_and_skepticism_regarding_peace_agreements_with_hezbollah",
-      "topic_label": "המערכה בלבנון והסדר מדיני",
+      "vote_count": 245000,
+      "agree_pct": 85,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "topic_label": "שוק העבודה לצעירים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 82
+          "agree_pct": 86
         },
         {
           "id": "B",
-          "agree_pct": 85
+          "agree_pct": 89
         },
         {
           "id": "C",
-          "agree_pct": 83
+          "agree_pct": 91
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_3",
-      "text": "אין לחתום על שום הסדר לפני שממשלת ישראל מאשרת תוכנית שיקום ופיצויים מלאה לתושבי הצפון שעסקיהם ובתיהם נפגעו",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 312000,
-      "agree_pct": 92,
-      "time_label": "לפני שעתיים",
+      "id": "decl_challenger_2026-04-19_12",
+      "text": "חוקי העבודה צריכים לכלול זכאות לימי חופשה ייעודיים לבריאות הנפש, בנפרד מימי מחלה רגילים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 160000,
+      "agree_pct": 48,
+      "time_label": "לפני 6 שעות",
       "pipeline_status": null,
-      "topic_key": "ongoing_idf_operations_in_lebanon_and_skepticism_regarding_peace_agreements_with_hezbollah",
-      "topic_label": "המערכה בלבנון והסדר מדיני",
+      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "topic_label": "שוק העבודה לצעירים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 83
         },
         {
           "id": "B",
-          "agree_pct": 96
+          "agree_pct": 20
+        },
+        {
+          "id": "C",
+          "agree_pct": 56
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_13",
+      "text": "יש לחייב מעסיקים בחוק לפרסם את טווח השכר המוצע כבר בשלב פרסום משרת העבודה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 210000,
+      "agree_pct": 82,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "topic_label": "שוק העבודה לצעירים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 73
+        },
+        {
+          "id": "B",
+          "agree_pct": 94
         },
         {
           "id": "C",
           "agree_pct": 88
         }
       ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_4",
-      "text": "יש להעביר חוק שיאסור מפורשות על השר לביטחון לאומי להתערב במינויי קצינים זוטרים ובחקירות משטרה ספציפיות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 198500,
-      "agree_pct": 85,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "attorney_generals_hearing_and_legal_precedent_regarding_the_potential_dismissal_of_itamar_ben_gvir",
-      "topic_label": "פיטורי בן גביר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 82
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 80
-        }
-      ],
-      "surprise": "bridge",
+      "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_5",
-      "text": "ההחלטה על סיום כהונתו של שר צריכה להיות בסמכותה הבלעדית של הכנסת, ולא של מערכת המשפט או הייעוץ המשפטי",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 275300,
-      "agree_pct": 48,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "attorney_generals_hearing_and_legal_precedent_regarding_the_potential_dismissal_of_itamar_ben_gvir",
-      "topic_label": "פיטורי בן גביר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 56
-        },
-        {
-          "id": "B",
-          "agree_pct": 17
-        },
-        {
-          "id": "C",
-          "agree_pct": 76
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_6",
-      "text": "יש לחייב פרסום מלא ושקוף של כל הפרוטוקולים מדיוני הייעוץ המשפטי בנוגע לפסילה או פיטורים של נבחרי ציבור",
+      "id": "decl_challenger_2026-04-19_14",
+      "text": "במקרה של התראות חמורות על מזג אוויר קיצוני, יש לאסור על מעסיקים לחייב עובדים להגיע פיזית למשרד",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 112000,
-      "agree_pct": 72,
-      "time_label": "לפני שעה",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "attorney_generals_hearing_and_legal_precedent_regarding_the_potential_dismissal_of_itamar_ben_gvir",
-      "topic_label": "פיטורי בן גביר",
+      "vote_count": 185000,
+      "agree_pct": 80,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
           "agree_pct": 89
         },
         {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_7",
-      "text": "יש לחייב תעודת הוראה רשמית רק עבור מורים המלמדים מקצועות ליבה כמו מתמטיקה ואנגלית, ולהחריג מורי קודש",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 85400,
-      "agree_pct": 52,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": null,
-      "topic_key": "severe_lack_of_formal_teaching_qualifications_among_professional_teachers_in_the_haredi_education_sector",
-      "topic_label": "הכשרת מורים בחינוך החרדי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 28
-        },
-        {
           "id": "B",
-          "agree_pct": 82
-        },
-        {
-          "id": "C",
-          "agree_pct": 56
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_8",
-      "text": "מורים במערכת החינוך החרדית בעלי ותק של מעל עשור צריכים לקבל פטור מהשלמת תעודת הוראה פורמלית",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 92100,
-      "agree_pct": 45,
-      "time_label": "לפני יום",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "severe_lack_of_formal_teaching_qualifications_among_professional_teachers_in_the_haredi_education_sector",
-      "topic_label": "הכשרת מורים בחינוך החרדי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 14
-        },
-        {
-          "id": "B",
-          "agree_pct": 49
-        },
-        {
-          "id": "C",
           "agree_pct": 72
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_9",
-      "text": "במקום סנקציות, המדינה צריכה להעניק תמריצים כספיים ובונוסים למוסדות חינוך חרדיים שיעסיקו מורים בעלי תעודת הוראה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 68,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "severe_lack_of_formal_teaching_qualifications_among_professional_teachers_in_the_haredi_education_sector",
-      "topic_label": "הכשרת מורים בחינוך החרדי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 58
-        },
-        {
-          "id": "B",
-          "agree_pct": 68
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_10",
-      "text": "יש להקים ועדה פדגוגית משותפת למשרד החינוך ולרבנים שתגבש מסלול הכשרה חלופי המוכר על ידי המדינה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 60,
-      "time_label": "לפני חצי שעה",
-      "pipeline_status": null,
-      "topic_key": "severe_lack_of_formal_teaching_qualifications_among_professional_teachers_in_the_haredi_education_sector",
-      "topic_label": "הכשרת מורים בחינוך החרדי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 68
-        },
-        {
-          "id": "B",
-          "agree_pct": 53
-        },
-        {
-          "id": "C",
-          "agree_pct": 58
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_11",
-      "text": "לאור העוינות באירופה, על המדינה להסיט את עיקר מאמצי הסחר והייצוא שלה לשווקים באסיה ובאמריקה הלטינית",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 167800,
-      "agree_pct": 78,
-      "time_label": "לפני 7 שעות",
-      "pipeline_status": null,
-      "topic_key": "concerns_over_israels_diplomatic_collapse_and_losing_its_remaining_allies_in_europe",
-      "topic_label": "הבידוד המדיני באירופה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 66
-        },
-        {
-          "id": "B",
-          "agree_pct": 93
-        },
-        {
-          "id": "C",
-          "agree_pct": 81
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_12",
-      "text": "יש לאסור על ממשלות אירופאיות המטילות אמברגו על ישראל להעביר מימון לעמותות וארגונים פוליטיים בתוך ישראל",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 245000,
-      "agree_pct": 58,
-      "time_label": "לפני 10 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "concerns_over_israels_diplomatic_collapse_and_losing_its_remaining_allies_in_europe",
-      "topic_label": "הבידוד המדיני באירופה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 93
-        },
-        {
-          "id": "B",
-          "agree_pct": 30
-        },
-        {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_13",
-      "text": "הדרך לשמר את הקשר עם אירופה היא באמצעות השקעה ממשלתית במיזמי הייטק ואקלים משותפים שאינם קשורים לביטחון",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 182000,
-      "agree_pct": 86,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "concerns_over_israels_diplomatic_collapse_and_losing_its_remaining_allies_in_europe",
-      "topic_label": "הבידוד המדיני באירופה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 90
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_14",
-      "text": "יש להוציא את מח\"ש מפרקליטות המדינה ולהפוך אותה לגוף חקירות עצמאי לחלוטין כדי למנוע ניגוד עניינים",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 265000,
-      "agree_pct": 89,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "political_attacks_and_reforms_surrounding_the_end_of_the_term_for_the_head_of_the_police_internal_investigations_department_piid",
-      "topic_label": "סיום תפקיד ראש מח\"ש",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 93
-        },
-        {
-          "id": "C",
-          "agree_pct": 86
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-15_15",
-      "text": "ראש מח\"ש הבא חייב להיבחר על ידי ועדה מקצועית בראשות שופט עליון בדימוס, ללא כל מעורבות של השר לביטחון לאומי",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 189000,
-      "agree_pct": 76,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "political_attacks_and_reforms_surrounding_the_end_of_the_term_for_the_head_of_the_police_internal_investigations_department_piid",
-      "topic_label": "סיום תפקיד ראש מח\"ש",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 71
-        },
-        {
-          "id": "B",
-          "agree_pct": 87
         },
         {
           "id": "C",
@@ -1204,26 +1173,26 @@
         }
       ],
       "surprise": null,
-      "win_rate": 0.7,
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_16",
-      "text": "יש להרחיב את סמכויות מח\"ש כך שתוכל לחקור גם חשדות לעבירות של פרקליטים ותובעים משטרתיים, ולא רק שוטרים בשטח",
+      "id": "decl_challenger_2026-04-19_15",
+      "text": "האחריות על גיזום עצים שמסכנים קווי חשמל צריכה לעבור במלואה לחברת החשמל, ולא ליפול על הרשויות המקומיות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
-      "agree_pct": 82,
-      "time_label": "לפני 9 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "political_attacks_and_reforms_surrounding_the_end_of_the_term_for_the_head_of_the_police_internal_investigations_department_piid",
-      "topic_label": "סיום תפקיד ראש מח\"ש",
+      "vote_count": 275000,
+      "agree_pct": 89,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 81
+          "agree_pct": 86
         },
         {
           "id": "B",
@@ -1231,45 +1200,76 @@
         },
         {
           "id": "C",
-          "agree_pct": 83
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-19_16",
+      "text": "חובה להטמין את כל תשתיות החשמל מתחת לאדמה בכל שכונה חדשה שנבנית כדי למנוע ניתוקים בסערות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 78000,
+      "agree_pct": 84,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 85
+        },
+        {
+          "id": "B",
+          "agree_pct": 91
+        },
+        {
+          "id": "C",
+          "agree_pct": 84
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-15_17",
-      "text": "יש לשלב נציגי ציבור שאינם עורכי דין או שוטרים לשעבר בוועדות הבדיקה של מח\"ש כדי להגביר את אמון האזרחים במערכת",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 68000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
+      "id": "decl_challenger_2026-04-19_17",
+      "text": "בזמן סערות קשות שגורמות לעומסי תנועה חריגים, המדינה צריכה לפתוח את כבישי האגרה לנסיעה בחינם",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134000,
+      "agree_pct": 60,
+      "time_label": "לפני 5 שעות",
       "pipeline_status": null,
-      "topic_key": "political_attacks_and_reforms_surrounding_the_end_of_the_term_for_the_head_of_the_police_internal_investigations_department_piid",
-      "topic_label": "סיום תפקיד ראש מח\"ש",
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 71
+          "agree_pct": 63
         },
         {
           "id": "B",
-          "agree_pct": 70
+          "agree_pct": 93
         },
         {
           "id": "C",
-          "agree_pct": 59
+          "agree_pct": 31
         }
       ],
-      "surprise": "bridge",
+      "surprise": "split",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-15",
-      "created": "2026-04-15T01:30:06.511542+00:00"
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     }
   ]
 }

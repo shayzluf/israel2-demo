@@ -1,397 +1,715 @@
 {
-  "updated": "2026-04-16T08:00:00Z",
+  "updated": "2026-04-19T05:38:58.201210+00:00",
   "topics": [
     {
-      "key": "cost_of_living_and_food_prices",
-      "label": "יוקר המחיה ומחירי המזון",
+      "key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "label": "בטיחות בעבודה",
       "you_group": "A",
       "groups": [
-        {"id": "A", "name": "קבוצה א׳", "color": "te", "size_pct": 34, "agree_pct": 86},
-        {"id": "B", "name": "קבוצה ב׳", "color": "bl", "size_pct": 41, "agree_pct": 83},
-        {"id": "C", "name": "קבוצה ג׳", "color": "pu", "size_pct": 25, "agree_pct": 88}
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 63
+        }
       ],
-      "convergence": "כל הקבוצות מסכימות שהריכוזיות בשוק המזון פוגעת בכולם ושיש לפתוח את השוק לתחרות אמיתית — גם תושבי המרכז וגם הפריפריה חשים את עליית המחירים באופן זהה",
-      "divergence": "קבוצה א׳ מעדיפה הורדת מכסי יבוא מיידית, קבוצה ב׳ דורשת פיקוח מחירים ממשלתי ישיר, וקבוצה ג׳ מבקשת קודם שקיפות מלאה של מרכיבי המחיר לפני כל התערבות"
+      "convergence": "באופן מפתיע, כל הקבוצות מסכימות שחייבים לפגוע בכיס של קבלנים רשלנים ולתגמל כספית עובדים שמתריעים על סכנות כדי לעצור את הקטל באתרי הבנייה",
+      "divergence": "בעוד שקבוצה א׳ דורשת להטיל אחריות פלילית אישית על מנכ״לים, קבוצה ב׳ מעדיפה פתרונות טכנולוגיים כמו מצלמות פיקוח, וקבוצה ג׳ מתמקדת בענישה דרך פרמיות ביטוח גבוהות"
     },
     {
-      "key": "emergency_shelters_and_home_front",
-      "label": "ממ״דים וביטחון עורף",
+      "key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
-        {"id": "A", "name": "קבוצה א׳", "color": "te", "size_pct": 34, "agree_pct": 89},
-        {"id": "B", "name": "קבוצה ב׳", "color": "bl", "size_pct": 41, "agree_pct": 87},
-        {"id": "C", "name": "קבוצה ג׳", "color": "pu", "size_pct": 25, "agree_pct": 91}
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 68
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 70
+        }
       ],
-      "convergence": "הסכמה חוצת קבוצות שכל אזרח — בצפון, בדרום, במרכז, ביהודה ושומרון — ראוי למרחב מוגן תקני, וזו אחריות המדינה לממן את הבנייה",
-      "divergence": "הוויכוח הוא על סדר העדיפויות: קבוצה א׳ דורשת להתחיל מבתי ספר, קבוצה ב׳ מתעקשת על שכונות ותיקות בערים מעורבות, וקבוצה ג׳ רוצה להתחיל מבניינים ישנים בפריפריה"
+      "convergence": "ישנה הסכמה רחבה שחינוך לבדו לא מספיק, ושהמדינה חייבת להתערב באופן אקטיבי, למשל דרך סבסוד מערכות בטיחות לרכבים ישנים",
+      "divergence": "המחלוקת העיקרית היא על רמת הענישה: קבוצה א׳ תומכת בהחרמת רכבים מיידית לנהגים מסוכנים, קבוצה ב׳ מתמקדת בהרחקת משאיות בשעות העומס, וקבוצה ג׳ מתנגדת לצעדים דרקוניים ומעדיפה תמריצים חיוביים"
     },
     {
-      "key": "healthcare_access_and_wait_times",
-      "label": "נגישות לרפואה וזמני המתנה",
+      "key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "label": "שירותי הצלה וחירום",
       "you_group": "A",
       "groups": [
-        {"id": "A", "name": "קבוצה א׳", "color": "te", "size_pct": 34, "agree_pct": 91},
-        {"id": "B", "name": "קבוצה ב׳", "color": "bl", "size_pct": 41, "agree_pct": 88},
-        {"id": "C", "name": "קבוצה ג׳", "color": "pu", "size_pct": 25, "agree_pct": 93}
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 68
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 86
+        }
       ],
-      "convergence": "כולם חווים את ההמתנה הבלתי נסבלת לרופא מומחה ומסכימים שזמני ההמתנה חייבים להיות שקופים ומוגבלים בחוק — אין הבדל בין מגזרים בתסכול הזה",
-      "divergence": "קבוצה א׳ מעדיפה סבסוד רופאים פרטיים כדי לקצר תורים, קבוצה ב׳ דורשת חיזוק המערכת הציבורית בלבד, וקבוצה ג׳ מציעה לפתוח את השוק לרופאים מחו״ל"
+      "convergence": "כל הקבוצות תמימי דעים שהמדינה חייבת לפתח אפליקציית חירום לאומית אחידה וכן להעניק נקודות זיכוי במס למתנדבים כהוקרה על פועלם",
+      "divergence": "קבוצה א׳ דורשת לקנוס מטיילים חסרי אחריות שיוצאים לשטח בסערה, בעוד שקבוצה ב׳ מתנגדת לגביית תשלום על חילוץ, וקבוצה ג׳ בכלל מתעדפת הכשרת חילוץ כחובה בבתי הספר"
     },
     {
-      "key": "government_bureaucracy_and_digital_services",
-      "label": "בירוקרטיה ושירותים דיגיטליים",
+      "key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "label": "שוק העבודה לצעירים",
       "you_group": "A",
       "groups": [
-        {"id": "A", "name": "קבוצה א׳", "color": "te", "size_pct": 34, "agree_pct": 84},
-        {"id": "B", "name": "קבוצה ב׳", "color": "bl", "size_pct": 41, "agree_pct": 82},
-        {"id": "C", "name": "קבוצה ג׳", "color": "pu", "size_pct": 25, "agree_pct": 86}
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 68
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 78
+        }
       ],
-      "convergence": "הסכמה גורפת שכל שירות ממשלתי צריך להיות זמין אונליין בלי לעמוד בתור פיזי, ושאזרח לא צריך להביא מסמכים שכבר נמצאים במאגרי המדינה",
-      "divergence": "קבוצה א׳ דורשת להשוות את כל השירותים הממשלתיים לרמה של אפליקציית בנק תוך שנתיים, קבוצה ב׳ מתמקדת בנגישות לקשישים ולאוכלוסיות שאינן דיגיטליות, וקבוצה ג׳ חוששת מריכוז מידע אישי בידי גוף ממשלתי אחד"
+      "convergence": "יש קונצנזוס מפתיע סביב הדרישה לשקיפות, כשכולם מסכימים שמעסיקים חייבים לפרסם את טווח השכר כבר במודעת הדרושים",
+      "divergence": "קבוצה א׳ נאבקת על זכויות סוציאליות לעובדי חלטורות וימי חופשה לבריאות הנפש, קבוצה ב׳ מוכנה רק לשקיפות בשכר, וקבוצה ג׳ חוששת שרגולציה כזו תפגע בגמישות של שוק העבודה"
     },
     {
-      "key": "education_quality_and_teacher_shortage",
-      "label": "איכות החינוך ומחסור במורים",
+      "key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "label": "היערכות למזג אוויר",
       "you_group": "A",
       "groups": [
-        {"id": "A", "name": "קבוצה א׳", "color": "te", "size_pct": 34, "agree_pct": 85},
-        {"id": "B", "name": "קבוצה ב׳", "color": "bl", "size_pct": 41, "agree_pct": 81},
-        {"id": "C", "name": "קבוצה ג׳", "color": "pu", "size_pct": 25, "agree_pct": 87}
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 72
+        }
       ],
-      "convergence": "כל הקבוצות מסכימות שמשכורות המורים חייבות לעלות משמעותית כדי למשוך את הטובים ביותר להוראה — זה המפתח לשוויון הזדמנויות בחינוך בכל הזרמים",
-      "divergence": "קבוצה א׳ מעדיפה העלאת שכר גורפת, קבוצה ב׳ רוצה בונוסים למורים שמלמדים בפריפריה ובאזורי עדיפות, וקבוצה ג׳ מבקשת קודם לשדרג את ההכשרה בסמינרים ובאקדמיות"
+      "convergence": "כל הקבוצות מסכימות שהגיע הזמן להפסיק עם הפסקות החשמל בסערות ודורשות להטמין את כל תשתיות החשמל מתחת לאדמה בשכונות חדשות",
+      "divergence": "קבוצה א׳ דורשת התערבות ממשלתית אגרסיבית כמו פתיחת כבישי אגרה בחינם ואיסור הגעה למשרד, בעוד שקבוצה ב׳ מתמקדת באחריות חברת החשמל לגיזום, וקבוצה ג׳ מתנגדת להתערבות בשוק הפרטי של כבישי האגרה"
     }
   ],
   "declarations": [
     {
-      "id": "decl_cost_of_living_0",
-      "text": "הריכוזיות בשוק המזון הישראלי פוגעת בכולנו — יש לפתוח את היבוא לתחרות אמיתית",
+      "id": "decl_improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries_0",
+      "text": "חובה להתקין מצלמות בטיחות בכל אתר בנייה ולחבר אותן למוקד פיקוח ממשלתי שיתריע על חריגות בזמן אמת",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 312000,
-      "agree_pct": 87,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "cost_of_living_and_food_prices",
-      "topic_label": "יוקר המחיה ומחירי המזון",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 85},
-        {"id": "B", "agree_pct": 84},
-        {"id": "C", "agree_pct": 89}
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.91,
-      "days_as_winner": 14,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_cost_of_living_1",
-      "text": "יש לחייב את רשתות השיווק לפרסם שקיפות מלאה של מרכיבי המחיר בכל מוצר בסיסי",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 198000,
-      "agree_pct": 82,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "cost_of_living_and_food_prices",
-      "topic_label": "יוקר המחיה ומחירי המזון",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 81},
-        {"id": "B", "agree_pct": 79},
-        {"id": "C", "agree_pct": 85}
-      ],
-      "surprise": null,
-      "win_rate": 0.84,
-      "days_as_winner": 7,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_cost_of_living_2",
-      "text": "עמלות הבנקים בישראל מנופחות ויש לקבוע תקרה חוקית לעמלות בסיסיות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 275000,
-      "agree_pct": 84,
+      "vote_count": 210500,
+      "agree_pct": 88,
       "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "cost_of_living_and_food_prices",
-      "topic_label": "יוקר המחיה ומחירי המזון",
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
       "group_breakdown": [
-        {"id": "A", "agree_pct": 83},
-        {"id": "B", "agree_pct": 82},
-        {"id": "C", "agree_pct": 86}
+        {
+          "id": "A",
+          "agree_pct": 84
+        },
+        {
+          "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries_1",
+      "text": "יש להטיל אחריות פלילית אישית על מנכ\"לים של חברות קבלן במקרה של תאונות עבודה קטלניות באתרי הבנייה שלהם",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 125000,
+      "agree_pct": 75,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 71
+        },
+        {
+          "id": "C",
+          "agree_pct": 64
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries_2",
+      "text": "חברות ביטוח צריכות לגבות פרמיות גבוהות משמעותית מקבלנים שיש להם היסטוריה של תאונות עבודה ופציעות עובדים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 89000,
+      "agree_pct": 55,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 49
+        },
+        {
+          "id": "B",
+          "agree_pct": 76
+        },
+        {
+          "id": "C",
+          "agree_pct": 33
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries_3",
+      "text": "יש להקים מנגנון שמתגמל כספית עובדים שמדווחים על ליקויי בטיחות חמורים במקום העבודה שלהם",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 68,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
+      "topic_label": "בטיחות בעבודה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_addressing_road_safety_and_reducing_traffic_accidents_across_the_country_4",
+      "text": "המדינה צריכה לסבסד התקנת מערכות בטיחות אקטיביות ברכבים ישנים כדי למנוע תאונות דרכים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 86,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 86
+        },
+        {
+          "id": "C",
+          "agree_pct": 91
+        }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
-      "days_as_winner": 10,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_shelters_0",
-      "text": "המדינה חייבת לממן בניית ממ״ד לכל אזרח שאין לו — בצפון, בדרום ובמרכז",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 345000,
-      "agree_pct": 91,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "emergency_shelters_and_home_front",
-      "topic_label": "ממ״דים וביטחון עורף",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 89},
-        {"id": "B", "agree_pct": 88},
-        {"id": "C", "agree_pct": 92}
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.95,
-      "days_as_winner": 28,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_shelters_1",
-      "text": "כל בית ספר בישראל חייב להיות עם ממ״ד תקני — אין מצב שילדים לומדים בלי הגנה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 298000,
-      "agree_pct": 93,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
-      "topic_key": "emergency_shelters_and_home_front",
-      "topic_label": "ממ״דים וביטחון עורף",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 92},
-        {"id": "B", "agree_pct": 91},
-        {"id": "C", "agree_pct": 94}
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.93,
-      "days_as_winner": 21,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_shelters_2",
-      "text": "יש להקים מערכת התרעה אחת ואמינה במקום חמש אפליקציות שסותרות אחת את השנייה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 215000,
-      "agree_pct": 88,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "emergency_shelters_and_home_front",
-      "topic_label": "ממ״דים וביטחון עורף",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 87},
-        {"id": "B", "agree_pct": 86},
-        {"id": "C", "agree_pct": 90}
-      ],
-      "surprise": null,
-      "win_rate": 0.88,
-      "days_as_winner": 14,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_healthcare_0",
-      "text": "כל אזרח צריך להגיע לרופא מומחה תוך 30 יום — לא תוך חצי שנה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 289000,
-      "agree_pct": 92,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "healthcare_access_and_wait_times",
-      "topic_label": "נגישות לרפואה וזמני המתנה",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 91},
-        {"id": "B", "agree_pct": 89},
-        {"id": "C", "agree_pct": 94}
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.94,
-      "days_as_winner": 21,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_healthcare_1",
-      "text": "יש להכפיל את מספר הפסיכולוגים הקליניים במערכת הציבורית — 14 חודשי המתנה זה לא מקובל",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 267000,
-      "agree_pct": 89,
-      "time_label": "לפני 7 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "healthcare_access_and_wait_times",
-      "topic_label": "נגישות לרפואה וזמני המתנה",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 88},
-        {"id": "B", "agree_pct": 87},
-        {"id": "C", "agree_pct": 91}
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.90,
-      "days_as_winner": 18,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_healthcare_2",
-      "text": "זמני ההמתנה בחדר מיון צריכים להיות שקופים ובזמן אמת — כמו שעת הגעה של אוטובוס",
+      "id": "decl_addressing_road_safety_and_reducing_traffic_accidents_across_the_country_5",
+      "text": "יש להחרים במקום את הרכב לנהגים שנתפסים נוהגים במהירות מופרזת שמסכנת חיים, עוד לפני המשפט",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
       "vote_count": 178000,
-      "agree_pct": 85,
-      "time_label": "לפני יום",
+      "agree_pct": 78,
+      "time_label": "לפני 8 שעות",
       "pipeline_status": null,
-      "topic_key": "healthcare_access_and_wait_times",
-      "topic_label": "נגישות לרפואה וזמני המתנה",
+      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
-        {"id": "A", "agree_pct": 84},
-        {"id": "B", "agree_pct": 83},
-        {"id": "C", "agree_pct": 87}
+        {
+          "id": "A",
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "agree_pct": 95
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
       ],
       "surprise": null,
-      "win_rate": 0.82,
-      "days_as_winner": 7,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_bureaucracy_0",
-      "text": "כל שירות ממשלתי צריך להיות זמין אונליין — אין סיבה לעמוד בתור פיזי ב-2026",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 256000,
-      "agree_pct": 86,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
-      "topic_key": "government_bureaucracy_and_digital_services",
-      "topic_label": "בירוקרטיה ושירותים דיגיטליים",
+      "id": "decl_addressing_road_safety_and_reducing_traffic_accidents_across_the_country_6",
+      "text": "צריך לאסור על תנועת משאיות כבדות בכבישים בינעירוניים בשעות העומס של הבוקר ואחר הצהריים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 145000,
+      "agree_pct": 52,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
-        {"id": "A", "agree_pct": 85},
-        {"id": "B", "agree_pct": 83},
-        {"id": "C", "agree_pct": 88}
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.87,
-      "days_as_winner": 14,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_bureaucracy_1",
-      "text": "אין סיבה שאזרח צריך להביא מסמכים שכבר נמצאים במערכות הממשלתיות — המדינה צריכה לדבר עם עצמה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 234000,
-      "agree_pct": 88,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "government_bureaucracy_and_digital_services",
-      "topic_label": "בירוקרטיה ושירותים דיגיטליים",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 87},
-        {"id": "B", "agree_pct": 86},
-        {"id": "C", "agree_pct": 89}
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.89,
-      "days_as_winner": 10,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_bureaucracy_2",
-      "text": "זמן טיפול בבקשה ממשלתית לא צריך לעבור 14 ימי עסקים — כמו חברת הייטק",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 189000,
-      "agree_pct": 81,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "government_bureaucracy_and_digital_services",
-      "topic_label": "בירוקרטיה ושירותים דיגיטליים",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 80},
-        {"id": "B", "agree_pct": 79},
-        {"id": "C", "agree_pct": 83}
+        {
+          "id": "A",
+          "agree_pct": 79
+        },
+        {
+          "id": "B",
+          "agree_pct": 23
+        },
+        {
+          "id": "C",
+          "agree_pct": 47
+        }
       ],
       "surprise": null,
       "win_rate": 0.78,
-      "days_as_winner": 5,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_education_0",
-      "text": "משכורות המורים חייבות לעלות משמעותית — אי אפשר למשוך את הטובים ביותר בשכר של מתחילים",
+      "id": "decl_funding_and_supporting_emergency_rescue_services_like_fire_and_rescue_7",
+      "text": "מתנדבים פעילים בגופי ההצלה והחירום צריכים לקבל נקודות זיכוי במס הכנסה כהוקרה על תרומתם",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 278000,
-      "agree_pct": 86,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "education_quality_and_teacher_shortage",
-      "topic_label": "איכות החינוך ומחסור במורים",
+      "vote_count": 310000,
+      "agree_pct": 92,
+      "time_label": "לפני יום",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
       "group_breakdown": [
-        {"id": "A", "agree_pct": 85},
-        {"id": "B", "agree_pct": 82},
-        {"id": "C", "agree_pct": 88}
+        {
+          "id": "A",
+          "agree_pct": 91
+        },
+        {
+          "id": "B",
+          "agree_pct": 90
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
+        }
       ],
       "surprise": "bridge",
-      "win_rate": 0.88,
-      "days_as_winner": 14,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     },
     {
-      "id": "decl_education_1",
-      "text": "כל ילד בישראל ראוי לחינוך איכותי — בלי קשר לאיפה הוא גר ולאיזה זרם הוא שייך",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 301000,
-      "agree_pct": 90,
-      "time_label": "לפני 5 שעות",
+      "id": "decl_funding_and_supporting_emergency_rescue_services_like_fire_and_rescue_8",
+      "text": "מטיילים שיוצאים לשטח למרות אזהרות מזג אוויר חמורות ונזקקים לחילוץ, צריכים לשאת בעלויות ההצלה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 195000,
+      "agree_pct": 58,
+      "time_label": "לפני 12 שעות",
       "pipeline_status": null,
-      "topic_key": "education_quality_and_teacher_shortage",
-      "topic_label": "איכות החינוך ומחסור במורים",
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
       "group_breakdown": [
-        {"id": "A", "agree_pct": 89},
-        {"id": "B", "agree_pct": 87},
-        {"id": "C", "agree_pct": 92}
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.92,
-      "days_as_winner": 21,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
-    },
-    {
-      "id": "decl_education_2",
-      "text": "יש ללמד כל תלמיד תיכון ניהול כספים ותקציב אישי — זה חשוב לא פחות ממתמטיקה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 198000,
-      "agree_pct": 83,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "education_quality_and_teacher_shortage",
-      "topic_label": "איכות החינוך ומחסור במורים",
-      "group_breakdown": [
-        {"id": "A", "agree_pct": 82},
-        {"id": "B", "agree_pct": 80},
-        {"id": "C", "agree_pct": 85}
+        {
+          "id": "A",
+          "agree_pct": 27
+        },
+        {
+          "id": "B",
+          "agree_pct": 62
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
       ],
       "surprise": null,
-      "win_rate": 0.80,
-      "days_as_winner": 7,
-      "generated_from": "manual_consensus_2026-04-16",
-      "created": "2026-04-16T08:00:00Z"
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_funding_and_supporting_emergency_rescue_services_like_fire_and_rescue_9",
+      "text": "יש לשלב הכשרת חילוץ והצלה בסיסית כחלק מתוכנית החובה בבתי הספר התיכוניים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 112000,
+      "agree_pct": 74,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 64
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
+        },
+        {
+          "id": "C",
+          "agree_pct": 89
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_funding_and_supporting_emergency_rescue_services_like_fire_and_rescue_10",
+      "text": "המדינה חייבת לפתח אפליקציית חירום לאומית אחת שמשדרת מיקום מדויק לכל כוחות ההצלה בלחיצת כפתור",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 65000,
+      "agree_pct": 81,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
+      "topic_label": "שירותי הצלה וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
+        },
+        {
+          "id": "C",
+          "agree_pct": 79
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_adapting_the_labor_market_and_employment_policies_for_the_younger_generation_11",
+      "text": "חברות שמבוססות על כלכלת חלטורות חייבות לספק תנאים סוציאליים בסיסיים לעובדים שלהן, כמו ימי מחלה ופנסיה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 245000,
+      "agree_pct": 85,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "topic_label": "שוק העבודה לצעירים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 86
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_adapting_the_labor_market_and_employment_policies_for_the_younger_generation_12",
+      "text": "יש לחייב מעסיקים בחוק לפרסם את טווח השכר המוצע כבר בשלב פרסום משרת העבודה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 210000,
+      "agree_pct": 82,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "topic_label": "שוק העבודה לצעירים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 73
+        },
+        {
+          "id": "B",
+          "agree_pct": 94
+        },
+        {
+          "id": "C",
+          "agree_pct": 88
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_adapting_the_labor_market_and_employment_policies_for_the_younger_generation_13",
+      "text": "חוקי העבודה צריכים לכלול זכאות לימי חופשה ייעודיים לבריאות הנפש, בנפרד מימי מחלה רגילים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 160000,
+      "agree_pct": 48,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
+      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
+      "topic_label": "שוק העבודה לצעירים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 20
+        },
+        {
+          "id": "C",
+          "agree_pct": 56
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions_14",
+      "text": "האחריות על גיזום עצים שמסכנים קווי חשמל צריכה לעבור במלואה לחברת החשמל, ולא ליפול על הרשויות המקומיות",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 275000,
+      "agree_pct": 89,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 86
+        },
+        {
+          "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions_15",
+      "text": "במקרה של התראות חמורות על מזג אוויר קיצוני, יש לאסור על מעסיקים לחייב עובדים להגיע פיזית למשרד",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 185000,
+      "agree_pct": 80,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 72
+        },
+        {
+          "id": "C",
+          "agree_pct": 80
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions_16",
+      "text": "בזמן סערות קשות שגורמות לעומסי תנועה חריגים, המדינה צריכה לפתוח את כבישי האגרה לנסיעה בחינם",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134000,
+      "agree_pct": 60,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 63
+        },
+        {
+          "id": "B",
+          "agree_pct": 93
+        },
+        {
+          "id": "C",
+          "agree_pct": 31
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
+    },
+    {
+      "id": "decl_infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions_17",
+      "text": "חובה להטמין את כל תשתיות החשמל מתחת לאדמה בכל שכונה חדשה שנבנית כדי למנוע ניתוקים בסערות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 78000,
+      "agree_pct": 84,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
+      "topic_label": "היערכות למזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 85
+        },
+        {
+          "id": "B",
+          "agree_pct": 91
+        },
+        {
+          "id": "C",
+          "agree_pct": 84
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-19",
+      "created": "2026-04-19T05:38:58.195405+00:00"
     }
   ]
 }
