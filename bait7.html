@@ -1957,6 +1957,7 @@ function advanceTour() {
   appTourStep++;
   hideTourElements();
   appTourNav = true;
+  if (typeof gtag === 'function') gtag('event', 'tour_step_' + appTourStep);
   switch (appTourStep) {
     case 1: go(4); setTimeout(() => { showTourBubble('tour-decl'); appTourNav = false; }, 350); return;
     case 2: go(3); setTimeout(() => { showTourBubble('tour-home'); appTourNav = false; }, 350); return;
@@ -1967,9 +1968,8 @@ function advanceTour() {
       try { localStorage.setItem('nspr_tour_done', '1'); } catch(e) {}
       go(4);
       if (typeof gtag === 'function') gtag('event', 'tour_complete');
-      break;
+      return;
   }
-  if (typeof gtag === 'function') gtag('event', 'tour_step_' + appTourStep);
 }
 
 function showTourBubble(id) {
@@ -3022,6 +3022,7 @@ function openDeclCompose(preselectedTopic) {
   }
 
   gate.style.display = 'none';
+  _dclTopic = preselectedTopic || (typeof SELECTED_TOPIC !== 'undefined' ? SELECTED_TOPIC : null);
   if (typeof gtag === 'function') gtag('event', 'compose_open', { topic: _dclTopic || 'none' });
   const ta = document.getElementById('dcl-textarea');
   const starters = document.getElementById('dcl-starters');
@@ -3041,7 +3042,6 @@ function openDeclCompose(preselectedTopic) {
   // Populate topic pills from loaded declarations data
   const topicRow = document.getElementById('dcl-topic-row');
   topicRow.innerHTML = '';
-  _dclTopic = preselectedTopic || (typeof SELECTED_TOPIC !== 'undefined' ? SELECTED_TOPIC : null);
   if (typeof DECLARATIONS_DATA !== 'undefined' && DECLARATIONS_DATA && DECLARATIONS_DATA.topics) {
     DECLARATIONS_DATA.topics.forEach(t => {
       const pill = document.createElement('div');
