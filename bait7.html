@@ -3477,7 +3477,7 @@ function updateDeclPreview() {
     '</div>';
 }
 
-function submitDeclaration() {
+async function submitDeclaration() {
   if (typeof gtag === 'function') gtag('event', 'compose_submit', { topic: _dclTopic || 'none', char_count: document.getElementById('dcl-textarea').value.length });
   const form = document.getElementById('dcl-form');
   const success = document.getElementById('dcl-success');
@@ -3488,17 +3488,80 @@ function submitDeclaration() {
   btn.disabled = true;
   btn.textContent = 'שולח...';
 
-  setTimeout(() => {
+  const text = ta.value.trim();
+  const apiOn = window.POLIS_API && window.POLIS_API.enabled();
+
+  // When the API is off, fall back to the local preview-only behavior so the
+  // GitHub Pages static demo keeps working without a backend.
+  if (!apiOn) {
+    setTimeout(() => {
+      form.style.display = 'none';
+      successPreview.innerHTML = '<div class="dcl-preview-card">'
+        + '<div class="dcl-preview-badge">חדש</div>'
+        + '<div class="dcl-preview-text">' + text.replace(/</g,'&lt;') + '</div>'
+        + '<div class="dcl-preview-meta">0 הצביעו</div>'
+        + '</div>';
+      success.classList.add('vis');
+      btn.textContent = 'לשתף';
+    }, 600);
+    return;
+  }
+
+  try {
+    const uid = await window.POLIS_API.ensureUser();
+    const topicKey = _dclTopic || DECLARATIONS_DATA?.topics?.[0]?.key;
+    if (!topicKey) {
+      throw new Error('no topic selected');
+    }
+    const lang = (function () { try { return localStorage.getItem('ns_lang') || 'he'; } catch (_) { return 'he'; } })();
+    const res = await fetch(window.POLIS_API.base() + '/api/v1/declarations', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ user_id: uid, topic_key: topicKey, text: text, lang: lang }),
+    });
+    const body = await res.json().catch(() => ({}));
+
+    if (res.ok) {
+      // 201 published, 202 pending_review. Show preview either way; mark badge.
+      const isPending = body.status === 'pending_review' || res.status === 202;
+      const badgeText = isPending ? 'ממתין לבדיקה' : 'חדש';
+      form.style.display = 'none';
+      successPreview.innerHTML = '<div class="dcl-preview-card">'
+        + '<div class="dcl-preview-badge">' + badgeText + '</div>'
+        + '<div class="dcl-preview-text">' + text.replace(/</g,'&lt;') + '</div>'
+        + '<div class="dcl-preview-meta">' + (isPending ? 'יתפרסם אחרי בדיקה' : '0 הצביעו') + '</div>'
+        + '</div>';
+      success.classList.add('vis');
+      if (typeof gtag === 'function') gtag('event', 'compose_published', { status: body.status, verdict: body.verdict });
+      // Refresh the feed so newly-published items appear without a page reload.
+      if (!isPending && typeof loadDeclarations === 'function') {
+        setTimeout(() => loadDeclarations(), 300);
+      }
+    } else {
+      // 422 rejected (local prefilter or moderator), 429 rate-limited, 400 bad topic.
+      const reason = body.reason_text || 'ההצעה נדחתה. אפשר לנסות ניסוח אחר';
+      form.style.display = 'none';
+      successPreview.innerHTML = '<div class="dcl-preview-card" style="border-color:var(--co)">'
+        + '<div class="dcl-preview-badge" style="background:var(--co1);color:var(--co)">נדחה</div>'
+        + '<div class="dcl-preview-text">' + text.replace(/</g,'&lt;') + '</div>'
+        + '<div class="dcl-preview-meta" style="color:var(--co)">' + reason.replace(/</g,'&lt;') + '</div>'
+        + '</div>';
+      success.classList.add('vis');
+      if (typeof gtag === 'function') gtag('event', 'compose_rejected', { reason_code: body.reason_code, http: res.status });
+    }
+  } catch (e) {
+    console.log('[compose] submit failed:', e.message);
     form.style.display = 'none';
-    // Show success preview
-    successPreview.innerHTML = '<div class="dcl-preview-card">' +
-      '<div class="dcl-preview-badge">חדש</div>' +
-      '<div class="dcl-preview-text">' + ta.value.replace(/</g,'&lt;') + '</div>' +
-      '<div class="dcl-preview-meta">0 הצביעו</div>' +
-    '</div>';
+    successPreview.innerHTML = '<div class="dcl-preview-card" style="border-color:var(--co)">'
+      + '<div class="dcl-preview-badge" style="background:var(--co1);color:var(--co)">שגיאת רשת</div>'
+      + '<div class="dcl-preview-text">' + text.replace(/</g,'&lt;') + '</div>'
+      + '<div class="dcl-preview-meta" style="color:var(--co)">נסו שוב בעוד רגע</div>'
+      + '</div>';
     success.classList.add('vis');
+  } finally {
     btn.textContent = 'לשתף';
-  }, 800);
+    btn.disabled = false;
+  }
 }
 </script>
 
