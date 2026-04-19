@@ -2413,11 +2413,21 @@ function voteStmt(btn) {
     const current = parseInt(counter.textContent.replace(/[^0-9]/g, ''), 10) || 0;
     counter.textContent = (current + 1).toLocaleString();
   }
+  // Determine action
+  const action = btn.classList.contains('sa-yes') ? 'agree'
+               : btn.classList.contains('sa-no') ? 'disagree' : 'skip';
   // Analytics
   if (typeof gtag === 'function') {
-    const action = btn.classList.contains('sa-yes') ? 'agree'
-                 : btn.classList.contains('sa-no') ? 'disagree' : 'skip';
     gtag('event', 'declaration_vote', { action });
+  }
+  // Persist to API if enabled
+  if (window.POLIS_API && window.POLIS_API.enabled()) {
+    const itemId = card.getAttribute('data-id');
+    if (itemId) {
+      const val = action === 'agree' ? 1 : action === 'disagree' ? -1 : 0;
+      window.POLIS_API.postVote(itemId, val).catch(e =>
+        console.log('[polis] vote post failed:', e.message));
+    }
   }
 }
 
@@ -2654,8 +2664,50 @@ const _OPINION_BLOBS = {
 };
 const _YOU_POS = { A: [158, 88], B: [55, 55], C: [180, 30] };
 
-function buildOpinionMap({ youGroup = 'A', counts = { A: 72, B: 67, C: 19 }, totalCitizens = 4219, heightPx = 130, label = 'אתם כאן' } = {}) {
-  let svg = '<svg viewBox="0 0 240 130" style="width:100%;height:100%;position:absolute;inset:0">';
+// Approx group centroids in the 240x130 SVG viewport (centers of the blob paths).
+// Statement dots are positioned as a weighted blend of these anchors based on per-group agree_pct.
+const _GROUP_CENTROIDS = { A: [170, 90], B: [55, 55], C: [180, 28] };
+
+/**
+ * Position a statement within the opinion map by weighted blend of group centroids,
+ * weighted by each group's agree_pct on that statement. Bridge statements (all groups
+ * agree) settle near the centroid of the three blobs. Contested statements pull toward
+ * whichever single group most strongly agrees.
+ *
+ * Deterministic jitter (derived from item id hash) prevents perfect overlap when
+ * two statements have identical breakdowns.
+ */
+function _statementPosition(decl) {
+  const bd = decl.group_breakdown || [];
+  let sx = 0, sy = 0, sw = 0;
+  for (const g of bd) {
+    const c = _GROUP_CENTROIDS[g.id];
+    if (!c) continue;
+    const w = Math.max(1, g.agree_pct || 0);
+    sx += c[0] * w;
+    sy += c[1] * w;
+    sw += w;
+  }
+  let x = sw > 0 ? sx / sw : 120;
+  let y = sw > 0 ? sy / sw : 65;
+  // Deterministic jitter from id hash so identical breakdowns don't stack perfectly.
+  let h = 0;
+  const s = decl.id || decl.text || '';
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h) + s.charCodeAt(i);
+  const jx = ((h & 0xff) / 255 - 0.5) * 14;
+  const jy = (((h >> 8) & 0xff) / 255 - 0.5) * 14;
+  return [Math.max(8, Math.min(232, x + jx)), Math.max(8, Math.min(122, y + jy))];
+}
+
+function _badgeDotColor(badge) {
+  if (badge === 'bridge')    return '#27B38E';
+  if (badge === 'contested') return '#7258A2';
+  if (badge === 'trending')  return '#E8A130';
+  return '#9DAFC8';
+}
+
+function buildOpinionMap({ youGroup = 'A', counts = { A: 72, B: 67, C: 19 }, totalCitizens = 4219, heightPx = 130, label = 'אתם כאן', declarations = null } = {}) {
+  let svg = '<svg viewBox="0 0 240 130" style="width:100%;height:100%;position:absolute;inset:0;pointer-events:none">';
   svg += '<line x1="120" y1="0" x2="120" y2="130" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>';
   svg += '<line x1="0" y1="65" x2="240" y2="65" stroke="rgba(255,255,255,0.06)" stroke-width="0.5"/>';
   for (const gid of ['A', 'B', 'C']) {
@@ -2666,28 +2718,215 @@ function buildOpinionMap({ youGroup = 'A', counts = { A: 72, B: 67, C: 19 }, tot
     }
     svg += `<text x="${b.countPos[0]}" y="${b.countPos[1]}" fill="${b.dotColor}" font-size="7" font-weight="700" font-family="Heebo">${counts[gid] ?? ''}</text>`;
   }
+  // Per-topic statement dots — tappable, open a declaration balloon.
+  if (Array.isArray(declarations) && declarations.length) {
+    for (const d of declarations) {
+      const [dx, dy] = _statementPosition(d);
+      const color = _badgeDotColor(d.badge);
+      svg += `<circle class="stmt-dot" data-decl-id="${d.id}" cx="${dx}" cy="${dy}" r="3.5"`
+           + ` fill="${color}" stroke="#0E1420" stroke-width="1" opacity="0.95"`
+           + ` style="pointer-events:auto;cursor:pointer"/>`;
+    }
+  }
   const [yx, yy] = _YOU_POS[youGroup] || _YOU_POS.A;
-  svg += `<circle cx="${yx}" cy="${yy}" r="4.5" fill="#E4AE58" stroke="#C8953A" stroke-width="1" opacity="1">`
+  svg += `<circle cx="${yx}" cy="${yy}" r="4.5" fill="#E4AE58" stroke="#C8953A" stroke-width="1" opacity="1" style="pointer-events:none">`
        + '<animate attributeName="r" values="4.5;6;4.5" dur="1.8s" repeatCount="indefinite"/>'
        + '<animate attributeName="opacity" values="1;.7;1" dur="1.8s" repeatCount="indefinite"/>'
        + '</circle>';
   svg += '</svg>';
-  return `<div style="height:${heightPx}px;background:var(--sf);border-radius:8px;position:relative;overflow:hidden;margin-bottom:8px">${svg}`
-       + `<div style="position:absolute;bottom:3px;right:6px;font-size:var(--fs-7);color:var(--gl);font-weight:700">${label}</div>`
-       + `<div style="position:absolute;top:3px;left:6px;font-size:var(--fs-6);color:var(--t3)"><span dir="ltr">${totalCitizens.toLocaleString()}</span> אזרחים</div>`
+  return `<div id="opinion-map-wrap" style="height:${heightPx}px;background:var(--sf);border-radius:8px;position:relative;overflow:visible;margin-bottom:8px">${svg}`
+       + `<div style="position:absolute;bottom:3px;right:6px;font-size:var(--fs-7);color:var(--gl);font-weight:700;pointer-events:none">${label}</div>`
+       + `<div style="position:absolute;top:3px;left:6px;font-size:var(--fs-6);color:var(--t3);pointer-events:none"><span dir="ltr">${totalCitizens.toLocaleString()}</span> אזרחים</div>`
+       + `<div id="decl-balloon" style="display:none"></div>`
        + '</div>';
 }
+
+/**
+ * Delegated click handler: any tap on an .stmt-dot shows a floating balloon with
+ * the declaration text + badge + per-group breakdown. Tapping outside dismisses.
+ */
+function _onOpinionMapTap(ev) {
+  const dot = ev.target.closest('.stmt-dot');
+  const wrap = document.getElementById('opinion-map-wrap');
+  const balloon = document.getElementById('decl-balloon');
+  if (!wrap || !balloon) return;
+  if (!dot) {
+    balloon.style.display = 'none';
+    return;
+  }
+  const declId = dot.getAttribute('data-decl-id');
+  const decl = (DECLARATIONS_DATA?.declarations || []).find(d => d.id === declId);
+  if (!decl) return;
+  const wrapRect = wrap.getBoundingClientRect();
+  const dotRect = dot.getBoundingClientRect();
+  const cx = dotRect.left + dotRect.width / 2 - wrapRect.left;
+  const cy = dotRect.top + dotRect.height / 2 - wrapRect.top;
+  // Prefer showing the balloon below the dot; flip above if near bottom.
+  const showBelow = cy < wrapRect.height * 0.55;
+  const maxW = Math.min(260, wrapRect.width - 16);
+  const badge = decl.badge || 'new';
+  const badgeColor = _badgeDotColor(badge);
+  const badgeLabel = badge === 'bridge' ? 'קונצנזוס רחב'
+                  : badge === 'contested' ? 'שנוי במחלוקת'
+                  : badge === 'trending' ? 'טרנדי' : 'חדש';
+  const breakdownHtml = (decl.group_breakdown || []).map(g => {
+    const cVar = `var(--${GROUP_COLOR_VAR[g.id] || 'te'})`;
+    return `<div style="display:flex;align-items:center;gap:4px;font-size:var(--fs-7)">`
+      + `<span style="width:8px;height:8px;border-radius:50%;background:${cVar}"></span>`
+      + `<span style="color:var(--t2)">${GROUP_LABEL[g.id] || g.id}</span>`
+      + `<span style="color:${cVar};font-weight:800;margin-right:auto" dir="ltr">${g.agree_pct}%</span>`
+      + `</div>`;
+  }).join('');
+  balloon.style.cssText = [
+    'position:absolute',
+    `top:${showBelow ? (cy + 10) : 'auto'}px`,
+    `bottom:${showBelow ? 'auto' : (wrapRect.height - cy + 10) + 'px'}`,
+    `left:${Math.max(8, Math.min(wrapRect.width - maxW - 8, cx - maxW / 2))}px`,
+    `width:${maxW}px`,
+    'background:var(--bg1,#0E1420)',
+    'border:1px solid rgba(255,255,255,0.12)',
+    'border-radius:10px',
+    'padding:10px 12px',
+    'box-shadow:0 8px 24px rgba(0,0,0,0.5)',
+    'z-index:20',
+    'display:block',
+  ].join(';');
+  balloon.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px">`
+    + `<span style="font-size:var(--fs-8);font-weight:800;color:${badgeColor}">${badgeLabel}</span>`
+    + `<button class="decl-balloon-close" aria-label="סגור" style="background:transparent;border:0;color:var(--t3);font-size:var(--fs-10);cursor:pointer;padding:0 2px">×</button>`
+    + `</div>`
+    + `<div style="font-size:var(--fs-9);color:var(--t1);line-height:1.45;margin-bottom:8px">${escapeHtml(decl.text || '')}</div>`
+    + `<div style="display:flex;flex-direction:column;gap:3px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.06)">${breakdownHtml}</div>`;
+  ev.stopPropagation();
+}
+
+document.addEventListener('click', (ev) => {
+  const wrap = document.getElementById('opinion-map-wrap');
+  if (!wrap) return;
+  if (ev.target.classList?.contains('decl-balloon-close')) {
+    const b = document.getElementById('decl-balloon');
+    if (b) b.style.display = 'none';
+    return;
+  }
+  if (wrap.contains(ev.target)) {
+    _onOpinionMapTap(ev);
+  } else {
+    const b = document.getElementById('decl-balloon');
+    if (b) b.style.display = 'none';
+  }
+});
 
 /* ══ DYNAMIC DECLARATION LOADING (pol.is-style with topic filter) ══ */
 let DECLARATIONS_DATA = null;
 let SELECTED_TOPIC = null;
-const GROUP_COLOR_VAR = { A: 'te', B: 'bl', C: 'pu' };
-const GROUP_LABEL = { A: 'קבוצה א׳', B: 'קבוצה ב׳', C: 'קבוצה ג׳' };
+const GROUP_COLOR_VAR = { A: 'te', B: 'bl', C: 'pu', D: 'go', E: 'or' };
+const GROUP_LABEL = { A: 'קבוצה א׳', B: 'קבוצה ב׳', C: 'קבוצה ג׳', D: 'קבוצה ד׳', E: 'קבוצה ה׳' };
+
+/* ══ POLIS_API shim ═══════════════════════════════════════════════════════
+ * When `?__polis_api=<base>` is set (or localStorage.ns_polis_api), the
+ * deliberation feed reads from the Rust service instead of static JSON.
+ * Off by default: GitHub Pages demo keeps working unchanged.
+ */
+(function () {
+  const qs = new URLSearchParams(location.search);
+  const fromQuery = qs.get('__polis_api');
+  if (fromQuery) {
+    try { localStorage.setItem('ns_polis_api', fromQuery); } catch (_) {}
+  }
+  let base = fromQuery || (function () { try { return localStorage.getItem('ns_polis_api') || ''; } catch (_) { return ''; } })();
+  base = (base || '').replace(/\/+$/, '');
+  const langOf = () => {
+    try { return localStorage.getItem('ns_lang') || 'he'; } catch (_) { return 'he'; }
+  };
+  const userIdKey = 'ns_polis_user_id';
+  async function ensureUser() {
+    let uid = null;
+    try { uid = localStorage.getItem(userIdKey); } catch (_) {}
+    if (uid) return uid;
+    const res = await fetch(base + '/api/v1/users', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ lang: langOf(), cohort: (function () { try { return localStorage.getItem('ns_cohort') || null; } catch (_) { return null; } })() }),
+    });
+    const body = await res.json();
+    if (body && body.user_id) {
+      try { localStorage.setItem(userIdKey, body.user_id); } catch (_) {}
+      return body.user_id;
+    }
+    throw new Error('user create failed');
+  }
+  // Stable A/B/C/D/E label per numeric group_id so the existing render pipeline works unchanged.
+  const idxToLegacy = ['A', 'B', 'C', 'D', 'E'];
+  async function loadFeed() {
+    const lang = langOf();
+    const [topicsRes, declRes] = await Promise.all([
+      fetch(base + '/api/v1/topics?lang=' + encodeURIComponent(lang)).then(r => r.json()),
+      fetch(base + '/api/v1/declarations?lang=' + encodeURIComponent(lang) + '&limit=200').then(r => r.json()),
+    ]);
+    const totalVoters = topicsRes.total_voters || 0;
+    const topics = (topicsRes.topics || []).map(t => ({
+      key: t.key,
+      label: t.label,
+      you_group: 'A',
+      total_voters: totalVoters,
+      groups: (t.groups || []).map(g => ({
+        id: idxToLegacy[g.group_id] || String(g.group_id),
+        name: g.label,
+        color: g.color,
+        size_pct: g.size_pct,
+        agree_pct: g.agree_pct,
+      })),
+      convergence: t.convergence_text || '',
+      divergence: t.divergence_text || '',
+    }));
+    const declarations = (declRes.declarations || []).map(d => ({
+      id: d.id,
+      text: d.text,
+      badge: d.badge,
+      badge_label: (d.badge === 'bridge') ? 'קונצנזוס רחב'
+                 : (d.badge === 'contested') ? 'שנוי במחלוקת'
+                 : (d.badge === 'trending') ? 'טרנדי'
+                 : 'חדש',
+      vote_count: d.vote_count || 0,
+      agree_pct: (d.agree_pct != null) ? d.agree_pct : null,
+      topic_key: d.topic_key,
+      group_breakdown: (d.group_breakdown || []).map(b => ({
+        id: idxToLegacy[b.group_id] || String(b.group_id),
+        agree_pct: b.agree_pct,
+      })),
+      time_label: '',
+      pipeline_status: null,
+    }));
+    return { topics, declarations };
+  }
+  async function postVote(itemId, value) {
+    const uid = await ensureUser();
+    return fetch(base + '/api/v1/declarations/' + encodeURIComponent(itemId) + '/vote', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ user_id: uid, value: value, lang_shown: langOf() }),
+    });
+  }
+  window.POLIS_API = {
+    enabled: () => base.length > 0,
+    base: () => base,
+    loadFeed,
+    ensureUser,
+    postVote,
+  };
+  if (base) console.log('[polis] API enabled:', base);
+})();
 
 async function loadDeclarations() {
   try {
-    const res = await fetch('data/declarations_winners.json');
-    const data = await res.json();
+    let data;
+    if (window.POLIS_API && window.POLIS_API.enabled()) {
+      data = await window.POLIS_API.loadFeed();
+      window.POLIS_API.ensureUser().catch(() => {});
+    } else {
+      const res = await fetch('data/declarations_winners.json');
+      data = await res.json();
+    }
     if (!data || !data.declarations?.length) return;
     DECLARATIONS_DATA = data;
     // Default to first topic
@@ -2754,6 +2993,70 @@ function renderTopicView() {
   }
 }
 
+/* @deprecated — replaced by per-topic statement dots overlaid on the opinion map.
+ * Kept temporarily in case we want to restore it. Unused. */
+function buildConsensusMeter(groups) {
+  const pcts = (groups || []).map(g => g?.agree_pct).filter(p => typeof p === 'number');
+  if (pcts.length < 2) return '';
+  const min = Math.min(...pcts);
+  const max = Math.max(...pcts);
+  const spread = max - min;
+  const isConsensus = min >= 65 && spread <= 18;
+  const isContested = spread >= 30;
+  const label = isConsensus ? 'הסכמה חוצת קבוצות' : isContested ? 'מחלוקת בין הקבוצות' : 'הסכמה חלקית';
+  const colorVar = isConsensus ? 'var(--gn)' : isContested ? 'var(--pu)' : 'var(--go)';
+  const bg = isConsensus ? 'rgba(39,179,142,0.08)' : isContested ? 'rgba(114,88,162,0.08)' : 'rgba(232,161,48,0.06)';
+  const bandHex = isConsensus ? 'rgba(39,179,142,0.32)' : isContested ? 'rgba(114,88,162,0.32)' : 'rgba(232,161,48,0.30)';
+
+  const dotsHtml = groups.map(g => {
+    const pct = Math.max(0, Math.min(100, g.agree_pct));
+    const cVar = `var(--${g.color || 'te'})`;
+    return `<div title="${escapeHtml(g.name || g.id)}: ${pct}%" style="position:absolute;left:${pct}%;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:${cVar};border:2px solid var(--sf);box-shadow:0 0 0 1px ${cVar}"></div>`;
+  }).join('');
+
+  const pctLabelsHtml = groups.map(g => {
+    const pct = Math.max(0, Math.min(100, g.agree_pct));
+    const cVar = `var(--${g.color || 'te'})`;
+    return `<div style="position:absolute;left:${pct}%;top:100%;transform:translateX(-50%);margin-top:4px;font-size:var(--fs-7);color:${cVar};font-weight:800"><span dir="ltr">${pct}%</span></div>`;
+  }).join('');
+
+  // Stagger overlapping pct labels: if two dots are within 8 points, push one up and one down.
+  const sortedPcts = [...pcts].sort((a, b) => a - b);
+  const tightPairs = new Set();
+  for (let i = 0; i < sortedPcts.length - 1; i++) {
+    if (sortedPcts[i + 1] - sortedPcts[i] < 9) {
+      tightPairs.add(sortedPcts[i]);
+      tightPairs.add(sortedPcts[i + 1]);
+    }
+  }
+  const pctLabelsHtmlV2 = groups.map((g, i) => {
+    const pct = Math.max(0, Math.min(100, g.agree_pct));
+    const cVar = `var(--${g.color || 'te'})`;
+    const isTight = tightPairs.has(pct);
+    const topShift = isTight ? (i % 2 === 0 ? '100%' : '130%') : '100%';
+    return `<div style="position:absolute;left:${pct}%;top:${topShift};transform:translateX(-50%);margin-top:4px;font-size:var(--fs-7);color:${cVar};font-weight:800;white-space:nowrap"><span dir="ltr">${pct}%</span></div>`;
+  }).join('');
+
+  // Note: container is RTL by default on this app. Use an LTR wrapper inside the
+  // meter so "0% on left, 100% on right" renders correctly regardless of page dir.
+  return `<div style="margin:4px 0 10px;padding:10px 12px 26px;background:${bg};border-radius:8px;border:1px solid ${colorVar}">`
+    + `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">`
+    + `<div style="font-size:var(--fs-8);color:${colorVar};font-weight:800">${label}</div>`
+    + `<div style="font-size:var(--fs-7);color:var(--t3)">הסכמה ממוצעת בנושא</div>`
+    + `</div>`
+    + `<div dir="ltr" style="position:relative;height:18px;margin:0 12px">`
+    + `<div style="position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;transform:translateY(-50%)"></div>`
+    + `<div style="position:absolute;top:50%;left:${min}%;width:${spread}%;height:5px;background:${bandHex};border-radius:3px;transform:translateY(-50%)"></div>`
+    + dotsHtml
+    + pctLabelsHtmlV2
+    + `</div>`
+    + `<div dir="ltr" style="display:flex;justify-content:space-between;margin:22px 12px 0;font-size:var(--fs-7);color:var(--t3)">`
+    + `<span>0%</span>`
+    + `<span>100%</span>`
+    + `</div>`
+    + `</div>`;
+}
+
 function renderTopicOverview(topic) {
   const overview = document.getElementById('topic-overview');
   if (!overview) return;
@@ -2768,12 +3071,20 @@ function renderTopicOverview(topic) {
   if (!counts.C) counts.C = 19;
   const youGroup = topic.you_group || 'A';
   const youSizePct = (topic.groups?.find(g => g.id === youGroup) || {}).size_pct || 34;
-  const totalCitizens = Math.round((counts.A + counts.B + counts.C) * 35); // scale up for display
+  // Prefer real user count from the latest recompute when available; fall back to
+  // the visual scale-up (counts × 35) only when the API hasn't populated total_voters yet.
+  const totalCitizens = (typeof topic.total_voters === 'number' && topic.total_voters > 0)
+    ? topic.total_voters
+    : Math.round((counts.A + counts.B + counts.C) * 35);
+
+  // Per-topic declarations — become tappable statement dots on the map.
+  const topicDecls = (DECLARATIONS_DATA?.declarations || []).filter(d => d.topic_key === topic.key);
 
   overview.className = 'card';
   overview.style.cssText = 'border-color:var(--gn);padding:10px 12px;display:block';
-  overview.innerHTML = buildOpinionMap({ youGroup, counts, totalCitizens })
-    + `<div style="font-size:var(--fs-9);color:var(--t2);line-height:1.5;margin-bottom:6px">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">${youSizePct}%</span> מהאזרחים שחושבים דומה בנושא הזה</div>`
+  overview.innerHTML = buildOpinionMap({ youGroup, counts, totalCitizens, heightPx: 170, declarations: topicDecls })
+    + `<div style="font-size:var(--fs-7);color:var(--t3);line-height:1.4;margin-bottom:8px;text-align:center">לחצו על נקודה כדי לקרוא את ההצהרה</div>`
+    + `<div style="font-size:var(--fs-9);color:var(--t2);line-height:1.5;margin-bottom:8px">הקבוצה שלכם מונה <span dir="ltr" style="color:var(--gl);font-weight:800">${youSizePct}%</span> מהאזרחים</div>`
     + `<div style="font-size:var(--fs-9);color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;margin-bottom:4px;border-right:2px solid var(--te)">`
     + `<strong style="color:var(--te)">מאחד את כולם:</strong> ${escapeHtml(topic.convergence || '')}</div>`
     + `<div style="font-size:var(--fs-9);color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;border-right:2px solid var(--co)">`
@@ -2783,6 +3094,7 @@ function renderTopicOverview(topic) {
 function buildDeclarationCard(decl, youGroup) {
   const card = document.createElement('div');
   card.className = 'card decl-card';
+  if (decl.id) card.setAttribute('data-id', decl.id);
   if (decl.badge === 'bridge') card.style.borderColor = 'var(--gn)';
 
   const flameIcon = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>';
