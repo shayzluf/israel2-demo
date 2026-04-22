@@ -493,6 +493,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 /* ═══ STATEMENT SWIPE (tcard reuse for sl4) ═══ */
 .st-badge-row{display:flex;align-items:center;gap:6px;margin-top:4px;}
 
+/* ═══ COST / TRADE-OFF NOTE (populism guard — 2026-04-21) ═══ */
+.tcard-cost{margin-top:4px;padding:6px 8px;background:var(--sf);border-radius:6px;
+  font-size:var(--fs-8);line-height:1.45;color:var(--t3);text-align:right;}
+.tcard-cost div{display:block;}
+.tcard-cost strong{color:var(--t2);font-weight:700;}
+
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:580px){
   .sim-wrap{flex-direction:column;align-items:center;}
@@ -867,7 +873,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-u" id="csi0u">&#8593; מורכב</div>
               <div class="tcard-tag" style="background:var(--co0);color:var(--co)">מיגון בעורף <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px;display:inline"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
               <div class="tcard-q">האם המדינה צריכה לממן בניית ממ"ד לכל אזרח שאין לו?</div>
-              <div class="tcard-ctx">ל-<span dir="ltr">3.2</span> מיליון אזרחים אין מרחב מוגן תקני (מבקר המדינה, מרץ <span dir="ltr">2026</span>).</div>
+              <div class="tcard-ctx">ל-<span dir="ltr">3.2</span> מיליון אזרחים אין מרחב מוגן תקני (מבקר המדינה, מרץ <span dir="ltr">2026</span>)</div>
+              <div class="tcard-cost">
+                <div>עלות הערכתית: <strong>~<span dir="ltr">50</span> מיליארד ש"ח</strong> לתוכנית כוללת</div>
+                <div>היקף: ~<span dir="ltr">10</span> שנות בנייה, תלוי בקצב אישורים</div>
+                <div>חלופה: מיגון קהילתי + השקעה בהגנה אקטיבית</div>
+              </div>
               <div class="tcard-meta"><span dir="ltr">142,530</span> הצביעו</div>
               <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs0')">למה זה מורכב?</div>
             </div>
@@ -879,9 +890,14 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-r" id="csi1r">&#8594; בעד</div>
               <div class="tind tind-l" id="csi1l">נגד &#8592;</div>
               <div class="tind tind-u" id="csi1u">&#8593; מורכב</div>
-              <div class="tcard-tag" style="background:var(--te0);color:var(--te)">בריאות הנפש</div>
-              <div class="tcard-q">האם צריך להכפיל את תקציב בריאות הנפש על חשבון משרדי ממשלה אחרים?</div>
-              <div class="tcard-ctx"><span dir="ltr">32%</span> מהישראלים זקוקים לתמיכה נפשית, אבל זמן ההמתנה הממוצע לטיפול הוא <span dir="ltr">14</span> חודשים (מכבי, <span dir="ltr">2025</span>).</div>
+              <div class="tcard-tag" style="background:var(--pu0);color:var(--pu)">בריאות הנפש</div>
+              <div class="tcard-q">מאיפה צריך להעביר את התקציב כדי לקצר את ההמתנה לפסיכולוג קליני?</div>
+              <div class="tcard-ctx"><span dir="ltr">32%</span> זקוקים לתמיכה נפשית · המתנה ממוצעת <span dir="ltr">14</span> חודשים (מכבי, <span dir="ltr">2025</span>)</div>
+              <div class="tcard-cost">
+                <div>סדר גודל: <strong>~<span dir="ltr">2</span> מיליארד ש"ח</strong> לשנה</div>
+                <div>מקורות אפשריים: פרסום ממשלתי · כפל קצבאות · מילואים</div>
+                <div>בלי העברה — התורים יישארו כפי שהם</div>
+              </div>
               <div class="tcard-meta"><span dir="ltr">185,420</span> הצביעו</div>
               <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs1')">למה זה מורכב?</div>
             </div>
@@ -894,8 +910,13 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-l" id="csi2l">נגד &#8592;</div>
               <div class="tind tind-u" id="csi2u">&#8593; מורכב</div>
               <div class="tcard-tag" style="background:var(--gd0);color:var(--gl)">משרתי המילואים</div>
-              <div class="tcard-q">האם משרתי מילואים צריכים לקבל פטור מלא ממס הכנסה לשנה?</div>
-              <div class="tcard-ctx"><span dir="ltr">120</span> אלף מילואימניקים שירתו מעל <span dir="ltr">100</span> ימים, עם אובדן הכנסה ממוצע של <span dir="ltr">45</span> אלף ש"ח</div>
+              <div class="tcard-q">האם פיצוי מילואים צריך להיות מענק שווה לכולם, גם אם זה פחות מהפסד ההכנסה?</div>
+              <div class="tcard-ctx"><span dir="ltr">120</span> אלף מילואימניקים שירתו מעל <span dir="ltr">100</span> ימים · אובדן ממוצע <span dir="ltr">45</span> אלף ש"ח (אכ"א, <span dir="ltr">2026</span>)</div>
+              <div class="tcard-cost">
+                <div>עלות פטור ממס: <strong>~<span dir="ltr">8</span> מיליארד ש"ח</strong> לשנה</div>
+                <div>עלות מענק אחיד: <strong>~<span dir="ltr">6</span> מיליארד</strong>, פחות פרוגרסיבי</div>
+                <div>בלי החלטה — חלקם כבר סגרו עסק</div>
+              </div>
               <div class="tcard-meta"><span dir="ltr">210,100</span> הצביעו</div>
               <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs2')">למה זה מורכב?</div>
             </div>
@@ -909,7 +930,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-u" id="csi3u">&#8593; מורכב</div>
               <div class="tcard-tag" style="background:var(--bl0);color:var(--bl)">חינוך פיננסי</div>
               <div class="tcard-q">האם חינוך פיננסי צריך להיות מקצוע חובה לבגרות?</div>
-              <div class="tcard-ctx"><span dir="ltr">27%</span> מהישראלים לא חוסכים כלל לעתיד (בנק ישראל).</div>
+              <div class="tcard-ctx"><span dir="ltr">27%</span> מהישראלים לא חוסכים כלל לעתיד (בנק ישראל)</div>
+              <div class="tcard-cost">
+                <div>עלות שולית: הכשרת ~<span dir="ltr">1,500</span> מורים, <strong>~<span dir="ltr">80</span> מיליון ש"ח</strong></div>
+                <div>היקף: <span dir="ltr">2</span> שעות שבועיות בחטיבה · לא במקום מתמטיקה</div>
+                <div>הצעת חוק כבר קיימת, לא הופעלה</div>
+              </div>
               <div class="tcard-meta"><span dir="ltr">198,050</span> הצביעו</div>
               <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs3')">למה זה מורכב?</div>
             </div>
@@ -922,8 +948,13 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-l" id="csi4l">נגד &#8592;</div>
               <div class="tind tind-u" id="csi4u">&#8593; מורכב</div>
               <div class="tcard-tag" style="background:var(--pu0);color:var(--pu)">טוהר המידות</div>
-              <div class="tcard-q">האם צריך לאסור לצמיתות על אדם שהורשע בשחיתות לכהן בכנסת?</div>
-              <div class="tcard-ctx"><span dir="ltr">74%</span> מהציבור חושבים שיש שחיתות בשלטון, ורק <span dir="ltr">11%</span> נותנים אמון בכנסת (IDI, <span dir="ltr">2025</span>).</div>
+              <div class="tcard-q">האם ח"כ שהורשע בשחיתות צריך להיות חסום מהכנסת לשבע שנים, ולא לצמיתות?</div>
+              <div class="tcard-ctx"><span dir="ltr">74%</span> מהציבור חושבים שיש שחיתות בשלטון · רק <span dir="ltr">11%</span> נותנים אמון בכנסת (IDI, <span dir="ltr">2025</span>)</div>
+              <div class="tcard-cost">
+                <div>עלות: אפסית — שינוי חוק בלבד</div>
+                <div>היקף: חלים גם על חברי ממשלה ומנכ"לי משרדים</div>
+                <div>חלופה היום: תקופת צינון <span dir="ltr">7</span> שנים, לא חסימה</div>
+              </div>
               <div class="tcard-meta"><span dir="ltr">245,800</span> הצביעו</div>
               <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs4')">למה זה מורכב?</div>
             </div>
@@ -936,8 +967,13 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-l" id="csi5l">נגד &#8592;</div>
               <div class="tind tind-u" id="csi5u">&#8593; מורכב</div>
               <div class="tcard-tag" style="background:var(--te0);color:var(--te)">מערכת הבריאות</div>
-              <div class="tcard-q">האם המדינה צריכה לחייב בתי חולים לפרסם את זמני ההמתנה לניתוחים?</div>
-              <div class="tcard-ctx">יש פער של יותר משנה בזמני ההמתנה בין בתי חולים שונים בישראל (מרכז טאוב, <span dir="ltr">2024</span>).</div>
+              <div class="tcard-q">האם בית חולים שמסתיר את זמני ההמתנה צריך לשאת בקנס אוטומטי?</div>
+              <div class="tcard-ctx">פער של יותר משנה בזמני המתנה בין בתי חולים שונים (מרכז טאוב, <span dir="ltr">2024</span>)</div>
+              <div class="tcard-cost">
+                <div>עלות: <strong>~<span dir="ltr">40</span> מיליון ש"ח</strong> למערכת דיווח</div>
+                <div>היקף: כל הניתוחים למעט חירום</div>
+                <div>תקדים: OECD דורש שקיפות כזו ב-<span dir="ltr">22</span> ממדינותיה</div>
+              </div>
               <div class="tcard-meta"><span dir="ltr">176,300</span> הצביעו</div>
               <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs5')">למה זה מורכב?</div>
             </div>
@@ -947,7 +983,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default">
               <div style="font-size:var(--fs-10);color:var(--te);font-weight:800;letter-spacing:1px"><span dir="ltr">6</span> מתוך <span dir="ltr">6</span></div>
               <div style="font-size:var(--fs-13);font-weight:900;color:var(--t1);line-height:1.4">גילינו הסכמה רחבה</div>
-              <div style="font-size:var(--fs-10);color:var(--t2);line-height:1.6">בזמן שהכנסת עסוקה בלריב, הציבור מסכים על הפתרונות. הגיע הזמן שהקול שלנו יקבע</div>
+              <div style="font-size:var(--fs-10);color:var(--t2);line-height:1.6">בזמן שהכנסת עסוקה בלריב, הציבור מסכים — גם כשמדובר בוויתורים. הגיע הזמן שהקול שלנו יקבע</div>
               <div class="tribal-bars" style="height:44px">
                 <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">89%</div><div class="tb-lbl">חרדי</div></div>
                 <div class="tribal-bar"><div class="tb-fill" style="height:29px;background:var(--gd)"></div><div class="tb-pct" style="color:var(--gd)">88%</div><div class="tb-lbl">ערבי</div></div>
@@ -955,6 +991,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div class="tribal-bar"><div class="tb-fill" style="height:27px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">85%</div><div class="tb-lbl">דתי</div></div>
                 <div class="tribal-bar"><div class="tb-fill" style="height:26px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">84%</div><div class="tb-lbl">עולה</div></div>
               </div>
+              <div style="font-size:var(--fs-7);color:var(--t3);line-height:1.4;margin-top:4px;padding:0 4px">מבקר המדינה — סקר נגישות מרחב מוגן, מרץ <span dir="ltr">2026</span>. הנתונים מתייחסים למצב המיגון כיום, לא לתמיכה בכל אחת מההצעות</div>
               <!-- City picker -->
               <div style="margin-top:8px;padding:8px 10px;background:var(--sf);border-radius:9px;border:1px solid var(--b1)">
                 <div style="font-size:var(--fs-10);font-weight:800;color:var(--t1);margin-bottom:4px">איפה אתם גרים?</div>
@@ -1239,6 +1276,15 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <div id="topic-overview" style="display:none"></div>
           <!-- Section label above filtered declaration list -->
           <div id="filtered-label" style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px;display:none">הצהרות בנושא</div>
+          <!-- Pact → Hamal tour bubble (step 2 of app tour, only fires when pactEnabled) -->
+          <div class="tour-bubble tour-arrow-down" id="tour-pact" style="margin-bottom:8px">
+            <div class="tour-close" onclick="skipTour()">&times;</div>
+            <div class="tour-kicker">מהלך פעיל</div>
+            <div class="tour-headline">היעד: אלף ילדים לטיפול פסיכולוגי קליני</div>
+            <div class="tour-body">כשמספיק אזרחים מתחייבים יחד, מטפלים קליניים יחוברו ישירות לילדים שממתינים מאז המלחמה</div>
+            <div class="tour-callout tour-callout-teal">ההסכמה הרחבה שלנו הופכת לטיפול אמיתי. הכרטיס הזהב כאן למטה</div>
+            <div class="tour-dismiss-wrap"><div class="tour-dismiss" onclick="advanceTour()">הבנתי</div></div>
+          </div>
           <!-- Pact → Hamal callout (feature-flagged via ?pact_preview=1 — populated by renderPactCallout) -->
           <div id="pact-callout-host"></div>
           <!-- Compose banner — above declarations, always visible -->
@@ -1551,46 +1597,130 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 ══════════════════════════════════════════════════════ */
 const CARD_INFO = {
   cs0: {
-    title: 'מיגון בעורף',
-    subtitle: 'ממ"ד לכל אזרח',
-    fact: '<strong>50%</strong> מהאזרחים בחברה הערבית חיים ללא מרחב מוגן',
-    sides: '<strong>תומכים:</strong> המדינה חייבת לספק ביטחון בסיסי. <strong>מתנגדים:</strong> העלות הכלכלית גבוהה מדי',
-    untold: 'משפחות בפריפריה שאין להן יכולת כלכלית לממן ממ"ד בעצמן'
+    title: 'מימון מרחבים מוגנים',
+    subtitle: 'המחיר של מיגון כלל-אוכלוסייתי',
+    perspectives: [
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי <strong>3.2 מיליון אזרחים</strong> ללא מרחב מוגן הוא פער שלא קיים בשום מדינה מפותחת אחרת',
+        source: 'משרד מבקר המדינה'
+      },
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי עלות ממ"ד פרטי עומדת על <strong>~150,000 ש"ח</strong> — רוב משפחות הפריפריה לא יגיעו לזה לבד',
+        source: 'התאחדות הקבלנים בוני הארץ'
+      },
+      {
+        if_label: 'אם לא הסכמתם — אולי כי...',
+        detail: 'כי תקציב של <strong>~50 מיליארד</strong> יבוא על חשבון יירוט מתקדם, בתי חולים או חינוך — וגם מיגון קהילתי משיג תוצאה דומה ב-~30 מיליארד',
+        source: 'משרד האוצר ומבקר המדינה'
+      }
+    ]
   },
   cs1: {
-    title: 'בריאות הנפש',
-    subtitle: 'הכפלת תקציב',
-    fact: 'הממשלה קיצצה <strong>400 מיליון ש"ח</strong> מתקציב בריאות הנפש ב-2024.',
-    sides: '<strong>תומכים:</strong> אי אפשר להשתקם בלי פסיכולוג קליני זמין. <strong>מתנגדים:</strong> אי אפשר לקצץ בביטחון או בחינוך',
-    untold: 'צעירים שמוותרים על טיפול כי הם לא יכולים לחכות יותר משנה'
+    title: 'מימון קיצור התורים לפסיכולוג קליני',
+    subtitle: 'טרייד-אוף תקציבי בין משרדים',
+    perspectives: [
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי צעירים אחרי המלחמה לא יכולים לחכות <strong>שנה וארבעה חודשים</strong> לפגישה ראשונה',
+        source: 'מכבי שירותי בריאות'
+      },
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי <strong>400 מיליון ש"ח</strong> שקוצצו ב-2024 לא חוזרים לבד — צריך להחליט מאיפה כן',
+        source: 'משרד האוצר'
+      },
+      {
+        if_label: 'אם לא הסכמתם — אולי כי...',
+        detail: 'כי גם ביטחון וחינוך דוחקים, והעברת תקציב <strong>בלי רפורמה מבנית</strong> בקופות החולים לא תקצר תורים',
+        source: 'הסתדרות הפסיכולוגים בישראל'
+      }
+    ]
   },
   cs2: {
-    title: 'משרתי המילואים',
-    subtitle: 'פטור ממס למשרתים מעל 100 ימים',
-    fact: 'הכנסת אישרה הרחבת הטבות, אבל אובדן ההכנסה הממוצע נשאר <strong>45,000 ש"ח</strong>.',
-    sides: '<strong>תומכים:</strong> זה המינימום שהמדינה חייבת להם. <strong>מתנגדים:</strong> פטור גורף ייצור גירעון ענק',
-    untold: 'עצמאיים שאיבדו את העסק שלהם בזמן שהגנו על המדינה'
+    title: 'מענק שווה או פטור ממס',
+    subtitle: 'צדק חלוקתי מול הכרה פרטנית',
+    perspectives: [
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי מענק שווה ייטיב דווקא עם מי שהרוויח פחות מהתחלה — הצדק החלוקתי שלו טוב יותר',
+        source: 'מרכז טאוב'
+      },
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי מענק אחיד פשוט יותר לתקצוב ולתפעול — <strong>~6 מיליארד</strong> לעומת ~8 מיליארד בפטור ממס',
+        source: 'משרד האוצר'
+      },
+      {
+        if_label: 'אם לא הסכמתם — אולי כי...',
+        detail: 'כי פטור ממס בעצם מכיר בזה שהמדינה <strong>לקחה שנה מהחיים</strong> — לא רק מחזירה הוצאות. ומחיר שני המסלולים יחד = ~14 מיליארד, יותר מתקציב משרד הרווחה',
+        source: 'מטה המילואימניקים ומשרד האוצר'
+      }
+    ]
   },
   cs3: {
-    title: 'חינוך פיננסי',
-    subtitle: 'מקצוע חובה לבגרות',
-    fact: 'הממשלה אישרה תוכנית, ואין לה אף מתנגד בכנסת, אבל היא עדיין לא מיושמת',
-    sides: '<strong>תומכים:</strong> ידע פיננסי הוא כלי הישרדותי. <strong>מתנגדים:</strong> מערכת החינוך עמוסה מדי גם ככה',
-    untold: 'דור שלם שנכנס לחובות רק בגלל חוסר הבנה בסיסי בריביות'
+    title: 'חינוך פיננסי כמקצוע חובה',
+    subtitle: 'הכלי שעלול למנוע חובות עתידיים',
+    perspectives: [
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי <strong>דור שלם</strong> נכנס לחובות רק בגלל אי-הבנה של ריביות מתגלגלות',
+        source: 'בנק ישראל'
+      },
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי הממשלה כבר אישרה את התוכנית, <strong>אין לה מתנגד בכנסת</strong> — והיא עדיין לא מיושמת',
+        source: 'משרד החינוך'
+      },
+      {
+        if_label: 'אם לא הסכמתם — אולי כי...',
+        detail: 'כי מערכת החינוך כבר עמוסה, ועדיף להעביר את זה כ<strong>מודול אופציונלי</strong> ולא חובה',
+        source: 'פורום הורים ארצי'
+      }
+    ]
   },
   cs4: {
-    title: 'טוהר המידות',
-    subtitle: 'איסור כהונה למורשעי שחיתות',
-    fact: 'למרות חוסר האמון, חברי כנסת שהורשעו בשחיתות חזרו לכהן בתפקידים בכירים',
-    sides: '<strong>תומכים:</strong> נבחר ציבור חייב להיות נקי כפיים. <strong>מתנגדים:</strong> זכות הציבור לבחור גם במי ששילם את חובו לחברה',
-    untold: 'אזרחים שמאבדים תקווה במערכת הדמוקרטית ומפסיקים להצביע'
+    title: 'חסימה לשבע שנים או לצמיתות',
+    subtitle: 'הגנה על הכנסת מול זכות הציבור לבחור',
+    perspectives: [
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי <strong>שבע שנים</strong> זה קדנציה וחצי — מספיק כדי לנקות את המערכת בלי להשתיק אדם לצמיתות',
+        source: 'התנועה לאיכות השלטון'
+      },
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי חסימה לצמיתות פוגעת בזכות הציבור לבחור במי ששילם את חובו לחברה',
+        source: 'האגודה לזכויות האזרח'
+      },
+      {
+        if_label: 'אם לא הסכמתם — אולי כי...',
+        detail: 'כי ח"כ שמעל באמון הציבור — מעל לכל החיים, ולא צריך <strong>להחזיר אותו אחרי שבע שנים</strong>',
+        source: 'תנועת דרך ארץ'
+      }
+    ]
   },
   cs5: {
-    title: 'מערכת הבריאות',
-    subtitle: 'שקיפות זמני המתנה',
-    fact: 'ישראל היא מהמדינות המפותחות היחידות שלא מפרסמות נתוני המתנה רשמיים',
-    sides: '<strong>תומכים:</strong> שקיפות תאפשר למטופלים לבחור נכון ותקצר תורים. <strong>מתנגדים:</strong> פרסום ייצור עומס על בתי חולים ספציפיים',
-    untold: 'חולים בפריפריה שממתינים חודשים ארוכים בלי לדעת שבמרכז התור פנוי'
+    title: 'שקיפות המתנה עם שיניים',
+    subtitle: 'דיווח חובה וקנס אוטומטי',
+    perspectives: [
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי היום מטופל בפריפריה ממתין חודשים <strong>בלי לדעת שבמרכז התור פנוי</strong> — זה הפער שחייבים לסגור',
+        source: 'מרכז טאוב'
+      },
+      {
+        if_label: 'אם הסכמתם — אולי כי...',
+        detail: 'כי <strong>בלי קנס</strong>, כל בית חולים ידווח רק את הנתונים הנוחים לו — שקיפות בלי שיניים לא עובדת',
+        source: 'משרד מבקר המדינה'
+      },
+      {
+        if_label: 'אם לא הסכמתם — אולי כי...',
+        detail: 'כי פרסום חד-צדדי ימשוך את כל הנפח לבתי החולים המובילים, <strong>ובתי חולים בפריפריה יסבלו עוד יותר</strong>',
+        source: 'איגוד מנהלי בתי חולים'
+      }
+    ]
   },
   dc0: {
     title: 'יוקר המחיה',
@@ -2016,12 +2146,21 @@ function advanceTour() {
   appTourStep++;
   hideTourElements();
   appTourNav = true;
+  // Skip the Pact step when the callout isn't rendered (pact_preview off).
+  // The tour must never point at an element that doesn't exist.
+  if (appTourStep === 2 && !(typeof pactEnabled === 'function' && pactEnabled())) {
+    appTourStep = 3;
+  }
   if (typeof gtag === 'function') gtag('event', 'tour_step_' + appTourStep);
   switch (appTourStep) {
     case 1: go(4); setTimeout(() => { showTourBubble('tour-decl'); appTourNav = false; }, 350); return;
-    case 2: go(3); setTimeout(() => { showTourBubble('tour-home'); appTourNav = false; }, 350); return;
-    case 3: go(5); setTimeout(() => { showTourBubble('tour-rep'); appTourNav = false; }, 350); return;
-    case 4:
+    case 2:
+      // Pact step — stays on sl4, points at the gold callout.
+      setTimeout(() => { showTourBubble('tour-pact'); appTourNav = false; }, 350);
+      return;
+    case 3: go(3); setTimeout(() => { showTourBubble('tour-home'); appTourNav = false; }, 350); return;
+    case 4: go(5); setTimeout(() => { showTourBubble('tour-rep'); appTourNav = false; }, 350); return;
+    case 5:
       appTourActive = false;
       appTourNav = false;
       try { localStorage.setItem('nspr_tour_done', '1'); } catch(e) {}
@@ -2037,7 +2176,7 @@ function showTourBubble(id) {
 }
 
 function hideTourElements() {
-  ['tour-done','tour-decl','tour-home','tour-rep'].forEach(function(id) {
+  ['tour-done','tour-decl','tour-pact','tour-home','tour-rep'].forEach(function(id) {
     const el = document.getElementById(id);
     if (el) el.classList.remove('show');
   });
@@ -2594,6 +2733,9 @@ function createCardEl(card, prefix, index) {
   div.className = 'tcard' + (index === 0 ? ' active' : '');
   div.id = id;
   const tc = card.tag_color || 'bl';
+  const costHtml = card.cost_note ? `<div class="tcard-cost">${
+    ['line1','line2','line3'].map(k => card.cost_note[k] ? `<div>${card.cost_note[k]}</div>` : '').join('')
+  }</div>` : '';
   div.innerHTML = `<div class="tcard-inner">
     <div class="tcard-before"></div>
     <div class="tind tind-r" id="${prefix}i${index}r">&#8594; בעד</div>
@@ -2602,6 +2744,7 @@ function createCardEl(card, prefix, index) {
     <div class="tcard-tag" style="background:var(--${tc}0);color:var(--${tc})">${card.tag}</div>
     <div class="tcard-q">${card.statement || card.question}</div>
     <div class="tcard-ctx">${card.context}</div>
+    ${costHtml}
     <div class="tcard-meta"><span dir="ltr">${(card.vote_count||0).toLocaleString()}</span> הצביעו</div>
     <div class="tcard-more" onclick="event.stopPropagation();showInfo('${id}')">למה זה מורכב?</div>
   </div>`;
