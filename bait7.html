@@ -97,11 +97,50 @@ function gtag(){
 gtag('js', new Date());
 if (I2_IS_INTERNAL) { gtag('set', { traffic_type: 'internal' }); }
 gtag('config','G-CXVXMQE8LM', { send_page_view:false });
+// Fallback loader for gtag.js.
+//   Brand-new GA4 Measurement IDs can return HTTP 404 from
+//   googletagmanager.com/gtag/js?id=X for up to 24-48h while Google propagates
+//   the tag config. If the primary loader errors, fall back to a known-good ID
+//   so gtag() still initializes — the gtag('config','G-CXVXMQE8LM',...) call
+//   queued above then routes events to the correct stream. Loader's auto-config
+//   for the fallback id is a tolerable side effect during the propagation window.
+window.__i2GtagLoader = 'primary';
+(function(){
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM';
+  s.onerror = function(){
+    window.__i2GtagLoader = 'fallback';
+    var s2 = document.createElement('script');
+    s2.async = true;
+    s2.src = 'https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM';
+    document.head.appendChild(s2);
+  };
+  document.head.appendChild(s);
+})();
 if (I2_IS_DEV || I2_IS_INTERNAL) {
   console.log('%c[Israel 2.0] stream G-CXVXMQE8LM · dev=' + (I2_IS_DEV?'1 (DebugView)':'0') + ' · internal=' + (I2_IS_INTERNAL?'1 (traffic_type=internal)':'0'), 'color:#d4af37;font-weight:bold');
+  // On-screen dev banner — ground truth when Web Inspector isn't convenient.
+  // Dismissible (tap to hide for this pageload). Only visible when dev/internal flags are on.
+  document.addEventListener('DOMContentLoaded', function(){
+    var b = document.createElement('div');
+    b.id = 'i2-dev-banner';
+    b.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#d4af37;color:#06070A;font:700 11px/1.4 -apple-system,Segoe UI,sans-serif;padding:6px 10px;text-align:center;direction:ltr;box-shadow:0 2px 6px rgba(0,0,0,.4);cursor:pointer';
+    function render(){
+      b.textContent = 'G-CXVXMQE8LM · dev=' + (I2_IS_DEV?'1':'0') + ' · internal=' + (I2_IS_INTERNAL?'1':'0') + ' · gtag=' + (window.google_tag_manager?'ready':'loading') + ' · loader=' + window.__i2GtagLoader + ' · tap to hide';
+    }
+    render();
+    b.addEventListener('click', function(){ b.remove(); });
+    document.body.appendChild(b);
+    // Refresh gtag status once it loads (also catches fallback loader transition)
+    var tick = setInterval(function(){
+      if (!document.getElementById('i2-dev-banner')) { clearInterval(tick); return; }
+      render();
+      if (window.google_tag_manager) { clearInterval(tick); }
+    }, 500);
+  });
 }
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM"></script>
 <style>
 :root {
   /* ─── COLORS ─── */
