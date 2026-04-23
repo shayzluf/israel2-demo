@@ -103,12 +103,49 @@ if (I2_IS_DEV) {
   --t1:#F5F7FB;  /* was #EFF1F6 — primary, bright */
   --t2:#A8B3C4;  /* was #78899C — secondary, muted */
   --t3:#7885A0;  /* was #4A5668 — tertiary, hints */
-  /* Accent colors — kept but slightly brighter */
-  --gd:#D8A040; --gl:#F0BC68; --gd0:rgba(216,160,64,0.14); --gn:rgba(216,160,64,0.32);
-  --te:#34C8A0; --te0:rgba(52,200,160,0.12);
-  --co:#D66060; --co0:rgba(214,96,96,0.12); --cn:rgba(214,96,96,0.28);
-  --bl:#5A85C4; --bl0:rgba(90,133,196,0.12);
-  --pu:#8668B8; --pu0:rgba(134,104,184,0.12);
+  /* Accent colors — kept but slightly brighter.
+     Stage 2 (2026-04-23): --gn and --cn opacity lowered so accent card borders
+     recede — borders carry signal without dominating chrome. Solid --gd/--te/--co
+     remain at full saturation for typography, icons, and action feedback. */
+  --gd:#D8A040; --gl:#F0BC68; --gd0:rgba(216,160,64,0.14); --gn:rgba(216,160,64,0.18);
+  --te:#34C8A0; --te0:rgba(52,200,160,0.12); --ten:rgba(52,200,160,0.18);
+  --co:#D66060; --co0:rgba(214,96,96,0.12); --cn:rgba(214,96,96,0.18);
+  /* --bl / --pu retired 2026-04-23 (Stage 1 of color-density pass).
+     Kept as aliases so 28 legacy usage sites become neutral greys without site-by-site edits.
+     Intent: category tags, info links, "contested" badges, and tribal-bar tints
+     now read as typography/iconography signal, not category color. */
+  --bl:#A8B3C4; --bl0:rgba(255,255,255,0.05);
+  --pu:#A8B3C4; --pu0:rgba(255,255,255,0.05);
+  /* ─── EXTENDED PALETTE (2026-04-23 refactor) ─── Consolidates previously
+     hardcoded hex + rgba values scattered across inline styles and JS. Change
+     these here and every call site updates. JS mirror in `const PAL = {...}`
+     near the top of <script> — keep them in sync. */
+  /* Contrast colors — text on accent backgrounds */
+  --on-gd:#1a0d00; --on-gd-warm:#1a1306; --on-te:#001a14; --on-co:#ffffff;
+  /* Brand SVG dots (opinion map + badges) */
+  --gold-dark:#C8953A; --you-dot:#E4AE58;
+  --trending:#E8A130; --badge-default:#9DAFC8;
+  /* Teal opacity scale (--te base #34C8A0). --te0=0.12 and --ten=0.18 above */
+  --te-06:rgba(52,200,160,0.06); --te-08:rgba(52,200,160,0.08);
+  --te-10:rgba(52,200,160,0.10); --te-20:rgba(52,200,160,0.20);
+  --te-30:rgba(52,200,160,0.30); --te-35:rgba(52,200,160,0.35);
+  --te-60:rgba(52,200,160,0.60); --te-75:rgba(52,200,160,0.75);
+  /* Coral opacity scale. --co0=0.12 and --cn=0.18 above */
+  --co-30:rgba(214,96,96,0.30); --co-35:rgba(214,96,96,0.35); --co-60:rgba(214,96,96,0.60);
+  /* Gold opacity scale (--gl/you-dot base #E4AE58, distinct from --trending).
+     --gd0=0.14 and --gn=0.18 above use --gd base #D8A040. */
+  --gd-06:rgba(228,174,88,0.06); --gd-35:rgba(228,174,88,0.35);
+  --gd-60:rgba(228,174,88,0.60); --gd-70:rgba(228,174,88,0.70);
+  /* White/border opacity scale. --b0=0.08, --b1=0.16, --b2=0.26 above */
+  --b-ultra:rgba(255,255,255,0.04); --b-faint:rgba(255,255,255,0.06);
+  --b-light:rgba(255,255,255,0.10); --b-semi:rgba(255,255,255,0.13);
+  --b-strong:rgba(255,255,255,0.32);
+  /* Black opacity scale (shadows, overlays) */
+  --k-30:rgba(0,0,0,0.30); --k-35:rgba(0,0,0,0.35); --k-40:rgba(0,0,0,0.40);
+  --k-50:rgba(0,0,0,0.50); --k-80:rgba(0,0,0,0.80);
+  /* Background opacity scale (modal scrims over --bg) */
+  --bg-60:rgba(6,7,10,0.60); --bg-88:rgba(6,7,10,0.88);
+  --bg-92:rgba(6,7,10,0.92); --bg-95:rgba(6,7,10,0.95);
   /* ─── FONT SIZES ─── Centralized scale (bumped for readability) */
   --fs-6:9px;   /* was 6px */
   --fs-7:10px;  /* was 7px */
@@ -145,8 +182,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 /* ─── SIM ─── */
 .sim-wrap{display:flex;align-items:flex-start;gap:26px;width:100%;max-width:960px;}
 .sim-phone{width:286px;flex-shrink:0;background:var(--bg);border-radius:40px;overflow:hidden;
-  border:1px solid rgba(255,255,255,0.13);
-  box-shadow:0 0 0 8px #0A0B0F,0 24px 64px rgba(0,0,0,0.8);position:relative;}
+  border:1px solid var(--b-semi);
+  box-shadow:0 0 0 8px var(--sf),0 24px 64px var(--k-80);position:relative;}
 .sim-notch{width:62px;height:16px;background:#050609;border-radius:0 0 9px 9px;
   position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:30;
   border-bottom:1px solid var(--b0);border-left:1px solid var(--b0);border-right:1px solid var(--b0);}
@@ -188,24 +225,36 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .topic-pill:hover{background:var(--el);color:var(--t1);}
 .topic-pill.on{background:var(--gd0);color:var(--gl);border-color:var(--gn);}
 #topic-bar::-webkit-scrollbar{display:none;}
-.group-bar-row{display:flex;align-items:center;gap:6px;margin-top:3px;padding-right:4px;}
-.group-bar-row.you{border-right:2px solid var(--gl);}
-.group-bar-label{font-size:var(--fs-8);color:var(--t2);width:52px;flex-shrink:0;font-weight:700;}
-.group-bar-row.you .group-bar-label{color:var(--gl);}
-.group-bar-wrap{flex:1;height:5px;background:var(--b0);border-radius:99px;overflow:hidden;}
-.group-bar-fill{height:100%;border-radius:99px;transition:width .3s;}
-.group-bar-pct{font-size:var(--fs-8);color:var(--t1);width:36px;text-align:left;font-weight:800;}
-.group-bar-row.you .group-bar-pct{color:var(--gl);}
+/* Declaration horizontal agreement scale (replaces .group-bar-* stacked bars) */
+.decl-scale-row{display:flex;align-items:center;gap:8px;margin-top:4px;}
+.decl-scale-avg{font-size:var(--fs-9);color:var(--t2);font-weight:800;flex-shrink:0;white-space:nowrap;display:flex;align-items:baseline;gap:3px;}
+.decl-scale-avg .avg-pct{color:var(--t1);}
+.decl-scale-avg .avg-lbl{font-size:var(--fs-7);color:var(--t3);font-weight:700;}
+.decl-scale-track{position:relative;flex:1;height:18px;}
+.decl-scale-track::before{content:"";position:absolute;inset:50% 0 auto 0;height:2px;background:var(--b0);border-radius:99px;transform:translateY(-50%);}
+.decl-scale-dot{position:absolute;top:50%;width:8px;height:8px;border-radius:50%;background:var(--b-strong);border:1px solid var(--k-35);transform:translate(-50%,-50%);}
+.decl-scale-you{position:absolute;top:50%;width:3px;height:14px;background:var(--gl);border-radius:2px;transform:translate(-50%,-50%);z-index:2;box-shadow:0 0 0 2px var(--gn);}
+.decl-scale-detail{margin-top:6px;font-size:var(--fs-7);color:var(--t3);line-height:1.5;display:none;padding:4px 6px;background:var(--sf);border-radius:5px;}
+.decl-scale-detail.on{display:block;}
+.decl-scale-detail .you-chip{color:var(--gl);font-weight:800;}
+.decl-scale-expand{display:inline-block;margin-top:5px;font-size:var(--fs-7);color:var(--t3);cursor:pointer;user-select:none;}
+.decl-scale-expand:hover{color:var(--t2);}
+/* Feed-level legend above first declaration card */
+.decl-legend{display:flex;align-items:center;gap:14px;padding:6px 10px;margin-bottom:6px;font-size:var(--fs-7);color:var(--t3);background:transparent;border-radius:6px;flex-wrap:wrap;}
+.decl-legend-item{display:inline-flex;align-items:center;gap:5px;}
+.decl-legend-you{display:inline-block;width:3px;height:10px;background:var(--gl);border-radius:2px;}
+.decl-legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--b-strong);border:1px solid var(--k-35);}
+.decl-legend-scale{margin-right:auto;font-size:var(--fs-7);color:var(--t3);opacity:.75;}
 .surprise-chip{display:inline-flex;align-items:center;gap:3px;font-size:var(--fs-8);font-weight:800;padding:3px 8px;border-radius:99px;margin-bottom:5px;}
-.surprise-chip.bridge{background:var(--te0);color:var(--te);border:1px solid rgba(39,179,142,0.3);}
+.surprise-chip.bridge{background:var(--te0);color:var(--te);border:1px solid var(--te-30);}
 .surprise-chip.split{background:var(--co0);color:var(--co);border:1px solid var(--cn);}
 .bar{height:5px;background:var(--b0);border-radius:99px;overflow:hidden;}
 .bar-f{height:100%;border-radius:99px;}
 .btn{padding:11px 14px;border-radius:9px;font-size:var(--fs-12);font-weight:900;text-align:center;cursor:pointer;transition:opacity .15s;}
 .btn:hover{opacity:.9;}
-.btn-gd{background:var(--gd);color:#1a0d00;}
-.btn-co{background:var(--co);color:#fff;}
-.btn-te{background:var(--te);color:#001a14;}
+.btn-gd{background:var(--gd);color:var(--on-gd);}
+.btn-co{background:var(--co);color:var(--on-co);}
+.btn-te{background:var(--te);color:var(--on-te);}
 .btn-out{background:var(--el);color:var(--t2);border:1px solid var(--b1);}
 .sr{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}
 .st{background:var(--sf);border-radius:7px;padding:8px 5px;text-align:center;}
@@ -224,7 +273,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .tut-src{font-size:var(--fs-8);color:var(--t3);margin-top:4px;}
 .tut-hint{font-size:var(--fs-10);color:var(--t1);position:absolute;bottom:76px;left:50%;transform:translateX(-50%);
   background:var(--el);border:1px solid var(--b1);border-radius:12px;padding:6px 14px;
-  white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,0.4);
+  white-space:nowrap;box-shadow:0 4px 12px var(--k-40);
   animation:tutBounce 2s ease-in-out infinite;}
 .tut-hint::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);
   width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;
@@ -238,9 +287,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .tut-ind{position:absolute;font-size:var(--fs-12);font-weight:900;opacity:0;transition:opacity .2s;
   pointer-events:none;z-index:5;padding:6px 14px;border-radius:8px;}
 .tut-ind-r{top:50%;right:12px;transform:translateY(-50%);color:var(--te);background:var(--te0);
-  border:1px solid rgba(39,179,142,0.3);}
+  border:1px solid var(--te-30);}
 .tut-ind-l{top:50%;left:12px;transform:translateY(-50%);color:var(--co);background:var(--co0);
-  border:1px solid rgba(199,82,82,0.3);}
+  border:1px solid var(--co-30);}
 .tut-ind-u{top:30px;left:50%;transform:translateX(-50%);color:var(--gl);background:var(--gd0);
   border:1px solid var(--gn);}
 .tut-skip{position:absolute;top:24px;left:14px;font-size:var(--fs-10);color:var(--t3);cursor:pointer;
@@ -269,7 +318,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .tut-zk-arrow{color:var(--t3);font-size:var(--fs-14);}
 .tut-zk-step.fade{opacity:.3;transition:opacity 1.5s ease;}
 /* skip overlay */
-.skip-overlay{position:absolute;inset:0;z-index:40;background:rgba(6,7,10,.95);display:none;
+.skip-overlay{position:absolute;inset:0;z-index:40;background:var(--bg-95);display:none;
   flex-direction:column;justify-content:center;align-items:center;padding:24px 20px;text-align:center;}
 .skip-overlay.show{display:flex;}
 .skip-card{background:var(--el);border-radius:12px;border:1px solid var(--b1);padding:18px 16px;
@@ -292,14 +341,14 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .tour-body{font-size:var(--fs-10);color:var(--t2);margin-top:6px;line-height:1.6;}
 .tour-callout{font-size:var(--fs-9);padding:8px 10px;border-radius:8px;margin-top:8px;line-height:1.5;}
 .tour-callout-gold{background:var(--gd0);color:var(--gl);border:1px solid var(--gn);}
-.tour-callout-teal{background:var(--te0);color:var(--te);border:1px solid rgba(39,179,142,0.2);}
+.tour-callout-teal{background:var(--te0);color:var(--te);border:1px solid var(--te-20);}
 .tour-dismiss{text-align:center;margin-top:10px;font-size:var(--fs-10);font-weight:800;color:var(--gl);
   cursor:pointer;padding:8px 14px;border:1px solid var(--gn);border-radius:8px;background:var(--gd0);
   display:inline-block;}
 .tour-dismiss-wrap{text-align:center;}
 .tour-close{position:absolute;top:8px;left:8px;font-size:var(--fs-14);color:var(--t3);cursor:pointer;line-height:1;}
 @keyframes tourFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.tour-done-overlay{position:absolute;inset:0;z-index:26;background:rgba(6,7,10,0.95);
+.tour-done-overlay{position:absolute;inset:0;z-index:26;background:var(--bg-95);
   display:none;flex-direction:column;justify-content:center;align-items:center;padding:24px;text-align:center;}
 .tour-done-overlay.show{display:flex;}
 .tour-done-check{width:52px;height:52px;border:2px solid var(--gl);border-radius:50%;
@@ -313,7 +362,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
   width:100%;background:var(--el);border-radius:14px;border:1px solid var(--b1);
   padding:36px 18px 16px;display:flex;flex-direction:column;gap:10px;
   position:relative;overflow:hidden;cursor:grab;user-select:none;touch-action:none;
-  box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:transform .15s,border-color .15s;will-change:transform;}
+  box-shadow:0 4px 20px var(--k-30);transition:transform .15s,border-color .15s;will-change:transform;}
 .tcard-inner.dragging{cursor:grabbing;transition:none;}
 .tcard-before{position:absolute;top:0;left:20px;right:20px;height:2px;
   background:linear-gradient(90deg,var(--te),var(--gl));border-radius:0 0 2px 2px;opacity:.5;}
@@ -322,9 +371,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .tcard-ctx{font-size:var(--fs-9);color:var(--t3);line-height:1.4;text-align:center;margin-top:4px;}
 .tcard-meta{font-size:var(--fs-10);color:var(--t3);text-align:center;padding-top:8px;border-top:1px solid var(--b0);}
 .tcard-more{font-size:var(--fs-10);color:var(--bl);text-align:center;cursor:pointer;padding:6px 12px;
-  background:var(--bl0);border:1px solid rgba(68,112,176,.25);border-radius:8px;font-weight:700;
+  background:var(--bl0);border:1px solid var(--b1);border-radius:8px;font-weight:700;
   transition:all .15s;margin-top:4px;}
-.tcard-more:hover{background:rgba(68,112,176,.2);border-color:var(--bl);}
+.tcard-more:hover{background:var(--b0);border-color:var(--bl);}
 /* Info overlay */
 .info-overlay{position:absolute;inset:0;z-index:30;background:var(--bg);display:none;
   flex-direction:column;padding:20px 16px;overflow-y:auto;scrollbar-width:none;}
@@ -349,22 +398,22 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .sa-btn{flex:1;padding:7px 4px;border-radius:8px;font-size:var(--fs-9);font-weight:800;cursor:pointer;
   font-family:var(--heb);border:1.5px solid;background:transparent;transition:all .12s;line-height:1;}
 .sa-btn:active{transform:scale(.96);}
-.sa-no{color:var(--co);border-color:rgba(199,82,82,.35);}
+.sa-no{color:var(--co);border-color:var(--co-35);}
 .sa-no:hover,.sa-no:active{background:var(--co0);}
-.sa-complex{color:var(--gd);border-color:rgba(228,174,88,.35);}
+.sa-complex{color:var(--gd);border-color:var(--gd-35);}
 .sa-complex:hover,.sa-complex:active{background:var(--gd0);}
-.sa-yes{color:var(--te);border-color:rgba(39,179,142,.35);}
+.sa-yes{color:var(--te);border-color:var(--te-35);}
 .sa-yes:hover,.sa-yes:active{background:var(--te0);}
 /* Voted state — filled background matching the button's color */
-.sa-yes.voted{background:var(--te);color:#001a14;border-color:var(--te);}
-.sa-no.voted{background:var(--co);color:#fff;border-color:var(--co);}
-.sa-complex.voted{background:var(--gd);color:#1a0d00;border-color:var(--gd);}
+.sa-yes.voted{background:var(--te);color:var(--on-te);border-color:var(--te);}
+.sa-no.voted{background:var(--co);color:var(--on-co);border-color:var(--co);}
+.sa-complex.voted{background:var(--gd);color:var(--on-gd);border-color:var(--gd);}
 /* After voting, unselected buttons are dimmed and unclickable */
 .decl-card.voted .sa-btn:not(.voted){opacity:.35;pointer-events:none;}
 /* Group breakdown hidden until vote — reveals with a slide-down animation */
 .group-breakdown{max-height:0;overflow:hidden;opacity:0;
   transition:max-height .4s ease,opacity .3s ease .1s,margin .3s ease;margin-bottom:0;}
-.decl-card.voted .group-breakdown{max-height:200px;opacity:1;margin-bottom:8px;}
+.decl-card.voted .group-breakdown{max-height:140px;opacity:1;margin-bottom:6px;}
 .breakdown-reveal-label{font-size:var(--fs-8);color:var(--gl);font-weight:800;
   letter-spacing:.5px;margin-bottom:4px;display:flex;align-items:center;gap:4px;}
 
@@ -391,7 +440,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 /* ═══ HEMICYCLE ═══ */
 .hemi-seat-filled{fill:var(--gd);opacity:1;}
 .hemi-seat-empty{fill:transparent;stroke:var(--t3);stroke-width:0.8;opacity:.3;}
-.hemi-seat-you{fill:var(--gl);filter:drop-shadow(0 0 4px rgba(228,174,88,0.6));animation:nowpulse 1.8s infinite;}
+.hemi-seat-you{fill:var(--gl);filter:drop-shadow(0 0 4px var(--gd-60));animation:nowpulse 1.8s infinite;}
 @keyframes nowpulse{0%,100%{opacity:1}50%{opacity:.6}}
 
 /* ═══ CONSTRUCTION FEEDBACK ═══ */
@@ -444,21 +493,21 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 /* ═══ CONSENSUS CELEBRATION ═══ */
 .consensus-celebration{position:absolute;inset:0;z-index:40;display:none;
   flex-direction:column;align-items:center;justify-content:center;
-  background:rgba(6,7,10,0.92);padding:20px;text-align:center;gap:10px;}
+  background:var(--bg-92);padding:20px;text-align:center;gap:10px;}
 .consensus-celebration.show{display:flex;}
 .cc-ring{width:80px;height:80px;border-radius:50%;border:3px solid var(--gl);
   display:flex;align-items:center;justify-content:center;animation:ccPulse 1.5s ease-out;}
 @keyframes ccPulse{0%{transform:scale(0.5);opacity:0}50%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
 
 /* ═══ ASPIRATION CARD ═══ */
-.aspiration-card{background:linear-gradient(135deg,rgba(200,149,58,0.08),rgba(39,179,142,0.05));
+.aspiration-card{background:linear-gradient(135deg,var(--gd-06),var(--te-06));
   border:1px solid var(--gn);border-radius:10px;padding:11px 12px;}
 
 /* ═══ ZK SCAN ═══ */
 .zk-scan{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
   padding:20px 18px;gap:0;position:relative;overflow:hidden;}
 .zk-glow{position:absolute;inset:0;
-  background:radial-gradient(ellipse 160% 60% at 50% 50%,rgba(39,179,142,0.07) 0%,transparent 65%);}
+  background:radial-gradient(ellipse 160% 60% at 50% 50%,var(--te-06) 0%,transparent 65%);}
 .passport-wrap{width:108px;height:78px;background:var(--el);border-radius:9px;
   border:1px solid var(--te0);display:flex;align-items:center;justify-content:center;
   position:relative;z-index:1;margin-bottom:14px;overflow:hidden;}
@@ -468,8 +517,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 @keyframes pscan{0%{top:10px}100%{top:62px}}
 .proof-steps{width:100%;display:flex;flex-direction:column;gap:4px;position:relative;z-index:1;}
 .proof-step{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--sf);border-radius:7px;}
-.proof-step.done{background:var(--te0);border:1px solid rgba(39,179,142,.2);}
-.proof-step.active{border:1px solid rgba(39,179,142,.35);}
+.proof-step.done{background:var(--te0);border:1px solid var(--te-20);}
+.proof-step.active{border:1px solid var(--te-35);}
 .ps-icon{font-size:var(--fs-12);flex-shrink:0;display:flex;align-items:center;}
 .ps-text{font-size:var(--fs-9);font-weight:600;color:var(--t2);flex:1;}
 .proof-step.done .ps-text{color:var(--te);}
@@ -478,17 +527,17 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 
 /* ═══ CITIZEN PRIDE ═══ */
 .s8-glow{position:absolute;inset:0;
-  background:radial-gradient(ellipse 200% 55% at 50% 55%,rgba(200,149,58,0.09) 0%,transparent 60%);}
+  background:radial-gradient(ellipse 200% 55% at 50% 55%,var(--gd-06) 0%,transparent 60%);}
 .cit-body{flex:1;overflow-y:auto;padding:18px 18px;display:flex;flex-direction:column;
   gap:9px;scrollbar-width:none;position:relative;z-index:1;}
 .cit-body::-webkit-scrollbar{display:none;}
 .cit-n{font-family:var(--frank);font-size:var(--fs-44);font-weight:900;color:var(--gl);
   letter-spacing:-2px;line-height:1;margin:6px 0 2px;}
-.retro-card{background:var(--te0);border:1px solid rgba(39,179,142,.2);border-radius:10px;padding:10px 12px;}
+.retro-card{background:var(--te0);border:1px solid var(--te-20);border-radius:10px;padding:10px 12px;}
 .retro-h{font-size:var(--fs-10);font-weight:800;color:var(--te);margin-bottom:6px;}
 .retro-row{display:flex;align-items:center;gap:7px;margin-bottom:4px;}
 .retro-icon{flex-shrink:0;display:flex;align-items:center;}
-.retro-text{font-size:var(--fs-9);color:rgba(39,179,142,.75);}
+.retro-text{font-size:var(--fs-9);color:var(--te-75);}
 
 /* ═══ STATEMENT SWIPE (tcard reuse for sl4) ═══ */
 .st-badge-row{display:flex;align-items:center;gap:6px;margin-top:4px;}
@@ -521,7 +570,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 }
 
 /* ── Declaration compose overlay ── */
-.dcl-overlay{position:fixed;inset:0;z-index:55;background:rgba(6,7,10,.88);display:none;
+.dcl-overlay{position:fixed;inset:0;z-index:55;background:var(--bg-88);display:none;
   justify-content:center;align-items:center;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
 .dcl-overlay.show{display:flex;}
 .dcl-sheet{width:100%;max-width:420px;max-height:88vh;background:var(--el);border-radius:18px;
@@ -552,14 +601,14 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .dcl-counter.c-gd{color:var(--gd);}
 .dcl-counter.c-co{color:var(--co);}
 .dcl-polish{display:none;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;
-  background:linear-gradient(135deg,rgba(39,179,142,.08),rgba(78,120,222,.08));
-  border:1px solid rgba(39,179,142,.2);color:var(--te);font-size:var(--fs-10);font-weight:800;
+  background:linear-gradient(135deg,var(--te-08),var(--te-08));
+  border:1px solid var(--te-20);color:var(--te);font-size:var(--fs-10);font-weight:800;
   font-family:var(--heb);cursor:pointer;transition:opacity .15s;width:100%;justify-content:center;}
 .dcl-polish.vis{display:flex;}
 .dcl-polish:hover{opacity:.85;}
 .dcl-polish svg{flex-shrink:0;}
 @keyframes dcl-shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.dcl-polish.loading{pointer-events:none;background:linear-gradient(90deg,rgba(39,179,142,.06) 25%,rgba(39,179,142,.15) 50%,rgba(39,179,142,.06) 75%);
+.dcl-polish.loading{pointer-events:none;background:linear-gradient(90deg,var(--te-06) 25%,var(--te-10) 50%,var(--te-06) 75%);
   background-size:200% 100%;animation:dcl-shimmer 1.2s linear infinite;}
 .dcl-suggestion{display:none;padding:10px 12px;background:var(--sf);border:1px solid var(--b1);
   border-radius:10px;gap:8px;flex-direction:column;}
@@ -582,7 +631,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .dcl-preview-meta{font-size:var(--fs-8);color:var(--t3);}
 .dcl-submit{width:100%;padding:12px;border-radius:10px;font-size:var(--fs-12);font-weight:900;
   font-family:var(--heb);border:none;cursor:pointer;transition:opacity .2s,background .15s;
-  background:var(--te);color:#001a14;}
+  background:var(--te);color:var(--on-te);}
 .dcl-submit:disabled{opacity:.35;cursor:default;}
 .dcl-success{display:none;flex-direction:column;align-items:center;justify-content:center;
   gap:12px;padding:24px 16px;text-align:center;min-height:280px;}
@@ -613,13 +662,13 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .pact-status-line{font-size:var(--fs-10);font-weight:800;margin:10px 0 4px;text-align:center;font-family:var(--heb);}
 .pact-blocking-line{font-size:var(--fs-11);font-weight:800;color:var(--gd);background:var(--gd0);border-radius:10px;padding:10px 12px;margin:8px 0 4px;text-align:center;font-family:var(--heb);line-height:1.5;display:none;}
 .pact-blocking-line.vis{display:block;}
-.pact-blocking-line.fired{color:#001a14;background:var(--te);}
+.pact-blocking-line.fired{color:var(--on-te);background:var(--te);}
 .pact-preview-warning{font-size:var(--fs-8);color:var(--gd);background:var(--gd0);padding:6px 10px;border-radius:8px;text-align:center;margin-top:6px;font-family:var(--heb);}
 .pact-pledge-types{display:flex;gap:8px;margin:12px 0 4px;}
 .pact-pledge-types label{flex:1;padding:10px;border:1.5px solid var(--b1);border-radius:10px;cursor:pointer;font-size:var(--fs-10);font-weight:700;text-align:center;font-family:var(--heb);display:flex;align-items:center;justify-content:center;line-height:1.35;}
 .pact-pledge-types label:has(input:checked){border-color:var(--te);background:var(--te0);color:var(--te);}
 .pact-pledge-types input{display:none;}
-.pact-submit{width:100%;padding:12px;border-radius:10px;font-size:var(--fs-12);font-weight:900;font-family:var(--heb);border:none;cursor:pointer;transition:opacity .2s,background .15s;background:var(--te);color:#001a14;margin-top:4px;}
+.pact-submit{width:100%;padding:12px;border-radius:10px;font-size:var(--fs-12);font-weight:900;font-family:var(--heb);border:none;cursor:pointer;transition:opacity .2s,background .15s;background:var(--te);color:var(--on-te);margin-top:4px;}
 .pact-submit:disabled{opacity:.35;cursor:default;}
 .pact-secondary{background:none;border:none;color:var(--t3);font-size:var(--fs-10);padding:6px;cursor:pointer;font-family:var(--heb);}
 .pact-secondary:hover{color:var(--t2);}
@@ -629,13 +678,13 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .pact-success p{font-size:var(--fs-10);color:var(--t3);margin:0;line-height:1.55;}
 
 /* sl4 Pact call-out card (feature-flag gated: ?pact_preview=1) */
-.pact-callout{background:linear-gradient(135deg,rgba(39,179,142,.10),rgba(212,175,55,.10));border:1.5px solid var(--gd);border-radius:14px;padding:14px 14px 12px;margin:8px 0 14px;cursor:pointer;transition:transform .15s,box-shadow .15s;position:relative;}
-.pact-callout:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(212,175,55,.15);}
-.pact-callout-badge{display:inline-block;font-size:var(--fs-7);font-weight:900;padding:3px 8px;border-radius:99px;background:var(--gd);color:#1a1306;letter-spacing:.4px;}
+.pact-callout{background:linear-gradient(135deg,var(--te-10),var(--gd0));border:1.5px solid var(--gd);border-radius:14px;padding:14px 14px 12px;margin:8px 0 14px;cursor:pointer;transition:transform .15s,box-shadow .15s;position:relative;}
+.pact-callout:hover{transform:translateY(-1px);box-shadow:0 4px 18px var(--gd0);}
+.pact-callout-badge{display:inline-block;font-size:var(--fs-7);font-weight:900;padding:3px 8px;border-radius:99px;background:var(--gd);color:var(--on-gd-warm);letter-spacing:.4px;}
 .pact-callout h4{font-size:var(--fs-13);font-weight:900;color:var(--t1);margin:8px 0 4px;font-family:var(--heb);line-height:1.35;}
 .pact-callout p{font-size:var(--fs-10);color:var(--t2);margin:0;line-height:1.55;font-family:var(--heb);}
 .pact-callout-cta{font-size:var(--fs-10);font-weight:800;color:var(--te);margin-top:8px;font-family:var(--heb);}
-.pact-callout-share{position:absolute;top:8px;left:8px;background:rgba(6,7,10,.6);border:1px solid var(--b1);border-radius:99px;padding:6px 10px;cursor:pointer;font-size:var(--fs-8);font-weight:800;color:var(--t2);font-family:var(--heb);display:inline-flex;align-items:center;gap:4px;backdrop-filter:blur(4px);transition:background .15s,color .15s;}
+.pact-callout-share{position:absolute;top:8px;left:8px;background:var(--bg-60);border:1px solid var(--b1);border-radius:99px;padding:6px 10px;cursor:pointer;font-size:var(--fs-8);font-weight:800;color:var(--t2);font-family:var(--heb);display:inline-flex;align-items:center;gap:4px;backdrop-filter:blur(4px);transition:background .15s,color .15s;}
 .pact-callout-share:hover{background:var(--gd0);color:var(--gd);border-color:var(--gd);}
 .pact-callout-share svg{width:12px;height:12px;stroke:currentColor;}
 
@@ -643,7 +692,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .pact-share-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
 .pact-share-btn{flex:1 1 auto;min-width:130px;padding:10px 12px;border-radius:10px;font-size:var(--fs-10);font-weight:800;font-family:var(--heb);border:1.5px solid var(--gd);background:var(--gd0);color:var(--gd);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:opacity .15s,background .15s;}
 .pact-share-btn:hover{opacity:.85;}
-.pact-share-btn.primary{background:var(--gd);color:#1a1306;border-color:var(--gd);}
+.pact-share-btn.primary{background:var(--gd);color:var(--on-gd-warm);border-color:var(--gd);}
 .pact-share-btn svg{width:14px;height:14px;stroke:currentColor;}
 .pact-share-section{margin-top:14px;padding-top:14px;border-top:1px solid var(--b1);}
 .pact-share-section-label{font-size:var(--fs-9);color:var(--t3);margin-bottom:8px;font-family:var(--heb);line-height:1.5;}
@@ -713,7 +762,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         </div>
         <!-- Instruction bubble -->
         <div style="width:100%;display:flex;justify-content:center;margin-top:16px;">
-          <div style="font-size:var(--fs-10);color:var(--t1);background:var(--el);border:1px solid var(--b1);border-radius:12px;padding:8px 14px;text-align:center;line-height:1.6;max-width:240px;box-shadow:0 4px 12px rgba(0,0,0,0.4);">
+          <div style="font-size:var(--fs-10);color:var(--t1);background:var(--el);border:1px solid var(--b1);border-radius:12px;padding:8px 14px;text-align:center;line-height:1.6;max-width:240px;box-shadow:0 4px 12px var(--k-40);">
             ימינה = מסכים/ה &middot; שמאלה = לא &middot; למעלה = מורכב
           </div>
         </div>
@@ -851,12 +900,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
           <div data-ab="headline" style="text-align:center;font-size:var(--fs-15);font-weight:900;color:var(--t1);line-height:1.4">את/ה כנראה אחד מהם</div>
           <!-- PART 2: RUPTURE — existence proof, something is already happening -->
-          <div data-ab="promise" style="text-align:center;font-size:var(--fs-11);color:var(--te);line-height:1.6;font-weight:700;padding:8px 12px;background:var(--te0);border-radius:9px;border:1px solid rgba(39,179,142,0.2)">כבר עכשיו, אלפי אזרחים מכל הקבוצות מגלים על מה הם כן מסכימים</div>
+          <div data-ab="promise" style="text-align:center;font-size:var(--fs-11);color:var(--te);line-height:1.6;font-weight:700;padding:8px 12px;background:var(--te0);border-radius:9px;border:1px solid var(--te-20)">כבר עכשיו, אלפי אזרחים מכל הקבוצות מגלים על מה הם כן מסכימים</div>
           <div data-ab="mission" style="text-align:center;font-size:var(--fs-10);color:var(--t2);line-height:1.6;max-width:240px;margin:0 auto">ההצבעות שלהם בונות כנסת עממית שהפוליטיקאים לא יכולים להתעלם ממנה</div>
           <!-- PART 3: INVITATION — curiosity, not commitment -->
           <div data-ab="cta" class="btn btn-gd" onclick="abTrackCta();go(1)">לגלות על מה מסכימים</div>
           <div style="text-align:center;font-size:var(--fs-9);color:var(--t3)"><span dir="ltr">6</span> סוויפים &middot; דקה אחת &middot; ללא הרשמה</div>
-          <!-- Social proof counter (secondary) -->
+          <!-- Social proof counter — populated by applyGlobalStats() from polis-rs /api/v1/topics -->
           <div style="text-align:center;font-size:var(--fs-9);color:var(--t3)"><span id="fc" style="color:var(--gl);font-weight:800"><span dir="ltr">47</span></span> אזרחים כבר גילו</div>
         </div>
       </div>
@@ -1034,7 +1083,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <div class="slide" id="sl2">
         <div class="scr" style="gap:8px;padding:14px 14px 10px">
           <div class="kicker" style="color:var(--gl)">הכנסת העממית</div>
-          <!-- Adaptive header — updated by JS -->
+          <!-- Adaptive header — updated by updateHemiDisplay() / applyGlobalStats() from polis-rs -->
           <div id="hemi-header" style="font-size:var(--fs-14);font-weight:900;color:var(--t1);text-align:center;line-height:1.3">את/ה אזרח <span dir="ltr">#47</span> בכנסת העממית</div>
           <!-- Hemicycle SVG -->
           <svg id="hemi-main" viewBox="0 0 260 140" style="width:100%;height:auto;display:block"></svg>
@@ -1053,9 +1102,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <span style="font-size:var(--fs-7);color:var(--t2)">את/ה</span>
             </div>
           </div>
-          <!-- Milestone context — updated by JS -->
+          <!-- Milestone context — updated by updateHemiDisplay() / applyGlobalStats() from polis-rs -->
           <div id="hemi-context" style="font-size:var(--fs-9);color:var(--t2);line-height:1.5;text-align:center;padding:4px 8px;background:var(--gd0);border:1px solid var(--gn);border-radius:8px">כל שינוי בהיסטוריה התחיל מקבוצה קטנה. את/ה חלק מ-<span dir="ltr">47</span> הראשונים</div>
-          <!-- Next milestone progress -->
+          <!-- Next milestone progress — bar + percent set live by updateHemiDisplay() -->
           <div id="hemi-milestone" style="display:flex;flex-direction:column;gap:2px">
             <div style="display:flex;align-items:center;justify-content:space-between">
               <span style="font-size:var(--fs-8);font-weight:700;color:var(--t2)" id="hemi-next-label">הבא: <span dir="ltr">100</span> הראשונים</span>
@@ -1085,7 +1134,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
         </div>
         <div class="scr" id="home-scr" style="overflow-y:hidden;position:relative;gap:6px">
-          <!-- Mini hemicycle -->
+          <!-- Mini hemicycle — adaptive SVG, no fake seat count -->
           <div style="text-align:center;padding:6px 0">
             <svg id="hemi-mini" viewBox="0 0 260 80" style="width:160px;height:auto;display:inline-block"></svg>
             <div style="font-size:var(--fs-9);font-weight:800;color:var(--gl)"><span dir="ltr">83</span>/<span dir="ltr">120</span> מושבים</div>
@@ -1148,7 +1197,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <span style="color:var(--co)">&#8592; נגד</span>
             </div>
           </div>
-          <!-- Construction feedback (hidden, shown after swipes) -->
+          <!-- Construction feedback (hidden, shown after swipes) — pilot: honest placeholder -->
           <div id="construction-fb" style="display:none" class="construction-fb">
             <div class="cf-line" style="font-weight:700;color:var(--gl)">+1. עכשיו <span dir="ltr">4,219</span> אזרחים הצביעו על הנושא הזה</div>
             <div class="cf-line">הכנסת העממית: <span dir="ltr">71</span> בעד, <span dir="ltr">49</span> נגד. הכנסת האמיתית: <span dir="ltr">38-82</span>.</div>
@@ -1175,16 +1224,16 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
           <!-- Below-fold content -->
           <div id="home-below-fold" class="home-locked" style="display:flex;flex-direction:column;gap:6px">
-            <!-- Impact counter -->
+            <!-- Weekly impact — pilot: honest coming-soon placeholder -->
             <div class="card" style="border-color:var(--gn)">
               <div style="font-size:var(--fs-9);font-weight:800;color:var(--gl);margin-bottom:4px">ההשפעה שלכם השבוע</div>
               <div style="font-size:var(--fs-9);color:var(--t2);line-height:1.6"><span dir="ltr">12</span> מכתבים נשלחו לחברי כנסת &middot; שותפות ב-<span dir="ltr">4</span> הסכמות רחבות</div>
             </div>
             <!-- Consensus discovery -->
-            <div class="card" style="border-color:rgba(39,179,142,.25)">
+            <div class="card" style="border-color:var(--ten)">
               <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px">
                 <div style="width:6px;height:6px;border-radius:50%;background:var(--te);animation:nowpulse 2s infinite"></div>
-                <div style="font-size:var(--fs-8);font-weight:800;color:var(--te)">הסכמה חדשה התגלתה</div>
+                <div style="font-size:var(--fs-8);font-weight:800;color:var(--t1)">הסכמה חדשה התגלתה</div>
               </div>
               <div style="font-size:var(--fs-10);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:4px">״המדינה כשלה בלספק מיגון בסיסי״ -- <span dir="ltr">87%</span> מכל הקבוצות מסכימים</div>
               <div style="text-align:left;font-size:var(--fs-8);color:var(--t3);cursor:pointer" onclick="shareConsensus()">שתף</div>
@@ -1233,9 +1282,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div style="display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
                 <div style="font-size:var(--fs-10);font-weight:800;color:var(--gl)">הנציג האישי שלכם</div>
               </div>
-              <div style="font-size:var(--fs-9);color:rgba(228,174,88,.7);line-height:1.5;margin-bottom:5px">ניבא <span dir="ltr">7/10</span> נכון. ביטחון: <span dir="ltr">74%</span></div>
+              <div style="font-size:var(--fs-9);color:var(--gd-70);line-height:1.5;margin-bottom:5px">ניבא <span dir="ltr">7/10</span> נכון. ביטחון: <span dir="ltr">74%</span></div>
               <div class="bar" style="margin-bottom:5px"><div class="bar-f" style="width:74%;background:var(--gl)"></div></div>
-              <div style="font-size:var(--fs-9);color:rgba(228,174,88,.6);cursor:pointer" onclick="go(5)">בדקו מה הנציג עשה בזמן שלא הייתם כאן &#8592;</div>
+              <div style="font-size:var(--fs-9);color:var(--gd-60);cursor:pointer" onclick="go(5)">בדקו מה הנציג עשה בזמן שלא הייתם כאן &#8592;</div>
             </div>
             <!-- ZK nudge (swapped to verified state by go(8)) -->
             <div id="zk-nudge" style="background:var(--co0);border:1px solid var(--cn);border-radius:9px;padding:8px 10px">
@@ -1329,7 +1378,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="tour-dismiss-wrap"><div class="tour-dismiss" onclick="advanceTour()">הבנתי, יאללה</div></div>
           </div>
           <!-- HERO: While away (moved to top, most important) -->
-          <div class="card" style="border-color:var(--gn);background:linear-gradient(135deg,rgba(200,149,58,0.06),rgba(39,179,142,0.04))">
+          <div class="card" style="border-color:var(--gn);background:linear-gradient(135deg,var(--gd-06),var(--te-06))">
             <div style="font-size:var(--fs-10);font-weight:800;color:var(--gl);margin-bottom:6px">בזמן שלא הייתם כאן, הנציג:</div>
             <div style="display:flex;flex-direction:column;gap:4px">
               <div style="font-size:var(--fs-9);color:var(--t2);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px">
@@ -1347,7 +1396,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <!-- Emergent profile (pol.is-style opinion groups) -->
           <div style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px">קבוצות דעה</div>
           <div class="card" style="padding:10px 12px">
-            <!-- Opinion map — injected by buildOpinionMap() -->
+            <!-- Opinion map — injected by loadAndRenderOpinionMap() from /api/v1/users/:id/opinion_map -->
             <div id="sl5-opinion-map"></div>
             <div style="font-size:var(--fs-9);color:var(--t2);line-height:1.5;margin-bottom:6px">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">34%</span> מהאזרחים שחושבים דומה</div>
             <div style="font-size:var(--fs-9);color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;margin-bottom:4px;border-right:2px solid var(--te)">
@@ -1367,8 +1416,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div style="font-size:var(--fs-8);color:var(--te);margin-top:2px">ניבא: מסכים (<span dir="ltr">91%</span>)</div>
               </div>
               <div style="display:flex;gap:4px;flex-shrink:0">
-                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
-                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='var(--on-te)'">&#10003;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='var(--on-co)'">&#10007;</div>
               </div>
             </div>
             <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
@@ -1377,8 +1426,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div style="font-size:var(--fs-8);color:var(--co);margin-top:2px">ניבא: לא מסכים (<span dir="ltr">67%</span>)</div>
               </div>
               <div style="display:flex;gap:4px;flex-shrink:0">
-                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
-                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='var(--on-te)'">&#10003;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='var(--on-co)'">&#10007;</div>
               </div>
             </div>
             <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
@@ -1387,8 +1436,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div style="font-size:var(--fs-8);color:var(--gd);margin-top:2px">ניבא: לא בטוח (<span dir="ltr">54%</span>)</div>
               </div>
               <div style="display:flex;gap:4px;flex-shrink:0">
-                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='#001a14'">&#10003;</div>
-                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='#fff'">&#10007;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--te0);border:1px solid var(--te);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--te)" onclick="this.style.background='var(--te)';this.style.color='var(--on-te)'">&#10003;</div>
+                <div style="width:26px;height:26px;border-radius:6px;background:var(--co0);border:1px solid var(--co);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:var(--fs-10);color:var(--co)" onclick="this.style.background='var(--co)';this.style.color='var(--on-co)'">&#10007;</div>
               </div>
             </div>
           </div>
@@ -1407,7 +1456,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
 
           <!-- Power section -->
-          <div class="card" style="border-color:var(--gn);background:linear-gradient(135deg,rgba(200,149,58,0.06),rgba(39,179,142,0.04))">
+          <div class="card" style="border-color:var(--gn);background:linear-gradient(135deg,var(--gd-06),var(--te-06))">
             <div style="font-size:var(--fs-10);font-weight:800;color:var(--gl);margin-bottom:4px">הכוח של כנסת העם</div>
             <div style="font-size:var(--fs-9);color:var(--t2);line-height:1.6">כש-<span dir="ltr">500,000</span> אזרחים מאומתים מפעילים נציגי AI, אנחנו יוצרים כנסת אזרחית שפועלת ברציפות, עוקפת את הפוליטיקה הישנה ומחזירה את הכוח אלינו</div>
           </div>
@@ -1424,7 +1473,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <div class="slide" id="sl6">
         <div class="scr" style="justify-content:center;gap:10px;padding:16px 16px">
           <div style="font-size:var(--fs-14);font-weight:900;color:var(--t1);text-align:center">הגיע הזמן לקחת את הכוח לידיים</div>
-          <!-- Pride stats -->
+          <!-- Pride stats — populated by updateProgressBadges() from ns_vote_log -->
           <div style="display:flex;gap:8px;justify-content:center">
             <div style="text-align:center;padding:8px 12px;background:var(--el);border-radius:8px">
               <div style="font-size:var(--fs-20);font-weight:900;color:var(--gl);direction:ltr">8</div>
@@ -1515,7 +1564,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="retro-row"><div class="retro-icon" style="color:var(--te)"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></div><div class="retro-text">פרופיל אזרחי -- מופעל</div></div>
           </div>
           <!-- Share -->
-          <div style="background:#25D366;color:#fff;font-weight:800;font-size:var(--fs-11);border-radius:10px;padding:11px;cursor:pointer" onclick="shareCitizen()">שתף -- אני אזרח/ית #<span dir="ltr">4,220</span></div>
+          <div style="background:var(--te);color:var(--on-te);font-weight:800;font-size:var(--fs-11);border-radius:10px;padding:11px;cursor:pointer" onclick="shareCitizen()">שתף -- אני אזרח/ית #<span dir="ltr">4,220</span></div>
 
           <!-- Experiment micro-survey (visible only for cohort users) -->
           <div id="exp-survey" style="display:none;margin-top:12px;text-align:right">
@@ -1592,6 +1641,24 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 </div><!-- /sim-wrap -->
 
 <script>
+/* ══════════════════════════════════════════════════════
+   PALETTE CONSTANTS — JS mirror of :root CSS vars.
+   SVG attributes (fill, stroke) can't reliably read var(--*) across browsers,
+   so we mirror the values here. Keep in sync with :root above when changing.
+══════════════════════════════════════════════════════ */
+const PAL = {
+  te:           '#34C8A0',   // --te
+  gl:           '#F0BC68',   // --gl
+  gd:           '#D8A040',   // --gd
+  co:           '#D66060',   // --co
+  t2:           '#A8B3C4',   // --t2
+  trending:     '#E8A130',   // --trending
+  badgeDefault: '#9DAFC8',   // --badge-default
+  goldDark:     '#C8953A',   // --gold-dark
+  youDot:       '#E4AE58',   // --you-dot
+  bg:           '#06070A',   // --bg
+};
+
 /* ══════════════════════════════════════════════════════
    CARD INFO DATA
 ══════════════════════════════════════════════════════ */
@@ -1976,13 +2043,13 @@ function showT2Demo() {
   const indL = document.getElementById('t2il');
   const indU = document.getElementById('t2iu');
   // Nudge right — show "בעד"
-  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(60px) rotate(6deg)'; inner.style.borderColor = 'rgba(39,179,142,0.6)'; if (indR) indR.style.opacity = '1'; }, 600);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(60px) rotate(6deg)'; inner.style.borderColor = 'var(--te-60)'; if (indR) indR.style.opacity = '1'; }, 600);
   setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indR) indR.style.opacity = '0'; }, 1500);
   // Nudge left — show "נגד"
-  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-60px) rotate(-6deg)'; inner.style.borderColor = 'rgba(199,82,82,0.6)'; if (indL) indL.style.opacity = '1'; }, 2300);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-60px) rotate(-6deg)'; inner.style.borderColor = 'var(--co-60)'; if (indL) indL.style.opacity = '1'; }, 2300);
   setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indL) indL.style.opacity = '0'; }, 3200);
   // Nudge up — show "מורכב"
-  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-40px) scale(1.02)'; inner.style.borderColor = 'rgba(228,174,88,0.6)'; if (indU) indU.style.opacity = '1'; }, 4000);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-40px) scale(1.02)'; inner.style.borderColor = 'var(--gd-60)'; if (indU) indU.style.opacity = '1'; }, 4000);
   setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indU) indU.style.opacity = '0'; inner.style.transition = ''; }, 4900);
 }
 
@@ -2506,11 +2573,11 @@ function showCsTutorial() {
   const inds = csGetInd(0);
   const ease = 'transform 600ms cubic-bezier(0.34,1.56,0.64,1), opacity 400ms ease, border-color 400ms ease';
   const back = 'transform 500ms cubic-bezier(0.175,0.885,0.32,1.375), opacity 300ms ease, border-color 300ms ease';
-  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(80px) rotate(8deg)'; inner.style.borderColor = 'rgba(39,179,142,0.6)'; if (inds.r) inds.r.style.opacity = '1'; }, 600);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(80px) rotate(8deg)'; inner.style.borderColor = 'var(--te-60)'; if (inds.r) inds.r.style.opacity = '1'; }, 600);
   setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (inds.r) inds.r.style.opacity = '0'; }, 1500);
-  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-80px) rotate(-8deg)'; inner.style.borderColor = 'rgba(199,82,82,0.6)'; if (inds.l) inds.l.style.opacity = '1'; }, 2200);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-80px) rotate(-8deg)'; inner.style.borderColor = 'var(--co-60)'; if (inds.l) inds.l.style.opacity = '1'; }, 2200);
   setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (inds.l) inds.l.style.opacity = '0'; }, 3100);
-  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-60px) scale(1.03)'; inner.style.borderColor = 'rgba(228,174,88,0.6)'; if (inds.u) inds.u.style.opacity = '1'; }, 3800);
+  setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-60px) scale(1.03)'; inner.style.borderColor = 'var(--gd-60)'; if (inds.u) inds.u.style.opacity = '1'; }, 3800);
   setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (inds.u) inds.u.style.opacity = '0'; inner.style.transition = ''; }, 4700);
 }
 
@@ -2841,25 +2908,28 @@ loadCards().then(() => injectChallenger());
 
 /* ══ REUSABLE OPINION MAP (sl4 + sl5) ══ */
 // Canonical SVG positions — do not change without matching sl5 design
+/* Stage 1 color-density pass: cluster blobs desaturated to a single neutral tone
+   so only the user's gold dot + emerging statement-dot badges carry color.
+   The clusters remain spatially distinct (position + count label do the work).
+   Colors sourced from PAL + --b-* tokens — see :root for meaning. */
+const _BLOB_FILL = 'rgba(255,255,255,0.04)';    // mirrors --b-ultra
+const _BLOB_STROKE = 'rgba(255,255,255,0.16)';  // mirrors --b1
 const _OPINION_BLOBS = {
   A: {
     path: 'M140,70 Q180,55 200,75 Q210,95 190,110 Q160,120 135,105 Q125,90 140,70Z',
-    fill: 'rgba(39,179,142,0.08)', stroke: 'rgba(39,179,142,0.2)',
-    dotColor: '#27B38E',
+    fill: _BLOB_FILL, stroke: _BLOB_STROKE, dotColor: PAL.t2,
     dots: [[165,85,2,.5],[175,78,2,.4],[155,92,2,.35],[180,90,1.5,.3],[160,100,2,.4],[190,82,1.5,.25],[170,95,1.5,.35],[148,88,1.5,.3]],
     countPos: [192,105]
   },
   B: {
     path: 'M20,35 Q55,15 80,30 Q95,50 85,75 Q70,95 40,85 Q15,70 20,35Z',
-    fill: 'rgba(68,112,176,0.08)', stroke: 'rgba(68,112,176,0.2)',
-    dotColor: '#4470B0',
+    fill: _BLOB_FILL, stroke: _BLOB_STROKE, dotColor: PAL.t2,
     dots: [[50,45,2,.5],[60,55,2,.4],[45,60,1.5,.35],[70,48,2,.3],[55,70,1.5,.3],[40,50,1.5,.25],[65,65,1.5,.35]],
     countPos: [42,80]
   },
   C: {
     path: 'M150,10 Q185,5 210,20 Q220,40 200,50 Q175,55 155,40 Q145,25 150,10Z',
-    fill: 'rgba(114,88,162,0.08)', stroke: 'rgba(114,88,162,0.2)',
-    dotColor: '#7258A2',
+    fill: _BLOB_FILL, stroke: _BLOB_STROKE, dotColor: PAL.t2,
     dots: [[175,25,2,.4],[190,30,1.5,.35],[180,38,1.5,.3],[165,32,2,.25],[195,22,1.5,.3]],
     countPos: [192,45]
   }
@@ -2902,10 +2972,13 @@ function _statementPosition(decl) {
 }
 
 function _badgeDotColor(badge) {
-  if (badge === 'bridge')    return '#27B38E';
-  if (badge === 'contested') return '#7258A2';
-  if (badge === 'trending')  return '#E8A130';
-  return '#9DAFC8';
+  /* Stage 1: contested retired from purple to neutral grey.
+     bridge keeps teal (consensus-reveal is a protected colored moment),
+     trending keeps gold (part of brand family). Values from PAL. */
+  if (badge === 'bridge')    return PAL.te;
+  if (badge === 'contested') return PAL.t2;
+  if (badge === 'trending')  return PAL.trending;
+  return PAL.badgeDefault;
 }
 
 function buildOpinionMap({ youGroup = 'A', counts = { A: 72, B: 67, C: 19 }, totalCitizens = 4219, heightPx = 130, label = 'אתם כאן', declarations = null } = {}) {
@@ -2926,12 +2999,12 @@ function buildOpinionMap({ youGroup = 'A', counts = { A: 72, B: 67, C: 19 }, tot
       const [dx, dy] = _statementPosition(d);
       const color = _badgeDotColor(d.badge);
       svg += `<circle class="stmt-dot" data-decl-id="${d.id}" cx="${dx}" cy="${dy}" r="3.5"`
-           + ` fill="${color}" stroke="#0E1420" stroke-width="1" opacity="0.95"`
+           + ` fill="${color}" stroke="${PAL.bg}" stroke-width="1" opacity="0.95"`
            + ` style="pointer-events:auto;cursor:pointer"/>`;
     }
   }
   const [yx, yy] = _YOU_POS[youGroup] || _YOU_POS.A;
-  svg += `<circle cx="${yx}" cy="${yy}" r="4.5" fill="#E4AE58" stroke="#C8953A" stroke-width="1" opacity="1" style="pointer-events:none">`
+  svg += `<circle cx="${yx}" cy="${yy}" r="4.5" fill="${PAL.youDot}" stroke="${PAL.goldDark}" stroke-width="1" opacity="1" style="pointer-events:none">`
        + '<animate attributeName="r" values="4.5;6;4.5" dur="1.8s" repeatCount="indefinite"/>'
        + '<animate attributeName="opacity" values="1;.7;1" dur="1.8s" repeatCount="indefinite"/>'
        + '</circle>';
@@ -2985,11 +3058,11 @@ function _onOpinionMapTap(ev) {
     `bottom:${showBelow ? 'auto' : (wrapRect.height - cy + 10) + 'px'}`,
     `left:${Math.max(8, Math.min(wrapRect.width - maxW - 8, cx - maxW / 2))}px`,
     `width:${maxW}px`,
-    'background:var(--bg1,#0E1420)',
-    'border:1px solid rgba(255,255,255,0.12)',
+    'background:var(--sf)',
+    'border:1px solid var(--b1)',
     'border-radius:10px',
     'padding:10px 12px',
-    'box-shadow:0 8px 24px rgba(0,0,0,0.5)',
+    'box-shadow:0 8px 24px var(--k-50)',
     'z-index:20',
     'display:block',
   ].join(';');
@@ -2998,7 +3071,7 @@ function _onOpinionMapTap(ev) {
     + `<button class="decl-balloon-close" aria-label="סגור" style="background:transparent;border:0;color:var(--t3);font-size:var(--fs-10);cursor:pointer;padding:0 2px">×</button>`
     + `</div>`
     + `<div style="font-size:var(--fs-9);color:var(--t1);line-height:1.45;margin-bottom:8px">${escapeHtml(decl.text || '')}</div>`
-    + `<div style="display:flex;flex-direction:column;gap:3px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.06)">${breakdownHtml}</div>`;
+    + `<div style="display:flex;flex-direction:column;gap:3px;padding-top:6px;border-top:1px solid var(--b-faint)">${breakdownHtml}</div>`;
   ev.stopPropagation();
 }
 
@@ -3179,17 +3252,32 @@ function renderTopicView() {
     label.textContent = 'הצהרות בנושא ' + (topic.label || '');
     label.style.display = 'block';
   }
-  // Remove existing declaration cards
+  // Remove existing declaration cards + legend
   const scr = document.getElementById('delib-scr');
   if (!scr) return;
-  scr.querySelectorAll('.decl-card').forEach(el => el.remove());
+  scr.querySelectorAll('.decl-card, .decl-legend').forEach(el => el.remove());
   // Filter + render — insert AFTER the compose banner anchor
   const anchor = document.getElementById('decl-insert-anchor');
   const filtered = DECLARATIONS_DATA.declarations.filter(d => d.topic_key === SELECTED_TOPIC);
+  // Feed-level legend — shown once, explains gold tick + grey dots
+  if (filtered.length && anchor) {
+    const legend = document.createElement('div');
+    legend.className = 'decl-legend';
+    legend.innerHTML = '<span class="decl-legend-item"><span class="decl-legend-you"></span>את/ה</span>'
+      + '<span class="decl-legend-item"><span class="decl-legend-dot"></span>קבוצות אחרות</span>'
+      + '<span class="decl-legend-scale" dir="ltr">0% → 100%</span>';
+    anchor.parentNode.insertBefore(legend, anchor.nextSibling);
+  }
+  // Render cards after the legend (insertBefore pushes earlier nodes up, so we
+  // need a moving cursor — insert each card after the previous one).
+  let cursor = anchor && anchor.nextSibling && anchor.nextSibling.classList && anchor.nextSibling.classList.contains('decl-legend')
+    ? anchor.nextSibling
+    : anchor;
   filtered.forEach(decl => {
     const card = buildDeclarationCard(decl, topic.you_group || 'A');
-    if (anchor) {
-      anchor.parentNode.insertBefore(card, anchor.nextSibling);
+    if (cursor) {
+      cursor.parentNode.insertBefore(card, cursor.nextSibling);
+      cursor = card;
     } else {
       scr.appendChild(card);
     }
@@ -3213,8 +3301,8 @@ function buildConsensusMeter(groups) {
   const isContested = spread >= 30;
   const label = isConsensus ? 'הסכמה חוצת קבוצות' : isContested ? 'מחלוקת בין הקבוצות' : 'הסכמה חלקית';
   const colorVar = isConsensus ? 'var(--gn)' : isContested ? 'var(--pu)' : 'var(--go)';
-  const bg = isConsensus ? 'rgba(39,179,142,0.08)' : isContested ? 'rgba(114,88,162,0.08)' : 'rgba(232,161,48,0.06)';
-  const bandHex = isConsensus ? 'rgba(39,179,142,0.32)' : isContested ? 'rgba(114,88,162,0.32)' : 'rgba(232,161,48,0.30)';
+  const bg = isConsensus ? 'var(--te-08)' : isContested ? 'rgba(114,88,162,0.08)' : 'var(--gd-06)';
+  const bandHex = isConsensus ? 'var(--te-30)' : isContested ? 'rgba(114,88,162,0.32)' : 'rgba(232,161,48,0.30)';
 
   const dotsHtml = groups.map(g => {
     const pct = Math.max(0, Math.min(100, g.agree_pct));
@@ -3253,7 +3341,7 @@ function buildConsensusMeter(groups) {
     + `<div style="font-size:var(--fs-7);color:var(--t3)">הסכמה ממוצעת בנושא</div>`
     + `</div>`
     + `<div dir="ltr" style="position:relative;height:18px;margin:0 12px">`
-    + `<div style="position:absolute;top:50%;left:0;right:0;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;transform:translateY(-50%)"></div>`
+    + `<div style="position:absolute;top:50%;left:0;right:0;height:3px;background:var(--b0);border-radius:2px;transform:translateY(-50%)"></div>`
     + `<div style="position:absolute;top:50%;left:${min}%;width:${spread}%;height:5px;background:${bandHex};border-radius:3px;transform:translateY(-50%)"></div>`
     + dotsHtml
     + pctLabelsHtmlV2
@@ -3307,11 +3395,13 @@ function buildDeclarationCard(decl, youGroup) {
 
   const flameIcon = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>';
 
+  /* Stage 4: only "bridge" keeps accent color (gold). trending/contested/new are
+     differentiated by icon + label, not color — feed reads as one visual rhythm. */
   let badgeHtml = '';
   if (decl.badge === 'bridge') badgeHtml = '<span class="bridge-badge">' + escapeHtml(decl.badge_label || 'בונה הסכמות') + '</span>';
-  else if (decl.badge === 'trending') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--co);font-weight:800;display:flex;align-items:center;gap:3px">' + flameIcon + ' ' + escapeHtml(decl.badge_label || 'טרנדי') + '</span>';
-  else if (decl.badge === 'contested') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--pu);font-weight:800">' + escapeHtml(decl.badge_label || 'שנוי במחלוקת') + '</span>';
-  else badgeHtml = '<span style="font-size:var(--fs-8);color:var(--bl);font-weight:800">' + escapeHtml(decl.badge_label || 'חדש') + '</span>';
+  else if (decl.badge === 'trending') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--t2);font-weight:800;display:flex;align-items:center;gap:3px">' + flameIcon + ' ' + escapeHtml(decl.badge_label || 'טרנדי') + '</span>';
+  else if (decl.badge === 'contested') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--t2);font-weight:800">' + escapeHtml(decl.badge_label || 'שנוי במחלוקת') + '</span>';
+  else badgeHtml = '<span style="font-size:var(--fs-8);color:var(--t2);font-weight:800">' + escapeHtml(decl.badge_label || 'חדש') + '</span>';
 
   // Surprise chip
   let surpriseChip = '';
@@ -3321,17 +3411,46 @@ function buildDeclarationCard(decl, youGroup) {
     surpriseChip = '<div><span class="surprise-chip split">⚡ מחלוקת חדה בין הקבוצות</span></div>';
   }
 
-  // Group breakdown rows (hidden until vote — see .group-breakdown CSS)
-  const breakdown = decl.group_breakdown || [];
-  const breakdownHtml = breakdown.map(g => {
-    const colorVar = GROUP_COLOR_VAR[g.id] || 'te';
-    const isYou = g.id === youGroup;
-    return `<div class="group-bar-row${isYou ? ' you' : ''}">`
-      + `<div class="group-bar-label">${GROUP_LABEL[g.id] || g.id}</div>`
-      + `<div class="group-bar-wrap"><div class="group-bar-fill" style="width:${g.agree_pct}%;background:var(--${colorVar})"></div></div>`
-      + `<div class="group-bar-pct"><span dir="ltr">${g.agree_pct}%</span></div>`
-      + `</div>`;
-  }).join('');
+  // Agreement scale (hidden until vote — see .group-breakdown CSS)
+  // Single horizontal 0%→100% track with one grey dot per group + gold tick for user's group.
+  const breakdown = (decl.group_breakdown || []).filter(g => typeof g.agree_pct === 'number');
+  const youEntry = breakdown.find(g => g.id === youGroup);
+  const overallPct = (typeof decl.agree_pct === 'number')
+    ? Math.round(decl.agree_pct)
+    : (breakdown.length ? Math.round(breakdown.reduce((s, g) => s + g.agree_pct, 0) / breakdown.length) : null);
+
+  let scaleHtml = '';
+  if (breakdown.length) {
+    const dotsHtml = breakdown
+      .filter(g => g.id !== youGroup)
+      .map(g => {
+        const pct = Math.max(0, Math.min(100, g.agree_pct));
+        return `<div class="decl-scale-dot" style="left:${pct}%" title="${escapeHtml(GROUP_LABEL[g.id] || g.id)}: ${pct}%"></div>`;
+      })
+      .join('');
+    const youHtml = youEntry
+      ? `<div class="decl-scale-you" style="left:${Math.max(0, Math.min(100, youEntry.agree_pct))}%" title="הקבוצה שלך: ${youEntry.agree_pct}%"></div>`
+      : '';
+    const detailHtml = breakdown.map(g => {
+      const pct = Math.max(0, Math.min(100, g.agree_pct));
+      const isYou = g.id === youGroup;
+      const label = escapeHtml(GROUP_LABEL[g.id] || g.id);
+      return isYou
+        ? `<span class="you-chip">${label} <span dir="ltr">${pct}%</span> (את/ה)</span>`
+        : `<span>${label} <span dir="ltr">${pct}%</span></span>`;
+    }).join(' · ');
+    const avgLabel = (overallPct !== null)
+      ? `<div class="decl-scale-avg"><span class="avg-pct" dir="ltr">${overallPct}%</span><span class="avg-lbl">ממוצע</span></div>`
+      : '';
+    scaleHtml = '<div class="group-breakdown">'
+      + '<div class="decl-scale-row">'
+      + avgLabel
+      + '<div dir="ltr" class="decl-scale-track">' + dotsHtml + youHtml + '</div>'
+      + '</div>'
+      + '<div class="decl-scale-expand" onclick="toggleDeclDetail(this)">פירוט לפי קבוצה</div>'
+      + '<div class="decl-scale-detail">' + detailHtml + '</div>'
+      + '</div>';
+  }
 
   card.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px">'
     + badgeHtml
@@ -3343,15 +3462,21 @@ function buildDeclarationCard(decl, youGroup) {
     + '<button class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</button>'
     + '<button class="sa-btn sa-no" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">לא מסכים</button>'
     + '<button class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</button></div>'
-    + (breakdownHtml
-        ? '<div class="group-breakdown">'
-          + '<div class="breakdown-reveal-label">✦ איך הצביעו הקבוצות</div>'
-          + breakdownHtml
-        + '</div>'
-        : '')
+    + scaleHtml
     + (decl.pipeline_status ? '<div style="font-size:var(--fs-8);color:var(--te);margin-top:5px;text-align:center">' + escapeHtml(decl.pipeline_status) + '</div>' : '');
 
   return card;
+}
+
+function toggleDeclDetail(el){
+  const card = el.closest('.decl-card');
+  if(!card) return;
+  const detail = card.querySelector('.decl-scale-detail');
+  if(!detail) return;
+  const on = detail.classList.toggle('on');
+  el.textContent = on ? 'הסתר פירוט' : 'פירוט לפי קבוצה';
+  const breakdown = card.querySelector('.group-breakdown');
+  if(breakdown) breakdown.style.maxHeight = on ? '220px' : '';
 }
 
 function escapeHtml(s) {
