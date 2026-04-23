@@ -9,12 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&display=swap" rel="stylesheet">
 <!-- GA4 -->
 <script>
-// Developer-device flag: ?dev=1 → tag device, ?dev=0 → untag.
-// When set, all GA4 events get:
-//   traffic_type='internal'  → excluded from standard reports by Internal Traffic filter
-//   _dbg=1 on every collect request → visible in GA4 DebugView (Admin → DebugView)
-// The _dbg=1 param is injected via fetch/sendBeacon interceptors below because
-// gtag's `debug_mode:true` flag does NOT reliably emit _dbg=1 in gtag.js 2025+.
+// Two independent device flags:
+//   ?dev=1       → inject _dbg=1 on every GA4 collect request → visible in DebugView
+//                  (gtag's debug_mode:true config flag does NOT reliably emit _dbg=1 in gtag.js 2025+,
+//                   so we patch fetch/sendBeacon/XHR instead.)
+//   ?internal=1  → tag every event with traffic_type='internal' → matched by the GA4
+//                  Internal Traffic filter (Admin → Data filters) and excluded from reports.
+// Both support '=0' to untag (?dev=0 / ?internal=0). They are independent — dev does NOT
+// imply internal and vice versa. This matters because an Active/Exclude Internal Traffic
+// filter drops events before they reach DebugView, so combining the two hides your own dev
+// device from DebugView.
 (function(){
   try {
     var q = new URLSearchParams(location.search);
@@ -22,10 +26,16 @@
       if (q.get('dev') === '0') { localStorage.removeItem('i2_dev_device'); }
       else { localStorage.setItem('i2_dev_device', '1'); }
     }
+    if (q.has('internal')) {
+      if (q.get('internal') === '0') { localStorage.removeItem('i2_internal_device'); }
+      else { localStorage.setItem('i2_internal_device', '1'); }
+    }
   } catch(e){}
 })();
 var I2_IS_DEV = false;
+var I2_IS_INTERNAL = false;
 try { I2_IS_DEV = localStorage.getItem('i2_dev_device') === '1'; } catch(e){}
+try { I2_IS_INTERNAL = localStorage.getItem('i2_internal_device') === '1'; } catch(e){}
 
 // Intercept GA4 collect requests BEFORE gtag.js loads to inject _dbg=1.
 // This is the only mobile-safe way to activate DebugView without the Chrome extension.
@@ -75,7 +85,7 @@ try { I2_IS_DEV = localStorage.getItem('i2_dev_device') === '1'; } catch(e){}
 
 window.dataLayer=window.dataLayer||[];
 function gtag(){
-  if (I2_IS_DEV && arguments.length >= 2 && arguments[0] === 'event') {
+  if (I2_IS_INTERNAL && arguments.length >= 2 && arguments[0] === 'event') {
     var p = arguments[2] || {};
     if (typeof p === 'object') {
       p.traffic_type = 'internal';
@@ -85,12 +95,10 @@ function gtag(){
   dataLayer.push(arguments);
 }
 gtag('js', new Date());
-if (I2_IS_DEV) {
-  gtag('set', { traffic_type: 'internal' });
-  gtag('config','G-CXVXMQE8LM', { send_page_view:false });
-  console.log('%c[Israel 2.0] Developer device — traffic_type=internal + _dbg=1 injected (GA4 DebugView enabled)', 'color:#d4af37;font-weight:bold');
-} else {
-  gtag('config','G-CXVXMQE8LM', { send_page_view:false });
+if (I2_IS_INTERNAL) { gtag('set', { traffic_type: 'internal' }); }
+gtag('config','G-CXVXMQE8LM', { send_page_view:false });
+if (I2_IS_DEV || I2_IS_INTERNAL) {
+  console.log('%c[Israel 2.0] stream G-CXVXMQE8LM · dev=' + (I2_IS_DEV?'1 (DebugView)':'0') + ' · internal=' + (I2_IS_INTERNAL?'1 (traffic_type=internal)':'0'), 'color:#d4af37;font-weight:bold');
 }
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM"></script>
