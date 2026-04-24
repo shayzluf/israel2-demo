@@ -1,9 +1,9 @@
 {
-  "updated": "2026-04-19T05:38:58.195405+00:00",
+  "updated": "2026-04-24T06:55:50.210777+00:00",
   "topics": [
     {
-      "key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
-      "label": "בטיחות בעבודה",
+      "key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "label": "אלימות ופשיעה",
       "you_group": "A",
       "groups": [
         {
@@ -11,28 +11,28 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 72
+          "agree_pct": 70
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 78
+          "agree_pct": 71
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 63
+          "agree_pct": 75
         }
       ],
-      "convergence": "באופן מפתיע, כל הקבוצות מסכימות שחייבים לפגוע בכיס של קבלנים רשלנים ולתגמל כספית עובדים שמתריעים על סכנות כדי לעצור את הקטל באתרי הבנייה",
-      "divergence": "בעוד שקבוצה א׳ דורשת להטיל אחריות פלילית אישית על מנכ״לים, קבוצה ב׳ מעדיפה פתרונות טכנולוגיים כמו מצלמות פיקוח, וקבוצה ג׳ מתמקדת בענישה דרך פרמיות ביטוח גבוהות"
+      "convergence": "למרות חילוקי הדעות, כל הקבוצות מסכימות שיש להקצות משאבים משמעותיים למאבק באלימות, גם אם זה ידרוש שינויים תקציביים מרחיקי לכת",
+      "divergence": "קבוצה א' רואה בהחמרת ענישה והגברת אכיפה את הפתרון המרכזי, בעוד שקבוצה ב' מתמקדת בהשקעה בחינוך ותוכניות מניעה ארוכות טווח, וקבוצה ג' דורשת יחידות משטרה ייעודיות"
     },
     {
-      "key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
+      "key": "improving_road_safety_and_reducing_traffic_accidents",
       "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
@@ -41,7 +41,7 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 83
+          "agree_pct": 74
         },
         {
           "id": "B",
@@ -55,15 +55,15 @@
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 70
+          "agree_pct": 76
         }
       ],
-      "convergence": "ישנה הסכמה רחבה שחינוך לבדו לא מספיק, ושהמדינה חייבת להתערב באופן אקטיבי, למשל דרך סבסוד מערכות בטיחות לרכבים ישנים",
-      "divergence": "המחלוקת העיקרית היא על רמת הענישה: קבוצה א׳ תומכת בהחרמת רכבים מיידית לנהגים מסוכנים, קבוצה ב׳ מתמקדת בהרחקת משאיות בשעות העומס, וקבוצה ג׳ מתנגדת לצעדים דרקוניים ומעדיפה תמריצים חיוביים"
+      "convergence": "באופן מפתיע, ישנה הסכמה רחבה בין הקבוצות כי נדרשת פעולה נחרצת הן באכיפה והן בתשתיות, גם אם הדבר יגרור אי נוחות ציבורית או עלויות גבוהות",
+      "divergence": "קבוצה א' שמה דגש על אכיפה מחמירה וקנסות גבוהים, בעוד שקבוצה ב' רואה בהשקעה בתשתיות בפריפריה את המפתח, וקבוצה ג' מתמקדת בענישה חמורה על נהיגה תחת השפעה"
     },
     {
-      "key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
-      "label": "שירותי הצלה וחירום",
+      "key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "label": "אלימות במשפחה",
       "you_group": "A",
       "groups": [
         {
@@ -71,192 +71,132 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 68
+          "agree_pct": 66
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 75
+          "agree_pct": 80
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 86
+          "agree_pct": 80
         }
       ],
-      "convergence": "כל הקבוצות תמימי דעים שהמדינה חייבת לפתח אפליקציית חירום לאומית אחידה וכן להעניק נקודות זיכוי במס למתנדבים כהוקרה על פועלם",
-      "divergence": "קבוצה א׳ דורשת לקנוס מטיילים חסרי אחריות שיוצאים לשטח בסערה, בעוד שקבוצה ב׳ מתנגדת לגביית תשלום על חילוץ, וקבוצה ג׳ בכלל מתעדפת הכשרת חילוץ כחובה בבתי הספר"
-    },
-    {
-      "key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
-      "label": "שוק העבודה לצעירים",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 81
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 68
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 78
-        }
-      ],
-      "convergence": "יש קונצנזוס מפתיע סביב הדרישה לשקיפות, כשכולם מסכימים שמעסיקים חייבים לפרסם את טווח השכר כבר במודעת הדרושים",
-      "divergence": "קבוצה א׳ נאבקת על זכויות סוציאליות לעובדי חלטורות וימי חופשה לבריאות הנפש, קבוצה ב׳ מוכנה רק לשקיפות בשכר, וקבוצה ג׳ חוששת שרגולציה כזו תפגע בגמישות של שוק העבודה"
-    },
-    {
-      "key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
-      "label": "היערכות למזג אוויר",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 81
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 72
-        }
-      ],
-      "convergence": "כל הקבוצות מסכימות שהגיע הזמן להפסיק עם הפסקות החשמל בסערות ודורשות להטמין את כל תשתיות החשמל מתחת לאדמה בשכונות חדשות",
-      "divergence": "קבוצה א׳ דורשת התערבות ממשלתית אגרסיבית כמו פתיחת כבישי אגרה בחינם ואיסור הגעה למשרד, בעוד שקבוצה ב׳ מתמקדת באחריות חברת החשמל לגיזום, וקבוצה ג׳ מתנגדת להתערבות בשוק הפרטי של כבישי האגרה"
+      "convergence": "כל הקבוצות תמימות דעים כי יש להגביר את המודעות הציבורית לאלימות במשפחה ולספק תמיכה רחבה לנפגעים, גם אם זה ידרוש קיצוצים בתחומים אחרים",
+      "divergence": "קבוצה א' מדגישה את הצורך בהגדלת מספר המקלטים ותמיכה בנשים, בעוד שקבוצה ב' רואה בתוכניות שיקום לגברים אלימים את הפתרון העיקרי, וקבוצה ג' דורשת מערך תמיכה פסיכולוגית לילדים"
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-04-19_0",
-      "text": "יש להטיל אחריות פלילית אישית על מנכ\"לים של חברות קבלן במקרה של תאונות עבודה קטלניות באתרי הבנייה שלהם",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 125000,
-      "agree_pct": 75,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
-      "topic_label": "בטיחות בעבודה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 71
-        },
-        {
-          "id": "C",
-          "agree_pct": 64
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_1",
-      "text": "חובה להתקין מצלמות בטיחות בכל אתר בנייה ולחבר אותן למוקד פיקוח ממשלתי שיתריע על חריגות בזמן אמת",
+      "id": "decl_challenger_2026-04-24_0",
+      "text": "יש להחמיר את הענישה על עבירות אלימות חמורות, במיוחד כשמדובר באלימות נגד נשים ובמרחב הציבורי",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
+      "vote_count": 285432,
       "agree_pct": 88,
-      "time_label": "לפני יום",
+      "time_label": "לפני יומיים",
       "pipeline_status": null,
-      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
-      "topic_label": "בטיחות בעבודה",
+      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 84
+          "agree_pct": 88
         },
         {
           "id": "B",
-          "agree_pct": 85
+          "agree_pct": 90
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 82
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
+      "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-19_2",
-      "text": "חברות ביטוח צריכות לגבות פרמיות גבוהות משמעותית מקבלנים שיש להם היסטוריה של תאונות עבודה ופציעות עובדים",
+      "id": "decl_challenger_2026-04-24_1",
+      "text": "צריך להקים יחידות משטרה ייעודיות לטיפול בפשיעה אלימה, גם אם זה יבוא על חשבון תקנים במחלקות אחרות",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 89000,
-      "agree_pct": 55,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
-      "topic_label": "בטיחות בעבודה",
+      "vote_count": 123456,
+      "agree_pct": 52,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 49
+          "agree_pct": 52
         },
         {
           "id": "B",
-          "agree_pct": 76
+          "agree_pct": 30
         },
         {
           "id": "C",
-          "agree_pct": 33
+          "agree_pct": 76
         }
       ],
       "surprise": null,
-      "win_rate": 0.86,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-19_3",
-      "text": "יש להקים מנגנון שמתגמל כספית עובדים שמדווחים על ליקויי בטיחות חמורים במקום העבודה שלהם",
+      "id": "decl_challenger_2026-04-24_2",
+      "text": "השקעה בחינוך ובתכניות מניעה בקהילה היא הדרך היעילה ביותר לצמצם אלימות לטווח הארוך, גם אם התוצאות אינן מיידיות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 187654,
+      "agree_pct": 78,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_label": "אלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 75
+        },
+        {
+          "id": "B",
+          "agree_pct": 86
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_3",
+      "text": "יש להגביר את נוכחות השיטור והאכיפה במרחבים ציבוריים, גם אם זה ידרוש תוספת תקציב של מאות מיליוני שקלים בשנה",
       "badge": "new",
       "badge_label": "חדש",
-      "vote_count": 52000,
+      "vote_count": 78901,
       "agree_pct": 68,
       "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
-      "topic_label": "בטיחות בעבודה",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
@@ -274,423 +214,51 @@
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-19_4",
-      "text": "צריך לאסור על תנועת משאיות כבדות בכבישים בינעירוניים בשעות העומס של הבוקר ואחר הצהריים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 145000,
-      "agree_pct": 52,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 79
-        },
-        {
-          "id": "B",
-          "agree_pct": 23
-        },
-        {
-          "id": "C",
-          "agree_pct": 47
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_5",
-      "text": "המדינה צריכה לסבסד התקנת מערכות בטיחות אקטיביות ברכבים ישנים כדי למנוע תאונות דרכים",
+      "id": "decl_challenger_2026-04-24_4",
+      "text": "חובה להגביר את האכיפה נגד עבירות תנועה מסכנות חיים, כמו נהיגה במהירות מופרזת ועקיפות מסוכנות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 280000,
-      "agree_pct": 86,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 91
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_6",
-      "text": "יש להחרים במקום את הרכב לנהגים שנתפסים נוהגים במהירות מופרזת שמסכנת חיים, עוד לפני המשפט",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 178000,
-      "agree_pct": 78,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 81
-        },
-        {
-          "id": "B",
-          "agree_pct": 95
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_7",
-      "text": "מתנדבים פעילים בגופי ההצלה והחירום צריכים לקבל נקודות זיכוי במס הכנסה כהוקרה על תרומתם",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310000,
+      "vote_count": 310245,
       "agree_pct": 92,
-      "time_label": "לפני יום",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
-      "topic_label": "שירותי הצלה וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 91
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 92
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_8",
-      "text": "מטיילים שיוצאים לשטח למרות אזהרות מזג אוויר חמורות ונזקקים לחילוץ, צריכים לשאת בעלויות ההצלה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 58,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": null,
-      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
-      "topic_label": "שירותי הצלה וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 27
-        },
-        {
-          "id": "B",
-          "agree_pct": 62
-        },
-        {
-          "id": "C",
-          "agree_pct": 85
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_9",
-      "text": "יש לשלב הכשרת חילוץ והצלה בסיסית כחלק מתוכנית החובה בבתי הספר התיכוניים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 112000,
-      "agree_pct": 74,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
-      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
-      "topic_label": "שירותי הצלה וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 64
-        },
-        {
-          "id": "B",
-          "agree_pct": 74
-        },
-        {
-          "id": "C",
-          "agree_pct": 89
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_10",
-      "text": "המדינה חייבת לפתח אפליקציית חירום לאומית אחת שמשדרת מיקום מדויק לכל כוחות ההצלה בלחיצת כפתור",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 65000,
-      "agree_pct": 81,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
-      "topic_label": "שירותי הצלה וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 74
-        },
-        {
-          "id": "C",
-          "agree_pct": 79
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_11",
-      "text": "חברות שמבוססות על כלכלת חלטורות חייבות לספק תנאים סוציאליים בסיסיים לעובדים שלהן, כמו ימי מחלה ופנסיה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 245000,
-      "agree_pct": 85,
       "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
-      "topic_label": "שוק העבודה לצעירים",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 86
-        },
-        {
-          "id": "B",
           "agree_pct": 89
         },
         {
+          "id": "B",
+          "agree_pct": 92
+        },
+        {
           "id": "C",
-          "agree_pct": 91
+          "agree_pct": 87
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.86,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-19_12",
-      "text": "חוקי העבודה צריכים לכלול זכאות לימי חופשה ייעודיים לבריאות הנפש, בנפרד מימי מחלה רגילים",
+      "id": "decl_challenger_2026-04-24_5",
+      "text": "צריך להשקיע יותר בתשתיות כבישים בטוחים בפריפריה, גם אם זה יבוא על חשבון פרויקטים אחרים במרכז הארץ",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 160000,
-      "agree_pct": 48,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
-      "topic_label": "שוק העבודה לצעירים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 83
-        },
-        {
-          "id": "B",
-          "agree_pct": 20
-        },
-        {
-          "id": "C",
-          "agree_pct": 56
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_13",
-      "text": "יש לחייב מעסיקים בחוק לפרסם את טווח השכר המוצע כבר בשלב פרסום משרת העבודה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 210000,
-      "agree_pct": 82,
+      "vote_count": 156789,
+      "agree_pct": 55,
       "time_label": "לפני יום",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
-      "topic_label": "שוק העבודה לצעירים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 73
-        },
-        {
-          "id": "B",
-          "agree_pct": 94
-        },
-        {
-          "id": "C",
-          "agree_pct": 88
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_14",
-      "text": "במקרה של התראות חמורות על מזג אוויר קיצוני, יש לאסור על מעסיקים לחייב עובדים להגיע פיזית למשרד",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 185000,
-      "agree_pct": 80,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
-      "topic_label": "היערכות למזג אוויר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 80
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_15",
-      "text": "האחריות על גיזום עצים שמסכנים קווי חשמל צריכה לעבור במלואה לחברת החשמל, ולא ליפול על הרשויות המקומיות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 275000,
-      "agree_pct": 89,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
-      "topic_label": "היערכות למזג אוויר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 86
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 91
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_16",
-      "text": "חובה להטמין את כל תשתיות החשמל מתחת לאדמה בכל שכונה חדשה שנבנית כדי למנוע ניתוקים בסערות",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 78000,
-      "agree_pct": 84,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
-      "topic_label": "היערכות למזג אוויר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 85
-        },
-        {
-          "id": "B",
-          "agree_pct": 91
-        },
-        {
-          "id": "C",
-          "agree_pct": 84
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_17",
-      "text": "בזמן סערות קשות שגורמות לעומסי תנועה חריגים, המדינה צריכה לפתוח את כבישי האגרה לנסיעה בחינם",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 134000,
-      "agree_pct": 60,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
-      "topic_label": "היערכות למזג אוויר",
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
@@ -698,125 +266,311 @@
         },
         {
           "id": "B",
-          "agree_pct": 93
+          "agree_pct": 24
         },
         {
           "id": "C",
-          "agree_pct": 31
+          "agree_pct": 83
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_6",
+      "text": "יש להחמיר את הענישה על נהיגה תחת השפעת אלכוהול או סמים, כולל שלילת רישיון ממושכת",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 210987,
+      "agree_pct": 81,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 84
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 75
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_7",
+      "text": "יש להטיל קנסות גבוהים יותר על נהגים שאינם שומרים מרחק, גם אם זה יגרום למורת רוח ציבורית",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 98765,
+      "agree_pct": 62,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 62
+        },
+        {
+          "id": "B",
+          "agree_pct": 58
+        },
+        {
+          "id": "C",
+          "agree_pct": 59
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_8",
+      "text": "חובה להגביר את המודעות הציבורית לאלימות במשפחה ולעודד דיווחים על מקרים חשודים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295678,
+      "agree_pct": 90,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "agree_pct": 91
+        },
+        {
+          "id": "C",
+          "agree_pct": 90
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_9",
+      "text": "צריך להגדיל את מספר המקלטים לנשים נפגעות אלימות ואת התמיכה בהן, גם אם זה ידרוש קיצוץ בתקציבי תרבות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134567,
+      "agree_pct": 58,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 27
+        },
+        {
+          "id": "B",
+          "agree_pct": 58
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
         }
       ],
       "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_10",
+      "text": "יש להשקיע בתכניות שיקום וטיפול לגברים אלימים, כדי למנוע הישנות מקרים ולשבור את מעגל האלימות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 198765,
+      "agree_pct": 75,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 77
+        },
+        {
+          "id": "B",
+          "agree_pct": 92
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_11",
+      "text": "יש להקים מערך תמיכה פסיכולוגית מקיף לילדים החשופים לאלימות במשפחה, בעלות של כ-50 מיליון שקלים בשנה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 87654,
+      "agree_pct": 70,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 74
+        },
+        {
+          "id": "B",
+          "agree_pct": 79
+        },
+        {
+          "id": "C",
+          "agree_pct": 69
+        }
+      ],
+      "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-04-19_0",
-      "text": "יש להטיל אחריות פלילית אישית על מנכ\"לים של חברות קבלן במקרה של תאונות עבודה קטלניות באתרי הבנייה שלהם",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 125000,
-      "agree_pct": 75,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
-      "topic_label": "בטיחות בעבודה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 71
-        },
-        {
-          "id": "C",
-          "agree_pct": 64
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_1",
-      "text": "חובה להתקין מצלמות בטיחות בכל אתר בנייה ולחבר אותן למוקד פיקוח ממשלתי שיתריע על חריגות בזמן אמת",
+      "id": "decl_challenger_2026-04-24_0",
+      "text": "יש להחמיר את הענישה על עבירות אלימות חמורות, במיוחד כשמדובר באלימות נגד נשים ובמרחב הציבורי",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
+      "vote_count": 285432,
       "agree_pct": 88,
-      "time_label": "לפני יום",
+      "time_label": "לפני יומיים",
       "pipeline_status": null,
-      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
-      "topic_label": "בטיחות בעבודה",
+      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 84
+          "agree_pct": 88
         },
         {
           "id": "B",
-          "agree_pct": 85
+          "agree_pct": 90
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 82
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
+      "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-19_2",
-      "text": "חברות ביטוח צריכות לגבות פרמיות גבוהות משמעותית מקבלנים שיש להם היסטוריה של תאונות עבודה ופציעות עובדים",
+      "id": "decl_challenger_2026-04-24_1",
+      "text": "צריך להקים יחידות משטרה ייעודיות לטיפול בפשיעה אלימה, גם אם זה יבוא על חשבון תקנים במחלקות אחרות",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 89000,
-      "agree_pct": 55,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
-      "topic_label": "בטיחות בעבודה",
+      "vote_count": 123456,
+      "agree_pct": 52,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 49
+          "agree_pct": 52
         },
         {
           "id": "B",
-          "agree_pct": 76
+          "agree_pct": 30
         },
         {
           "id": "C",
-          "agree_pct": 33
+          "agree_pct": 76
         }
       ],
       "surprise": null,
-      "win_rate": 0.86,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-19_3",
-      "text": "יש להקים מנגנון שמתגמל כספית עובדים שמדווחים על ליקויי בטיחות חמורים במקום העבודה שלהם",
+      "id": "decl_challenger_2026-04-24_2",
+      "text": "השקעה בחינוך ובתכניות מניעה בקהילה היא הדרך היעילה ביותר לצמצם אלימות לטווח הארוך, גם אם התוצאות אינן מיידיות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 187654,
+      "agree_pct": 78,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_label": "אלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 75
+        },
+        {
+          "id": "B",
+          "agree_pct": 86
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_3",
+      "text": "יש להגביר את נוכחות השיטור והאכיפה במרחבים ציבוריים, גם אם זה ידרוש תוספת תקציב של מאות מיליוני שקלים בשנה",
       "badge": "new",
       "badge_label": "חדש",
-      "vote_count": 52000,
+      "vote_count": 78901,
       "agree_pct": 68,
       "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "improving_workplace_safety_regulations_and_enforcement_following_severe_occupational_injuries",
-      "topic_label": "בטיחות בעבודה",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
@@ -834,423 +588,51 @@
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-19_4",
-      "text": "צריך לאסור על תנועת משאיות כבדות בכבישים בינעירוניים בשעות העומס של הבוקר ואחר הצהריים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 145000,
-      "agree_pct": 52,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 79
-        },
-        {
-          "id": "B",
-          "agree_pct": 23
-        },
-        {
-          "id": "C",
-          "agree_pct": 47
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_5",
-      "text": "המדינה צריכה לסבסד התקנת מערכות בטיחות אקטיביות ברכבים ישנים כדי למנוע תאונות דרכים",
+      "id": "decl_challenger_2026-04-24_4",
+      "text": "חובה להגביר את האכיפה נגד עבירות תנועה מסכנות חיים, כמו נהיגה במהירות מופרזת ועקיפות מסוכנות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 280000,
-      "agree_pct": 86,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 91
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_6",
-      "text": "יש להחרים במקום את הרכב לנהגים שנתפסים נוהגים במהירות מופרזת שמסכנת חיים, עוד לפני המשפט",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 178000,
-      "agree_pct": 78,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "addressing_road_safety_and_reducing_traffic_accidents_across_the_country",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 81
-        },
-        {
-          "id": "B",
-          "agree_pct": 95
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_7",
-      "text": "מתנדבים פעילים בגופי ההצלה והחירום צריכים לקבל נקודות זיכוי במס הכנסה כהוקרה על תרומתם",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310000,
+      "vote_count": 310245,
       "agree_pct": 92,
-      "time_label": "לפני יום",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
-      "topic_label": "שירותי הצלה וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 91
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 92
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_8",
-      "text": "מטיילים שיוצאים לשטח למרות אזהרות מזג אוויר חמורות ונזקקים לחילוץ, צריכים לשאת בעלויות ההצלה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 58,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": null,
-      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
-      "topic_label": "שירותי הצלה וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 27
-        },
-        {
-          "id": "B",
-          "agree_pct": 62
-        },
-        {
-          "id": "C",
-          "agree_pct": 85
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_9",
-      "text": "יש לשלב הכשרת חילוץ והצלה בסיסית כחלק מתוכנית החובה בבתי הספר התיכוניים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 112000,
-      "agree_pct": 74,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
-      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
-      "topic_label": "שירותי הצלה וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 64
-        },
-        {
-          "id": "B",
-          "agree_pct": 74
-        },
-        {
-          "id": "C",
-          "agree_pct": 89
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_10",
-      "text": "המדינה חייבת לפתח אפליקציית חירום לאומית אחת שמשדרת מיקום מדויק לכל כוחות ההצלה בלחיצת כפתור",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 65000,
-      "agree_pct": 81,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "funding_and_supporting_emergency_rescue_services_like_fire_and_rescue",
-      "topic_label": "שירותי הצלה וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 74
-        },
-        {
-          "id": "C",
-          "agree_pct": 79
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_11",
-      "text": "חברות שמבוססות על כלכלת חלטורות חייבות לספק תנאים סוציאליים בסיסיים לעובדים שלהן, כמו ימי מחלה ופנסיה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 245000,
-      "agree_pct": 85,
       "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
-      "topic_label": "שוק העבודה לצעירים",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 86
-        },
-        {
-          "id": "B",
           "agree_pct": 89
         },
         {
+          "id": "B",
+          "agree_pct": 92
+        },
+        {
           "id": "C",
-          "agree_pct": 91
+          "agree_pct": 87
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.86,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-19_12",
-      "text": "חוקי העבודה צריכים לכלול זכאות לימי חופשה ייעודיים לבריאות הנפש, בנפרד מימי מחלה רגילים",
+      "id": "decl_challenger_2026-04-24_5",
+      "text": "צריך להשקיע יותר בתשתיות כבישים בטוחים בפריפריה, גם אם זה יבוא על חשבון פרויקטים אחרים במרכז הארץ",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 160000,
-      "agree_pct": 48,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
-      "topic_label": "שוק העבודה לצעירים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 83
-        },
-        {
-          "id": "B",
-          "agree_pct": 20
-        },
-        {
-          "id": "C",
-          "agree_pct": 56
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_13",
-      "text": "יש לחייב מעסיקים בחוק לפרסם את טווח השכר המוצע כבר בשלב פרסום משרת העבודה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 210000,
-      "agree_pct": 82,
+      "vote_count": 156789,
+      "agree_pct": 55,
       "time_label": "לפני יום",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "adapting_the_labor_market_and_employment_policies_for_the_younger_generation",
-      "topic_label": "שוק העבודה לצעירים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 73
-        },
-        {
-          "id": "B",
-          "agree_pct": 94
-        },
-        {
-          "id": "C",
-          "agree_pct": 88
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_14",
-      "text": "במקרה של התראות חמורות על מזג אוויר קיצוני, יש לאסור על מעסיקים לחייב עובדים להגיע פיזית למשרד",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 185000,
-      "agree_pct": 80,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
-      "topic_label": "היערכות למזג אוויר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 80
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_15",
-      "text": "האחריות על גיזום עצים שמסכנים קווי חשמל צריכה לעבור במלואה לחברת החשמל, ולא ליפול על הרשויות המקומיות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 275000,
-      "agree_pct": 89,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
-      "topic_label": "היערכות למזג אוויר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 86
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 91
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_16",
-      "text": "חובה להטמין את כל תשתיות החשמל מתחת לאדמה בכל שכונה חדשה שנבנית כדי למנוע ניתוקים בסערות",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 78000,
-      "agree_pct": 84,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
-      "topic_label": "היערכות למזג אוויר",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 85
-        },
-        {
-          "id": "B",
-          "agree_pct": 91
-        },
-        {
-          "id": "C",
-          "agree_pct": 84
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-19_17",
-      "text": "בזמן סערות קשות שגורמות לעומסי תנועה חריגים, המדינה צריכה לפתוח את כבישי האגרה לנסיעה בחינם",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 134000,
-      "agree_pct": 60,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "infrastructure_preparedness_and_public_safety_during_extreme_weather_conditions",
-      "topic_label": "היערכות למזג אוויר",
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
@@ -1258,18 +640,204 @@
         },
         {
           "id": "B",
-          "agree_pct": 93
+          "agree_pct": 24
         },
         {
           "id": "C",
-          "agree_pct": 31
+          "agree_pct": 83
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_6",
+      "text": "יש להחמיר את הענישה על נהיגה תחת השפעת אלכוהול או סמים, כולל שלילת רישיון ממושכת",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 210987,
+      "agree_pct": 81,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 84
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 75
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_7",
+      "text": "יש להטיל קנסות גבוהים יותר על נהגים שאינם שומרים מרחק, גם אם זה יגרום למורת רוח ציבורית",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 98765,
+      "agree_pct": 62,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 62
+        },
+        {
+          "id": "B",
+          "agree_pct": 58
+        },
+        {
+          "id": "C",
+          "agree_pct": 59
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_8",
+      "text": "חובה להגביר את המודעות הציבורית לאלימות במשפחה ולעודד דיווחים על מקרים חשודים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295678,
+      "agree_pct": 90,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "agree_pct": 91
+        },
+        {
+          "id": "C",
+          "agree_pct": 90
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_9",
+      "text": "צריך להגדיל את מספר המקלטים לנשים נפגעות אלימות ואת התמיכה בהן, גם אם זה ידרוש קיצוץ בתקציבי תרבות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134567,
+      "agree_pct": 58,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 27
+        },
+        {
+          "id": "B",
+          "agree_pct": 58
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
         }
       ],
       "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_10",
+      "text": "יש להשקיע בתכניות שיקום וטיפול לגברים אלימים, כדי למנוע הישנות מקרים ולשבור את מעגל האלימות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 198765,
+      "agree_pct": 75,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 77
+        },
+        {
+          "id": "B",
+          "agree_pct": 92
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-04-24_11",
+      "text": "יש להקים מערך תמיכה פסיכולוגית מקיף לילדים החשופים לאלימות במשפחה, בעלות של כ-50 מיליון שקלים בשנה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 87654,
+      "agree_pct": 70,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 74
+        },
+        {
+          "id": "B",
+          "agree_pct": 79
+        },
+        {
+          "id": "C",
+          "agree_pct": 69
+        }
+      ],
+      "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-19",
-      "created": "2026-04-19T05:38:58.195405+00:00"
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T06:55:50.210777+00:00"
     }
   ]
 }
