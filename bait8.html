@@ -104,19 +104,32 @@ gtag('config','G-WW5KEYRR1Z', { send_page_view:false });
 //   so gtag() still initializes — the gtag('config','G-WW5KEYRR1Z',...) call
 //   queued above then routes events to the correct stream. Loader's auto-config
 //   for the fallback id is a tolerable side effect during the propagation window.
+// Two fallback triggers because iOS Safari doesn't reliably fire `onerror` on
+// 404 script responses (the 404 HTML body is treated as "loaded but non-JS"
+// and silently skipped):
+//   1. onerror — fires on clean 404 in most browsers
+//   2. 4s timeout — if window.google_tag_manager isn't set by then, assume
+//      silent failure and load the fallback anyway
 window.__i2GtagLoader = 'primary';
 (function(){
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WW5KEYRR1Z';
-  s.onerror = function(){
-    window.__i2GtagLoader = 'fallback';
+  var fallbackTriggered = false;
+  function loadFallback(reason){
+    if (fallbackTriggered) return;
+    fallbackTriggered = true;
+    window.__i2GtagLoader = 'fallback_' + reason;
     var s2 = document.createElement('script');
     s2.async = true;
     s2.src = 'https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM';
     document.head.appendChild(s2);
-  };
+  }
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WW5KEYRR1Z';
+  s.onerror = function(){ loadFallback('onerror'); };
   document.head.appendChild(s);
+  setTimeout(function(){
+    if (!window.google_tag_manager) loadFallback('timeout');
+  }, 4000);
 })();
 if (I2_IS_DEV || I2_IS_INTERNAL) {
   console.log('%c[Israel 2.0] stream G-WW5KEYRR1Z · dev=' + (I2_IS_DEV?'1 (DebugView)':'0') + ' · internal=' + (I2_IS_INTERNAL?'1 (traffic_type=internal)':'0'), 'color:#d4af37;font-weight:bold');
@@ -440,7 +453,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .tdot{width:5px;height:5px;border-radius:50%;background:var(--t3);transition:all .3s;}
 .tdot.on{background:var(--te);width:14px;border-radius:99px;}
 
-/* ─── 3-action swipe buttons ─── */
+/* ─── 3-action swipe buttons (sl4 declarations) ─── */
 .swipe-actions{display:flex;gap:6px;padding:4px 0 2px;flex-shrink:0;}
 .sa-btn{flex:1;padding:7px 4px;border-radius:8px;font-size:var(--fs-9);font-weight:800;cursor:pointer;
   font-family:var(--heb);border:1.5px solid;background:transparent;transition:all .12s;line-height:1;}
@@ -451,6 +464,19 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .sa-complex:hover,.sa-complex:active{background:var(--gd0);}
 .sa-yes{color:var(--te);border-color:var(--te-35);}
 .sa-yes:hover,.sa-yes:active{background:var(--te0);}
+/* ─── Direction chips (sl1 onboarding + T2 practice) — merge of hints + tap-fallback ─── */
+.dir-chips{display:flex;gap:6px;padding:8px 14px 4px;flex-shrink:0;}
+.dir-chip{flex:1;padding:10px 6px;border-radius:10px;font-size:var(--fs-10);font-weight:800;cursor:pointer;
+  font-family:var(--heb);border:1.5px solid;background:transparent;transition:transform .1s,background .12s;line-height:1;
+  display:flex;align-items:center;justify-content:center;gap:4px;}
+.dir-chip:active{transform:scale(.95);}
+.dir-chip-no{color:var(--co);border-color:var(--co-35);}
+.dir-chip-no:hover,.dir-chip-no:active{background:var(--co0);}
+.dir-chip-complex{color:var(--gl);border-color:var(--gd-35);}
+.dir-chip-complex:hover,.dir-chip-complex:active{background:var(--gd0);}
+.dir-chip-yes{color:var(--te);border-color:var(--te-35);}
+.dir-chip-yes:hover,.dir-chip-yes:active{background:var(--te0);}
+.dir-chip-arrow{font-family:var(--frank);font-size:var(--fs-11);}
 /* Voted state — filled background matching the button's color */
 .sa-yes.voted{background:var(--te);color:var(--on-te);border-color:var(--te);}
 .sa-no.voted{background:var(--co);color:var(--on-co);border-color:var(--co);}
@@ -808,12 +834,17 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
         </div>
         <!-- Instruction bubble -->
-        <div style="width:100%;display:flex;justify-content:center;margin-top:16px;">
-          <div style="font-size:var(--fs-10);color:var(--t1);background:var(--el);border:1px solid var(--b1);border-radius:12px;padding:8px 14px;text-align:center;line-height:1.6;max-width:240px;box-shadow:0 4px 12px var(--k-40);">
-            ימינה = מסכים/ה &middot; שמאלה = לא &middot; למעלה = מורכב
+        <div style="width:100%;display:flex;justify-content:center;margin-top:14px;">
+          <div style="font-size:var(--fs-10);color:var(--t1);background:var(--el);border:1px solid var(--b1);border-radius:12px;padding:8px 14px;text-align:center;line-height:1.6;max-width:260px;box-shadow:0 4px 12px var(--k-40);">
+            גררו את הכרטיס או הקישו על אחת האפשרויות
           </div>
         </div>
-        <div style="font-size:var(--fs-12);color:var(--gl);font-weight:800;margin-top:10px;text-align:center">נסו עכשיו</div>
+        <!-- Direction chips — same pattern as sl1 -->
+        <div class="dir-chips" id="t2-actions" style="width:100%;max-width:340px;margin:12px auto 0;">
+          <button class="dir-chip dir-chip-yes" onclick="t2SwipeAction('r')"><span>בעד</span><span class="dir-chip-arrow">&#8594;</span></button>
+          <button class="dir-chip dir-chip-complex" onclick="t2SwipeAction('u')"><span class="dir-chip-arrow">&#8593;</span><span>מורכב</span></button>
+          <button class="dir-chip dir-chip-no" onclick="t2SwipeAction('l')"><span class="dir-chip-arrow">&#8592;</span><span>נגד</span></button>
+        </div>
       </div>
 
       <!-- T3: DAILY RITUAL — "3 swipes a day" -->
@@ -1102,11 +1133,11 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
         </div>
-        <!-- Swipe hints -->
-        <div id="cs-hints" style="display:flex;justify-content:space-between;padding:4px 16px 2px;font-size:var(--fs-9);font-weight:700;color:var(--t3)">
-          <span style="color:var(--te)">בעד &#8594;</span>
-          <span style="color:var(--gl)">&#8593; זה מורכב</span>
-          <span style="color:var(--co)">&#8592; נגד</span>
+        <!-- Direction chips — swipe hint + tap-fallback merged. Arrow + RTL DOM order match swipe direction. -->
+        <div class="dir-chips" id="cs-actions">
+          <button class="dir-chip dir-chip-yes" onclick="csSwipeAction('r')"><span>בעד</span><span class="dir-chip-arrow">&#8594;</span></button>
+          <button class="dir-chip dir-chip-complex" onclick="csSwipeAction('u')"><span class="dir-chip-arrow">&#8593;</span><span>מורכב</span></button>
+          <button class="dir-chip dir-chip-no" onclick="csSwipeAction('l')"><span class="dir-chip-arrow">&#8592;</span><span>נגד</span></button>
         </div>
         <!-- Dots -->
         <div id="cs-dots" style="display:flex;justify-content:center;gap:4px;padding:4px 0 8px">
@@ -1897,6 +1928,9 @@ function tutGetInd(n) {
 function tutBindSwipe(n) {
   const slide = tutSlides[n];
   if (!slide || slide._tutBound) return;
+  // T2 is the practice slide — only the card should accept swipes.
+  // Without this guard, swiping the empty slide area skips past the practice.
+  if (n === 2) { slide._tutBound = true; return; }
   slide._tutBound = true;
   let startX = 0, startY = 0, dragging = false;
   const inds = tutGetInd(n);
@@ -1975,9 +2009,27 @@ function tutBindSwipe(n) {
 
 // Tutorial t2 — interactive practice card with real swipe engine + demo nudge
 let t2CardInit = false;
+let t2Done = false;
+function t2SwipeAction(dir) {
+  if (t2Done) return;
+  t2Done = true;
+  const inner = document.getElementById('t2card-inner');
+  if (!inner) { tutActivate(3); tutBindSwipe(3); return; }
+  inner.style.transition = 'transform .3s ease, opacity .25s';
+  const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
+  const y = dir === 'u' ? -300 : 0;
+  const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
+  inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
+  inner.style.opacity = '0';
+  setTimeout(() => {
+    tutActivate(3);
+    tutBindSwipe(3);
+  }, 350);
+}
 function initT2Card() {
   if (t2CardInit) return;
   t2CardInit = true;
+  t2Done = false;
   const inner = document.getElementById('t2card-inner');
   if (!inner) return;
   function getInd() {
@@ -1987,19 +2039,7 @@ function initT2Card() {
       u: document.getElementById('t2iu')
     };
   }
-  function onSwipeDone(dir) {
-    inner.style.transition = 'transform .3s ease, opacity .25s';
-    const x = dir === 'r' ? 300 : dir === 'l' ? -300 : 0;
-    const y = dir === 'u' ? -300 : 0;
-    const rot = dir === 'r' ? 15 : dir === 'l' ? -15 : 0;
-    inner.style.transform = `translateX(${x}px) translateY(${y}px) rotate(${rot}deg)`;
-    inner.style.opacity = '0';
-    setTimeout(() => {
-      tutActivate(3);
-      tutBindSwipe(3);
-    }, 350);
-  }
-  bindSwipeEngine(inner, getInd, onSwipeDone);
+  bindSwipeEngine(inner, getInd, t2SwipeAction);
 }
 
 let t2DemoShown = false;
