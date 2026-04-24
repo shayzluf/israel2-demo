@@ -96,41 +96,18 @@ function gtag(){
 }
 gtag('js', new Date());
 if (I2_IS_INTERNAL) { gtag('set', { traffic_type: 'internal' }); }
-gtag('config','G-CXVXMQE8LM', { send_page_view:false });
-// Fallback loader for gtag.js.
-//   Brand-new GA4 Measurement IDs can return HTTP 404 from
-//   googletagmanager.com/gtag/js?id=X for up to 24-48h while Google propagates
-//   the tag config. If the primary loader errors, fall back to a known-good ID
-//   so gtag() still initializes — the gtag('config','G-CXVXMQE8LM',...) call
-//   queued above then routes events to the correct stream. Loader's auto-config
-//   for the fallback id is a tolerable side effect during the propagation window.
-// Two fallback triggers because iOS Safari doesn't reliably fire `onerror` on
-// 404 script responses (the 404 HTML body is treated as "loaded but non-JS"
-// and silently skipped):
-//   1. onerror — fires on clean 404 in most browsers
-//   2. 4s timeout — if window.google_tag_manager isn't set by then, assume
-//      silent failure and load the fallback anyway
-window.__i2GtagLoader = 'primary';
-(function(){
-  var fallbackTriggered = false;
-  function loadFallback(reason){
-    if (fallbackTriggered) return;
-    fallbackTriggered = true;
-    window.__i2GtagLoader = 'fallback_' + reason;
-    var s2 = document.createElement('script');
-    s2.async = true;
-    s2.src = 'https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM';
-    document.head.appendChild(s2);
-  }
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM';
-  s.onerror = function(){ loadFallback('onerror'); };
-  document.head.appendChild(s);
-  setTimeout(function(){
-    if (!window.google_tag_manager) loadFallback('timeout');
-  }, 4000);
-})();
+// The loader and config both use the property's Google Tag ID (G-CXVXMQE8LM).
+// GA4 auto-routes events to the correct stream based on page URL matching
+// each stream's default_uri — bait_v7.html → bait7 stream, bait8.html → bait8
+// stream (G-WW5KEYRR1Z). This is exactly what GA4's Install UI recommends
+// even for secondary streams. Per-stream Measurement IDs aren't standalone
+// loaders (gtag/js?id=G-WW5KEYRR1Z returns 404 permanently by design).
+// G-CXVXMQE8LM below is the stream's Measurement ID — kept only for the
+// dev banner so you can see which stream this page routes to.
+gtag('config', 'G-CXVXMQE8LM', { send_page_view:false });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CXVXMQE8LM"></script>
+<script>
 if (I2_IS_DEV || I2_IS_INTERNAL) {
   console.log('%c[Israel 2.0] stream G-CXVXMQE8LM · dev=' + (I2_IS_DEV?'1 (DebugView)':'0') + ' · internal=' + (I2_IS_INTERNAL?'1 (traffic_type=internal)':'0'), 'color:#d4af37;font-weight:bold');
   // On-screen dev banner — ground truth when Web Inspector isn't convenient.
@@ -140,12 +117,11 @@ if (I2_IS_DEV || I2_IS_INTERNAL) {
     b.id = 'i2-dev-banner';
     b.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#d4af37;color:#06070A;font:700 11px/1.4 -apple-system,Segoe UI,sans-serif;padding:6px 10px;text-align:center;direction:ltr;box-shadow:0 2px 6px rgba(0,0,0,.4);cursor:pointer';
     function render(){
-      b.textContent = 'G-CXVXMQE8LM · dev=' + (I2_IS_DEV?'1':'0') + ' · internal=' + (I2_IS_INTERNAL?'1':'0') + ' · gtag=' + (window.google_tag_manager?'ready':'loading') + ' · loader=' + window.__i2GtagLoader + ' · tap to hide';
+      b.textContent = 'stream G-CXVXMQE8LM · dev=' + (I2_IS_DEV?'1':'0') + ' · internal=' + (I2_IS_INTERNAL?'1':'0') + ' · gtag=' + (window.google_tag_manager?'ready':'loading') + ' · tap to hide';
     }
     render();
     b.addEventListener('click', function(){ b.remove(); });
     document.body.appendChild(b);
-    // Refresh gtag status once it loads (also catches fallback loader transition)
     var tick = setInterval(function(){
       if (!document.getElementById('i2-dev-banner')) { clearInterval(tick); return; }
       render();
