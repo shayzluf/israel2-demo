@@ -1066,8 +1066,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <!-- CSR — Result -->
           <div class="tcard" id="csr">
             <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default">
-              <div style="font-size:var(--fs-10);color:var(--te);font-weight:800;letter-spacing:1px"><span dir="ltr">6</span> מתוך <span dir="ltr">6</span></div>
-              <div style="font-size:var(--fs-13);font-weight:900;color:var(--t1);line-height:1.4">גילינו הסכמה רחבה</div>
+              <div style="font-size:var(--fs-10);color:var(--te);font-weight:800;letter-spacing:1px"><span dir="ltr" id="csr-agree-count">6</span> מתוך <span dir="ltr">6</span></div>
+              <div style="font-size:var(--fs-13);font-weight:900;color:var(--t1);line-height:1.4" id="csr-headline">גילינו הסכמה רחבה</div>
               <div style="font-size:var(--fs-10);color:var(--t2);line-height:1.6">בזמן שהכנסת עסוקה בלריב, הציבור מסכים — גם כשמדובר בוויתורים. הגיע הזמן שהקול שלנו יקבע</div>
               <div class="tribal-bars" style="height:44px">
                 <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">89%</div><div class="tb-lbl">חרדי</div></div>
@@ -1090,9 +1090,6 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                   <span style="font-size:var(--fs-7);color:var(--t3)">נשמר מקומית בלבד. לא נשלח לשרת. לא משותף עם אף גורם</span>
                 </div>
               </div>
-              <!-- Tech disclosure: ZK -->
-              <div style="font-size:var(--fs-9);color:var(--bl);cursor:pointer;margin-top:4px" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">איך אנחנו יודעים שהנתון הזה אמיתי?</div>
-              <div style="display:none;font-size:var(--fs-9);color:var(--t2);line-height:1.5;background:var(--el);border-radius:7px;padding:8px;border-right:2px solid var(--te);text-align:right">טכנולוגיית <strong style="color:var(--te)">ZK Passport</strong> מוודאת: אזרח אחד = קול אחד. מוכיחה שאתם אמיתיים בלי לחשוף מי אתם. אף בוט, אף כפילות</div>
               <div class="btn btn-gd" style="width:100%;margin-top:6px" onclick="go(2)">לראות את הכנסת העממית</div>
             </div>
           </div>
@@ -2555,6 +2552,10 @@ function bindSwipeEngine(inner, indFn, doneFn) {
 const CS_IDS = ['cs0', 'cs1', 'cs2', 'cs3', 'cs4', 'cs5', 'csr'];
 const CS_SWIPEABLE = ['cs0', 'cs1', 'cs2', 'cs3', 'cs4', 'cs5'];
 let csCur = 0;
+// Tallies what the user actually voted, so the result card reflects real swipes
+// instead of a hardcoded "6 מתוך 6". Complex ('u') counts as partial agreement.
+let csAgreeCount = 0;
+let csComplexCount = 0;
 
 function csGetInner(n) { return document.getElementById(CS_IDS[n])?.querySelector('.tcard-inner'); }
 function csGetInd(n) {
@@ -2580,10 +2581,24 @@ function csActivate(n) {
   if (hints) hints.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
   const dots = document.getElementById('cs-dots');
   if (dots) dots.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
+  // Result card reached — reflect the user's actual agree count, and soften the
+  // headline if they disagreed on most cards so the copy isn't tone-deaf.
+  if (n === CS_SWIPEABLE.length) {
+    const cEl = document.getElementById('csr-agree-count');
+    if (cEl) cEl.textContent = String(csAgreeCount);
+    const hEl = document.getElementById('csr-headline');
+    if (hEl) {
+      if (csAgreeCount >= 4)       hEl.textContent = 'גילינו הסכמה רחבה';
+      else if (csAgreeCount >= 2)  hEl.textContent = 'יש על מה להסכים';
+      else                          hEl.textContent = 'דעה מורכבת — זה בסדר';
+    }
+  }
 }
 
 function csSwipeDone(n, dir) {
   var dirName = dir === 'r' ? 'agree' : dir === 'l' ? 'disagree' : 'complex';
+  if (dir === 'r') csAgreeCount++;
+  else if (dir === 'u') csComplexCount++;
   if (typeof gtag === 'function') gtag('event', 'swipe_card', { card_index: n, card_id: CS_IDS[n] || n, direction: dirName, card_type: 'onboarding' });
   const inner = csGetInner(n);
   if (!inner) return;
