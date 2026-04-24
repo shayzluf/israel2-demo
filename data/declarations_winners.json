@@ -1,8 +1,8 @@
 {
-  "updated": "2026-04-24T06:55:50.214026+00:00",
+  "updated": "2026-04-24T07:04:08.072340+00:00",
   "topics": [
     {
-      "key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "key": "addressing_the_rising_issue_of_violent_crime_and_murder_within_israel_particularly_the_recent_incidents_of_stabbings_and_shootings",
       "label": "אלימות ופשיעה",
       "you_group": "A",
       "groups": [
@@ -11,28 +11,28 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 70
+          "agree_pct": 81
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 71
+          "agree_pct": 72
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 75
+          "agree_pct": 59
         }
       ],
-      "convergence": "למרות חילוקי הדעות, כל הקבוצות מסכימות שיש להקצות משאבים משמעותיים למאבק באלימות, גם אם זה ידרוש שינויים תקציביים מרחיקי לכת",
-      "divergence": "קבוצה א' רואה בהחמרת ענישה והגברת אכיפה את הפתרון המרכזי, בעוד שקבוצה ב' מתמקדת בהשקעה בחינוך ותוכניות מניעה ארוכות טווח, וקבוצה ג' דורשת יחידות משטרה ייעודיות"
+      "convergence": "למרות השוני בגישות, כל הקבוצות מסכימות שיש להטיל אחריות משמעותית על גורמים שונים במאבק באלימות, בין אם זו אחריות הורית, רשות מקומית או מערכת המשפט",
+      "divergence": "בעוד שקבוצה א' רואה בהעלאת מס ארנונה ייעודי למימון שיטור מקומי פתרון לגיטימי, קבוצה ב' מתנגדת לכך ומתמקדת בהורדת גיל האחריות הפלילית, וקבוצה ג' דורשת הטלת אחריות פלילית וכלכלית על הורים למעשי אלימות של ילדיהם"
     },
     {
-      "key": "improving_road_safety_and_reducing_traffic_accidents",
+      "key": "improving_road_safety_and_reducing_traffic_accidents_following_multiple_reports_of_fatalities_and_injuries",
       "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
@@ -41,14 +41,44 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 74
+          "agree_pct": 73
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 68
+          "agree_pct": 58
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 65
+        }
+      ],
+      "convergence": "באופן מפתיע, ישנה הסכמה רחבה בין הקבוצות שיש לנקוט בצעדים דרסטיים ובלתי שגרתיים כדי לממן ולשפר את בטיחות הדרכים, גם אם זה כרוך בנטל כלכלי או בפגיעה ברכוש",
+      "divergence": "קבוצה א' דוגלת בהסטת תקציבים קיימים לטיפול בכבישים אדומים, בעוד שקבוצה ב' תומכת בהטלת עלויות קורסי נהיגה מונעת על הנהגים, וקבוצה ג' רואה בהחרמת רכבים של נהגים מסוכנים ומכירתם כמקור מימון לתשתיות בטיחות"
+    },
+    {
+      "key": "addressing_domestic_violence_and_protecting_vulnerable_individuals_highlighted_by_the_murder_of_women",
+      "label": "אלימות במשפחה",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 67
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 78
         },
         {
           "id": "C",
@@ -58,82 +88,52 @@
           "agree_pct": 76
         }
       ],
-      "convergence": "באופן מפתיע, ישנה הסכמה רחבה בין הקבוצות כי נדרשת פעולה נחרצת הן באכיפה והן בתשתיות, גם אם הדבר יגרור אי נוחות ציבורית או עלויות גבוהות",
-      "divergence": "קבוצה א' שמה דגש על אכיפה מחמירה וקנסות גבוהים, בעוד שקבוצה ב' רואה בהשקעה בתשתיות בפריפריה את המפתח, וקבוצה ג' מתמקדת בענישה חמורה על נהיגה תחת השפעה"
-    },
-    {
-      "key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
-      "label": "אלימות במשפחה",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 66
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 80
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 80
-        }
-      ],
-      "convergence": "כל הקבוצות תמימות דעים כי יש להגביר את המודעות הציבורית לאלימות במשפחה ולספק תמיכה רחבה לנפגעים, גם אם זה ידרוש קיצוצים בתחומים אחרים",
-      "divergence": "קבוצה א' מדגישה את הצורך בהגדלת מספר המקלטים ותמיכה בנשים, בעוד שקבוצה ב' רואה בתוכניות שיקום לגברים אלימים את הפתרון העיקרי, וקבוצה ג' דורשת מערך תמיכה פסיכולוגית לילדים"
+      "convergence": "כל שלוש הקבוצות מסכימות שיש להעניק סיוע מקיף לנפגעות אלימות ולנקוט בצעדים חמורים נגד עבריינים, תוך שימוש במנגנונים קיימים או יצירת חדשים",
+      "divergence": "קבוצה א' מתמקדת בהטבות כלכליות לנפגעות כמו מימון ימי חופשה ושבירת חוזי שכירות, בעוד שקבוצה ב' רואה בשלילת רישיון נשק אוטומטית פתרון מיידי, וקבוצה ג' דורשת הקמת מאגר פומבי של מורשעים באלימות במשפחה"
     }
   ],
   "declarations": [
     {
-      "id": "decl_addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces_0",
-      "text": "יש להחמיר את הענישה על עבירות אלימות חמורות, במיוחד כשמדובר באלימות נגד נשים ובמרחב הציבורי",
+      "id": "decl_addressing_the_rising_issue_of_violent_crime_and_murder_within_israel_particularly_the_recent_incidents_of_stabbings_and_shootings_0",
+      "text": "הורים צריכים לשאת באחריות פלילית וכלכלית על מעשי אלימות חמורים שמבצעים ילדיהם הקטינים במרחב הציבורי",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 285432,
+      "vote_count": 280500,
       "agree_pct": 88,
-      "time_label": "לפני יומיים",
+      "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_key": "addressing_the_rising_issue_of_violent_crime_and_murder_within_israel_particularly_the_recent_incidents_of_stabbings_and_shootings",
       "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 88
+          "agree_pct": 84
         },
         {
           "id": "B",
-          "agree_pct": 90
+          "agree_pct": 85
         },
         {
           "id": "C",
-          "agree_pct": 82
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.7,
+      "win_rate": 0.78,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
+      "created": "2026-04-24T07:04:08.066864+00:00"
     },
     {
-      "id": "decl_addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces_1",
-      "text": "השקעה בחינוך ובתכניות מניעה בקהילה היא הדרך היעילה ביותר לצמצם אלימות לטווח הארוך, גם אם התוצאות אינן מיידיות",
+      "id": "decl_addressing_the_rising_issue_of_violent_crime_and_murder_within_israel_particularly_the_recent_incidents_of_stabbings_and_shootings_1",
+      "text": "צריך להוריד את גיל האחריות הפלילית לעבירות רצח ודקירה, כדי למנוע מנערים לחמוק מעונש בחסות הגיל",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 187654,
+      "vote_count": 192000,
       "agree_pct": 78,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_the_rising_issue_of_violent_crime_and_murder_within_israel_particularly_the_recent_incidents_of_stabbings_and_shootings",
       "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
@@ -153,80 +153,49 @@
       "win_rate": 0.86,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
+      "created": "2026-04-24T07:04:08.066864+00:00"
     },
     {
-      "id": "decl_addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces_2",
-      "text": "צריך להקים יחידות משטרה ייעודיות לטיפול בפשיעה אלימה, גם אם זה יבוא על חשבון תקנים במחלקות אחרות",
+      "id": "decl_addressing_the_rising_issue_of_violent_crime_and_murder_within_israel_particularly_the_recent_incidents_of_stabbings_and_shootings_2",
+      "text": "יש לאפשר לרשויות מקומיות להפעיל כוחות שיטור חמושים, גם אם זה יחייב העלאת מס ארנונה ייעודי לתושבים",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 123456,
+      "vote_count": 145000,
       "agree_pct": 52,
       "time_label": "לפני 4 שעות",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
+      "topic_key": "addressing_the_rising_issue_of_violent_crime_and_murder_within_israel_particularly_the_recent_incidents_of_stabbings_and_shootings",
       "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 52
+          "agree_pct": 84
         },
         {
           "id": "B",
-          "agree_pct": 30
+          "agree_pct": 45
         },
         {
           "id": "C",
-          "agree_pct": 76
+          "agree_pct": 19
         }
       ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
-    },
-    {
-      "id": "decl_addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces_3",
-      "text": "יש להגביר את נוכחות השיטור והאכיפה במרחבים ציבוריים, גם אם זה ידרוש תוספת תקציב של מאות מיליוני שקלים בשנה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 78901,
-      "agree_pct": 68,
-      "time_label": "לפני שעה",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "addressing_the_rise_in_violent_crime_particularly_murders_against_women_and_in_public_spaces",
-      "topic_label": "אלימות ופשיעה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 65
-        },
-        {
-          "id": "B",
-          "agree_pct": 78
-        },
-        {
-          "id": "C",
-          "agree_pct": 70
-        }
-      ],
-      "surprise": "bridge",
+      "surprise": "split",
       "win_rate": 0.7,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
+      "created": "2026-04-24T07:04:08.066864+00:00"
     },
     {
-      "id": "decl_improving_road_safety_and_reducing_traffic_accidents_4",
-      "text": "חובה להגביר את האכיפה נגד עבירות תנועה מסכנות חיים, כמו נהיגה במהירות מופרזת ועקיפות מסוכנות",
+      "id": "decl_improving_road_safety_and_reducing_traffic_accidents_following_multiple_reports_of_fatalities_and_injuries_3",
+      "text": "המדינה צריכה להחרים רכבים של נהגים שנתפסו בנהיגה פרועה ומסכנת חיים, ולמכור אותם כדי לממן תשתיות בטיחות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 310245,
-      "agree_pct": 92,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "vote_count": 275000,
+      "agree_pct": 86,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_following_multiple_reports_of_fatalities_and_injuries",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
@@ -235,215 +204,122 @@
         },
         {
           "id": "B",
-          "agree_pct": 92
+          "agree_pct": 86
         },
         {
           "id": "C",
-          "agree_pct": 87
+          "agree_pct": 91
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
-    },
-    {
-      "id": "decl_improving_road_safety_and_reducing_traffic_accidents_5",
-      "text": "יש להחמיר את הענישה על נהיגה תחת השפעת אלכוהול או סמים, כולל שלילת רישיון ממושכת",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 210987,
-      "agree_pct": 81,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 97
-        },
-        {
-          "id": "C",
-          "agree_pct": 75
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
-    },
-    {
-      "id": "decl_improving_road_safety_and_reducing_traffic_accidents_6",
-      "text": "צריך להשקיע יותר בתשתיות כבישים בטוחים בפריפריה, גם אם זה יבוא על חשבון פרויקטים אחרים במרכז הארץ",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 156789,
-      "agree_pct": 55,
-      "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
+      "created": "2026-04-24T07:04:08.066864+00:00"
     },
     {
-      "id": "decl_improving_road_safety_and_reducing_traffic_accidents_7",
-      "text": "יש להטיל קנסות גבוהים יותר על נהגים שאינם שומרים מרחק, גם אם זה יגרום למורת רוח ציבורית",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 98765,
-      "agree_pct": 62,
-      "time_label": "לפני שעתיים",
+      "id": "decl_improving_road_safety_and_reducing_traffic_accidents_following_multiple_reports_of_fatalities_and_injuries_4",
+      "text": "יש לחייב כל נהג לעבור קורס נהיגה מונעת מעשי כתנאי לחידוש רישיון כל עשור, בעלות מלאה של הנהג",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 310000,
+      "agree_pct": 46,
+      "time_label": "לפני יומיים",
       "pipeline_status": null,
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents",
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_following_multiple_reports_of_fatalities_and_injuries",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 62
+          "agree_pct": 73
         },
         {
           "id": "B",
+          "agree_pct": 17
+        },
+        {
+          "id": "C",
+          "agree_pct": 41
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T07:04:08.066864+00:00"
+    },
+    {
+      "id": "decl_improving_road_safety_and_reducing_traffic_accidents_following_multiple_reports_of_fatalities_and_injuries_5",
+      "text": "צריך להסיט 10% מתקציב סלילת כבישים חדשים לטובת טיפול מיידי בכבישים אדומים בפריפריה ובחברה הערבית",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 55000,
+      "agree_pct": 61,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_following_multiple_reports_of_fatalities_and_injuries",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
           "agree_pct": 58
         },
         {
+          "id": "B",
+          "agree_pct": 71
+        },
+        {
           "id": "C",
-          "agree_pct": 59
+          "agree_pct": 63
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
+      "win_rate": 0.7,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
+      "created": "2026-04-24T07:04:08.066864+00:00"
     },
     {
-      "id": "decl_addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities_8",
-      "text": "חובה להגביר את המודעות הציבורית לאלימות במשפחה ולעודד דיווחים על מקרים חשודים",
+      "id": "decl_addressing_domestic_violence_and_protecting_vulnerable_individuals_highlighted_by_the_murder_of_women_6",
+      "text": "צריך לשלול אוטומטית רישיון נשק מכל אדם שהוגשה נגדו תלונה על אלימות במשפחה, עד לסיום בירור משטרתי",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 295678,
-      "agree_pct": 90,
+      "vote_count": 320000,
+      "agree_pct": 91,
       "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_domestic_violence_and_protecting_vulnerable_individuals_highlighted_by_the_murder_of_women",
       "topic_label": "אלימות במשפחה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 87
+          "agree_pct": 90
         },
         {
           "id": "B",
-          "agree_pct": 91
+          "agree_pct": 89
         },
         {
           "id": "C",
-          "agree_pct": 90
+          "agree_pct": 91
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
-    },
-    {
-      "id": "decl_addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities_9",
-      "text": "יש להשקיע בתכניות שיקום וטיפול לגברים אלימים, כדי למנוע הישנות מקרים ולשבור את מעגל האלימות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 198765,
-      "agree_pct": 75,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
-      "topic_label": "אלימות במשפחה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 77
-        },
-        {
-          "id": "B",
-          "agree_pct": 92
-        },
-        {
-          "id": "C",
-          "agree_pct": 70
-        }
-      ],
-      "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
+      "created": "2026-04-24T07:04:08.066864+00:00"
     },
     {
-      "id": "decl_addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities_10",
-      "text": "יש להקים מערך תמיכה פסיכולוגית מקיף לילדים החשופים לאלימות במשפחה, בעלות של כ-50 מיליון שקלים בשנה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 87654,
-      "agree_pct": 70,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
-      "topic_label": "אלימות במשפחה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 74
-        },
-        {
-          "id": "B",
-          "agree_pct": 79
-        },
-        {
-          "id": "C",
-          "agree_pct": 69
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
-    },
-    {
-      "id": "decl_addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities_11",
-      "text": "צריך להגדיל את מספר המקלטים לנשים נפגעות אלימות ואת התמיכה בהן, גם אם זה ידרוש קיצוץ בתקציבי תרבות",
+      "id": "decl_addressing_domestic_violence_and_protecting_vulnerable_individuals_highlighted_by_the_murder_of_women_7",
+      "text": "יש להקים מאגר פומבי של מורשעים באלימות במשפחה שיהיה פתוח לציבור, בדומה למאגר עברייני מין",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 134567,
+      "vote_count": 210000,
       "agree_pct": 58,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_the_issue_of_domestic_violence_and_the_presence_of_violent_individuals_in_communities",
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_domestic_violence_and_protecting_vulnerable_individuals_highlighted_by_the_murder_of_women",
       "topic_label": "אלימות במשפחה",
       "group_breakdown": [
         {
@@ -452,18 +328,80 @@
         },
         {
           "id": "B",
-          "agree_pct": 58
+          "agree_pct": 62
         },
         {
           "id": "C",
-          "agree_pct": 92
+          "agree_pct": 85
         }
       ],
-      "surprise": "split",
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T07:04:08.066864+00:00"
+    },
+    {
+      "id": "decl_addressing_domestic_violence_and_protecting_vulnerable_individuals_highlighted_by_the_murder_of_women_8",
+      "text": "יש לממן ימי חופשה מיוחדים לנפגעות אלימות כדי שיוכלו לטפל בעצמן, על חשבון קופת הביטוח הלאומי",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 134000,
+      "agree_pct": 75,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_domestic_violence_and_protecting_vulnerable_individuals_highlighted_by_the_murder_of_women",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 78
+        },
+        {
+          "id": "B",
+          "agree_pct": 92
+        },
+        {
+          "id": "C",
+          "agree_pct": 69
+        }
+      ],
+      "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-04-24",
-      "created": "2026-04-24T06:55:50.210777+00:00"
+      "created": "2026-04-24T07:04:08.066864+00:00"
+    },
+    {
+      "id": "decl_addressing_domestic_violence_and_protecting_vulnerable_individuals_highlighted_by_the_murder_of_women_9",
+      "text": "צריך לאפשר לנפגעות אלימות לשבור חוזה שכירות ללא קנס, כשהמדינה תפצה את בעל הנכס מתקציב הרווחה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 62000,
+      "agree_pct": 68,
+      "time_label": "לפני חצי שעה",
+      "pipeline_status": null,
+      "topic_key": "addressing_domestic_violence_and_protecting_vulnerable_individuals_highlighted_by_the_murder_of_women",
+      "topic_label": "אלימות במשפחה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 71
+        },
+        {
+          "id": "C",
+          "agree_pct": 61
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-04-24",
+      "created": "2026-04-24T07:04:08.066864+00:00"
     }
   ]
 }
