@@ -4004,16 +4004,14 @@ async function loadPactData() {
         group_progress: [], qualifying_groups: 0, crossed_groups: 0, would_fire: false,
         totals: { total: 0, by_type: {} },
         blockers: [
-          // Preview-mode stub blockers so the UI shows the mechanic even
-          // without a backend — matches Pact #1 production defaults.
+          // Preview-mode stub blockers — matches Pact #1 deliverability floors.
+          // Cross-tribal blocker (qualifying_groups) intentionally dropped:
+          // the fire rule is deliverability-only (scale + type-balance).
           { kind: 'total_pledges', have: 0, need: 1000 },
           { kind: 'type_pledges', pledge_type: 'professional', have: 0, need: 100 },
-          { kind: 'type_pledges', pledge_type: 'donor', have: 0, need: 500 },
-          { kind: 'qualifying_groups', have: 0, need: 2 }
+          { kind: 'type_pledges', pledge_type: 'donor', have: 0, need: 500 }
         ],
         thresholds: {
-          group_agreement: 0.8, group_pledge_share: 0.2,
-          min_groups_qualifying: 2, share_of_qualifying: 0.5,
           min_total_pledges: 1000,
           min_pledges_per_type: { professional: 100, donor: 500 }
         }
@@ -4099,39 +4097,14 @@ function renderPactProgressBars(copy, v) {
   var thresholds = _pactData.thresholds || {};
   var totals = _pactData.totals || { total: 0, by_type: {} };
   var typeFloors = thresholds.min_pledges_per_type || {};
-  var progress = _pactData.group_progress || [];
 
-  // ── Track 1: cross-tribal group bars ───────────────────────────
-  var groupLabelTemplate = pickVariant(copy.group_progress_label, v)
-    || 'קבוצה {{N}} — הסכמה {{pct}}% ({{count}}/{{target}})';
-  if (progress.length) {
-    if (groupLabel) groupLabel.style.display = 'block';
-    groupList.innerHTML = progress.map(function (g, i) {
-      var pct = (g.agree_pct == null) ? 0 : g.agree_pct;
-      var pledgePct = (g.pledge_target > 0)
-        ? Math.max(3, Math.min(100, Math.round((g.pledge_count / g.pledge_target) * 100))) : 0;
-      var fillClass = g.crossed ? 'crossed' : (g.qualifies ? 'qualified' : 'below');
-      var label = groupLabelTemplate
-        .replace('{{N}}', i + 1)
-        .replace('{{pct}}', pct)
-        .replace('{{count}}', g.pledge_count)
-        .replace('{{target}}', g.pledge_target);
-      return '<div class="pact-progress-row">'
-        + '<div class="pact-progress-label"><span>' + escapeHtml(label) + '</span>'
-        + (g.crossed ? '<span style="color:var(--te);font-weight:900">✓</span>' : '')
-        + '</div>'
-        + '<div class="pact-progress-bar"><div class="pact-progress-fill ' + fillClass + '" style="width:' + pledgePct + '%"></div></div>'
-        + '</div>';
-    }).join('');
-  } else {
-    if (groupLabel) groupLabel.style.display = 'none';
-    groupList.innerHTML = '<div style="font-size:var(--fs-9);color:var(--t3);padding:10px;text-align:center;line-height:1.5">'
-      + escapeHtml(pickVariant(copy.empty_state_pre_agreement, v)
-          || 'עוד אין מספיק נתונים מהאלגוריתם — חזרו אחרי השבעה הראשונה')
-      + '</div>';
-  }
+  // Cross-tribal group bars (Track 1) were dropped 2026-04-24: pacts only
+  // exist once cross-tribal consensus is already observed, so the activation
+  // view is purely a funding + volunteering challenge (Tracks 2 + 3 below).
+  if (groupLabel) groupLabel.style.display = 'none';
+  groupList.innerHTML = '';
 
-  // ── Track 2 + 3: scale bar + per-type bars ─────────────────────
+  // ── Scale bar + per-type bars (the two gating tracks) ──────────
   var scaleRows = [];
   if (thresholds.min_total_pledges > 0) {
     var tTotal = thresholds.min_total_pledges;
@@ -4183,7 +4156,8 @@ function renderPactProgressBars(copy, v) {
       blocking.textContent = '';
     }
     // Short summary line above the blocker: N-of-M conditions met.
-    var totalConditions = 2 + Object.keys(typeFloors).length + 1; // scale + per-type + group
+    // Scale (1) + per-type floors (N). No cross-tribal bundle — see note above.
+    var totalConditions = 1 + Object.keys(typeFloors).length;
     var missing = blockers.length;
     var conditionsMet = Math.max(0, totalConditions - missing);
     status.textContent = conditionsMet + ' מתוך ' + totalConditions + ' תנאים להפעלה התקיימו';
