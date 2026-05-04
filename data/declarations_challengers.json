@@ -1,9 +1,9 @@
 {
-  "updated": "2026-04-30T02:53:37.286058+00:00",
+  "updated": "2026-05-04T05:58:03.177367+00:00",
   "topics": [
     {
-      "key": "addressing_violence_and_crime_in_israeli_cities_as_seen_in_incidents_in_tel_aviv_and_haifa",
-      "label": "אלימות ופשיעה בערים",
+      "key": "addressing_the_rise_in_youth_violence_and_juvenile_delinquency",
+      "label": "אלימות נוער ועבריינות",
       "you_group": "A",
       "groups": [
         {
@@ -11,28 +11,28 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 68
+          "agree_pct": 67
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 61
+          "agree_pct": 68
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 67
+          "agree_pct": 72
         }
       ],
-      "convergence": "באופן מפתיע, כל הקבוצות מסכימות שיש צורך בהטלת סנקציות כלכליות או הגבלות על עברייני אלימות במרחב הציבורי, בין אם בשלילת הטבות עירוניות או חיוב עסקים באבטחה",
-      "divergence": "קבוצה א׳ סבורה שיש להעניק לרשויות כלים טכנולוגיים כמו מצלמות זיהוי פנים, בעוד שקבוצה ב׳ מתנגדת לכך ומתמקדת בתגבור נוכחות משטרתית פיזית, וקבוצה ג׳ מעדיפה הטלת אחריות כלכלית על עסקים"
+      "convergence": "כל הקבוצות מסכימות שיש לנקוט צעדים משמעותיים וישירים כדי לטפל בעלייה באלימות נוער ועבריינות, בין אם דרך מערכת החינוך, המשפט או הרשתות החברתיות",
+      "divergence": "בעוד שקבוצה א' רואה בטיפול חינוכי ושיקומי, כמו התנדבות בקהילה, את הפתרון המועדף לעבירה ראשונה, קבוצה ב' וקבוצה ג' דורשות צעדים דרסטיים יותר כמו דיווח חובה למשטרה והקמת בתי משפט ייעודיים לנוער"
     },
     {
-      "key": "improving_road_safety_and_reducing_traffic_accidents_highlighted_by_multiple_incidents_involving_vehicles_and_electric_scooters",
+      "key": "improving_road_safety_to_prevent_fatal_traffic_accidents",
       "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
@@ -41,29 +41,29 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 51
+          "agree_pct": 72
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 80
+          "agree_pct": 65
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 74
+          "agree_pct": 73
         }
       ],
-      "convergence": "על אף חילוקי הדעות, ישנה הסכמה רחבה בין הקבוצות כי יש לנקוט בצעדים דרסטיים נגד רוכבי קורקינטים חשמליים צעירים, בין אם בהחרמה או חיוב ברישוי",
-      "divergence": "קבוצה א׳ דורשת החרמה מיידית של קורקינטים מרוכבים צעירים, בעוד שקבוצה ב׳ מתמקדת בחיוב רוכבים בלוחית רישוי וביטוח, וקבוצה ג׳ מעדיפה סבסוד קורסי רכיבה מתקדמים לצד איסור נסיעה על מדרכות"
+      "convergence": "יש הסכמה רחבה בין כל הקבוצות כי נדרשת התערבות נחרצת מצד המדינה כדי לצמצם את מספר תאונות הדרכים הקטלניות, גם אם זה כרוך בהגבלות או עלויות נוספות לנהגים",
+      "divergence": "קבוצה א' מתמקדת בהגבלות על סוגי רכבים ספציפיים ושיפור הכשרת הנהגים, בעוד קבוצה ב' מעדיפה אכיפה טכנולוגית חסרת פשרות באמצעות מצלמות וקנסות גבוהים, וקבוצה ג' דורשת ענישה חמורה ואוטומטית על שימוש בטלפון נייד"
     },
     {
-      "key": "addressing_the_issue_of_youth_violence_and_its_impact_on_families_following_the_arrest_of_suspects_in_a_murder_case",
-      "label": "אלימות נוער והשלכותיה",
+      "key": "ensuring_access_to_medical_cannabis_for_patients_without_compromising_their_care",
+      "label": "קנאביס רפואי לחולים",
       "you_group": "A",
       "groups": [
         {
@@ -71,198 +71,259 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 48
+          "agree_pct": 63
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 75
+          "agree_pct": 76
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 78
+          "agree_pct": 77
         }
       ],
-      "convergence": "כל הקבוצות תמימות דעים שיש להשקיע בחינוך ובמסגרות שיקום לנוער אלים, גם אם זה כרוך בשינויים מהותיים במערכת החינוך או בחיי הקהילה",
-      "divergence": "קבוצה א׳ מדגישה את הצורך בסדנאות חובה בבתי הספר, בעוד שקבוצה ב׳ מתמקדת באחריות ובשיקום הורים לנוער אלים, וקבוצה ג׳ דורשת הרחקת נוער אלים למסגרות סגורות"
+      "convergence": "כל הקבוצות רואות חשיבות עליונה בהנגשת קנאביס רפואי לחולים הזקוקים לו, ומסכימות שיש לפעול להסרת חסמים בירוקרטיים וכלכליים המונעים זאת",
+      "divergence": "קבוצה א' דוגלת בהקלה משמעותית ברגולציה ובניתוק הדיון מלגליזציה, קבוצה ב' מוכנה לוותר על פיקוח ממשלתי הדוק לטובת גידול ומכירה פרטיים, ואילו קבוצה ג' מתמקדת בסבסוד מלא לקבוצות חולים ספציפיות דרך מיסוי ייעודי"
+    },
+    {
+      "key": "combating_violent_crime_and_ensuring_public_safety_in_cities",
+      "label": "מאבק באלימות ופשיעה",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 58
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 67
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 64
+        }
+      ],
+      "convergence": "כל הקבוצות מאוחדות בדרישה לחיזוק משמעותי של הביטחון האישי בערים ולמאבק נחוש בפשיעה האלימה, תוך שימוש בכלים שונים",
+      "divergence": "קבוצה א' דורשת ענישה מחמירה ובלתי מתפשרת על החזקת נשק בלתי חוקי, קבוצה ב' מוכנה להקריב שירותים קהילתיים לטובת הקמת תחנות משטרה חדשות, וקבוצה ג' מעדיפה להקים משטרות עירוניות עם סמכויות מעצר מלאות"
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-04-30_0",
-      "text": "יש לאפשר לעיריות להציב מצלמות זיהוי פנים במרחב הציבורי כדי לאתר עברייני אלימות מועדים, גם במחיר של פגיעה בפרטיות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 142050,
-      "agree_pct": 75,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_violence_and_crime_in_israeli_cities_as_seen_in_incidents_in_tel_aviv_and_haifa",
-      "topic_label": "אלימות ופשיעה בערים",
+      "id": "decl_challenger_2026-05-04_0",
+      "text": "חובה על בתי ספר לדווח למשטרה על כל אירוע אלימות פיזית חמורה, ולא להסתפק בטיפול משמעתי פנימי בתוך המערכת",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 215400,
+      "agree_pct": 88,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_the_rise_in_youth_violence_and_juvenile_delinquency",
+      "topic_label": "אלימות נוער ועבריינות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 88
         },
         {
           "id": "B",
-          "agree_pct": 71
+          "agree_pct": 90
         },
         {
           "id": "C",
-          "agree_pct": 64
+          "agree_pct": 82
         }
       ],
-      "surprise": null,
+      "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_1",
-      "text": "צריך לתגבר את נוכחות המשטרה באזורי בילוי על חשבון ביטול פסטיבלים ואירועי תרבות עירוניים",
+      "id": "decl_challenger_2026-05-04_1",
+      "text": "יש להקים בתי משפט ייעודיים ומהירים לעבירות נוער, במימון שיושג מקיצוץ של 10% בתקציב תנועות הנוער והחינוך הבלתי פורמלי",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 210400,
-      "agree_pct": 48,
-      "time_label": "לפני יום",
+      "vote_count": 142000,
+      "agree_pct": 42,
+      "time_label": "לפני 5 שעות",
       "pipeline_status": null,
-      "topic_key": "addressing_violence_and_crime_in_israeli_cities_as_seen_in_incidents_in_tel_aviv_and_haifa",
-      "topic_label": "אלימות ופשיעה בערים",
+      "topic_key": "addressing_the_rise_in_youth_violence_and_juvenile_delinquency",
+      "topic_label": "אלימות נוער ועבריינות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 48
+          "agree_pct": 42
         },
         {
           "id": "B",
-          "agree_pct": 26
+          "agree_pct": 20
         },
         {
           "id": "C",
-          "agree_pct": 72
+          "agree_pct": 66
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_2",
-      "text": "יש לשלול הטבות עירוניות, כמו תווי חניה והנחות בארנונה, מתושבים שהורשעו בעבירות אלימות במרחב הציבורי",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52300,
-      "agree_pct": 60,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "addressing_violence_and_crime_in_israeli_cities_as_seen_in_incidents_in_tel_aviv_and_haifa",
-      "topic_label": "אלימות ופשיעה בערים",
+      "id": "decl_challenger_2026-05-04_2",
+      "text": "צריך לקנוס רשתות חברתיות שהאלגוריתם שלהן מקדם סרטוני אלימות וקטטות בקרב בני נוער ישראלים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 89000,
+      "agree_pct": 75,
+      "time_label": "לפני יום",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_the_rise_in_youth_violence_and_juvenile_delinquency",
+      "topic_label": "אלימות נוער ועבריינות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 51
+          "agree_pct": 72
         },
         {
           "id": "B",
-          "agree_pct": 54
+          "agree_pct": 83
         },
         {
           "id": "C",
-          "agree_pct": 47
+          "agree_pct": 69
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_3",
-      "text": "חובה לדרוש מכל מתחם בילוי מסחרי לממן בעצמו אבטחה חמושה היקפית לאחר חצות, כתנאי לרישיון עסק",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 285000,
-      "agree_pct": 88,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "addressing_violence_and_crime_in_israeli_cities_as_seen_in_incidents_in_tel_aviv_and_haifa",
-      "topic_label": "אלימות ופשיעה בערים",
+      "id": "decl_challenger_2026-05-04_3",
+      "text": "עדיף לחייב בני נוער בעבירה ראשונה ב-100 שעות התנדבות בקהילה במקום לפתוח להם תיק פלילי שיהרוס להם את העתיד",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 51000,
+      "agree_pct": 68,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_rise_in_youth_violence_and_juvenile_delinquency",
+      "topic_label": "אלימות נוער ועבריינות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 85
+          "agree_pct": 65
         },
         {
           "id": "B",
-          "agree_pct": 92
+          "agree_pct": 78
         },
         {
           "id": "C",
-          "agree_pct": 84
+          "agree_pct": 70
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_4",
-      "text": "יש להחרים קורקינטים חשמליים מרוכבים מתחת לגיל 16 במקום, ללא אפשרות לשלם קנס כדי לקבל את הכלי בחזרה",
+      "id": "decl_challenger_2026-05-04_4",
+      "text": "צריך לאסור על משאיות כבדות לנסוע בכבישים בינעירוניים בשעות העומס של הבוקר כדי למנוע תאונות קטלניות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 312000,
-      "agree_pct": 92,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_highlighted_by_multiple_incidents_involving_vehicles_and_electric_scooters",
+      "vote_count": 310500,
+      "agree_pct": 86,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "improving_road_safety_to_prevent_fatal_traffic_accidents",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 83
         },
         {
           "id": "B",
-          "agree_pct": 92
+          "agree_pct": 86
         },
         {
           "id": "C",
-          "agree_pct": 87
+          "agree_pct": 81
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_5",
-      "text": "צריך לחייב כל רוכב קורקינט ואופניים חשמליים בהוצאת לוחית רישוי וביטוח צד ג' כתנאי לעלייה לכביש",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 198500,
-      "agree_pct": 82,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_highlighted_by_multiple_incidents_involving_vehicles_and_electric_scooters",
+      "id": "decl_challenger_2026-05-04_5",
+      "text": "יש לרשת את כל הכבישים הבינעירוניים במצלמות מהירות ממוצעת, גם אם זה יחייב העלאה של 20% בגובה הקנסות כדי לממן את המערכת",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 185000,
+      "agree_pct": 52,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_to_prevent_fatal_traffic_accidents",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 73
+          "agree_pct": 60
+        },
+        {
+          "id": "B",
+          "agree_pct": 21
+        },
+        {
+          "id": "C",
+          "agree_pct": 80
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_6",
+      "text": "נהג שהיה מעורב בתאונה בזמן שהשתמש בטלפון הנייד צריך לאבד את הרישיון שלו אוטומטית לחמש שנים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 112000,
+      "agree_pct": 81,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "improving_road_safety_to_prevent_fatal_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 84
         },
         {
           "id": "B",
@@ -270,185 +331,61 @@
         },
         {
           "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-30_6",
-      "text": "יש לסבסד קורסי רכיבה מתקדמים לבני נוער, במימון שיושג דרך הטלת מס של 5% על כל קניית קורקינט חשמלי חדש",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 115000,
-      "agree_pct": 55,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_highlighted_by_multiple_incidents_involving_vehicles_and_electric_scooters",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 20
-        },
-        {
-          "id": "B",
-          "agree_pct": 55
-        },
-        {
-          "id": "C",
-          "agree_pct": 77
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-30_7",
-      "text": "חובה לאסור לחלוטין נסיעת קורקינטים על מדרכות ולהוריד אותם לכביש, גם אם זה יאט משמעותית את תנועת הרכבים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 275000,
-      "agree_pct": 45,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_highlighted_by_multiple_incidents_involving_vehicles_and_electric_scooters",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 21
-        },
-        {
-          "id": "B",
           "agree_pct": 75
-        },
-        {
-          "id": "C",
-          "agree_pct": 49
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-30_8",
-      "text": "חובה לשלב סדנאות חובה למניעת אלימות בתיכונים, על חשבון קיצוץ שעות ההכנה לבגרויות",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 178000,
-      "agree_pct": 49,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_youth_violence_and_its_impact_on_families_following_the_arrest_of_suspects_in_a_murder_case",
-      "topic_label": "אלימות נוער והשלכותיה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 18
-        },
-        {
-          "id": "B",
-          "agree_pct": 53
-        },
-        {
-          "id": "C",
-          "agree_pct": 76
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-30_9",
-      "text": "הורים לבני נוער שהיו מעורבים באלימות קשה צריכים לעבור תוכנית שיקום חובה, ואם יסרבו - יועמדו לדין פלילי",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 205000,
-      "agree_pct": 72,
-      "time_label": "לפני יום",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "addressing_the_issue_of_youth_violence_and_its_impact_on_families_following_the_arrest_of_suspects_in_a_murder_case",
-      "topic_label": "אלימות נוער והשלכותיה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
         }
       ],
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_10",
-      "text": "יש להרחיק בני נוער אלימים למסגרות חינוך ושיקום סגורות, במקום להשאיר אותם במערכת החינוך הרגילה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 265000,
-      "agree_pct": 86,
-      "time_label": "לפני יומיים",
+      "id": "decl_challenger_2026-05-04_7",
+      "text": "יש לחייב כל נהג לעבור קורס רענון נהיגה מעשי כל עשר שנים כתנאי לחידוש הרישיון",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 62000,
+      "agree_pct": 60,
+      "time_label": "לפני חצי שעה",
       "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_youth_violence_and_its_impact_on_families_following_the_arrest_of_suspects_in_a_murder_case",
-      "topic_label": "אלימות נוער והשלכותיה",
+      "topic_key": "improving_road_safety_to_prevent_fatal_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 60
         },
         {
           "id": "B",
-          "agree_pct": 82
+          "agree_pct": 56
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 57
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_11",
-      "text": "צריך להפעיל מוקדי נוער קהילתיים עד השעות הקטנות של הלילה בסופי שבוע, גם אם זה יחייב תוספת תשלום בארנונה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 140000,
-      "agree_pct": 58,
-      "time_label": "לפני 10 שעות",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_youth_violence_and_its_impact_on_families_following_the_arrest_of_suspects_in_a_murder_case",
-      "topic_label": "אלימות נוער והשלכותיה",
+      "id": "decl_challenger_2026-05-04_8",
+      "text": "חולים כרוניים שמטופלים בקנאביס רפואי צריכים לקבל אפשרות לחדש מרשם באונליין, בלי לחכות חודשים לתור אצל רופא מומחה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 91,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "ensuring_access_to_medical_cannabis_for_patients_without_compromising_their_care",
+      "topic_label": "קנאביס רפואי לחולים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 24
+          "agree_pct": 88
         },
         {
           "id": "B",
@@ -456,187 +393,435 @@
         },
         {
           "id": "C",
-          "agree_pct": 64
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_9",
+      "text": "יש לאפשר לבתי מרקחת פרטיים לגדל ולמכור קנאביס רפואי ישירות לחולים, גם במחיר של ויתור על פיקוח ממשלתי הדוק על שרשרת האספקה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134000,
+      "agree_pct": 45,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "ensuring_access_to_medical_cannabis_for_patients_without_compromising_their_care",
+      "topic_label": "קנאביס רפואי לחולים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 14
+        },
+        {
+          "id": "B",
+          "agree_pct": 45
+        },
+        {
+          "id": "C",
+          "agree_pct": 79
         }
       ],
       "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_10",
+      "text": "חייבים לנתק לחלוטין את הרגולציה על קנאביס רפואי מהדיון על לגליזציה, כדי לא לעכב טיפול מחולים שזקוקים לו",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 95000,
+      "agree_pct": 78,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": null,
+      "topic_key": "ensuring_access_to_medical_cannabis_for_patients_without_compromising_their_care",
+      "topic_label": "קנאביס רפואי לחולים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 80
+        },
+        {
+          "id": "B",
+          "agree_pct": 95
+        },
+        {
+          "id": "C",
+          "agree_pct": 73
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_11",
+      "text": "יש לסבסד במלואו שמן קנאביס לילדים חולי אפילפסיה, במימון שיושג דרך הטלת מס בריאות מיוחד של 3% על מכירת אלכוהול",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 58000,
+      "agree_pct": 65,
+      "time_label": "לפני שעה",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "ensuring_access_to_medical_cannabis_for_patients_without_compromising_their_care",
+      "topic_label": "קנאביס רפואי לחולים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 69
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
+        },
+        {
+          "id": "C",
+          "agree_pct": 64
+        }
+      ],
+      "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_12",
+      "text": "צריך לקבוע עונש מינימום של חמש שנות מאסר בפועל על החזקת נשק בלתי חוקי, בלי אפשרות לעסקאות טיעון מקלות",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295000,
+      "agree_pct": 89,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "combating_violent_crime_and_ensuring_public_safety_in_cities",
+      "topic_label": "מאבק באלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 90
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 93
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_13",
+      "text": "יש להקים תחנות משטרה חדשות בלב שכונות מוכות פשיעה, גם אם זה יבוא על חשבון סגירת מרכזים קהילתיים באותן שכונות כדי לממן את המהלך",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 167000,
+      "agree_pct": 47,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "combating_violent_crime_and_ensuring_public_safety_in_cities",
+      "topic_label": "מאבק באלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 18
+        },
+        {
+          "id": "B",
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "agree_pct": 44
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_14",
+      "text": "צריך להקים משטרות עירוניות עם סמכויות מעצר מלאות כדי להגיב מהר יותר לאירועי ירי ואלימות ברחובות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 125000,
+      "agree_pct": 72,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "combating_violent_crime_and_ensuring_public_safety_in_cities",
+      "topic_label": "מאבק באלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "agree_pct": 64
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_15",
+      "text": "יש להתנות העברת תקציבי פיתוח ממשלתיים לעיריות בירידה מוכחת בשיעור הפשיעה האלימה בשטחן",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 54000,
+      "agree_pct": 48,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "combating_violent_crime_and_ensuring_public_safety_in_cities",
+      "topic_label": "מאבק באלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 44
+        },
+        {
+          "id": "B",
+          "agree_pct": 40
+        },
+        {
+          "id": "C",
+          "agree_pct": 49
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-04-30_0",
-      "text": "יש לאפשר לעיריות להציב מצלמות זיהוי פנים במרחב הציבורי כדי לאתר עברייני אלימות מועדים, גם במחיר של פגיעה בפרטיות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 142050,
-      "agree_pct": 75,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_violence_and_crime_in_israeli_cities_as_seen_in_incidents_in_tel_aviv_and_haifa",
-      "topic_label": "אלימות ופשיעה בערים",
+      "id": "decl_challenger_2026-05-04_0",
+      "text": "חובה על בתי ספר לדווח למשטרה על כל אירוע אלימות פיזית חמורה, ולא להסתפק בטיפול משמעתי פנימי בתוך המערכת",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 215400,
+      "agree_pct": 88,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_the_rise_in_youth_violence_and_juvenile_delinquency",
+      "topic_label": "אלימות נוער ועבריינות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 88
         },
         {
           "id": "B",
-          "agree_pct": 71
+          "agree_pct": 90
         },
         {
           "id": "C",
-          "agree_pct": 64
+          "agree_pct": 82
         }
       ],
-      "surprise": null,
+      "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_1",
-      "text": "צריך לתגבר את נוכחות המשטרה באזורי בילוי על חשבון ביטול פסטיבלים ואירועי תרבות עירוניים",
+      "id": "decl_challenger_2026-05-04_1",
+      "text": "יש להקים בתי משפט ייעודיים ומהירים לעבירות נוער, במימון שיושג מקיצוץ של 10% בתקציב תנועות הנוער והחינוך הבלתי פורמלי",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 210400,
-      "agree_pct": 48,
-      "time_label": "לפני יום",
+      "vote_count": 142000,
+      "agree_pct": 42,
+      "time_label": "לפני 5 שעות",
       "pipeline_status": null,
-      "topic_key": "addressing_violence_and_crime_in_israeli_cities_as_seen_in_incidents_in_tel_aviv_and_haifa",
-      "topic_label": "אלימות ופשיעה בערים",
+      "topic_key": "addressing_the_rise_in_youth_violence_and_juvenile_delinquency",
+      "topic_label": "אלימות נוער ועבריינות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 48
+          "agree_pct": 42
         },
         {
           "id": "B",
-          "agree_pct": 26
+          "agree_pct": 20
         },
         {
           "id": "C",
-          "agree_pct": 72
+          "agree_pct": 66
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_2",
-      "text": "יש לשלול הטבות עירוניות, כמו תווי חניה והנחות בארנונה, מתושבים שהורשעו בעבירות אלימות במרחב הציבורי",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52300,
-      "agree_pct": 60,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "addressing_violence_and_crime_in_israeli_cities_as_seen_in_incidents_in_tel_aviv_and_haifa",
-      "topic_label": "אלימות ופשיעה בערים",
+      "id": "decl_challenger_2026-05-04_2",
+      "text": "צריך לקנוס רשתות חברתיות שהאלגוריתם שלהן מקדם סרטוני אלימות וקטטות בקרב בני נוער ישראלים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 89000,
+      "agree_pct": 75,
+      "time_label": "לפני יום",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_the_rise_in_youth_violence_and_juvenile_delinquency",
+      "topic_label": "אלימות נוער ועבריינות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 51
+          "agree_pct": 72
         },
         {
           "id": "B",
-          "agree_pct": 54
+          "agree_pct": 83
         },
         {
           "id": "C",
-          "agree_pct": 47
+          "agree_pct": 69
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_3",
-      "text": "חובה לדרוש מכל מתחם בילוי מסחרי לממן בעצמו אבטחה חמושה היקפית לאחר חצות, כתנאי לרישיון עסק",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 285000,
-      "agree_pct": 88,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "addressing_violence_and_crime_in_israeli_cities_as_seen_in_incidents_in_tel_aviv_and_haifa",
-      "topic_label": "אלימות ופשיעה בערים",
+      "id": "decl_challenger_2026-05-04_3",
+      "text": "עדיף לחייב בני נוער בעבירה ראשונה ב-100 שעות התנדבות בקהילה במקום לפתוח להם תיק פלילי שיהרוס להם את העתיד",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 51000,
+      "agree_pct": 68,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_rise_in_youth_violence_and_juvenile_delinquency",
+      "topic_label": "אלימות נוער ועבריינות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 85
+          "agree_pct": 65
         },
         {
           "id": "B",
-          "agree_pct": 92
+          "agree_pct": 78
         },
         {
           "id": "C",
-          "agree_pct": 84
+          "agree_pct": 70
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_4",
-      "text": "יש להחרים קורקינטים חשמליים מרוכבים מתחת לגיל 16 במקום, ללא אפשרות לשלם קנס כדי לקבל את הכלי בחזרה",
+      "id": "decl_challenger_2026-05-04_4",
+      "text": "צריך לאסור על משאיות כבדות לנסוע בכבישים בינעירוניים בשעות העומס של הבוקר כדי למנוע תאונות קטלניות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 312000,
-      "agree_pct": 92,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_highlighted_by_multiple_incidents_involving_vehicles_and_electric_scooters",
+      "vote_count": 310500,
+      "agree_pct": 86,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "improving_road_safety_to_prevent_fatal_traffic_accidents",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 83
         },
         {
           "id": "B",
-          "agree_pct": 92
+          "agree_pct": 86
         },
         {
           "id": "C",
-          "agree_pct": 87
+          "agree_pct": 81
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_5",
-      "text": "צריך לחייב כל רוכב קורקינט ואופניים חשמליים בהוצאת לוחית רישוי וביטוח צד ג' כתנאי לעלייה לכביש",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 198500,
-      "agree_pct": 82,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_highlighted_by_multiple_incidents_involving_vehicles_and_electric_scooters",
+      "id": "decl_challenger_2026-05-04_5",
+      "text": "יש לרשת את כל הכבישים הבינעירוניים במצלמות מהירות ממוצעת, גם אם זה יחייב העלאה של 20% בגובה הקנסות כדי לממן את המערכת",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 185000,
+      "agree_pct": 52,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_to_prevent_fatal_traffic_accidents",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 73
+          "agree_pct": 60
+        },
+        {
+          "id": "B",
+          "agree_pct": 21
+        },
+        {
+          "id": "C",
+          "agree_pct": 80
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_6",
+      "text": "נהג שהיה מעורב בתאונה בזמן שהשתמש בטלפון הנייד צריך לאבד את הרישיון שלו אוטומטית לחמש שנים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 112000,
+      "agree_pct": 81,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "improving_road_safety_to_prevent_fatal_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 84
         },
         {
           "id": "B",
@@ -644,185 +829,61 @@
         },
         {
           "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-30_6",
-      "text": "יש לסבסד קורסי רכיבה מתקדמים לבני נוער, במימון שיושג דרך הטלת מס של 5% על כל קניית קורקינט חשמלי חדש",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 115000,
-      "agree_pct": 55,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_highlighted_by_multiple_incidents_involving_vehicles_and_electric_scooters",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 20
-        },
-        {
-          "id": "B",
-          "agree_pct": 55
-        },
-        {
-          "id": "C",
-          "agree_pct": 77
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-30_7",
-      "text": "חובה לאסור לחלוטין נסיעת קורקינטים על מדרכות ולהוריד אותם לכביש, גם אם זה יאט משמעותית את תנועת הרכבים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 275000,
-      "agree_pct": 45,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "improving_road_safety_and_reducing_traffic_accidents_highlighted_by_multiple_incidents_involving_vehicles_and_electric_scooters",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 21
-        },
-        {
-          "id": "B",
           "agree_pct": 75
-        },
-        {
-          "id": "C",
-          "agree_pct": 49
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-30_8",
-      "text": "חובה לשלב סדנאות חובה למניעת אלימות בתיכונים, על חשבון קיצוץ שעות ההכנה לבגרויות",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 178000,
-      "agree_pct": 49,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_youth_violence_and_its_impact_on_families_following_the_arrest_of_suspects_in_a_murder_case",
-      "topic_label": "אלימות נוער והשלכותיה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 18
-        },
-        {
-          "id": "B",
-          "agree_pct": 53
-        },
-        {
-          "id": "C",
-          "agree_pct": 76
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-04-30_9",
-      "text": "הורים לבני נוער שהיו מעורבים באלימות קשה צריכים לעבור תוכנית שיקום חובה, ואם יסרבו - יועמדו לדין פלילי",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 205000,
-      "agree_pct": 72,
-      "time_label": "לפני יום",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "addressing_the_issue_of_youth_violence_and_its_impact_on_families_following_the_arrest_of_suspects_in_a_murder_case",
-      "topic_label": "אלימות נוער והשלכותיה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
         }
       ],
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_10",
-      "text": "יש להרחיק בני נוער אלימים למסגרות חינוך ושיקום סגורות, במקום להשאיר אותם במערכת החינוך הרגילה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 265000,
-      "agree_pct": 86,
-      "time_label": "לפני יומיים",
+      "id": "decl_challenger_2026-05-04_7",
+      "text": "יש לחייב כל נהג לעבור קורס רענון נהיגה מעשי כל עשר שנים כתנאי לחידוש הרישיון",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 62000,
+      "agree_pct": 60,
+      "time_label": "לפני חצי שעה",
       "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_youth_violence_and_its_impact_on_families_following_the_arrest_of_suspects_in_a_murder_case",
-      "topic_label": "אלימות נוער והשלכותיה",
+      "topic_key": "improving_road_safety_to_prevent_fatal_traffic_accidents",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 60
         },
         {
           "id": "B",
-          "agree_pct": 82
+          "agree_pct": 56
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 57
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     },
     {
-      "id": "decl_challenger_2026-04-30_11",
-      "text": "צריך להפעיל מוקדי נוער קהילתיים עד השעות הקטנות של הלילה בסופי שבוע, גם אם זה יחייב תוספת תשלום בארנונה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 140000,
-      "agree_pct": 58,
-      "time_label": "לפני 10 שעות",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_youth_violence_and_its_impact_on_families_following_the_arrest_of_suspects_in_a_murder_case",
-      "topic_label": "אלימות נוער והשלכותיה",
+      "id": "decl_challenger_2026-05-04_8",
+      "text": "חולים כרוניים שמטופלים בקנאביס רפואי צריכים לקבל אפשרות לחדש מרשם באונליין, בלי לחכות חודשים לתור אצל רופא מומחה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 91,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "ensuring_access_to_medical_cannabis_for_patients_without_compromising_their_care",
+      "topic_label": "קנאביס רפואי לחולים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 24
+          "agree_pct": 88
         },
         {
           "id": "B",
@@ -830,14 +891,231 @@
         },
         {
           "id": "C",
-          "agree_pct": 64
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_9",
+      "text": "יש לאפשר לבתי מרקחת פרטיים לגדל ולמכור קנאביס רפואי ישירות לחולים, גם במחיר של ויתור על פיקוח ממשלתי הדוק על שרשרת האספקה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134000,
+      "agree_pct": 45,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "ensuring_access_to_medical_cannabis_for_patients_without_compromising_their_care",
+      "topic_label": "קנאביס רפואי לחולים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 14
+        },
+        {
+          "id": "B",
+          "agree_pct": 45
+        },
+        {
+          "id": "C",
+          "agree_pct": 79
         }
       ],
       "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_10",
+      "text": "חייבים לנתק לחלוטין את הרגולציה על קנאביס רפואי מהדיון על לגליזציה, כדי לא לעכב טיפול מחולים שזקוקים לו",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 95000,
+      "agree_pct": 78,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": null,
+      "topic_key": "ensuring_access_to_medical_cannabis_for_patients_without_compromising_their_care",
+      "topic_label": "קנאביס רפואי לחולים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 80
+        },
+        {
+          "id": "B",
+          "agree_pct": 95
+        },
+        {
+          "id": "C",
+          "agree_pct": 73
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_11",
+      "text": "יש לסבסד במלואו שמן קנאביס לילדים חולי אפילפסיה, במימון שיושג דרך הטלת מס בריאות מיוחד של 3% על מכירת אלכוהול",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 58000,
+      "agree_pct": 65,
+      "time_label": "לפני שעה",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "ensuring_access_to_medical_cannabis_for_patients_without_compromising_their_care",
+      "topic_label": "קנאביס רפואי לחולים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 69
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
+        },
+        {
+          "id": "C",
+          "agree_pct": 64
+        }
+      ],
+      "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-04-30",
-      "created": "2026-04-30T02:53:37.286058+00:00"
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_12",
+      "text": "צריך לקבוע עונש מינימום של חמש שנות מאסר בפועל על החזקת נשק בלתי חוקי, בלי אפשרות לעסקאות טיעון מקלות",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295000,
+      "agree_pct": 89,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "combating_violent_crime_and_ensuring_public_safety_in_cities",
+      "topic_label": "מאבק באלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 90
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 93
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_13",
+      "text": "יש להקים תחנות משטרה חדשות בלב שכונות מוכות פשיעה, גם אם זה יבוא על חשבון סגירת מרכזים קהילתיים באותן שכונות כדי לממן את המהלך",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 167000,
+      "agree_pct": 47,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "combating_violent_crime_and_ensuring_public_safety_in_cities",
+      "topic_label": "מאבק באלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 18
+        },
+        {
+          "id": "B",
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "agree_pct": 44
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_14",
+      "text": "צריך להקים משטרות עירוניות עם סמכויות מעצר מלאות כדי להגיב מהר יותר לאירועי ירי ואלימות ברחובות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 125000,
+      "agree_pct": 72,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "combating_violent_crime_and_ensuring_public_safety_in_cities",
+      "topic_label": "מאבק באלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "agree_pct": 64
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-04_15",
+      "text": "יש להתנות העברת תקציבי פיתוח ממשלתיים לעיריות בירידה מוכחת בשיעור הפשיעה האלימה בשטחן",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 54000,
+      "agree_pct": 48,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "combating_violent_crime_and_ensuring_public_safety_in_cities",
+      "topic_label": "מאבק באלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 44
+        },
+        {
+          "id": "B",
+          "agree_pct": 40
+        },
+        {
+          "id": "C",
+          "agree_pct": 49
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-04",
+      "created": "2026-05-04T05:58:03.177367+00:00"
     }
   ]
 }
