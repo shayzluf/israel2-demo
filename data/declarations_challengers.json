@@ -1,9 +1,39 @@
 {
-  "updated": "2026-05-05T02:39:45.848296+00:00",
+  "updated": "2026-05-06T02:40:14.359421+00:00",
   "topics": [
     {
-      "key": "ensuring_public_safety_and_emergency_preparedness_for_large_gatherings_as_seen_with_the_approval_of_events_for_the_rashbi_celebration_in_meron",
-      "label": "בטיחות באירועים המוניים",
+      "key": "addressing_the_high_rate_of_homicides_in_the_arab_community",
+      "label": "אלימות בחברה הערבית",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 68
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 64
+        }
+      ],
+      "convergence": "באופן מפתיע, כל הקבוצות תמימות דעים שיש צורך בתוכנית מקיפה להגנת עדים בחברה הערבית, שתמומן על ידי קיצוץ בתקציב המשטרה או הטלת סנקציות על רשויות מקומיות סרבניות",
+      "divergence": "בעוד שקבוצה א' רואה בחובת פרסום דוחות התקדמות רבעוניים על ידי מבקר המדינה ככלי חיוני, קבוצה ב' וקבוצה ג' חלוקות ביניהן האם המימון לתוכניות יגיע מקיצוץ תקציב המשטרה או מסנקציות כלכליות על רשויות מקומיות"
+    },
+    {
+      "key": "public_safety_and_reducing_violent_crime_as_evidenced_by_multiple_shooting_incidents",
+      "label": "ביטחון אישי ואלימות",
       "you_group": "A",
       "groups": [
         {
@@ -18,22 +48,22 @@
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 70
+          "agree_pct": 56
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 59
+          "agree_pct": 73
         }
       ],
-      "convergence": "למרות השוני בגישות, כל הקבוצות מסכימות שיש צורך דחוף בשינוי מהותי באופן ניהול אירועים המוניים כדי למנוע אסונות עתידיים",
-      "divergence": "בעוד שקבוצה א' רואה בניהול מקצועי ופיקוח אזרחי את המפתח לבטיחות, קבוצה ב' מתמקדת בצמצום סכנות ספציפיות כמו הדלקת מדורות, וקבוצה ג' שמה דגש על אחריות כלכלית של המארגנים"
+      "convergence": "קיים קונצנזוס רחב בין הקבוצות כי יש צורך בחיזוק הביטחון האישי, בין אם באמצעות יחידות שיטור עירוני עצמאיות או על ידי החרמת רכוש של מעורבים בירי",
+      "divergence": "הוויכוח העיקרי הוא בין קבוצה א' וקבוצה ב' התומכות בהקמת יחידות שיטור עירוני חמושות, כאשר קבוצה א' מתנגדת להעלאת ארנונה למימון וקבוצה ב' מוכנה לשקול זאת, לבין קבוצה ג' המעדיפה החרמת רכוש ודיווח חובה של בתי חולים למשטרה"
     },
     {
-      "key": "addressing_urban_violence_and_public_safety_concerns_following_reports_of_a_man_injured_in_netanya",
-      "label": "ביטחון אישי בערים",
+      "key": "road_safety_and_preventing_traffic_accidents_particularly_involving_pedestrians",
+      "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
         {
@@ -41,14 +71,44 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 77
+          "agree_pct": 64
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 65
+          "agree_pct": 77
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 78
+        }
+      ],
+      "convergence": "כל הקבוצות מסכימות על החשיבות העליונה של בטיחות הולכי רגל, ומכירות בצורך בפתרונות טכנולוגיים או ענישה מחמירה למען מטרה זו",
+      "divergence": "קבוצה א' וקבוצה ב' חלוקות על מקור המימון לסבסוד מערכות בטיחות מתקדמות, כאשר קבוצה א' מעדיפה קיצוץ בתקציבי פיתוח כבישים וקבוצה ב' מתנגדת לכך, בעוד שקבוצה ג' מתמקדת בענישה חמורה של נהגים מסיחי דעת ובהעברת אחריות התאורה למשרד התחבורה"
+    },
+    {
+      "key": "emergency_services_and_public_safety_as_indicated_by_the_extension_of_the_state_of_emergency",
+      "label": "הארכת מצב חירום",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 61
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 70
         },
         {
           "id": "C",
@@ -58,208 +118,239 @@
           "agree_pct": 67
         }
       ],
-      "convergence": "באופן מפתיע, ישנה הסכמה רחבה בין הקבוצות על כך שיש להגביר את ההרתעה והאכיפה נגד אלימות עירונית, אך בדרכים שונות מאוד",
-      "divergence": "קבוצה א' תומכת בהגבלות על פרטיות כמו מצלמות זיהוי פנים, בעוד שקבוצה ב' דורשת עונשי מינימום מחמירים על נשיאת נשק קר, וקבוצה ג' מעדיפה שקיפות ציבורית לגבי עבריינים סדרתיים ואחריות עסקית"
+      "convergence": "ישנה הסכמה כללית בין הקבוצות על הצורך בפיקוח הדוק יותר על הארכת מצב חירום, בין אם באמצעות רוב מיוחד בכנסת או ביטול אוטומטי של תקנות",
+      "divergence": "קבוצה א' דורשת רוב מיוחד של 70 חברי כנסת להארכת מצב חירום, בעוד קבוצה ב' מוכנה לשקול פיצויים מוגדלים לעסקים על חשבון העלאת מע\"מ, וקבוצה ג' מתמקדת בביטול אוטומטי של תקנות ללא אישור ועדות הכנסת ובהקמת ועדה אזרחית לבחינת ההצדקה הביטחונית"
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-05-05_0",
-      "text": "עלויות האבטחה והכיבוי באירועי דת המוניים צריכות לחול על המארגנים, גם אם זה יחייב גביית תשלום על כרטיסי כניסה מהמשתתפים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 210000,
-      "agree_pct": 52,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "ensuring_public_safety_and_emergency_preparedness_for_large_gatherings_as_seen_with_the_approval_of_events_for_the_rashbi_celebration_in_meron",
-      "topic_label": "בטיחות באירועים המוניים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 45
-        },
-        {
-          "id": "C",
-          "agree_pct": 19
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_1",
-      "text": "כל אירוע המוני של מעל 10,000 משתתפים חייב להיות מנוהל על ידי מהנדס בטיחות אזרחי מוסמך, ולא רק על ידי מפקדי המשטרה בשטח",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 315000,
-      "agree_pct": 88,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "ensuring_public_safety_and_emergency_preparedness_for_large_gatherings_as_seen_with_the_approval_of_events_for_the_rashbi_celebration_in_meron",
-      "topic_label": "בטיחות באירועים המוניים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 86
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_2",
-      "text": "יש לאסור לחלוטין על הדלקת מדורות ענק באזורים צפופים כמו הר מירון, ולהסתפק בהדלקות סמליות ומבוקרות כדי למנוע אסון",
+      "id": "decl_challenger_2026-05-06_0",
+      "text": "יש להקים תוכנית להגנת עדים המותאמת תרבותית לחברה הערבית, כדי לעודד תושבים להעיד נגד ארגוני פשיעה",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 165000,
-      "agree_pct": 74,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "ensuring_public_safety_and_emergency_preparedness_for_large_gatherings_as_seen_with_the_approval_of_events_for_the_rashbi_celebration_in_meron",
-      "topic_label": "בטיחות באירועים המוניים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 71
-        },
-        {
-          "id": "B",
-          "agree_pct": 82
-        },
-        {
-          "id": "C",
-          "agree_pct": 68
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_3",
-      "text": "חובה להנהיג מערכת כרטוס דיגיטלית אישית עם תעודת זהות לאירועים המוניים, כך שאף אדם לא יוכל להיכנס למתחם ללא רישום מראש",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 62000,
-      "agree_pct": 60,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "ensuring_public_safety_and_emergency_preparedness_for_large_gatherings_as_seen_with_the_approval_of_events_for_the_rashbi_celebration_in_meron",
-      "topic_label": "בטיחות באירועים המוניים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 57
-        },
-        {
-          "id": "B",
-          "agree_pct": 70
-        },
-        {
-          "id": "C",
-          "agree_pct": 62
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_4",
-      "text": "יש לרשת את מרכזי הערים במצלמות זיהוי פנים מתקדמות לאיתור עבריינים, גם במחיר של פגיעה מסוימת בפרטיות האזרחים במרחב הציבורי",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 198000,
-      "agree_pct": 45,
-      "time_label": "לפני יום",
+      "vote_count": 145000,
+      "agree_pct": 76,
+      "time_label": "לפני 3 שעות",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_urban_violence_and_public_safety_concerns_following_reports_of_a_man_injured_in_netanya",
-      "topic_label": "ביטחון אישי בערים",
+      "topic_key": "addressing_the_high_rate_of_homicides_in_the_arab_community",
+      "topic_label": "אלימות בחברה הערבית",
       "group_breakdown": [
         {
           "id": "A",
+          "agree_pct": 90
+        },
+        {
+          "id": "B",
           "agree_pct": 72
         },
         {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_1",
+      "text": "מימון תוכנית הגנת העדים החדשה ייעשה על חשבון קיצוץ של 2% מתקציב הרכש הכללי של המשטרה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 210500,
+      "agree_pct": 48,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_high_rate_of_homicides_in_the_arab_community",
+      "topic_label": "אלימות בחברה הערבית",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 48
+        },
+        {
           "id": "B",
-          "agree_pct": 16
+          "agree_pct": 26
         },
         {
           "id": "C",
-          "agree_pct": 40
+          "agree_pct": 72
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-05_5",
-      "text": "צריך לקבוע עונשי מינימום מחמירים על נשיאת סכין או נשק קר ברחוב ללא הצדקה, כדי לייצר הרתעה אמיתית נגד אלימות עירונית",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 290000,
-      "agree_pct": 92,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "addressing_urban_violence_and_public_safety_concerns_following_reports_of_a_man_injured_in_netanya",
-      "topic_label": "ביטחון אישי בערים",
+      "id": "decl_challenger_2026-05-06_2",
+      "text": "יש להטיל סנקציות כלכליות על רשויות מקומיות שיסרבו לשתף פעולה עם חקירות משטרה נגד משפחות פשע בשטחן",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 189000,
+      "agree_pct": 54,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_high_rate_of_homicides_in_the_arab_community",
+      "topic_label": "אלימות בחברה הערבית",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 95
+          "agree_pct": 48
         },
         {
           "id": "B",
-          "agree_pct": 92
+          "agree_pct": 75
         },
         {
           "id": "C",
-          "agree_pct": 97
+          "agree_pct": 32
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_3",
+      "text": "חובה לחייב את מבקר המדינה לפרסם דוח התקדמות רבעוני פומבי על יישום התוכניות הממשלתיות למיגור הפשיעה בחברה הערבית",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 312000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_the_high_rate_of_homicides_in_the_arab_community",
+      "topic_label": "אלימות בחברה הערבית",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 86
+        },
+        {
+          "id": "B",
+          "agree_pct": 93
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.86,
+      "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-05_6",
-      "text": "יש להקים מאגר מידע פתוח לציבור שבו יפורסמו שמותיהם של מי שהורשעו באלימות סדרתית, כדי שהתושבים יוכלו להיזהר",
+      "id": "decl_challenger_2026-05-06_4",
+      "text": "יש לאפשר לרשויות המקומיות להפעיל יחידות שיטור עירוני חמושות ועצמאיות, ללא תלות במשטרה הארצית",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 71,
-      "time_label": "לפני 10 שעות",
+      "vote_count": 120000,
+      "agree_pct": 68,
+      "time_label": "לפני 5 שעות",
       "pipeline_status": null,
-      "topic_key": "addressing_urban_violence_and_public_safety_concerns_following_reports_of_a_man_injured_in_netanya",
-      "topic_label": "ביטחון אישי בערים",
+      "topic_key": "public_safety_and_reducing_violent_crime_as_evidenced_by_multiple_shooting_incidents",
+      "topic_label": "ביטחון אישי ואלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 79
+        },
+        {
+          "id": "B",
+          "agree_pct": 59
+        },
+        {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_5",
+      "text": "הקמת יחידות שיטור עירוני חמושות תהיה אפשרית רק אם המהלך יחייב העלאת מס ארנונה בשיעור של עד 3% למימון העלויות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 165000,
+      "agree_pct": 42,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "public_safety_and_reducing_violent_crime_as_evidenced_by_multiple_shooting_incidents",
+      "topic_label": "ביטחון אישי ואלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 50
+        },
+        {
+          "id": "B",
+          "agree_pct": 11
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_6",
+      "text": "יש להחרים רכבים ורכוש של מי שנתפס מעורב באירועי ירי במרחב הציבורי, עוד לפני הרשעה חלוטה בבית משפט",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 86,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "public_safety_and_reducing_violent_crime_as_evidenced_by_multiple_shooting_incidents",
+      "topic_label": "ביטחון אישי ואלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 92
+        },
+        {
+          "id": "B",
+          "agree_pct": 83
+        },
+        {
+          "id": "C",
+          "agree_pct": 87
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_7",
+      "text": "חובה על בתי חולים לדווח למשטרה בזמן אמת על כל פצוע ירי שמגיע למיון, גם במחיר פגיעה מסוימת בחיסיון הרפואי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 55000,
+      "agree_pct": 74,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "public_safety_and_reducing_violent_crime_as_evidenced_by_multiple_shooting_incidents",
+      "topic_label": "ביטחון אישי ואלימות",
       "group_breakdown": [
         {
           "id": "A",
@@ -267,249 +358,497 @@
         },
         {
           "id": "B",
-          "agree_pct": 88
+          "agree_pct": 70
         },
         {
           "id": "C",
-          "agree_pct": 65
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_7",
-      "text": "יש לחייב עסקים שפועלים בשעות הלילה המאוחרות להעסיק מאבטח, תמורת הנחה בארנונה העסקית שתסייע להם לממן את העלות",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 51000,
-      "agree_pct": 68,
-      "time_label": "לפני חצי שעה",
-      "pipeline_status": null,
-      "topic_key": "addressing_urban_violence_and_public_safety_concerns_following_reports_of_a_man_injured_in_netanya",
-      "topic_label": "ביטחון אישי בערים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 68
-        },
-        {
-          "id": "B",
-          "agree_pct": 64
-        },
-        {
-          "id": "C",
-          "agree_pct": 65
+          "agree_pct": 71
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_8",
+      "text": "יש לחייב התקנת מערכות בלימת חירום אוטונומיות לזיהוי הולכי רגל בכל רכב חדש המיובא לישראל",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295000,
+      "agree_pct": 92,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "road_safety_and_preventing_traffic_accidents_particularly_involving_pedestrians",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 93
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_9",
+      "text": "סבסוד מערכות בטיחות מתקדמות לרכבים ישנים ימומן על חשבון תקציבי הפיתוח של כבישים מהירים חדשים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134000,
+      "agree_pct": 45,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_safety_and_preventing_traffic_accidents_particularly_involving_pedestrians",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 14
+        },
+        {
+          "id": "B",
+          "agree_pct": 45
+        },
+        {
+          "id": "C",
+          "agree_pct": 79
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_10",
+      "text": "נהג שפגע בהולך רגל במעבר חצייה בגלל שימוש בטלפון נייד יאבד את רישיונו לצמיתות, ללא אפשרות לחידוש",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 210000,
+      "agree_pct": 81,
+      "time_label": "לפני יום",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "road_safety_and_preventing_traffic_accidents_particularly_involving_pedestrians",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 76
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_11",
+      "text": "יש להעביר את האחריות לתאורת מעברי חצייה מהרשויות המקומיות ישירות למשרד התחבורה כדי להבטיח אחידות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 62000,
+      "agree_pct": 65,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "road_safety_and_preventing_traffic_accidents_particularly_involving_pedestrians",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 69
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
+        },
+        {
+          "id": "C",
+          "agree_pct": 64
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_12",
+      "text": "יש לדרוש רוב מיוחד של 70 חברי כנסת כדי להאריך מצב חירום ממשלתי מעבר לשלושת החודשים הראשונים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 178000,
+      "agree_pct": 72,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "emergency_services_and_public_safety_as_indicated_by_the_extension_of_the_state_of_emergency",
+      "topic_label": "הארכת מצב חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "agree_pct": 63
+        },
+        {
+          "id": "C",
+          "agree_pct": 78
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_13",
+      "text": "מתן פיצויים מוגדלים לעסקים שנפגעו מהארכת מצב החירום יחייב העלאת מס ערך מוסף (מע״מ) באחוז אחד למשך שנה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 245000,
+      "agree_pct": 38,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "emergency_services_and_public_safety_as_indicated_by_the_extension_of_the_state_of_emergency",
+      "topic_label": "הארכת מצב חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 9
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 35
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_14",
+      "text": "תקנות שעת חירום יבוטלו אוטומטית אם ועדות הכנסת לא יתכנסו לאשר אותן בתוך 48 שעות מרגע פרסומן",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 260000,
+      "agree_pct": 88,
+      "time_label": "לפני 10 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "emergency_services_and_public_safety_as_indicated_by_the_extension_of_the_state_of_emergency",
+      "topic_label": "הארכת מצב חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 92
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_15",
+      "text": "יש להקים ועדה אזרחית בלתי תלויה שתבחן ותפרסם לציבור את ההצדקה הביטחונית לכל הארכה נוספת של מצב החירום",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 51000,
+      "agree_pct": 69,
+      "time_label": "לפני חצי שעה",
+      "pipeline_status": null,
+      "topic_key": "emergency_services_and_public_safety_as_indicated_by_the_extension_of_the_state_of_emergency",
+      "topic_label": "הארכת מצב חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 61
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-05-05_0",
-      "text": "עלויות האבטחה והכיבוי באירועי דת המוניים צריכות לחול על המארגנים, גם אם זה יחייב גביית תשלום על כרטיסי כניסה מהמשתתפים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 210000,
-      "agree_pct": 52,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "ensuring_public_safety_and_emergency_preparedness_for_large_gatherings_as_seen_with_the_approval_of_events_for_the_rashbi_celebration_in_meron",
-      "topic_label": "בטיחות באירועים המוניים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 45
-        },
-        {
-          "id": "C",
-          "agree_pct": 19
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_1",
-      "text": "כל אירוע המוני של מעל 10,000 משתתפים חייב להיות מנוהל על ידי מהנדס בטיחות אזרחי מוסמך, ולא רק על ידי מפקדי המשטרה בשטח",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 315000,
-      "agree_pct": 88,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "ensuring_public_safety_and_emergency_preparedness_for_large_gatherings_as_seen_with_the_approval_of_events_for_the_rashbi_celebration_in_meron",
-      "topic_label": "בטיחות באירועים המוניים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 86
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_2",
-      "text": "יש לאסור לחלוטין על הדלקת מדורות ענק באזורים צפופים כמו הר מירון, ולהסתפק בהדלקות סמליות ומבוקרות כדי למנוע אסון",
+      "id": "decl_challenger_2026-05-06_0",
+      "text": "יש להקים תוכנית להגנת עדים המותאמת תרבותית לחברה הערבית, כדי לעודד תושבים להעיד נגד ארגוני פשיעה",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 165000,
-      "agree_pct": 74,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "ensuring_public_safety_and_emergency_preparedness_for_large_gatherings_as_seen_with_the_approval_of_events_for_the_rashbi_celebration_in_meron",
-      "topic_label": "בטיחות באירועים המוניים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 71
-        },
-        {
-          "id": "B",
-          "agree_pct": 82
-        },
-        {
-          "id": "C",
-          "agree_pct": 68
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_3",
-      "text": "חובה להנהיג מערכת כרטוס דיגיטלית אישית עם תעודת זהות לאירועים המוניים, כך שאף אדם לא יוכל להיכנס למתחם ללא רישום מראש",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 62000,
-      "agree_pct": 60,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "ensuring_public_safety_and_emergency_preparedness_for_large_gatherings_as_seen_with_the_approval_of_events_for_the_rashbi_celebration_in_meron",
-      "topic_label": "בטיחות באירועים המוניים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 57
-        },
-        {
-          "id": "B",
-          "agree_pct": 70
-        },
-        {
-          "id": "C",
-          "agree_pct": 62
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_4",
-      "text": "יש לרשת את מרכזי הערים במצלמות זיהוי פנים מתקדמות לאיתור עבריינים, גם במחיר של פגיעה מסוימת בפרטיות האזרחים במרחב הציבורי",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 198000,
-      "agree_pct": 45,
-      "time_label": "לפני יום",
+      "vote_count": 145000,
+      "agree_pct": 76,
+      "time_label": "לפני 3 שעות",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_urban_violence_and_public_safety_concerns_following_reports_of_a_man_injured_in_netanya",
-      "topic_label": "ביטחון אישי בערים",
+      "topic_key": "addressing_the_high_rate_of_homicides_in_the_arab_community",
+      "topic_label": "אלימות בחברה הערבית",
       "group_breakdown": [
         {
           "id": "A",
+          "agree_pct": 90
+        },
+        {
+          "id": "B",
           "agree_pct": 72
         },
         {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_1",
+      "text": "מימון תוכנית הגנת העדים החדשה ייעשה על חשבון קיצוץ של 2% מתקציב הרכש הכללי של המשטרה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 210500,
+      "agree_pct": 48,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_high_rate_of_homicides_in_the_arab_community",
+      "topic_label": "אלימות בחברה הערבית",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 48
+        },
+        {
           "id": "B",
-          "agree_pct": 16
+          "agree_pct": 26
         },
         {
           "id": "C",
-          "agree_pct": 40
+          "agree_pct": 72
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-05_5",
-      "text": "צריך לקבוע עונשי מינימום מחמירים על נשיאת סכין או נשק קר ברחוב ללא הצדקה, כדי לייצר הרתעה אמיתית נגד אלימות עירונית",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 290000,
-      "agree_pct": 92,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "addressing_urban_violence_and_public_safety_concerns_following_reports_of_a_man_injured_in_netanya",
-      "topic_label": "ביטחון אישי בערים",
+      "id": "decl_challenger_2026-05-06_2",
+      "text": "יש להטיל סנקציות כלכליות על רשויות מקומיות שיסרבו לשתף פעולה עם חקירות משטרה נגד משפחות פשע בשטחן",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 189000,
+      "agree_pct": 54,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_high_rate_of_homicides_in_the_arab_community",
+      "topic_label": "אלימות בחברה הערבית",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 95
+          "agree_pct": 48
         },
         {
           "id": "B",
-          "agree_pct": 92
+          "agree_pct": 75
         },
         {
           "id": "C",
-          "agree_pct": 97
+          "agree_pct": 32
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_3",
+      "text": "חובה לחייב את מבקר המדינה לפרסם דוח התקדמות רבעוני פומבי על יישום התוכניות הממשלתיות למיגור הפשיעה בחברה הערבית",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 312000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_the_high_rate_of_homicides_in_the_arab_community",
+      "topic_label": "אלימות בחברה הערבית",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 86
+        },
+        {
+          "id": "B",
+          "agree_pct": 93
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.86,
+      "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-05_6",
-      "text": "יש להקים מאגר מידע פתוח לציבור שבו יפורסמו שמותיהם של מי שהורשעו באלימות סדרתית, כדי שהתושבים יוכלו להיזהר",
+      "id": "decl_challenger_2026-05-06_4",
+      "text": "יש לאפשר לרשויות המקומיות להפעיל יחידות שיטור עירוני חמושות ועצמאיות, ללא תלות במשטרה הארצית",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 71,
-      "time_label": "לפני 10 שעות",
+      "vote_count": 120000,
+      "agree_pct": 68,
+      "time_label": "לפני 5 שעות",
       "pipeline_status": null,
-      "topic_key": "addressing_urban_violence_and_public_safety_concerns_following_reports_of_a_man_injured_in_netanya",
-      "topic_label": "ביטחון אישי בערים",
+      "topic_key": "public_safety_and_reducing_violent_crime_as_evidenced_by_multiple_shooting_incidents",
+      "topic_label": "ביטחון אישי ואלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 79
+        },
+        {
+          "id": "B",
+          "agree_pct": 59
+        },
+        {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_5",
+      "text": "הקמת יחידות שיטור עירוני חמושות תהיה אפשרית רק אם המהלך יחייב העלאת מס ארנונה בשיעור של עד 3% למימון העלויות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 165000,
+      "agree_pct": 42,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "public_safety_and_reducing_violent_crime_as_evidenced_by_multiple_shooting_incidents",
+      "topic_label": "ביטחון אישי ואלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 50
+        },
+        {
+          "id": "B",
+          "agree_pct": 11
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_6",
+      "text": "יש להחרים רכבים ורכוש של מי שנתפס מעורב באירועי ירי במרחב הציבורי, עוד לפני הרשעה חלוטה בבית משפט",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 86,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "public_safety_and_reducing_violent_crime_as_evidenced_by_multiple_shooting_incidents",
+      "topic_label": "ביטחון אישי ואלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 92
+        },
+        {
+          "id": "B",
+          "agree_pct": 83
+        },
+        {
+          "id": "C",
+          "agree_pct": 87
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_7",
+      "text": "חובה על בתי חולים לדווח למשטרה בזמן אמת על כל פצוע ירי שמגיע למיון, גם במחיר פגיעה מסוימת בחיסיון הרפואי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 55000,
+      "agree_pct": 74,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "public_safety_and_reducing_violent_crime_as_evidenced_by_multiple_shooting_incidents",
+      "topic_label": "ביטחון אישי ואלימות",
       "group_breakdown": [
         {
           "id": "A",
@@ -517,49 +856,266 @@
         },
         {
           "id": "B",
-          "agree_pct": 88
+          "agree_pct": 70
         },
         {
           "id": "C",
-          "agree_pct": 65
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-05_7",
-      "text": "יש לחייב עסקים שפועלים בשעות הלילה המאוחרות להעסיק מאבטח, תמורת הנחה בארנונה העסקית שתסייע להם לממן את העלות",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 51000,
-      "agree_pct": 68,
-      "time_label": "לפני חצי שעה",
-      "pipeline_status": null,
-      "topic_key": "addressing_urban_violence_and_public_safety_concerns_following_reports_of_a_man_injured_in_netanya",
-      "topic_label": "ביטחון אישי בערים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 68
-        },
-        {
-          "id": "B",
-          "agree_pct": 64
-        },
-        {
-          "id": "C",
-          "agree_pct": 65
+          "agree_pct": 71
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-05",
-      "created": "2026-05-05T02:39:45.848296+00:00"
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_8",
+      "text": "יש לחייב התקנת מערכות בלימת חירום אוטונומיות לזיהוי הולכי רגל בכל רכב חדש המיובא לישראל",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295000,
+      "agree_pct": 92,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "road_safety_and_preventing_traffic_accidents_particularly_involving_pedestrians",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 93
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_9",
+      "text": "סבסוד מערכות בטיחות מתקדמות לרכבים ישנים ימומן על חשבון תקציבי הפיתוח של כבישים מהירים חדשים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134000,
+      "agree_pct": 45,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_safety_and_preventing_traffic_accidents_particularly_involving_pedestrians",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 14
+        },
+        {
+          "id": "B",
+          "agree_pct": 45
+        },
+        {
+          "id": "C",
+          "agree_pct": 79
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_10",
+      "text": "נהג שפגע בהולך רגל במעבר חצייה בגלל שימוש בטלפון נייד יאבד את רישיונו לצמיתות, ללא אפשרות לחידוש",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 210000,
+      "agree_pct": 81,
+      "time_label": "לפני יום",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "road_safety_and_preventing_traffic_accidents_particularly_involving_pedestrians",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 76
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_11",
+      "text": "יש להעביר את האחריות לתאורת מעברי חצייה מהרשויות המקומיות ישירות למשרד התחבורה כדי להבטיח אחידות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 62000,
+      "agree_pct": 65,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "road_safety_and_preventing_traffic_accidents_particularly_involving_pedestrians",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 69
+        },
+        {
+          "id": "B",
+          "agree_pct": 74
+        },
+        {
+          "id": "C",
+          "agree_pct": 64
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_12",
+      "text": "יש לדרוש רוב מיוחד של 70 חברי כנסת כדי להאריך מצב חירום ממשלתי מעבר לשלושת החודשים הראשונים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 178000,
+      "agree_pct": 72,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "emergency_services_and_public_safety_as_indicated_by_the_extension_of_the_state_of_emergency",
+      "topic_label": "הארכת מצב חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "agree_pct": 63
+        },
+        {
+          "id": "C",
+          "agree_pct": 78
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_13",
+      "text": "מתן פיצויים מוגדלים לעסקים שנפגעו מהארכת מצב החירום יחייב העלאת מס ערך מוסף (מע״מ) באחוז אחד למשך שנה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 245000,
+      "agree_pct": 38,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "emergency_services_and_public_safety_as_indicated_by_the_extension_of_the_state_of_emergency",
+      "topic_label": "הארכת מצב חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 9
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 35
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_14",
+      "text": "תקנות שעת חירום יבוטלו אוטומטית אם ועדות הכנסת לא יתכנסו לאשר אותן בתוך 48 שעות מרגע פרסומן",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 260000,
+      "agree_pct": 88,
+      "time_label": "לפני 10 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "emergency_services_and_public_safety_as_indicated_by_the_extension_of_the_state_of_emergency",
+      "topic_label": "הארכת מצב חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 92
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-06_15",
+      "text": "יש להקים ועדה אזרחית בלתי תלויה שתבחן ותפרסם לציבור את ההצדקה הביטחונית לכל הארכה נוספת של מצב החירום",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 51000,
+      "agree_pct": 69,
+      "time_label": "לפני חצי שעה",
+      "pipeline_status": null,
+      "topic_key": "emergency_services_and_public_safety_as_indicated_by_the_extension_of_the_state_of_emergency",
+      "topic_label": "הארכת מצב חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 61
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-06",
+      "created": "2026-05-06T02:40:14.359421+00:00"
     }
   ]
 }
