@@ -1,9 +1,9 @@
 {
-  "updated": "2026-05-07T04:41:52.937433+00:00",
+  "updated": "2026-05-08T05:11:48.659490+00:00",
   "topics": [
     {
-      "key": "ensuring_the_health_and_safety_of_soldiers_specifically_regarding_outbreaks_of_illness_in_military_bases",
-      "label": "בריאות חיילים בבסיסים",
+      "key": "addressing_the_lack_of_housing_and_support_for_citizens_whose_homes_were_damaged_by_missile_attacks",
+      "label": "סיוע לנפגעי טילים",
       "you_group": "A",
       "groups": [
         {
@@ -11,28 +11,28 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 72
+          "agree_pct": 80
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 74
+          "agree_pct": 71
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 76
+          "agree_pct": 58
         }
       ],
-      "convergence": "שלוש הקבוצות תמימות דעים כי יש לחזק את הפיקוח על התברואה בבסיסי צה״ל, וכי בריאות החיילים אינה עניין שניתן להתפשר עליו",
-      "divergence": "בעוד שקבוצה א׳ דורשת להעניק למשרד הבריאות סמכויות פיקוח נרחבות בבסיסים, קבוצה ב׳ מתעקשת שהפיקוח יישאר באחריות הצבא, וקבוצה ג׳ מציעה פתרונות טכנולוגיים לדיווח אנונימי"
+      "convergence": "כל הקבוצות מסכימות שהמדינה צריכה להיות הגורם המרכזי שפועל באופן אקטיבי ומהיר למציאת פתרונות דיור מיידיים לנפגעי טילים, ולא להשאיר את הנטל על האזרחים",
+      "divergence": "בעוד שקבוצה א' רואה במימון פתרונות הדיור אחריות ציבורית רחבה שתחייב מס זמני על בעלי הכנסות גבוהות, קבוצה ב' מתמקדת בפתרונות בירוקרטיים מהירים כמו אישור מקדמות, וקבוצה ג' מציעה פתרונות יצירתיים כמו הפקעת דירות Airbnb ריקות"
     },
     {
-      "key": "improving_road_safety_and_preventing_traffic_accidents",
+      "key": "improving_road_safety_and_enforcing_traffic_laws_to_prevent_dangerous_driving_behaviors",
       "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
@@ -41,43 +41,351 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 50
+          "agree_pct": 80
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 68
+          "agree_pct": 72
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 77
+          "agree_pct": 75
         }
       ],
-      "convergence": "באופן מפתיע, כל הקבוצות מסכימות שיש להחמיר את הענישה על עבירות תנועה חמורות, במיוחד נהיגה בשכרות, וכי זהו צעד הכרחי להצלת חיים",
-      "divergence": "קבוצה א׳ רואה בחינוך והכשרה מעשית לנהגים חדשים את הפתרון המרכזי, בעוד שקבוצה ב׳ מתמקדת בהצבת מצלמות חכמות ומימונן, וקבוצה ג׳ דורשת הגבלות תנועה על כלי רכב כבדים בכבישים מסוימים"
+      "convergence": "יש הסכמה גורפת בין הקבוצות שיש להחמיר באופן ניכר את הענישה כלפי נהגים המסכנים חיים בכביש, גם אם זה מצריך צעדים דרסטיים וחריגים",
+      "divergence": "קבוצה א' מוכנה לפגוע בזכות הקניין על מנת להחרים טלפונים של נהגים מסוכנים, בעוד שקבוצה ב' תומכת בשלילת רישיון אוטומטית על עבירות מסוימות, וקבוצה ג' מעוניינת להעצים את האזרחים באמצעות מערכת דיווח משטרתית על תיעוד ממצלמות רכב"
+    },
+    {
+      "key": "addressing_the_issue_of_violence_and_injuries_in_public_spaces_including_road_accidents_and_assaults",
+      "label": "מניעת אלימות ותאונות",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 66
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 84
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 68
+        }
+      ],
+      "convergence": "כל הקבוצות תמימות דעים שיש לנקוט בצעדים נחרצים ואף פולשניים כדי למגר אלימות ותאונות במרחב הציבורי, גם אם הדבר כרוך בהגבלות על חופש הפרט או פגיעה בנוחות",
+      "divergence": "קבוצה א' מתמקדת באחריות הורית ובקנסות על מנת לממן תוכניות נוער בסיכון, קבוצה ב' מעניקה סמכות לרשויות המקומיות להטיל עוצר לילה, וקבוצה ג' רואה בהתקנת פסי האטה פיזיים וחובת דיווח מבתי חולים למשטרה את הפתרון העיקרי"
+    },
+    {
+      "key": "public_health_concerns_related_to_extreme_weather_conditions_like_heatwaves",
+      "label": "היערכות לעומס חום",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 76
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 81
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 80
+        }
+      ],
+      "convergence": "כל הקבוצות מסכימות שיש צורך בהתערבות ממשלתית משמעותית ומהירה כדי להגן על האוכלוסייה מפני סכנות עומס חום קיצוני, גם אם הדבר כרוך בעלויות כלכליות או פגיעה באינטרסים מסחריים",
+      "divergence": "קבוצה א' תומכת באיסור מוחלט על עבודות בנייה בשעות החמות, קבוצה ב' מציעה הנחות בחשמל לקשישים על חשבון מפעלים, וקבוצה ג' דורשת מקניונים לשמש כמרכזי קירור בחינם, עם סבסוד ממשלתי לאבטחה"
     }
   ],
   "declarations": [
     {
-      "id": "decl_ensuring_the_health_and_safety_of_soldiers_specifically_regarding_outbreaks_of_illness_in_military_bases_0",
-      "text": "משרד הבריאות חייב לקבל סמכות לערוך ביקורות פתע תברואתיות במטבחי צה״ל, בדיוק כמו במסעדות אזרחיות",
+      "id": "decl_addressing_the_lack_of_housing_and_support_for_citizens_whose_homes_were_damaged_by_missile_attacks_0",
+      "text": "יש לקבוע בחוק שרשות המיסים חייבת לאשר מקדמה כספית למגורים חלופיים תוך 48 שעות מפגיעת טיל בבית",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 310200,
+      "vote_count": 210500,
       "agree_pct": 92,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "ensuring_the_health_and_safety_of_soldiers_specifically_regarding_outbreaks_of_illness_in_military_bases",
-      "topic_label": "בריאות חיילים בבסיסים",
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_the_lack_of_housing_and_support_for_citizens_whose_homes_were_damaged_by_missile_attacks",
+      "topic_label": "סיוע לנפגעי טילים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 92
+          "agree_pct": 88
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 90
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
+    },
+    {
+      "id": "decl_addressing_the_lack_of_housing_and_support_for_citizens_whose_homes_were_damaged_by_missile_attacks_1",
+      "text": "במקום לשלוח נפגעים לחפש סידור, המדינה צריכה להפקיע זמנית דירות Airbnb ריקות ולשלם לבעליהן תעריף קבוע",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 89000,
+      "agree_pct": 74,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_lack_of_housing_and_support_for_citizens_whose_homes_were_damaged_by_missile_attacks",
+      "topic_label": "סיוע לנפגעי טילים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 71
+        },
+        {
+          "id": "B",
+          "agree_pct": 82
+        },
+        {
+          "id": "C",
+          "agree_pct": 68
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
+    },
+    {
+      "id": "decl_addressing_the_lack_of_housing_and_support_for_citizens_whose_homes_were_damaged_by_missile_attacks_2",
+      "text": "יש לחייב את המדינה לספק חדר מלון לכל אזרח שביתו נהרס מטיל, גם אם זה יחייב מס זמני של 1% על בעלי הכנסות גבוהות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 145000,
+      "agree_pct": 48,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_lack_of_housing_and_support_for_citizens_whose_homes_were_damaged_by_missile_attacks",
+      "topic_label": "סיוע לנפגעי טילים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 80
+        },
+        {
+          "id": "B",
+          "agree_pct": 41
+        },
+        {
+          "id": "C",
+          "agree_pct": 15
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
+    },
+    {
+      "id": "decl_improving_road_safety_and_enforcing_traffic_laws_to_prevent_dangerous_driving_behaviors_3",
+      "text": "יש לשלול אוטומטית לשנה את הרישיון של נהג שנתפס מסיע נוסעים שמוציאים חצי גוף מהחלון או מהסאנרוף",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 265000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "improving_road_safety_and_enforcing_traffic_laws_to_prevent_dangerous_driving_behaviors",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 86
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 84
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
+    },
+    {
+      "id": "decl_improving_road_safety_and_enforcing_traffic_laws_to_prevent_dangerous_driving_behaviors_4",
+      "text": "נהג שייתפס מצלם סרטונים לרשתות החברתיות תוך כדי נהיגה יוחרם לו הטלפון הנייד במקום, גם במחיר פגיעה בזכות לקניין",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 178000,
+      "agree_pct": 55,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_and_enforcing_traffic_laws_to_prevent_dangerous_driving_behaviors",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 82
+        },
+        {
+          "id": "B",
+          "agree_pct": 31
+        },
+        {
+          "id": "C",
+          "agree_pct": 58
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
+    },
+    {
+      "id": "decl_improving_road_safety_and_enforcing_traffic_laws_to_prevent_dangerous_driving_behaviors_5",
+      "text": "יש להקים מערכת משטרתית שתאפשר לאזרחים להעלות תיעוד ממצלמות רכב, ולקנוס נהגים משתוללים על בסיס הסרטונים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 132000,
+      "agree_pct": 81,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_and_enforcing_traffic_laws_to_prevent_dangerous_driving_behaviors",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
+    },
+    {
+      "id": "decl_addressing_the_issue_of_violence_and_injuries_in_public_spaces_including_road_accidents_and_assaults_6",
+      "text": "חובה להתקין פסי האטה פיזיים בכל רחוב שבו יש מרכז נוער או מועדון, גם אם זה מאט את התחבורה הציבורית באזור",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 204000,
+      "agree_pct": 86,
+      "time_label": "לפני יום",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "addressing_the_issue_of_violence_and_injuries_in_public_spaces_including_road_accidents_and_assaults",
+      "topic_label": "מניעת אלימות ותאונות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 87
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
+    },
+    {
+      "id": "decl_addressing_the_issue_of_violence_and_injuries_in_public_spaces_including_road_accidents_and_assaults_7",
+      "text": "יש לתת לרשויות המקומיות סמכות להכריז על עוצר לילה לקטינים בפארקים ציבוריים שמוגדרים כמוקדי אלימות קבועים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 112000,
+      "agree_pct": 52,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_violence_and_injuries_in_public_spaces_including_road_accidents_and_assaults",
+      "topic_label": "מניעת אלימות ותאונות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 28
+        },
+        {
+          "id": "B",
+          "agree_pct": 82
+        },
+        {
+          "id": "C",
+          "agree_pct": 56
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
+    },
+    {
+      "id": "decl_addressing_the_issue_of_violence_and_injuries_in_public_spaces_including_road_accidents_and_assaults_8",
+      "text": "יש לקנוס ב-5,000 שקלים הורים של קטין שנתפס עם סכין במרחב הציבורי, ולהעביר את הכסף למימון תוכניות נוער בסיכון",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 95000,
+      "agree_pct": 77,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_violence_and_injuries_in_public_spaces_including_road_accidents_and_assaults",
+      "topic_label": "מניעת אלימות ותאונות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 80
         },
         {
           "id": "B",
@@ -85,231 +393,138 @@
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 71
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
+    },
+    {
+      "id": "decl_addressing_the_issue_of_violence_and_injuries_in_public_spaces_including_road_accidents_and_assaults_9",
+      "text": "יש לחייב בתי חולים לדווח למשטרה על כל נער שמגיע למיון עם חבלות שחשודות כתוצאה מקטטה, גם ללא תלונה מצידו",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 68,
+      "time_label": "לפני חצי שעה",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_violence_and_injuries_in_public_spaces_including_road_accidents_and_assaults",
+      "topic_label": "מניעת אלימות ותאונות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 71
+        },
+        {
+          "id": "C",
+          "agree_pct": 61
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-07",
-      "created": "2026-05-07T04:41:52.934001+00:00"
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
     },
     {
-      "id": "decl_ensuring_the_health_and_safety_of_soldiers_specifically_regarding_outbreaks_of_illness_in_military_bases_1",
-      "text": "יש לחייב קבלני מזון חיצוניים בצה״ל בפיצוי כספי אישי לכל חייל שנפגע מהרעלת מזון באחריותם",
+      "id": "decl_public_health_concerns_related_to_extreme_weather_conditions_like_heatwaves_10",
+      "text": "יש לאסור לחלוטין עבודות בנייה בחוץ בין השעות 12:00 ל-15:00 בימי עומס חום קיצוני, גם אם זה יעכב מסירת דירות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 280000,
-      "agree_pct": 88,
-      "time_label": "לפני 12 שעות",
+      "vote_count": 310000,
+      "agree_pct": 94,
+      "time_label": "לפני יום",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "ensuring_the_health_and_safety_of_soldiers_specifically_regarding_outbreaks_of_illness_in_military_bases",
-      "topic_label": "בריאות חיילים בבסיסים",
+      "topic_key": "public_health_concerns_related_to_extreme_weather_conditions_like_heatwaves",
+      "topic_label": "היערכות לעומס חום",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 85
+          "agree_pct": 97
         },
         {
           "id": "B",
-          "agree_pct": 88
+          "agree_pct": 90
         },
         {
           "id": "C",
-          "agree_pct": 83
+          "agree_pct": 94
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-07",
-      "created": "2026-05-07T04:41:52.934001+00:00"
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
     },
     {
-      "id": "decl_ensuring_the_health_and_safety_of_soldiers_specifically_regarding_outbreaks_of_illness_in_military_bases_2",
-      "text": "מפקדים שיתגלה כי התעלמו מתלונות חוזרות של חיילים על איכות המזון והתברואה יושעו מתפקידם הפיקודי",
+      "id": "decl_public_health_concerns_related_to_extreme_weather_conditions_like_heatwaves_11",
+      "text": "יש לתת 50% הנחה בחשמל לקשישים בקיץ כדי שיוכלו להפעיל מזגן, על חשבון העלאת התעריף למפעלים תעשייתיים",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 205000,
-      "agree_pct": 81,
-      "time_label": "לפני יום",
+      "vote_count": 142000,
+      "agree_pct": 72,
+      "time_label": "לפני 7 שעות",
       "pipeline_status": null,
-      "topic_key": "ensuring_the_health_and_safety_of_soldiers_specifically_regarding_outbreaks_of_illness_in_military_bases",
-      "topic_label": "בריאות חיילים בבסיסים",
+      "topic_key": "public_health_concerns_related_to_extreme_weather_conditions_like_heatwaves",
+      "topic_label": "היערכות לעומס חום",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 78
+          "agree_pct": 60
         },
         {
           "id": "B",
-          "agree_pct": 89
+          "agree_pct": 87
         },
         {
           "id": "C",
           "agree_pct": 75
         }
       ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-07",
-      "created": "2026-05-07T04:41:52.934001+00:00"
-    },
-    {
-      "id": "decl_ensuring_the_health_and_safety_of_soldiers_specifically_regarding_outbreaks_of_illness_in_military_bases_3",
-      "text": "יש להעסיק פקחי תברואה אזרחיים בכל בסיס הדרכה, גם אם המימון יבוא על חשבון תקציב ימי הגיבוש והרווחה של היחידות",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 178000,
-      "agree_pct": 42,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "ensuring_the_health_and_safety_of_soldiers_specifically_regarding_outbreaks_of_illness_in_military_bases",
-      "topic_label": "בריאות חיילים בבסיסים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 42
-        },
-        {
-          "id": "B",
-          "agree_pct": 20
-        },
-        {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
       "surprise": null,
-      "win_rate": 0.78,
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-07",
-      "created": "2026-05-07T04:41:52.934001+00:00"
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
     },
     {
-      "id": "decl_improving_road_safety_and_preventing_traffic_accidents_4",
-      "text": "יש לחייב כל נהג חדש לעבור השתלמות מעשית בנהיגת חורף ובמצבי חירום לפני קבלת רישיון קבוע",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 250000,
-      "agree_pct": 86,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "improving_road_safety_and_preventing_traffic_accidents",
-      "topic_label": "בטיחות בדרכים",
+      "id": "decl_public_health_concerns_related_to_extreme_weather_conditions_like_heatwaves_12",
+      "text": "יש לחייב קניונים לשמש כמרכזי קירור פתוחים בחינם בימי שרב, כשהמדינה תסבסד להם רק את תוספת עלויות האבטחה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 61000,
+      "agree_pct": 65,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "public_health_concerns_related_to_extreme_weather_conditions_like_heatwaves",
+      "topic_label": "היערכות לעומס חום",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 70
         },
         {
           "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 91
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-07",
-      "created": "2026-05-07T04:41:52.934001+00:00"
-    },
-    {
-      "id": "decl_improving_road_safety_and_preventing_traffic_accidents_5",
-      "text": "יש להחמיר את הענישה על נהיגה בשכרות להחרמת הרכב לחודש במקום, גם אם הרכב אינו בבעלות הנהג הפוגע",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 198000,
-      "agree_pct": 72,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "improving_road_safety_and_preventing_traffic_accidents",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
           "agree_pct": 65
         },
         {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
           "id": "C",
-          "agree_pct": 74
+          "agree_pct": 71
         }
       ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-07",
-      "created": "2026-05-07T04:41:52.934001+00:00"
-    },
-    {
-      "id": "decl_improving_road_safety_and_preventing_traffic_accidents_6",
-      "text": "כדי לממן הצבת מצלמות חכמות בצמתים מסוכנים בפריפריה, יש להעלות את אגרת הרישוי השנתית לרכבים פרטיים ב-50 שקלים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 134000,
-      "agree_pct": 51,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "improving_road_safety_and_preventing_traffic_accidents",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 16
-        },
-        {
-          "id": "B",
-          "agree_pct": 51
-        },
-        {
-          "id": "C",
-          "agree_pct": 73
-        }
-      ],
-      "surprise": null,
+      "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-07",
-      "created": "2026-05-07T04:41:52.934001+00:00"
-    },
-    {
-      "id": "decl_improving_road_safety_and_preventing_traffic_accidents_7",
-      "text": "יש לבטל את חובת הליווי לנהגים צעירים, ובתמורה להגביל את מהירות הנסיעה שלהם ל-80 קמ״ש בשנה הראשונה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 112000,
-      "agree_pct": 52,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "improving_road_safety_and_preventing_traffic_accidents",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 21
-        },
-        {
-          "id": "B",
-          "agree_pct": 52
-        },
-        {
-          "id": "C",
-          "agree_pct": 86
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-07",
-      "created": "2026-05-07T04:41:52.934001+00:00"
+      "generated_from": "gemini_2026-05-08",
+      "created": "2026-05-08T05:11:48.654991+00:00"
     }
   ]
 }
