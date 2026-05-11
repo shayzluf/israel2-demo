@@ -2,8 +2,8 @@
   "updated": "2026-05-11T02:39:34.201393+00:00",
   "topics": [
     {
-      "key": "addressing_street_violence_and_public_safety_concerns_as_highlighted_by_an_attack_in_a_dog_park",
-      "label": "אלימות ברחובות",
+      "key": "civilian_security_and_public_safety",
+      "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
       "you_group": "A",
       "groups": [
         {
@@ -32,8 +32,8 @@
       "divergence": "קבוצה א' סבורה שיש להעצים את יכולת ההגנה העצמית של האזרח, בעוד שקבוצה ב' מתמקדת בהגברת נוכחות הרשויות בשטח וקבוצה ג' דוגלת בהחמרת הענישה על עבירות אלימות"
     },
     {
-      "key": "concerns_about_the_fair_treatment_and_representation_of_women_in_public_discourse_and_decision_making",
-      "label": "מעמד האישה",
+      "key": "gender_equity_and_representation",
+      "label": "מגדר וייצוג",
       "you_group": "A",
       "groups": [
         {
@@ -62,8 +62,8 @@
       "divergence": "קבוצה א' תומכת בהתערבות רגולטורית מחייבת כמו קביעת מכסות ייצוג, בעוד שקבוצה ב' מעדיפה תמריצים כלכליים וקבוצה ג' מתמקדת בהפסקת מימון לאירועים שאינם מקדמים שוויון"
     },
     {
-      "key": "the_need_for_effective_investigation_and_transparency_in_cases_of_serious_crime_such_as_a_high_tech_worker_suspected_of_shooting_a_bedouin_man",
-      "label": "שקיפות בחקירות",
+      "key": "criminal_justice_and_investigation_transparency",
+      "label": "חקירה משפטית ושקיפות",
       "you_group": "A",
       "groups": [
         {
@@ -92,7 +92,7 @@
       "divergence": "קבוצה א' דורשת שקיפות מלאה ומיידית של צווי איסור פרסום ושמות חשודים, בעוד שקבוצה ב' מציעה הגבלה קצובה בזמן לצווי איסור פרסום וקבוצה ג' מוכנה לשקול פגיעה בשמו הטוב של חשוד למען השקיפות הציבורית"
     },
     {
-      "key": "addressing_the_issue_of_road_safety_and_reducing_traffic_accidents_as_indicated_by_multiple_injury_reports",
+      "key": "road_and_traffic_safety",
       "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
@@ -132,8 +132,8 @@
       "agree_pct": 48,
       "time_label": "לפני שעתיים",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_street_violence_and_public_safety_concerns_as_highlighted_by_an_attack_in_a_dog_park",
-      "topic_label": "אלימות ברחובות",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
       "group_breakdown": [
         {
           "id": "A",
@@ -163,8 +163,8 @@
       "agree_pct": 72,
       "time_label": "לפני 5 שעות",
       "pipeline_status": null,
-      "topic_key": "addressing_street_violence_and_public_safety_concerns_as_highlighted_by_an_attack_in_a_dog_park",
-      "topic_label": "אלימות ברחובות",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
       "group_breakdown": [
         {
           "id": "A",
@@ -194,8 +194,8 @@
       "agree_pct": 88,
       "time_label": "לפני יום",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "addressing_street_violence_and_public_safety_concerns_as_highlighted_by_an_attack_in_a_dog_park",
-      "topic_label": "אלימות ברחובות",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
       "group_breakdown": [
         {
           "id": "A",
@@ -225,8 +225,8 @@
       "agree_pct": 65,
       "time_label": "לפני שעה",
       "pipeline_status": null,
-      "topic_key": "addressing_street_violence_and_public_safety_concerns_as_highlighted_by_an_attack_in_a_dog_park",
-      "topic_label": "אלימות ברחובות",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
       "group_breakdown": [
         {
           "id": "A",
@@ -256,8 +256,8 @@
       "agree_pct": 55,
       "time_label": "לפני 3 שעות",
       "pipeline_status": "ממתין לאישור",
-      "topic_key": "concerns_about_the_fair_treatment_and_representation_of_women_in_public_discourse_and_decision_making",
-      "topic_label": "מעמד האישה",
+      "topic_key": "gender_equity_and_representation",
+      "topic_label": "מגדר וייצוג",
       "group_breakdown": [
         {
           "id": "A",
@@ -287,8 +287,8 @@
       "agree_pct": 68,
       "time_label": "לפני 8 שעות",
       "pipeline_status": null,
-      "topic_key": "concerns_about_the_fair_treatment_and_representation_of_women_in_public_discourse_and_decision_making",
-      "topic_label": "מעמד האישה",
+      "topic_key": "gender_equity_and_representation",
+      "topic_label": "מגדר וייצוג",
       "group_breakdown": [
         {
           "id": "A",
@@ -318,8 +318,8 @@
       "agree_pct": 86,
       "time_label": "לפני יומיים",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "concerns_about_the_fair_treatment_and_representation_of_women_in_public_discourse_and_decision_making",
-      "topic_label": "מעמד האישה",
+      "topic_key": "gender_equity_and_representation",
+      "topic_label": "מגדר וייצוג",
       "group_breakdown": [
         {
           "id": "A",
@@ -349,8 +349,8 @@
       "agree_pct": 91,
       "time_label": "לפני 12 שעות",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "the_need_for_effective_investigation_and_transparency_in_cases_of_serious_crime_such_as_a_high_tech_worker_suspected_of_shooting_a_bedouin_man",
-      "topic_label": "שקיפות בחקירות",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "חקירה משפטית ושקיפות",
       "group_breakdown": [
         {
           "id": "A",
@@ -380,8 +380,8 @@
       "agree_pct": 42,
       "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "the_need_for_effective_investigation_and_transparency_in_cases_of_serious_crime_such_as_a_high_tech_worker_suspected_of_shooting_a_bedouin_man",
-      "topic_label": "שקיפות בחקירות",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "חקירה משפטית ושקיפות",
       "group_breakdown": [
         {
           "id": "A",
@@ -411,8 +411,8 @@
       "agree_pct": 76,
       "time_label": "לפני 6 שעות",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "the_need_for_effective_investigation_and_transparency_in_cases_of_serious_crime_such_as_a_high_tech_worker_suspected_of_shooting_a_bedouin_man",
-      "topic_label": "שקיפות בחקירות",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "חקירה משפטית ושקיפות",
       "group_breakdown": [
         {
           "id": "A",
@@ -442,7 +442,7 @@
       "agree_pct": 51,
       "time_label": "לפני 4 שעות",
       "pipeline_status": "ממתין לאישור",
-      "topic_key": "addressing_the_issue_of_road_safety_and_reducing_traffic_accidents_as_indicated_by_multiple_injury_reports",
+      "topic_key": "road_and_traffic_safety",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
@@ -473,7 +473,7 @@
       "agree_pct": 79,
       "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_road_safety_and_reducing_traffic_accidents_as_indicated_by_multiple_injury_reports",
+      "topic_key": "road_and_traffic_safety",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
@@ -504,7 +504,7 @@
       "agree_pct": 85,
       "time_label": "לפני יומיים",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "addressing_the_issue_of_road_safety_and_reducing_traffic_accidents_as_indicated_by_multiple_injury_reports",
+      "topic_key": "road_and_traffic_safety",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {

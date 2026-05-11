@@ -5,7 +5,7 @@
 <meta name="viewport" id="vp" content="width=device-width, initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
-<title>נספר — Knesset Ha'amamit v7.0</title>
+<title>בית, Knesset Ha'amamit v7.0</title>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;800;900&display=swap" rel="stylesheet">
 <!-- GA4 -->
 <script>
@@ -15,7 +15,7 @@
 //                   so we patch fetch/sendBeacon/XHR instead.)
 //   ?internal=1  → tag every event with traffic_type='internal' → matched by the GA4
 //                  Internal Traffic filter (Admin → Data filters) and excluded from reports.
-// Both support '=0' to untag (?dev=0 / ?internal=0). They are independent — dev does NOT
+// Both support '=0' to untag (?dev=0 / ?internal=0). They are independent, dev does NOT
 // imply internal and vice versa. This matters because an Active/Exclude Internal Traffic
 // filter drops events before they reach DebugView, so combining the two hides your own dev
 // device from DebugView.
@@ -98,11 +98,11 @@ gtag('js', new Date());
 if (I2_IS_INTERNAL) { gtag('set', { traffic_type: 'internal' }); }
 // The loader and config both use the property's Google Tag ID (G-CXVXMQE8LM).
 // GA4 auto-routes events to the correct stream based on page URL matching
-// each stream's default_uri — bait_v7.html → bait7 stream, bait8.html → bait8
+// each stream's default_uri, bait_v7.html → bait7 stream, bait8.html → bait8
 // stream (G-WW5KEYRR1Z). This is exactly what GA4's Install UI recommends
 // even for secondary streams. Per-stream Measurement IDs aren't standalone
 // loaders (gtag/js?id=G-WW5KEYRR1Z returns 404 permanently by design).
-// G-CXVXMQE8LM below is the stream's Measurement ID — kept only for the
+// G-CXVXMQE8LM below is the stream's Measurement ID, kept only for the
 // dev banner so you can see which stream this page routes to.
 gtag('config', 'G-CXVXMQE8LM', { send_page_view:false });
 </script>
@@ -117,13 +117,13 @@ if (I2_IS_DEV || I2_IS_INTERNAL) {
   /* ─── COLORS ─── */
   --bg:#06070A; --sf:#0D0F14; --el:#141820; --ra:#1C2029;
   --b0:rgba(255,255,255,0.08); --b1:rgba(255,255,255,0.16); --b2:rgba(255,255,255,0.26);
-  /* Text colors — lightened for better readability on older audiences */
-  --t1:#F5F7FB;  /* was #EFF1F6 — primary, bright */
-  --t2:#A8B3C4;  /* was #78899C — secondary, muted */
-  --t3:#7885A0;  /* was #4A5668 — tertiary, hints */
-  /* Accent colors — kept but slightly brighter.
+  /* Text colors, lightened for better readability on older audiences */
+  --t1:#F5F7FB;  /* was #EFF1F6, primary, bright */
+  --t2:#A8B3C4;  /* was #78899C, secondary, muted */
+  --t3:#7885A0;  /* was #4A5668, tertiary, hints */
+  /* Accent colors, kept but slightly brighter.
      Stage 2 (2026-04-23): --gn and --cn opacity lowered so accent card borders
-     recede — borders carry signal without dominating chrome. Solid --gd/--te/--co
+     recede, borders carry signal without dominating chrome. Solid --gd/--te/--co
      remain at full saturation for typography, icons, and action feedback. */
   --gd:#D8A040; --gl:#F0BC68; --gd0:rgba(216,160,64,0.14); --gn:rgba(216,160,64,0.18);
   --te:#34C8A0; --te0:rgba(52,200,160,0.12); --ten:rgba(52,200,160,0.18);
@@ -137,8 +137,8 @@ if (I2_IS_DEV || I2_IS_INTERNAL) {
   /* ─── EXTENDED PALETTE (2026-04-23 refactor) ─── Consolidates previously
      hardcoded hex + rgba values scattered across inline styles and JS. Change
      these here and every call site updates. JS mirror in `const PAL = {...}`
-     near the top of <script> — keep them in sync. */
-  /* Contrast colors — text on accent backgrounds */
+     near the top of <script>, keep them in sync. */
+  /* Contrast colors, text on accent backgrounds */
   --on-gd:#1a0d00; --on-gd-warm:#1a1306; --on-te:#001a14; --on-co:#ffffff;
   /* Brand SVG dots (opinion map + badges) */
   --gold-dark:#C8953A; --you-dot:#E4AE58;
@@ -167,18 +167,18 @@ if (I2_IS_DEV || I2_IS_INTERNAL) {
   /* ─── FONT SIZES ─── Centralized scale (bumped for readability) */
   --fs-6:9px;   /* was 6px */
   --fs-7:10px;  /* was 7px */
-  --fs-8:11px;  /* was 8px — chips, kickers */
-  --fs-9:12px;  /* was 9px — most common body */
-  --fs-10:13px; /* was 10px — secondary body */
-  --fs-11:14px; /* was 11px — small labels */
-  --fs-12:15px; /* was 12px — labels, headlines */
+  --fs-8:11px;  /* was 8px, chips, kickers */
+  --fs-9:12px;  /* was 9px, most common body */
+  --fs-10:13px; /* was 10px, secondary body */
+  --fs-11:14px; /* was 11px, small labels */
+  --fs-12:15px; /* was 12px, labels, headlines */
   --fs-13:16px; /* was 13px */
-  --fs-14:16px; /* was 14px — body */
+  --fs-14:16px; /* was 14px, body */
   --fs-15:17px; /* was 15px */
   --fs-16:18px; /* was 16px */
   --fs-17:19px; /* was 17px */
-  --fs-18:20px; /* was 18px — headlines */
-  --fs-20:22px; /* was 20px — big headlines */
+  --fs-18:20px; /* was 18px, headlines */
+  --fs-20:22px; /* was 20px, big headlines */
   --fs-22:24px; /* was 22px */
   --fs-26:28px; /* was 26px */
   /* Desktop-only header sizes, unchanged */
@@ -422,7 +422,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .sa-complex:hover,.sa-complex:active{background:var(--gd0);}
 .sa-yes{color:var(--te);border-color:var(--te-35);}
 .sa-yes:hover,.sa-yes:active{background:var(--te0);}
-/* ─── Direction chips (sl1 onboarding + T2 practice) — merge of hints + tap-fallback ─── */
+/* ─── Direction chips (sl1 onboarding + T2 practice), merge of hints + tap-fallback ─── */
 .dir-chips{display:flex;gap:6px;padding:8px 14px 4px;flex-shrink:0;}
 .dir-chip{flex:1;padding:10px 6px;border-radius:10px;font-size:var(--fs-10);font-weight:800;cursor:pointer;
   font-family:var(--heb);border:1.5px solid;background:transparent;transition:transform .1s,background .12s;line-height:1;
@@ -435,13 +435,13 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .dir-chip-yes{color:var(--te);border-color:var(--te-35);}
 .dir-chip-yes:hover,.dir-chip-yes:active{background:var(--te0);}
 .dir-chip-arrow{font-family:var(--frank);font-size:var(--fs-11);}
-/* Voted state — filled background matching the button's color */
+/* Voted state, filled background matching the button's color */
 .sa-yes.voted{background:var(--te);color:var(--on-te);border-color:var(--te);}
 .sa-no.voted{background:var(--co);color:var(--on-co);border-color:var(--co);}
 .sa-complex.voted{background:var(--gd);color:var(--on-gd);border-color:var(--gd);}
 /* After voting, unselected buttons are dimmed and unclickable */
 .decl-card.voted .sa-btn:not(.voted){opacity:.35;pointer-events:none;}
-/* Group breakdown hidden until vote — reveals with a slide-down animation */
+/* Group breakdown hidden until vote, reveals with a slide-down animation */
 .group-breakdown{max-height:0;overflow:hidden;opacity:0;
   transition:max-height .4s ease,opacity .3s ease .1s,margin .3s ease;margin-bottom:0;}
 .decl-card.voted .group-breakdown{max-height:140px;opacity:1;margin-bottom:6px;}
@@ -573,7 +573,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 /* ═══ STATEMENT SWIPE (tcard reuse for sl4) ═══ */
 .st-badge-row{display:flex;align-items:center;gap:6px;margin-top:4px;}
 
-/* ═══ COST / TRADE-OFF NOTE (populism guard — 2026-04-21) ═══ */
+/* ═══ COST / TRADE-OFF NOTE (populism guard, 2026-04-21) ═══ */
 .tcard-cost{margin-top:4px;padding:6px 8px;background:var(--sf);border-radius:6px;
   font-size:var(--fs-8);line-height:1.45;color:var(--t3);text-align:right;}
 .tcard-cost div{display:block;}
@@ -675,7 +675,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .dcl-success h3{font-size:var(--fs-14);font-weight:900;color:var(--t1);margin:0;font-family:var(--heb);}
 .dcl-success p{font-size:var(--fs-10);color:var(--t3);margin:0;line-height:1.5;}
 
-/* ── Pact → Hamal modal (Pact #1) — reuses .dcl-overlay / .dcl-sheet base ── */
+/* ── Pact → Hamal modal (Pact #1), reuses .dcl-overlay / .dcl-sheet base ── */
 .pact-hook{font-weight:700;color:var(--t1);font-size:var(--fs-12);line-height:1.55;margin:4px 0 10px;font-family:var(--heb);}
 .pact-explain{font-size:var(--fs-10);color:var(--t2);line-height:1.6;background:var(--sf);padding:10px 12px;border-radius:10px;font-family:var(--heb);}
 .pact-threshold-microcopy{font-size:var(--fs-9);color:var(--t3);margin:10px 0 4px;font-family:var(--heb);}
@@ -737,9 +737,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 
 <!-- HEADER -->
 <div class="ph">
-  <div class="ph-k">נספר — הכנסת העממית v6</div>
-  <div class="ph-h"><em>נספר</em></div>
-  <p class="ph-sub">הכנסת העממית — הקול של מיליוני ישראלים שאף מפלגה לא מייצגת</p>
+  <div class="ph-k">בית, הכנסת העממית v6</div>
+  <div class="ph-h"><em>בית</em></div>
+  <p class="ph-sub">הכנסת העממית, הקול של מיליוני ישראלים שאף מפלגה לא מייצגת</p>
 </div>
 
 <!-- PHONE SIMULATOR -->
@@ -752,7 +752,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <!-- ════ TUTORIAL: 8 SKEPTIC-FRIENDLY ONBOARDING SCREENS ════ -->
       <div class="tut-skip" id="tut-skip" onclick="skipTutorial()">דלג</div>
 
-      <!-- T0: VALIDATION — "You're right to doubt this" -->
+      <!-- T0: VALIDATION, "You're right to doubt this" -->
       <div class="tut-slide active" id="t0">
         <div class="tut-ind tut-ind-r">בעד &#8594;</div>
         <div class="tut-ind tut-ind-l">&#8592; נגד</div>
@@ -762,7 +762,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         <div class="tut-hint">&#8594; להחליק לכל כיוון כדי להמשיך &#8592;</div>
       </div>
 
-      <!-- T1: CURIOSITY — "But look at this number" -->
+      <!-- T1: CURIOSITY, "But look at this number" -->
       <div class="tut-slide" id="t1">
         <div class="tut-ind tut-ind-r">בעד &#8594;</div>
         <div class="tut-ind tut-ind-l">&#8592; נגד</div>
@@ -773,7 +773,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         <div class="tut-src">המכון הישראלי לדמוקרטיה, <span dir="ltr">2025</span></div>
       </div>
 
-      <!-- T2: CLARITY — "Not a survey" + interactive practice card -->
+      <!-- T2: CLARITY, "Not a survey" + interactive practice card -->
       <div class="tut-slide" id="t2" style="padding:20px 16px;justify-content:flex-start;padding-top:36px;">
         <div class="tut-l1" style="font-size:var(--fs-17);margin-bottom:2px">זה לא סקר</div>
         <div class="tut-l2" style="margin-top:4px;margin-bottom:14px;font-size:var(--fs-11)">סקרים הולכים למגירה. כאן אנחנו בונים משהו אחר</div>
@@ -787,7 +787,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tind tind-u" id="t2iu">&#8593; מורכב</div>
               <div class="tcard-tag" style="background:var(--te0);color:var(--te);font-size:var(--fs-8);padding:3px 10px;display:inline-block;border-radius:99px">חינוך</div>
               <div class="tcard-q" style="font-size:var(--fs-13)">כל ילד בישראל ראוי לחינוך איכותי, ללא קשר לאיפה שהוא גר</div>
-              <div class="tcard-ctx" style="font-size:var(--fs-8)">שאלה לדוגמה — נסו להחליק</div>
+              <div class="tcard-ctx" style="font-size:var(--fs-8)">שאלה לדוגמה, נסו להחליק</div>
             </div>
           </div>
         </div>
@@ -797,7 +797,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             גררו את הכרטיס או הקישו על אחת האפשרויות
           </div>
         </div>
-        <!-- Direction chips — same pattern as sl1 -->
+        <!-- Direction chips, same pattern as sl1 -->
         <div class="dir-chips" id="t2-actions" style="width:100%;max-width:340px;margin:12px auto 0;">
           <button class="dir-chip dir-chip-yes" onclick="t2SwipeAction('r')"><span>בעד</span><span class="dir-chip-arrow">&#8594;</span></button>
           <button class="dir-chip dir-chip-complex" onclick="t2SwipeAction('u')"><span class="dir-chip-arrow">&#8593;</span><span>מורכב</span></button>
@@ -805,7 +805,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         </div>
       </div>
 
-      <!-- T3: DAILY RITUAL — "3 swipes a day" -->
+      <!-- T3: DAILY RITUAL, "3 swipes a day" -->
       <div class="tut-slide" id="t3">
         <div class="tut-ind tut-ind-r">בעד &#8594;</div>
         <div class="tut-ind tut-ind-l">&#8592; נגד</div>
@@ -817,7 +817,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         <div class="tut-l2" style="margin-top:10px">זה הרגל יומי, לא מטלה. כמו לקרוא חדשות, רק שהפעם אפשר אשכרה להשפיע עליהן</div>
       </div>
 
-      <!-- T4: AI REP — "Why you need a representative" -->
+      <!-- T4: AI REP, "Why you need a representative" -->
       <div class="tut-slide" id="t4">
         <div class="tut-ind tut-ind-r">בעד &#8594;</div>
         <div class="tut-ind tut-ind-l">&#8592; נגד</div>
@@ -830,7 +830,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         <div class="tut-l3" style="margin-top:12px"><span dir="ltr">3</span> החלקות ביום מלמדות אותו. הוא כבר ידאג לשאר</div>
       </div>
 
-      <!-- T5: PRIVACY — "Your data is yours" (after AI rep context) -->
+      <!-- T5: PRIVACY, "Your data is yours" (after AI rep context) -->
       <div class="tut-slide" id="t5">
         <div class="tut-ind tut-ind-r">בעד &#8594;</div>
         <div class="tut-ind tut-ind-l">&#8592; נגד</div>
@@ -843,7 +843,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         <div class="tut-l3" style="margin-top:12px;font-size:var(--fs-12)">גם אנחנו לא יכולים לראות מי את/ה. בכוונה</div>
       </div>
 
-      <!-- T6: COLLECTIVE POWER — Hemicycle + future vision ★ PEAK -->
+      <!-- T6: COLLECTIVE POWER, Hemicycle + future vision ★ PEAK -->
       <div class="tut-slide" id="t6">
         <div class="tut-ind tut-ind-r">בעד &#8594;</div>
         <div class="tut-ind tut-ind-l">&#8592; נגד</div>
@@ -857,7 +857,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         <div class="tut-l3" style="margin-top:8px;font-size:var(--fs-10)">אפשר רק לדמיין מה יקרה כשנוכל לנתב תקציבים ישירות לפתרונות שאנחנו באמת רוצים</div>
       </div>
 
-      <!-- T7: ZK PASSPORT — detailed explanation -->
+      <!-- T7: ZK PASSPORT, detailed explanation -->
       <div class="tut-slide" id="t7" style="padding:24px 18px">
         <div class="tut-ind tut-ind-r">בעד &#8594;</div>
         <div class="tut-ind tut-ind-l">&#8592; נגד</div>
@@ -890,7 +890,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         <a href="https://zkpassport.id" target="_blank" rel="noopener" style="margin-top:10px;font-size:var(--fs-9);color:var(--bl);text-decoration:underline;cursor:pointer">מאות מפתחים בדקו את הטכנולוגיה הזו ואימתו שכך היא עובדת</a>
       </div>
 
-      <!-- T8: AGENCY — "Your turn" (transitions to sl1) -->
+      <!-- T8: AGENCY, "Your turn" (transitions to sl1) -->
       <div class="tut-slide" id="t8">
         <div class="tut-l1" style="color:var(--gl);font-size:var(--fs-26)">עכשיו התור שלך</div>
         <div class="tut-l2" style="margin-top:12px">הנה הנושא האמיתי הראשון. מתחילים</div>
@@ -928,20 +928,20 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <!-- ════ S0: ORIGINAL LANDING (now hidden during tutorial) ════ -->
       <div class="slide" id="sl0">
         <div class="scr" style="justify-content:center;gap:12px;padding:24px 18px 14px">
-          <!-- PART 1: RECOGNITION — reflect what they already feel -->
+          <!-- PART 1: RECOGNITION, reflect what they already feel -->
           <div style="text-align:center">
             <div data-ab="stat" style="font-family:var(--frank);font-size:var(--fs-48);font-weight:900;color:var(--gl);letter-spacing:-2px;line-height:1" dir="ltr">74%</div>
             <div data-ab="stat-desc" style="font-size:var(--fs-12);color:var(--t2);line-height:1.5;margin-top:6px">מהאזרחים מרגישים שאף מפלגה לא מייצגת אותם</div>
             <div data-ab="stat-source" style="font-size:var(--fs-8);color:var(--t3);margin-top:2px">המכון הישראלי לדמוקרטיה, <span dir="ltr">2025</span></div>
           </div>
           <div data-ab="headline" style="text-align:center;font-size:var(--fs-15);font-weight:900;color:var(--t1);line-height:1.4">את/ה כנראה אחד מהם</div>
-          <!-- PART 2: RUPTURE — existence proof, something is already happening -->
+          <!-- PART 2: RUPTURE, existence proof, something is already happening -->
           <div data-ab="promise" style="text-align:center;font-size:var(--fs-11);color:var(--te);line-height:1.6;font-weight:700;padding:8px 12px;background:var(--te0);border-radius:9px;border:1px solid var(--te-20)">כבר עכשיו, אלפי אזרחים מכל הקבוצות מגלים על מה הם כן מסכימים</div>
           <div data-ab="mission" style="text-align:center;font-size:var(--fs-10);color:var(--t2);line-height:1.6;max-width:240px;margin:0 auto">ההצבעות שלהם בונות כנסת עממית שהפוליטיקאים לא יכולים להתעלם ממנה</div>
-          <!-- PART 3: INVITATION — curiosity, not commitment -->
+          <!-- PART 3: INVITATION, curiosity, not commitment -->
           <div data-ab="cta" class="btn btn-gd" onclick="abTrackCta();go(1)">לגלות על מה מסכימים</div>
           <div style="text-align:center;font-size:var(--fs-9);color:var(--t3)"><span dir="ltr">6</span> סוויפים &middot; דקה אחת &middot; ללא הרשמה</div>
-          <!-- Social proof counter — populated by applyGlobalStats() from polis-rs /api/v1/topics -->
+          <!-- Social proof counter, populated by applyGlobalStats() from polis-rs /api/v1/topics -->
           <div style="text-align:center;font-size:var(--fs-9);color:var(--t3)"><span id="fc" style="color:var(--gl);font-weight:800"><span dir="ltr">47</span></span> אזרחים כבר גילו</div>
         </div>
       </div>
@@ -981,7 +981,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-cost">
                 <div>סדר גודל: <strong>~<span dir="ltr">2</span> מיליארד ש"ח</strong> לשנה</div>
                 <div>מקורות אפשריים: פרסום ממשלתי · כפל קצבאות · מילואים</div>
-                <div>בלי העברה — התורים יישארו כפי שהם</div>
+                <div>בלי העברה, התורים יישארו כפי שהם</div>
               </div>
               <div class="tcard-meta"><span dir="ltr">185,420</span> הצביעו</div>
               <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs1')">למה זה מורכב?</div>
@@ -1000,7 +1000,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-cost">
                 <div>עלות פטור ממס: <strong>~<span dir="ltr">8</span> מיליארד ש"ח</strong> לשנה</div>
                 <div>עלות מענק אחיד: <strong>~<span dir="ltr">6</span> מיליארד</strong>, פחות פרוגרסיבי</div>
-                <div>בלי החלטה — חלקם כבר סגרו עסק</div>
+                <div>בלי החלטה, חלקם כבר סגרו עסק</div>
               </div>
               <div class="tcard-meta"><span dir="ltr">210,100</span> הצביעו</div>
               <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs2')">למה זה מורכב?</div>
@@ -1036,7 +1036,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-q">האם ח"כ שהורשע בשחיתות צריך להיות חסום מהכנסת לשבע שנים, ולא לצמיתות?</div>
               <div class="tcard-ctx"><span dir="ltr">74%</span> מהציבור חושבים שיש שחיתות בשלטון · רק <span dir="ltr">11%</span> נותנים אמון בכנסת (IDI, <span dir="ltr">2025</span>)</div>
               <div class="tcard-cost">
-                <div>עלות: אפסית — שינוי חוק בלבד</div>
+                <div>עלות: אפסית, שינוי חוק בלבד</div>
                 <div>היקף: חלים גם על חברי ממשלה ומנכ"לי משרדים</div>
                 <div>חלופה היום: תקופת צינון <span dir="ltr">7</span> שנים, לא חסימה</div>
               </div>
@@ -1063,12 +1063,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <div class="tcard-more" onclick="event.stopPropagation();showInfo('cs5')">למה זה מורכב?</div>
             </div>
           </div>
-          <!-- CSR — Result -->
+          <!-- CSR, Result -->
           <div class="tcard" id="csr">
             <div class="tcard-inner" style="text-align:center;gap:8px;cursor:default">
               <div style="font-size:var(--fs-10);color:var(--te);font-weight:800;letter-spacing:1px"><span dir="ltr" id="csr-agree-count">6</span> מתוך <span dir="ltr">6</span></div>
               <div style="font-size:var(--fs-13);font-weight:900;color:var(--t1);line-height:1.4" id="csr-headline">גילינו הסכמה רחבה</div>
-              <div style="font-size:var(--fs-10);color:var(--t2);line-height:1.6">בזמן שהכנסת עסוקה בלריב, הציבור מסכים — גם כשמדובר בוויתורים. הגיע הזמן שהקול שלנו יקבע</div>
+              <div style="font-size:var(--fs-10);color:var(--t2);line-height:1.6">בזמן שהכנסת עסוקה בלריב, הציבור מסכים, גם כשמדובר בוויתורים. הגיע הזמן שהקול שלנו יקבע</div>
               <div class="tribal-bars" style="height:44px">
                 <div class="tribal-bar"><div class="tb-fill" style="height:30px;background:var(--pu)"></div><div class="tb-pct" style="color:var(--pu)">89%</div><div class="tb-lbl">חרדי</div></div>
                 <div class="tribal-bar"><div class="tb-fill" style="height:29px;background:var(--gd)"></div><div class="tb-pct" style="color:var(--gd)">88%</div><div class="tb-lbl">ערבי</div></div>
@@ -1076,7 +1076,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
                 <div class="tribal-bar"><div class="tb-fill" style="height:27px;background:var(--bl)"></div><div class="tb-pct" style="color:var(--bl)">85%</div><div class="tb-lbl">דתי</div></div>
                 <div class="tribal-bar"><div class="tb-fill" style="height:26px;background:var(--co)"></div><div class="tb-pct" style="color:var(--co)">84%</div><div class="tb-lbl">עולה</div></div>
               </div>
-              <div style="font-size:var(--fs-7);color:var(--t3);line-height:1.4;margin-top:4px;padding:0 4px">מבקר המדינה — סקר נגישות מרחב מוגן, מרץ <span dir="ltr">2026</span>. הנתונים מתייחסים למצב המיגון כיום, לא לתמיכה בכל אחת מההצעות</div>
+              <div style="font-size:var(--fs-7);color:var(--t3);line-height:1.4;margin-top:4px;padding:0 4px">מבקר המדינה, סקר נגישות מרחב מוגן, מרץ <span dir="ltr">2026</span>. הנתונים מתייחסים למצב המיגון כיום, לא לתמיכה בכל אחת מההצעות</div>
               <!-- City picker -->
               <div style="margin-top:8px;padding:8px 10px;background:var(--sf);border-radius:9px;border:1px solid var(--b1)">
                 <div style="font-size:var(--fs-10);font-weight:800;color:var(--t1);margin-bottom:4px">איפה אתם גרים?</div>
@@ -1094,7 +1094,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
         </div>
-        <!-- Direction chips — swipe hint + tap-fallback merged. Arrow + RTL DOM order match swipe direction. -->
+        <!-- Direction chips, swipe hint + tap-fallback merged. Arrow + RTL DOM order match swipe direction. -->
         <div class="dir-chips" id="cs-actions">
           <button class="dir-chip dir-chip-yes" onclick="csSwipeAction('r')"><span>בעד</span><span class="dir-chip-arrow">&#8594;</span></button>
           <button class="dir-chip dir-chip-complex" onclick="csSwipeAction('u')"><span class="dir-chip-arrow">&#8593;</span><span>מורכב</span></button>
@@ -1116,7 +1116,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <div class="slide" id="sl2">
         <div class="scr" style="gap:8px;padding:14px 14px 10px">
           <div class="kicker" style="color:var(--gl)">הכנסת העממית</div>
-          <!-- Adaptive header — updated by updateHemiDisplay() / applyGlobalStats() from polis-rs -->
+          <!-- Adaptive header, updated by updateHemiDisplay() / applyGlobalStats() from polis-rs -->
           <div id="hemi-header" style="font-size:var(--fs-14);font-weight:900;color:var(--t1);text-align:center;line-height:1.3">את/ה אזרח <span dir="ltr">#47</span> בכנסת העממית</div>
           <!-- Hemicycle SVG -->
           <svg id="hemi-main" viewBox="0 0 260 140" style="width:100%;height:auto;display:block"></svg>
@@ -1135,9 +1135,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <span style="font-size:var(--fs-7);color:var(--t2)">את/ה</span>
             </div>
           </div>
-          <!-- Milestone context — updated by updateHemiDisplay() / applyGlobalStats() from polis-rs -->
+          <!-- Milestone context, updated by updateHemiDisplay() / applyGlobalStats() from polis-rs -->
           <div id="hemi-context" style="font-size:var(--fs-9);color:var(--t2);line-height:1.5;text-align:center;padding:4px 8px;background:var(--gd0);border:1px solid var(--gn);border-radius:8px">כל שינוי בהיסטוריה התחיל מקבוצה קטנה. את/ה חלק מ-<span dir="ltr">47</span> הראשונים</div>
-          <!-- Next milestone progress — bar + percent set live by updateHemiDisplay() -->
+          <!-- Next milestone progress, bar + percent set live by updateHemiDisplay() -->
           <div id="hemi-milestone" style="display:flex;flex-direction:column;gap:2px">
             <div style="display:flex;align-items:center;justify-content:space-between">
               <span style="font-size:var(--fs-8);font-weight:700;color:var(--t2)" id="hemi-next-label">הבא: <span dir="ltr">100</span> הראשונים</span>
@@ -1147,8 +1147,8 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
           <!-- Tech disclosure -->
           <div style="font-size:var(--fs-9);color:var(--bl);cursor:pointer;text-align:center" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">איך הכנסת העממית עובדת גם כשאתם לא כאן?</div>
-          <div style="display:none;font-size:var(--fs-9);color:var(--t2);line-height:1.5;background:var(--el);border-radius:7px;padding:8px;border-right:2px solid var(--gl)"><strong style="color:var(--gl)">נציג AI אישי</strong> לומד אתכם מ-<span dir="ltr">3</span> החלקות ביום ומייצג את עמדותיכם בכל החלטה — גם כשאתם לא כאן. <strong style="color:var(--te)">ZK Passport</strong> מוודא שכל קול הוא של אזרח אמיתי</div>
-          <!-- Counter — tap to cycle demo -->
+          <div style="display:none;font-size:var(--fs-9);color:var(--t2);line-height:1.5;background:var(--el);border-radius:7px;padding:8px;border-right:2px solid var(--gl)"><strong style="color:var(--gl)">נציג AI אישי</strong> לומד אתכם מ-<span dir="ltr">3</span> החלקות ביום ומייצג את עמדותיכם בכל החלטה, גם כשאתם לא כאן. <strong style="color:var(--te)">ZK Passport</strong> מוודא שכל קול הוא של אזרח אמיתי</div>
+          <!-- Counter, tap to cycle demo -->
           <div style="background:var(--sf);border-radius:9px;border:1px solid var(--b1);padding:6px 11px;display:flex;align-items:center;gap:9px;cursor:pointer" onclick="cycleHemiDemo()">
             <div id="fc2" style="font-family:var(--frank);font-size:var(--fs-20);font-weight:900;color:var(--gl);letter-spacing:-1px"><span dir="ltr">47</span></div>
             <div style="font-size:var(--fs-9);color:var(--t2);line-height:1.4"><strong style="color:var(--t1)">אזרחים מאומתים</strong><br><span style="font-size:var(--fs-7);color:var(--t3)">לחצו לראות שלבים הבאים</span></div>
@@ -1160,14 +1160,14 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
       <!-- ════ S3: HOME (בית) ════ -->
       <div class="slide" id="sl3">
         <div class="s-top">
-          <div class="s-logo">נספר</div>
+          <div class="s-logo">בית</div>
           <div style="display:flex;align-items:center;gap:6px">
             <div class="streak-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> רצף של <span dir="ltr">4</span> ימים!</div>
             <div class="level-badge">רמה <span dir="ltr">2</span> &middot; קול משפיע</div>
           </div>
         </div>
         <div class="scr" id="home-scr" style="overflow-y:hidden;position:relative;gap:6px">
-          <!-- Mini hemicycle — adaptive SVG, no fake seat count -->
+          <!-- Mini hemicycle, adaptive SVG, no fake seat count -->
           <div style="text-align:center;padding:6px 0">
             <svg id="hemi-mini" viewBox="0 0 260 80" style="width:160px;height:auto;display:inline-block"></svg>
             <div style="font-size:var(--fs-9);font-weight:800;color:var(--gl)"><span dir="ltr">83</span>/<span dir="ltr">120</span> מושבים</div>
@@ -1230,7 +1230,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <span style="color:var(--co)">&#8592; נגד</span>
             </div>
           </div>
-          <!-- Construction feedback (hidden, shown after swipes) — pilot: honest placeholder -->
+          <!-- Construction feedback (hidden, shown after swipes), pilot: honest placeholder -->
           <div id="construction-fb" style="display:none" class="construction-fb">
             <div class="cf-line" style="font-weight:700;color:var(--gl)">+1. עכשיו <span dir="ltr">4,219</span> אזרחים הצביעו על הנושא הזה</div>
             <div class="cf-line">הכנסת העממית: <span dir="ltr">71</span> בעד, <span dir="ltr">49</span> נגד. הכנסת האמיתית: <span dir="ltr">38-82</span>.</div>
@@ -1242,7 +1242,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gl)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <div style="font-size:var(--fs-18);font-weight:900;color:var(--t1);margin-top:14px">מעולה, אנחנו בפנים</div>
-            <div style="font-size:var(--fs-11);color:var(--t2);margin-top:8px;max-width:220px;line-height:1.6">שש ההצבעות הראשונות שלך כבר נספרות. עכשיו מתחיל הדבר האמיתי — בניית כוח אזרחי משותף</div>
+            <div style="font-size:var(--fs-11);color:var(--t2);margin-top:8px;max-width:220px;line-height:1.6">שש ההצבעות הראשונות שלך כבר נספרות. עכשיו מתחיל הדבר האמיתי, בניית כוח אזרחי משותף</div>
             <div style="font-size:var(--fs-10);color:var(--t3);margin-top:6px">הנה הצצה קצרה לאיך שזה עובד</div>
             <div class="btn btn-gd" onclick="advanceTour()" style="margin-top:18px;font-size:var(--fs-12);padding:11px 18px">יאללה, להראות לי מה קורה פה</div>
           </div>
@@ -1251,13 +1251,13 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="tour-close" onclick="skipTour()">&times;</div>
             <div class="tour-kicker">המסך הראשי</div>
             <div class="tour-headline">מתחילים בקטן, וזה בדיוק העניין</div>
-            <div class="tour-body">המליאה מתמלאת ככל שעוד אזרחים מצטרפים. למטה יופיעו עדכונים על הסכמות חדשות ופעילות באזור שלך. מחר יחכו לך כאן <span dir="ltr">3</span> סוויפים חדשים — <span dir="ltr">30</span> שניות וזהו</div>
+            <div class="tour-body">המליאה מתמלאת ככל שעוד אזרחים מצטרפים. למטה יופיעו עדכונים על הסכמות חדשות ופעילות באזור שלך. מחר יחכו לך כאן <span dir="ltr">3</span> סוויפים חדשים, <span dir="ltr">30</span> שניות וזהו</div>
             <div class="tour-callout tour-callout-gold">רק לדמיין חצי מיליון אזרחים מאומתים עומדים מאחורי עמדה אחת. זו לא עצומה, זה מנדט</div>
             <div class="tour-dismiss-wrap"><div class="tour-dismiss" onclick="advanceTour()">הבנתי</div></div>
           </div>
           <!-- Below-fold content -->
           <div id="home-below-fold" class="home-locked" style="display:flex;flex-direction:column;gap:6px">
-            <!-- Weekly impact — pilot: honest coming-soon placeholder -->
+            <!-- Weekly impact, pilot: honest coming-soon placeholder -->
             <div class="card" style="border-color:var(--gn)">
               <div style="font-size:var(--fs-9);font-weight:800;color:var(--gl);margin-bottom:4px">ההשפעה שלכם השבוע</div>
               <div style="font-size:var(--fs-9);color:var(--t2);line-height:1.6"><span dir="ltr">12</span> מכתבים נשלחו לחברי כנסת &middot; שותפות ב-<span dir="ltr">4</span> הסכמות רחבות</div>
@@ -1333,10 +1333,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         </div>
       </div>
 
-      <!-- ════ S4: DELIBERATION (הצהרות) — pol.is-style feed ════ -->
+      <!-- ════ S4: DELIBERATION (הצהרות), pol.is-style feed ════ -->
       <div class="slide" id="sl4">
         <div class="s-top">
-          <div class="s-logo">נספר</div>
+          <div class="s-logo">בית</div>
           <div class="s-chip" style="background:var(--bl0);color:var(--bl)">הצהרות</div>
         </div>
         <div class="scr" id="delib-scr">
@@ -1349,7 +1349,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="tour-callout tour-callout-teal">כל סוויפ מתחיל מהצהרה של מישהו! בלי תגובות ובלי ריבים</div>
             <div class="tour-dismiss-wrap"><div class="tour-dismiss" onclick="advanceTour()">הבנתי</div></div>
           </div>
-          <!-- Topic filter bar (populated by renderTopicBar) — FIRST thing user sees -->
+          <!-- Topic filter bar (populated by renderTopicBar), FIRST thing user sees -->
           <div id="topic-bar" style="display:flex;align-items:center;gap:6px;overflow-x:auto;padding:8px 0;scrollbar-width:none;scroll-snap-type:x mandatory;flex-shrink:0;min-height:44px;position:sticky;top:-12px;z-index:5;background:var(--bg);border-bottom:1px solid var(--b0);margin-bottom:4px;">
             <span style="font-size:var(--fs-8);font-weight:800;color:var(--gl);letter-spacing:1px;flex-shrink:0;padding-left:6px;padding-right:2px">נושאים ▸</span>
             <!-- .topic-pill buttons injected by renderTopicBar() -->
@@ -1367,9 +1367,9 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="tour-callout tour-callout-teal">הקישו על כרטיס הזהב למטה כדי להצטרף למהלך</div>
             <div class="tour-dismiss-wrap"><div class="tour-dismiss" onclick="advanceTour()">יאללה נתחיל</div></div>
           </div>
-          <!-- Pact → Hamal callout (feature-flagged via ?pact_preview=1 — populated by renderPactCallout) -->
+          <!-- Pact → Hamal callout (feature-flagged via ?pact_preview=1, populated by renderPactCallout) -->
           <div id="pact-callout-host"></div>
-          <!-- Compose banner — above declarations, always visible -->
+          <!-- Compose banner, above declarations, always visible -->
           <div class="card" style="border-color:var(--bl);border-style:dashed" id="compose-banner" onclick="openDeclCompose()">
             <div style="font-size:var(--fs-12);font-weight:900;color:var(--t1);margin-bottom:2px">יש לך מה להגיד?</div>
             <div id="compose-banner-sub" style="font-size:var(--fs-9);color:var(--t3);line-height:1.4;margin-bottom:8px">משפט קצר שאנשים אחרים יסכימו או לא יסכימו איתו</div>
@@ -1385,10 +1385,10 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         </div>
       </div>
 
-      <!-- ════ S5: AI REP (הנציג) — Personal Dashboard ════ -->
+      <!-- ════ S5: AI REP (הנציג), Personal Dashboard ════ -->
       <div class="slide" id="sl5">
         <div class="s-top">
-          <div class="s-logo">נספר</div>
+          <div class="s-logo">בית</div>
           <div class="s-chip" style="background:var(--gd0);color:var(--gl)">הנציג</div>
         </div>
         <div class="scr" style="gap:8px;padding:10px 13px 8px">
@@ -1406,7 +1406,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             <div class="tour-close" onclick="skipTour()">&times;</div>
             <div class="tour-kicker">הנציג החכם</div>
             <div class="tour-headline">ללמוד מ-<span dir="ltr">3</span> סוויפים ביום. זה כל מה שצריך</div>
-            <div class="tour-body">יש אלפי נושאים שאין זמן לעקוב אחריהם. הנציג לומד את הערכים שלך ומנבא את העמדה שלך. הוא מציף את מה שבאמת חשוב לך כדי לאפשר לך להצביע ישירות. מאשרים או מתקנים — והוא נהיה חכם יותר</div>
+            <div class="tour-body">יש אלפי נושאים שאין זמן לעקוב אחריהם. הנציג לומד את הערכים שלך ומנבא את העמדה שלך. הוא מציף את מה שבאמת חשוב לך כדי לאפשר לך להצביע ישירות. מאשרים או מתקנים, והוא נהיה חכם יותר</div>
             <div class="tour-callout tour-callout-teal">תהליך הלמידה קורה על המכשיר שלך בלבד. אף פיסת מידע לא יוצאת החוצה</div>
             <div class="tour-dismiss-wrap"><div class="tour-dismiss" onclick="advanceTour()">הבנתי, יאללה</div></div>
           </div>
@@ -1429,7 +1429,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           <!-- Emergent profile (pol.is-style opinion groups) -->
           <div style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:2px">קבוצות דעה</div>
           <div class="card" style="padding:10px 12px">
-            <!-- Opinion map — injected by loadAndRenderOpinionMap() from /api/v1/users/:id/opinion_map -->
+            <!-- Opinion map, injected by loadAndRenderOpinionMap() from /api/v1/users/:id/opinion_map -->
             <div id="sl5-opinion-map"></div>
             <div style="font-size:var(--fs-9);color:var(--t2);line-height:1.5;margin-bottom:6px">אתם קרובים ל-<span dir="ltr" style="color:var(--gl);font-weight:800">34%</span> מהאזרחים שחושבים דומה</div>
             <div style="font-size:var(--fs-9);color:var(--t1);line-height:1.5;padding:5px 8px;background:var(--sf);border-radius:6px;margin-bottom:4px;border-right:2px solid var(--te)">
@@ -1440,12 +1440,12 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
           </div>
 
-          <!-- Compact predictions — value-revealing statements -->
-          <div style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">הנציג ניבא — אשרו או תקנו</div>
+          <!-- Compact predictions, value-revealing statements -->
+          <div style="font-size:var(--fs-8);font-weight:800;color:var(--t3);letter-spacing:1px;margin-top:4px">הנציג ניבא, אשרו או תקנו</div>
           <div style="display:flex;flex-direction:column;gap:4px">
             <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
               <div style="flex:1">
-                <div style="font-size:var(--fs-9);font-weight:700;color:var(--t1);line-height:1.4">״צריך לחייב כל רשת מזון לפרסם השוואת מחירים — כי המונופול חונק אותנו.״</div>
+                <div style="font-size:var(--fs-9);font-weight:700;color:var(--t1);line-height:1.4">״צריך לחייב כל רשת מזון לפרסם השוואת מחירים, כי המונופול חונק אותנו.״</div>
                 <div style="font-size:var(--fs-8);color:var(--te);margin-top:2px">ניבא: מסכים (<span dir="ltr">91%</span>)</div>
               </div>
               <div style="display:flex;gap:4px;flex-shrink:0">
@@ -1455,7 +1455,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
             <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
               <div style="flex:1">
-                <div style="font-size:var(--fs-9);font-weight:700;color:var(--t1);line-height:1.4">״עדיף להשקיע בטכנולוגיית יירוט מאשר בבטון — ממ"ד זה פתרון של אתמול.״</div>
+                <div style="font-size:var(--fs-9);font-weight:700;color:var(--t1);line-height:1.4">״עדיף להשקיע בטכנולוגיית יירוט מאשר בבטון, ממ"ד זה פתרון של אתמול.״</div>
                 <div style="font-size:var(--fs-8);color:var(--co);margin-top:2px">ניבא: לא מסכים (<span dir="ltr">67%</span>)</div>
               </div>
               <div style="display:flex;gap:4px;flex-shrink:0">
@@ -1465,7 +1465,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
             </div>
             <div class="card" style="padding:6px 10px;display:flex;align-items:center;gap:6px">
               <div style="flex:1">
-                <div style="font-size:var(--fs-9);font-weight:700;color:var(--t1);line-height:1.4">״בזמן מלחמה אסור לפטר עובדים — גם אם העסק מפסיד.״</div>
+                <div style="font-size:var(--fs-9);font-weight:700;color:var(--t1);line-height:1.4">״בזמן מלחמה אסור לפטר עובדים, גם אם העסק מפסיד.״</div>
                 <div style="font-size:var(--fs-8);color:var(--gd);margin-top:2px">ניבא: לא בטוח (<span dir="ltr">54%</span>)</div>
               </div>
               <div style="display:flex;gap:4px;flex-shrink:0">
@@ -1502,11 +1502,11 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
         </div>
       </div>
 
-      <!-- ════ S6: ZK CONVERSION (להיספר) — ASPIRATION ════ -->
+      <!-- ════ S6: ZK CONVERSION (להיספר), ASPIRATION ════ -->
       <div class="slide" id="sl6">
         <div class="scr" style="justify-content:center;gap:10px;padding:16px 16px">
           <div style="font-size:var(--fs-14);font-weight:900;color:var(--t1);text-align:center">הגיע הזמן לקחת את הכוח לידיים</div>
-          <!-- Pride stats — populated by updateProgressBadges() from ns_vote_log -->
+          <!-- Pride stats, populated by updateProgressBadges() from ns_vote_log -->
           <div style="display:flex;gap:8px;justify-content:center">
             <div style="text-align:center;padding:8px 12px;background:var(--el);border-radius:8px">
               <div style="font-size:var(--fs-20);font-weight:900;color:var(--gl);direction:ltr">8</div>
@@ -1548,7 +1548,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
           </div>
           <!-- CTA -->
           <div class="btn btn-gd" style="font-size:var(--fs-14);padding:13px" onclick="go(7)">לאמת אזרחות בצורה מאובטחת</div>
-          <div style="text-align:center;font-size:var(--fs-9);color:var(--t3);cursor:pointer" onclick="go(3)">אולי אחר כך</div>
+          <div style="text-align:center;font-size:var(--fs-9);color:var(--t3);cursor:pointer" onclick="consumePostVerifyIntent();go(3)">אולי אחר כך</div>
         </div>
       </div>
 
@@ -1675,7 +1675,7 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 
 <script>
 /* ══════════════════════════════════════════════════════
-   PALETTE CONSTANTS — JS mirror of :root CSS vars.
+   PALETTE CONSTANTS, JS mirror of :root CSS vars.
    SVG attributes (fill, stroke) can't reliably read var(--*) across browsers,
    so we mirror the values here. Keep in sync with :root above when changing.
 ══════════════════════════════════════════════════════ */
@@ -1695,24 +1695,29 @@ const PAL = {
 /* ══════════════════════════════════════════════════════
    CARD INFO DATA
 ══════════════════════════════════════════════════════ */
+// Full card payloads keyed by DOM id ('cs0'..'cs5', 'dc0'..'dc2').
+// Populated by loadCards() and used by csSwipeDone/dcSwipeDone to look up
+// polis_item_id and POST votes to polis-rs.
+const CARD_DATA = {};
+
 const CARD_INFO = {
   cs0: {
     title: 'מימון מרחבים מוגנים',
     subtitle: 'המחיר של מיגון כלל-אוכלוסייתי',
     perspectives: [
       {
-        if_label: 'אם הסכמתם — אולי כי...',
+        if_label: 'אם הסכמתם, אולי כי...',
         detail: 'כי <strong>3.2 מיליון אזרחים</strong> ללא מרחב מוגן הוא פער שלא קיים בשום מדינה מפותחת אחרת',
         source: 'משרד מבקר המדינה'
       },
       {
-        if_label: 'אם הסכמתם — אולי כי...',
-        detail: 'כי עלות ממ"ד פרטי עומדת על <strong>~150,000 ש"ח</strong> — רוב משפחות הפריפריה לא יגיעו לזה לבד',
+        if_label: 'אם הסכמתם, אולי כי...',
+        detail: 'כי עלות ממ"ד פרטי עומדת על <strong>~150,000 ש"ח</strong>, רוב משפחות הפריפריה לא יגיעו לזה לבד',
         source: 'התאחדות הקבלנים בוני הארץ'
       },
       {
-        if_label: 'אם לא הסכמתם — אולי כי...',
-        detail: 'כי תקציב של <strong>~50 מיליארד</strong> יבוא על חשבון יירוט מתקדם, בתי חולים או חינוך — וגם מיגון קהילתי משיג תוצאה דומה ב-~30 מיליארד',
+        if_label: 'אם לא הסכמתם, אולי כי...',
+        detail: 'כי תקציב של <strong>~50 מיליארד</strong> יבוא על חשבון יירוט מתקדם, בתי חולים או חינוך, וגם מיגון קהילתי משיג תוצאה דומה ב-~30 מיליארד',
         source: 'משרד האוצר ומבקר המדינה'
       }
     ]
@@ -1722,17 +1727,17 @@ const CARD_INFO = {
     subtitle: 'טרייד-אוף תקציבי בין משרדים',
     perspectives: [
       {
-        if_label: 'אם הסכמתם — אולי כי...',
+        if_label: 'אם הסכמתם, אולי כי...',
         detail: 'כי צעירים אחרי המלחמה לא יכולים לחכות <strong>שנה וארבעה חודשים</strong> לפגישה ראשונה',
         source: 'מכבי שירותי בריאות'
       },
       {
-        if_label: 'אם הסכמתם — אולי כי...',
-        detail: 'כי <strong>400 מיליון ש"ח</strong> שקוצצו ב-2024 לא חוזרים לבד — צריך להחליט מאיפה כן',
+        if_label: 'אם הסכמתם, אולי כי...',
+        detail: 'כי <strong>400 מיליון ש"ח</strong> שקוצצו ב-2024 לא חוזרים לבד, צריך להחליט מאיפה כן',
         source: 'משרד האוצר'
       },
       {
-        if_label: 'אם לא הסכמתם — אולי כי...',
+        if_label: 'אם לא הסכמתם, אולי כי...',
         detail: 'כי גם ביטחון וחינוך דוחקים, והעברת תקציב <strong>בלי רפורמה מבנית</strong> בקופות החולים לא תקצר תורים',
         source: 'הסתדרות הפסיכולוגים בישראל'
       }
@@ -1743,18 +1748,18 @@ const CARD_INFO = {
     subtitle: 'צדק חלוקתי מול הכרה פרטנית',
     perspectives: [
       {
-        if_label: 'אם הסכמתם — אולי כי...',
-        detail: 'כי מענק שווה ייטיב דווקא עם מי שהרוויח פחות מהתחלה — הצדק החלוקתי שלו טוב יותר',
+        if_label: 'אם הסכמתם, אולי כי...',
+        detail: 'כי מענק שווה ייטיב דווקא עם מי שהרוויח פחות מהתחלה, הצדק החלוקתי שלו טוב יותר',
         source: 'מרכז טאוב'
       },
       {
-        if_label: 'אם הסכמתם — אולי כי...',
-        detail: 'כי מענק אחיד פשוט יותר לתקצוב ולתפעול — <strong>~6 מיליארד</strong> לעומת ~8 מיליארד בפטור ממס',
+        if_label: 'אם הסכמתם, אולי כי...',
+        detail: 'כי מענק אחיד פשוט יותר לתקצוב ולתפעול, <strong>~6 מיליארד</strong> לעומת ~8 מיליארד בפטור ממס',
         source: 'משרד האוצר'
       },
       {
-        if_label: 'אם לא הסכמתם — אולי כי...',
-        detail: 'כי פטור ממס בעצם מכיר בזה שהמדינה <strong>לקחה שנה מהחיים</strong> — לא רק מחזירה הוצאות. ומחיר שני המסלולים יחד = ~14 מיליארד, יותר מתקציב משרד הרווחה',
+        if_label: 'אם לא הסכמתם, אולי כי...',
+        detail: 'כי פטור ממס בעצם מכיר בזה שהמדינה <strong>לקחה שנה מהחיים</strong>, לא רק מחזירה הוצאות. ומחיר שני המסלולים יחד = ~14 מיליארד, יותר מתקציב משרד הרווחה',
         source: 'מטה המילואימניקים ומשרד האוצר'
       }
     ]
@@ -1764,17 +1769,17 @@ const CARD_INFO = {
     subtitle: 'הכלי שעלול למנוע חובות עתידיים',
     perspectives: [
       {
-        if_label: 'אם הסכמתם — אולי כי...',
+        if_label: 'אם הסכמתם, אולי כי...',
         detail: 'כי <strong>דור שלם</strong> נכנס לחובות רק בגלל אי-הבנה של ריביות מתגלגלות',
         source: 'בנק ישראל'
       },
       {
-        if_label: 'אם הסכמתם — אולי כי...',
-        detail: 'כי הממשלה כבר אישרה את התוכנית, <strong>אין לה מתנגד בכנסת</strong> — והיא עדיין לא מיושמת',
+        if_label: 'אם הסכמתם, אולי כי...',
+        detail: 'כי הממשלה כבר אישרה את התוכנית, <strong>אין לה מתנגד בכנסת</strong>, והיא עדיין לא מיושמת',
         source: 'משרד החינוך'
       },
       {
-        if_label: 'אם לא הסכמתם — אולי כי...',
+        if_label: 'אם לא הסכמתם, אולי כי...',
         detail: 'כי מערכת החינוך כבר עמוסה, ועדיף להעביר את זה כ<strong>מודול אופציונלי</strong> ולא חובה',
         source: 'פורום הורים ארצי'
       }
@@ -1785,18 +1790,18 @@ const CARD_INFO = {
     subtitle: 'הגנה על הכנסת מול זכות הציבור לבחור',
     perspectives: [
       {
-        if_label: 'אם הסכמתם — אולי כי...',
-        detail: 'כי <strong>שבע שנים</strong> זה קדנציה וחצי — מספיק כדי לנקות את המערכת בלי להשתיק אדם לצמיתות',
+        if_label: 'אם הסכמתם, אולי כי...',
+        detail: 'כי <strong>שבע שנים</strong> זה קדנציה וחצי, מספיק כדי לנקות את המערכת בלי להשתיק אדם לצמיתות',
         source: 'התנועה לאיכות השלטון'
       },
       {
-        if_label: 'אם הסכמתם — אולי כי...',
+        if_label: 'אם הסכמתם, אולי כי...',
         detail: 'כי חסימה לצמיתות פוגעת בזכות הציבור לבחור במי ששילם את חובו לחברה',
         source: 'האגודה לזכויות האזרח'
       },
       {
-        if_label: 'אם לא הסכמתם — אולי כי...',
-        detail: 'כי ח"כ שמעל באמון הציבור — מעל לכל החיים, ולא צריך <strong>להחזיר אותו אחרי שבע שנים</strong>',
+        if_label: 'אם לא הסכמתם, אולי כי...',
+        detail: 'כי ח"כ שמעל באמון הציבור, מעל לכל החיים, ולא צריך <strong>להחזיר אותו אחרי שבע שנים</strong>',
         source: 'תנועת דרך ארץ'
       }
     ]
@@ -1806,17 +1811,17 @@ const CARD_INFO = {
     subtitle: 'דיווח חובה וקנס אוטומטי',
     perspectives: [
       {
-        if_label: 'אם הסכמתם — אולי כי...',
-        detail: 'כי היום מטופל בפריפריה ממתין חודשים <strong>בלי לדעת שבמרכז התור פנוי</strong> — זה הפער שחייבים לסגור',
+        if_label: 'אם הסכמתם, אולי כי...',
+        detail: 'כי היום מטופל בפריפריה ממתין חודשים <strong>בלי לדעת שבמרכז התור פנוי</strong>, זה הפער שחייבים לסגור',
         source: 'מרכז טאוב'
       },
       {
-        if_label: 'אם הסכמתם — אולי כי...',
-        detail: 'כי <strong>בלי קנס</strong>, כל בית חולים ידווח רק את הנתונים הנוחים לו — שקיפות בלי שיניים לא עובדת',
+        if_label: 'אם הסכמתם, אולי כי...',
+        detail: 'כי <strong>בלי קנס</strong>, כל בית חולים ידווח רק את הנתונים הנוחים לו, שקיפות בלי שיניים לא עובדת',
         source: 'משרד מבקר המדינה'
       },
       {
-        if_label: 'אם לא הסכמתם — אולי כי...',
+        if_label: 'אם לא הסכמתם, אולי כי...',
         detail: 'כי פרסום חד-צדדי ימשוך את כל הנפח לבתי החולים המובילים, <strong>ובתי חולים בפריפריה יסבלו עוד יותר</strong>',
         source: 'איגוד מנהלי בתי חולים'
       }
@@ -1825,22 +1830,22 @@ const CARD_INFO = {
   dc0: {
     title: 'יוקר המחיה',
     subtitle: 'מחירי מזון ודיור',
-    fact: 'משפחה ישראלית ממוצעת מוציאה <strong>42% מההכנסה</strong> על דיור ומזון — גבוה מכל מדינה באיחוד האירופי',
+    fact: 'משפחה ישראלית ממוצעת מוציאה <strong>42% מההכנסה</strong> על דיור ומזון, גבוה מכל מדינה באיחוד האירופי',
     sides: '<strong>תומכים:</strong> הגבלת מחירים והעלאת תחרות הם חובה כשאזרחים לא יכולים לקנות אוכל. <strong>מתנגדים:</strong> התערבות ממשלתית במחירים מצמצמת היצע',
-    untold: 'ישראל היא אחת המדינות <strong>הריכוזיות ביותר במזון</strong> — 5 חברות שולטות ב-80% מהשוק'
+    untold: 'ישראל היא אחת המדינות <strong>הריכוזיות ביותר במזון</strong>, 5 חברות שולטות ב-80% מהשוק'
   },
   dc1: {
     title: 'נטל המילואים',
     subtitle: 'השפעה כלכלית',
     fact: '<strong>25%</strong> מהעסקים בישראל דיווחו על ירידה בפריון בגלל מילואים. העלות הכוללת למשק: <strong>15 מיליארד ש"ח</strong>.',
-    sides: '<strong>תומכים:</strong> הגדלת פיצוי היא השקעה בביטחון. <strong>מתנגדים:</strong> התקציב כבר שבור — צריך רפורמה מבנית בצה"ל',
-    untold: '4,000 מילואימניקים מהימין ארגנו מחאה משלהם — הנושא חוצה ימין-שמאל'
+    sides: '<strong>תומכים:</strong> הגדלת פיצוי היא השקעה בביטחון. <strong>מתנגדים:</strong> התקציב כבר שבור, צריך רפורמה מבנית בצה"ל',
+    untold: '4,000 מילואימניקים מהימין ארגנו מחאה משלהם, הנושא חוצה ימין-שמאל'
   },
   dc2: {
     title: 'פשיעה בחברה הערבית',
     subtitle: 'מצב חירום שלא מטופל',
-    fact: '<strong>252 הרוגים</strong> מפשיעה בחברה הערבית ב-2025 — שיא כל הזמנים. המשטרה פתרה <strong>15%</strong> מהתיקים',
-    sides: '<strong>תומכים:</strong> הממשלה חייבת תוכנית חירום. <strong>מתנגדים:</strong> הבעיה מורכבת — לא רק משטרה',
+    fact: '<strong>252 הרוגים</strong> מפשיעה בחברה הערבית ב-2025, שיא כל הזמנים. המשטרה פתרה <strong>15%</strong> מהתיקים',
+    sides: '<strong>תומכים:</strong> הממשלה חייבת תוכנית חירום. <strong>מתנגדים:</strong> הבעיה מורכבת, לא רק משטרה',
     untold: 'בינואר 2026, עשרות אלפים יהודים וערבים הפגינו <strong>יחד בתל אביב</strong> נגד הפשיעה'
   }
 };
@@ -1899,8 +1904,41 @@ const gameState = {
 ══════════════════════════════════════════════════════ */
 let cur = 0;
 let userVerified = localStorage.getItem('ns_verified') === '1'; // persists across refreshes
+
+// Post-verify routing: set by gates that send the user to sl6, consumed by go(8).
+// sessionStorage so a refresh mid-flow still routes back. Cleared after consumption.
+function setPostVerifyIntent(intent) {
+  try { sessionStorage.setItem('ns_post_verify_intent', JSON.stringify(intent)); } catch(e) {}
+}
+function consumePostVerifyIntent() {
+  try {
+    var raw = sessionStorage.getItem('ns_post_verify_intent');
+    if (!raw) return null;
+    sessionStorage.removeItem('ns_post_verify_intent');
+    return JSON.parse(raw);
+  } catch(e) { return null; }
+}
+
+// Applies the "verified" visual to the sl5 zk-nudge. Called from go(8) on first
+// verification AND from init so the state persists across page reloads.
+function applyVerifiedZkNudge() {
+  var zkNudge = document.getElementById('zk-nudge');
+  if (!zkNudge) return;
+  zkNudge.style.background = 'var(--te0)';
+  zkNudge.style.borderColor = 'var(--tn)';
+  zkNudge.innerHTML = '<div style="display:flex;align-items:center;gap:6px">' +
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--te)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>' +
+    '<span style="font-size:var(--fs-9);font-weight:800;color:var(--te)">הקול שלכם נספר</span></div>';
+}
+if (userVerified) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyVerifiedZkNudge);
+  } else {
+    applyVerifiedZkNudge();
+  }
+}
 /* ══════════════════════════════════════════════════════
-   TUTORIAL ENGINE — skeptic-friendly onboarding
+   TUTORIAL ENGINE, skeptic-friendly onboarding
 ══════════════════════════════════════════════════════ */
 const TUT_TOTAL = 9;
 let tutCur = 0;
@@ -1959,7 +1997,7 @@ function tutGetInd(n) {
 function tutBindSwipe(n) {
   const slide = tutSlides[n];
   if (!slide || slide._tutBound) return;
-  // T2 is the practice slide — only the card should accept swipes.
+  // T2 is the practice slide, only the card should accept swipes.
   // Without this guard, swiping the empty slide area skips past the practice.
   if (n === 2) { slide._tutBound = true; return; }
   slide._tutBound = true;
@@ -1989,7 +2027,7 @@ function tutBindSwipe(n) {
     // Determine dominant direction
     const absDx = Math.abs(dx), absDy = Math.abs(dy);
     if (absDx > 10 || absDy > 10) {
-      // Drag detected — now it's safe to preventDefault (stops scroll)
+      // Drag detected, now it's safe to preventDefault (stops scroll)
       if (e.cancelable) e.preventDefault();
       if (dy < -20 && absDy > absDx) {
         // Swiping up
@@ -2029,7 +2067,7 @@ function tutBindSwipe(n) {
     document.addEventListener('mousemove', onMove);
     document.addEventListener('mouseup', onUp);
   });
-  // touchstart stays passive — we don't preventDefault it anymore, so
+  // touchstart stays passive, we don't preventDefault it anymore, so
   // button taps inside tut slides (e.g. t8 "להתחיל") work on mobile.
   slide.addEventListener('touchstart', onDown, { passive: true });
   // touchmove must be non-passive so onMove can preventDefault once drag
@@ -2038,7 +2076,7 @@ function tutBindSwipe(n) {
   slide.addEventListener('touchend', onUp);
 }
 
-// Tutorial t2 — interactive practice card with real swipe engine + demo nudge
+// Tutorial t2, interactive practice card with real swipe engine + demo nudge
 let t2CardInit = false;
 let t2Done = false;
 function t2SwipeAction(dir) {
@@ -2084,13 +2122,13 @@ function showT2Demo() {
   const indR = document.getElementById('t2ir');
   const indL = document.getElementById('t2il');
   const indU = document.getElementById('t2iu');
-  // Nudge right — show "בעד"
+  // Nudge right, show "בעד"
   setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(60px) rotate(6deg)'; inner.style.borderColor = 'var(--te-60)'; if (indR) indR.style.opacity = '1'; }, 600);
   setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indR) indR.style.opacity = '0'; }, 1500);
-  // Nudge left — show "נגד"
+  // Nudge left, show "נגד"
   setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateX(-60px) rotate(-6deg)'; inner.style.borderColor = 'var(--co-60)'; if (indL) indL.style.opacity = '1'; }, 2300);
   setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indL) indL.style.opacity = '0'; }, 3200);
-  // Nudge up — show "מורכב"
+  // Nudge up, show "מורכב"
   setTimeout(() => { inner.style.transition = ease; inner.style.transform = 'translateY(-40px) scale(1.02)'; inner.style.borderColor = 'var(--gd-60)'; if (indU) indU.style.opacity = '1'; }, 4000);
   setTimeout(() => { inner.style.transition = back; inner.style.transform = ''; inner.style.borderColor = ''; if (indU) indU.style.opacity = '0'; inner.style.transition = ''; }, 4900);
 }
@@ -2172,7 +2210,7 @@ function animateTutHemi() {
   setTimeout(fillNext, 400);
 }
 
-// Init tutorial on load — but only on first visit
+// Init tutorial on load, but only on first visit
 (function initTutorialOrSkip() {
   let onboardingDone = false;
   try { onboardingDone = !!localStorage.getItem('nspr_onboarding_done'); } catch(e) {}
@@ -2184,7 +2222,7 @@ function animateTutHemi() {
     if (dots) dots.style.display = 'none';
     const skip = document.getElementById('tut-skip');
     if (skip) skip.style.display = 'none';
-    // Wait a tick for the go() function and sls to be ready — go to sl3 (Home)
+    // Wait a tick for the go() function and sls to be ready, go to sl3 (Home)
     // Since nspr_tour_done is set, sl3 shows daily swipes (not the tour)
     // After 3 daily swipes → dcSwipeDone routes to sl4 (Declarations)
     setTimeout(() => { if (typeof go === 'function') go(3); }, 0);
@@ -2194,7 +2232,7 @@ function animateTutHemi() {
   }
 })();
 
-// Hidden reset — triple-tap any logo (.s-logo) within 800ms to clear flags and reload
+// Hidden reset, triple-tap any logo (.s-logo) within 800ms to clear flags and reload
 (function initLogoReset() {
   let tapCount = 0;
   let tapTimer = null;
@@ -2224,7 +2262,7 @@ function animateTutHemi() {
 })();
 
 /* ══════════════════════════════════════════════════════
-   IN-APP GUIDED TOUR — bubble state machine
+   IN-APP GUIDED TOUR, bubble state machine
 ══════════════════════════════════════════════════════ */
 let appTourActive = false;
 let appTourStep = -1;
@@ -2264,7 +2302,7 @@ function advanceTour() {
   switch (appTourStep) {
     case 1: go(4); setTimeout(() => { showTourBubble('tour-decl'); appTourNav = false; }, 350); return;
     case 2:
-      // Pact step — stays on sl4, points at the gold callout.
+      // Pact step, stays on sl4, points at the gold callout.
       setTimeout(() => { showTourBubble('tour-pact'); appTourNav = false; }, 350);
       return;
     case 3: go(3); setTimeout(() => { showTourBubble('tour-home'); appTourNav = false; }, 350); return;
@@ -2352,14 +2390,27 @@ function go(n) {
     userVerified = true;
     try { localStorage.setItem('ns_verified', '1'); } catch(e) {}
     if (typeof gtag === 'function') gtag('event', 'verification_complete');
-    // Update ZK nudge in S5 to show verified state
-    var zkNudge = document.getElementById('zk-nudge');
-    if (zkNudge) {
-      zkNudge.style.background = 'var(--te0)';
-      zkNudge.style.borderColor = 'var(--tn)';
-      zkNudge.innerHTML = '<div style="display:flex;align-items:center;gap:6px">' +
-        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--te)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>' +
-        '<span style="font-size:var(--fs-9);font-weight:800;color:var(--te)">הקול שלכם נספר</span></div>';
+    applyVerifiedZkNudge();
+
+    // If the user was sent here by a gate (compose / pact), return them to it
+    // after a brief pride-moment pause so they can finish what they started.
+    var intent = consumePostVerifyIntent();
+    if (intent && intent.type) {
+      if (typeof gtag === 'function') gtag('event', 'post_verify_return', { intent_type: intent.type });
+      setTimeout(function() {
+        if (intent.type === 'compose') {
+          go(4);
+          setTimeout(function() {
+            if (typeof openDeclCompose === 'function') openDeclCompose(intent.topic || undefined);
+          }, 250);
+        } else if (intent.type === 'pact') {
+          var returnSlide = (typeof intent.returnSlide === 'number') ? intent.returnSlide : 3;
+          go(returnSlide);
+          setTimeout(function() {
+            if (typeof openPactModal === 'function') openPactModal();
+          }, 250);
+        }
+      }, 1500);
     }
   }
 }
@@ -2441,22 +2492,22 @@ function updateHemiDisplay(count) {
     if (pct) pct.textContent = Math.round(count / 100 * 100) + '%';
     if (bar) bar.style.width = Math.min(100, count) + '%';
   } else if (count <= 1000) {
-    if (hdr) hdr.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> אזרחים מאומתים — הבסיס נבנה';
+    if (hdr) hdr.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> אזרחים מאומתים, הבסיס נבנה';
     if (ctx) ctx.innerHTML = 'כל סקר בישראל מבוסס על <span dir="ltr">1,000</span> משתתפים. אנחנו כבר ב-<span dir="ltr">' + count.toLocaleString() + '</span>.';
-    if (lbl) lbl.innerHTML = 'הבא: רשומה ציבורית — <span dir="ltr">1,000</span>';
+    if (lbl) lbl.innerHTML = 'הבא: רשומה ציבורית, <span dir="ltr">1,000</span>';
     if (pct) pct.textContent = Math.round(count / 1000 * 100) + '%';
     if (bar) bar.style.width = Math.round(count / 1000 * 100) + '%';
   } else if (count <= 37000) {
     if (hdr) hdr.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> / <span dir="ltr">37,000</span> למנדט הראשון';
     if (ctx) ctx.innerHTML = '<span dir="ltr">37,000</span> אזרחים = מנדט אחד בכנסת. אנחנו ב-<span dir="ltr">' + Math.round(count / 37000 * 100) + '%</span>.';
-    if (lbl) lbl.innerHTML = 'הבא: מנדט ראשון — <span dir="ltr">37,000</span>';
+    if (lbl) lbl.innerHTML = 'הבא: מנדט ראשון, <span dir="ltr">37,000</span>';
     if (pct) pct.textContent = Math.round(count / 37000 * 100) + '%';
     if (bar) bar.style.width = Math.round(count / 37000 * 100) + '%';
   } else {
     const mandates = Math.floor(count / 37000);
     if (hdr) hdr.innerHTML = '<span dir="ltr">' + mandates + '</span> מנדטים בכנסת העממית';
     if (ctx) ctx.innerHTML = '<span dir="ltr">' + count.toLocaleString() + '</span> אזרחים מאומתים. הכנסת העממית צוברת כוח אמיתי';
-    if (lbl) lbl.innerHTML = 'הבא: כנסת מלאה — <span dir="ltr">120,000</span>';
+    if (lbl) lbl.innerHTML = 'הבא: כנסת מלאה, <span dir="ltr">120,000</span>';
     if (pct) pct.textContent = Math.min(100, Math.round(count / 120000 * 100)) + '%';
     if (bar) bar.style.width = Math.min(100, Math.round(count / 120000 * 100)) + '%';
   }
@@ -2547,7 +2598,7 @@ function bindSwipeEngine(inner, indFn, doneFn) {
 }
 
 /* ══════════════════════════════════════════════════════
-   CONSENSUS SWIPE ENGINE (cs prefix, sl1) — 6 cards
+   CONSENSUS SWIPE ENGINE (cs prefix, sl1), 6 cards
 ══════════════════════════════════════════════════════ */
 const CS_IDS = ['cs0', 'cs1', 'cs2', 'cs3', 'cs4', 'cs5', 'csr'];
 const CS_SWIPEABLE = ['cs0', 'cs1', 'cs2', 'cs3', 'cs4', 'cs5'];
@@ -2581,7 +2632,7 @@ function csActivate(n) {
   if (hints) hints.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
   const dots = document.getElementById('cs-dots');
   if (dots) dots.style.display = n < CS_SWIPEABLE.length ? 'flex' : 'none';
-  // Result card reached — reflect the user's actual agree count, and soften the
+  // Result card reached, reflect the user's actual agree count, and soften the
   // headline if they disagreed on most cards so the copy isn't tone-deaf.
   if (n === CS_SWIPEABLE.length) {
     const cEl = document.getElementById('csr-agree-count');
@@ -2590,9 +2641,24 @@ function csActivate(n) {
     if (hEl) {
       if (csAgreeCount >= 4)       hEl.textContent = 'גילינו הסכמה רחבה';
       else if (csAgreeCount >= 2)  hEl.textContent = 'יש על מה להסכים';
-      else                          hEl.textContent = 'דעה מורכבת — זה בסדר';
+      else                          hEl.textContent = 'דעה מורכבת, זה בסדר';
     }
   }
+}
+
+// Look up the card by DOM id ('cs0'..'csN', 'dc0'..'dcN'), find its polis_item_id,
+// and POST the swipe direction to polis-rs. Silently skips when:
+//   - POLIS_API is disabled (no backend URL configured)
+//   - the card has no polis_item_id (legacy cards or challengers without an ID)
+//   - the network call fails (don't break the swipe UX over a missing vote)
+function postSwipeToPolis(domId, dir) {
+  try {
+    if (!window.POLIS_API || !window.POLIS_API.enabled()) return;
+    var card = CARD_DATA[domId];
+    if (!card || !card.polis_item_id) return;
+    var val = dir === 'r' ? 1 : dir === 'l' ? -1 : 0;
+    window.POLIS_API.postItemVote(card.polis_item_id, val).catch(function() {});
+  } catch (e) {}
 }
 
 function csSwipeDone(n, dir) {
@@ -2600,6 +2666,9 @@ function csSwipeDone(n, dir) {
   if (dir === 'r') csAgreeCount++;
   else if (dir === 'u') csComplexCount++;
   if (typeof gtag === 'function') gtag('event', 'swipe_card', { card_index: n, card_id: CS_IDS[n] || n, direction: dirName, card_type: 'onboarding' });
+  // Post to polis-rs if this card has a registered polis_item_id (sl1 cards
+  // contribute their votes to the cluster vote matrix alongside sl4 declarations).
+  postSwipeToPolis(CS_IDS[n] || ('cs' + n), dir);
   const inner = csGetInner(n);
   if (!inner) return;
   inner.style.transition = 'transform .3s ease, opacity .25s';
@@ -2670,6 +2739,8 @@ function dcActivate(n) {
 function dcSwipeDone(n, dir) {
   var dirName = dir === 'r' ? 'agree' : dir === 'l' ? 'disagree' : 'complex';
   if (typeof gtag === 'function') gtag('event', 'swipe_card', { card_index: n, card_id: 'dc' + n, direction: dirName, card_type: 'daily' });
+  // Post to polis-rs if this card has a registered polis_item_id.
+  postSwipeToPolis('dc' + n, dir);
   const inner = dcGetInner(n);
   if (!inner) return;
   inner.style.transition = 'transform .3s ease, opacity .25s';
@@ -2721,7 +2792,7 @@ function showConstructionFB(n) {
 }
 
 /* ══════════════════════════════════════════════════════
-   DELIBERATION — statement vote toggle (sl4)
+   DELIBERATION, statement vote toggle (sl4)
 ══════════════════════════════════════════════════════ */
 function voteStmt(btn) {
   // Find the parent declaration card
@@ -2730,9 +2801,9 @@ function voteStmt(btn) {
   // Mark this button as voted (reveal its filled color)
   card.querySelectorAll('.sa-btn').forEach(b => b.classList.remove('voted'));
   btn.classList.add('voted');
-  // Mark the card as voted — this reveals .group-breakdown + dims other buttons
+  // Mark the card as voted, this reveals .group-breakdown + dims other buttons
   card.classList.add('voted');
-  // Bump the aggregate vote count by 1 (visual feedback only — no persistence)
+  // Bump the aggregate vote count by 1 (visual feedback only, no persistence)
   const counter = card.querySelector('.decl-vote-count');
   if (counter) {
     const current = parseInt(counter.textContent.replace(/[^0-9]/g, ''), 10) || 0;
@@ -2810,7 +2881,7 @@ function submitSurvey() {
     q4_improve: (document.getElementById('srv-q4') || {}).value || ''
   };
   if (typeof gtag === 'function') gtag('event', 'experiment_survey', data);
-  // Send to Google Sheet (fire-and-forget — GA4 is the backup)
+  // Send to Google Sheet (fire-and-forget, GA4 is the backup)
   if (SURVEY_SHEET_URL) {
     var payload = Object.assign({
       vid: localStorage.getItem('ns_vid') || '',
@@ -2853,7 +2924,7 @@ function startScan() {
   setTimeout(() => { if (ps4) ps4.className = 'proof-step done'; if (ps4s) ps4s.textContent = '\u2713'; if (cb) cb.style.display = 'block'; }, 3600);
 }
 
-/* ══ DYNAMIC CARD LOADING — winners + A/B challengers ══ */
+/* ══ DYNAMIC CARD LOADING, winners + A/B challengers ══ */
 function createCardEl(card, prefix, index) {
   const id = prefix + index;
   const div = document.createElement('div');
@@ -2878,6 +2949,43 @@ function createCardEl(card, prefix, index) {
   return div;
 }
 
+// djb2 string hash. Used to make daily-card selection date-deterministic.
+function djb2(str) {
+  let hash = 5381;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) + hash) + str.charCodeAt(i);
+    hash = hash & 0xffffffff;
+  }
+  return hash >>> 0;
+}
+
+// Return today's date in YYYY-MM-DD (UTC) + cohort string. Used as the seed
+// so every visitor with the same cohort sees the same 3 cards on a given day.
+function getDailyCohort() {
+  try {
+    var cohort = localStorage.getItem('ns_cohort') || 'default';
+    var d = new Date();
+    var iso = d.getUTCFullYear() + '-' +
+              String(d.getUTCMonth() + 1).padStart(2, '0') + '-' +
+              String(d.getUTCDate()).padStart(2, '0');
+    return iso + ':' + cohort;
+  } catch (e) {
+    return new Date().toISOString().slice(0, 10);
+  }
+}
+
+// Pick N cards deterministically from a pool by hashing each card.id together
+// with the seed. Stable for the same (pool, seed) pair, varies per day.
+function pickDailyCards(pool, count, seed) {
+  if (!pool || pool.length === 0) return [];
+  if (pool.length <= count) return pool.slice(0, count);
+  var scored = pool.map(function(c) {
+    return { card: c, score: djb2(seed + '|' + (c.id || c.statement || '')) };
+  });
+  scored.sort(function(a, b) { return a.score - b.score; });
+  return scored.slice(0, count).map(function(s) { return s.card; });
+}
+
 async function loadCards() {
   try {
     const res = await fetch('data/cards_winners.json');
@@ -2892,6 +3000,7 @@ async function loadCards() {
       const el = createCardEl(card, 'cs', i);
       csArea.insertBefore(el, csr);
       CARD_INFO['cs' + i] = card.info;
+      CARD_DATA['cs' + i] = card;
     });
     CS_IDS.length = 0;
     data.consensus.forEach((_, i) => CS_IDS.push('cs' + i));
@@ -2911,15 +3020,22 @@ async function loadCards() {
     }
 
     // ── Render daily cards ──
+    // The pool grows over time (pipeline auto-promotes 1-2/day). We select 3
+    // of N by date hash so each day shows a different mix, but every visitor
+    // on a given day sees the same 3 (preserves "we got the same card today"
+    // viral moment and reproducibility for A/B analysis).
     if (data.daily?.length) {
       const dcArea = document.getElementById('dc-area');
       dcArea.querySelectorAll('.tcard').forEach(el => el.remove());
-      data.daily.forEach((card, i) => {
+      const pool = data.daily.filter(c => !c.archived && !c.pending_topic);
+      const todaysCards = pickDailyCards(pool, 3, getDailyCohort());
+      todaysCards.forEach((card, i) => {
         const el = createCardEl(card, 'dc', i);
         el.querySelector('.tcard-q').style.fontSize = '12px';
         el.querySelector('.tcard-inner').style.padding = '16px 14px';
         dcArea.appendChild(el);
         CARD_INFO['dc' + i] = card.info;
+        CARD_DATA['dc' + i] = card;
       });
     }
     console.log('[cards] Loaded', data.consensus.length, 'consensus +', data.daily?.length || 0, 'daily from JSON');
@@ -2960,6 +3076,8 @@ async function injectChallenger() {
     if (q) q.innerHTML = ch.statement || ch.question;
     if (ctx) ctx.innerHTML = ch.context || '';
     if (ch.info) CARD_INFO.dc2 = ch.info;
+    // Update CARD_DATA so the swipe handler reads the challenger's polis_item_id (if any)
+    CARD_DATA.dc2 = ch;
     console.log('[A/B] Challenger injected:', ch.id);
   } catch(e) { /* silent */ }
 }
@@ -2967,11 +3085,11 @@ async function injectChallenger() {
 loadCards().then(() => injectChallenger());
 
 /* ══ REUSABLE OPINION MAP (sl4 + sl5) ══ */
-// Canonical SVG positions — do not change without matching sl5 design
+// Canonical SVG positions, do not change without matching sl5 design
 /* Stage 1 color-density pass: cluster blobs desaturated to a single neutral tone
    so only the user's gold dot + emerging statement-dot badges carry color.
    The clusters remain spatially distinct (position + count label do the work).
-   Colors sourced from PAL + --b-* tokens — see :root for meaning. */
+   Colors sourced from PAL + --b-* tokens, see :root for meaning. */
 const _BLOB_FILL = 'rgba(255,255,255,0.04)';    // mirrors --b-ultra
 const _BLOB_STROKE = 'rgba(255,255,255,0.16)';  // mirrors --b1
 const _OPINION_BLOBS = {
@@ -3053,7 +3171,7 @@ function buildOpinionMap({ youGroup = 'A', counts = { A: 72, B: 67, C: 19 }, tot
     }
     svg += `<text x="${b.countPos[0]}" y="${b.countPos[1]}" fill="${b.dotColor}" font-size="7" font-weight="700" font-family="Heebo">${counts[gid] ?? ''}</text>`;
   }
-  // Per-topic statement dots — tappable, open a declaration balloon.
+  // Per-topic statement dots, tappable, open a declaration balloon.
   if (Array.isArray(declarations) && declarations.length) {
     for (const d of declarations) {
       const [dx, dy] = _statementPosition(d);
@@ -3248,12 +3366,23 @@ const GROUP_LABEL = { A: 'קבוצה א׳', B: 'קבוצה ב׳', C: 'קבוצה
       body: JSON.stringify({ user_id: uid, value: value, lang_shown: langOf() }),
     });
   }
+  // Kind-agnostic vote upsert — used by sl1/sl3 onboarding card swipes.
+  // sl4 declarations still use postVote() above (parallel endpoint, same semantics).
+  async function postItemVote(itemId, value) {
+    const uid = await ensureUser();
+    return fetch(base + '/api/v1/items/' + encodeURIComponent(itemId) + '/vote', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ user_id: uid, value: value, lang_shown: langOf() }),
+    });
+  }
   window.POLIS_API = {
     enabled: () => base.length > 0,
     base: () => base,
     loadFeed,
     ensureUser,
     postVote,
+    postItemVote,
   };
   if (base) console.log('[polis] API enabled:', base);
 })();
@@ -3316,10 +3445,10 @@ function renderTopicView() {
   const scr = document.getElementById('delib-scr');
   if (!scr) return;
   scr.querySelectorAll('.decl-card, .decl-legend').forEach(el => el.remove());
-  // Filter + render — insert AFTER the compose banner anchor
+  // Filter + render, insert AFTER the compose banner anchor
   const anchor = document.getElementById('decl-insert-anchor');
   const filtered = DECLARATIONS_DATA.declarations.filter(d => d.topic_key === SELECTED_TOPIC);
-  // Feed-level legend — shown once, explains gold tick + grey dots
+  // Feed-level legend, shown once, explains gold tick + grey dots
   if (filtered.length && anchor) {
     const legend = document.createElement('div');
     legend.className = 'decl-legend';
@@ -3329,7 +3458,7 @@ function renderTopicView() {
     anchor.parentNode.insertBefore(legend, anchor.nextSibling);
   }
   // Render cards after the legend (insertBefore pushes earlier nodes up, so we
-  // need a moving cursor — insert each card after the previous one).
+  // need a moving cursor, insert each card after the previous one).
   let cursor = anchor && anchor.nextSibling && anchor.nextSibling.classList && anchor.nextSibling.classList.contains('decl-legend')
     ? anchor.nextSibling
     : anchor;
@@ -3349,7 +3478,7 @@ function renderTopicView() {
   }
 }
 
-/* @deprecated — replaced by per-topic statement dots overlaid on the opinion map.
+/* @deprecated, replaced by per-topic statement dots overlaid on the opinion map.
  * Kept temporarily in case we want to restore it. Unused. */
 function buildConsensusMeter(groups) {
   const pcts = (groups || []).map(g => g?.agree_pct).filter(p => typeof p === 'number');
@@ -3433,7 +3562,7 @@ function renderTopicOverview(topic) {
     ? topic.total_voters
     : Math.round((counts.A + counts.B + counts.C) * 35);
 
-  // Per-topic declarations — become tappable statement dots on the map.
+  // Per-topic declarations, become tappable statement dots on the map.
   const topicDecls = (DECLARATIONS_DATA?.declarations || []).filter(d => d.topic_key === topic.key);
 
   overview.className = 'card';
@@ -3456,7 +3585,7 @@ function buildDeclarationCard(decl, youGroup) {
   const flameIcon = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>';
 
   /* Stage 4: only "bridge" keeps accent color (gold). trending/contested/new are
-     differentiated by icon + label, not color — feed reads as one visual rhythm. */
+     differentiated by icon + label, not color, feed reads as one visual rhythm. */
   let badgeHtml = '';
   if (decl.badge === 'bridge') badgeHtml = '<span class="bridge-badge">' + escapeHtml(decl.badge_label || 'בונה הסכמות') + '</span>';
   else if (decl.badge === 'trending') badgeHtml = '<span style="font-size:var(--fs-8);color:var(--t2);font-weight:800;display:flex;align-items:center;gap:3px">' + flameIcon + ' ' + escapeHtml(decl.badge_label || 'טרנדי') + '</span>';
@@ -3471,7 +3600,7 @@ function buildDeclarationCard(decl, youGroup) {
     surpriseChip = '<div><span class="surprise-chip split">⚡ מחלוקת חדה בין הקבוצות</span></div>';
   }
 
-  // Agreement scale (hidden until vote — see .group-breakdown CSS)
+  // Agreement scale (hidden until vote, see .group-breakdown CSS)
   // Single horizontal 0%→100% track with one grey dot per group + gold tick for user's group.
   const breakdown = (decl.group_breakdown || []).filter(g => typeof g.agree_pct === 'number');
   const youEntry = breakdown.find(g => g.id === youGroup);
@@ -3645,7 +3774,7 @@ function abTrackCta() {
 
   fetch('data/sl0_variants.json?v=2').then(function(r) { return r.json(); }).then(function(d) {
     var variant = d.champion;
-    // Cohort override — force specific variant for experiment cohorts
+    // Cohort override, force specific variant for experiment cohorts
     if (window._nsCohort && d.cohort_overrides && d.cohort_overrides[window._nsCohort]) {
       variant = d.cohort_overrides[window._nsCohort];
     }
@@ -3678,32 +3807,32 @@ function abTrackCta() {
     if (typeof gtag === 'function') {
       gtag('event', 'sl0_impression', { variant_id: _abVariantId });
     }
-  }).catch(function() { /* JSON fetch failed — keep hardcoded HTML */ });
+  }).catch(function() { /* JSON fetch failed, keep hardcoded HTML */ });
 })();
 
 /* ══════════════════════════════════════════════
-   DECLARATION COMPOSE — AI-guided writing flow
+   DECLARATION COMPOSE, AI-guided writing flow
    ══════════════════════════════════════════════ */
 
 const POLISH_MAP = {
   "cost_of_living_and_food_prices": [
-    "הריכוזיות בשוק המזון מייקרת את החיים לכולנו — חייבים לפתוח את השוק לתחרות אמיתית",
+    "הריכוזיות בשוק המזון מייקרת את החיים לכולנו, חייבים לפתוח את השוק לתחרות אמיתית",
     "אין סיבה שמשפחה ישראלית תשלם על מזון 40% יותר ממשפחה באירופה"
   ],
   "emergency_shelters_and_home_front": [
-    "לכל אחד בישראל מגיע ממ״ד — זו אחריות המדינה, לא של הדיירים",
+    "לכל אחד בישראל מגיע ממ״ד, זו אחריות המדינה, לא של הדיירים",
     "אין מצב שילדים לומדים בבית ספר בלי ממ״ד ב-2026"
   ],
   "healthcare_access_and_wait_times": [
-    "14 חודשי המתנה לפסיכולוג קליני זה לא הגיוני — צריך לקבוע מגבלה בחוק",
+    "14 חודשי המתנה לפסיכולוג קליני זה לא הגיוני, צריך לקבוע מגבלה בחוק",
     "כל מטופל צריך לקבל תור לרופא מומחה תוך חודש, לא תוך חצי שנה"
   ],
   "government_bureaucracy_and_digital_services": [
-    "כל שירות ממשלתי צריך להיות זמין אונליין — אין סיבה לעמוד בתור פיזי ב-2026",
-    "המדינה צריכה לדבר עם עצמה — אנחנו לא צריכים להביא מסמכים שכבר נמצאים במערכת"
+    "כל שירות ממשלתי צריך להיות זמין אונליין, אין סיבה לעמוד בתור פיזי ב-2026",
+    "המדינה צריכה לדבר עם עצמה, אנחנו לא צריכים להביא מסמכים שכבר נמצאים במערכת"
   ],
   "education_quality_and_teacher_shortage": [
-    "משכורות המורים חייבות לעלות — אי אפשר למשוך אנשים טובים בשכר של מתחילים",
+    "משכורות המורים חייבות לעלות, אי אפשר למשוך אנשים טובים בשכר של מתחילים",
     "לכל הילדים בישראל מגיע חינוך איכותי, בלי קשר למקום המגורים שלהם"
   ]
 };
@@ -3994,7 +4123,7 @@ async function loadPactData() {
       }
     } catch (e) { /* fall through to bundled fallback */ }
   }
-  // Bundled fallback — copy only, no progress bars.
+  // Bundled fallback, copy only, no progress bars.
   try {
     var r2 = await fetch('data/pact_mental_health_copy.json');
     if (r2.ok) {
@@ -4004,14 +4133,16 @@ async function loadPactData() {
         group_progress: [], qualifying_groups: 0, crossed_groups: 0, would_fire: false,
         totals: { total: 0, by_type: {} },
         blockers: [
-          // Preview-mode stub blockers — matches Pact #1 deliverability floors.
-          // Cross-tribal blocker (qualifying_groups) intentionally dropped:
-          // the fire rule is deliverability-only (scale + type-balance).
+          // Preview-mode stub blockers so the UI shows the mechanic even
+          // without a backend, matches Pact #1 production defaults.
           { kind: 'total_pledges', have: 0, need: 1000 },
           { kind: 'type_pledges', pledge_type: 'professional', have: 0, need: 100 },
-          { kind: 'type_pledges', pledge_type: 'donor', have: 0, need: 500 }
+          { kind: 'type_pledges', pledge_type: 'donor', have: 0, need: 500 },
+          { kind: 'qualifying_groups', have: 0, need: 2 }
         ],
         thresholds: {
+          group_agreement: 0.8, group_pledge_share: 0.2,
+          min_groups_qualifying: 2, share_of_qualifying: 0.5,
           min_total_pledges: 1000,
           min_pledges_per_type: { professional: 100, donor: 500 }
         }
@@ -4024,7 +4155,7 @@ async function loadPactData() {
   return null;
 }
 
-/* Label lookup for per-type bars — reuses the pledger_type_label_* copy
+/* Label lookup for per-type bars, reuses the pledger_type_label_* copy
  * variants the Pact already carries. */
 function pactTypeLabel(copy, pledgeType, variant) {
   if (pledgeType === 'professional') return pickVariant(copy.pledger_type_label_professional, variant) || 'מטפלים קליניים';
@@ -4097,14 +4228,39 @@ function renderPactProgressBars(copy, v) {
   var thresholds = _pactData.thresholds || {};
   var totals = _pactData.totals || { total: 0, by_type: {} };
   var typeFloors = thresholds.min_pledges_per_type || {};
+  var progress = _pactData.group_progress || [];
 
-  // Cross-tribal group bars (Track 1) were dropped 2026-04-24: pacts only
-  // exist once cross-tribal consensus is already observed, so the activation
-  // view is purely a funding + volunteering challenge (Tracks 2 + 3 below).
-  if (groupLabel) groupLabel.style.display = 'none';
-  groupList.innerHTML = '';
+  // ── Track 1: cross-tribal group bars ───────────────────────────
+  var groupLabelTemplate = pickVariant(copy.group_progress_label, v)
+    || 'קבוצה {{N}}, הסכמה {{pct}}% ({{count}}/{{target}})';
+  if (progress.length) {
+    if (groupLabel) groupLabel.style.display = 'block';
+    groupList.innerHTML = progress.map(function (g, i) {
+      var pct = (g.agree_pct == null) ? 0 : g.agree_pct;
+      var pledgePct = (g.pledge_target > 0)
+        ? Math.max(3, Math.min(100, Math.round((g.pledge_count / g.pledge_target) * 100))) : 0;
+      var fillClass = g.crossed ? 'crossed' : (g.qualifies ? 'qualified' : 'below');
+      var label = groupLabelTemplate
+        .replace('{{N}}', i + 1)
+        .replace('{{pct}}', pct)
+        .replace('{{count}}', g.pledge_count)
+        .replace('{{target}}', g.pledge_target);
+      return '<div class="pact-progress-row">'
+        + '<div class="pact-progress-label"><span>' + escapeHtml(label) + '</span>'
+        + (g.crossed ? '<span style="color:var(--te);font-weight:900">✓</span>' : '')
+        + '</div>'
+        + '<div class="pact-progress-bar"><div class="pact-progress-fill ' + fillClass + '" style="width:' + pledgePct + '%"></div></div>'
+        + '</div>';
+    }).join('');
+  } else {
+    if (groupLabel) groupLabel.style.display = 'none';
+    groupList.innerHTML = '<div style="font-size:var(--fs-9);color:var(--t3);padding:10px;text-align:center;line-height:1.5">'
+      + escapeHtml(pickVariant(copy.empty_state_pre_agreement, v)
+          || 'עוד אין מספיק נתונים מהאלגוריתם, חזרו אחרי השבעה הראשונה')
+      + '</div>';
+  }
 
-  // ── Scale bar + per-type bars (the two gating tracks) ──────────
+  // ── Track 2 + 3: scale bar + per-type bars ─────────────────────
   var scaleRows = [];
   if (thresholds.min_total_pledges > 0) {
     var tTotal = thresholds.min_total_pledges;
@@ -4143,7 +4299,7 @@ function renderPactProgressBars(copy, v) {
   if (_pactData.would_fire || _pactData.status === 'fired') {
     status.textContent = pickVariant(copy.empty_state_pact_fired, v) || 'המהלך יצא לדרך';
     status.style.color = 'var(--te)';
-    blocking.textContent = '🔥 המהלך הופעל — חיבורים ראשונים יצאו ב-48 השעות הקרובות';
+    blocking.textContent = '🔥 המהלך הופעל, חיבורים ראשונים יצאו ב-48 השעות הקרובות';
     blocking.className = 'pact-blocking-line vis fired';
   } else {
     var blockers = _pactData.blockers || [];
@@ -4156,8 +4312,7 @@ function renderPactProgressBars(copy, v) {
       blocking.textContent = '';
     }
     // Short summary line above the blocker: N-of-M conditions met.
-    // Scale (1) + per-type floors (N). No cross-tribal bundle — see note above.
-    var totalConditions = 1 + Object.keys(typeFloors).length;
+    var totalConditions = 2 + Object.keys(typeFloors).length + 1; // scale + per-type + group
     var missing = blockers.length;
     var conditionsMet = Math.max(0, totalConditions - missing);
     status.textContent = conditionsMet + ' מתוך ' + totalConditions + ' תנאים להפעלה התקיימו';
@@ -4185,9 +4340,10 @@ async function submitPactPledge() {
   var typeEl = document.querySelector('input[name="pact_pledge_type"]:checked');
   var pledgeType = typeEl ? typeEl.value : 'donor';
 
-  // ZK verification gate — same flow as declaration compose.
+  // ZK verification gate, same flow as declaration compose.
   if (!userVerified) {
     if (typeof gtag === 'function') gtag('event', 'pact_pledge_gate', { pact_slug: PACT_SLUG });
+    setPostVerifyIntent({ type: 'pact', returnSlide: cur });
     closePactModal();
     go(6); // להיספר slide
     return;
@@ -4261,7 +4417,7 @@ function showPactSuccess() {
 }
 
 /* ══ Pact share cards (stage-aware) ══════════════════════════════════════
- * Each share is itself an action — recruits other Israelis to cross the
+ * Each share is itself an action, recruits other Israelis to cross the
  * activation threshold. Stages:
  *   discovery     → curiosity hook, nobody knows yet (pre-pledge)
  *   growing_donor / growing_professional → "I just pledged, join me"
@@ -4278,7 +4434,7 @@ function getVisitorRef() {
   try {
     var r = localStorage.getItem('pact_visitor_ref');
     if (r) return r;
-    // Prefer polis-rs user id (short form) if we have it — gives real attribution.
+    // Prefer polis-rs user id (short form) if we have it, gives real attribution.
     var uid = localStorage.getItem('ns_polis_user_id');
     if (uid) {
       r = uid.split('-')[0];
@@ -4407,10 +4563,10 @@ function renderPactShareButtons() {
     var stage = selectShareStage();
     var hint = 'עכשיו הזמן להביא את הקבוצות שלנו ליעד';
     if (stage === 'fired_celebration') hint = 'הצלחנו! תעזרו לספר לכולם';
-    else if (stage.indexOf('urgency') === 0) hint = 'אנחנו ממש קרובים — תעזרו לסגור את הפער';
+    else if (stage.indexOf('urgency') === 0) hint = 'אנחנו ממש קרובים, תעזרו לסגור את הפער';
     sectionLabel.textContent = hint;
   }
-  // Ally buttons — 2-3 targeted recruits based on user's pledge type.
+  // Ally buttons, 2-3 targeted recruits based on user's pledge type.
   var allyRow = document.getElementById('pact-share-ally-row');
   if (!allyRow) return;
   var pledge = null;
@@ -4439,7 +4595,7 @@ function renderPactShareButtons() {
   }).join('');
 }
 
-/* Deep-link handler — runs on page load. If ?pact=<slug> is in the URL,
+/* Deep-link handler, runs on page load. If ?pact=<slug> is in the URL,
  * force-enable the pact preview flag and auto-open the modal once the app
  * initializes. ?ref=<hash> is stored for attribution. */
 (function () {
@@ -4524,7 +4680,7 @@ document.addEventListener('DOMContentLoaded', function () { renderPactCallout();
       <div class="pact-scale-progress" id="pact-scale-progress"></div>
       <div class="pact-status-line" id="pact-status-line"></div>
       <div class="pact-blocking-line" id="pact-blocking-line"></div>
-      <div class="pact-preview-warning" id="pact-preview-warning" style="display:none">מצב הדגמה — ההתחייבות נשמרת אצלך עד שהשרת עולה לאוויר</div>
+      <div class="pact-preview-warning" id="pact-preview-warning" style="display:none">מצב הדגמה, ההתחייבות נשמרת אצלך עד שהשרת עולה לאוויר</div>
       <div class="pact-pledge-types" id="pact-pledge-types">
         <label><input type="radio" name="pact_pledge_type" value="donor" checked><span id="pact-label-donor">לתת 100 שקלים למעטפת</span></label>
         <label><input type="radio" name="pact_pledge_type" value="professional"><span id="pact-label-pro">אני מטפל/ת קליני/ת</span></label>
@@ -4571,9 +4727,9 @@ document.addEventListener('DOMContentLoaded', function () { renderPactCallout();
     <div id="dcl-gate" style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:32px 16px;text-align:center;min-height:260px">
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gd)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
       <div style="font-size:var(--fs-14);font-weight:900;color:var(--t1);font-family:var(--heb)">רגע, עוד צעד אחד</div>
-      <div style="font-size:var(--fs-10);color:var(--t3);line-height:1.6;max-width:280px">כדי שהמשפט שלך ייספר ויופיע בפיד, צריך קודם לאמת שאתם אזרחים אמיתיים — תהליך קצר ומאובטח</div>
-      <button class="btn btn-gd" style="width:100%;font-size:var(--fs-12);padding:12px" onclick="if(typeof gtag==='function')gtag('event','compose_gate_verify');closeDeclCompose();go(6)">להיספר</button>
-      <div style="font-size:var(--fs-9);color:var(--t3);cursor:pointer;padding:4px" onclick="if(typeof gtag==='function')gtag('event','compose_gate_dismiss');closeDeclCompose()">אולי אחר כך</div>
+      <div style="font-size:var(--fs-10);color:var(--t3);line-height:1.6;max-width:280px">כדי שהמשפט שלך ייספר ויופיע בפיד, צריך קודם לאמת שאתם אזרחים אמיתיים, תהליך קצר ומאובטח</div>
+      <button class="btn btn-gd" style="width:100%;font-size:var(--fs-12);padding:12px" onclick="if(typeof gtag==='function')gtag('event','compose_gate_verify');setPostVerifyIntent({type:'compose',topic:_dclTopic||null});closeDeclCompose();go(6)">להיספר</button>
+      <div style="font-size:var(--fs-9);color:var(--t3);cursor:pointer;padding:4px" onclick="if(typeof gtag==='function')gtag('event','compose_gate_dismiss');consumePostVerifyIntent();closeDeclCompose()">אולי אחר כך</div>
     </div>
 
     <!-- ── Compose form (default state) ── -->
