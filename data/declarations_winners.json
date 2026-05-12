@@ -1,9 +1,9 @@
 {
-  "updated": "2026-05-11T02:39:34.206957+00:00",
+  "updated": "2026-05-12T09:31:24.708707+00:00",
   "topics": [
     {
-      "key": "civilian_security_and_public_safety",
-      "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
+      "key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
+      "label": "מכת\"זית מים נקיים ותיעוד",
       "you_group": "A",
       "groups": [
         {
@@ -11,29 +11,29 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 74
+          "agree_pct": 76
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 67
+          "agree_pct": 73
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 62
+          "agree_pct": 61
         }
       ],
-      "convergence": "על אף חילוקי הדעות, כל הקבוצות מסכימות שיש צורך בנקיטת צעדים אקטיביים לשיפור הביטחון האישי במרחב הציבורי, גם אם זה כרוך בהגבלות חדשות או שינוי סדרי עדיפויות קיימים",
-      "divergence": "קבוצה א' סבורה שיש להעצים את יכולת ההגנה העצמית של האזרח, בעוד שקבוצה ב' מתמקדת בהגברת נוכחות הרשויות בשטח וקבוצה ג' דוגלת בהחמרת הענישה על עבירות אלימות"
+      "convergence": "למרות חילוקי הדעות, כל הקבוצות מסכימות שיש צורך בתיעוד שקוף של הפעלת מכת\"זיות כדי לאפשר חקירה במקרה של פגיעה באזרחים",
+      "divergence": "בעוד שקבוצה א' דורשת איסור מוחלט על שימוש במי בואש והגבלת המכת\"זית למקרים של אלימות פיזית בלבד, קבוצה ב' מתמקדת בצורך להשעות מיידית שוטר שיפעל בניגוד לנהלים, וקבוצה ג' שמה דגש על התקנת מצלמות גוף ורכב לכל מפעיל"
     },
     {
-      "key": "gender_equity_and_representation",
-      "label": "מגדר וייצוג",
+      "key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
+      "label": "חידוש דרכונים הוגן",
       "you_group": "A",
       "groups": [
         {
@@ -41,59 +41,29 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 78
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 65
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 69
-        }
-      ],
-      "convergence": "כל הקבוצות רואות חשיבות בקידום מעמד האישה ושוויון מגדרי, ומכירות בכך שיש צורך בשינויים מבניים כדי להשיג זאת",
-      "divergence": "קבוצה א' תומכת בהתערבות רגולטורית מחייבת כמו קביעת מכסות ייצוג, בעוד שקבוצה ב' מעדיפה תמריצים כלכליים וקבוצה ג' מתמקדת בהפסקת מימון לאירועים שאינם מקדמים שוויון"
-    },
-    {
-      "key": "criminal_justice_and_investigation_transparency",
-      "label": "חקירה משפטית ושקיפות",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 56
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
           "agree_pct": 70
         },
         {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 64
+        },
+        {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 84
+          "agree_pct": 72
         }
       ],
-      "convergence": "קיים קונצנזוס רחב בין הקבוצות לגבי החשיבות של שקיפות מוגברת בחקירות פליליות, במיוחד בעבירות חמורות, כדי לחזק את אמון הציבור במערכת המשפט",
-      "divergence": "קבוצה א' דורשת שקיפות מלאה ומיידית של צווי איסור פרסום ושמות חשודים, בעוד שקבוצה ב' מציעה הגבלה קצובה בזמן לצווי איסור פרסום וקבוצה ג' מוכנה לשקול פגיעה בשמו הטוב של חשוד למען השקיפות הציבורית"
+      "convergence": "באופן מפתיע, יש הסכמה רחבה בין הקבוצות על כך שמשרד הפנים חייב לספק עילה מפורטת בכתב לכל סירוב להנפקת דרכון, כדי לאפשר לאזרח לערער ביעילות",
+      "divergence": "קבוצה א' דורשת חידוש דרכון אוטומטי ללא קשר לכתובת המגורים בשטחים שנויים במחלוקת, בעוד שקבוצה ב' מציעה הקמת לשכות ייעודיות לתושבי שכונות התפר בתוספת תשלום, וקבוצה ג' מתמקדת בעדכון מערכות המחשוב הממשלתיות להכרה בכל המיקודים של ירושלים ככתובות רגילות"
     },
     {
-      "key": "road_and_traffic_safety",
-      "label": "בטיחות בדרכים",
+      "key": "public_health_warnings_and_preventative_measures_during_heatwaves_and_extreme_weather_conditions",
+      "label": "אזהרות בריאות לשרב",
       "you_group": "A",
       "groups": [
         {
@@ -101,430 +71,26 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 57
+          "agree_pct": 67
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 84
+          "agree_pct": 82
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 76
+          "agree_pct": 88
         }
       ],
-      "convergence": "כל הקבוצות מסכימות שיש לנקוט בצעדים דרסטיים ומחייבים כדי לצמצם את תאונות הדרכים, גם אם הדבר כרוך בהטלת נטל כלכלי או אישי על האזרחים",
-      "divergence": "קבוצה א' מתמקדת בשיפור תשתיות פיזיות בכבישים, קבוצה ב' דוגלת בהחמרת ענישה על עבירות מסכנות חיים כמו סימוס בנהיגה, וקבוצה ג' רואה צורך בבחינה מחודשת של כשירות נהגים מבוגרים"
+      "convergence": "כל הקבוצות רואות חשיבות עליונה בהגנה על הציבור מפני גלי חום קיצוניים, בין אם באמצעות הגבלת עבודות בחוץ ובין אם באמצעות פתיחת מרחבי קירור ציבוריים",
+      "divergence": "קבוצה א' דורשת איסור בחוק על עבודות בנייה וחקלאות בחוץ בשעות השיא של גלי חום, בעוד שקבוצה ב' מתמקדת בפתיחת בריכות ציבוריות בחינם בימי שרב, וקבוצה ג' רואה פתרון בהתקנת הצללה מלאה בגינות ציבוריות כתנאי להיתרי בנייה"
     }
   ],
-  "declarations": [
-    {
-      "id": "decl_addressing_street_violence_and_public_safety_concerns_as_highlighted_by_an_attack_in_a_dog_park_0",
-      "text": "יש לחייב עבודות שירות משמעותיות על כל עבירת אלימות ראשונה במרחב הציבורי, במקום להסתפק בעונש על תנאי",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 215000,
-      "agree_pct": 88,
-      "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 82
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_addressing_street_violence_and_public_safety_concerns_as_highlighted_by_an_attack_in_a_dog_park_1",
-      "text": "יש לתגבר סיורים רגליים של המשטרה בגינות ציבוריות בשעות הערב, על חשבון צמצום ניידות תנועה בכבישים בינעירוניים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 89400,
-      "agree_pct": 72,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 72
-        },
-        {
-          "id": "B",
-          "agree_pct": 66
-        },
-        {
-          "id": "C",
-          "agree_pct": 82
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_addressing_street_violence_and_public_safety_concerns_as_highlighted_by_an_attack_in_a_dog_park_2",
-      "text": "יש לאפשר לכל אזרח לשאת שוקר חשמלי ללא רישיון להגנה עצמית, גם במחיר של סיכון להסלמת סכסוכי רחוב קלים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 142050,
-      "agree_pct": 48,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 80
-        },
-        {
-          "id": "B",
-          "agree_pct": 41
-        },
-        {
-          "id": "C",
-          "agree_pct": 15
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_addressing_street_violence_and_public_safety_concerns_as_highlighted_by_an_attack_in_a_dog_park_3",
-      "text": "רשות מקומית שאין לה תקציב להציב שומר בגינה ציבורית בלילה, תהיה חייבת לנעול אותה החל מהשעה 22:00.",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52100,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 75
-        },
-        {
-          "id": "C",
-          "agree_pct": 67
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_concerns_about_the_fair_treatment_and_representation_of_women_in_public_discourse_and_decision_making_4",
-      "text": "יש לעצור כל תקצוב ממשלתי לכנסים או אירועים ציבוריים שבהם מופיעים פאנלים של גברים בלבד",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 260400,
-      "agree_pct": 86,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "gender_equity_and_representation",
-      "topic_label": "מגדר וייצוג",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 92
-        },
-        {
-          "id": "B",
-          "agree_pct": 83
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_concerns_about_the_fair_treatment_and_representation_of_women_in_public_discourse_and_decision_making_5",
-      "text": "יש לחייב ייצוג של 50% נשים בכל ועדה ממשלתית שמוקמת, גם אם זה יעכב את תחילת עבודת הוועדה בחודשים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 185300,
-      "agree_pct": 55,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "gender_equity_and_representation",
-      "topic_label": "מגדר וייצוג",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 82
-        },
-        {
-          "id": "B",
-          "agree_pct": 26
-        },
-        {
-          "id": "C",
-          "agree_pct": 50
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_concerns_about_the_fair_treatment_and_representation_of_women_in_public_discourse_and_decision_making_6",
-      "text": "יש לתת פטור חלקי ממס לחברות עם שוויון מגדרי בהנהלה הבכירה, במימון של העלאת מס החברות לאלו שלא עומדות ביעד",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 112000,
-      "agree_pct": 68,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "gender_equity_and_representation",
-      "topic_label": "מגדר וייצוג",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 59
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 69
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_the_need_for_effective_investigation_and_transparency_in_cases_of_serious_crime_such_as_a_high_tech_worker_suspected_of_shooting_a_bedouin_man_7",
-      "text": "יש להקים מאגר פתוח לציבור של כל צווי איסור הפרסום שהוצאו, כולל שם השופט והנימוק, כדי למנוע הסתרת מידע שרירותית",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310000,
-      "agree_pct": 91,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "חקירה משפטית ושקיפות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 90
-        },
-        {
-          "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
-          "agree_pct": 91
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_the_need_for_effective_investigation_and_transparency_in_cases_of_serious_crime_such_as_a_high_tech_worker_suspected_of_shooting_a_bedouin_man_8",
-      "text": "יש להתיר פרסום מיידי של שמות חשודים בעבירות המתה, גם במחיר של פגיעה אנושה בשמו הטוב של אדם שאולי יזוכה בהמשך",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 198000,
-      "agree_pct": 42,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "חקירה משפטית ושקיפות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 11
-        },
-        {
-          "id": "B",
-          "agree_pct": 46
-        },
-        {
-          "id": "C",
-          "agree_pct": 69
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_the_need_for_effective_investigation_and_transparency_in_cases_of_serious_crime_such_as_a_high_tech_worker_suspected_of_shooting_a_bedouin_man_9",
-      "text": "יש להגביל צווי איסור פרסום על שמות חשודים ל-48 שעות בלבד, שלאחריהן יידרש אישור חריג של בית המשפט העליון",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 134500,
-      "agree_pct": 76,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "חקירה משפטית ושקיפות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 66
-        },
-        {
-          "id": "B",
-          "agree_pct": 76
-        },
-        {
-          "id": "C",
-          "agree_pct": 91
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_addressing_the_issue_of_road_safety_and_reducing_traffic_accidents_as_indicated_by_multiple_injury_reports_10",
-      "text": "יש לחייב נהגים מעל גיל 75 לעבור טסט מעשי כל שנתיים, בעלות של כמה מאות שקלים מכיסם הפרטי",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 289000,
-      "agree_pct": 85,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 86
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 89
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_addressing_the_issue_of_road_safety_and_reducing_traffic_accidents_as_indicated_by_multiple_injury_reports_11",
-      "text": "יש להחרים את הרכב ל-30 יום לכל נהג שנתפס מסמס בנהיגה, גם אם זה הרכב היחיד של המשפחה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 245000,
-      "agree_pct": 79,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 67
-        },
-        {
-          "id": "B",
-          "agree_pct": 94
-        },
-        {
-          "id": "C",
-          "agree_pct": 82
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    },
-    {
-      "id": "decl_addressing_the_issue_of_road_safety_and_reducing_traffic_accidents_as_indicated_by_multiple_injury_reports_12",
-      "text": "יש להתקין גדרות הפרדה קשיחות בכל הכבישים הבינעירוניים החד-מסלוליים, במימון של תוספת 1% לאגרת הרישוי השנתית",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 175000,
-      "agree_pct": 51,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 18
-        },
-        {
-          "id": "B",
-          "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 58
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-11",
-      "created": "2026-05-11T02:39:34.201393+00:00"
-    }
-  ]
+  "declarations": []
 }
