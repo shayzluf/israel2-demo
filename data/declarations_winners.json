@@ -1,9 +1,9 @@
 {
-  "updated": "2026-05-12T09:31:24.708707+00:00",
+  "updated": "2026-05-13T04:32:23.679975+00:00",
   "topics": [
     {
-      "key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "label": "מכת\"זית מים נקיים ותיעוד",
+      "key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "label": "אלימות בבתי הספר",
       "you_group": "A",
       "groups": [
         {
@@ -11,59 +11,29 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 76
+          "agree_pct": 74
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 73
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 61
-        }
-      ],
-      "convergence": "למרות חילוקי הדעות, כל הקבוצות מסכימות שיש צורך בתיעוד שקוף של הפעלת מכת\"זיות כדי לאפשר חקירה במקרה של פגיעה באזרחים",
-      "divergence": "בעוד שקבוצה א' דורשת איסור מוחלט על שימוש במי בואש והגבלת המכת\"זית למקרים של אלימות פיזית בלבד, קבוצה ב' מתמקדת בצורך להשעות מיידית שוטר שיפעל בניגוד לנהלים, וקבוצה ג' שמה דגש על התקנת מצלמות גוף ורכב לכל מפעיל"
-    },
-    {
-      "key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "label": "חידוש דרכונים הוגן",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
           "agree_pct": 70
         },
         {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 64
-        },
-        {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 72
+          "agree_pct": 59
         }
       ],
-      "convergence": "באופן מפתיע, יש הסכמה רחבה בין הקבוצות על כך שמשרד הפנים חייב לספק עילה מפורטת בכתב לכל סירוב להנפקת דרכון, כדי לאפשר לאזרח לערער ביעילות",
-      "divergence": "קבוצה א' דורשת חידוש דרכון אוטומטי ללא קשר לכתובת המגורים בשטחים שנויים במחלוקת, בעוד שקבוצה ב' מציעה הקמת לשכות ייעודיות לתושבי שכונות התפר בתוספת תשלום, וקבוצה ג' מתמקדת בעדכון מערכות המחשוב הממשלתיות להכרה בכל המיקודים של ירושלים ככתובות רגילות"
+      "convergence": "באופן מפתיע, שלוש הקבוצות מסכימות כי יש להטיל אחריות כלכלית או עונשית על הורים או תלמידים אלימים, בין אם בקנסות כספיים ובין אם במימון מסגרות חלופיות",
+      "divergence": "בעוד קבוצה א' דורשת הרחקה לצמיתות של תלמידים אלימים, קבוצה ב' מתמקדת בחינוך וסדנאות חובה לפתרון סכסוכים, וקבוצה ג' רואה במצלמות אבטחה את הפתרון העיקרי"
     },
     {
-      "key": "public_health_warnings_and_preventative_measures_during_heatwaves_and_extreme_weather_conditions",
-      "label": "אזהרות בריאות לשרב",
+      "key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
         {
@@ -71,25 +41,115 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 67
+          "agree_pct": 69
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 82
+          "agree_pct": 63
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 88
+          "agree_pct": 71
         }
       ],
-      "convergence": "כל הקבוצות רואות חשיבות עליונה בהגנה על הציבור מפני גלי חום קיצוניים, בין אם באמצעות הגבלת עבודות בחוץ ובין אם באמצעות פתיחת מרחבי קירור ציבוריים",
-      "divergence": "קבוצה א' דורשת איסור בחוק על עבודות בנייה וחקלאות בחוץ בשעות השיא של גלי חום, בעוד שקבוצה ב' מתמקדת בפתיחת בריכות ציבוריות בחינם בימי שרב, וקבוצה ג' רואה פתרון בהתקנת הצללה מלאה בגינות ציבוריות כתנאי להיתרי בנייה"
+      "convergence": "שלוש הקבוצות תמימות דעים כי יש להטיל אחריות רבה יותר על נהגים צעירים, בין אם באמצעות הכשרה נוספת או הגבלות על נהיגה לילית",
+      "divergence": "קבוצה א' רואה בקורסי נהיגה מונעת מעשיים את הפתרון, קבוצה ב' מעדיפה איסור נהיגה לילית לצעירים, בעוד קבוצה ג' מצדדת בהתקנת אפליקציות מעקב מטעם חברות הביטוח"
+    },
+    {
+      "key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "label": "ביטחון אזרחי ובטיחות",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 76
+        }
+      ],
+      "convergence": "שלוש הקבוצות מסכימות כי יש להגביר את נוכחות הרשויות והאכיפה במרחב הציבורי, גם אם הדבר כרוך בעלויות נוספות או שינויים בסמכויות",
+      "divergence": "קבוצה א' רואה בהחמרת עונשי המינימום על נשיאת סכין את הדרך, קבוצה ב' מתמקדת בהגברת סיורי משטרה בפארקים, ואילו קבוצה ג' מצדדת בהפעלת סיירות הורים מתנדבים עם סמכויות"
+    },
+    {
+      "key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "label": "ביטחון אזרחי",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 71
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 80
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 77
+        }
+      ],
+      "convergence": "באופן מפתיע, כל הקבוצות מסכימות על הצורך בהרתעה חזקה יותר נגד משליכי בקבוקי תבערה, בין אם באמצעות אמצעים כלכליים ובין אם באמצעות שימוש בכוח",
+      "divergence": "קבוצה א' תומכת בגיבוי מלא לשוטרים לשימוש באש חיה, קבוצה ב' מציעה שלילת קצבאות ביטוח לאומי מורשעים, וקבוצה ג' מתמקדת בהטלת קנסות כבדים על מוכרי חומרים דליקים לקטינים"
+    },
+    {
+      "key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "label": "טוהר המידות",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 76
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 64
+        }
+      ],
+      "convergence": "שלוש הקבוצות מאוחדות בדעה כי יש להגביר את השקיפות והפיקוח על נבחרי ציבור ועובדי מדינה, כדי למנוע שחיתות וניגודי עניינים",
+      "divergence": "קבוצה א' דורשת שלילת מימון מפלגות ממי שמסרב לחתום על אמנת טוהר מידות, קבוצה ב' מצדדת בפרסום יומני פגישות של נבחרי ציבור, וקבוצה ג' רואה בהקמת ועדה מקצועית בלתי תלויה למינויים בכירים את הפתרון"
     }
   ],
   "declarations": []

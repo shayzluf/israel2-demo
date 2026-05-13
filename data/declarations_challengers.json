@@ -1,9 +1,9 @@
 {
-  "updated": "2026-05-12T09:17:03.743411+00:00",
+  "updated": "2026-05-13T04:26:33.711612+00:00",
   "topics": [
     {
-      "key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "label": "מכת\"זית מים נקיים ותיעוד",
+      "key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "label": "אלימות בבתי הספר",
       "you_group": "A",
       "groups": [
         {
@@ -11,59 +11,29 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 76
+          "agree_pct": 74
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 73
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 61
-        }
-      ],
-      "convergence": "למרות חילוקי הדעות, כל הקבוצות מסכימות שיש צורך בתיעוד שקוף של הפעלת מכת\"זיות כדי לאפשר חקירה במקרה של פגיעה באזרחים",
-      "divergence": "בעוד שקבוצה א' דורשת איסור מוחלט על שימוש במי בואש והגבלת המכת\"זית למקרים של אלימות פיזית בלבד, קבוצה ב' מתמקדת בצורך להשעות מיידית שוטר שיפעל בניגוד לנהלים, וקבוצה ג' שמה דגש על התקנת מצלמות גוף ורכב לכל מפעיל"
-    },
-    {
-      "key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "label": "חידוש דרכונים הוגן",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
           "agree_pct": 70
         },
         {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 64
-        },
-        {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 72
+          "agree_pct": 59
         }
       ],
-      "convergence": "באופן מפתיע, יש הסכמה רחבה בין הקבוצות על כך שמשרד הפנים חייב לספק עילה מפורטת בכתב לכל סירוב להנפקת דרכון, כדי לאפשר לאזרח לערער ביעילות",
-      "divergence": "קבוצה א' דורשת חידוש דרכון אוטומטי ללא קשר לכתובת המגורים בשטחים שנויים במחלוקת, בעוד שקבוצה ב' מציעה הקמת לשכות ייעודיות לתושבי שכונות התפר בתוספת תשלום, וקבוצה ג' מתמקדת בעדכון מערכות המחשוב הממשלתיות להכרה בכל המיקודים של ירושלים ככתובות רגילות"
+      "convergence": "באופן מפתיע, שלוש הקבוצות מסכימות כי יש להטיל אחריות כלכלית או עונשית על הורים או תלמידים אלימים, בין אם בקנסות כספיים ובין אם במימון מסגרות חלופיות",
+      "divergence": "בעוד קבוצה א' דורשת הרחקה לצמיתות של תלמידים אלימים, קבוצה ב' מתמקדת בחינוך וסדנאות חובה לפתרון סכסוכים, וקבוצה ג' רואה במצלמות אבטחה את הפתרון העיקרי"
     },
     {
-      "key": "public_health_warnings_and_preventative_measures_during_heatwaves_and_extreme_weather_conditions",
-      "label": "אזהרות בריאות לשרב",
+      "key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
         {
@@ -71,39 +41,129 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 67
+          "agree_pct": 69
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 82
+          "agree_pct": 63
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 88
+          "agree_pct": 71
         }
       ],
-      "convergence": "כל הקבוצות רואות חשיבות עליונה בהגנה על הציבור מפני גלי חום קיצוניים, בין אם באמצעות הגבלת עבודות בחוץ ובין אם באמצעות פתיחת מרחבי קירור ציבוריים",
-      "divergence": "קבוצה א' דורשת איסור בחוק על עבודות בנייה וחקלאות בחוץ בשעות השיא של גלי חום, בעוד שקבוצה ב' מתמקדת בפתיחת בריכות ציבוריות בחינם בימי שרב, וקבוצה ג' רואה פתרון בהתקנת הצללה מלאה בגינות ציבוריות כתנאי להיתרי בנייה"
+      "convergence": "שלוש הקבוצות תמימות דעים כי יש להטיל אחריות רבה יותר על נהגים צעירים, בין אם באמצעות הכשרה נוספת או הגבלות על נהיגה לילית",
+      "divergence": "קבוצה א' רואה בקורסי נהיגה מונעת מעשיים את הפתרון, קבוצה ב' מעדיפה איסור נהיגה לילית לצעירים, בעוד קבוצה ג' מצדדת בהתקנת אפליקציות מעקב מטעם חברות הביטוח"
+    },
+    {
+      "key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "label": "ביטחון אזרחי ובטיחות",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 76
+        }
+      ],
+      "convergence": "שלוש הקבוצות מסכימות כי יש להגביר את נוכחות הרשויות והאכיפה במרחב הציבורי, גם אם הדבר כרוך בעלויות נוספות או שינויים בסמכויות",
+      "divergence": "קבוצה א' רואה בהחמרת עונשי המינימום על נשיאת סכין את הדרך, קבוצה ב' מתמקדת בהגברת סיורי משטרה בפארקים, ואילו קבוצה ג' מצדדת בהפעלת סיירות הורים מתנדבים עם סמכויות"
+    },
+    {
+      "key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "label": "ביטחון אזרחי",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 71
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 80
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 77
+        }
+      ],
+      "convergence": "באופן מפתיע, כל הקבוצות מסכימות על הצורך בהרתעה חזקה יותר נגד משליכי בקבוקי תבערה, בין אם באמצעות אמצעים כלכליים ובין אם באמצעות שימוש בכוח",
+      "divergence": "קבוצה א' תומכת בגיבוי מלא לשוטרים לשימוש באש חיה, קבוצה ב' מציעה שלילת קצבאות ביטוח לאומי מורשעים, וקבוצה ג' מתמקדת בהטלת קנסות כבדים על מוכרי חומרים דליקים לקטינים"
+    },
+    {
+      "key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "label": "טוהר המידות",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 76
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 64
+        }
+      ],
+      "convergence": "שלוש הקבוצות מאוחדות בדעה כי יש להגביר את השקיפות והפיקוח על נבחרי ציבור ועובדי מדינה, כדי למנוע שחיתות וניגודי עניינים",
+      "divergence": "קבוצה א' דורשת שלילת מימון מפלגות ממי שמסרב לחתום על אמנת טוהר מידות, קבוצה ב' מצדדת בפרסום יומני פגישות של נבחרי ציבור, וקבוצה ג' רואה בהקמת ועדה מקצועית בלתי תלויה למינויים בכירים את הפתרון"
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-05-12_0",
-      "text": "יש לאסור לחלוטין שימוש במי בואש בהפגנות, גם אם המעבר למים נקיים יחייב גיוס שוטרי יס״מ נוספים על חשבון תקני סיור בערים",
+      "id": "decl_challenger_2026-05-13_0",
+      "text": "תלמיד שפוגע פיזית באחר צריך להיות מורחק מבית הספר לצמיתות, גם אם זה אומר שההורים יצטרכו לממן לו מסגרת חלופית",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 145000,
+      "vote_count": 125400,
       "agree_pct": 48,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "topic_label": "מכת\"זית מים נקיים ותיעוד",
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "topic_label": "אלימות בבתי הספר",
       "group_breakdown": [
         {
           "id": "A",
@@ -122,180 +182,20 @@
       "win_rate": 0.7,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-12_1",
-      "text": "חובה להתקין מצלמות גוף ורכב על כל מפעיל מכת״זית, כדי לאפשר חקירה שקופה ובלתי תלויה במקרה של פגיעה באזרחים",
+      "id": "decl_challenger_2026-05-13_1",
+      "text": "יש לחייב כל בית ספר להעביר סדנאות חובה לפתרון סכסוכים, במקום שעות לימוד של מקצועות בחירה",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 280500,
-      "agree_pct": 92,
-      "time_label": "לפני יום",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "topic_label": "מכת\"זית מים נקיים ותיעוד",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 88
-        },
-        {
-          "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
-          "agree_pct": 90
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_2",
-      "text": "יש להגביל את השימוש במכת״זית מים נקיים רק למקרים של אלימות פיזית כלפי שוטרים, ולא להפעיל אותה לפיזור חסימות כבישים שקטות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 195000,
-      "agree_pct": 78,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "topic_label": "מכת\"זית מים נקיים ותיעוד",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_3",
-      "text": "שוטר שיכוון מכת״זית לראשם של מפגינים בניגוד לנהלים, יושעה מיידית ויישא באחריות אישית וכלכלית לפיצוי הנפגע",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "topic_label": "מכת\"זית מים נקיים ותיעוד",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 75
-        },
-        {
-          "id": "C",
-          "agree_pct": 67
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_4",
-      "text": "משרד הפנים חייב לאפשר חידוש דרכון אוטומטי לכל אזרח ישראלי, ללא קשר לשאלה אם כתובת המגורים שלו נחשבת לשטח שנוי במחלוקת",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 275000,
+      "vote_count": 210300,
       "agree_pct": 88,
       "time_label": "לפני יום",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "topic_label": "חידוש דרכונים הוגן",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 85
-        },
-        {
-          "id": "B",
-          "agree_pct": 88
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_5",
-      "text": "יש להקים לשכות ייעודיות לתושבי שכונות התפר כדי למנוע עיכובים בדרכונים, בעלות של תוספת 10 שקלים לאגרת הדרכון של שאר האזרחים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 134000,
-      "agree_pct": 45,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "topic_label": "חידוש דרכונים הוגן",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 53
-        },
-        {
-          "id": "B",
-          "agree_pct": 14
-        },
-        {
-          "id": "C",
-          "agree_pct": 73
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_6",
-      "text": "יש לחייב את רשות האוכלוסין לפרט בכתב את העילה המדויקת לכל סירוב להנפקת דרכון, כדי לאפשר לאזרח לערער ביעילות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 210000,
-      "agree_pct": 81,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "topic_label": "חידוש דרכונים הוגן",
+      "topic_key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "topic_label": "אלימות בבתי הספר",
       "group_breakdown": [
         {
           "id": "A",
@@ -303,131 +203,291 @@
         },
         {
           "id": "B",
-          "agree_pct": 97
+          "agree_pct": 85
         },
         {
           "id": "C",
-          "agree_pct": 75
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_7",
-      "text": "יש לעדכן את מערכות המחשוב הממשלתיות כך שיכירו בכל המיקודים של שכונות ירושלים ככתובות ישראליות רגילות ללא חסימות טכניות",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 68000,
-      "agree_pct": 60,
-      "time_label": "לפני חצי שעה",
-      "pipeline_status": null,
-      "topic_key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "topic_label": "חידוש דרכונים הוגן",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 60
-        },
-        {
-          "id": "B",
-          "agree_pct": 56
-        },
-        {
-          "id": "C",
-          "agree_pct": 57
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-12_8",
-      "text": "יש לאסור בחוק עבודות בנייה וחקלאות בחוץ בשעות השיא של גלי חום קיצוניים, כדי לשמור על חיי העובדים",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 320000,
-      "agree_pct": 94,
-      "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "public_health_warnings_and_preventative_measures_during_heatwaves_and_extreme_weather_conditions",
-      "topic_label": "אזהרות בריאות לשרב",
+      "id": "decl_challenger_2026-05-13_2",
+      "text": "צריך להתקין מצלמות אבטחה במסדרונות ובחצרות בתי הספר כדי לתעד מקרי אלימות בזמן אמת",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 156000,
+      "agree_pct": 76,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "topic_label": "אלימות בבתי הספר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 91
+          "agree_pct": 73
         },
         {
           "id": "B",
-          "agree_pct": 95
+          "agree_pct": 84
         },
         {
           "id": "C",
-          "agree_pct": 94
+          "agree_pct": 70
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-12_9",
-      "text": "רשויות מקומיות צריכות לפתוח את הבריכות הציבוריות בחינם בימי שרב קיצוני, גם אם זה יחייב קיצוץ בתקציב אירועי התרבות בקיץ",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 156000,
-      "agree_pct": 55,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "public_health_warnings_and_preventative_measures_during_heatwaves_and_extreme_weather_conditions",
-      "topic_label": "אזהרות בריאות לשרב",
+      "id": "decl_challenger_2026-05-13_3",
+      "text": "הורים לתלמידים אלימים צריכים לשאת בקנסות כספיים על הנזק שהילדים שלהם גורמים לרכוש או לתלמידים אחרים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 62,
+      "time_label": "לפני שעה",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "topic_label": "אלימות בבתי הספר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 24
+          "agree_pct": 59
         },
         {
           "id": "B",
-          "agree_pct": 55
+          "agree_pct": 72
         },
         {
           "id": "C",
-          "agree_pct": 89
+          "agree_pct": 64
         }
       ],
-      "surprise": "split",
+      "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-12_10",
-      "text": "יש לחייב קבלנים להתקין הצללה מלאה מעל כל גינה ציבורית כתנאי בסיסי לקבלת היתר בנייה לשכונות חדשות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 245000,
-      "agree_pct": 85,
-      "time_label": "לפני 10 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "public_health_warnings_and_preventative_measures_during_heatwaves_and_extreme_weather_conditions",
-      "topic_label": "אזהרות בריאות לשרב",
+      "id": "decl_challenger_2026-05-13_4",
+      "text": "יש להתנות קבלת רישיון נהיגה לצעירים בהשתתפות בקורס נהיגה מונעת מעשי, בעלות סמלית שישלמו הנהגים החדשים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 289000,
+      "agree_pct": 86,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 87
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 86
+        },
+        {
+          "id": "C",
+          "agree_pct": 81
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_5",
+      "text": "צריך לאסור על נהגים מתחת לגיל 21 לנהוג בין חצות ל-5 בבוקר כדי להפחית תאונות עצמיות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 198500,
+      "agree_pct": 54,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 62
+        },
+        {
+          "id": "B",
+          "agree_pct": 23
+        },
+        {
+          "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_6",
+      "text": "חברות הביטוח צריכות לחייב נהגים צעירים להתקין אפליקציה שעוקבת אחרי מהירות ושימוש בנייד, תמורת הוזלה בביטוח",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 142000,
+      "agree_pct": 71,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 74
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_7",
+      "text": "יש להשקיע יותר בתאורת כבישים חכמה בתוך הערים, גם אם זה יבוא על חשבון פיתוח כבישים בינעירוניים חדשים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 61000,
+      "agree_pct": 58,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 58
+        },
+        {
+          "id": "B",
+          "agree_pct": 54
+        },
+        {
+          "id": "C",
+          "agree_pct": 55
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_8",
+      "text": "צריך להגביר סיורי משטרה בפארקים ציבוריים בלילות, גם אם זה יחייב העלאת מס עירוני (ארנונה) לתושבים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 175000,
+      "agree_pct": 45,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "topic_label": "ביטחון אזרחי ובטיחות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 14
+        },
+        {
+          "id": "B",
+          "agree_pct": 49
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_9",
+      "text": "יש להחמיר משמעותית את עונשי המינימום על נשיאת סכין במרחב הציבורי, ללא אפשרות להמרת העונש בעבודות שירות",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 312000,
+      "agree_pct": 92,
+      "time_label": "לפני 3 ימים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "topic_label": "ביטחון אזרחי ובטיחות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 93
+        },
+        {
+          "id": "C",
+          "agree_pct": 90
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_10",
+      "text": "רשויות מקומיות צריכות להפעיל סיירות הורים מתנדבים בשכונות, שיקבלו סמכויות בסיסיות לעיכוב עד הגעת משטרה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 134000,
+      "agree_pct": 81,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
+      "topic_key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "topic_label": "ביטחון אזרחי ובטיחות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
         },
         {
           "id": "B",
@@ -435,29 +495,317 @@
         },
         {
           "id": "C",
-          "agree_pct": 80
+          "agree_pct": 76
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_11",
+      "text": "נערים שהיו מעורבים באלימות קשה חייבים לעבור טיפול אצל פסיכולוג קליני, על חשבון תקציבי תרבות וספורט של הרשות המקומית",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 55000,
+      "agree_pct": 66,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "topic_label": "ביטחון אזרחי ובטיחות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 70
+        },
+        {
+          "id": "B",
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_12",
+      "text": "שוטרים שזיהו כוונה ברורה להשלכת בקבוק תבערה צריכים לקבל גיבוי מלא לשימוש באש חיה כדי לנטרל את הסכנה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 298000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "topic_label": "ביטחון אזרחי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 90
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 93
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_13",
+      "text": "מי שמורשע בהשלכת בקבוק תבערה צריך לאבד את הזכאות שלו לקצבאות ביטוח לאומי, כדי לייצר הרתעה כלכלית",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 215000,
+      "agree_pct": 59,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "topic_label": "ביטחון אזרחי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 30
+        },
+        {
+          "id": "B",
+          "agree_pct": 87
+        },
+        {
+          "id": "C",
+          "agree_pct": 56
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_14",
+      "text": "המשטרה צריכה להפעיל רחפנים באופן קבוע מעל אזורי חיכוך, גם אם זה ידרוש קיצוץ בתקני שוטרי תנועה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 112000,
+      "agree_pct": 74,
+      "time_label": "לפני 7 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "topic_label": "ביטחון אזרחי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 74
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_15",
+      "text": "יש להטיל קנסות כבדים על בעלי עסקים שמוכרים חומרים דליקים לקטינים ללא זיהוי, כדי לצמצם את התופעה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 68000,
+      "agree_pct": 85,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "topic_label": "ביטחון אזרחי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "agree_pct": 77
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_16",
+      "text": "יש לשלול מימון מפלגות מנבחרי ציבור שסירבו לחתום על אמנת טוהר מידות, גם אם יצטרכו לגייס תרומות פרטיות במקום",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 189000,
+      "agree_pct": 51,
+      "time_label": "לפני 10 שעות",
+      "pipeline_status": null,
+      "topic_key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "topic_label": "טוהר המידות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 82
+        },
+        {
+          "id": "B",
+          "agree_pct": 58
+        },
+        {
+          "id": "C",
+          "agree_pct": 16
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_17",
+      "text": "כל נבחר ציבור חייב לפרסם את יומן הפגישות שלו עם לוביסטים ואנשי עסקים באופן גלוי לציבור פעם בחודש",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 320000,
+      "agree_pct": 94,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "topic_label": "טוהר המידות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 96
+        },
+        {
+          "id": "B",
+          "agree_pct": 96
+        },
+        {
+          "id": "C",
+          "agree_pct": 97
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_18",
+      "text": "צריך להקים ועדה מקצועית בלתי תלויה שתאשר מינויים בכירים בשירות הציבורי, כדי למנוע מינוי מקורבים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 205000,
+      "agree_pct": 82,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "topic_label": "טוהר המידות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 92
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
+          "id": "C",
+          "agree_pct": 76
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_19",
+      "text": "המדינה צריכה להעניק פרס כספי לעובדי ציבור שחושפים שחיתות, על חשבון תקציב המשרד שבו התגלתה השחיתות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 72000,
+      "agree_pct": 68,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "topic_label": "טוהר המידות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 79
+        },
+        {
+          "id": "B",
+          "agree_pct": 61
+        },
+        {
+          "id": "C",
+          "agree_pct": 69
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-05-12_0",
-      "text": "יש לאסור לחלוטין שימוש במי בואש בהפגנות, גם אם המעבר למים נקיים יחייב גיוס שוטרי יס״מ נוספים על חשבון תקני סיור בערים",
+      "id": "decl_challenger_2026-05-13_0",
+      "text": "תלמיד שפוגע פיזית באחר צריך להיות מורחק מבית הספר לצמיתות, גם אם זה אומר שההורים יצטרכו לממן לו מסגרת חלופית",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 145000,
+      "vote_count": 125400,
       "agree_pct": 48,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "topic_label": "מכת\"זית מים נקיים ותיעוד",
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "topic_label": "אלימות בבתי הספר",
       "group_breakdown": [
         {
           "id": "A",
@@ -476,180 +824,20 @@
       "win_rate": 0.7,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-12_1",
-      "text": "חובה להתקין מצלמות גוף ורכב על כל מפעיל מכת״זית, כדי לאפשר חקירה שקופה ובלתי תלויה במקרה של פגיעה באזרחים",
+      "id": "decl_challenger_2026-05-13_1",
+      "text": "יש לחייב כל בית ספר להעביר סדנאות חובה לפתרון סכסוכים, במקום שעות לימוד של מקצועות בחירה",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 280500,
-      "agree_pct": 92,
-      "time_label": "לפני יום",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "topic_label": "מכת\"זית מים נקיים ותיעוד",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 88
-        },
-        {
-          "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
-          "agree_pct": 90
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_2",
-      "text": "יש להגביל את השימוש במכת״זית מים נקיים רק למקרים של אלימות פיזית כלפי שוטרים, ולא להפעיל אותה לפיזור חסימות כבישים שקטות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 195000,
-      "agree_pct": 78,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "topic_label": "מכת\"זית מים נקיים ותיעוד",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_3",
-      "text": "שוטר שיכוון מכת״זית לראשם של מפגינים בניגוד לנהלים, יושעה מיידית ויישא באחריות אישית וכלכלית לפיצוי הנפגע",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "addressing_the_issue_of_police_water_cannons_using_only_clean_water_and_video_documentation_for_transparency_and_public_safety",
-      "topic_label": "מכת\"זית מים נקיים ותיעוד",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 75
-        },
-        {
-          "id": "C",
-          "agree_pct": 67
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_4",
-      "text": "משרד הפנים חייב לאפשר חידוש דרכון אוטומטי לכל אזרח ישראלי, ללא קשר לשאלה אם כתובת המגורים שלו נחשבת לשטח שנוי במחלוקת",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 275000,
+      "vote_count": 210300,
       "agree_pct": 88,
       "time_label": "לפני יום",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "topic_label": "חידוש דרכונים הוגן",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 85
-        },
-        {
-          "id": "B",
-          "agree_pct": 88
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_5",
-      "text": "יש להקים לשכות ייעודיות לתושבי שכונות התפר כדי למנוע עיכובים בדרכונים, בעלות של תוספת 10 שקלים לאגרת הדרכון של שאר האזרחים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 134000,
-      "agree_pct": 45,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "topic_label": "חידוש דרכונים הוגן",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 53
-        },
-        {
-          "id": "B",
-          "agree_pct": 14
-        },
-        {
-          "id": "C",
-          "agree_pct": 73
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_6",
-      "text": "יש לחייב את רשות האוכלוסין לפרט בכתב את העילה המדויקת לכל סירוב להנפקת דרכון, כדי לאפשר לאזרח לערער ביעילות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 210000,
-      "agree_pct": 81,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "topic_label": "חידוש דרכונים הוגן",
+      "topic_key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "topic_label": "אלימות בבתי הספר",
       "group_breakdown": [
         {
           "id": "A",
@@ -657,131 +845,291 @@
         },
         {
           "id": "B",
-          "agree_pct": 97
+          "agree_pct": 85
         },
         {
           "id": "C",
-          "agree_pct": 75
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-12_7",
-      "text": "יש לעדכן את מערכות המחשוב הממשלתיות כך שיכירו בכל המיקודים של שכונות ירושלים ככתובות ישראליות רגילות ללא חסימות טכניות",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 68000,
-      "agree_pct": 60,
-      "time_label": "לפני חצי שעה",
-      "pipeline_status": null,
-      "topic_key": "ensuring_fair_and_transparent_processes_for_passport_renewal_especially_concerning_residency_in_disputed_areas",
-      "topic_label": "חידוש דרכונים הוגן",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 60
-        },
-        {
-          "id": "B",
-          "agree_pct": 56
-        },
-        {
-          "id": "C",
-          "agree_pct": 57
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-12_8",
-      "text": "יש לאסור בחוק עבודות בנייה וחקלאות בחוץ בשעות השיא של גלי חום קיצוניים, כדי לשמור על חיי העובדים",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 320000,
-      "agree_pct": 94,
-      "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "public_health_warnings_and_preventative_measures_during_heatwaves_and_extreme_weather_conditions",
-      "topic_label": "אזהרות בריאות לשרב",
+      "id": "decl_challenger_2026-05-13_2",
+      "text": "צריך להתקין מצלמות אבטחה במסדרונות ובחצרות בתי הספר כדי לתעד מקרי אלימות בזמן אמת",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 156000,
+      "agree_pct": 76,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "topic_label": "אלימות בבתי הספר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 91
+          "agree_pct": 73
         },
         {
           "id": "B",
-          "agree_pct": 95
+          "agree_pct": 84
         },
         {
           "id": "C",
-          "agree_pct": 94
+          "agree_pct": 70
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-12_9",
-      "text": "רשויות מקומיות צריכות לפתוח את הבריכות הציבוריות בחינם בימי שרב קיצוני, גם אם זה יחייב קיצוץ בתקציב אירועי התרבות בקיץ",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 156000,
-      "agree_pct": 55,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "public_health_warnings_and_preventative_measures_during_heatwaves_and_extreme_weather_conditions",
-      "topic_label": "אזהרות בריאות לשרב",
+      "id": "decl_challenger_2026-05-13_3",
+      "text": "הורים לתלמידים אלימים צריכים לשאת בקנסות כספיים על הנזק שהילדים שלהם גורמים לרכוש או לתלמידים אחרים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 62,
+      "time_label": "לפני שעה",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_violence_among_students_in_schools_as_one_in_ten_students_reported_being_victims_of_violence_in_the_past_year",
+      "topic_label": "אלימות בבתי הספר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 24
+          "agree_pct": 59
         },
         {
           "id": "B",
-          "agree_pct": 55
+          "agree_pct": 72
         },
         {
           "id": "C",
-          "agree_pct": 89
+          "agree_pct": 64
         }
       ],
-      "surprise": "split",
+      "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-12_10",
-      "text": "יש לחייב קבלנים להתקין הצללה מלאה מעל כל גינה ציבורית כתנאי בסיסי לקבלת היתר בנייה לשכונות חדשות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 245000,
-      "agree_pct": 85,
-      "time_label": "לפני 10 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "public_health_warnings_and_preventative_measures_during_heatwaves_and_extreme_weather_conditions",
-      "topic_label": "אזהרות בריאות לשרב",
+      "id": "decl_challenger_2026-05-13_4",
+      "text": "יש להתנות קבלת רישיון נהיגה לצעירים בהשתתפות בקורס נהיגה מונעת מעשי, בעלות סמלית שישלמו הנהגים החדשים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 289000,
+      "agree_pct": 86,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 87
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 86
+        },
+        {
+          "id": "C",
+          "agree_pct": 81
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_5",
+      "text": "צריך לאסור על נהגים מתחת לגיל 21 לנהוג בין חצות ל-5 בבוקר כדי להפחית תאונות עצמיות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 198500,
+      "agree_pct": 54,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 62
+        },
+        {
+          "id": "B",
+          "agree_pct": 23
+        },
+        {
+          "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_6",
+      "text": "חברות הביטוח צריכות לחייב נהגים צעירים להתקין אפליקציה שעוקבת אחרי מהירות ושימוש בנייד, תמורת הוזלה בביטוח",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 142000,
+      "agree_pct": 71,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 74
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_7",
+      "text": "יש להשקיע יותר בתאורת כבישים חכמה בתוך הערים, גם אם זה יבוא על חשבון פיתוח כבישים בינעירוניים חדשים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 61000,
+      "agree_pct": 58,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "improving_road_safety_to_prevent_accidents_following_a_17_year_old_being_moderately_injured_in_a_self_inflicted_car_accident",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 58
+        },
+        {
+          "id": "B",
+          "agree_pct": 54
+        },
+        {
+          "id": "C",
+          "agree_pct": 55
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_8",
+      "text": "צריך להגביר סיורי משטרה בפארקים ציבוריים בלילות, גם אם זה יחייב העלאת מס עירוני (ארנונה) לתושבים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 175000,
+      "agree_pct": 45,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "topic_label": "ביטחון אזרחי ובטיחות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 14
+        },
+        {
+          "id": "B",
+          "agree_pct": 49
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_9",
+      "text": "יש להחמיר משמעותית את עונשי המינימום על נשיאת סכין במרחב הציבורי, ללא אפשרות להמרת העונש בעבודות שירות",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 312000,
+      "agree_pct": 92,
+      "time_label": "לפני 3 ימים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "topic_label": "ביטחון אזרחי ובטיחות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 93
+        },
+        {
+          "id": "C",
+          "agree_pct": 90
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_10",
+      "text": "רשויות מקומיות צריכות להפעיל סיירות הורים מתנדבים בשכונות, שיקבלו סמכויות בסיסיות לעיכוב עד הגעת משטרה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 134000,
+      "agree_pct": 81,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
+      "topic_key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "topic_label": "ביטחון אזרחי ובטיחות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
         },
         {
           "id": "B",
@@ -789,15 +1137,303 @@
         },
         {
           "id": "C",
-          "agree_pct": 80
+          "agree_pct": 76
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
       "pending_topic": true,
-      "generated_from": "gemini_2026-05-12",
-      "created": "2026-05-12T09:17:03.743411+00:00"
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_11",
+      "text": "נערים שהיו מעורבים באלימות קשה חייבים לעבור טיפול אצל פסיכולוג קליני, על חשבון תקציבי תרבות וספורט של הרשות המקומית",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 55000,
+      "agree_pct": 66,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "ensuring_public_safety_and_addressing_incidents_of_violence_such_as_a_16_year_old_being_seriously_stabbed_in_tirat_carmel",
+      "topic_label": "ביטחון אזרחי ובטיחות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 70
+        },
+        {
+          "id": "B",
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_12",
+      "text": "שוטרים שזיהו כוונה ברורה להשלכת בקבוק תבערה צריכים לקבל גיבוי מלא לשימוש באש חיה כדי לנטרל את הסכנה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 298000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "topic_label": "ביטחון אזרחי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 90
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 93
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_13",
+      "text": "מי שמורשע בהשלכת בקבוק תבערה צריך לאבד את הזכאות שלו לקצבאות ביטוח לאומי, כדי לייצר הרתעה כלכלית",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 215000,
+      "agree_pct": 59,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "topic_label": "ביטחון אזרחי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 30
+        },
+        {
+          "id": "B",
+          "agree_pct": 87
+        },
+        {
+          "id": "C",
+          "agree_pct": 56
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_14",
+      "text": "המשטרה צריכה להפעיל רחפנים באופן קבוע מעל אזורי חיכוך, גם אם זה ידרוש קיצוץ בתקני שוטרי תנועה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 112000,
+      "agree_pct": 74,
+      "time_label": "לפני 7 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "topic_label": "ביטחון אזרחי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 83
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 74
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_15",
+      "text": "יש להטיל קנסות כבדים על בעלי עסקים שמוכרים חומרים דליקים לקטינים ללא זיהוי, כדי לצמצם את התופעה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 68000,
+      "agree_pct": 85,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "addressing_the_issue_of_public_safety_and_the_use_of_incendiary_devices_as_police_shot_at_two_suspects_with_firebombs_in_hadera",
+      "topic_label": "ביטחון אזרחי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "agree_pct": 77
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_16",
+      "text": "יש לשלול מימון מפלגות מנבחרי ציבור שסירבו לחתום על אמנת טוהר מידות, גם אם יצטרכו לגייס תרומות פרטיות במקום",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 189000,
+      "agree_pct": 51,
+      "time_label": "לפני 10 שעות",
+      "pipeline_status": null,
+      "topic_key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "topic_label": "טוהר המידות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 82
+        },
+        {
+          "id": "B",
+          "agree_pct": 58
+        },
+        {
+          "id": "C",
+          "agree_pct": 16
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_17",
+      "text": "כל נבחר ציבור חייב לפרסם את יומן הפגישות שלו עם לוביסטים ואנשי עסקים באופן גלוי לציבור פעם בחודש",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 320000,
+      "agree_pct": 94,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "topic_label": "טוהר המידות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 96
+        },
+        {
+          "id": "B",
+          "agree_pct": 96
+        },
+        {
+          "id": "C",
+          "agree_pct": 97
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_18",
+      "text": "צריך להקים ועדה מקצועית בלתי תלויה שתאשר מינויים בכירים בשירות הציבורי, כדי למנוע מינוי מקורבים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 205000,
+      "agree_pct": 82,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "topic_label": "טוהר המידות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 92
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
+          "id": "C",
+          "agree_pct": 76
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-13_19",
+      "text": "המדינה צריכה להעניק פרס כספי לעובדי ציבור שחושפים שחיתות, על חשבון תקציב המשרד שבו התגלתה השחיתות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 72000,
+      "agree_pct": 68,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "promoting_integrity_and_ethical_conduct_in_public_life_as_discussed_in_a_headline_about_purity_of_integrity_and_purity_of_opinions",
+      "topic_label": "טוהר המידות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 79
+        },
+        {
+          "id": "B",
+          "agree_pct": 61
+        },
+        {
+          "id": "C",
+          "agree_pct": 69
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-13",
+      "created": "2026-05-13T04:26:33.711612+00:00"
     }
   ]
 }
