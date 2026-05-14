@@ -266,6 +266,26 @@ body{font-family:var(--heb);background:#040508;color:var(--t1);
 .surprise-chip{display:inline-flex;align-items:center;gap:3px;font-size:var(--fs-8);font-weight:800;padding:3px 8px;border-radius:99px;margin-bottom:5px;}
 .surprise-chip.bridge{background:var(--te0);color:var(--te);border:1px solid var(--te-30);}
 .surprise-chip.split{background:var(--co0);color:var(--co);border:1px solid var(--cn);}
+/* Per-topic bridging indicator (CN-style) — sl4 declaration cards.
+   Two horizontal bars + a single Hebrew label chip:
+     1) consensus bar: -1 ←→ +1, tick at consensus_score
+     2) polarization bar: 0 → 1, tick at |polarity_coef|
+   Label chip combines both into one of 4 quadrants. */
+.bridge-meter{display:flex;flex-direction:column;gap:4px;margin:6px 0 8px;}
+.bridge-label-chip{display:inline-flex;align-self:flex-start;font-size:var(--fs-9);font-weight:800;padding:2px 9px;border-radius:99px;}
+.bridge-label-chip.bridge-pos{background:var(--te0);color:var(--te);border:1px solid var(--te-30);}
+.bridge-label-chip.bridge-neg{background:var(--co0);color:var(--co);border:1px solid var(--cn);}
+.bridge-label-chip.bridge-div{background:rgba(114,88,162,0.10);color:var(--pu);border:1px solid rgba(114,88,162,0.32);}
+.bridge-label-chip.bridge-mid{background:var(--gd-06);color:var(--gd);border:1px solid var(--gd-30,rgba(232,161,48,0.30));}
+.bridge-track{position:relative;height:6px;background:var(--sf);border-radius:99px;}
+.bridge-track.bridge-consensus{height:8px;}
+.bridge-track.bridge-consensus::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--b1);transform:translateX(-50%);}
+.bridge-tick{position:absolute;top:-2px;bottom:-2px;width:3px;background:var(--gl);border-radius:99px;transform:translateX(-50%);box-shadow:0 0 0 1px var(--sf);}
+.bridge-axis{display:flex;justify-content:space-between;font-size:var(--fs-7);color:var(--t3);padding:0 2px;}
+.bridge-axis-row{display:flex;align-items:center;gap:6px;font-size:var(--fs-7);color:var(--t3);}
+.bridge-axis-row span{flex-shrink:0;}
+.bridge-axis-row .bridge-track{flex:1;}
+.bridge-skeleton{font-size:var(--fs-8);color:var(--t3);font-style:italic;padding:4px 8px;background:var(--sf);border-radius:6px;text-align:center;}
 .bar{height:5px;background:var(--b0);border-radius:99px;overflow:hidden;}
 .bar-f{height:100%;border-radius:99px;}
 .btn{padding:11px 14px;border-radius:9px;font-size:var(--fs-12);font-weight:900;text-align:center;cursor:pointer;transition:opacity .15s;}
@@ -3321,6 +3341,8 @@ const GROUP_LABEL = { A: 'קבוצה א׳', B: 'קבוצה ב׳', C: 'קבוצה
         id: idxToLegacy[b.group_id] || String(b.group_id),
         agree_pct: b.agree_pct,
       })),
+      consensus_score: (typeof d.consensus_score === 'number') ? d.consensus_score : null,
+      polarization_level: (typeof d.polarization_level === 'number') ? d.polarization_level : null,
       time_label: '',
       pipeline_status: null,
     }));
@@ -3639,9 +3661,20 @@ function renderTopicView() {
   const scr = document.getElementById('delib-scr');
   if (!scr) return;
   scr.querySelectorAll('.decl-card, .decl-legend').forEach(el => el.remove());
-  // Filter + render, insert AFTER the compose banner anchor
+  // Filter + render, insert AFTER the compose banner anchor.
+  // Sort by |consensus_score| descending — common-ground first in either direction
+  // (broad agreement and broad rejection both rise to top; polarizing items sink).
+  // Items without a consensus_score (k-anon skip / no recompute yet) keep insertion
+  // order, sorted to the bottom.
   const anchor = document.getElementById('decl-insert-anchor');
-  const filtered = DECLARATIONS_DATA.declarations.filter(d => d.topic_key === SELECTED_TOPIC);
+  const filtered = DECLARATIONS_DATA.declarations
+    .filter(d => d.topic_key === SELECTED_TOPIC)
+    .slice()
+    .sort((a, b) => {
+      const av = (typeof a.consensus_score === 'number') ? Math.abs(a.consensus_score) : -Infinity;
+      const bv = (typeof b.consensus_score === 'number') ? Math.abs(b.consensus_score) : -Infinity;
+      return bv - av;
+    });
   // Feed-level legend, shown once, explains gold tick + grey dots
   if (filtered.length && anchor) {
     const legend = document.createElement('div');
@@ -3770,6 +3803,56 @@ function renderTopicOverview(topic) {
     + `<strong style="color:var(--co)">מפצל:</strong> ${escapeHtml(topic.divergence || '')}</div>`;
 }
 
+/* Build the bridging indicator (label chip + 2 bars) for an sl4 declaration card.
+   Returns HTML string. Renders a skeleton placeholder if scores are absent
+   (topic below k-anon threshold OR no recompute yet).
+
+   Thresholds match server-side intent:
+     - |polarization_level| >= 0.3 → "divides" (regardless of consensus sign)
+     - else consensus_score >= 0.3 → "unites in favor"
+     - else consensus_score <= -0.3 → "unites against"
+     - else → "mixed/weak"
+ */
+function buildBridgeMeter(decl) {
+  const c = (typeof decl.consensus_score === 'number') ? decl.consensus_score : null;
+  const p = (typeof decl.polarization_level === 'number') ? decl.polarization_level : null;
+  if (c === null || p === null) {
+    return '<div class="bridge-skeleton" dir="rtl">ציון גישור טרם זמין</div>';
+  }
+  const cClamped = Math.max(-1, Math.min(1, c));
+  const pClamped = Math.max(0, Math.min(1, p));
+  // Position on consensus bar: -1 → left=0%, 0 → 50%, +1 → 100%
+  const cPct = ((cClamped + 1) / 2) * 100;
+  // Position on polarization bar: 0 → 0%, 1 → 100%
+  const pPct = pClamped * 100;
+  let chipClass, chipText;
+  if (pClamped >= 0.3) {
+    chipClass = 'bridge-div';
+    chipText = 'מפלג';
+  } else if (cClamped >= 0.3) {
+    chipClass = 'bridge-pos';
+    chipText = 'מאחד בעד';
+  } else if (cClamped <= -0.3) {
+    chipClass = 'bridge-neg';
+    chipText = 'מאחד נגד';
+  } else {
+    chipClass = 'bridge-mid';
+    chipText = 'מעורב';
+  }
+  // Tooltip with raw numbers for debugging / power-user transparency.
+  const tooltip = `consensus=${cClamped.toFixed(2)}, polarization=${pClamped.toFixed(2)}`;
+  return ''
+    + '<div class="bridge-meter" title="' + tooltip + '">'
+    + '<div class="bridge-label-chip ' + chipClass + '" dir="rtl">' + chipText + '</div>'
+    + '<div class="bridge-axis-row" dir="ltr"><span>−</span>'
+    + '<div class="bridge-track bridge-consensus"><div class="bridge-tick" style="left:' + cPct.toFixed(1) + '%"></div></div>'
+    + '<span>+</span></div>'
+    + '<div class="bridge-axis-row" dir="ltr"><span>קיטוב</span>'
+    + '<div class="bridge-track bridge-polarization"><div class="bridge-tick" style="left:' + pPct.toFixed(1) + '%"></div></div>'
+    + '<span>גבוה</span></div>'
+    + '</div>';
+}
+
 function buildDeclarationCard(decl, youGroup) {
   const card = document.createElement('div');
   card.className = 'card decl-card';
@@ -3840,6 +3923,7 @@ function buildDeclarationCard(decl, youGroup) {
     + '<span style="font-size:var(--fs-8);color:var(--t3)">' + escapeHtml(decl.time_label || '') + '</span></div>'
     + surpriseChip
     + '<div style="font-size:var(--fs-11);font-weight:700;color:var(--t1);line-height:1.5;margin-bottom:6px">' + escapeHtml(decl.text || '') + '</div>'
+    + buildBridgeMeter(decl)
     + '<div style="font-size:var(--fs-9);color:var(--t3);margin-bottom:6px"><span class="decl-vote-count" dir="ltr">' + (decl.vote_count || 0).toLocaleString() + '</span> הצביעו</div>'
     + '<div style="display:flex;gap:4px">'
     + '<button class="sa-btn sa-yes" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">מסכים</button>'
