@@ -1,38 +1,8 @@
 {
-  "updated": "2026-05-14T05:37:00.157278+00:00",
+  "updated": "2026-05-16T02:51:27.974711+00:00",
   "topics": [
     {
-      "key": "addressing_violent_crime_and_public_safety_in_cities_as_evidenced_by_a_shooting_death_in_netanya_and_an_attempted_assassination_of_a_mayor",
-      "label": "אלימות וביטחון אזרחי",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 67
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 68
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 72
-        }
-      ],
-      "convergence": "כל הקבוצות מסכימות שיש צורך דחוף לחזק את הביטחון האישי והציבורי בערים, וכי יש לנקוט צעדים משמעותיים נגד ארגוני הפשיעה והאלימות הגואה",
-      "divergence": "בעוד שקבוצה א' רואה בהתערבות שב\"כ ובאבטחה משטרתית מלאה לראשי ערים מאוימים את הפתרון המרכזי, קבוצה ב' מתמקדת בייבוש מקורות המימון של הפשיעה באמצעות הגבלת שימוש במזומן, וקבוצה ג' דורשת הקמת יחידת אבטחה ארצית ייעודית לשלטון המקומי במימון קיצוץ רוחבי"
-    },
-    {
-      "key": "improving_road_safety_highlighted_by_a_cyclist_injured_in_tel_aviv",
+      "key": "road_safety_and_accident_prevention_due_to_multiple_fatalities_on_major_roads",
       "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
@@ -41,95 +11,95 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 70
+          "agree_pct": 75
         },
         {
           "id": "B",
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 63
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 71
-        }
-      ],
-      "convergence": "ישנה הסכמה רחבה בין הקבוצות כי יש לטפל באופן מיידי בבעיית בטיחות רוכבי האופניים והקורקינטים החשמליים, וכי המצב הנוכחי מסכן חיים",
-      "divergence": "קבוצה א' תומכת בהחרמת כלים חשמליים לרוכבים על מדרכות, בעוד שקבוצה ב' מעדיפה להפקיע נתיבי נסיעה לרכבים לטובת שבילי אופניים מופרדים, וקבוצה ג' שמה דגש על הגבלת גיל הרכיבה והגבלת מהירות הנסיעה לרכבים במרכזי הערים"
-    },
-    {
-      "key": "supporting_mental_health_and_addressing_post_trauma_in_the_population_as_discussed_by_karen_turner",
-      "label": "בריאות נפשית ופוסט-טראומה",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 66
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 83
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 79
-        }
-      ],
-      "convergence": "כל הקבוצות רואות חשיבות עליונה בהרחבת הטיפול והתמיכה בבריאות הנפש של האוכלוסייה, במיוחד לאור אירועי התקופה והצורך להתמודד עם פוסט-טראומה",
-      "divergence": "קבוצה א' דורשת טיפולים פסיכולוגיים בחינם במימון ביטול כספים קואליציוניים, קבוצה ב' רואה בטראומה הלאומית משבר חירום ומציעה להסיט תקציבים מפרויקטי תשתית, ואילו קבוצה ג' מתמקדת בהכשרת מנהלים לניהול מודע-טראומה ובאפשרות למשוך כספים מקרן ההשתלמות לטיפולים נפשיים"
-    },
-    {
-      "key": "ensuring_proper_treatment_and_support_for_soldiers_and_their_families_as_seen_in_the_criticism_regarding_patch_police_and_parents_anger",
-      "label": "תמיכה בחיילים ומשפחותיהם",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 66
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 74
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
           "agree_pct": 72
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 60
         }
       ],
-      "convergence": "ישנה הסכמה בין כל הקבוצות כי יש לשפר את היחס והתמיכה בחיילים ובני משפחותיהם, וכי יש לתת מענה לתחושות התסכול והכעס העולות מהשטח",
-      "divergence": "קבוצה א' מתמקדת באפשרות לענוד פאצ'ים יחידתיים לחיזוק המורל, קבוצה ב' דורשת הקמת נציבות קבילות עצמאית להורי לוחמים, ואילו קבוצה ג' מעוניינת להעביר את סמכות האכיפה של דיגום ומשמעת למפקדי היחידות בשטח ולחייב שהות במתקן מנוחה לפני חזרה הביתה"
+      "convergence": "באופן מפתיע, כל הקבוצות מסכימות שיש צורך דחוף בפתרונות יצירתיים ומרחיקי לכת כדי למנוע את המשך הקטל בכבישים, גם אם זה כרוך בפגיעה מסוימת בנוחות או בעלויות",
+      "divergence": "בעוד שקבוצה א׳ דוגלת בהטלת סנקציות חמורות ומיידיות על נהגים עבריינים, קבוצה ב׳ מתמקדת בשיפור תשתיות ובטכנולוגיות מונעות תאונות, וקבוצה ג׳ רואה את הפתרון בהגבלות תנועה משמעותיות על כלי רכב כבדים"
     },
     {
-      "key": "military_service_and_reservist_support",
-      "label": "שירות צבאי ותמיכה במילואים",
-      "convergence": "",
-      "divergence": ""
+      "key": "addressing_violent_crime_and_stabbings_in_various_communities",
+      "label": "אלימות ופשיעה",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 76
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 58
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 76
+        }
+      ],
+      "convergence": "כל שלוש הקבוצות רואות בחומרה רבה את התפשטות האלימות והדקירות ומסכימות שיש לפעול בנחישות וביד קשה כדי למגר את התופעה, תוך נכונות לשקול צעדים חריגים",
+      "divergence": "קבוצה א׳ דורשת ענישה מחמירה ובלתי מתפשרת על נשיאת נשק קר, בעוד שקבוצה ב׳ מעדיפה נוכחות משטרתית מוגברת וקבועה בשטח, וקבוצה ג׳ שמה דגש על אחריות אישית של מפקדים ודיווח מיידי"
+    },
+    {
+      "key": "youth_violence_and_its_impact_on_teenagers",
+      "label": "אלימות נוער",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 62
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 72
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 80
+        }
+      ],
+      "convergence": "קיים קונצנזוס רחב בין הקבוצות כי אלימות נוער היא בעיה חברתית חמורה הדורשת התערבות מיידית ונחרצת, תוך הסכמה על הצורך בצעדים שיטילו אחריות על הנוער האלים וסביבתו",
+      "divergence": "קבוצה א׳ תומכת בהורדת גיל האחריות הפלילית ובענישה ממשית לנוער אלים, בעוד שקבוצה ב׳ מתמקדת בהטלת אחריות כלכלית על ההורים וקיצוץ קצבאות, וקבוצה ג׳ דוגלת בהרחקה לצמיתות ממערכת החינוך הרגילה"
     },
     {
       "key": "criminal_justice_and_investigation_transparency",
       "label": "חקירה משפטית ושקיפות",
+      "convergence": "",
+      "divergence": ""
+    },
+    {
+      "key": "education_and_civic_literacy",
+      "label": "חינוך ואוריינות אזרחית",
       "convergence": "",
       "divergence": ""
     },
@@ -140,98 +110,86 @@
       "divergence": ""
     },
     {
-      "key": "governance_accountability_and_anti_corruption",
-      "label": "אחריות שלטונית ואנטי-שחיתות",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
       "key": "civilian_security_and_public_safety",
       "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
-      "key": "healthcare_access_and_quality",
-      "label": "נגישות ואיכות בריאות",
       "convergence": "",
       "divergence": ""
     }
   ],
   "declarations": [
     {
-      "id": "decl_criminal_justice_and_investigation_transparency_0",
-      "text": "להגדיר פגיעה בנבחרי ציבור ברשויות המקומיות כטרור לכל דבר, ולאפשר לשב\"כ להתערב בחקירות גם אם מדובר בפשיעה פלילית",
+      "id": "decl_road_and_traffic_safety_0",
+      "text": "להחרים במקום את הרכב לנהגים שנתפסים נוהגים בשכרות או במהירות מופרזת בכבישים בינעירוניים",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 215400,
+      "vote_count": 289000,
       "agree_pct": 88,
       "time_label": "לפני יום",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "אלימות וביטחון אזרחי",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 88
+          "agree_pct": 84
         },
         {
           "id": "B",
-          "agree_pct": 90
+          "agree_pct": 85
         },
         {
           "id": "C",
-          "agree_pct": 82
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.7,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
     },
     {
-      "id": "decl_governance_accountability_and_anti_corruption_1",
-      "text": "לחייב ראשי ערים מאוימים לקבל אבטחה משטרתית מלאה, ולנכות את עלות האבטחה ישירות מתקציב הרשות המקומית שלהם",
+      "id": "decl_road_and_traffic_safety_1",
+      "text": "לחייב התקנת מערכות בלימה אוטונומיות בכל משאית כבדה, גם אם זה ייקר משמעותית את עלויות ההובלה והבנייה",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 184200,
-      "agree_pct": 52,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "אלימות וביטחון אזרחי",
+      "vote_count": 145200,
+      "agree_pct": 55,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 52
+          "agree_pct": 87
         },
         {
           "id": "B",
-          "agree_pct": 30
+          "agree_pct": 48
         },
         {
           "id": "C",
-          "agree_pct": 76
+          "agree_pct": 22
         }
       ],
-      "surprise": null,
-      "win_rate": 0.78,
+      "surprise": "split",
+      "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
     },
     {
-      "id": "decl_governance_accountability_and_anti_corruption_2",
-      "text": "לאסור לחלוטין שימוש במזומן בעסקאות מעל 2,000 שקלים כדי לייבש את מקורות המימון של ארגוני הפשיעה, למרות הפגיעה בעסקים קטנים",
+      "id": "decl_road_and_traffic_safety_2",
+      "text": "להגדיל את תקציב התשתיות מונעות התאונות בכבישים בינעירוניים, במימון קיצוץ של 5% מתקציב המנהלה של משרד התחבורה",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 132000,
+      "vote_count": 98500,
       "agree_pct": 75,
-      "time_label": "לפני 12 שעות",
+      "time_label": "לפני 8 שעות",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "אלימות וביטחון אזרחי",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
@@ -249,20 +207,20 @@
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
     },
     {
-      "id": "decl_civilian_security_and_public_safety_3",
-      "text": "להקים יחידת אבטחה ארצית ייעודית לשלטון המקומי, שתמומן על ידי קיצוץ רוחבי של 1% בתקציבי כלל משרדי הממשלה",
+      "id": "decl_road_and_traffic_safety_3",
+      "text": "לאסור לחלוטין על משאיות כבדות לעקוף בכבישים 1 ו-2 בשעות העומס כדי למנוע תאונות שרשרת קטלניות",
       "badge": "new",
       "badge_label": "חדש",
       "vote_count": 52100,
       "agree_pct": 60,
       "time_label": "לפני שעה",
       "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות וביטחון אזרחי",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
@@ -280,121 +238,28 @@
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
     },
     {
-      "id": "decl_road_and_traffic_safety_4",
-      "text": "להחרים במקום אופניים וקורקינטים חשמליים לרוכבים שנתפסים נוסעים על המדרכה, ללא אפשרות לאזהרה מוקדמת",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310500,
-      "agree_pct": 92,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 92
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
-    },
-    {
-      "id": "decl_road_and_traffic_safety_5",
-      "text": "לאסור לחלוטין רכיבה על כלים חשמליים מתחת לגיל 18, ללא קשר למעבר מבחן תיאוריה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 198000,
-      "agree_pct": 78,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 81
-        },
-        {
-          "id": "B",
-          "agree_pct": 95
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
-    },
-    {
-      "id": "decl_road_and_traffic_safety_6",
-      "text": "להגביל את מהירות הנסיעה לרכבים במרכזי הערים ל-30 קמ\"ש כדי להפחית את חומרת הפגיעה בהולכי רגל ורוכבים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 61200,
-      "agree_pct": 55,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 55
-        },
-        {
-          "id": "B",
-          "agree_pct": 51
-        },
-        {
-          "id": "C",
-          "agree_pct": 52
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
-    },
-    {
-      "id": "decl_healthcare_access_and_quality_7",
-      "text": "להכיר בטראומה הלאומית כמשבר בריאותי חירום, ולהסיט תקציבים מפרויקטי תשתית עתידיים לטובת הרחבת מערך בריאות הנפש",
+      "id": "decl_civilian_security_and_public_safety_4",
+      "text": "להדיח מתפקידם מפקדי תחנות משטרה שלא יציגו ירידה במספר אירועי הדקירות והאלימות בגזרתם תוך שנה",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
       "vote_count": 315000,
-      "agree_pct": 89,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "בריאות נפשית ופוסט-טראומה",
+      "agree_pct": 86,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 90
+          "agree_pct": 92
         },
         {
           "id": "B",
-          "agree_pct": 90
+          "agree_pct": 83
         },
         {
           "id": "C",
@@ -404,117 +269,210 @@
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
     },
     {
-      "id": "decl_healthcare_access_and_quality_8",
-      "text": "להעניק 10 טיפולים אצל פסיכולוג קליני בחינם לכל אזרח שמרגיש פגוע מהמלחמה, במימון ביטול מוחלט של הכספים הקואליציוניים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 289000,
-      "agree_pct": 82,
-      "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "בריאות נפשית ופוסט-טראומה",
+      "id": "decl_civilian_security_and_public_safety_5",
+      "text": "לחייב הורים לשלם פיצויים מלאים על נזקים רפואיים שגרמו הילדים שלהם באירועי אלימות כלפי נערים אחרים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 275000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות נוער",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 72
+          "agree_pct": 92
         },
         {
           "id": "B",
-          "agree_pct": 84
+          "agree_pct": 85
         },
         {
           "id": "C",
-          "agree_pct": 93
+          "agree_pct": 89
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
+    },
+    {
+      "id": "decl_civilian_security_and_public_safety_6",
+      "text": "להציב פלוגות מג״ב קבועות בערים עם פשיעה חמורה, במימון העלאה של 2% בארנונה לתושבי אותן ערים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 210500,
+      "agree_pct": 48,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 56
+        },
+        {
+          "id": "B",
+          "agree_pct": 17
+        },
+        {
+          "id": "C",
+          "agree_pct": 76
         }
       ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
     },
     {
-      "id": "decl_healthcare_access_and_quality_9",
-      "text": "לאפשר לאזרחים למשוך כספים מקרן ההשתלמות שלהם ללא קנס מס, אך ורק לצורך מימון טיפולים נפשיים פרטיים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 78000,
-      "agree_pct": 71,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "בריאות נפשית ופוסט-טראומה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 80
-        },
-        {
-          "id": "C",
-          "agree_pct": 70
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
-    },
-    {
-      "id": "decl_military_service_and_reservist_support_10",
-      "text": "לאפשר ליחידות לוחמות לעצב ולענוד פאצ'ים יחידתיים לחיזוק המורל בזמן מלחמה, כל עוד אין בהם מסר פוליטי או פוגעני",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 298000,
-      "agree_pct": 90,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה בחיילים ומשפחותיהם",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 91
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 94
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
-    },
-    {
-      "id": "decl_military_service_and_reservist_support_11",
-      "text": "להעביר את סמכות האכיפה של דיגום ומשמעת באזורי לחימה מהמשטרה הצבאית למפקדי היחידות בשטח בלבד",
+      "id": "decl_civilian_security_and_public_safety_7",
+      "text": "לקבוע עונש מינימום של שנת מאסר על נשיאת נשק קר (סכין) שלא כדין, בדומה לענישה על נשק חם",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 210000,
-      "agree_pct": 85,
-      "time_label": "לפני 14 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה בחיילים ומשפחותיהם",
+      "vote_count": 178000,
+      "agree_pct": 82,
+      "time_label": "לפני יום",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות ופשיעה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 94
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 73
+        },
+        {
+          "id": "C",
+          "agree_pct": 79
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
+    },
+    {
+      "id": "decl_criminal_justice_and_investigation_transparency_8",
+      "text": "להוריד את גיל האחריות הפלילית בעבירות אלימות חמורות לגיל 12, כדי לאפשר ענישה ממשית לנערים תוקפים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 189000,
+      "agree_pct": 52,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "אלימות נוער",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 21
+        },
+        {
+          "id": "B",
+          "agree_pct": 56
+        },
+        {
+          "id": "C",
+          "agree_pct": 79
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
+    },
+    {
+      "id": "decl_criminal_justice_and_investigation_transparency_9",
+      "text": "לממן תוכניות שיקום לנוער בסיכון על חשבון שלילת קצבאות ילדים מהורים שנערים שלהם הורשעו באלימות חמורה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 134000,
+      "agree_pct": 72,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "אלימות נוער",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 62
+        },
+        {
+          "id": "B",
+          "agree_pct": 72
+        },
+        {
+          "id": "C",
+          "agree_pct": 87
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
+    },
+    {
+      "id": "decl_criminal_justice_and_investigation_transparency_10",
+      "text": "לחייב צוותים רפואיים לדווח למשטרה בזמן אמת על כל פצוע דקירה שמגיע למיון, גם במחיר פגיעה בחיסיון הרפואי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 65000,
+      "agree_pct": 65,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "אלימות ופשיעה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 61
+        },
+        {
+          "id": "C",
+          "agree_pct": 62
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
+    },
+    {
+      "id": "decl_education_and_civic_literacy_11",
+      "text": "להרחיק לצמיתות נערים שהיו מעורבים באלימות קשה ממערכת החינוך הרגילה, ולהעבירם למסגרות שיקום סגורות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 58000,
+      "agree_pct": 68,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "education_and_civic_literacy",
+      "topic_label": "אלימות נוער",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
         },
         {
           "id": "B",
@@ -522,76 +480,14 @@
         },
         {
           "id": "C",
-          "agree_pct": 85
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
-    },
-    {
-      "id": "decl_military_service_and_reservist_support_12",
-      "text": "להקים נציבות קבילות עצמאית להורי לוחמים, שתמומן על ידי קיצוץ התקציב של מערך דובר צה\"ל",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 162000,
-      "agree_pct": 48,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה בחיילים ומשפחותיהם",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 19
-        },
-        {
-          "id": "B",
-          "agree_pct": 76
-        },
-        {
-          "id": "C",
-          "agree_pct": 45
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
-    },
-    {
-      "id": "decl_military_service_and_reservist_support_13",
-      "text": "לחייב לוחמים לשהות 48 שעות במתקן מנוחה ועיבוד חוויות לפני חזרה הביתה, גם אם זה אומר עיכוב ביציאה לחופשה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 85000,
-      "agree_pct": 62,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה בחיילים ומשפחותיהם",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 58
-        },
-        {
-          "id": "B",
-          "agree_pct": 54
-        },
-        {
-          "id": "C",
-          "agree_pct": 63
+          "agree_pct": 67
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.7,
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-14",
-      "created": "2026-05-14T05:36:33.982818+00:00"
+      "generated_from": "gemini_2026-05-16",
+      "created": "2026-05-16T02:51:08.268379+00:00"
     }
   ]
 }
