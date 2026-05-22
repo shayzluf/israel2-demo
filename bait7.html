@@ -3493,14 +3493,25 @@ async function loadDeclarations() {
       data = await res.json();
     }
     if (!data || !data.declarations?.length) return;
+    // Drop topics that have zero declarations under them (the polis-rs topic
+    // clustering can produce orphan topic keys that don't match any declaration's
+    // topic_key, leaving the user staring at an empty feed). Sort the remaining
+    // topics by declaration count desc so the most populated topic surfaces first.
+    const counts = {};
+    data.declarations.forEach(d => { counts[d.topic_key] = (counts[d.topic_key] || 0) + 1; });
+    if (Array.isArray(data.topics)) {
+      data.topics = data.topics
+        .filter(t => (counts[t.key] || 0) > 0)
+        .sort((a, b) => (counts[b.key] || 0) - (counts[a.key] || 0));
+    }
     DECLARATIONS_DATA = data;
-    // Default to first topic
+    // Default to the most-populated topic
     if (data.topics?.length) {
       SELECTED_TOPIC = data.topics[0].key;
     }
     renderTopicBar();
     renderTopicView();
-    console.log('[declarations] Loaded', data.declarations.length, 'across', data.topics?.length || 0, 'topics');
+    console.log('[declarations] Loaded', data.declarations.length, 'across', data.topics?.length || 0, 'non-empty topics');
   } catch (e) {
     console.log('[declarations] Load failed:', e.message);
   }

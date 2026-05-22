@@ -2,94 +2,16 @@
   "updated": "2026-05-22T01:47:38.210445+00:00",
   "topics": [
     {
-      "key": "emergency_services_response_and_safety_for_children_following_a_tragic_fall_in_tel_aviv",
-      "label": "בטיחות ילדים וחירום",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 76
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 73
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 61
-        }
-      ],
-      "convergence": "כל הקבוצות תמימות דעים שיש לפעול באופן נרחב למניעת אסונות בטיחותיים בקרב ילדים, בין אם באמצעות חקיקה, הסברה או סבסוד אמצעים",
-      "divergence": "בעוד שקבוצה א׳ דוגלת בהטלת אחריות על ועדי בתים ובעלי דירות להתקנת אמצעי בטיחות, קבוצה ב׳ מעדיפה התערבות ממשלתית באמצעות קמפיינים וסבסוד, וקבוצה ג׳ רואה חשיבות בחיוב בעלי דירות להתקנת מגבילי פתיחה כתנאי להשכרה"
+      "key": "civilian_security_and_public_safety",
+      "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
+      "convergence": "",
+      "divergence": ""
     },
     {
-      "key": "the_welfare_and_support_for_individuals_injured_in_incidents_as_seen_with_a_severely_wounded_soldier_and_other_injured_citizens",
-      "label": "תמיכה בפצועים",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 78
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 71
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 79
-        }
-      ],
-      "convergence": "כל שלוש הקבוצות מוצאות ענין משותף בנושא תמיכה בפצועים",
-      "divergence": "קבוצה ב׳ מציגה עמדה שונה משאר הקבוצות בנושא תמיכה בפצועים"
-    },
-    {
-      "key": "the_need_for_improved_road_and_traffic_safety_given_the_general_context_of_civic_well_being",
-      "label": "בטיחות בדרכים",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 58
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 71
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 68
-        }
-      ],
-      "convergence": "כל הקבוצות מסכימות על הצורך הדחוף בנקיטת צעדים אקטיביים להגברת הבטיחות בדרכים, במיוחד סביב מוסדות חינוך ובאזורים עירוניים צפופים",
-      "divergence": "קבוצה א׳ תומכת באיסור כניסת משאיות כבדות למרכזי ערים בשעות מסוימות, קבוצה ב׳ מתמקדת בחיוב רשויות מקומיות להתקין פסי האטה או מעברי חצייה מוגבהים, בעוד שקבוצה ג׳ דוגלת בענישה חמורה יותר לנהגים המשתמשים בטלפון נייד ובהתניית חידוש רישיון בקורס רענון"
+      "key": "healthcare_access_and_quality",
+      "label": "נגישות ואיכות בריאות",
+      "convergence": "",
+      "divergence": ""
     },
     {
       "key": "military_service_and_reservist_support",
@@ -100,18 +22,6 @@
     {
       "key": "road_and_traffic_safety",
       "label": "בטיחות בדרכים",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
-      "key": "civilian_security_and_public_safety",
-      "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
-      "key": "healthcare_access_and_quality",
-      "label": "נגישות ואיכות בריאות",
       "convergence": "",
       "divergence": ""
     }
