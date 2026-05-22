@@ -1,9 +1,9 @@
 {
-  "updated": "2026-05-20T03:04:27.138822+00:00",
+  "updated": "2026-05-22T01:47:38.210445+00:00",
   "topics": [
     {
-      "key": "addressing_the_issue_of_individuals_not_enlisting_in_the_military_and_the_proposal_for_them_to_pay_a_tax_instead",
-      "label": "מס במקום גיוס",
+      "key": "emergency_services_response_and_safety_for_children_following_a_tragic_fall_in_tel_aviv",
+      "label": "בטיחות ילדים וחירום",
       "you_group": "A",
       "groups": [
         {
@@ -11,7 +11,37 @@
           "name": "קבוצה א׳",
           "color": "te",
           "size_pct": 34,
-          "agree_pct": 74
+          "agree_pct": 76
+        },
+        {
+          "id": "B",
+          "name": "קבוצה ב׳",
+          "color": "bl",
+          "size_pct": 41,
+          "agree_pct": 73
+        },
+        {
+          "id": "C",
+          "name": "קבוצה ג׳",
+          "color": "pu",
+          "size_pct": 25,
+          "agree_pct": 61
+        }
+      ],
+      "convergence": "כל הקבוצות תמימות דעים שיש לפעול באופן נרחב למניעת אסונות בטיחותיים בקרב ילדים, בין אם באמצעות חקיקה, הסברה או סבסוד אמצעים",
+      "divergence": "בעוד שקבוצה א׳ דוגלת בהטלת אחריות על ועדי בתים ובעלי דירות להתקנת אמצעי בטיחות, קבוצה ב׳ מעדיפה התערבות ממשלתית באמצעות קמפיינים וסבסוד, וקבוצה ג׳ רואה חשיבות בחיוב בעלי דירות להתקנת מגבילי פתיחה כתנאי להשכרה"
+    },
+    {
+      "key": "the_welfare_and_support_for_individuals_injured_in_incidents_as_seen_with_a_severely_wounded_soldier_and_other_injured_citizens",
+      "label": "תמיכה בפצועים",
+      "you_group": "A",
+      "groups": [
+        {
+          "id": "A",
+          "name": "קבוצה א׳",
+          "color": "te",
+          "size_pct": 34,
+          "agree_pct": 78
         },
         {
           "id": "B",
@@ -25,45 +55,15 @@
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 59
+          "agree_pct": 79
         }
       ],
-      "convergence": "כל הקבוצות מסכימות שיש למצוא דרך לגרום למי שלא משרתים בצבא או בשירות לאומי לתרום באופן כספי, ושהכסף הזה יופנה לצרכים ביטחוניים או חברתיים",
-      "divergence": "בעוד שקבוצה א' רואה במס חלופת גיוס כדרך לממן את שיקום פצועי צה״ל, קבוצה ב' מתעקשת שההכנסות ילכו ישירות לקרן תגמול למשרתי מילואים, וקבוצה ג' רואה בכך הזדמנות להכפיל את שכר הלוחמים"
+      "convergence": "כל שלוש הקבוצות מוצאות ענין משותף בנושא תמיכה בפצועים",
+      "divergence": "קבוצה ב׳ מציגה עמדה שונה משאר הקבוצות בנושא תמיכה בפצועים"
     },
     {
-      "key": "concerns_about_the_integrity_of_political_appointments_specifically_a_political_advisor_with_a_criminal_record",
-      "label": "יועץ פוליטי עם עבר פלילי",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 83
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 60
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 83
-        }
-      ],
-      "convergence": "ישנה הסכמה רחבה בין הקבוצות כי יש צורך במידה מסוימת של שקיפות או הגבלה בנוגע להעסקת יועצים פוליטיים בעלי עבר פלילי, כדי לשמור על אמון הציבור",
-      "divergence": "קבוצה א' דורשת שקיפות מלאה בפרסום הרישום הפלילי של יועצים, בעוד שקבוצה ב' מוכנה לאפשר העסקה רק לאחר תקופת צינון ארוכה, וקבוצה ג' סבורה שהשר צריך לממן יועץ כזה מתקציב מפלגתו"
-    },
-    {
-      "key": "public_safety_concerns_due_to_a_shooting_incident_in_jisr_al_zarqa",
-      "label": "אלימות בישובים",
+      "key": "the_need_for_improved_road_and_traffic_safety_given_the_general_context_of_civic_well_being",
+      "label": "בטיחות בדרכים",
       "you_group": "A",
       "groups": [
         {
@@ -78,18 +78,30 @@
           "name": "קבוצה ב׳",
           "color": "bl",
           "size_pct": 41,
-          "agree_pct": 66
+          "agree_pct": 71
         },
         {
           "id": "C",
           "name": "קבוצה ג׳",
           "color": "pu",
           "size_pct": 25,
-          "agree_pct": 77
+          "agree_pct": 68
         }
       ],
-      "convergence": "כל הקבוצות מסכימות כי יש לפעול באופן נחרץ לשיפור הביטחון האישי ביישובים מוכי אלימות, וכי המדינה צריכה למצוא פתרונות יצירתיים לבעיה",
-      "divergence": "קבוצה א' דורשת הקמת תחנות משטרה קבועות גם במחיר קיצוץ בתקציבי המטה, קבוצה ב' מציעה תוכנית למסירת נשק תמורת פיצוי וחסינות, וקבוצה ג' מעדיפה להעניק לראשי רשויות סמכות לסגור עסקים המשמשים לארגוני פשיעה"
+      "convergence": "כל הקבוצות מסכימות על הצורך הדחוף בנקיטת צעדים אקטיביים להגברת הבטיחות בדרכים, במיוחד סביב מוסדות חינוך ובאזורים עירוניים צפופים",
+      "divergence": "קבוצה א׳ תומכת באיסור כניסת משאיות כבדות למרכזי ערים בשעות מסוימות, קבוצה ב׳ מתמקדת בחיוב רשויות מקומיות להתקין פסי האטה או מעברי חצייה מוגבהים, בעוד שקבוצה ג׳ דוגלת בענישה חמורה יותר לנהגים המשתמשים בטלפון נייד ובהתניית חידוש רישיון בקורס רענון"
+    },
+    {
+      "key": "military_service_and_reservist_support",
+      "label": "שירות צבאי ותמיכה במילואים",
+      "convergence": "",
+      "divergence": ""
+    },
+    {
+      "key": "road_and_traffic_safety",
+      "label": "בטיחות בדרכים",
+      "convergence": "",
+      "divergence": ""
     },
     {
       "key": "civilian_security_and_public_safety",
@@ -98,359 +110,322 @@
       "divergence": ""
     },
     {
-      "key": "governance_accountability_and_anti_corruption",
-      "label": "אחריות שלטונית ואנטי-שחיתות",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
-      "key": "military_service_and_reservist_support",
-      "label": "שירות צבאי ותמיכה במילואים",
+      "key": "healthcare_access_and_quality",
+      "label": "נגישות ואיכות בריאות",
       "convergence": "",
       "divergence": ""
     }
   ],
   "declarations": [
     {
-      "id": "decl_military_service_and_reservist_support_0",
-      "text": "כל ההכנסות מ״מס אי-גיוס״ חייבות לעבור ישירות לקרן תגמול למשרתי מילואים, ולא להיבלע בתקציב המדינה הכללי",
+      "id": "decl_civilian_security_and_public_safety_0",
+      "text": "להפעיל קמפיין הסברה לאומי להורים על התקנת מנגנוני נעילה לחלונות לקראת כל חופש גדול",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 289400,
-      "agree_pct": 88,
+      "vote_count": 215000,
+      "agree_pct": 92,
       "time_label": "לפני יום",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "מס במקום גיוס",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות ילדים וחירום",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 86
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
-    },
-    {
-      "id": "decl_military_service_and_reservist_support_1",
-      "text": "לאפשר פטור מגיוס תמורת תשלום מס חד-פעמי של 100,000 שקלים, בתנאי שהכסף ישמש אך ורק להכפלת שכר הלוחמים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 98500,
-      "agree_pct": 72,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "מס במקום גיוס",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 69
-        },
-        {
-          "id": "B",
-          "agree_pct": 80
-        },
-        {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
-    },
-    {
-      "id": "decl_military_service_and_reservist_support_2",
-      "text": "להטיל מס בריאות מוגדל של 5% על כל אזרח שלא שירת בצבא או בשירות לאומי, כדי לממן את שיקום פצועי צה״ל",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 145020,
-      "agree_pct": 55,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "מס במקום גיוס",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 87
-        },
-        {
-          "id": "B",
-          "agree_pct": 48
-        },
-        {
-          "id": "C",
-          "agree_pct": 22
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
-    },
-    {
-      "id": "decl_military_service_and_reservist_support_3",
-      "text": "לשלול הטבות מס וסבסוד משכנתאות ממי שלא מתגייס ומסרב לשלם את מס חלופת הגיוס",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52100,
-      "agree_pct": 60,
-      "time_label": "לפני חצי שעה",
-      "pipeline_status": null,
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "מס במקום גיוס",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 57
-        },
-        {
-          "id": "B",
-          "agree_pct": 70
-        },
-        {
-          "id": "C",
-          "agree_pct": 62
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
-    },
-    {
-      "id": "decl_governance_accountability_and_anti_corruption_4",
-      "text": "שר שבוחר להעסיק יועץ פוליטי עם עבר פלילי יידרש לממן את שכרו מתקציב המפלגה, ולא על חשבון משלם המסים",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310200,
-      "agree_pct": 91,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "יועץ פוליטי עם עבר פלילי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 97
-        },
-        {
-          "id": "B",
           "agree_pct": 88
         },
         {
-          "id": "C",
-          "agree_pct": 92
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
-    },
-    {
-      "id": "decl_governance_accountability_and_anti_corruption_5",
-      "text": "לחייב שרים לפרסם באתר המשרד את הרישום הפלילי של כל יועץ פוליטי חיצוני שהם שוכרים, למען השקיפות הציבורית",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 182300,
-      "agree_pct": 82,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "יועץ פוליטי עם עבר פלילי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 93
-        },
-        {
           "id": "B",
-          "agree_pct": 73
-        },
-        {
-          "id": "C",
-          "agree_pct": 79
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
-    },
-    {
-      "id": "decl_governance_accountability_and_anti_corruption_6",
-      "text": "לאפשר לשרים להעסיק יועצים פוליטיים שהורשעו בפלילים רק אם עברו לפחות 10 שנים מסיום ריצוי העונש שלהם",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 112450,
-      "agree_pct": 51,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "יועץ פוליטי עם עבר פלילי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 59
-        },
-        {
-          "id": "B",
-          "agree_pct": 20
-        },
-        {
-          "id": "C",
-          "agree_pct": 79
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
-    },
-    {
-      "id": "decl_civilian_security_and_public_safety_7",
-      "text": "להקים תחנת משטרה קבועה בכל יישוב שמונה מעל 10,000 תושבים, גם במחיר של קיצוץ בתקציבי המטה של משטרת ישראל",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 275800,
-      "agree_pct": 86,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות בישובים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 85
-        },
-        {
-          "id": "B",
-          "agree_pct": 84
-        },
-        {
-          "id": "C",
-          "agree_pct": 86
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
-    },
-    {
-      "id": "decl_civilian_security_and_public_safety_8",
-      "text": "להפעיל תוכנית למסירת נשק לא חוקי בחברה הערבית תמורת פיצוי כספי וחסינות מלאה מהעמדה לדין למשך חודש אחד",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 134000,
-      "agree_pct": 48,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות בישובים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 17
-        },
-        {
-          "id": "B",
-          "agree_pct": 52
-        },
-        {
-          "id": "C",
-          "agree_pct": 75
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
-    },
-    {
-      "id": "decl_civilian_security_and_public_safety_9",
-      "text": "להעניק לראשי רשויות סמכות מנהלית לסגור באופן מיידי עסקים מקומיים שמשמשים כחזית לארגוני פשיעה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 156700,
-      "agree_pct": 75,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות בישובים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 65
-        },
-        {
-          "id": "B",
-          "agree_pct": 75
+          "agree_pct": 89
         },
         {
           "id": "C",
           "agree_pct": 90
         }
       ],
-      "surprise": null,
-      "win_rate": 0.7,
+      "surprise": "bridge",
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
     },
     {
-      "id": "decl_civilian_security_and_public_safety_10",
-      "text": "לממן סיירות אבטחה קהילתיות ביישובים מוכי אלימות על חשבון תוספת של 2% לארנונה העסקית באותן רשויות",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 61200,
-      "agree_pct": 58,
-      "time_label": "לפני שעה",
+      "id": "decl_civilian_security_and_public_safety_1",
+      "text": "לחייב ועדי בית בבניינים ישנים להתקין רשתות בטיחות בחדרי המדרגות, גם אם זה יחייב העלאה של דמי ועד הבית החודשיים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 142000,
+      "agree_pct": 48,
+      "time_label": "לפני שעתיים",
       "pipeline_status": null,
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות בישובים",
+      "topic_label": "בטיחות ילדים וחירום",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 66
+          "agree_pct": 80
         },
         {
           "id": "B",
-          "agree_pct": 51
+          "agree_pct": 41
         },
         {
           "id": "C",
-          "agree_pct": 56
+          "agree_pct": 15
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
+    },
+    {
+      "id": "decl_civilian_security_and_public_safety_2",
+      "text": "לסבסד התקנת אמצעי בטיחות לחלונות למשפחות מעוטות יכולת דרך הרשויות המקומיות, כדי למנוע אסונות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 89000,
+      "agree_pct": 78,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות ילדים וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 75
+        },
+        {
+          "id": "B",
+          "agree_pct": 86
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
+    },
+    {
+      "id": "decl_civilian_security_and_public_safety_3",
+      "text": "לחייב בעלי דירות להתקין מגבילי פתיחה בחלונות כתנאי להשכרת הדירה למשפחות עם ילדים קטנים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 65,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות ילדים וחירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 62
+        },
+        {
+          "id": "B",
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "agree_pct": 67
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
+    },
+    {
+      "id": "decl_military_service_and_reservist_support_4",
+      "text": "להקים גוף ממשלתי אחד שירכז את כל הבירוקרטיה עבור פצועי צה״ל ואזרחים, במקום לטרטר אותם בין ועדות שונות",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 310000,
+      "agree_pct": 95,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "תמיכה בפצועים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 92
+        },
+        {
+          "id": "B",
+          "agree_pct": 95
+        },
+        {
+          "id": "C",
+          "agree_pct": 90
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
+    },
+    {
+      "id": "decl_healthcare_access_and_quality_5",
+      "text": "לממן מעטפת תמיכה נפשית צמודה למשפחות פצועים קשה, על חשבון קיצוץ בתקציב הטקסים הממלכתיים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 178000,
+      "agree_pct": 55,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "תמיכה בפצועים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 63
+        },
+        {
+          "id": "B",
+          "agree_pct": 24
+        },
+        {
+          "id": "C",
+          "agree_pct": 83
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
+    },
+    {
+      "id": "decl_road_and_traffic_safety_6",
+      "text": "לחייב רשויות מקומיות להתקין פסי האטה או מעברי חצייה מוגבהים בקרבת כל בית ספר יסודי",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 90
+        },
+        {
+          "id": "B",
+          "agree_pct": 90
+        },
+        {
+          "id": "C",
+          "agree_pct": 87
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
+    },
+    {
+      "id": "decl_road_and_traffic_safety_7",
+      "text": "לאסור כניסת משאיות כבדות למרכזי ערים בשעות פיזור הילדים למוסדות החינוך, גם אם זה ייקר את עלויות המשלוח לעסקים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 195000,
+      "agree_pct": 51,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 20
+        },
+        {
+          "id": "B",
+          "agree_pct": 55
+        },
+        {
+          "id": "C",
+          "agree_pct": 78
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
+    },
+    {
+      "id": "decl_road_and_traffic_safety_8",
+      "text": "להחרים את הטלפון הנייד במקום לנהגים שנתפסים מסמסים בזמן נהיגה, ולא להסתפק רק בקנס כספי",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 134000,
+      "agree_pct": 68,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 70
+        },
+        {
+          "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 63
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-20",
-      "created": "2026-05-20T03:03:58.235239+00:00"
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
+    },
+    {
+      "id": "decl_road_and_traffic_safety_9",
+      "text": "להתנות חידוש רישיון נהיגה במעבר קורס רענון נהיגה מעשי קצר פעם בעשר שנים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 58000,
+      "agree_pct": 46,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 50
+        },
+        {
+          "id": "B",
+          "agree_pct": 55
+        },
+        {
+          "id": "C",
+          "agree_pct": 45
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T01:47:17.725657+00:00"
     }
   ]
 }
