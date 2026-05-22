@@ -1,99 +1,9 @@
 {
-  "updated": "2026-05-22T01:47:17.725657+00:00",
+  "updated": "2026-05-22T02:42:14.435708+00:00",
   "topics": [
     {
-      "key": "emergency_services_response_and_safety_for_children_following_a_tragic_fall_in_tel_aviv",
-      "label": "בטיחות ילדים וחירום",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 76
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 73
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 61
-        }
-      ],
-      "convergence": "כל הקבוצות תמימות דעים שיש לפעול באופן נרחב למניעת אסונות בטיחותיים בקרב ילדים, בין אם באמצעות חקיקה, הסברה או סבסוד אמצעים",
-      "divergence": "בעוד שקבוצה א׳ דוגלת בהטלת אחריות על ועדי בתים ובעלי דירות להתקנת אמצעי בטיחות, קבוצה ב׳ מעדיפה התערבות ממשלתית באמצעות קמפיינים וסבסוד, וקבוצה ג׳ רואה חשיבות בחיוב בעלי דירות להתקנת מגבילי פתיחה כתנאי להשכרה"
-    },
-    {
-      "key": "the_welfare_and_support_for_individuals_injured_in_incidents_as_seen_with_a_severely_wounded_soldier_and_other_injured_citizens",
-      "label": "תמיכה בפצועים",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 78
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 71
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 79
-        }
-      ],
-      "convergence": "כל שלוש הקבוצות מוצאות ענין משותף בנושא תמיכה בפצועים",
-      "divergence": "קבוצה ב׳ מציגה עמדה שונה משאר הקבוצות בנושא תמיכה בפצועים"
-    },
-    {
-      "key": "the_need_for_improved_road_and_traffic_safety_given_the_general_context_of_civic_well_being",
-      "label": "בטיחות בדרכים",
-      "you_group": "A",
-      "groups": [
-        {
-          "id": "A",
-          "name": "קבוצה א׳",
-          "color": "te",
-          "size_pct": 34,
-          "agree_pct": 58
-        },
-        {
-          "id": "B",
-          "name": "קבוצה ב׳",
-          "color": "bl",
-          "size_pct": 41,
-          "agree_pct": 71
-        },
-        {
-          "id": "C",
-          "name": "קבוצה ג׳",
-          "color": "pu",
-          "size_pct": 25,
-          "agree_pct": 68
-        }
-      ],
-      "convergence": "כל הקבוצות מסכימות על הצורך הדחוף בנקיטת צעדים אקטיביים להגברת הבטיחות בדרכים, במיוחד סביב מוסדות חינוך ובאזורים עירוניים צפופים",
-      "divergence": "קבוצה א׳ תומכת באיסור כניסת משאיות כבדות למרכזי ערים בשעות מסוימות, קבוצה ב׳ מתמקדת בחיוב רשויות מקומיות להתקין פסי האטה או מעברי חצייה מוגבהים, בעוד שקבוצה ג׳ דוגלת בענישה חמורה יותר לנהגים המשתמשים בטלפון נייד ובהתניית חידוש רישיון בקורס רענון"
-    },
-    {
-      "key": "military_service_and_reservist_support",
-      "label": "שירות צבאי ותמיכה במילואים",
+      "key": "healthcare_access_and_quality",
+      "label": "נגישות ואיכות בריאות",
       "convergence": "",
       "divergence": ""
     },
@@ -102,63 +12,20 @@
       "label": "בטיחות בדרכים",
       "convergence": "",
       "divergence": ""
-    },
-    {
-      "key": "civilian_security_and_public_safety",
-      "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
-      "key": "healthcare_access_and_quality",
-      "label": "נגישות ואיכות בריאות",
-      "convergence": "",
-      "divergence": ""
     }
   ],
   "declarations": [
     {
       "id": "decl_challenger_2026-05-22_0",
-      "text": "לחייב ועדי בית בבניינים ישנים להתקין רשתות בטיחות בחדרי המדרגות, גם אם זה יחייב העלאה של דמי ועד הבית החודשיים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 142000,
-      "agree_pct": 48,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות ילדים וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 80
-        },
-        {
-          "id": "B",
-          "agree_pct": 41
-        },
-        {
-          "id": "C",
-          "agree_pct": 15
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_1",
-      "text": "להפעיל קמפיין הסברה לאומי להורים על התקנת מנגנוני נעילה לחלונות לקראת כל חופש גדול",
+      "text": "לאסור יבוא רכבים חדשים לישראל שאין בהם מערכת בלימת חירום אוטונומית, ללא שום החרגות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 215000,
-      "agree_pct": 92,
-      "time_label": "לפני יום",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות ילדים וחירום",
+      "vote_count": 310000,
+      "agree_pct": 88,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
@@ -166,214 +33,26 @@
         },
         {
           "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
           "agree_pct": 90
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_2",
-      "text": "לסבסד התקנת אמצעי בטיחות לחלונות למשפחות מעוטות יכולת דרך הרשויות המקומיות, כדי למנוע אסונות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 89000,
-      "agree_pct": 78,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות ילדים וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
         },
         {
           "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_3",
-      "text": "לחייב בעלי דירות להתקין מגבילי פתיחה בחלונות כתנאי להשכרת הדירה למשפחות עם ילדים קטנים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות ילדים וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 75
-        },
-        {
-          "id": "C",
-          "agree_pct": 67
+          "agree_pct": 82
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
+      "created": "2026-05-22T02:42:14.435708+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_4",
-      "text": "להקים גוף ממשלתי אחד שירכז את כל הבירוקרטיה עבור פצועי צה״ל ואזרחים, במקום לטרטר אותם בין ועדות שונות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310000,
-      "agree_pct": 95,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה בפצועים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 92
-        },
-        {
-          "id": "B",
-          "agree_pct": 95
-        },
-        {
-          "id": "C",
-          "agree_pct": 90
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_5",
-      "text": "לממן מעטפת תמיכה נפשית צמודה למשפחות פצועים קשה, על חשבון קיצוץ בתקציב הטקסים הממלכתיים",
+      "id": "decl_challenger_2026-05-22_1",
+      "text": "להוריד את המהירות המותרת בכביש 6 ב-10 קמ״ש כדי להפחית את חומרת התאונות, גם במחיר של הארכת זמני הנסיעה לנהגים",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 178000,
-      "agree_pct": 55,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "תמיכה בפצועים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_6",
-      "text": "לתת עדיפות בדיור הציבורי ובשירותים עירוניים לפצועים שהוכרו עם נכות קשה לצמיתות בעקבות אירועי השנים האחרונות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 125000,
-      "agree_pct": 82,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "the_welfare_and_support_for_individuals_injured_in_incidents_as_seen_with_a_severely_wounded_soldier_and_other_injured_citizens",
-      "topic_label": "תמיכה בפצועים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 85
-        },
-        {
-          "id": "B",
-          "agree_pct": 97
-        },
-        {
-          "id": "C",
-          "agree_pct": 76
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_7",
-      "text": "לחייב מעסיקים גדולים לשריין אחוז מסוים ממשרות העבודה מרחוק עבור פצועים שנמצאים בשיקום פיזי ארוך",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 61000,
-      "agree_pct": 71,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "the_welfare_and_support_for_individuals_injured_in_incidents_as_seen_with_a_severely_wounded_soldier_and_other_injured_citizens",
-      "topic_label": "תמיכה בפצועים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 71
-        },
-        {
-          "id": "B",
-          "agree_pct": 67
-        },
-        {
-          "id": "C",
-          "agree_pct": 68
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_8",
-      "text": "לאסור כניסת משאיות כבדות למרכזי ערים בשעות פיזור הילדים למוסדות החינוך, גם אם זה ייקר את עלויות המשלוח לעסקים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 51,
+      "vote_count": 215000,
+      "agree_pct": 42,
       "time_label": "לפני יום",
       "pipeline_status": null,
       "topic_key": "road_and_traffic_safety",
@@ -381,160 +60,222 @@
       "group_breakdown": [
         {
           "id": "A",
+          "agree_pct": 42
+        },
+        {
+          "id": "B",
           "agree_pct": 20
         },
         {
-          "id": "B",
-          "agree_pct": 55
-        },
-        {
           "id": "C",
-          "agree_pct": 78
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_9",
-      "text": "לחייב רשויות מקומיות להתקין פסי האטה או מעברי חצייה מוגבהים בקרבת כל בית ספר יסודי",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 280000,
-      "agree_pct": 89,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 90
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_10",
-      "text": "להחרים את הטלפון הנייד במקום לנהגים שנתפסים מסמסים בזמן נהיגה, ולא להסתפק רק בקנס כספי",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 68,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 70
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 63
+          "agree_pct": 66
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
+      "created": "2026-05-22T02:42:14.435708+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_11",
-      "text": "להתנות חידוש רישיון נהיגה במעבר קורס רענון נהיגה מעשי קצר פעם בעשר שנים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 58000,
-      "agree_pct": 46,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
+      "id": "decl_challenger_2026-05-22_2",
+      "text": "להקים יחידת משטרת תנועה ייעודית לכבישי אגרה, שתמומן ממס של 1% על רווחי החברות המפעילות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 168000,
+      "agree_pct": 74,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": "בדיון בוועדה",
       "topic_key": "road_and_traffic_safety",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 50
+          "agree_pct": 71
         },
         {
           "id": "B",
-          "agree_pct": 55
+          "agree_pct": 82
         },
         {
           "id": "C",
-          "agree_pct": 45
+          "agree_pct": 68
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_3",
+      "text": "לחייב חברות תובלה להתקין במשאיות כבדות מצלמות דרך שמשדרות בזמן אמת למוקד תנועה ארצי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 61000,
+      "agree_pct": 68,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_4",
+      "text": "לאחד את כל מוקדי החירום הרפואיים למערכת לאומית אחת בסגנון 911, כדי למנוע עיכובים בשיגור צוותים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295000,
+      "agree_pct": 94,
+      "time_label": "לפני 3 ימים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "שירותי חירום רפואיים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 91
+        },
+        {
+          "id": "B",
+          "agree_pct": 94
+        },
+        {
+          "id": "C",
+          "agree_pct": 89
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_5",
+      "text": "לספק דפיברילטור מותאם לילדים לכל מעון יום גדול, על חשבון קיצוץ בתקציב אירועי התרבות של הרשות המקומית",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 185000,
+      "agree_pct": 51,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "שירותי חירום רפואיים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 59
+        },
+        {
+          "id": "B",
+          "agree_pct": 20
+        },
+        {
+          "id": "C",
+          "agree_pct": 79
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_6",
+      "text": "לחייב אפליקציות מוניות להוסיף כפתור ״פינוי רפואי דחוף״ לטובת מקרים שאינם מצריכים אמבולנס טיפול נמרץ",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 134000,
+      "agree_pct": 81,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "שירותי חירום רפואיים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 84
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 75
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_7",
+      "text": "לאשר לכונני רפואת חירום על אופנועים לנסוע בנת״צים בשעות העומס כדי לקצר את זמני ההגעה לפצועים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 58000,
+      "agree_pct": 72,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "שירותי חירום רפואיים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 68
+        },
+        {
+          "id": "C",
+          "agree_pct": 69
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
     }
   ],
   "challengers": [
     {
       "id": "decl_challenger_2026-05-22_0",
-      "text": "לחייב ועדי בית בבניינים ישנים להתקין רשתות בטיחות בחדרי המדרגות, גם אם זה יחייב העלאה של דמי ועד הבית החודשיים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 142000,
-      "agree_pct": 48,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות ילדים וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 80
-        },
-        {
-          "id": "B",
-          "agree_pct": 41
-        },
-        {
-          "id": "C",
-          "agree_pct": 15
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_1",
-      "text": "להפעיל קמפיין הסברה לאומי להורים על התקנת מנגנוני נעילה לחלונות לקראת כל חופש גדול",
+      "text": "לאסור יבוא רכבים חדשים לישראל שאין בהם מערכת בלימת חירום אוטונומית, ללא שום החרגות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 215000,
-      "agree_pct": 92,
-      "time_label": "לפני יום",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות ילדים וחירום",
+      "vote_count": 310000,
+      "agree_pct": 88,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
@@ -542,214 +283,26 @@
         },
         {
           "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
           "agree_pct": 90
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_2",
-      "text": "לסבסד התקנת אמצעי בטיחות לחלונות למשפחות מעוטות יכולת דרך הרשויות המקומיות, כדי למנוע אסונות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 89000,
-      "agree_pct": 78,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות ילדים וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
         },
         {
           "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_3",
-      "text": "לחייב בעלי דירות להתקין מגבילי פתיחה בחלונות כתנאי להשכרת הדירה למשפחות עם ילדים קטנים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות ילדים וחירום",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 75
-        },
-        {
-          "id": "C",
-          "agree_pct": 67
+          "agree_pct": 82
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
+      "created": "2026-05-22T02:42:14.435708+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_4",
-      "text": "להקים גוף ממשלתי אחד שירכז את כל הבירוקרטיה עבור פצועי צה״ל ואזרחים, במקום לטרטר אותם בין ועדות שונות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310000,
-      "agree_pct": 95,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה בפצועים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 92
-        },
-        {
-          "id": "B",
-          "agree_pct": 95
-        },
-        {
-          "id": "C",
-          "agree_pct": 90
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_5",
-      "text": "לממן מעטפת תמיכה נפשית צמודה למשפחות פצועים קשה, על חשבון קיצוץ בתקציב הטקסים הממלכתיים",
+      "id": "decl_challenger_2026-05-22_1",
+      "text": "להוריד את המהירות המותרת בכביש 6 ב-10 קמ״ש כדי להפחית את חומרת התאונות, גם במחיר של הארכת זמני הנסיעה לנהגים",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 178000,
-      "agree_pct": 55,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "תמיכה בפצועים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_6",
-      "text": "לתת עדיפות בדיור הציבורי ובשירותים עירוניים לפצועים שהוכרו עם נכות קשה לצמיתות בעקבות אירועי השנים האחרונות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 125000,
-      "agree_pct": 82,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "the_welfare_and_support_for_individuals_injured_in_incidents_as_seen_with_a_severely_wounded_soldier_and_other_injured_citizens",
-      "topic_label": "תמיכה בפצועים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 85
-        },
-        {
-          "id": "B",
-          "agree_pct": 97
-        },
-        {
-          "id": "C",
-          "agree_pct": 76
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_7",
-      "text": "לחייב מעסיקים גדולים לשריין אחוז מסוים ממשרות העבודה מרחוק עבור פצועים שנמצאים בשיקום פיזי ארוך",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 61000,
-      "agree_pct": 71,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "the_welfare_and_support_for_individuals_injured_in_incidents_as_seen_with_a_severely_wounded_soldier_and_other_injured_citizens",
-      "topic_label": "תמיכה בפצועים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 71
-        },
-        {
-          "id": "B",
-          "agree_pct": 67
-        },
-        {
-          "id": "C",
-          "agree_pct": 68
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_8",
-      "text": "לאסור כניסת משאיות כבדות למרכזי ערים בשעות פיזור הילדים למוסדות החינוך, גם אם זה ייקר את עלויות המשלוח לעסקים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 51,
+      "vote_count": 215000,
+      "agree_pct": 42,
       "time_label": "לפני יום",
       "pipeline_status": null,
       "topic_key": "road_and_traffic_safety",
@@ -757,115 +310,208 @@
       "group_breakdown": [
         {
           "id": "A",
+          "agree_pct": 42
+        },
+        {
+          "id": "B",
           "agree_pct": 20
         },
         {
-          "id": "B",
-          "agree_pct": 55
-        },
-        {
           "id": "C",
-          "agree_pct": 78
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_9",
-      "text": "לחייב רשויות מקומיות להתקין פסי האטה או מעברי חצייה מוגבהים בקרבת כל בית ספר יסודי",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 280000,
-      "agree_pct": 89,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 90
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_10",
-      "text": "להחרים את הטלפון הנייד במקום לנהגים שנתפסים מסמסים בזמן נהיגה, ולא להסתפק רק בקנס כספי",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 68,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 70
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 63
+          "agree_pct": 66
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
+      "created": "2026-05-22T02:42:14.435708+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_11",
-      "text": "להתנות חידוש רישיון נהיגה במעבר קורס רענון נהיגה מעשי קצר פעם בעשר שנים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 58000,
-      "agree_pct": 46,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
+      "id": "decl_challenger_2026-05-22_2",
+      "text": "להקים יחידת משטרת תנועה ייעודית לכבישי אגרה, שתמומן ממס של 1% על רווחי החברות המפעילות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 168000,
+      "agree_pct": 74,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": "בדיון בוועדה",
       "topic_key": "road_and_traffic_safety",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 50
+          "agree_pct": 71
         },
         {
           "id": "B",
-          "agree_pct": 55
+          "agree_pct": 82
         },
         {
           "id": "C",
-          "agree_pct": 45
+          "agree_pct": 68
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
       "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T01:47:17.725657+00:00"
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_3",
+      "text": "לחייב חברות תובלה להתקין במשאיות כבדות מצלמות דרך שמשדרות בזמן אמת למוקד תנועה ארצי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 61000,
+      "agree_pct": 68,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "agree_pct": 70
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_4",
+      "text": "לאחד את כל מוקדי החירום הרפואיים למערכת לאומית אחת בסגנון 911, כדי למנוע עיכובים בשיגור צוותים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295000,
+      "agree_pct": 94,
+      "time_label": "לפני 3 ימים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "שירותי חירום רפואיים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 91
+        },
+        {
+          "id": "B",
+          "agree_pct": 94
+        },
+        {
+          "id": "C",
+          "agree_pct": 89
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_5",
+      "text": "לספק דפיברילטור מותאם לילדים לכל מעון יום גדול, על חשבון קיצוץ בתקציב אירועי התרבות של הרשות המקומית",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 185000,
+      "agree_pct": 51,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "שירותי חירום רפואיים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 59
+        },
+        {
+          "id": "B",
+          "agree_pct": 20
+        },
+        {
+          "id": "C",
+          "agree_pct": 79
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_6",
+      "text": "לחייב אפליקציות מוניות להוסיף כפתור ״פינוי רפואי דחוף״ לטובת מקרים שאינם מצריכים אמבולנס טיפול נמרץ",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 134000,
+      "agree_pct": 81,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "שירותי חירום רפואיים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 84
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 75
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-22_7",
+      "text": "לאשר לכונני רפואת חירום על אופנועים לנסוע בנת״צים בשעות העומס כדי לקצר את זמני ההגעה לפצועים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 58000,
+      "agree_pct": 72,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "שירותי חירום רפואיים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 68
+        },
+        {
+          "id": "C",
+          "agree_pct": 69
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-22",
+      "created": "2026-05-22T02:42:14.435708+00:00"
     }
   ]
 }
