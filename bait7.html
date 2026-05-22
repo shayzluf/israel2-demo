@@ -2736,6 +2736,39 @@ function showCsTutorial() {
 const DC_TOTAL = 3;
 let dcCur = 0;
 
+// Today's daily-swipe ritual is one-shot per user per calendar day. Persist
+// completion to localStorage so a page refresh (or navigating back to sl3
+// from the tab bar) doesn't re-prompt the user to swipe the same 3 cards.
+function _dailyToday() {
+  // Local YYYY-MM-DD — daily means "same calendar day on the user's device".
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+function _isDailyDone() {
+  try { return localStorage.getItem('ns_daily_done_date') === _dailyToday(); }
+  catch (_) { return false; }
+}
+function _markDailyDone() {
+  try { localStorage.setItem('ns_daily_done_date', _dailyToday()); } catch (_) {}
+}
+// On every load: if today's 3 swipes are already in, advance the cursor past
+// DC_TOTAL so the sl3 init code skips dcActivate / dcBindSwipe, and hide the
+// overlay synchronously before paint so the user never sees it flash.
+if (_isDailyDone()) {
+  dcCur = DC_TOTAL;
+  document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('daily-overlay');
+    if (overlay) overlay.style.display = 'none';
+    const scr = document.getElementById('home-scr');
+    if (scr) scr.style.overflowY = 'auto';
+    const below = document.getElementById('home-below-fold');
+    if (below) { below.classList.remove('home-locked'); below.classList.add('home-unlocked'); }
+  });
+}
+
 function dcGetInner(n) { return document.getElementById('dc' + n)?.querySelector('.tcard-inner'); }
 function dcGetInd(n) {
   return {
@@ -2776,6 +2809,7 @@ function dcSwipeDone(n, dir) {
       dcActivate(dcCur);
       dcBindSwipe(dcCur);
     } else {
+      _markDailyDone();
       const overlay = document.getElementById('daily-overlay');
       if (overlay) {
         overlay.style.transition = 'opacity .4s ease';
