@@ -2677,6 +2677,12 @@ function postSwipeToPolis(domId, dir) {
     var card = CARD_DATA[domId];
     if (!card || !card.polis_item_id) return;
     var val = dir === 'r' ? 1 : dir === 'l' ? -1 : 0;
+    // Persist before POST so even a network failure leaves the local "already
+    // voted" flag set — a user who refreshes mid-flight won't see the same
+    // card as fresh on the next sl4 render. The server's row gets created
+    // when the in-flight POST succeeds, or on a future retry; either way the
+    // (user_id, item_id) PRIMARY KEY in votes still dedups to one row.
+    markItemVoted(card.polis_item_id, val);
     window.POLIS_API.postItemVote(card.polis_item_id, val).catch(function() {});
   } catch (e) {}
 }
@@ -2852,24 +2858,40 @@ function voteStmt(btn) {
   // Find the parent declaration card
   const card = btn.closest('.decl-card');
   if (!card) return;
+  // Already-voted guard: this prevents the user from re-bumping the displayed
+  // vote count by clicking the same card again (server upserts so the algorithm
+  // sees one row regardless, but the UI counter was over-counting). Treat
+  // .voted as the source of truth — set either by a fresh click below or by
+  // applyVotedState() on card render from localStorage.
+  const alreadyVoted = card.classList.contains('voted');
   // Mark this button as voted (reveal its filled color)
   card.querySelectorAll('.sa-btn').forEach(b => b.classList.remove('voted'));
   btn.classList.add('voted');
   // Mark the card as voted, this reveals .group-breakdown + dims other buttons
   card.classList.add('voted');
-  // Bump the aggregate vote count by 1 (visual feedback only, no persistence)
-  const counter = card.querySelector('.decl-vote-count');
-  if (counter) {
-    const current = parseInt(counter.textContent.replace(/[^0-9]/g, ''), 10) || 0;
-    counter.textContent = (current + 1).toLocaleString();
+  // Bump the aggregate vote count by 1 ONLY on the first vote per card.
+  if (!alreadyVoted) {
+    const counter = card.querySelector('.decl-vote-count');
+    if (counter) {
+      const current = parseInt(counter.textContent.replace(/[^0-9]/g, ''), 10) || 0;
+      counter.textContent = (current + 1).toLocaleString();
+    }
   }
   // Determine action
   const action = btn.classList.contains('sa-yes') ? 'agree'
                : btn.classList.contains('sa-no') ? 'disagree' : 'skip';
+  // Persist the user's vote locally so a reload doesn't reset the .voted state
+  // and let them silently change their mind. Polis allows vote-change in
+  // principle, but only when the user can SEE they already voted — which
+  // requires restoring the .voted class across sessions.
+  const itemIdForLog = card.getAttribute('data-id') || '';
+  const valForLog = action === 'agree' ? 1 : action === 'disagree' ? -1 : 0;
+  if (itemIdForLog) markItemVoted(itemIdForLog, valForLog);
   // Analytics
   if (typeof gtag === 'function') {
     gtag('event', 'declaration_vote', { action });
   }
+  if (alreadyVoted) return;  // skip the rest (counter, post, log) on re-click
   // Persist to API if enabled
   if (window.POLIS_API && window.POLIS_API.enabled()) {
     const itemId = card.getAttribute('data-id');
@@ -3855,6 +3877,10 @@ function buildDeclarationCard(decl, youGroup) {
     + '<button class="sa-btn sa-complex" style="flex:1;text-align:center;font-size:var(--fs-9)" onclick="voteStmt(this)">דלג</button></div>'
     + scaleHtml
     + (decl.pipeline_status ? '<div style="font-size:var(--fs-8);color:var(--te);margin-top:5px;text-align:center">' + escapeHtml(decl.pipeline_status) + '</div>' : '');
+
+  // Restore .voted state across reloads so a user who already voted on this
+  // declaration can't silently change their position (and bump the count).
+  applyVotedStateToCard(card);
 
   return card;
 }
