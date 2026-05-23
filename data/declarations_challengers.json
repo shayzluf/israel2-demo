@@ -1,6 +1,30 @@
 {
-  "updated": "2026-05-22T02:42:14.435708+00:00",
+  "updated": "2026-05-23T09:20:30.717710+00:00",
   "topics": [
+    {
+      "key": "civilian_security_and_public_safety",
+      "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
+      "convergence": "",
+      "divergence": ""
+    },
+    {
+      "key": "cost_of_living_and_economic_pressure",
+      "label": "יוקר המחיה ולחץ כלכלי",
+      "convergence": "",
+      "divergence": ""
+    },
+    {
+      "key": "criminal_justice_and_investigation_transparency",
+      "label": "חקירה משפטית ושקיפות",
+      "convergence": "",
+      "divergence": ""
+    },
+    {
+      "key": "governance_accountability_and_anti_corruption",
+      "label": "אחריות שלטונית ואנטי-שחיתות",
+      "convergence": "",
+      "divergence": ""
+    },
     {
       "key": "healthcare_access_and_quality",
       "label": "נגישות ואיכות בריאות",
@@ -16,43 +40,198 @@
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-05-22_0",
-      "text": "לאסור יבוא רכבים חדשים לישראל שאין בהם מערכת בלימת חירום אוטונומית, ללא שום החרגות",
+      "id": "decl_challenger_2026-05-23_0",
+      "text": "להוציא את מינוי מפקדי המחוזות במשטרה מידי השר לביטחון לאומי ולהעבירם לוועדה מקצועית בלתי תלויה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 145000,
+      "agree_pct": 55,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "חיזוק המשטרה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "agree_pct": 48
+        },
+        {
+          "id": "C",
+          "agree_pct": 22
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_1",
+      "text": "להעלות את שכר ההתחלתי של שוטרי סיור ב-20%, גם אם זה יחייב קיצוץ רוחבי בתקציבי משרדי הממשלה האחרים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 89000,
+      "agree_pct": 72,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "חיזוק המשטרה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_2",
+      "text": "לאסור על שרים להתערב בהחלטות מבצעיות של המשטרה בזמן אירועי חירום ומחאות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 310000,
+      "vote_count": 210000,
       "agree_pct": 88,
-      "time_label": "לפני יומיים",
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "חיזוק המשטרה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 82
+        },
+        {
+          "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 83
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_3",
+      "text": "לחייב פרסום פומבי של כל הנחיה מדינית שניתנת למפכ״ל על ידי השר הממונה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 60,
+      "time_label": "לפני 40 דקות",
+      "pipeline_status": null,
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "חיזוק המשטרה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 57
+        },
+        {
+          "id": "B",
+          "agree_pct": 70
+        },
+        {
+          "id": "C",
+          "agree_pct": 62
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_4",
+      "text": "לחייב סלילת שבילי אופניים מופרדים בכל כביש בינעירוני חדש שנסלל, גם על חשבון צמצום נתיבי רכב פרטי",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 112000,
+      "agree_pct": 68,
+      "time_label": "לפני 3 שעות",
       "pipeline_status": "ממתין לאישור",
       "topic_key": "road_and_traffic_safety",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 88
+          "agree_pct": 79
         },
         {
           "id": "B",
-          "agree_pct": 90
+          "agree_pct": 59
         },
         {
           "id": "C",
-          "agree_pct": 82
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_5",
+      "text": "להחמיר משמעותית את עונשי המאסר על נהגים שפגעו והפקירו פצועים בשטח",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 315000,
+      "agree_pct": 92,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 95
+        },
+        {
+          "id": "B",
+          "agree_pct": 92
+        },
+        {
+          "id": "C",
+          "agree_pct": 97
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.7,
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_1",
-      "text": "להוריד את המהירות המותרת בכביש 6 ב-10 קמ״ש כדי להפחית את חומרת התאונות, גם במחיר של הארכת זמני הנסיעה לנהגים",
+      "id": "decl_challenger_2026-05-23_6",
+      "text": "לאסור כליל על רכיבת אופניים בכבישים בינעירוניים שאין בהם שוליים רחבים מופרדים פיזית",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 215000,
-      "agree_pct": 42,
+      "vote_count": 178000,
+      "agree_pct": 48,
       "time_label": "לפני יום",
       "pipeline_status": null,
       "topic_key": "road_and_traffic_safety",
@@ -60,135 +239,73 @@
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 42
+          "agree_pct": 13
         },
         {
           "id": "B",
-          "agree_pct": 20
-        },
-        {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_2",
-      "text": "להקים יחידת משטרת תנועה ייעודית לכבישי אגרה, שתמומן ממס של 1% על רווחי החברות המפעילות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 168000,
-      "agree_pct": 74,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 71
-        },
-        {
-          "id": "B",
-          "agree_pct": 82
-        },
-        {
-          "id": "C",
-          "agree_pct": 68
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_3",
-      "text": "לחייב חברות תובלה להתקין במשאיות כבדות מצלמות דרך שמשדרות בזמן אמת למוקד תנועה ארצי",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 61000,
-      "agree_pct": 68,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 65
-        },
-        {
-          "id": "B",
-          "agree_pct": 78
+          "agree_pct": 48
         },
         {
           "id": "C",
           "agree_pct": 70
         }
       ],
-      "surprise": "bridge",
+      "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_4",
-      "text": "לאחד את כל מוקדי החירום הרפואיים למערכת לאומית אחת בסגנון 911, כדי למנוע עיכובים בשיגור צוותים",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 295000,
-      "agree_pct": 94,
-      "time_label": "לפני 3 ימים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "שירותי חירום רפואיים",
+      "id": "decl_challenger_2026-05-23_7",
+      "text": "להעביר את סמכויות האכיפה של עבירות תנועה קלות בתוך הערים לפקחים העירוניים כדי לשחרר את המשטרה למשימות ליבה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 61000,
+      "agree_pct": 75,
+      "time_label": "לפני שעה",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 91
+          "agree_pct": 75
         },
         {
           "id": "B",
-          "agree_pct": 94
+          "agree_pct": 71
         },
         {
           "id": "C",
-          "agree_pct": 89
+          "agree_pct": 72
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_5",
-      "text": "לספק דפיברילטור מותאם לילדים לכל מעון יום גדול, על חשבון קיצוץ בתקציב אירועי התרבות של הרשות המקומית",
+      "id": "decl_challenger_2026-05-23_8",
+      "text": "לבטל את האפשרות להוציא צווי איסור פרסום גורפים על חקירות רצח, למעט במקרים חריגים של ביטחון המדינה",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 185000,
-      "agree_pct": 51,
-      "time_label": "לפני יום",
+      "vote_count": 134000,
+      "agree_pct": 52,
+      "time_label": "לפני 6 שעות",
       "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "שירותי חירום רפואיים",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "שקיפות חקירתית",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 59
+          "agree_pct": 21
         },
         {
           "id": "B",
-          "agree_pct": 20
+          "agree_pct": 56
         },
         {
           "id": "C",
@@ -198,20 +315,82 @@
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_6",
-      "text": "לחייב אפליקציות מוניות להוסיף כפתור ״פינוי רפואי דחוף״ לטובת מקרים שאינם מצריכים אמבולנס טיפול נמרץ",
+      "id": "decl_challenger_2026-05-23_9",
+      "text": "להקים מכון לרפואה משפטית נוסף בנגב, בעלות של 150 מיליון שקלים שיקוזזו מתקציב פיתוח בתי החולים במרכז",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 81,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
+      "vote_count": 95000,
+      "agree_pct": 70,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "ממתין לאישור",
       "topic_key": "healthcare_access_and_quality",
-      "topic_label": "שירותי חירום רפואיים",
+      "topic_label": "שקיפות חקירתית",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 60
+        },
+        {
+          "id": "B",
+          "agree_pct": 70
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_10",
+      "text": "לאפשר למשפחות קורבנות עבירה לקבל עדכון שוטף על סטטוס החקירה, כל עוד זה לא משבש אותה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 94,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "שקיפות חקירתית",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 97
+        },
+        {
+          "id": "B",
+          "agree_pct": 90
+        },
+        {
+          "id": "C",
+          "agree_pct": 94
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_11",
+      "text": "להקים גוף ביקורת אזרחי שיוכל לבחון תיקי רצח שלא פוענחו מעל לחמש שנים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 58000,
+      "agree_pct": 80,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "שקיפות חקירתית",
       "group_breakdown": [
         {
           "id": "A",
@@ -219,90 +398,340 @@
         },
         {
           "id": "B",
-          "agree_pct": 97
+          "agree_pct": 89
         },
         {
           "id": "C",
-          "agree_pct": 75
+          "agree_pct": 79
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_12",
+      "text": "לחייב את השירות המטאורולוגי לשלוח התראות SMS אזוריות על שינויי טמפרטורה קיצוניים שעלולים לסכן קשישים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 105000,
+      "agree_pct": 78,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "תחזית מזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 69
+        },
+        {
+          "id": "C",
+          "agree_pct": 84
         }
       ],
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_7",
-      "text": "לאשר לכונני רפואת חירום על אופנועים לנסוע בנת״צים בשעות העומס כדי לקצר את זמני ההגעה לפצועים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 58000,
-      "agree_pct": 72,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "שירותי חירום רפואיים",
+      "id": "decl_challenger_2026-05-23_13",
+      "text": "לסבסד חשמל לחימום בחורף לקשישים בלבד, על חשבון העלאת תעריף החשמל הכללי ב-1%.",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 162000,
+      "agree_pct": 45,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "cost_of_living_and_economic_pressure",
+      "topic_label": "תחזית מזג אוויר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 72
+          "agree_pct": 16
         },
         {
           "id": "B",
-          "agree_pct": 68
+          "agree_pct": 73
         },
         {
           "id": "C",
-          "agree_pct": 69
+          "agree_pct": 42
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_14",
+      "text": "לחייב רשויות מקומיות לפתוח מבני ציבור מחוממים או ממוזגים ללא תשלום בימי קיצון אקלימיים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 245000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "improving_weather_forecasting_and_public_awareness_of_temperature_changes",
+      "topic_label": "תחזית מזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 84
+        },
+        {
+          "id": "B",
+          "agree_pct": 93
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_15",
+      "text": "להקים קרן פיצויים אוטומטית לחקלאים על נזקי מזג אוויר, שתמומן ממס מיוחד על חברות ביטוח",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 67000,
+      "agree_pct": 62,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "improving_weather_forecasting_and_public_awareness_of_temperature_changes",
+      "topic_label": "תחזית מזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 58
+        },
+        {
+          "id": "B",
+          "agree_pct": 54
+        },
+        {
+          "id": "C",
+          "agree_pct": 63
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-05-22_0",
-      "text": "לאסור יבוא רכבים חדשים לישראל שאין בהם מערכת בלימת חירום אוטונומית, ללא שום החרגות",
+      "id": "decl_challenger_2026-05-23_0",
+      "text": "להוציא את מינוי מפקדי המחוזות במשטרה מידי השר לביטחון לאומי ולהעבירם לוועדה מקצועית בלתי תלויה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 145000,
+      "agree_pct": 55,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "חיזוק המשטרה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "agree_pct": 48
+        },
+        {
+          "id": "C",
+          "agree_pct": 22
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_1",
+      "text": "להעלות את שכר ההתחלתי של שוטרי סיור ב-20%, גם אם זה יחייב קיצוץ רוחבי בתקציבי משרדי הממשלה האחרים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 89000,
+      "agree_pct": 72,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "חיזוק המשטרה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_2",
+      "text": "לאסור על שרים להתערב בהחלטות מבצעיות של המשטרה בזמן אירועי חירום ומחאות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 310000,
+      "vote_count": 210000,
       "agree_pct": 88,
-      "time_label": "לפני יומיים",
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "חיזוק המשטרה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 82
+        },
+        {
+          "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 83
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_3",
+      "text": "לחייב פרסום פומבי של כל הנחיה מדינית שניתנת למפכ״ל על ידי השר הממונה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 60,
+      "time_label": "לפני 40 דקות",
+      "pipeline_status": null,
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "חיזוק המשטרה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 57
+        },
+        {
+          "id": "B",
+          "agree_pct": 70
+        },
+        {
+          "id": "C",
+          "agree_pct": 62
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_4",
+      "text": "לחייב סלילת שבילי אופניים מופרדים בכל כביש בינעירוני חדש שנסלל, גם על חשבון צמצום נתיבי רכב פרטי",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 112000,
+      "agree_pct": 68,
+      "time_label": "לפני 3 שעות",
       "pipeline_status": "ממתין לאישור",
       "topic_key": "road_and_traffic_safety",
       "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 88
+          "agree_pct": 79
         },
         {
           "id": "B",
-          "agree_pct": 90
+          "agree_pct": 59
         },
         {
           "id": "C",
-          "agree_pct": 82
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_5",
+      "text": "להחמיר משמעותית את עונשי המאסר על נהגים שפגעו והפקירו פצועים בשטח",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 315000,
+      "agree_pct": 92,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 95
+        },
+        {
+          "id": "B",
+          "agree_pct": 92
+        },
+        {
+          "id": "C",
+          "agree_pct": 97
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.7,
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_1",
-      "text": "להוריד את המהירות המותרת בכביש 6 ב-10 קמ״ש כדי להפחית את חומרת התאונות, גם במחיר של הארכת זמני הנסיעה לנהגים",
+      "id": "decl_challenger_2026-05-23_6",
+      "text": "לאסור כליל על רכיבת אופניים בכבישים בינעירוניים שאין בהם שוליים רחבים מופרדים פיזית",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 215000,
-      "agree_pct": 42,
+      "vote_count": 178000,
+      "agree_pct": 48,
       "time_label": "לפני יום",
       "pipeline_status": null,
       "topic_key": "road_and_traffic_safety",
@@ -310,135 +739,73 @@
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 42
+          "agree_pct": 13
         },
         {
           "id": "B",
-          "agree_pct": 20
-        },
-        {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_2",
-      "text": "להקים יחידת משטרת תנועה ייעודית לכבישי אגרה, שתמומן ממס של 1% על רווחי החברות המפעילות",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 168000,
-      "agree_pct": 74,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 71
-        },
-        {
-          "id": "B",
-          "agree_pct": 82
-        },
-        {
-          "id": "C",
-          "agree_pct": 68
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-22_3",
-      "text": "לחייב חברות תובלה להתקין במשאיות כבדות מצלמות דרך שמשדרות בזמן אמת למוקד תנועה ארצי",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 61000,
-      "agree_pct": 68,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 65
-        },
-        {
-          "id": "B",
-          "agree_pct": 78
+          "agree_pct": 48
         },
         {
           "id": "C",
           "agree_pct": 70
         }
       ],
-      "surprise": "bridge",
+      "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_4",
-      "text": "לאחד את כל מוקדי החירום הרפואיים למערכת לאומית אחת בסגנון 911, כדי למנוע עיכובים בשיגור צוותים",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 295000,
-      "agree_pct": 94,
-      "time_label": "לפני 3 ימים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "שירותי חירום רפואיים",
+      "id": "decl_challenger_2026-05-23_7",
+      "text": "להעביר את סמכויות האכיפה של עבירות תנועה קלות בתוך הערים לפקחים העירוניים כדי לשחרר את המשטרה למשימות ליבה",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 61000,
+      "agree_pct": 75,
+      "time_label": "לפני שעה",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 91
+          "agree_pct": 75
         },
         {
           "id": "B",
-          "agree_pct": 94
+          "agree_pct": 71
         },
         {
           "id": "C",
-          "agree_pct": 89
+          "agree_pct": 72
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_5",
-      "text": "לספק דפיברילטור מותאם לילדים לכל מעון יום גדול, על חשבון קיצוץ בתקציב אירועי התרבות של הרשות המקומית",
+      "id": "decl_challenger_2026-05-23_8",
+      "text": "לבטל את האפשרות להוציא צווי איסור פרסום גורפים על חקירות רצח, למעט במקרים חריגים של ביטחון המדינה",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 185000,
-      "agree_pct": 51,
-      "time_label": "לפני יום",
+      "vote_count": 134000,
+      "agree_pct": 52,
+      "time_label": "לפני 6 שעות",
       "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "שירותי חירום רפואיים",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "שקיפות חקירתית",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 59
+          "agree_pct": 21
         },
         {
           "id": "B",
-          "agree_pct": 20
+          "agree_pct": 56
         },
         {
           "id": "C",
@@ -448,20 +815,82 @@
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_6",
-      "text": "לחייב אפליקציות מוניות להוסיף כפתור ״פינוי רפואי דחוף״ לטובת מקרים שאינם מצריכים אמבולנס טיפול נמרץ",
+      "id": "decl_challenger_2026-05-23_9",
+      "text": "להקים מכון לרפואה משפטית נוסף בנגב, בעלות של 150 מיליון שקלים שיקוזזו מתקציב פיתוח בתי החולים במרכז",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 81,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
+      "vote_count": 95000,
+      "agree_pct": 70,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "ממתין לאישור",
       "topic_key": "healthcare_access_and_quality",
-      "topic_label": "שירותי חירום רפואיים",
+      "topic_label": "שקיפות חקירתית",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 60
+        },
+        {
+          "id": "B",
+          "agree_pct": 70
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_10",
+      "text": "לאפשר למשפחות קורבנות עבירה לקבל עדכון שוטף על סטטוס החקירה, כל עוד זה לא משבש אותה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 94,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "שקיפות חקירתית",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 97
+        },
+        {
+          "id": "B",
+          "agree_pct": 90
+        },
+        {
+          "id": "C",
+          "agree_pct": 94
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_11",
+      "text": "להקים גוף ביקורת אזרחי שיוכל לבחון תיקי רצח שלא פוענחו מעל לחמש שנים",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 58000,
+      "agree_pct": 80,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "שקיפות חקירתית",
       "group_breakdown": [
         {
           "id": "A",
@@ -469,49 +898,144 @@
         },
         {
           "id": "B",
-          "agree_pct": 97
+          "agree_pct": 89
         },
         {
           "id": "C",
-          "agree_pct": 75
+          "agree_pct": 79
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_12",
+      "text": "לחייב את השירות המטאורולוגי לשלוח התראות SMS אזוריות על שינויי טמפרטורה קיצוניים שעלולים לסכן קשישים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 105000,
+      "agree_pct": 78,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "תחזית מזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 69
+        },
+        {
+          "id": "C",
+          "agree_pct": 84
         }
       ],
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-22_7",
-      "text": "לאשר לכונני רפואת חירום על אופנועים לנסוע בנת״צים בשעות העומס כדי לקצר את זמני ההגעה לפצועים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 58000,
-      "agree_pct": 72,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "שירותי חירום רפואיים",
+      "id": "decl_challenger_2026-05-23_13",
+      "text": "לסבסד חשמל לחימום בחורף לקשישים בלבד, על חשבון העלאת תעריף החשמל הכללי ב-1%.",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 162000,
+      "agree_pct": 45,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "cost_of_living_and_economic_pressure",
+      "topic_label": "תחזית מזג אוויר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 72
+          "agree_pct": 16
         },
         {
           "id": "B",
-          "agree_pct": 68
+          "agree_pct": 73
         },
         {
           "id": "C",
-          "agree_pct": 69
+          "agree_pct": 42
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_14",
+      "text": "לחייב רשויות מקומיות לפתוח מבני ציבור מחוממים או ממוזגים ללא תשלום בימי קיצון אקלימיים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 245000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "improving_weather_forecasting_and_public_awareness_of_temperature_changes",
+      "topic_label": "תחזית מזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 84
+        },
+        {
+          "id": "B",
+          "agree_pct": 93
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-22",
-      "created": "2026-05-22T02:42:14.435708+00:00"
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-05-23_15",
+      "text": "להקים קרן פיצויים אוטומטית לחקלאים על נזקי מזג אוויר, שתמומן ממס מיוחד על חברות ביטוח",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 67000,
+      "agree_pct": 62,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "improving_weather_forecasting_and_public_awareness_of_temperature_changes",
+      "topic_label": "תחזית מזג אוויר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 58
+        },
+        {
+          "id": "B",
+          "agree_pct": 54
+        },
+        {
+          "id": "C",
+          "agree_pct": 63
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-05-23",
+      "created": "2026-05-23T09:20:30.717710+00:00"
     }
   ]
 }
