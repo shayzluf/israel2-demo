@@ -3538,6 +3538,50 @@ const GROUP_LABEL = { A: 'קבוצה א׳', B: 'קבוצה ב׳', C: 'קבוצה
   if (base) console.log('[polis] API enabled:', base);
 })();
 
+/* ══ VOTED-ITEMS REGISTRY ═════════════════════════════════════════════════
+ * Map of polis_item_id → last vote value, kept in localStorage so card-render
+ * can restore the .voted UI state and prevent the user from second-guessing
+ * (and over-bumping the visible vote count). Server upserts dedup the row
+ * regardless, so this is a UX safeguard rather than an algorithm one.
+ *
+ * Lives OUTSIDE the BAIT_IF:pilot block on purpose — bait_v7 (demo) renders
+ * decl cards too (from data/demo_polis_snapshot.json) and calls
+ * applyVotedStateToCard from buildDeclarationCard, so the helper must be
+ * present in both builds. */
+function _loadVotedItems() {
+  try { return JSON.parse(localStorage.getItem('ns_voted_items') || '{}'); }
+  catch(_) { return {}; }
+}
+function _saveVotedItems(map) {
+  try { localStorage.setItem('ns_voted_items', JSON.stringify(map)); } catch(_) {}
+}
+function markItemVoted(itemId, value) {
+  if (!itemId) return;
+  const m = _loadVotedItems();
+  m[itemId] = (typeof value === 'number') ? value : 0;
+  _saveVotedItems(m);
+}
+function getItemVote(itemId) {
+  if (!itemId) return null;
+  const m = _loadVotedItems();
+  return (itemId in m) ? m[itemId] : null;
+}
+window.markItemVoted = markItemVoted;
+window.getItemVote = getItemVote;
+
+function applyVotedStateToCard(card) {
+  if (!card) return;
+  const id = card.getAttribute('data-id');
+  const v = getItemVote(id);
+  if (v === null) return;
+  card.classList.add('voted');
+  const sel = (v === 1) ? '.sa-yes' : (v === -1) ? '.sa-no' : '.sa-complex';
+  const btn = card.querySelector(sel);
+  if (btn) btn.classList.add('voted');
+}
+window.applyVotedStateToCard = applyVotedStateToCard;
+
+
 async function loadDeclarations() {
   try {
     let data;
