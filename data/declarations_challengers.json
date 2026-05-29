@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-28T01:09:16.022244+00:00",
+  "updated": "2026-05-29T01:09:05.426120+00:00",
   "topics": [
     {
       "key": "civilian_security_and_public_safety",
@@ -12,125 +12,20 @@
       "label": "חקירה משפטית ושקיפות",
       "convergence": "",
       "divergence": ""
-    },
-    {
-      "key": "education_and_civic_literacy",
-      "label": "חינוך ואוריינות אזרחית",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
-      "key": "military_service_and_reservist_support",
-      "label": "שירות צבאי ותמיכה במילואים",
-      "convergence": "",
-      "divergence": ""
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-05-28_0",
-      "text": "יש להעניק למשרתי מילואים פעילים עדיפות מוחלטת בהגרלות מחיר למשתכן, גם אם זה יעכב זכאים אחרים",
+      "id": "decl_challenger_2026-05-29_0",
+      "text": "המשטרה חייבת לשתף מידע על פורצים מורשעים שפעילים באזור עם קציני הביטחון של הרשויות המקומיות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
-      "agree_pct": 88,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה במילואימניקים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 88
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 82
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_1",
-      "text": "יש לתת פטור מלא מארנונה למילואימניקים, על חשבון קיצוץ תקציבי התרבות של הרשויות המקומיות",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 180200,
-      "agree_pct": 52,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה במילואימניקים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 52
-        },
-        {
-          "id": "B",
-          "agree_pct": 30
-        },
-        {
-          "id": "C",
-          "agree_pct": 76
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_2",
-      "text": "חובה לאסור בחוק פיטורי מילואימניקים למשך שנה שלמה מיום השחרור, ללא אפשרות להיתר חריג ממשרד העבודה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 120450,
-      "agree_pct": 75,
-      "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה במילואימניקים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 72
-        },
-        {
-          "id": "B",
-          "agree_pct": 83
-        },
-        {
-          "id": "C",
-          "agree_pct": 69
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_3",
-      "text": "יש לקבוע עונש מינימום של 5 שנות מאסר בפועל על החזקת נשק בלתי חוקי, ללא שיקול דעת לשופטים",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 250100,
-      "agree_pct": 92,
-      "time_label": "לפני 3 שעות",
+      "vote_count": 280500,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
       "pipeline_status": "ממתין לאישור",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות בחברה הערבית",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "ביטחון אזרחי",
       "group_breakdown": [
         {
           "id": "A",
@@ -138,404 +33,94 @@
         },
         {
           "id": "B",
-          "agree_pct": 96
+          "agree_pct": 91
         },
         {
           "id": "C",
-          "agree_pct": 88
+          "agree_pct": 83
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
+      "generated_from": "gemini_2026-05-29",
+      "created": "2026-05-29T01:09:05.426120+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-28_4",
-      "text": "יש להחרים רכוש וכספים של משפחות פשע מורשעות כדי לממן הקמת מרכזי נוער בחברה הערבית",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 190300,
-      "agree_pct": 81,
-      "time_label": "לפני 8 שעות",
+      "id": "decl_challenger_2026-05-29_1",
+      "text": "יש לסבסד מערכות אזעקה חכמות לקשישים החיים בגפם, על חשבון העלאת הארנונה לעסקים באחוז אחד",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 112000,
+      "agree_pct": 48,
+      "time_label": "לפני 12 שעות",
       "pipeline_status": null,
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "אלימות בחברה הערבית",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "ביטחון אזרחי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 92
+          "agree_pct": 48
         },
         {
           "id": "B",
+          "agree_pct": 26
+        },
+        {
+          "id": "C",
           "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 78
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
+      "generated_from": "gemini_2026-05-29",
+      "created": "2026-05-29T01:09:05.426120+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-28_5",
-      "text": "יש להכניס כוחות צבא לחיפוש נשק מבית לבית ביישובים עם פשיעה חמורה, גם במחיר של פגיעה בזכויות אזרח",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 310000,
-      "agree_pct": 55,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות בחברה הערבית",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_6",
-      "text": "יש להוסיף שעות חובה בלימודי אזרחות וסוציולוגיה בתיכון, על חשבון צמצום שעות הלימוד במתמטיקה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 95000,
-      "agree_pct": 42,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "לימוד מדעי החברה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 7
-        },
-        {
-          "id": "B",
-          "agree_pct": 42
-        },
-        {
-          "id": "C",
-          "agree_pct": 64
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_7",
-      "text": "חובה לחייב סטודנטים למדעי המחשב והנדסה לקחת קורסים במדעי החברה כדי לקבל תואר",
+      "id": "decl_challenger_2026-05-29_2",
+      "text": "יש לאפשר לרשויות מקומיות להציב מצלמות זיהוי פנים במרחב הציבורי כדי לאתר כנופיות פורצים, למרות הפגיעה בפרטיות",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 85400,
+      "vote_count": 175000,
       "agree_pct": 68,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "לימוד מדעי החברה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 61
-        },
-        {
-          "id": "B",
-          "agree_pct": 81
-        },
-        {
-          "id": "C",
-          "agree_pct": 70
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_8",
-      "text": "תוכנית הלימודים באזרחות חייבת לכלול התנסות מעשית בפעילות דמוקרטית, ולא רק שינון חוקים לבגרות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 130200,
-      "agree_pct": 86,
       "time_label": "לפני 6 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "לימוד מדעי החברה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 83
-        },
-        {
-          "id": "B",
-          "agree_pct": 87
-        },
-        {
-          "id": "C",
-          "agree_pct": 86
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_9",
-      "text": "יש לבטל תקצוב ממשלתי לחוגים במדעי החברה שלא מובילים להשתלבות ישירה בשוק התעסוקה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 60100,
-      "agree_pct": 58,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "לימוד מדעי החברה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 61
-        },
-        {
-          "id": "C",
-          "agree_pct": 51
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_10",
-      "text": "פיקוד העורף חייב לפתח מערכת התרעה ממוקדת לרחפני נפץ שמתריעה רק ברחובות הספציפיים שנמצאים בסכנה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 280500,
-      "agree_pct": 94,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ורחפנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 97
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 94
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_11",
-      "text": "יש לאשר לחברי כיתות כוננות עירוניות לירות ברחפנים חשודים בתוך שכונות מגורים, למרות סכנת הקליעים התועים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 220100,
-      "agree_pct": 51,
-      "time_label": "לפני 7 שעות",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ורחפנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 17
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 57
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_12",
-      "text": "יש לממן הצבת מיגוניות בשטחים חקלאיים פתוחים בצפון, על חשבון הטלת מס מיוחד על יצוא חקלאי",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 105600,
-      "agree_pct": 65,
-      "time_label": "לפני יום",
       "pipeline_status": "הצעת חוק הוגשה",
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ורחפנים",
+      "topic_label": "ביטחון אזרחי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 80
+          "agree_pct": 65
         },
         {
           "id": "B",
-          "agree_pct": 56
+          "agree_pct": 76
         },
         {
           "id": "C",
-          "agree_pct": 71
+          "agree_pct": 62
         }
       ],
-      "surprise": null,
-      "win_rate": 0.7,
+      "surprise": "bridge",
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
+      "generated_from": "gemini_2026-05-29",
+      "created": "2026-05-29T01:09:05.426120+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-05-28_0",
-      "text": "יש להעניק למשרתי מילואים פעילים עדיפות מוחלטת בהגרלות מחיר למשתכן, גם אם זה יעכב זכאים אחרים",
+      "id": "decl_challenger_2026-05-29_0",
+      "text": "המשטרה חייבת לשתף מידע על פורצים מורשעים שפעילים באזור עם קציני הביטחון של הרשויות המקומיות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
-      "agree_pct": 88,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה במילואימניקים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 88
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 82
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_1",
-      "text": "יש לתת פטור מלא מארנונה למילואימניקים, על חשבון קיצוץ תקציבי התרבות של הרשויות המקומיות",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 180200,
-      "agree_pct": 52,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": null,
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה במילואימניקים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 52
-        },
-        {
-          "id": "B",
-          "agree_pct": 30
-        },
-        {
-          "id": "C",
-          "agree_pct": 76
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_2",
-      "text": "חובה לאסור בחוק פיטורי מילואימניקים למשך שנה שלמה מיום השחרור, ללא אפשרות להיתר חריג ממשרד העבודה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 120450,
-      "agree_pct": 75,
-      "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "תמיכה במילואימניקים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 72
-        },
-        {
-          "id": "B",
-          "agree_pct": 83
-        },
-        {
-          "id": "C",
-          "agree_pct": 69
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_3",
-      "text": "יש לקבוע עונש מינימום של 5 שנות מאסר בפועל על החזקת נשק בלתי חוקי, ללא שיקול דעת לשופטים",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 250100,
-      "agree_pct": 92,
-      "time_label": "לפני 3 שעות",
+      "vote_count": 280500,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
       "pipeline_status": "ממתין לאישור",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות בחברה הערבית",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "ביטחון אזרחי",
       "group_breakdown": [
         {
           "id": "A",
@@ -543,297 +128,80 @@
         },
         {
           "id": "B",
-          "agree_pct": 96
+          "agree_pct": 91
         },
         {
           "id": "C",
-          "agree_pct": 88
+          "agree_pct": 83
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
+      "generated_from": "gemini_2026-05-29",
+      "created": "2026-05-29T01:09:05.426120+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-28_4",
-      "text": "יש להחרים רכוש וכספים של משפחות פשע מורשעות כדי לממן הקמת מרכזי נוער בחברה הערבית",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 190300,
-      "agree_pct": 81,
-      "time_label": "לפני 8 שעות",
+      "id": "decl_challenger_2026-05-29_1",
+      "text": "יש לסבסד מערכות אזעקה חכמות לקשישים החיים בגפם, על חשבון העלאת הארנונה לעסקים באחוז אחד",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 112000,
+      "agree_pct": 48,
+      "time_label": "לפני 12 שעות",
       "pipeline_status": null,
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "אלימות בחברה הערבית",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "ביטחון אזרחי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 92
+          "agree_pct": 48
         },
         {
           "id": "B",
+          "agree_pct": 26
+        },
+        {
+          "id": "C",
           "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 78
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
+      "generated_from": "gemini_2026-05-29",
+      "created": "2026-05-29T01:09:05.426120+00:00"
     },
     {
-      "id": "decl_challenger_2026-05-28_5",
-      "text": "יש להכניס כוחות צבא לחיפוש נשק מבית לבית ביישובים עם פשיעה חמורה, גם במחיר של פגיעה בזכויות אזרח",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 310000,
-      "agree_pct": 55,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות בחברה הערבית",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_6",
-      "text": "יש להוסיף שעות חובה בלימודי אזרחות וסוציולוגיה בתיכון, על חשבון צמצום שעות הלימוד במתמטיקה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 95000,
-      "agree_pct": 42,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "לימוד מדעי החברה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 7
-        },
-        {
-          "id": "B",
-          "agree_pct": 42
-        },
-        {
-          "id": "C",
-          "agree_pct": 64
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_7",
-      "text": "חובה לחייב סטודנטים למדעי המחשב והנדסה לקחת קורסים במדעי החברה כדי לקבל תואר",
+      "id": "decl_challenger_2026-05-29_2",
+      "text": "יש לאפשר לרשויות מקומיות להציב מצלמות זיהוי פנים במרחב הציבורי כדי לאתר כנופיות פורצים, למרות הפגיעה בפרטיות",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 85400,
+      "vote_count": 175000,
       "agree_pct": 68,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "לימוד מדעי החברה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 61
-        },
-        {
-          "id": "B",
-          "agree_pct": 81
-        },
-        {
-          "id": "C",
-          "agree_pct": 70
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_8",
-      "text": "תוכנית הלימודים באזרחות חייבת לכלול התנסות מעשית בפעילות דמוקרטית, ולא רק שינון חוקים לבגרות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 130200,
-      "agree_pct": 86,
       "time_label": "לפני 6 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "לימוד מדעי החברה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 83
-        },
-        {
-          "id": "B",
-          "agree_pct": 87
-        },
-        {
-          "id": "C",
-          "agree_pct": 86
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_9",
-      "text": "יש לבטל תקצוב ממשלתי לחוגים במדעי החברה שלא מובילים להשתלבות ישירה בשוק התעסוקה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 60100,
-      "agree_pct": 58,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "לימוד מדעי החברה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 61
-        },
-        {
-          "id": "C",
-          "agree_pct": 51
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_10",
-      "text": "פיקוד העורף חייב לפתח מערכת התרעה ממוקדת לרחפני נפץ שמתריעה רק ברחובות הספציפיים שנמצאים בסכנה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 280500,
-      "agree_pct": 94,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ורחפנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 97
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 94
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_11",
-      "text": "יש לאשר לחברי כיתות כוננות עירוניות לירות ברחפנים חשודים בתוך שכונות מגורים, למרות סכנת הקליעים התועים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 220100,
-      "agree_pct": 51,
-      "time_label": "לפני 7 שעות",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ורחפנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 17
-        },
-        {
-          "id": "B",
-          "agree_pct": 85
-        },
-        {
-          "id": "C",
-          "agree_pct": 57
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-05-28_12",
-      "text": "יש לממן הצבת מיגוניות בשטחים חקלאיים פתוחים בצפון, על חשבון הטלת מס מיוחד על יצוא חקלאי",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 105600,
-      "agree_pct": 65,
-      "time_label": "לפני יום",
       "pipeline_status": "הצעת חוק הוגשה",
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ורחפנים",
+      "topic_label": "ביטחון אזרחי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 80
+          "agree_pct": 65
         },
         {
           "id": "B",
-          "agree_pct": 56
+          "agree_pct": 76
         },
         {
           "id": "C",
-          "agree_pct": 71
+          "agree_pct": 62
         }
       ],
-      "surprise": null,
-      "win_rate": 0.7,
+      "surprise": "bridge",
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-05-28",
-      "created": "2026-05-28T01:09:16.022244+00:00"
+      "generated_from": "gemini_2026-05-29",
+      "created": "2026-05-29T01:09:05.426120+00:00"
     }
   ]
 }
