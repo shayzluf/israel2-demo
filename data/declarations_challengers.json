@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-01T01:14:11.461932+00:00",
+  "updated": "2026-06-02T01:09:44.490783+00:00",
   "topics": [
     {
       "key": "civilian_security_and_public_safety",
@@ -20,90 +20,158 @@
       "divergence": ""
     },
     {
-      "key": "governance_accountability_and_anti_corruption",
-      "label": "אחריות שלטונית ואנטי-שחיתות",
+      "key": "military_service_and_reservist_support",
+      "label": "שירות צבאי ותמיכה במילואים",
+      "convergence": "",
+      "divergence": ""
+    },
+    {
+      "key": "road_and_traffic_safety",
+      "label": "בטיחות בדרכים",
       "convergence": "",
       "divergence": ""
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-06-01_0",
-      "text": "יש להקים מוקד חירום ייעודי לעסקים בצפון, שיאויש על ידי נציגי רשות המיסים בעלי סמכות לקבלת החלטות במקום",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
-      "agree_pct": 88,
+      "id": "decl_challenger_2026-06-02_0",
+      "text": "צריך להחרים רכבים של נהגים צעירים שנתפסו משתוללים בכביש, גם אם הרכב שייך להורים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 124500,
+      "agree_pct": 55,
       "time_label": "לפני 4 שעות",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "פיצוי לעסקים בצפון",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 88
+          "agree_pct": 87
         },
         {
           "id": "B",
-          "agree_pct": 90
+          "agree_pct": 48
         },
         {
           "id": "C",
-          "agree_pct": 82
+          "agree_pct": 22
         }
       ],
-      "surprise": "bridge",
+      "surprise": "split",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_1",
-      "text": "יש לאפשר לעסקים שקרסו בקו העימות להקפיא תשלומי מיסים וארנונה ללא הגבלת זמן, עד להתייצבות המצב הביטחוני",
+      "id": "decl_challenger_2026-06-02_1",
+      "text": "יש לחייב כל נהג חדש לעבור אימון בסימולטור מתקדם כתנאי לרישיון, במימון תוספת של 50 ש״ח לאגרת הטסט",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 145200,
-      "agree_pct": 78,
+      "vote_count": 89200,
+      "agree_pct": 75,
       "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "פיצוי לעסקים בצפון",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 78
+          "agree_pct": 75
         },
         {
           "id": "B",
-          "agree_pct": 72
+          "agree_pct": 69
         },
         {
           "id": "C",
-          "agree_pct": 88
+          "agree_pct": 85
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_2",
-      "text": "יש להעניק פיצוי מלא על אובדן הכנסות לעסקים בקריית שמונה, במימון של העלאת מס החברות הארצי באחוז אחד",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 312000,
-      "agree_pct": 52,
+      "id": "decl_challenger_2026-06-02_2",
+      "text": "צריך להתקין מצלמות מהירות ממוצעת בכל הכבישים הבינעירוניים החד-מסלוליים כדי למנוע תאונות קטלניות",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 210400,
+      "agree_pct": 88,
       "time_label": "לפני יומיים",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "פיצוי לעסקים בצפון",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 46
+          "agree_pct": 82
+        },
+        {
+          "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 83
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_3",
+      "text": "יש לאסור על נהגים חדשים מתחת לגיל 21 לנהוג בין חצות ל-5 בבוקר בשנתיים הראשונות לקבלת הרישיון",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52100,
+      "agree_pct": 60,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 57
+        },
+        {
+          "id": "B",
+          "agree_pct": 70
+        },
+        {
+          "id": "C",
+          "agree_pct": 62
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_4",
+      "text": "צריך להקים מוקד אנונימי לאומי לדיווח על פרוטקשן, שיופעל ישירות על ידי השב״כ ולא על ידי המשטרה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 145800,
+      "agree_pct": 82,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק בפשיעה וסחטנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
         },
         {
           "id": "B",
@@ -111,185 +179,187 @@
         },
         {
           "id": "C",
-          "agree_pct": 30
+          "agree_pct": 79
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_5",
+      "text": "יש לפצות עסקים שהוצתו בגלל סחיטה מקרן מס רכוש, במימון העלאת מס החברות הארצי ב-0.5%.",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 112000,
+      "agree_pct": 48,
+      "time_label": "לפני יום",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "cost_of_living_and_economic_pressure",
+      "topic_label": "מאבק בפשיעה וסחטנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 56
+        },
+        {
+          "id": "B",
+          "agree_pct": 17
+        },
+        {
+          "id": "C",
+          "agree_pct": 76
         }
       ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_3",
-      "text": "המדינה צריכה לספק הלוואות בערבות מדינה לעסקים צפוניים שרוצים להעתיק את פעילותם למרכז באופן זמני",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "פיצוי לעסקים בצפון",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 75
-        },
-        {
-          "id": "C",
-          "agree_pct": 67
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_4",
-      "text": "יש לחייב את המשטרה לעדכן את משפחות הקורבנות מדי חודש בסטטוס החקירה של מקרי רצח לא מפוענחים",
+      "id": "decl_challenger_2026-06-02_6",
+      "text": "צריך לחוקק חוק שיאפשר הקפאה מיידית של חשבונות בנק לכל מי שמוגש נגדו כתב אישום על סחיטת דמי חסות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
       "vote_count": 289000,
-      "agree_pct": 92,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "ממתין לאישור",
+      "agree_pct": 91,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
       "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "מאבק באלימות ורצח",
+      "topic_label": "מאבק בפשיעה וסחטנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 92
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_5",
-      "text": "יש לקבוע עונש מינימום של 5 שנות מאסר על החזקת נשק בלתי חוקי, ללא אפשרות לעסקאות טיעון",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 175000,
-      "agree_pct": 81,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק באלימות ורצח",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 72
-        },
-        {
-          "id": "B",
           "agree_pct": 97
         },
         {
-          "id": "C",
-          "agree_pct": 82
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_6",
-      "text": "יש להכניס כוחות משטרה צבאית לסיוע בהחרמת נשק בערים מעורבות, גם אם זה בא על חשבון עיכוב באימוני צה״ל הסדירים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 245000,
-      "agree_pct": 48,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק באלימות ורצח",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 13
-        },
-        {
           "id": "B",
-          "agree_pct": 48
+          "agree_pct": 88
         },
         {
           "id": "C",
-          "agree_pct": 70
+          "agree_pct": 92
         }
       ],
-      "surprise": null,
+      "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_7",
-      "text": "ראשי רשויות שלא ישתפו פעולה עם המשטרה בחקירות רצח בשטחם, יודחו מתפקידם על ידי שר הפנים",
+      "id": "decl_challenger_2026-06-02_7",
+      "text": "יש להפוך תשלום דמי חסות לעבירה פלילית כדי לייבש את המימון לעבריינים, גם אם זה פוגע בבעלי העסקים הנסחטים",
       "badge": "new",
       "badge_label": "חדש",
-      "vote_count": 68000,
-      "agree_pct": 58,
-      "time_label": "לפני שעתיים",
+      "vote_count": 61300,
+      "agree_pct": 45,
+      "time_label": "לפני חצי שעה",
       "pipeline_status": null,
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "מאבק באלימות ורצח",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק בפשיעה וסחטנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 58
+          "agree_pct": 45
         },
         {
           "id": "B",
-          "agree_pct": 54
+          "agree_pct": 41
         },
         {
           "id": "C",
-          "agree_pct": 55
+          "agree_pct": 42
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_8",
-      "text": "יש לשלב באפליקציית פיקוד העורף התרעה קולית ייחודית לחדירת כלי טיס עוין, שתהיה שונה לחלוטין מאזעקת צבע אדום רגילה",
+      "id": "decl_challenger_2026-06-02_8",
+      "text": "צריך לחייב את הרשתות החברתיות להציג תווית אזהרה בולטת על כל תמונה או סרטון שנוצרו בבינה מלאכותית",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
       "vote_count": 315000,
-      "agree_pct": 94,
-      "time_label": "לפני חצי שעה",
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
       "pipeline_status": "ממתין לאישור",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מענה חירום לרחפנים",
+      "topic_key": "investigating_and_preventing_the_spread_of_misinformation_and_fake_news_in_public_discourse",
+      "topic_label": "מאבק בפייק ניוז",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 91
+          "agree_pct": 86
+        },
+        {
+          "id": "B",
+          "agree_pct": 90
+        },
+        {
+          "id": "C",
+          "agree_pct": 89
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_9",
+      "text": "יש להקים רשות ממשלתית לניטור והפרכת פייק ניוז ברשת, בעלות של 100 מיליון ש״ח על חשבון תקציב תאגיד השידור",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134200,
+      "agree_pct": 42,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "investigating_and_preventing_the_spread_of_misinformation_and_fake_news_in_public_discourse",
+      "topic_label": "מאבק בפייק ניוז",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 11
+        },
+        {
+          "id": "B",
+          "agree_pct": 42
+        },
+        {
+          "id": "C",
+          "agree_pct": 76
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_10",
+      "text": "צריך להטיל אחריות אישית על מנהלי רשתות חברתיות אם הם מסרבים להסיר קמפיינים מוכחים של פייק ניוז תוך 24 שעות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 178900,
+      "agree_pct": 78,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "investigating_and_preventing_the_spread_of_misinformation_and_fake_news_in_public_discourse",
+      "topic_label": "מאבק בפייק ניוז",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 80
         },
         {
           "id": "B",
@@ -297,156 +367,313 @@
         },
         {
           "id": "C",
-          "agree_pct": 94
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_9",
-      "text": "יש לאשר לכיתות הכוננות ביישובי קו העימות להפעיל ציוד שיבוש רחפנים באופן עצמאי, ללא המתנה לאישור הצבא",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 182000,
-      "agree_pct": 72,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מענה חירום לרחפנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_10",
-      "text": "יש לסבסד מיגון גגות מפני רסיסי רחפנים לתושבי הצפון, על חשבון ביטול נקודות הזיכוי במס הכנסה להורים עובדים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 260000,
-      "agree_pct": 41,
-      "time_label": "לפני יום",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מענה חירום לרחפנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 8
-        },
-        {
-          "id": "B",
-          "agree_pct": 62
-        },
-        {
-          "id": "C",
-          "agree_pct": 48
+          "agree_pct": 73
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_11",
+      "text": "יש לחייב אתרי חדשות לפרסם התנצלות ותיקון באותו גודל ומיקום בדיוק של כותרת הפייק המקורית שפרסמו",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 72500,
+      "agree_pct": 85,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "investigating_and_preventing_the_spread_of_misinformation_and_fake_news_in_public_discourse",
+      "topic_label": "מאבק בפייק ניוז",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 94
+        },
+        {
+          "id": "C",
+          "agree_pct": 84
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_12",
+      "text": "המדינה צריכה להבטיח מלגות לימודים מלאות לילדי מילואימניקים שנפלו, ללא קשר למצב הכלכלי של המשפחה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 320000,
+      "agree_pct": 94,
+      "time_label": "לפני יום",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "תמיכה במילואים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 95
+        },
+        {
+          "id": "B",
+          "agree_pct": 94
+        },
+        {
+          "id": "C",
+          "agree_pct": 97
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_13",
+      "text": "יש לממן קצבה חודשית קבועה לאלמנות מילואים על חשבון קיצוץ רוחבי בכספים הקואליציוניים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 215000,
+      "agree_pct": 86,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "תמיכה במילואים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 77
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_14",
+      "text": "צריך לחייב מעסיקים לשמור על מקום העבודה של מילואימניקים קרביים לשנה שלמה אחרי השחרור, ולא רק ל-30 יום",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 156000,
+      "agree_pct": 58,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "תמיכה במילואים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "agree_pct": 31
+        },
+        {
+          "id": "C",
+          "agree_pct": 58
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_15",
+      "text": "יש לתת עדיפות במכרזים ממשלתיים לעסקים בבעלות משרתי מילואים פעילים כדי לעודד שירות משמעותי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 68400,
+      "agree_pct": 72,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "תמיכה במילואים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 68
+        },
+        {
+          "id": "B",
+          "agree_pct": 64
+        },
+        {
+          "id": "C",
+          "agree_pct": 73
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-06-01_0",
-      "text": "יש להקים מוקד חירום ייעודי לעסקים בצפון, שיאויש על ידי נציגי רשות המיסים בעלי סמכות לקבלת החלטות במקום",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
-      "agree_pct": 88,
+      "id": "decl_challenger_2026-06-02_0",
+      "text": "צריך להחרים רכבים של נהגים צעירים שנתפסו משתוללים בכביש, גם אם הרכב שייך להורים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 124500,
+      "agree_pct": 55,
       "time_label": "לפני 4 שעות",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "פיצוי לעסקים בצפון",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 88
+          "agree_pct": 87
         },
         {
           "id": "B",
-          "agree_pct": 90
+          "agree_pct": 48
         },
         {
           "id": "C",
-          "agree_pct": 82
+          "agree_pct": 22
         }
       ],
-      "surprise": "bridge",
+      "surprise": "split",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_1",
-      "text": "יש לאפשר לעסקים שקרסו בקו העימות להקפיא תשלומי מיסים וארנונה ללא הגבלת זמן, עד להתייצבות המצב הביטחוני",
+      "id": "decl_challenger_2026-06-02_1",
+      "text": "יש לחייב כל נהג חדש לעבור אימון בסימולטור מתקדם כתנאי לרישיון, במימון תוספת של 50 ש״ח לאגרת הטסט",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 145200,
-      "agree_pct": 78,
+      "vote_count": 89200,
+      "agree_pct": 75,
       "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "פיצוי לעסקים בצפון",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 78
+          "agree_pct": 75
         },
         {
           "id": "B",
-          "agree_pct": 72
+          "agree_pct": 69
         },
         {
           "id": "C",
-          "agree_pct": 88
+          "agree_pct": 85
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_2",
-      "text": "יש להעניק פיצוי מלא על אובדן הכנסות לעסקים בקריית שמונה, במימון של העלאת מס החברות הארצי באחוז אחד",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 312000,
-      "agree_pct": 52,
+      "id": "decl_challenger_2026-06-02_2",
+      "text": "צריך להתקין מצלמות מהירות ממוצעת בכל הכבישים הבינעירוניים החד-מסלוליים כדי למנוע תאונות קטלניות",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 210400,
+      "agree_pct": 88,
       "time_label": "לפני יומיים",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "פיצוי לעסקים בצפון",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 46
+          "agree_pct": 82
+        },
+        {
+          "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 83
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_3",
+      "text": "יש לאסור על נהגים חדשים מתחת לגיל 21 לנהוג בין חצות ל-5 בבוקר בשנתיים הראשונות לקבלת הרישיון",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52100,
+      "agree_pct": 60,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 57
+        },
+        {
+          "id": "B",
+          "agree_pct": 70
+        },
+        {
+          "id": "C",
+          "agree_pct": 62
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_4",
+      "text": "צריך להקים מוקד אנונימי לאומי לדיווח על פרוטקשן, שיופעל ישירות על ידי השב״כ ולא על ידי המשטרה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 145800,
+      "agree_pct": 82,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק בפשיעה וסחטנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
         },
         {
           "id": "B",
@@ -454,185 +681,187 @@
         },
         {
           "id": "C",
-          "agree_pct": 30
+          "agree_pct": 79
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_5",
+      "text": "יש לפצות עסקים שהוצתו בגלל סחיטה מקרן מס רכוש, במימון העלאת מס החברות הארצי ב-0.5%.",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 112000,
+      "agree_pct": 48,
+      "time_label": "לפני יום",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "cost_of_living_and_economic_pressure",
+      "topic_label": "מאבק בפשיעה וסחטנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 56
+        },
+        {
+          "id": "B",
+          "agree_pct": 17
+        },
+        {
+          "id": "C",
+          "agree_pct": 76
         }
       ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_3",
-      "text": "המדינה צריכה לספק הלוואות בערבות מדינה לעסקים צפוניים שרוצים להעתיק את פעילותם למרכז באופן זמני",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "פיצוי לעסקים בצפון",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 75
-        },
-        {
-          "id": "C",
-          "agree_pct": 67
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_4",
-      "text": "יש לחייב את המשטרה לעדכן את משפחות הקורבנות מדי חודש בסטטוס החקירה של מקרי רצח לא מפוענחים",
+      "id": "decl_challenger_2026-06-02_6",
+      "text": "צריך לחוקק חוק שיאפשר הקפאה מיידית של חשבונות בנק לכל מי שמוגש נגדו כתב אישום על סחיטת דמי חסות",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
       "vote_count": 289000,
-      "agree_pct": 92,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "ממתין לאישור",
+      "agree_pct": 91,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
       "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "מאבק באלימות ורצח",
+      "topic_label": "מאבק בפשיעה וסחטנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 92
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_5",
-      "text": "יש לקבוע עונש מינימום של 5 שנות מאסר על החזקת נשק בלתי חוקי, ללא אפשרות לעסקאות טיעון",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 175000,
-      "agree_pct": 81,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק באלימות ורצח",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 72
-        },
-        {
-          "id": "B",
           "agree_pct": 97
         },
         {
-          "id": "C",
-          "agree_pct": 82
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_6",
-      "text": "יש להכניס כוחות משטרה צבאית לסיוע בהחרמת נשק בערים מעורבות, גם אם זה בא על חשבון עיכוב באימוני צה״ל הסדירים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 245000,
-      "agree_pct": 48,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק באלימות ורצח",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 13
-        },
-        {
           "id": "B",
-          "agree_pct": 48
+          "agree_pct": 88
         },
         {
           "id": "C",
-          "agree_pct": 70
+          "agree_pct": 92
         }
       ],
-      "surprise": null,
+      "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_7",
-      "text": "ראשי רשויות שלא ישתפו פעולה עם המשטרה בחקירות רצח בשטחם, יודחו מתפקידם על ידי שר הפנים",
+      "id": "decl_challenger_2026-06-02_7",
+      "text": "יש להפוך תשלום דמי חסות לעבירה פלילית כדי לייבש את המימון לעבריינים, גם אם זה פוגע בבעלי העסקים הנסחטים",
       "badge": "new",
       "badge_label": "חדש",
-      "vote_count": 68000,
-      "agree_pct": 58,
-      "time_label": "לפני שעתיים",
+      "vote_count": 61300,
+      "agree_pct": 45,
+      "time_label": "לפני חצי שעה",
       "pipeline_status": null,
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "מאבק באלימות ורצח",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק בפשיעה וסחטנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 58
+          "agree_pct": 45
         },
         {
           "id": "B",
-          "agree_pct": 54
+          "agree_pct": 41
         },
         {
           "id": "C",
-          "agree_pct": 55
+          "agree_pct": 42
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-01_8",
-      "text": "יש לשלב באפליקציית פיקוד העורף התרעה קולית ייחודית לחדירת כלי טיס עוין, שתהיה שונה לחלוטין מאזעקת צבע אדום רגילה",
+      "id": "decl_challenger_2026-06-02_8",
+      "text": "צריך לחייב את הרשתות החברתיות להציג תווית אזהרה בולטת על כל תמונה או סרטון שנוצרו בבינה מלאכותית",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
       "vote_count": 315000,
-      "agree_pct": 94,
-      "time_label": "לפני חצי שעה",
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
       "pipeline_status": "ממתין לאישור",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מענה חירום לרחפנים",
+      "topic_key": "investigating_and_preventing_the_spread_of_misinformation_and_fake_news_in_public_discourse",
+      "topic_label": "מאבק בפייק ניוז",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 91
+          "agree_pct": 86
+        },
+        {
+          "id": "B",
+          "agree_pct": 90
+        },
+        {
+          "id": "C",
+          "agree_pct": 89
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_9",
+      "text": "יש להקים רשות ממשלתית לניטור והפרכת פייק ניוז ברשת, בעלות של 100 מיליון ש״ח על חשבון תקציב תאגיד השידור",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134200,
+      "agree_pct": 42,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "investigating_and_preventing_the_spread_of_misinformation_and_fake_news_in_public_discourse",
+      "topic_label": "מאבק בפייק ניוז",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 11
+        },
+        {
+          "id": "B",
+          "agree_pct": 42
+        },
+        {
+          "id": "C",
+          "agree_pct": 76
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_10",
+      "text": "צריך להטיל אחריות אישית על מנהלי רשתות חברתיות אם הם מסרבים להסיר קמפיינים מוכחים של פייק ניוז תוך 24 שעות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 178900,
+      "agree_pct": 78,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "investigating_and_preventing_the_spread_of_misinformation_and_fake_news_in_public_discourse",
+      "topic_label": "מאבק בפייק ניוז",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 80
         },
         {
           "id": "B",
@@ -640,76 +869,171 @@
         },
         {
           "id": "C",
-          "agree_pct": 94
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_9",
-      "text": "יש לאשר לכיתות הכוננות ביישובי קו העימות להפעיל ציוד שיבוש רחפנים באופן עצמאי, ללא המתנה לאישור הצבא",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 182000,
-      "agree_pct": 72,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מענה חירום לרחפנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 62
-        },
-        {
-          "id": "B",
-          "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-01_10",
-      "text": "יש לסבסד מיגון גגות מפני רסיסי רחפנים לתושבי הצפון, על חשבון ביטול נקודות הזיכוי במס הכנסה להורים עובדים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 260000,
-      "agree_pct": 41,
-      "time_label": "לפני יום",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מענה חירום לרחפנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 8
-        },
-        {
-          "id": "B",
-          "agree_pct": 62
-        },
-        {
-          "id": "C",
-          "agree_pct": 48
+          "agree_pct": 73
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-01",
-      "created": "2026-06-01T01:14:11.461932+00:00"
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_11",
+      "text": "יש לחייב אתרי חדשות לפרסם התנצלות ותיקון באותו גודל ומיקום בדיוק של כותרת הפייק המקורית שפרסמו",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 72500,
+      "agree_pct": 85,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "investigating_and_preventing_the_spread_of_misinformation_and_fake_news_in_public_discourse",
+      "topic_label": "מאבק בפייק ניוז",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 94
+        },
+        {
+          "id": "C",
+          "agree_pct": 84
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_12",
+      "text": "המדינה צריכה להבטיח מלגות לימודים מלאות לילדי מילואימניקים שנפלו, ללא קשר למצב הכלכלי של המשפחה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 320000,
+      "agree_pct": 94,
+      "time_label": "לפני יום",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "תמיכה במילואים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 95
+        },
+        {
+          "id": "B",
+          "agree_pct": 94
+        },
+        {
+          "id": "C",
+          "agree_pct": 97
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_13",
+      "text": "יש לממן קצבה חודשית קבועה לאלמנות מילואים על חשבון קיצוץ רוחבי בכספים הקואליציוניים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 215000,
+      "agree_pct": 86,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "תמיכה במילואים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 77
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_14",
+      "text": "צריך לחייב מעסיקים לשמור על מקום העבודה של מילואימניקים קרביים לשנה שלמה אחרי השחרור, ולא רק ל-30 יום",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 156000,
+      "agree_pct": 58,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "תמיכה במילואים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 81
+        },
+        {
+          "id": "B",
+          "agree_pct": 31
+        },
+        {
+          "id": "C",
+          "agree_pct": 58
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-02_15",
+      "text": "יש לתת עדיפות במכרזים ממשלתיים לעסקים בבעלות משרתי מילואים פעילים כדי לעודד שירות משמעותי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 68400,
+      "agree_pct": 72,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "תמיכה במילואים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 68
+        },
+        {
+          "id": "B",
+          "agree_pct": 64
+        },
+        {
+          "id": "C",
+          "agree_pct": 73
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-02",
+      "created": "2026-06-02T01:09:44.490783+00:00"
     }
   ]
 }
