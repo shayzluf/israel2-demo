@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-03T01:10:04.421380+00:00",
+  "updated": "2026-06-04T01:09:16.064857+00:00",
   "topics": [
     {
       "key": "civilian_security_and_public_safety",
@@ -8,98 +8,40 @@
       "divergence": ""
     },
     {
-      "key": "cost_of_living_and_economic_pressure",
-      "label": "יוקר המחיה ולחץ כלכלי",
+      "key": "criminal_justice_and_investigation_transparency",
+      "label": "חקירה משפטית ושקיפות",
       "convergence": "",
       "divergence": ""
     },
     {
-      "key": "road_and_traffic_safety",
-      "label": "בטיחות בדרכים",
+      "key": "governance_accountability_and_anti_corruption",
+      "label": "אחריות שלטונית ואנטי-שחיתות",
+      "convergence": "",
+      "divergence": ""
+    },
+    {
+      "key": "healthcare_access_and_quality",
+      "label": "נגישות ואיכות בריאות",
       "convergence": "",
       "divergence": ""
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-06-03_0",
-      "text": "יש להבטיח שכל ביטול של קו אוטובוס מרכזי בעוטף עזה ילווה בהפעלת שירות תחבורה חכמה לפי קריאה",
+      "id": "decl_challenger_2026-06-04_0",
+      "text": "יש לקבוע עונש מינימום של מאסר בפועל למי שמשחית רכוש בביתו של עובד ציבור או שופט",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 178000,
-      "agree_pct": 91,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "improving_public_transportation_infrastructure_and_services_in_the_gaza_envelope_region",
-      "topic_label": "תחבורה בעוטף עזה",
+      "vote_count": 215000,
+      "agree_pct": 88,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "אלימות בהפגנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 91
-        },
-        {
-          "id": "B",
-          "agree_pct": 93
-        },
-        {
-          "id": "C",
-          "agree_pct": 85
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_1",
-      "text": "צריך להכפיל את תדירות האוטובוסים בעוטף עזה גם אם הם נוסעים ריקים, על חשבון תקציב התחבורה של גוש דן",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 255000,
-      "agree_pct": 48,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "improving_public_transportation_infrastructure_and_services_in_the_gaza_envelope_region",
-      "topic_label": "תחבורה בעוטף עזה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 48
-        },
-        {
-          "id": "B",
-          "agree_pct": 26
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_2",
-      "text": "יש לחייב בניית מסופי תחבורה ממוגני ירי בעוטף עזה כדי להבטיח את שלומם של הנוסעים בזמן הסלמה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 112000,
-      "agree_pct": 82,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "תחבורה בעוטף עזה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 79
+          "agree_pct": 88
         },
         {
           "id": "B",
@@ -107,247 +49,61 @@
         },
         {
           "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-04_1",
+      "text": "צריך לאבטח בתי שופטים 24/7, גם אם זה ידרוש להעביר תקציבים מאבטחת אירועי תרבות וספורט",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 142000,
+      "agree_pct": 52,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות בהפגנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 52
+        },
+        {
+          "id": "B",
+          "agree_pct": 30
+        },
+        {
+          "id": "C",
           "agree_pct": 76
         }
       ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
+      "surprise": null,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-03_3",
-      "text": "צריך לתת עדיפות במכרזים לחברות תחבורה שמעסיקות נהגים תושבי עוטף עזה, כדי לחזק את התעסוקה המקומית",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 62000,
-      "agree_pct": 70,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "תחבורה בעוטף עזה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 67
-        },
-        {
-          "id": "B",
-          "agree_pct": 80
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_4",
-      "text": "יש לרשת את כל הצמתים הבינעירוניים המרכזיים במצלמות חכמות כדי לזהות במהירות רכבים המעורבים באירועי אלימות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310500,
-      "agree_pct": 89,
+      "id": "decl_challenger_2026-06-04_2",
+      "text": "מותר למשטרה להשתמש באוטובוסים כמתקני כליאה זמניים כדי להשתלט מהר על התפרעויות המוניות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 89000,
+      "agree_pct": 71,
       "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 86
-        },
-        {
-          "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
-          "agree_pct": 84
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_5",
-      "text": "צריך לתגבר את נוכחות המשטרה בצמתים מועדים לאלימות בצפון, על חשבון צמצום ניידות לאכיפת מהירות בכבישים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 55,
-      "time_label": "לפני 8 שעות",
       "pipeline_status": null,
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_6",
-      "text": "יש להקל משמעותית על מתן רישיונות נשק לבעלי עסקים הממוקמים בצמתים מבודדים כדי לאפשר להם הגנה עצמית",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 76,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 79
-        },
-        {
-          "id": "B",
-          "agree_pct": 93
-        },
-        {
-          "id": "C",
-          "agree_pct": 70
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_7",
-      "text": "צריך להקים מנגנון גישור חובה בסכסוכי חמולות מקומיים לפני שהם גולשים לאלימות ברחובות ובצמתים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 58000,
-      "agree_pct": 63,
-      "time_label": "לפני חצי שעה",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 59
-        },
-        {
-          "id": "C",
-          "agree_pct": 60
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_8",
-      "text": "יש לחייב יבואני אופניים חשמליים להגביל מכנית את מהירות הכלים ל-25 קמ״ש עוד לפני המסירה ללקוח",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 285000,
-      "agree_pct": 87,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות אופניים חשמליים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 88
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_9",
-      "text": "צריך להחרים במקום אופניים חשמליים של רוכבים מתחת לגיל 16, ולהתנות את שחרורם בתשלום קנס של 1,000 ש״ח על ידי ההורים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 167000,
-      "agree_pct": 78,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות אופניים חשמליים",
+      "topic_label": "אלימות בהפגנות",
       "group_breakdown": [
         {
           "id": "A",
           "agree_pct": 68
-        },
-        {
-          "id": "B",
-          "agree_pct": 78
-        },
-        {
-          "id": "C",
-          "agree_pct": 93
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_10",
-      "text": "יש לאסור לחלוטין כניסת אופניים וקורקינטים חשמליים לשטחי בתי הספר כדי להילחם בתופעת הרכיבה מתחת לגיל המותר",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 124000,
-      "agree_pct": 58,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות אופניים חשמליים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 25
         },
         {
           "id": "B",
@@ -358,58 +114,120 @@
           "agree_pct": 65
         }
       ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_11",
-      "text": "צריך להטיל אחריות פלילית ישירה על הורים שילדיהם הקטינים היו מעורבים בתאונה בעת רכיבה לא חוקית על אופניים חשמליים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 53000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות אופניים חשמליים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 69
-        },
-        {
-          "id": "B",
-          "agree_pct": 74
-        },
-        {
-          "id": "C",
-          "agree_pct": 64
-        }
-      ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-03_12",
-      "text": "יש להתקין פסי האטה פיזיים בקרבת כל מוסדות החינוך והפארקים בחברה הערבית כדי לאלץ נהגים להאט",
+      "id": "decl_challenger_2026-06-04_3",
+      "text": "דו״חות מבקר המדינה על מחדלים ביטחוניים חייבים להתפרסם לציבור מיד עם סיומם, תוך השחרת מידע מסווג",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 240000,
-      "agree_pct": 92,
-      "time_label": "לפני יום",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
+      "vote_count": 280000,
+      "agree_pct": 91,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "ביקורת המדינה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 93
+          "agree_pct": 88
+        },
+        {
+          "id": "B",
+          "agree_pct": 95
+        },
+        {
+          "id": "C",
+          "agree_pct": 87
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-04_4",
+      "text": "יש להקים ועדה ציבורית שתפקח על עבודת מבקר המדינה, ולממן אותה על חשבון קיצוץ תקציב הדוברות של המוסד",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134000,
+      "agree_pct": 55,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "ביקורת המדינה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 82
+        },
+        {
+          "id": "B",
+          "agree_pct": 26
+        },
+        {
+          "id": "C",
+          "agree_pct": 50
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-04_5",
+      "text": "צריך לאסור בחקיקה על הממשלה או הצבא לעכב חקירות של מבקר המדינה בתירוץ של מצב חירום ביטחוני",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 198000,
+      "agree_pct": 84,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "ביקורת המדינה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 75
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-04_6",
+      "text": "צוותי רפואה שמוזעקים לטפל באזרחים בלב מוקדי הפגנות חייבים לקבל ליווי משטרתי צמוד כדי להבטיח את שלומם",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 245000,
+      "agree_pct": 95,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מענה רפואי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 97
         },
         {
           "id": "B",
@@ -423,184 +241,88 @@
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-03_13",
-      "text": "צריך לממן בניית גשרי הולכי רגל ביישובים צפופים על חשבון ביטול פרויקטים להרחבת כבישים מהירים",
+      "id": "decl_challenger_2026-06-04_7",
+      "text": "יש להקים מערך רפואת חירום ייעודי לאישי ציבור מאוימים, גם אם זה ימומן מקיצוץ בתקציב האבטחה של הכנסת",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 182000,
-      "agree_pct": 45,
+      "vote_count": 121000,
+      "agree_pct": 44,
       "time_label": "לפני 10 שעות",
       "pipeline_status": null,
-      "topic_key": "improving_road_safety_to_prevent_injuries_such_as_a_10_year_old_hit_by_a_car_in_majd_al_krum",
-      "topic_label": "בטיחות בדרכים",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "מענה רפואי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 16
+          "agree_pct": 20
         },
         {
           "id": "B",
-          "agree_pct": 73
+          "agree_pct": 74
         },
         {
           "id": "C",
-          "agree_pct": 42
+          "agree_pct": 48
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-03_14",
-      "text": "יש לחייב שכל רכב חדש המיובא לישראל יכלול מערכת בלימת חירום אוטונומית המזהה הולכי רגל",
+      "id": "decl_challenger_2026-06-04_8",
+      "text": "מפגינים שחוסמים במכוון מעבר של אמבולנסים או צוותי רפואה בדרכם למטופל צריכים לעמוד לדין על סיכון חיי אדם",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 145000,
-      "agree_pct": 84,
-      "time_label": "לפני יומיים",
+      "vote_count": 210000,
+      "agree_pct": 86,
+      "time_label": "לפני 5 שעות",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מענה רפואי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 93
-        },
-        {
-          "id": "B",
           "agree_pct": 76
         },
         {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
           "id": "C",
-          "agree_pct": 84
+          "agree_pct": 97
         }
       ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_15",
-      "text": "צריך להסמיך מתנדבים מקומיים לרשום דוחות תנועה על חניה מסוכנת בקרבת בתי ספר ביישובים שלהם",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 67000,
-      "agree_pct": 68,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 64
-        },
-        {
-          "id": "B",
-          "agree_pct": 60
-        },
-        {
-          "id": "C",
-          "agree_pct": 69
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-06-03_0",
-      "text": "יש להבטיח שכל ביטול של קו אוטובוס מרכזי בעוטף עזה ילווה בהפעלת שירות תחבורה חכמה לפי קריאה",
+      "id": "decl_challenger_2026-06-04_0",
+      "text": "יש לקבוע עונש מינימום של מאסר בפועל למי שמשחית רכוש בביתו של עובד ציבור או שופט",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 178000,
-      "agree_pct": 91,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "improving_public_transportation_infrastructure_and_services_in_the_gaza_envelope_region",
-      "topic_label": "תחבורה בעוטף עזה",
+      "vote_count": 215000,
+      "agree_pct": 88,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "אלימות בהפגנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 91
-        },
-        {
-          "id": "B",
-          "agree_pct": 93
-        },
-        {
-          "id": "C",
-          "agree_pct": 85
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_1",
-      "text": "צריך להכפיל את תדירות האוטובוסים בעוטף עזה גם אם הם נוסעים ריקים, על חשבון תקציב התחבורה של גוש דן",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 255000,
-      "agree_pct": 48,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "improving_public_transportation_infrastructure_and_services_in_the_gaza_envelope_region",
-      "topic_label": "תחבורה בעוטף עזה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 48
-        },
-        {
-          "id": "B",
-          "agree_pct": 26
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_2",
-      "text": "יש לחייב בניית מסופי תחבורה ממוגני ירי בעוטף עזה כדי להבטיח את שלומם של הנוסעים בזמן הסלמה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 112000,
-      "agree_pct": 82,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "תחבורה בעוטף עזה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 79
+          "agree_pct": 88
         },
         {
           "id": "B",
@@ -608,247 +330,61 @@
         },
         {
           "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-04_1",
+      "text": "צריך לאבטח בתי שופטים 24/7, גם אם זה ידרוש להעביר תקציבים מאבטחת אירועי תרבות וספורט",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 142000,
+      "agree_pct": 52,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות בהפגנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 52
+        },
+        {
+          "id": "B",
+          "agree_pct": 30
+        },
+        {
+          "id": "C",
           "agree_pct": 76
         }
       ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
+      "surprise": null,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-03_3",
-      "text": "צריך לתת עדיפות במכרזים לחברות תחבורה שמעסיקות נהגים תושבי עוטף עזה, כדי לחזק את התעסוקה המקומית",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 62000,
-      "agree_pct": 70,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "תחבורה בעוטף עזה",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 67
-        },
-        {
-          "id": "B",
-          "agree_pct": 80
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_4",
-      "text": "יש לרשת את כל הצמתים הבינעירוניים המרכזיים במצלמות חכמות כדי לזהות במהירות רכבים המעורבים באירועי אלימות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310500,
-      "agree_pct": 89,
+      "id": "decl_challenger_2026-06-04_2",
+      "text": "מותר למשטרה להשתמש באוטובוסים כמתקני כליאה זמניים כדי להשתלט מהר על התפרעויות המוניות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 89000,
+      "agree_pct": 71,
       "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 86
-        },
-        {
-          "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
-          "agree_pct": 84
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_5",
-      "text": "צריך לתגבר את נוכחות המשטרה בצמתים מועדים לאלימות בצפון, על חשבון צמצום ניידות לאכיפת מהירות בכבישים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 55,
-      "time_label": "לפני 8 שעות",
       "pipeline_status": null,
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_6",
-      "text": "יש להקל משמעותית על מתן רישיונות נשק לבעלי עסקים הממוקמים בצמתים מבודדים כדי לאפשר להם הגנה עצמית",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 134000,
-      "agree_pct": 76,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 79
-        },
-        {
-          "id": "B",
-          "agree_pct": 93
-        },
-        {
-          "id": "C",
-          "agree_pct": 70
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_7",
-      "text": "צריך להקים מנגנון גישור חובה בסכסוכי חמולות מקומיים לפני שהם גולשים לאלימות ברחובות ובצמתים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 58000,
-      "agree_pct": 63,
-      "time_label": "לפני חצי שעה",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "בטיחות אזרחית ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 59
-        },
-        {
-          "id": "C",
-          "agree_pct": 60
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_8",
-      "text": "יש לחייב יבואני אופניים חשמליים להגביל מכנית את מהירות הכלים ל-25 קמ״ש עוד לפני המסירה ללקוח",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 285000,
-      "agree_pct": 87,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות אופניים חשמליים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 88
-        },
-        {
-          "id": "C",
-          "agree_pct": 87
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_9",
-      "text": "צריך להחרים במקום אופניים חשמליים של רוכבים מתחת לגיל 16, ולהתנות את שחרורם בתשלום קנס של 1,000 ש״ח על ידי ההורים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 167000,
-      "agree_pct": 78,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות אופניים חשמליים",
+      "topic_label": "אלימות בהפגנות",
       "group_breakdown": [
         {
           "id": "A",
           "agree_pct": 68
-        },
-        {
-          "id": "B",
-          "agree_pct": 78
-        },
-        {
-          "id": "C",
-          "agree_pct": 93
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_10",
-      "text": "יש לאסור לחלוטין כניסת אופניים וקורקינטים חשמליים לשטחי בתי הספר כדי להילחם בתופעת הרכיבה מתחת לגיל המותר",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 124000,
-      "agree_pct": 58,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות אופניים חשמליים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 25
         },
         {
           "id": "B",
@@ -859,58 +395,120 @@
           "agree_pct": 65
         }
       ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_11",
-      "text": "צריך להטיל אחריות פלילית ישירה על הורים שילדיהם הקטינים היו מעורבים בתאונה בעת רכיבה לא חוקית על אופניים חשמליים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 53000,
-      "agree_pct": 65,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות אופניים חשמליים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 69
-        },
-        {
-          "id": "B",
-          "agree_pct": 74
-        },
-        {
-          "id": "C",
-          "agree_pct": 64
-        }
-      ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-03_12",
-      "text": "יש להתקין פסי האטה פיזיים בקרבת כל מוסדות החינוך והפארקים בחברה הערבית כדי לאלץ נהגים להאט",
+      "id": "decl_challenger_2026-06-04_3",
+      "text": "דו״חות מבקר המדינה על מחדלים ביטחוניים חייבים להתפרסם לציבור מיד עם סיומם, תוך השחרת מידע מסווג",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 240000,
-      "agree_pct": 92,
-      "time_label": "לפני יום",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
+      "vote_count": 280000,
+      "agree_pct": 91,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "ביקורת המדינה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 93
+          "agree_pct": 88
+        },
+        {
+          "id": "B",
+          "agree_pct": 95
+        },
+        {
+          "id": "C",
+          "agree_pct": 87
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-04_4",
+      "text": "יש להקים ועדה ציבורית שתפקח על עבודת מבקר המדינה, ולממן אותה על חשבון קיצוץ תקציב הדוברות של המוסד",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 134000,
+      "agree_pct": 55,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "ביקורת המדינה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 82
+        },
+        {
+          "id": "B",
+          "agree_pct": 26
+        },
+        {
+          "id": "C",
+          "agree_pct": 50
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-04_5",
+      "text": "צריך לאסור בחקיקה על הממשלה או הצבא לעכב חקירות של מבקר המדינה בתירוץ של מצב חירום ביטחוני",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 198000,
+      "agree_pct": 84,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "ביקורת המדינה",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 75
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-04_6",
+      "text": "צוותי רפואה שמוזעקים לטפל באזרחים בלב מוקדי הפגנות חייבים לקבל ליווי משטרתי צמוד כדי להבטיח את שלומם",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 245000,
+      "agree_pct": 95,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מענה רפואי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 97
         },
         {
           "id": "B",
@@ -924,102 +522,70 @@
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-03_13",
-      "text": "צריך לממן בניית גשרי הולכי רגל ביישובים צפופים על חשבון ביטול פרויקטים להרחבת כבישים מהירים",
+      "id": "decl_challenger_2026-06-04_7",
+      "text": "יש להקים מערך רפואת חירום ייעודי לאישי ציבור מאוימים, גם אם זה ימומן מקיצוץ בתקציב האבטחה של הכנסת",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 182000,
-      "agree_pct": 45,
+      "vote_count": 121000,
+      "agree_pct": 44,
       "time_label": "לפני 10 שעות",
       "pipeline_status": null,
-      "topic_key": "improving_road_safety_to_prevent_injuries_such_as_a_10_year_old_hit_by_a_car_in_majd_al_krum",
-      "topic_label": "בטיחות בדרכים",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "מענה רפואי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 16
+          "agree_pct": 20
         },
         {
           "id": "B",
-          "agree_pct": 73
+          "agree_pct": 74
         },
         {
           "id": "C",
-          "agree_pct": 42
+          "agree_pct": 48
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-03_14",
-      "text": "יש לחייב שכל רכב חדש המיובא לישראל יכלול מערכת בלימת חירום אוטונומית המזהה הולכי רגל",
+      "id": "decl_challenger_2026-06-04_8",
+      "text": "מפגינים שחוסמים במכוון מעבר של אמבולנסים או צוותי רפואה בדרכם למטופל צריכים לעמוד לדין על סיכון חיי אדם",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 145000,
-      "agree_pct": 84,
-      "time_label": "לפני יומיים",
+      "vote_count": 210000,
+      "agree_pct": 86,
+      "time_label": "לפני 5 שעות",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מענה רפואי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 93
-        },
-        {
-          "id": "B",
           "agree_pct": 76
         },
         {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
           "id": "C",
-          "agree_pct": 84
+          "agree_pct": 97
         }
       ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-03_15",
-      "text": "צריך להסמיך מתנדבים מקומיים לרשום דוחות תנועה על חניה מסוכנת בקרבת בתי ספר ביישובים שלהם",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 67000,
-      "agree_pct": 68,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 64
-        },
-        {
-          "id": "B",
-          "agree_pct": 60
-        },
-        {
-          "id": "C",
-          "agree_pct": 69
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-03",
-      "created": "2026-06-03T01:10:04.421380+00:00"
+      "generated_from": "gemini_2026-06-04",
+      "created": "2026-06-04T01:09:16.064857+00:00"
     }
   ]
 }
