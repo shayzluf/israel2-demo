@@ -1,15 +1,9 @@
 {
-  "updated": "2026-06-13T01:09:56.664767+00:00",
+  "updated": "2026-06-14T01:11:14.165269+00:00",
   "topics": [
     {
       "key": "civilian_security_and_public_safety",
       "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
-      "key": "cost_of_living_and_economic_pressure",
-      "label": "יוקר המחיה ולחץ כלכלי",
       "convergence": "",
       "divergence": ""
     },
@@ -24,28 +18,160 @@
       "label": "נגישות ואיכות בריאות",
       "convergence": "",
       "divergence": ""
+    },
+    {
+      "key": "road_and_traffic_safety",
+      "label": "בטיחות בדרכים",
+      "convergence": "",
+      "divergence": ""
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-06-13_0",
-      "text": "יש להחמיר משמעותית את הענישה על הנחת מטעני חבלה ברכבים, ולהשוות אותה לענישה על ניסיון פיגוע טרור",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
-      "agree_pct": 89,
+      "id": "decl_challenger_2026-06-14_0",
+      "text": "יש לגדר את כל חופי הכינרת המוכרזים כדי למנוע כניסת חיות בר, גם אם זה יחייב העלאת דמי הכניסה לחופים ב-10 שקלים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 112040,
+      "agree_pct": 48,
       "time_label": "לפני שעתיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק בפשיעה ואלימות",
+      "pipeline_status": null,
+      "topic_key": "public_safety_concerns_due_to_animal_attacks_specifically_jackals_in_the_kinneret_area",
+      "topic_label": "בטיחות מחיות בר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 80
         },
         {
           "id": "B",
-          "agree_pct": 91
+          "agree_pct": 41
+        },
+        {
+          "id": "C",
+          "agree_pct": 15
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_1",
+      "text": "רשות הטבע והגנים צריכה לדלל באופן יזום להקות תנים באזורי תיירות, כדי למנוע סכנה לחיי אדם",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 86500,
+      "agree_pct": 72,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות מחיות בר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_2",
+      "text": "חובה להציב שלטי אזהרה בולטים בכל אזור קמפינג על סכנת חיות בר, ולחלק עלון מידע לכל מבקר",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 210300,
+      "agree_pct": 91,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות מחיות בר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 85
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_3",
+      "text": "יש לקנוס ב-1,000 ש״ח מטיילים שמשאירים שאריות מזון מחוץ לפחים סגורים באזורי טבע, כדי לא למשוך חיות בר",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 65,
+      "time_label": "לפני חצי שעה",
+      "pipeline_status": null,
+      "topic_key": "public_safety_concerns_due_to_animal_attacks_specifically_jackals_in_the_kinneret_area",
+      "topic_label": "בטיחות מחיות בר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 62
+        },
+        {
+          "id": "B",
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "agree_pct": 67
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_4",
+      "text": "יש להגביל שימוש ברמקולים ומגפונים בהפגנות עד השעה 21:00 בלבד, כדי לאפשר שגרת חיים סבירה לתושבי האזור",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 198000,
+      "agree_pct": 88,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "סדר ציבורי בהפגנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 85
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
         },
         {
           "id": "C",
@@ -53,115 +179,116 @@
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.7,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_1",
-      "text": "יש להקים יחידות סיור מיוחדות למאבק בארגוני פשיעה ברחובות, גם אם המימון יגיע מהעלאת הארנונה לעסקים",
+      "id": "decl_challenger_2026-06-14_5",
+      "text": "המשטרה צריכה להחרים ציוד הגברה שמופעל בניגוד להנחיות, ללא צורך בצו בית משפט מראש",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 145200,
-      "agree_pct": 48,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "בדיון בוועדה",
+      "vote_count": 145000,
+      "agree_pct": 52,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק בפשיעה ואלימות",
+      "topic_label": "סדר ציבורי בהפגנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 48
+          "agree_pct": 60
         },
         {
           "id": "B",
-          "agree_pct": 26
+          "agree_pct": 21
         },
         {
           "id": "C",
-          "agree_pct": 72
+          "agree_pct": 80
         }
       ],
       "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_2",
-      "text": "יש לאפשר חילוט רכוש של ראשי ארגוני פשיעה עוד לפני הרשעה חלוטה, כדי לייבש את מקורות המימון שלהם",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 182000,
-      "agree_pct": 78,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "מאבק בפשיעה ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_3",
-      "text": "יש לאפשר למשטרה להפעיל מצלמות זיהוי פנים חכמות בכבישים מרכזיים כדי לאתר רכבים של עבריינים בזמן אמת",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 60,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק בפשיעה ואלימות",
+      "id": "decl_challenger_2026-06-14_6",
+      "text": "יש להכשיר מתחמי הפגנות ייעודיים עם תשתיות הגברה מובנות מטעם העירייה, על חשבון תקציב התרבות המקומי",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 78000,
+      "agree_pct": 68,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "concerns_regarding_public_safety_and_order_during_demonstrations_including_the_use_of_amplification_equipment",
+      "topic_label": "סדר ציבורי בהפגנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 57
+          "agree_pct": 71
         },
         {
           "id": "B",
-          "agree_pct": 70
+          "agree_pct": 85
         },
         {
           "id": "C",
           "agree_pct": 62
         }
       ],
-      "surprise": "bridge",
+      "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_4",
-      "text": "יש לחייב את הבנקים לאפשר דחיית תשלומי הלוואות ללא ריבית לעסקים קטנים שנפגעו מהשחתה או אלימות",
+      "id": "decl_challenger_2026-06-14_7",
+      "text": "יש לאסור לחלוטין הפעלת ציוד הגברה בהפגנות לפני צאת השבת באזורים הסמוכים לבתי כנסת",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 61000,
+      "agree_pct": 59,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "סדר ציבורי בהפגנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 59
+        },
+        {
+          "id": "B",
+          "agree_pct": 55
+        },
+        {
+          "id": "C",
+          "agree_pct": 56
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_8",
+      "text": "יש להחמיר את תנאי חידוש רישיון הנשק האזרחי, ולחייב בדיקה פסיכולוגית מקיפה כל שלוש שנים",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
       "vote_count": 285000,
       "agree_pct": 86,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "תמיכה בעסקים קטנים",
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות במרחב הציבורי",
       "group_breakdown": [
         {
           "id": "A",
@@ -169,154 +296,30 @@
         },
         {
           "id": "B",
-          "agree_pct": 86
+          "agree_pct": 87
         },
         {
           "id": "C",
-          "agree_pct": 81
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_5",
-      "text": "המדינה צריכה לפצות בעלי עסקים על סחורה שהושחתה בעקבות פשיעה, על חשבון ביטול הטבות מס לחברות ענק",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 55,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "תמיכה בעסקים קטנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_6",
-      "text": "יש לאסור על חברות ביטוח לסרב לבטח עסקים קטנים באזורים מוכי פשיעה, כדי למנוע את קריסתם",
+      "id": "decl_challenger_2026-06-14_9",
+      "text": "צוותי רפואה בחדרי מיון חייבים לדווח למשטרה על כל פצוע שמגיע עם חבלות חשודות, גם אם הוא מסרב להתלונן",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
       "vote_count": 134000,
-      "agree_pct": 72,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "תמיכה בעסקים קטנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_7",
-      "text": "יש להבטיח שצוותי רפואת חירום יוכלו להיכנס בבטחה לכל שכונה או יישוב, ללא תלות ברמת המתיחות הביטחונית במקום",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 315000,
-      "agree_pct": 92,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "ביטחון אזרחי ובטיחות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 91
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 92
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_8",
-      "text": "יש לרשת אזורי תפר ומוקדי חיכוך במצלמות אבטחה מתקדמות, גם אם זה ימומן מקיצוץ בתקציבי הפיתוח של הרשויות המקומיות",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 128000,
-      "agree_pct": 47,
-      "time_label": "לפני 7 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 16
-        },
-        {
-          "id": "B",
-          "agree_pct": 51
-        },
-        {
-          "id": "C",
-          "agree_pct": 74
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_9",
-      "text": "יש להקים כוחות סיור משותפים של משטרה ופקחים עירוניים באזורים רגישים כדי להגביר את תחושת הביטחון של התושבים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 189000,
       "agree_pct": 79,
-      "time_label": "לפני יום",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות",
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "אלימות במרחב הציבורי",
       "group_breakdown": [
         {
           "id": "A",
@@ -334,20 +337,144 @@
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_10",
-      "text": "בעת אירועי אלימות קשים, יש לאפשר למשטרה להגביל זמנית כניסת אזרחים שאינם תושבי המקום לאזורי חיכוך",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 75000,
-      "agree_pct": 62,
-      "time_label": "לפני 3 שעות",
+      "id": "decl_challenger_2026-06-14_10",
+      "text": "יש לאפשר למשטרה להכריז על עוצר לילי זמני בשכונות שבהן יש רצף של אירועי ירי ואלימות קשה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 176000,
+      "agree_pct": 45,
+      "time_label": "לפני 12 שעות",
       "pipeline_status": null,
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות",
+      "topic_label": "אלימות במרחב הציבורי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 12
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 52
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_11",
+      "text": "יש להקים מרכזי גמילה מאלימות לנוער בסיכון בכל עיר, על חשבון קיצוץ תקציבי הספורט והפנאי של הרשות המקומית",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 55000,
+      "agree_pct": 51,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות במרחב הציבורי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 55
+        },
+        {
+          "id": "B",
+          "agree_pct": 60
+        },
+        {
+          "id": "C",
+          "agree_pct": 50
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_12",
+      "text": "יש להחרים ולגרוט טרקטורונים שנתפסים נוסעים בפראות בשטחים ציבוריים או ביערות קק״ל",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 162000,
+      "agree_pct": 81,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 96
+        },
+        {
+          "id": "B",
+          "agree_pct": 72
+        },
+        {
+          "id": "C",
+          "agree_pct": 87
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_13",
+      "text": "יש לחייב בחוק רכיבה עם ציוד מגן מלא, כולל מעיל ומגיני ברכיים, לכל רוכב אופנוע בדרך בינעירונית",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 240000,
+      "agree_pct": 89,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 93
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_14",
+      "text": "המדינה צריכה להקים מסלולי שטח חוקיים לטרקטורונים, גם אם זה ימומן מהטלת מס רכישה נוסף על כלי שטח",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 105000,
+      "agree_pct": 47,
+      "time_label": "לפני 7 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_safety_concerns_due_to_accidents_involving_vehicles_like_atvs_and_motorcycles",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
@@ -355,40 +482,322 @@
         },
         {
           "id": "B",
-          "agree_pct": 55
+          "agree_pct": 20
         },
         {
           "id": "C",
-          "agree_pct": 60
+          "agree_pct": 47
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_15",
+      "text": "יש לחייב התקנת קופסה שחורה ורכיב מעקב בכל אופנוע חדש כדי לתעד עבירות תנועה חמורות בזמן אמת",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 68000,
+      "agree_pct": 58,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 54
+        },
+        {
+          "id": "B",
+          "agree_pct": 50
+        },
+        {
+          "id": "C",
+          "agree_pct": 59
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_16",
+      "text": "יש להקים מאגר ממשלתי פתוח לציבור של מוהלים מורשים, שיכלול דיווח שקוף על כל סיבוך רפואי שהתרחש תחת ידם",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 310000,
+      "agree_pct": 94,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בריאות הציבור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 95
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_17",
+      "text": "יש לאסור ביצוע הליכים כירורגיים בתינוקות באולמות אירועים או בבתים פרטיים, ולהתיר אותם רק במרפאות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 195000,
+      "agree_pct": 76,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בריאות הציבור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 92
+        },
+        {
+          "id": "B",
+          "agree_pct": 76
+        },
+        {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_18",
+      "text": "קופות החולים צריכות לספק אחות לביקור בית יום אחרי כל ברית מילה, על חשבון צמצום מספר בדיקות האולטרסאונד בהיריון",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 128000,
+      "agree_pct": 42,
+      "time_label": "לפני 9 שעות",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בריאות הציבור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 48
+        },
+        {
+          "id": "B",
+          "agree_pct": 67
+        },
+        {
+          "id": "C",
+          "agree_pct": 19
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_19",
+      "text": "יש לאפשר להורים לדחות הליכים רפואיים לא דחופים בתינוקות לגיל חודש לפחות, ללא לחץ מוסדי או חברתי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 72000,
+      "agree_pct": 63,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בריאות הציבור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 74
+        },
+        {
+          "id": "B",
+          "agree_pct": 56
+        },
+        {
+          "id": "C",
+          "agree_pct": 64
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-06-13_0",
-      "text": "יש להחמיר משמעותית את הענישה על הנחת מטעני חבלה ברכבים, ולהשוות אותה לענישה על ניסיון פיגוע טרור",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
-      "agree_pct": 89,
+      "id": "decl_challenger_2026-06-14_0",
+      "text": "יש לגדר את כל חופי הכינרת המוכרזים כדי למנוע כניסת חיות בר, גם אם זה יחייב העלאת דמי הכניסה לחופים ב-10 שקלים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 112040,
+      "agree_pct": 48,
       "time_label": "לפני שעתיים",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק בפשיעה ואלימות",
+      "pipeline_status": null,
+      "topic_key": "public_safety_concerns_due_to_animal_attacks_specifically_jackals_in_the_kinneret_area",
+      "topic_label": "בטיחות מחיות בר",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 89
+          "agree_pct": 80
         },
         {
           "id": "B",
-          "agree_pct": 91
+          "agree_pct": 41
+        },
+        {
+          "id": "C",
+          "agree_pct": 15
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_1",
+      "text": "רשות הטבע והגנים צריכה לדלל באופן יזום להקות תנים באזורי תיירות, כדי למנוע סכנה לחיי אדם",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 86500,
+      "agree_pct": 72,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות מחיות בר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_2",
+      "text": "חובה להציב שלטי אזהרה בולטים בכל אזור קמפינג על סכנת חיות בר, ולחלק עלון מידע לכל מבקר",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 210300,
+      "agree_pct": 91,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות מחיות בר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 85
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
+          "id": "C",
+          "agree_pct": 86
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_3",
+      "text": "יש לקנוס ב-1,000 ש״ח מטיילים שמשאירים שאריות מזון מחוץ לפחים סגורים באזורי טבע, כדי לא למשוך חיות בר",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 65,
+      "time_label": "לפני חצי שעה",
+      "pipeline_status": null,
+      "topic_key": "public_safety_concerns_due_to_animal_attacks_specifically_jackals_in_the_kinneret_area",
+      "topic_label": "בטיחות מחיות בר",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 62
+        },
+        {
+          "id": "B",
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "agree_pct": 67
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_4",
+      "text": "יש להגביל שימוש ברמקולים ומגפונים בהפגנות עד השעה 21:00 בלבד, כדי לאפשר שגרת חיים סבירה לתושבי האזור",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 198000,
+      "agree_pct": 88,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "סדר ציבורי בהפגנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 85
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
         },
         {
           "id": "C",
@@ -396,115 +805,116 @@
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.7,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_1",
-      "text": "יש להקים יחידות סיור מיוחדות למאבק בארגוני פשיעה ברחובות, גם אם המימון יגיע מהעלאת הארנונה לעסקים",
+      "id": "decl_challenger_2026-06-14_5",
+      "text": "המשטרה צריכה להחרים ציוד הגברה שמופעל בניגוד להנחיות, ללא צורך בצו בית משפט מראש",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 145200,
-      "agree_pct": 48,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "בדיון בוועדה",
+      "vote_count": 145000,
+      "agree_pct": 52,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק בפשיעה ואלימות",
+      "topic_label": "סדר ציבורי בהפגנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 48
+          "agree_pct": 60
         },
         {
           "id": "B",
-          "agree_pct": 26
+          "agree_pct": 21
         },
         {
           "id": "C",
-          "agree_pct": 72
+          "agree_pct": 80
         }
       ],
       "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_2",
-      "text": "יש לאפשר חילוט רכוש של ראשי ארגוני פשיעה עוד לפני הרשעה חלוטה, כדי לייבש את מקורות המימון שלהם",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 182000,
-      "agree_pct": 78,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "מאבק בפשיעה ואלימות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 72
-        }
-      ],
-      "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_3",
-      "text": "יש לאפשר למשטרה להפעיל מצלמות זיהוי פנים חכמות בכבישים מרכזיים כדי לאתר רכבים של עבריינים בזמן אמת",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 52000,
-      "agree_pct": 60,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מאבק בפשיעה ואלימות",
+      "id": "decl_challenger_2026-06-14_6",
+      "text": "יש להכשיר מתחמי הפגנות ייעודיים עם תשתיות הגברה מובנות מטעם העירייה, על חשבון תקציב התרבות המקומי",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 78000,
+      "agree_pct": 68,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "concerns_regarding_public_safety_and_order_during_demonstrations_including_the_use_of_amplification_equipment",
+      "topic_label": "סדר ציבורי בהפגנות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 57
+          "agree_pct": 71
         },
         {
           "id": "B",
-          "agree_pct": 70
+          "agree_pct": 85
         },
         {
           "id": "C",
           "agree_pct": 62
         }
       ],
-      "surprise": "bridge",
+      "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_4",
-      "text": "יש לחייב את הבנקים לאפשר דחיית תשלומי הלוואות ללא ריבית לעסקים קטנים שנפגעו מהשחתה או אלימות",
+      "id": "decl_challenger_2026-06-14_7",
+      "text": "יש לאסור לחלוטין הפעלת ציוד הגברה בהפגנות לפני צאת השבת באזורים הסמוכים לבתי כנסת",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 61000,
+      "agree_pct": 59,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "סדר ציבורי בהפגנות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 59
+        },
+        {
+          "id": "B",
+          "agree_pct": 55
+        },
+        {
+          "id": "C",
+          "agree_pct": 56
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_8",
+      "text": "יש להחמיר את תנאי חידוש רישיון הנשק האזרחי, ולחייב בדיקה פסיכולוגית מקיפה כל שלוש שנים",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
       "vote_count": 285000,
       "agree_pct": 86,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "תמיכה בעסקים קטנים",
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות במרחב הציבורי",
       "group_breakdown": [
         {
           "id": "A",
@@ -512,154 +922,30 @@
         },
         {
           "id": "B",
-          "agree_pct": 86
+          "agree_pct": 87
         },
         {
           "id": "C",
-          "agree_pct": 81
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_5",
-      "text": "המדינה צריכה לפצות בעלי עסקים על סחורה שהושחתה בעקבות פשיעה, על חשבון ביטול הטבות מס לחברות ענק",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 55,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "תמיכה בעסקים קטנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 63
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 83
-        }
-      ],
-      "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_6",
-      "text": "יש לאסור על חברות ביטוח לסרב לבטח עסקים קטנים באזורים מוכי פשיעה, כדי למנוע את קריסתם",
+      "id": "decl_challenger_2026-06-14_9",
+      "text": "צוותי רפואה בחדרי מיון חייבים לדווח למשטרה על כל פצוע שמגיע עם חבלות חשודות, גם אם הוא מסרב להתלונן",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
       "vote_count": 134000,
-      "agree_pct": 72,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "תמיכה בעסקים קטנים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
-          "agree_pct": 66
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_7",
-      "text": "יש להבטיח שצוותי רפואת חירום יוכלו להיכנס בבטחה לכל שכונה או יישוב, ללא תלות ברמת המתיחות הביטחונית במקום",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 315000,
-      "agree_pct": 92,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "ביטחון אזרחי ובטיחות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 91
-        },
-        {
-          "id": "B",
-          "agree_pct": 90
-        },
-        {
-          "id": "C",
-          "agree_pct": 92
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_8",
-      "text": "יש לרשת אזורי תפר ומוקדי חיכוך במצלמות אבטחה מתקדמות, גם אם זה ימומן מקיצוץ בתקציבי הפיתוח של הרשויות המקומיות",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 128000,
-      "agree_pct": 47,
-      "time_label": "לפני 7 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 16
-        },
-        {
-          "id": "B",
-          "agree_pct": 51
-        },
-        {
-          "id": "C",
-          "agree_pct": 74
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-13_9",
-      "text": "יש להקים כוחות סיור משותפים של משטרה ופקחים עירוניים באזורים רגישים כדי להגביר את תחושת הביטחון של התושבים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 189000,
       "agree_pct": 79,
-      "time_label": "לפני יום",
-      "pipeline_status": "ממתין לאישור",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות",
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "אלימות במרחב הציבורי",
       "group_breakdown": [
         {
           "id": "A",
@@ -677,20 +963,144 @@
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-13_10",
-      "text": "בעת אירועי אלימות קשים, יש לאפשר למשטרה להגביל זמנית כניסת אזרחים שאינם תושבי המקום לאזורי חיכוך",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 75000,
-      "agree_pct": 62,
-      "time_label": "לפני 3 שעות",
+      "id": "decl_challenger_2026-06-14_10",
+      "text": "יש לאפשר למשטרה להכריז על עוצר לילי זמני בשכונות שבהן יש רצף של אירועי ירי ואלימות קשה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 176000,
+      "agree_pct": 45,
+      "time_label": "לפני 12 שעות",
       "pipeline_status": null,
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי ובטיחות",
+      "topic_label": "אלימות במרחב הציבורי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 12
+        },
+        {
+          "id": "B",
+          "agree_pct": 66
+        },
+        {
+          "id": "C",
+          "agree_pct": 52
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_11",
+      "text": "יש להקים מרכזי גמילה מאלימות לנוער בסיכון בכל עיר, על חשבון קיצוץ תקציבי הספורט והפנאי של הרשות המקומית",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 55000,
+      "agree_pct": 51,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות במרחב הציבורי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 55
+        },
+        {
+          "id": "B",
+          "agree_pct": 60
+        },
+        {
+          "id": "C",
+          "agree_pct": 50
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_12",
+      "text": "יש להחרים ולגרוט טרקטורונים שנתפסים נוסעים בפראות בשטחים ציבוריים או ביערות קק״ל",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 162000,
+      "agree_pct": 81,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 96
+        },
+        {
+          "id": "B",
+          "agree_pct": 72
+        },
+        {
+          "id": "C",
+          "agree_pct": 87
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_13",
+      "text": "יש לחייב בחוק רכיבה עם ציוד מגן מלא, כולל מעיל ומגיני ברכיים, לכל רוכב אופנוע בדרך בינעירונית",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 240000,
+      "agree_pct": 89,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 87
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 93
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_14",
+      "text": "המדינה צריכה להקים מסלולי שטח חוקיים לטרקטורונים, גם אם זה ימומן מהטלת מס רכישה נוסף על כלי שטח",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 105000,
+      "agree_pct": 47,
+      "time_label": "לפני 7 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_safety_concerns_due_to_accidents_involving_vehicles_like_atvs_and_motorcycles",
+      "topic_label": "בטיחות בדרכים",
       "group_breakdown": [
         {
           "id": "A",
@@ -698,18 +1108,174 @@
         },
         {
           "id": "B",
-          "agree_pct": 55
+          "agree_pct": 20
         },
         {
           "id": "C",
-          "agree_pct": 60
+          "agree_pct": 47
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_15",
+      "text": "יש לחייב התקנת קופסה שחורה ורכיב מעקב בכל אופנוע חדש כדי לתעד עבירות תנועה חמורות בזמן אמת",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 68000,
+      "agree_pct": 58,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות בדרכים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 54
+        },
+        {
+          "id": "B",
+          "agree_pct": 50
+        },
+        {
+          "id": "C",
+          "agree_pct": 59
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_16",
+      "text": "יש להקים מאגר ממשלתי פתוח לציבור של מוהלים מורשים, שיכלול דיווח שקוף על כל סיבוך רפואי שהתרחש תחת ידם",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 310000,
+      "agree_pct": 94,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בריאות הציבור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 97
+        },
+        {
+          "id": "C",
+          "agree_pct": 95
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_17",
+      "text": "יש לאסור ביצוע הליכים כירורגיים בתינוקות באולמות אירועים או בבתים פרטיים, ולהתיר אותם רק במרפאות",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 195000,
+      "agree_pct": 76,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בריאות הציבור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 92
+        },
+        {
+          "id": "B",
+          "agree_pct": 76
+        },
+        {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_18",
+      "text": "קופות החולים צריכות לספק אחות לביקור בית יום אחרי כל ברית מילה, על חשבון צמצום מספר בדיקות האולטרסאונד בהיריון",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 128000,
+      "agree_pct": 42,
+      "time_label": "לפני 9 שעות",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בריאות הציבור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 48
+        },
+        {
+          "id": "B",
+          "agree_pct": 67
+        },
+        {
+          "id": "C",
+          "agree_pct": 19
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-14_19",
+      "text": "יש לאפשר להורים לדחות הליכים רפואיים לא דחופים בתינוקות לגיל חודש לפחות, ללא לחץ מוסדי או חברתי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 72000,
+      "agree_pct": 63,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בריאות הציבור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 74
+        },
+        {
+          "id": "B",
+          "agree_pct": 56
+        },
+        {
+          "id": "C",
+          "agree_pct": 64
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-13",
-      "created": "2026-06-13T01:09:56.664767+00:00"
+      "generated_from": "gemini_2026-06-14",
+      "created": "2026-06-14T01:11:14.165269+00:00"
     }
   ]
 }
