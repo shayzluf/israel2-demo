@@ -1,15 +1,27 @@
 {
-  "updated": "2026-06-15T01:22:49.236720+00:00",
+  "updated": "2026-06-17T01:09:55.863214+00:00",
   "topics": [
     {
-      "key": "civilian_security_and_public_safety",
-      "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
+      "key": "cost_of_living_and_economic_pressure",
+      "label": "יוקר המחיה ולחץ כלכלי",
       "convergence": "",
       "divergence": ""
     },
     {
-      "key": "cost_of_living_and_economic_pressure",
-      "label": "יוקר המחיה ולחץ כלכלי",
+      "key": "education_and_civic_literacy",
+      "label": "חינוך ואוריינות אזרחית",
+      "convergence": "",
+      "divergence": ""
+    },
+    {
+      "key": "governance_accountability_and_anti_corruption",
+      "label": "אחריות שלטונית ואנטי-שחיתות",
+      "convergence": "",
+      "divergence": ""
+    },
+    {
+      "key": "military_service_and_reservist_support",
+      "label": "שירות צבאי ותמיכה במילואים",
       "convergence": "",
       "divergence": ""
     },
@@ -22,140 +34,233 @@
   ],
   "declarations": [
     {
-      "id": "decl_civilian_security_and_public_safety_0",
-      "text": "יש לשלול אוטומטית את רישיון העסק של מקומות בילוי שיימצא בהם נשק לא חוקי ולא דיווחו על כך למשטרה",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 310000,
-      "agree_pct": 91,
-      "time_label": "לפני 5 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות וירי בערים",
+      "id": "decl_cost_of_living_and_economic_pressure_0",
+      "text": "יש להעניק מלגת דיור מיידית לכל בת שירות לאומי בודדה, על חשבון קיצוץ של אחוז אחד בתקציבי תנועות הנוער",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 112400,
+      "agree_pct": 55,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "cost_of_living_and_economic_pressure",
+      "topic_label": "סיוע לבנות שירות לאומי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 85
+          "agree_pct": 87
         },
         {
           "id": "B",
-          "agree_pct": 88
+          "agree_pct": 48
+        },
+        {
+          "id": "C",
+          "agree_pct": 22
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-17",
+      "created": "2026-06-17T01:09:39.263701+00:00"
+    },
+    {
+      "id": "decl_governance_accountability_and_anti_corruption_1",
+      "text": "שרים שמכריזים על סיוע כלכלי למתנדבים חייבים להיות מחויבים בחוק ליישם אותו תוך 90 יום, אחרת ההכרזה תבוטל",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 285000,
+      "agree_pct": 88,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "סיוע לבנות שירות לאומי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 84
+        },
+        {
+          "id": "B",
+          "agree_pct": 85
         },
         {
           "id": "C",
           "agree_pct": 86
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-17",
+      "created": "2026-06-17T01:09:39.263701+00:00"
+    },
+    {
+      "id": "decl_military_service_and_reservist_support_2",
+      "text": "במקום מענקים כספיים שמתעכבים, המדינה צריכה לספק לבנות שירות בודדות מגורים מסובסדים במלואם במעונות סטודנטים קיימים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 145000,
+      "agree_pct": 75,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": null,
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "סיוע לבנות שירות לאומי",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 72
+        },
+        {
+          "id": "B",
+          "agree_pct": 83
+        },
+        {
+          "id": "C",
+          "agree_pct": 69
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-15",
-      "created": "2026-06-15T01:22:36.153675+00:00"
+      "generated_from": "gemini_2026-06-17",
+      "created": "2026-06-17T01:09:39.263701+00:00"
     },
     {
-      "id": "decl_civilian_security_and_public_safety_1",
-      "text": "יש לחייב הצבת מאבטח חמוש בכל בית קפה ומסעדה באזורים המוגדרים מועדים לאלימות, בסבסוד חלקי של המדינה",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 142000,
-      "agree_pct": 72,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות וירי בערים",
+      "id": "decl_education_and_civic_literacy_3",
+      "text": "יש לאפשר למנהלי בתי ספר לפטר בקלות מורים שאינם מתפקדים כראוי, תוך עקיפת ההגנות הנוכחיות של ארגוני המורים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 250000,
+      "agree_pct": 58,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "education_and_civic_literacy",
+      "topic_label": "חיזוק מערכת החינוך",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 86
+          "agree_pct": 66
         },
         {
           "id": "B",
-          "agree_pct": 68
+          "agree_pct": 27
         },
         {
           "id": "C",
-          "agree_pct": 61
+          "agree_pct": 86
         }
       ],
       "surprise": null,
-      "win_rate": 0.7,
+      "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-15",
-      "created": "2026-06-15T01:22:36.153675+00:00"
+      "generated_from": "gemini_2026-06-17",
+      "created": "2026-06-17T01:09:39.263701+00:00"
     },
     {
-      "id": "decl_civilian_security_and_public_safety_2",
-      "text": "יש לאפשר לעסקים להציב מגנומטרים בכניסה למסעדות ובתי קפה, גם אם הדבר פוגע בחוויית הלקוח",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 55000,
-      "agree_pct": 61,
-      "time_label": "לפני שעה",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "אלימות וירי בערים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 58
-        },
-        {
-          "id": "B",
-          "agree_pct": 71
-        },
-        {
-          "id": "C",
-          "agree_pct": 63
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-15",
-      "created": "2026-06-15T01:22:36.153675+00:00"
-    },
-    {
-      "id": "decl_cost_of_living_and_economic_pressure_3",
-      "text": "את סבסוד האבטחה לעסקים קטנים באזורי פשיעה יש לממן באמצעות העלאת הארנונה לעסקים גדולים באותה עיר",
+      "id": "decl_education_and_civic_literacy_4",
+      "text": "יש להקטין את מספר התלמידים בכיתה ל-25 לכל היותר, גם אם זה יחייב העלאת ארנונה של 3% לטובת בניית כיתות חדשות",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
       "vote_count": 215000,
       "agree_pct": 48,
-      "time_label": "לפני יום",
+      "time_label": "לפני 12 שעות",
       "pipeline_status": null,
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "אלימות וירי בערים",
+      "topic_key": "education_and_civic_literacy",
+      "topic_label": "חיזוק מערכת החינוך",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 48
+          "agree_pct": 75
         },
         {
           "id": "B",
-          "agree_pct": 26
+          "agree_pct": 24
         },
         {
           "id": "C",
-          "agree_pct": 72
+          "agree_pct": 51
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-17",
+      "created": "2026-06-17T01:09:39.263701+00:00"
+    },
+    {
+      "id": "decl_education_and_civic_literacy_5",
+      "text": "צריך להעביר 20% משעות הלימוד של מקצועות רגילים לטובת מיומנויות חיים מעשיות כמו פתרון בעיות ואוריינות דיגיטלית",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 175000,
+      "agree_pct": 78,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "education_and_civic_literacy",
+      "topic_label": "חיזוק מערכת החינוך",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 89
+        },
+        {
+          "id": "B",
+          "agree_pct": 69
+        },
+        {
+          "id": "C",
+          "agree_pct": 75
         }
       ],
       "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-15",
-      "created": "2026-06-15T01:22:36.153675+00:00"
+      "generated_from": "gemini_2026-06-17",
+      "created": "2026-06-17T01:09:39.263701+00:00"
     },
     {
-      "id": "decl_road_and_traffic_safety_4",
-      "text": "יש להפריד פיזית באמצעות גדרות בין שבילי אופניים לנתיבי תחבורה ציבורית בתוך הערים",
+      "id": "decl_education_and_civic_literacy_6",
+      "text": "יש לחייב הורים להתנדב לפחות 10 שעות בשנה בבית הספר של הילדים שלהם כדי לחזק את המעורבות הקהילתית",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 65,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "education_and_civic_literacy",
+      "topic_label": "חיזוק מערכת החינוך",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 73
+        },
+        {
+          "id": "B",
+          "agree_pct": 59
+        },
+        {
+          "id": "C",
+          "agree_pct": 65
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-17",
+      "created": "2026-06-17T01:09:39.263701+00:00"
+    },
+    {
+      "id": "decl_road_and_traffic_safety_7",
+      "text": "יש להחרים ולהשמיד אופניים חשמליים לא חוקיים מיד כשנתפס רוכב קטין, במקום רק לתת קנס כספי להורים",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 280000,
-      "agree_pct": 88,
-      "time_label": "לפני יומיים",
+      "vote_count": 275000,
+      "agree_pct": 86,
+      "time_label": "לפני יום",
       "pipeline_status": "ממתין לאישור",
       "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
+      "topic_label": "בטיחות רוכבי אופניים חשמליים",
       "group_breakdown": [
         {
           "id": "A",
@@ -163,30 +268,30 @@
         },
         {
           "id": "B",
-          "agree_pct": 88
+          "agree_pct": 84
         },
         {
           "id": "C",
-          "agree_pct": 83
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-15",
-      "created": "2026-06-15T01:22:36.153675+00:00"
+      "generated_from": "gemini_2026-06-17",
+      "created": "2026-06-17T01:09:39.263701+00:00"
     },
     {
-      "id": "decl_road_and_traffic_safety_5",
-      "text": "יש להפוך את כביש 90 לדו-מסלולי עם הפרדה קשיחה, גם במחיר של הפיכתו לכביש אגרה בחלק מהמקטעים",
+      "id": "decl_road_and_traffic_safety_8",
+      "text": "חנויות שמוכרות אופניים חשמליים לילדים מתחת לגיל 16 צריכות להיסגר לצמיתות, ובעליהן יעמדו לדין פלילי",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 160000,
-      "agree_pct": 68,
-      "time_label": "לפני 8 שעות",
+      "vote_count": 210000,
+      "agree_pct": 81,
+      "time_label": "לפני 7 שעות",
       "pipeline_status": "בדיון בוועדה",
       "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
+      "topic_label": "בטיחות רוכבי אופניים חשמליים",
       "group_breakdown": [
         {
           "id": "A",
@@ -194,49 +299,18 @@
         },
         {
           "id": "B",
-          "agree_pct": 85
+          "agree_pct": 81
         },
         {
           "id": "C",
-          "agree_pct": 62
+          "agree_pct": 96
         }
       ],
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-15",
-      "created": "2026-06-15T01:22:36.153675+00:00"
-    },
-    {
-      "id": "decl_road_and_traffic_safety_6",
-      "text": "יש להחרים במקום את הטלפון הנייד של כל נהג המעורב בתאונת דרכים עם נפגעים, לצורך בדיקת שימוש בנהיגה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 62000,
-      "agree_pct": 58,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 58
-        },
-        {
-          "id": "B",
-          "agree_pct": 54
-        },
-        {
-          "id": "C",
-          "agree_pct": 55
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-15",
-      "created": "2026-06-15T01:22:36.153675+00:00"
+      "generated_from": "gemini_2026-06-17",
+      "created": "2026-06-17T01:09:39.263701+00:00"
     }
   ]
 }
