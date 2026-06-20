@@ -1,6 +1,12 @@
 {
-  "updated": "2026-06-17T01:09:39.263701+00:00",
+  "updated": "2026-06-20T01:12:00.391626+00:00",
   "topics": [
+    {
+      "key": "civilian_security_and_public_safety",
+      "label": "ביטחון אזרחי ובטיחות במרחב הציבורי",
+      "convergence": "",
+      "divergence": ""
+    },
     {
       "key": "cost_of_living_and_economic_pressure",
       "label": "יוקר המחיה ולחץ כלכלי",
@@ -8,14 +14,14 @@
       "divergence": ""
     },
     {
-      "key": "education_and_civic_literacy",
-      "label": "חינוך ואוריינות אזרחית",
+      "key": "criminal_justice_and_investigation_transparency",
+      "label": "חקירה משפטית ושקיפות",
       "convergence": "",
       "divergence": ""
     },
     {
-      "key": "governance_accountability_and_anti_corruption",
-      "label": "אחריות שלטונית ואנטי-שחיתות",
+      "key": "healthcare_access_and_quality",
+      "label": "נגישות ואיכות בריאות",
       "convergence": "",
       "divergence": ""
     },
@@ -24,88 +30,51 @@
       "label": "שירות צבאי ותמיכה במילואים",
       "convergence": "",
       "divergence": ""
-    },
-    {
-      "key": "road_and_traffic_safety",
-      "label": "בטיחות בדרכים",
-      "convergence": "",
-      "divergence": ""
     }
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-06-17_0",
-      "text": "יש להעניק מלגת דיור מיידית לכל בת שירות לאומי בודדה, על חשבון קיצוץ של אחוז אחד בתקציבי תנועות הנוער",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 112400,
-      "agree_pct": 55,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "סיוע לבנות שירות לאומי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 87
-        },
-        {
-          "id": "B",
-          "agree_pct": 48
-        },
-        {
-          "id": "C",
-          "agree_pct": 22
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-17_1",
-      "text": "שרים שמכריזים על סיוע כלכלי למתנדבים חייבים להיות מחויבים בחוק ליישם אותו תוך 90 יום, אחרת ההכרזה תבוטל",
+      "id": "decl_challenger_2026-06-20_0",
+      "text": "לשלב נציג ציבור או שופט בדימוס בכל ועדת חקירה צבאית הבוחנת תאונות אימונים ומבצעים, כדי להבטיח שקיפות מלאה",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 285000,
+      "vote_count": 210500,
       "agree_pct": 88,
-      "time_label": "לפני יום",
+      "time_label": "לפני 3 שעות",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "סיוע לבנות שירות לאומי",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "חקירת תאונות צבאיות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 84
+          "agree_pct": 88
         },
         {
           "id": "B",
-          "agree_pct": 85
+          "agree_pct": 90
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 82
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
+      "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_2",
-      "text": "במקום מענקים כספיים שמתעכבים, המדינה צריכה לספק לבנות שירות בודדות מגורים מסובסדים במלואם במעונות סטודנטים קיימים",
+      "id": "decl_challenger_2026-06-20_1",
+      "text": "להקים מתקני סימולטור מתקדמים לאימון כוחות שריון לפני כניסה ללבנון, על חשבון קיצוץ של 2% מתקציב הפנסיות של אנשי הקבע",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
       "vote_count": 145000,
-      "agree_pct": 75,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
+      "agree_pct": 72,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "בדיון בוועדה",
       "topic_key": "military_service_and_reservist_support",
-      "topic_label": "סיוע לבנות שירות לאומי",
+      "topic_label": "חקירת תאונות צבאיות",
       "group_breakdown": [
         {
           "id": "A",
@@ -113,162 +82,100 @@
         },
         {
           "id": "B",
-          "agree_pct": 83
-        },
-        {
-          "id": "C",
-          "agree_pct": 69
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-17_3",
-      "text": "יש להקטין את מספר התלמידים בכיתה ל-25 לכל היותר, גם אם זה יחייב העלאת ארנונה של 3% לטובת בניית כיתות חדשות",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 215000,
-      "agree_pct": 48,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "חיזוק מערכת החינוך",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 51
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-17_4",
-      "text": "צריך להעביר 20% משעות הלימוד של מקצועות רגילים לטובת מיומנויות חיים מעשיות כמו פתרון בעיות ואוריינות דיגיטלית",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 175000,
-      "agree_pct": 78,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "חיזוק מערכת החינוך",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 69
-        },
-        {
-          "id": "C",
-          "agree_pct": 75
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-17_5",
-      "text": "יש לאפשר למנהלי בתי ספר לפטר בקלות מורים שאינם מתפקדים כראוי, תוך עקיפת ההגנות הנוכחיות של ארגוני המורים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 250000,
-      "agree_pct": 58,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "חיזוק מערכת החינוך",
-      "group_breakdown": [
-        {
-          "id": "A",
           "agree_pct": 66
         },
         {
+          "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_2",
+      "text": "לחייב את צה\"ל להציג למשפחות שכולות את תחקיר התאונות המבצעיות תוך 30 יום, גם אם זה חושף טעויות טקטיות מביכות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 189000,
+      "agree_pct": 55,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "חקירת תאונות צבאיות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 49
+        },
+        {
           "id": "B",
-          "agree_pct": 27
+          "agree_pct": 76
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 33
         }
       ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_6",
-      "text": "יש לחייב הורים להתנדב לפחות 10 שעות בשנה בבית הספר של הילדים שלהם כדי לחזק את המעורבות הקהילתית",
+      "id": "decl_challenger_2026-06-20_3",
+      "text": "להשעות אוטומטית מפקדי גדודים בזמן חקירת תאונות קטלניות ביחידה שלהם, כדי למנוע תיאום עדויות או לחץ על פקודים",
       "badge": "new",
       "badge_label": "חדש",
       "vote_count": 52000,
-      "agree_pct": 65,
+      "agree_pct": 48,
       "time_label": "לפני שעה",
       "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "חיזוק מערכת החינוך",
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "חקירת תאונות צבאיות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 73
+          "agree_pct": 45
         },
         {
           "id": "B",
-          "agree_pct": 59
+          "agree_pct": 58
         },
         {
           "id": "C",
-          "agree_pct": 65
+          "agree_pct": 50
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_7",
-      "text": "יש להחרים ולהשמיד אופניים חשמליים לא חוקיים מיד כשנתפס רוכב קטין, במקום רק לתת קנס כספי להורים",
+      "id": "decl_challenger_2026-06-20_4",
+      "text": "להגדיר נשיאת נשק חם וטעון על אופנוע כניסיון רצח לכל דבר, ולא רק כעבירת החזקת אמל\"ח",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
       "vote_count": 275000,
-      "agree_pct": 86,
-      "time_label": "לפני יום",
+      "agree_pct": 91,
+      "time_label": "לפני 8 שעות",
       "pipeline_status": "ממתין לאישור",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות רוכבי אופניים חשמליים",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "אלימות ופשיעה ברחובות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 85
+          "agree_pct": 88
         },
         {
           "id": "B",
-          "agree_pct": 84
+          "agree_pct": 91
         },
         {
           "id": "C",
@@ -278,52 +185,51 @@
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_8",
-      "text": "עיריות חייבות לסלול שבילי אופניים ייעודיים בכל רחוב ראשי, גם אם זה בא על חשבון ביטול מקומות חניה ציבוריים",
+      "id": "decl_challenger_2026-06-20_5",
+      "text": "לרשת שכונות מגורים בחיישנים אקוסטיים לזיהוי ירי בזמן אמת, גם אם זה דורש פריסת מצלמות שפוגעות בפרטיות התושבים",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 188000,
+      "vote_count": 132000,
       "agree_pct": 52,
-      "time_label": "לפני 10 שעות",
+      "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "road_safety_concerns_following_a_childs_serious_injury_while_riding_an_electric_bicycle_in_bnei_brak",
-      "topic_label": "בטיחות רוכבי אופניים חשמליים",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות ופשיעה ברחובות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 21
+          "agree_pct": 60
         },
         {
           "id": "B",
-          "agree_pct": 56
+          "agree_pct": 21
         },
         {
           "id": "C",
-          "agree_pct": 79
+          "agree_pct": 80
         }
       ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_9",
-      "text": "חנויות שמוכרות אופניים חשמליים לילדים מתחת לגיל 16 צריכות להיסגר לצמיתות, ובעליהן יעמדו לדין פלילי",
+      "id": "decl_challenger_2026-06-20_6",
+      "text": "לתגבר סיורי משטרה רגליים בערים בשרון, על חשבון העברת 500 מיליון שקלים מתקציב משטרת התנועה הארצית",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 210000,
-      "agree_pct": 81,
-      "time_label": "לפני 7 שעות",
+      "vote_count": 168000,
+      "agree_pct": 68,
+      "time_label": "לפני 12 שעות",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות רוכבי אופניים חשמליים",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות ופשיעה ברחובות",
       "group_breakdown": [
         {
           "id": "A",
@@ -331,94 +237,280 @@
         },
         {
           "id": "B",
-          "agree_pct": 81
+          "agree_pct": 85
         },
         {
           "id": "C",
-          "agree_pct": 96
+          "agree_pct": 62
         }
       ],
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_7",
+      "text": "לחייב יצרנים להתקין פקקי בטיחות קשים לפתיחה על כל חומרי הניקוי הביתיים, גם אם זה יעלה את מחיר המוצר לצרכן",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 310000,
+      "agree_pct": 89,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מניעת הרעלות בילדים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 88
+        },
+        {
+          "id": "B",
+          "agree_pct": 87
+        },
+        {
+          "id": "C",
+          "agree_pct": 89
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_8",
+      "text": "לחלק ערכות נעילת ארונות בחינם למשפחות מעוטות יכולת, במימון מס מיוחד שיוטל על חומרי ניקוי תעשייתיים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 142000,
+      "agree_pct": 74,
+      "time_label": "לפני 10 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "cost_of_living_and_economic_pressure",
+      "topic_label": "מניעת הרעלות בילדים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 64
+        },
+        {
+          "id": "B",
+          "agree_pct": 76
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_9",
+      "text": "להתנות קבלת קצבת ילדים בהשתתפות חובה של ההורים בהדרכת בטיחות ומניעת הרעלות בטיפת חלב",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 195000,
+      "agree_pct": 46,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "מניעת הרעלות בילדים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 15
+        },
+        {
+          "id": "B",
+          "agree_pct": 46
+        },
+        {
+          "id": "C",
+          "agree_pct": 80
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_10",
+      "text": "לאסור שיווק של חומרי ניקוי רעילים באריזות צבעוניות שמזכירות מיצים או ממתקים ומושכות פעוטות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 68000,
+      "agree_pct": 82,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מניעת הרעלות בילדים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 90
+        },
+        {
+          "id": "B",
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "agree_pct": 80
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_11",
+      "text": "לאפשר לעדי ראייה למקרי רצח של ארגוני פשיעה בצפון להעיד בבית המשפט באופן אנונימי לחלוטין כדי למנוע נקמה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 285000,
+      "agree_pct": 85,
+      "time_label": "לפני 7 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "מאבק ברצח כפול",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 86
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_12",
+      "text": "להקים יחידה מרחבית מיוחדת לפשיעה חמורה בגולן ובגליל, במימון קיצוץ של 200 מיליון שקלים מתקציב משרד ההתיישבות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 174000,
+      "agree_pct": 58,
+      "time_label": "לפני יום",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק ברצח כפול",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 30
+        },
+        {
+          "id": "C",
+          "agree_pct": 66
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_13",
+      "text": "לאשר למשטרה לבצע חיפושי נשק בבתים ללא צו שופט ברדיוס של 5 קילומטרים מזירת רצח כפול, בשעות הראשונות לאירוע",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 156000,
+      "agree_pct": 66,
+      "time_label": "לפני 14 שעות",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "מאבק ברצח כפול",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 57
+        },
+        {
+          "id": "B",
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-06-17_0",
-      "text": "יש להעניק מלגת דיור מיידית לכל בת שירות לאומי בודדה, על חשבון קיצוץ של אחוז אחד בתקציבי תנועות הנוער",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 112400,
-      "agree_pct": 55,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "cost_of_living_and_economic_pressure",
-      "topic_label": "סיוע לבנות שירות לאומי",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 87
-        },
-        {
-          "id": "B",
-          "agree_pct": 48
-        },
-        {
-          "id": "C",
-          "agree_pct": 22
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-17_1",
-      "text": "שרים שמכריזים על סיוע כלכלי למתנדבים חייבים להיות מחויבים בחוק ליישם אותו תוך 90 יום, אחרת ההכרזה תבוטל",
+      "id": "decl_challenger_2026-06-20_0",
+      "text": "לשלב נציג ציבור או שופט בדימוס בכל ועדת חקירה צבאית הבוחנת תאונות אימונים ומבצעים, כדי להבטיח שקיפות מלאה",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 285000,
+      "vote_count": 210500,
       "agree_pct": 88,
-      "time_label": "לפני יום",
+      "time_label": "לפני 3 שעות",
       "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "סיוע לבנות שירות לאומי",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "חקירת תאונות צבאיות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 84
+          "agree_pct": 88
         },
         {
           "id": "B",
-          "agree_pct": 85
+          "agree_pct": 90
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 82
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.78,
+      "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_2",
-      "text": "במקום מענקים כספיים שמתעכבים, המדינה צריכה לספק לבנות שירות בודדות מגורים מסובסדים במלואם במעונות סטודנטים קיימים",
+      "id": "decl_challenger_2026-06-20_1",
+      "text": "להקים מתקני סימולטור מתקדמים לאימון כוחות שריון לפני כניסה ללבנון, על חשבון קיצוץ של 2% מתקציב הפנסיות של אנשי הקבע",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
       "vote_count": 145000,
-      "agree_pct": 75,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
+      "agree_pct": 72,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "בדיון בוועדה",
       "topic_key": "military_service_and_reservist_support",
-      "topic_label": "סיוע לבנות שירות לאומי",
+      "topic_label": "חקירת תאונות צבאיות",
       "group_breakdown": [
         {
           "id": "A",
@@ -426,162 +518,100 @@
         },
         {
           "id": "B",
-          "agree_pct": 83
-        },
-        {
-          "id": "C",
-          "agree_pct": 69
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-17_3",
-      "text": "יש להקטין את מספר התלמידים בכיתה ל-25 לכל היותר, גם אם זה יחייב העלאת ארנונה של 3% לטובת בניית כיתות חדשות",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 215000,
-      "agree_pct": 48,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "חיזוק מערכת החינוך",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 24
-        },
-        {
-          "id": "C",
-          "agree_pct": 51
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-17_4",
-      "text": "צריך להעביר 20% משעות הלימוד של מקצועות רגילים לטובת מיומנויות חיים מעשיות כמו פתרון בעיות ואוריינות דיגיטלית",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 175000,
-      "agree_pct": 78,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "בדיון בוועדה",
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "חיזוק מערכת החינוך",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 89
-        },
-        {
-          "id": "B",
-          "agree_pct": 69
-        },
-        {
-          "id": "C",
-          "agree_pct": 75
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-17_5",
-      "text": "יש לאפשר למנהלי בתי ספר לפטר בקלות מורים שאינם מתפקדים כראוי, תוך עקיפת ההגנות הנוכחיות של ארגוני המורים",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 250000,
-      "agree_pct": 58,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "חיזוק מערכת החינוך",
-      "group_breakdown": [
-        {
-          "id": "A",
           "agree_pct": 66
         },
         {
+          "id": "C",
+          "agree_pct": 82
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_2",
+      "text": "לחייב את צה\"ל להציג למשפחות שכולות את תחקיר התאונות המבצעיות תוך 30 יום, גם אם זה חושף טעויות טקטיות מביכות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 189000,
+      "agree_pct": 55,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "חקירת תאונות צבאיות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 49
+        },
+        {
           "id": "B",
-          "agree_pct": 27
+          "agree_pct": 76
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 33
         }
       ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_6",
-      "text": "יש לחייב הורים להתנדב לפחות 10 שעות בשנה בבית הספר של הילדים שלהם כדי לחזק את המעורבות הקהילתית",
+      "id": "decl_challenger_2026-06-20_3",
+      "text": "להשעות אוטומטית מפקדי גדודים בזמן חקירת תאונות קטלניות ביחידה שלהם, כדי למנוע תיאום עדויות או לחץ על פקודים",
       "badge": "new",
       "badge_label": "חדש",
       "vote_count": 52000,
-      "agree_pct": 65,
+      "agree_pct": 48,
       "time_label": "לפני שעה",
       "pipeline_status": null,
-      "topic_key": "education_and_civic_literacy",
-      "topic_label": "חיזוק מערכת החינוך",
+      "topic_key": "military_service_and_reservist_support",
+      "topic_label": "חקירת תאונות צבאיות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 73
+          "agree_pct": 45
         },
         {
           "id": "B",
-          "agree_pct": 59
+          "agree_pct": 58
         },
         {
           "id": "C",
-          "agree_pct": 65
+          "agree_pct": 50
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_7",
-      "text": "יש להחרים ולהשמיד אופניים חשמליים לא חוקיים מיד כשנתפס רוכב קטין, במקום רק לתת קנס כספי להורים",
+      "id": "decl_challenger_2026-06-20_4",
+      "text": "להגדיר נשיאת נשק חם וטעון על אופנוע כניסיון רצח לכל דבר, ולא רק כעבירת החזקת אמל\"ח",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
       "vote_count": 275000,
-      "agree_pct": 86,
-      "time_label": "לפני יום",
+      "agree_pct": 91,
+      "time_label": "לפני 8 שעות",
       "pipeline_status": "ממתין לאישור",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות רוכבי אופניים חשמליים",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "אלימות ופשיעה ברחובות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 85
+          "agree_pct": 88
         },
         {
           "id": "B",
-          "agree_pct": 84
+          "agree_pct": 91
         },
         {
           "id": "C",
@@ -591,52 +621,51 @@
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_8",
-      "text": "עיריות חייבות לסלול שבילי אופניים ייעודיים בכל רחוב ראשי, גם אם זה בא על חשבון ביטול מקומות חניה ציבוריים",
+      "id": "decl_challenger_2026-06-20_5",
+      "text": "לרשת שכונות מגורים בחיישנים אקוסטיים לזיהוי ירי בזמן אמת, גם אם זה דורש פריסת מצלמות שפוגעות בפרטיות התושבים",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 188000,
+      "vote_count": 132000,
       "agree_pct": 52,
-      "time_label": "לפני 10 שעות",
+      "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "road_safety_concerns_following_a_childs_serious_injury_while_riding_an_electric_bicycle_in_bnei_brak",
-      "topic_label": "בטיחות רוכבי אופניים חשמליים",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות ופשיעה ברחובות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 21
+          "agree_pct": 60
         },
         {
           "id": "B",
-          "agree_pct": 56
+          "agree_pct": 21
         },
         {
           "id": "C",
-          "agree_pct": 79
+          "agree_pct": 80
         }
       ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "pending_topic": true,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-17_9",
-      "text": "חנויות שמוכרות אופניים חשמליים לילדים מתחת לגיל 16 צריכות להיסגר לצמיתות, ובעליהן יעמדו לדין פלילי",
+      "id": "decl_challenger_2026-06-20_6",
+      "text": "לתגבר סיורי משטרה רגליים בערים בשרון, על חשבון העברת 500 מיליון שקלים מתקציב משטרת התנועה הארצית",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 210000,
-      "agree_pct": 81,
-      "time_label": "לפני 7 שעות",
+      "vote_count": 168000,
+      "agree_pct": 68,
+      "time_label": "לפני 12 שעות",
       "pipeline_status": "בדיון בוועדה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות רוכבי אופניים חשמליים",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "אלימות ופשיעה ברחובות",
       "group_breakdown": [
         {
           "id": "A",
@@ -644,18 +673,235 @@
         },
         {
           "id": "B",
-          "agree_pct": 81
+          "agree_pct": 85
         },
         {
           "id": "C",
-          "agree_pct": 96
+          "agree_pct": 62
         }
       ],
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-17",
-      "created": "2026-06-17T01:09:39.263701+00:00"
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_7",
+      "text": "לחייב יצרנים להתקין פקקי בטיחות קשים לפתיחה על כל חומרי הניקוי הביתיים, גם אם זה יעלה את מחיר המוצר לצרכן",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 310000,
+      "agree_pct": 89,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מניעת הרעלות בילדים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 88
+        },
+        {
+          "id": "B",
+          "agree_pct": 87
+        },
+        {
+          "id": "C",
+          "agree_pct": 89
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_8",
+      "text": "לחלק ערכות נעילת ארונות בחינם למשפחות מעוטות יכולת, במימון מס מיוחד שיוטל על חומרי ניקוי תעשייתיים",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 142000,
+      "agree_pct": 74,
+      "time_label": "לפני 10 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "cost_of_living_and_economic_pressure",
+      "topic_label": "מניעת הרעלות בילדים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 64
+        },
+        {
+          "id": "B",
+          "agree_pct": 76
+        },
+        {
+          "id": "C",
+          "agree_pct": 85
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_9",
+      "text": "להתנות קבלת קצבת ילדים בהשתתפות חובה של ההורים בהדרכת בטיחות ומניעת הרעלות בטיפת חלב",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 195000,
+      "agree_pct": 46,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "מניעת הרעלות בילדים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 15
+        },
+        {
+          "id": "B",
+          "agree_pct": 46
+        },
+        {
+          "id": "C",
+          "agree_pct": 80
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_10",
+      "text": "לאסור שיווק של חומרי ניקוי רעילים באריזות צבעוניות שמזכירות מיצים או ממתקים ומושכות פעוטות",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 68000,
+      "agree_pct": 82,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מניעת הרעלות בילדים",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 90
+        },
+        {
+          "id": "B",
+          "agree_pct": 75
+        },
+        {
+          "id": "C",
+          "agree_pct": 80
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_11",
+      "text": "לאפשר לעדי ראייה למקרי רצח של ארגוני פשיעה בצפון להעיד בבית המשפט באופן אנונימי לחלוטין כדי למנוע נקמה",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 285000,
+      "agree_pct": 85,
+      "time_label": "לפני 7 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "מאבק ברצח כפול",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 86
+        },
+        {
+          "id": "B",
+          "agree_pct": 89
+        },
+        {
+          "id": "C",
+          "agree_pct": 91
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_12",
+      "text": "להקים יחידה מרחבית מיוחדת לפשיעה חמורה בגולן ובגליל, במימון קיצוץ של 200 מיליון שקלים מתקציב משרד ההתיישבות",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 174000,
+      "agree_pct": 58,
+      "time_label": "לפני יום",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק ברצח כפול",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 30
+        },
+        {
+          "id": "C",
+          "agree_pct": 66
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-20_13",
+      "text": "לאשר למשטרה לבצע חיפושי נשק בבתים ללא צו שופט ברדיוס של 5 קילומטרים מזירת רצח כפול, בשעות הראשונות לאירוע",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 156000,
+      "agree_pct": 66,
+      "time_label": "לפני 14 שעות",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "מאבק ברצח כפול",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 57
+        },
+        {
+          "id": "B",
+          "agree_pct": 78
+        },
+        {
+          "id": "C",
+          "agree_pct": 72
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-20",
+      "created": "2026-06-20T01:12:00.391626+00:00"
     }
   ]
 }
