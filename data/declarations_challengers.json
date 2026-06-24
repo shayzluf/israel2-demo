@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T02:16:56.020818+00:00",
+  "updated": "2026-06-24T01:09:26.378087+00:00",
   "topics": [
     {
       "key": "civilian_security_and_public_safety",
@@ -28,202 +28,79 @@
   ],
   "declarations": [
     {
-      "id": "decl_challenger_2026-06-21_0",
-      "text": "לאסור על תנועת משאיות ורכבים כבדים בכבישים בינעירוניים מרכזיים בשעות העומס כדי להגן על רוכבי דו-גלגלי",
+      "id": "decl_challenger_2026-06-24_0",
+      "text": "להתנות אישור הפגנות גדולות בהפקדת ערבות כספית של המארגנים לכיסוי נזקי תשתית, גם במחיר של פגיעה בחופש המחאה",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 210000,
-      "agree_pct": 48,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
+      "vote_count": 145000,
+      "agree_pct": 52,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_road_chaos_and_traffic_disruptions_caused_by_public_events_or_protests_ensuring_public_safety_and_smooth_transportation",
+      "topic_label": "הסדרת שיבושי תנועה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 80
+          "agree_pct": 84
         },
         {
           "id": "B",
-          "agree_pct": 41
+          "agree_pct": 45
         },
         {
           "id": "C",
-          "agree_pct": 15
+          "agree_pct": 19
         }
       ],
       "surprise": "split",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-21_1",
-      "text": "לחייב התקנת מערכות בטיחות מתקדמות לזיהוי אופנועים בשטחים מתים בכל רכב מסחרי שעולה על הכביש",
+      "id": "decl_challenger_2026-06-24_1",
+      "text": "להקים מערכת התרעות בזמן אמת שתנתב אוטומטית תחבורה ציבורית ורכבי חירום למסלולים חלופיים בעת חסימות פתע",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 315000,
-      "agree_pct": 91,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 87
-        },
-        {
-          "id": "B",
-          "agree_pct": 88
-        },
-        {
-          "id": "C",
-          "agree_pct": 89
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-21_2",
-      "text": "לסבסד קורסי רכיבה מתקדמת לרוכבים צעירים, על חשבון ייקור קל בביטוח החובה של רכבים פרטיים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 132000,
-      "agree_pct": 68,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 65
-        },
-        {
-          "id": "B",
-          "agree_pct": 76
-        },
-        {
-          "id": "C",
-          "agree_pct": 62
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-21_3",
-      "text": "להפעיל מערכת רמזורים חכמה בכבישים מהירים שתאט את התנועה באופן אוטומטי כשמזוהה ריכוז גבוה של אופנועים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 62000,
-      "agree_pct": 52,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 49
-        },
-        {
-          "id": "B",
-          "agree_pct": 62
-        },
-        {
-          "id": "C",
-          "agree_pct": 54
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-21_4",
-      "text": "לאפשר לראשי רשויות בחברה הערבית להכריז על 'מצב חירום מקומי' שיאפשר להם להטיל עוצר לילי זמני",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 42,
+      "vote_count": 210500,
+      "agree_pct": 88,
       "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מניעת אלימות ופציעות",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "הסדרת שיבושי תנועה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 69
+          "agree_pct": 84
         },
         {
           "id": "B",
-          "agree_pct": 13
+          "agree_pct": 85
         },
         {
           "id": "C",
-          "agree_pct": 37
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-21_5",
-      "text": "לחייב פריסה מיידית של ניידות טיפול נמרץ וצוותי חירום בכל יישוב שחווה הסלמה פתאומית באירועי אלימות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 260000,
-      "agree_pct": 89,
-      "time_label": "לפני 10 שעות",
-      "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "מניעת אלימות ופציעות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 92
-        },
-        {
-          "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
-          "agree_pct": 94
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.86,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-21_6",
-      "text": "לממן מרכזי גישור ויישוב סכסוכים קהילתיים, על חשבון העברת תקציבים המיועדים להקמת תחנות משטרה חדשות",
+      "id": "decl_challenger_2026-06-24_2",
+      "text": "לאפשר לרשויות המקומיות לאסור קיום הפגנות בצירים מרכזיים בשעות העומס בבוקר ואחר הצהריים",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 128000,
-      "agree_pct": 65,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
+      "vote_count": 89000,
+      "agree_pct": 71,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מניעת אלימות ופציעות",
+      "topic_label": "הסדרת שיבושי תנועה",
       "group_breakdown": [
         {
           "id": "A",
@@ -231,249 +108,281 @@
         },
         {
           "id": "B",
-          "agree_pct": 82
+          "agree_pct": 79
         },
         {
           "id": "C",
-          "agree_pct": 59
+          "agree_pct": 65
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_3",
+      "text": "לסבסד ערכות חירום ואנטי-ארס לתושבי הפריפריה והמדבר, במימון של מס קנייה סמלי על ציוד מחנאות וטיולים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 65000,
+      "agree_pct": 48,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בטיחות אזרחית ותגובת חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 75
+        },
+        {
+          "id": "B",
+          "agree_pct": 24
+        },
+        {
+          "id": "C",
+          "agree_pct": 51
         }
       ],
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-21_7",
-      "text": "להתנות העברת תקציבי פיתוח לרשויות מקומיות בשיתוף פעולה פומבי ומלא של ראש הרשות עם חקירות המשטרה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 82000,
-      "agree_pct": 55,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "מניעת אלימות ופציעות",
+      "id": "decl_challenger_2026-06-24_4",
+      "text": "לחייב כל מועצה אזורית מרוחקת להחזיק כונן רפואת חירום זמין 24/7 עם רכב שטח מתאים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בטיחות אזרחית ותגובת חירום",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 55
+          "agree_pct": 86
         },
         {
           "id": "B",
-          "agree_pct": 51
+          "agree_pct": 89
         },
         {
           "id": "C",
-          "agree_pct": 52
+          "agree_pct": 84
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_5",
+      "text": "לשדרג מעברי חציה בכבישים בינעירוניים עם תאורה חכמה ופסי האטה, גם במחיר של עיכוב מסוים ברצף התנועה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 142000,
+      "agree_pct": 74,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות אזרחית ותגובת חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 91
+        },
+        {
+          "id": "C",
+          "agree_pct": 75
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_6",
+      "text": "לשלול את הפנסיה התקציבית מכל נבחר ציבור לשעבר שהורשע בהסתה לטרור",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295000,
+      "agree_pct": 94,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "מאבק בהסתה לטרור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 97
+        },
+        {
+          "id": "B",
+          "agree_pct": 91
+        },
+        {
+          "id": "C",
+          "agree_pct": 95
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_7",
+      "text": "לאפשר למשטרה לבטל מראש עצרות פוליטיות אם יש מודיעין מובהק להסתה לטרור, למרות הפגיעה בחופש הביטוי",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 198000,
+      "agree_pct": 58,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק בהסתה לטרור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 34
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
+          "id": "C",
+          "agree_pct": 62
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_8",
+      "text": "להקים יחידת סייבר ייעודית לניטור ותביעה על הסתה ברשתות, על חשבון קיצוץ בתקציב תאגיד השידור הציבורי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 61,
+      "time_label": "לפני חצי שעה",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק בהסתה לטרור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 58
+        },
+        {
+          "id": "B",
+          "agree_pct": 64
+        },
+        {
+          "id": "C",
+          "agree_pct": 58
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
     }
   ],
   "challengers": [
     {
-      "id": "decl_challenger_2026-06-21_0",
-      "text": "לאסור על תנועת משאיות ורכבים כבדים בכבישים בינעירוניים מרכזיים בשעות העומס כדי להגן על רוכבי דו-גלגלי",
+      "id": "decl_challenger_2026-06-24_0",
+      "text": "להתנות אישור הפגנות גדולות בהפקדת ערבות כספית של המארגנים לכיסוי נזקי תשתית, גם במחיר של פגיעה בחופש המחאה",
       "badge": "contested",
       "badge_label": "שנוי במחלוקת",
-      "vote_count": 210000,
-      "agree_pct": 48,
-      "time_label": "לפני יומיים",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
+      "vote_count": 145000,
+      "agree_pct": 52,
+      "time_label": "לפני שעתיים",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "addressing_road_chaos_and_traffic_disruptions_caused_by_public_events_or_protests_ensuring_public_safety_and_smooth_transportation",
+      "topic_label": "הסדרת שיבושי תנועה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 80
+          "agree_pct": 84
         },
         {
           "id": "B",
-          "agree_pct": 41
+          "agree_pct": 45
         },
         {
           "id": "C",
-          "agree_pct": 15
+          "agree_pct": 19
         }
       ],
       "surprise": "split",
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
+      "pending_topic": true,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-21_1",
-      "text": "לחייב התקנת מערכות בטיחות מתקדמות לזיהוי אופנועים בשטחים מתים בכל רכב מסחרי שעולה על הכביש",
+      "id": "decl_challenger_2026-06-24_1",
+      "text": "להקים מערכת התרעות בזמן אמת שתנתב אוטומטית תחבורה ציבורית ורכבי חירום למסלולים חלופיים בעת חסימות פתע",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 315000,
-      "agree_pct": 91,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 87
-        },
-        {
-          "id": "B",
-          "agree_pct": 88
-        },
-        {
-          "id": "C",
-          "agree_pct": 89
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-21_2",
-      "text": "לסבסד קורסי רכיבה מתקדמת לרוכבים צעירים, על חשבון ייקור קל בביטוח החובה של רכבים פרטיים",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 132000,
-      "agree_pct": 68,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 65
-        },
-        {
-          "id": "B",
-          "agree_pct": 76
-        },
-        {
-          "id": "C",
-          "agree_pct": 62
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-21_3",
-      "text": "להפעיל מערכת רמזורים חכמה בכבישים מהירים שתאט את התנועה באופן אוטומטי כשמזוהה ריכוז גבוה של אופנועים",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 62000,
-      "agree_pct": 52,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "road_and_traffic_safety",
-      "topic_label": "בטיחות בדרכים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 49
-        },
-        {
-          "id": "B",
-          "agree_pct": 62
-        },
-        {
-          "id": "C",
-          "agree_pct": 54
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-21_4",
-      "text": "לאפשר לראשי רשויות בחברה הערבית להכריז על 'מצב חירום מקומי' שיאפשר להם להטיל עוצר לילי זמני",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 195000,
-      "agree_pct": 42,
+      "vote_count": 210500,
+      "agree_pct": 88,
       "time_label": "לפני יום",
       "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מניעת אלימות ופציעות",
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "הסדרת שיבושי תנועה",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 69
+          "agree_pct": 84
         },
         {
           "id": "B",
-          "agree_pct": 13
+          "agree_pct": 85
         },
         {
           "id": "C",
-          "agree_pct": 37
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
-    },
-    {
-      "id": "decl_challenger_2026-06-21_5",
-      "text": "לחייב פריסה מיידית של ניידות טיפול נמרץ וצוותי חירום בכל יישוב שחווה הסלמה פתאומית באירועי אלימות",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 260000,
-      "agree_pct": 89,
-      "time_label": "לפני 10 שעות",
-      "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "מניעת אלימות ופציעות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 92
-        },
-        {
-          "id": "B",
-          "agree_pct": 89
-        },
-        {
-          "id": "C",
-          "agree_pct": 94
+          "agree_pct": 86
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.86,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-21_6",
-      "text": "לממן מרכזי גישור ויישוב סכסוכים קהילתיים, על חשבון העברת תקציבים המיועדים להקמת תחנות משטרה חדשות",
+      "id": "decl_challenger_2026-06-24_2",
+      "text": "לאפשר לרשויות המקומיות לאסור קיום הפגנות בצירים מרכזיים בשעות העומס בבוקר ואחר הצהריים",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 128000,
-      "agree_pct": 65,
-      "time_label": "לפני 4 שעות",
-      "pipeline_status": null,
+      "vote_count": 89000,
+      "agree_pct": 71,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": "הצעת חוק הוגשה",
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "מניעת אלימות ופציעות",
+      "topic_label": "הסדרת שיבושי תנועה",
       "group_breakdown": [
         {
           "id": "A",
@@ -481,49 +390,204 @@
         },
         {
           "id": "B",
-          "agree_pct": 82
+          "agree_pct": 79
         },
         {
           "id": "C",
-          "agree_pct": 59
+          "agree_pct": 65
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_3",
+      "text": "לסבסד ערכות חירום ואנטי-ארס לתושבי הפריפריה והמדבר, במימון של מס קנייה סמלי על ציוד מחנאות וטיולים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 65000,
+      "agree_pct": 48,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בטיחות אזרחית ותגובת חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 75
+        },
+        {
+          "id": "B",
+          "agree_pct": 24
+        },
+        {
+          "id": "C",
+          "agree_pct": 51
         }
       ],
       "surprise": null,
       "win_rate": 0.7,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
     },
     {
-      "id": "decl_challenger_2026-06-21_7",
-      "text": "להתנות העברת תקציבי פיתוח לרשויות מקומיות בשיתוף פעולה פומבי ומלא של ראש הרשות עם חקירות המשטרה",
-      "badge": "new",
-      "badge_label": "חדש",
-      "vote_count": 82000,
-      "agree_pct": 55,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "governance_accountability_and_anti_corruption",
-      "topic_label": "מניעת אלימות ופציעות",
+      "id": "decl_challenger_2026-06-24_4",
+      "text": "לחייב כל מועצה אזורית מרוחקת להחזיק כונן רפואת חירום זמין 24/7 עם רכב שטח מתאים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 280000,
+      "agree_pct": 89,
+      "time_label": "לפני יומיים",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "healthcare_access_and_quality",
+      "topic_label": "בטיחות אזרחית ותגובת חירום",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 55
+          "agree_pct": 86
         },
         {
           "id": "B",
-          "agree_pct": 51
+          "agree_pct": 89
         },
         {
           "id": "C",
-          "agree_pct": 52
+          "agree_pct": 84
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-21",
-      "created": "2026-06-21T02:16:56.020818+00:00"
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_5",
+      "text": "לשדרג מעברי חציה בכבישים בינעירוניים עם תאורה חכמה ופסי האטה, גם במחיר של עיכוב מסוים ברצף התנועה",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 142000,
+      "agree_pct": 74,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": null,
+      "topic_key": "road_and_traffic_safety",
+      "topic_label": "בטיחות אזרחית ותגובת חירום",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 65
+        },
+        {
+          "id": "B",
+          "agree_pct": 91
+        },
+        {
+          "id": "C",
+          "agree_pct": 75
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_6",
+      "text": "לשלול את הפנסיה התקציבית מכל נבחר ציבור לשעבר שהורשע בהסתה לטרור",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 295000,
+      "agree_pct": 94,
+      "time_label": "לפני 4 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "מאבק בהסתה לטרור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 97
+        },
+        {
+          "id": "B",
+          "agree_pct": 91
+        },
+        {
+          "id": "C",
+          "agree_pct": 95
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_7",
+      "text": "לאפשר למשטרה לבטל מראש עצרות פוליטיות אם יש מודיעין מובהק להסתה לטרור, למרות הפגיעה בחופש הביטוי",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 198000,
+      "agree_pct": 58,
+      "time_label": "לפני יום",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק בהסתה לטרור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 34
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
+          "id": "C",
+          "agree_pct": 62
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
+    },
+    {
+      "id": "decl_challenger_2026-06-24_8",
+      "text": "להקים יחידת סייבר ייעודית לניטור ותביעה על הסתה ברשתות, על חשבון קיצוץ בתקציב תאגיד השידור הציבורי",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 52000,
+      "agree_pct": 61,
+      "time_label": "לפני חצי שעה",
+      "pipeline_status": null,
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק בהסתה לטרור",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 58
+        },
+        {
+          "id": "B",
+          "agree_pct": 64
+        },
+        {
+          "id": "C",
+          "agree_pct": 58
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-24",
+      "created": "2026-06-24T01:09:26.378087+00:00"
     }
   ]
 }
