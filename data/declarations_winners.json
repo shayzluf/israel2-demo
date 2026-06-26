@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T01:09:23.934073+00:00",
+  "updated": "2026-06-26T01:10:30.612518+00:00",
   "topics": [
     {
       "key": "civilian_security_and_public_safety",
@@ -14,164 +14,59 @@
       "divergence": ""
     },
     {
-      "key": "gender_equity_and_representation",
-      "label": "מגדר וייצוג",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
-      "key": "healthcare_access_and_quality",
-      "label": "נגישות ואיכות בריאות",
-      "convergence": "",
-      "divergence": ""
-    },
-    {
-      "key": "military_service_and_reservist_support",
-      "label": "שירות צבאי ותמיכה במילואים",
+      "key": "governance_accountability_and_anti_corruption",
+      "label": "אחריות שלטונית ואנטי-שחיתות",
       "convergence": "",
       "divergence": ""
     }
   ],
   "declarations": [
     {
-      "id": "decl_criminal_justice_and_investigation_transparency_0",
-      "text": "להגדיר בחוק צילום סתר בתאי מדידה כעבירת מין חמורה, ולא רק כפגיעה בפרטיות",
+      "id": "decl_civilian_security_and_public_safety_0",
+      "text": "להחמיר ענישה על פשעי אלימות ברחובות, ולבטל לחלוטין את האפשרות לקיצור שליש בגין התנהגות טובה לעבריינים אלו",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 315000,
-      "agree_pct": 96,
-      "time_label": "לפני יום",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "הגנה על פרטיות בקניונים",
+      "vote_count": 280000,
+      "agree_pct": 89,
+      "time_label": "לפני 12 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "ביטחון אזרחי ואלימות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 97
+          "agree_pct": 86
         },
         {
           "id": "B",
-          "agree_pct": 92
+          "agree_pct": 89
         },
         {
           "id": "C",
-          "agree_pct": 96
+          "agree_pct": 84
         }
       ],
       "surprise": "bridge",
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
     },
     {
-      "id": "decl_criminal_justice_and_investigation_transparency_1",
-      "text": "לקבוע שכל מציאת נשק לא חוקי בבית שיש לגביו תלונות על אלימות במשפחה תהווה עילה למעצר מיידי עד תום ההליכים",
+      "id": "decl_civilian_security_and_public_safety_1",
+      "text": "להחמיר את עונשי המינימום על הברחת נשק באמצעות רחפנים, כך שיושוו לענישה על סחר בנשק צבאי",
       "badge": "bridge",
       "badge_label": "קונצנזוס רחב",
-      "vote_count": 275000,
-      "agree_pct": 93,
-      "time_label": "לפני 8 שעות",
-      "pipeline_status": null,
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "אלימות נגד נשים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 96
-        },
-        {
-          "id": "B",
-          "agree_pct": 93
-        },
-        {
-          "id": "C",
-          "agree_pct": 97
-        }
-      ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
-    },
-    {
-      "id": "decl_criminal_justice_and_investigation_transparency_2",
-      "text": "לאפשר הצמדת אזיק אלקטרוני לחשודים באלימות במשפחה עוד לפני הרשעה, למרות הפגיעה בזכויות הפרט שלהם",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 145200,
-      "agree_pct": 79,
-      "time_label": "לפני 3 שעות",
-      "pipeline_status": "הצעת חוק הוגשה",
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "אלימות נגד נשים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 90
-        },
-        {
-          "id": "B",
-          "agree_pct": 72
-        },
-        {
-          "id": "C",
-          "agree_pct": 80
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
-    },
-    {
-      "id": "decl_criminal_justice_and_investigation_transparency_3",
-      "text": "להטיל אחריות פלילית על בעלי עסקים שלא איבטחו כראוי מזון נגוע שיועד להשמדה, גם אם הם עצמם קורבנות הגניבה",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 85400,
-      "agree_pct": 52,
-      "time_label": "לפני שעתיים",
-      "pipeline_status": null,
-      "topic_key": "criminal_justice_and_investigation_transparency",
-      "topic_label": "בטיחות מזון וחקירת גניבות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 84
-        },
-        {
-          "id": "B",
-          "agree_pct": 45
-        },
-        {
-          "id": "C",
-          "agree_pct": 19
-        }
-      ],
-      "surprise": "split",
-      "win_rate": 0.7,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
-    },
-    {
-      "id": "decl_healthcare_access_and_quality_4",
-      "text": "לחייב את משרד הבריאות לשלוח התרעות SMS ממוקדות לתושבים באזורים שבהם קיים חשש להפצת מזון נגוע שנגנב",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 210500,
+      "vote_count": 210000,
       "agree_pct": 91,
       "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "healthcare_access_and_quality",
-      "topic_label": "בטיחות מזון וחקירת גניבות",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "מאבק בנשק בלתי חוקי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 85
+          "agree_pct": 87
         },
         {
           "id": "B",
@@ -179,96 +74,34 @@
         },
         {
           "id": "C",
-          "agree_pct": 86
+          "agree_pct": 89
         }
       ],
       "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
-    },
-    {
-      "id": "decl_gender_equity_and_representation_5",
-      "text": "להעביר 500 מיליון שקלים מתקציב פיתוח הכבישים לטובת הקמת דירות מסתור לנשים המצויות באיום מיידי",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 98700,
-      "agree_pct": 47,
-      "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "gender_equity_and_representation",
-      "topic_label": "אלימות נגד נשים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 74
-        },
-        {
-          "id": "B",
-          "agree_pct": 18
-        },
-        {
-          "id": "C",
-          "agree_pct": 42
-        }
-      ],
-      "surprise": null,
       "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
     },
     {
-      "id": "decl_military_service_and_reservist_support_6",
-      "text": "להדיח מיידית משירות צבאי כל חייל שהסתבך באירוע פלילי בשטחי הרשות ודרש חילוץ של כוחות הביטחון",
+      "id": "decl_civilian_security_and_public_safety_2",
+      "text": "להקים מערך אבטחה משטרתי לנשים בסיכון גבוה לאלימות, מרגע הגשת התלונה ועד תום ההליכים",
       "badge": "trending",
       "badge_label": "במגמת עלייה",
-      "vote_count": 168000,
+      "vote_count": 188000,
       "agree_pct": 82,
       "time_label": "לפני יום",
-      "pipeline_status": null,
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "ביטחון אזרחי וחקירות פליליות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "civilian_security_and_public_safety",
+      "topic_label": "שוויון מגדרי ומאבק באלימות",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 75
-        },
-        {
-          "id": "B",
-          "agree_pct": 95
-        },
-        {
-          "id": "C",
           "agree_pct": 84
-        }
-      ],
-      "surprise": null,
-      "win_rate": 0.78,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
-    },
-    {
-      "id": "decl_military_service_and_reservist_support_7",
-      "text": "לאסור על חיילים להיכנס לשטחי הרשות לעסקים פרטיים, ולחייב את מי שחולץ בעקבות הסתבכות פלילית לשאת בעלות המבצע",
-      "badge": "contested",
-      "badge_label": "שנוי במחלוקת",
-      "vote_count": 132000,
-      "agree_pct": 55,
-      "time_label": "לפני 12 שעות",
-      "pipeline_status": null,
-      "topic_key": "military_service_and_reservist_support",
-      "topic_label": "ביטחון אזרחי וחקירות פליליות",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 20
         },
         {
           "id": "B",
-          "agree_pct": 55
+          "agree_pct": 97
         },
         {
           "id": "C",
@@ -276,72 +109,258 @@
         }
       ],
       "surprise": null,
-      "win_rate": 0.7,
+      "win_rate": 0.78,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
     },
     {
-      "id": "decl_civilian_security_and_public_safety_8",
-      "text": "לחייב סנכרון מודיעיני בזמן אמת בין המשטרה לצה״ל לגבי מוקדי פשיעה מוכרים ביהודה ושומרון כדי למנוע כניסה בשוגג",
-      "badge": "bridge",
-      "badge_label": "קונצנזוס רחב",
-      "vote_count": 290000,
-      "agree_pct": 89,
-      "time_label": "לפני יומיים",
-      "pipeline_status": "ממתין לאישור",
+      "id": "decl_civilian_security_and_public_safety_3",
+      "text": "להקים יחידה משולבת לסיכול הברחות רחפנים, גם אם זה ידרוש קיצוץ של 100 מיליון שקלים מתקציב הרכש המשטרתי",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 145000,
+      "agree_pct": 73,
+      "time_label": "לפני 8 שעות",
+      "pipeline_status": "בדיון בוועדה",
       "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "ביטחון אזרחי וחקירות פליליות",
+      "topic_label": "מאבק בנשק בלתי חוקי",
       "group_breakdown": [
         {
           "id": "A",
-          "agree_pct": 86
+          "agree_pct": 70
         },
         {
           "id": "B",
-          "agree_pct": 90
+          "agree_pct": 81
+        },
+        {
+          "id": "C",
+          "agree_pct": 67
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
+    },
+    {
+      "id": "decl_criminal_justice_and_investigation_transparency_4",
+      "text": "להחמיר משמעותית את הענישה על בני משפחה או מקורבים שמפעילים לחץ על נפגעות תקיפה מינית לחזור בהן מתלונתן",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 275000,
+      "agree_pct": 94,
+      "time_label": "לפני 10 שעות",
+      "pipeline_status": "ממתין לאישור",
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "שוויון מגדרי ומאבק באלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 95
+        },
+        {
+          "id": "B",
+          "agree_pct": 95
+        },
+        {
+          "id": "C",
+          "agree_pct": 92
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
+    },
+    {
+      "id": "decl_criminal_justice_and_investigation_transparency_5",
+      "text": "לאפשר למשטרה לבצע חיפושי נשק בבתים ללא צו שופט בערים מעורבות עם פשיעה גבוהה, למרות הפגיעה בזכויות האזרח",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 315000,
+      "agree_pct": 48,
+      "time_label": "לפני יומיים",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "ביטחון אזרחי ואלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 75
+        },
+        {
+          "id": "B",
+          "agree_pct": 24
+        },
+        {
+          "id": "C",
+          "agree_pct": 51
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
+    },
+    {
+      "id": "decl_criminal_justice_and_investigation_transparency_6",
+      "text": "לממן סיוע משפטי ופסיכולוגי פרטי לכל נפגעת עבירת מין, על חשבון העלאת אגרות המשפט בהליכים אזרחיים",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 142000,
+      "agree_pct": 43,
+      "time_label": "לפני 5 שעות",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "שוויון מגדרי ומאבק באלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 9
+        },
+        {
+          "id": "B",
+          "agree_pct": 77
+        },
+        {
+          "id": "C",
+          "agree_pct": 49
+        }
+      ],
+      "surprise": "split",
+      "win_rate": 0.86,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
+    },
+    {
+      "id": "decl_criminal_justice_and_investigation_transparency_7",
+      "text": "לאפשר לנפגעות אלימות מינית להעיד בבית המשפט באמצעות וידאו מחדר סגור, כדי למנוע מפגש מאיים עם קרובי הנאשם",
+      "badge": "new",
+      "badge_label": "חדש",
+      "vote_count": 65000,
+      "agree_pct": 88,
+      "time_label": "לפני שעה",
+      "pipeline_status": null,
+      "topic_key": "criminal_justice_and_investigation_transparency",
+      "topic_label": "שוויון מגדרי ומאבק באלימות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 88
+        },
+        {
+          "id": "C",
+          "agree_pct": 94
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
+    },
+    {
+      "id": "decl_governance_accountability_and_anti_corruption_8",
+      "text": "לאסור בחוק על נבחרי ציבור להשתמש בדוברות צה״ל או גופי ביטחון אחרים להעברת מסרים פוליטיים",
+      "badge": "bridge",
+      "badge_label": "קונצנזוס רחב",
+      "vote_count": 250000,
+      "agree_pct": 87,
+      "time_label": "לפני יום",
+      "pipeline_status": "הצעת חוק הוגשה",
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "אחריות שלטונית ושקיפות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 93
+        },
+        {
+          "id": "B",
+          "agree_pct": 84
+        },
+        {
+          "id": "C",
+          "agree_pct": 88
+        }
+      ],
+      "surprise": "bridge",
+      "win_rate": 0.7,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
+    },
+    {
+      "id": "decl_governance_accountability_and_anti_corruption_9",
+      "text": "לחייב פרסום פרוטוקולים של דיוני קבינט לאחר חצי שנה, גם במחיר של חשיפת חילוקי דעות פנימיים בזמן מלחמה",
+      "badge": "contested",
+      "badge_label": "שנוי במחלוקת",
+      "vote_count": 195000,
+      "agree_pct": 55,
+      "time_label": "לפני 3 שעות",
+      "pipeline_status": null,
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "אחריות שלטונית ושקיפות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 31
+        },
+        {
+          "id": "B",
+          "agree_pct": 85
+        },
+        {
+          "id": "C",
+          "agree_pct": 59
+        }
+      ],
+      "surprise": null,
+      "win_rate": 0.78,
+      "days_as_winner": 0,
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
+    },
+    {
+      "id": "decl_governance_accountability_and_anti_corruption_10",
+      "text": "לקבוע עבירה פלילית של ״הטעיית הציבור״ לשרים שימסרו נתונים שקריים ביודעין על הישגי המערכת הביטחונית",
+      "badge": "trending",
+      "badge_label": "במגמת עלייה",
+      "vote_count": 160000,
+      "agree_pct": 78,
+      "time_label": "לפני 6 שעות",
+      "pipeline_status": "בדיון בוועדה",
+      "topic_key": "governance_accountability_and_anti_corruption",
+      "topic_label": "אחריות שלטונית ושקיפות",
+      "group_breakdown": [
+        {
+          "id": "A",
+          "agree_pct": 68
+        },
+        {
+          "id": "B",
+          "agree_pct": 80
         },
         {
           "id": "C",
           "agree_pct": 89
         }
       ],
-      "surprise": "bridge",
-      "win_rate": 0.86,
-      "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
-    },
-    {
-      "id": "decl_civilian_security_and_public_safety_9",
-      "text": "להטיל אחריות משפטית על הנהלות קניונים שלא יבצעו סריקות יזומות לגילוי מצלמות נסתרות בחנויות המתחם",
-      "badge": "trending",
-      "badge_label": "במגמת עלייה",
-      "vote_count": 128000,
-      "agree_pct": 71,
-      "time_label": "לפני 6 שעות",
-      "pipeline_status": null,
-      "topic_key": "civilian_security_and_public_safety",
-      "topic_label": "הגנה על פרטיות בקניונים",
-      "group_breakdown": [
-        {
-          "id": "A",
-          "agree_pct": 59
-        },
-        {
-          "id": "B",
-          "agree_pct": 86
-        },
-        {
-          "id": "C",
-          "agree_pct": 74
-        }
-      ],
       "surprise": null,
       "win_rate": 0.86,
       "days_as_winner": 0,
-      "generated_from": "gemini_2026-06-25",
-      "created": "2026-06-25T01:09:02.554311+00:00"
+      "generated_from": "gemini_2026-06-26",
+      "created": "2026-06-26T01:10:08.709182+00:00"
     }
   ]
 }
